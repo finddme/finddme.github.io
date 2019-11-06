@@ -26,11 +26,11 @@ CBOW는 context word(주변 단어)를 통해 center word를 예측하는 모델
 
 <center><img width="586" alt="2019-11-04 (7)" src="https://user-images.githubusercontent.com/53667002/68124084-d0addd80-ff51-11e9-860e-6b040167f3cf.png"></center>
 
-1. 우선 하나의 center word에 대한 context words의 one-hot-vectors를 만든다:
+1\. 우선 하나의 center word에 대한 context words의 one-hot-vectors를 만든다:
 
 $$(x^{ (c-m) },x^{ (c-m+1) },...,x^{ (c-1) },x^{ (c+1) },...x^{ (c+m-1) },x^{ (c+m) })\in\mathbb{R}^{|V|}$$
 
-2. 해당 모델의 파라미터는 input layer에서 hidden layer로 넘어가는 matrix $W$와 hidden layer에서 output layer로 넘어가는 matrix $W'$가 있다:
+2\. 해당 모델의 파라미터는 input layer에서 hidden layer로 넘어가는 matrix $W$와 hidden layer에서 output layer로 넘어가는 matrix $W'$가 있다:
 
 $$\mathbf{W}\in\mathbb{R}^{|V|\times N},~\mathbf{W}^{\prime}\in\mathbb{R}^{N\times |V|}$$
 
@@ -42,15 +42,15 @@ Input의 형태가 one-hot-vector이니 input과 파라미터의 내적은 아�
 
 <center><img width="481" alt="2019-10-23 (5)" src="https://user-images.githubusercontent.com/53667002/68124829-96454000-ff53-11e9-9f77-ed17b74d8f72.png"></center>
 
-앞서 얻은 Embedded vector들의 평균을 구하여 Hidden layer값을 구한다:
+3\. 앞서 얻은 Embedded vector들의 평균을 구하여 Hidden layer값을 구한다:
 
 $$\hat{v}=\frac{v_{c-m}+v_{c-m+1}+\dotsm+v_{c+m}}{2m}\in\mathbb{R}^n$$
 
-Hidden layer값에 $W'$를 내적하여 score값을 구한다: 
+4\. Hidden layer값에 $W'$를 내적하여 score값을 구한다: 
 
 $$z=\mathbf{W'}\hat{v}\in\mathbb{R}^{|V|}$$
 
-마지막으로 score값을 확률값으로 변환하기 위해 softmax를 적용시킨다:
+5\. 마지막으로 score값을 확률값으로 변환하기 위해 softmax를 적용시킨다:
 
 $$\hat{y}=softmax(z)\in\mathbb{R}^{|V|}$$
 
