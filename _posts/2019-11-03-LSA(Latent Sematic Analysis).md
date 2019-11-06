@@ -23,11 +23,11 @@ $U$는 $A { A }^{ T }$를 고유값 분해(eigenvalue decomposition)하여 얻�
 
 truncated SVD 결과가 갖는 의미에 대해 살펴보도록 하겠다. $U_kΣ_k{ V_k }^{ T }$로 도출된 행렬은 단어와 문서 간의 유사도를 나타내고, $U_kΣ_k{ V_k }^{ T }$에 ${ U_k }^{ T }$를 곱해 $Σ_k{ V_k }^{ T }$를 구하면 결과로 도출된 행렬의 행(colunm)은 문서 간의 유사도를 의미하게 된다. 
 
-<center><img width="270" alt="2019-11-06 (10)" src="https://user-images.githubusercontent.com/53667002/68293746-f661f080-00d1-11ea-92ce-514a8323981f.png"></center>
+<center><img width="320" alt="2019-11-06 (10)" src="https://user-images.githubusercontent.com/53667002/68293746-f661f080-00d1-11ea-92ce-514a8323981f.png"></center>
 
 그리고  $U_kΣ_k{ V_k }^{ T }$에 $V_k$를 곱하여 $U_kΣ_k$의 결과를 구하게 되면 도출된 행렬의 열(row)는 단어 간의 유사도를 의미한다. 
 
-<center><img width="228" alt="2019-11-06 (11)" src="https://user-images.githubusercontent.com/53667002/68293788-08439380-00d2-11ea-84b8-08cff462a63b.png"></center>
+<center><img width="280" alt="2019-11-06 (11)" src="https://user-images.githubusercontent.com/53667002/68293788-08439380-00d2-11ea-84b8-08cff462a63b.png"></center>
 
 지금까지 설명한 LSA기법은 데이터의 차원을 축소하여 학습량을 줄여 성능을 높일 수 있다는 장점도 있지만 SVD의 특성상 새로운 데이터가 추가될 경우 계산을 모두 다시 해야 해 정보 업데이트에 대해 취약하다는 단점도 존재한다. 따라서 이러한 문제점으로 인해 새로운 데이터 업데이트가 용이한 인공 신경망 기반의 word embedding방법이 연구되어 계속 발전되고 있다.
 
