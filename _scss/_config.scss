@@ -1,0 +1,47 @@
+/* Colors 
+ * Based on colors from Base16: http://chriskempson.github.io/base16/#default.
+ */
+$red:      #ac4142;
+$orange:   #d28445;
+$yellow:   #f4bf75;
+$green:    #90a959;
+$cyan:     #75b5aa;
+$blue:     #6a9fb5;
+$magenta:  #aa759f;
+$brown:    #8f5536;
+$default:  #505050;
+$ivory:    #cdB59d;
+$dgreen:   #385723;
+$pink:     #dfa2a1;
+$skyblue:  #b5c9de;
+$dred:     #9d0c3c;
+$dpink:    #c86e65;
+$gpurple:  #9795a5;
+$dblue:    #003876;
+$ngreen:   #939852;
+$pdblue:   #433b61;
+$mblue:    #2c6c85;
+$dgray:    #656668;
+$gray:     #f2f2f2;
+
+$white:      #fff;
+$lightgrey:  #eee;
+$black:      #000;
+
+$theme-color: $gray;
+$theme-color-dark: darken($theme-color, 10%);
+
+$post-date-color_1: #9a9a9a;
+$post-date-color: #cdB59d;
+$title-color: #313131;
+$post-title-color: #656668;
+$masthead-title-small-color: #c0c0c0;
+
+/* Layout */
+$reverse-layout: false;
+$overlay-sidebar: true;
+
+/* Font stack */
+$font-serif: "PT Serif", Georgia, "Times New Roman", serif;
+$font-sans: "PT Sans", Helvetica, Arial, sans-serif;
+$font-font-awesome: FontAwesome;
