@@ -26,11 +26,11 @@ CBOW는 context word(주변 단어)를 통해 center word를 예측하는 모델
 
 <center><img width="586" alt="2019-11-04 (7)" src="https://user-images.githubusercontent.com/53667002/68124084-d0addd80-ff51-11e9-860e-6b040167f3cf.png"></center>
 
-우선 하나의 center word에 대한 context words의 one-hot-vectors를 만든다:
+1. 우선 하나의 center word에 대한 context words의 one-hot-vectors를 만든다:
 
 $$(x^{ (c-m) },x^{ (c-m+1) },...,x^{ (c-1) },x^{ (c+1) },...x^{ (c+m-1) },x^{ (c+m) })\in\mathbb{R}^{|V|}$$
 
-해당 모델의 파라미터는 input layer에서 hidden layer로 넘어가는 matrix $W$와 hidden layer에서 output layer로 넘어가는 matrix $W'$가 있다:
+2. 해당 모델의 파라미터는 input layer에서 hidden layer로 넘어가는 matrix $W$와 hidden layer에서 output layer로 넘어가는 matrix $W'$가 있다:
 
 $$\mathbf{W}\in\mathbb{R}^{|V|\times N},~\mathbf{W}^{\prime}\in\mathbb{R}^{N\times |V|}$$
 
