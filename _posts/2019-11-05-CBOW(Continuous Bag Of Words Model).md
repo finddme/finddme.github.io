@@ -79,3 +79,8 @@ u_c와 v를 최적화(optimization)시키는 방법으로 SGD(stochastic gradien
 
 지금까지 학습 진행과정을 살펴보았다. 학습이 완료된 후에는 지금까지 학습시킨 파라미터 중 W를 embedded vector matrix로 사용한다.
 
+## Reference
+
+> Francois Chaubard, Michael Fang, Guillaume Genthial, Rohit Mundra, Richard Socher."CS224n: Natural Language Processing with Deep Learning: Part1,"(winter 2017)
+> Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean."Efficient Estimation of Word Representations in Vector Space,"(2013)
+> Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado, Jeffrey Dean."Distributed Representations of Words and Phrases and their Compositionality,"(2013)
