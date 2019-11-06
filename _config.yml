@@ -1,0 +1,76 @@
+# Site Info
+title: finddme_textmining
+#tagline: '_textmining'
+#description: 'blog for textmining'
+url: http://dPdlsdlek.github.io
+logo: '/public/finddme.png'
+encoding: utf-8
+highlighter: rouge
+
+# Site configurations
+gems:
+  - jekyll-paginate
+markdown: kramdown
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss    
+paginate: 5
+paginate_path: '/blog/page:num'
+permalink: pretty
+version: 1.0.0
+
+
+authoricon: heart
+
+     
+
+# About/contact
+author:
+  name: dPdlsdlek
+  description: <strong>dPdlsdlek </strong> serenity
+  #image: https://dPdlsdlek.github.io/public/img/yein01.jpeg
+  #gravatar: 0a638fc7996869b1b67fb90ccf77dcfe # md5 hash of your email address
+  gravatar: 753e5aac923755fc6a53de0a371ab12e
+  
+  contact:
+    #linkedin:  https://www.linkedin.com/in/gichanglee/
+    #github:    https://github.com/ratsgo
+    #facebook:  https://www.facebook.com/gichanglee.84
+    #twitter:  <hide>
+    #weibo:    <hide>
+    email:     mailto:yein4452@gmail.com
+
+# Navigation (2nd level links supported)
+nav:
+  #Home: 
+    #- '/'
+  Categories: 
+    - '/blog/categories/'
+  #Tags: 
+    #- '/blog/tags/'
+  #Contents:           
+    #- '/blog/'
+    #- { Categories: '/blog/categories/' }
+    #- { Tags: '/blog/tags/' }
+  About:          
+    - '/about/'
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
+hero:
+  image : '/public/rovvxhyo.jpg'
+#  image: https://dPdlsdlek.github.io/public/oz.jpg
+#  caption: Original Artwork &copy; Pablo Picasso. Girl before a Mirror. Boisgeloup, March 1932. Oil on canvas
+#back: 
+  #image: https://dPdlsdlek.github.io/public/oz.jpg
+
+# Puglins
+mathjax: true # whether support mathjax
+#google_analytics_token: 'UA-93172815-1' # leave blank if you don't want google analytics
+disqus_short_name: 'dPdlsdlek-github-io' # leave blank if you don't want disqus
+
