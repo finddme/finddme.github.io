@@ -35,4 +35,4 @@ $$P_{ij}=P(j|i)=\frac{X_{ij}}{X_j}$$
 
 위 수식은 center word $i$에 대해 context word $j$가 등장할 확률을 표현한 것이다. 해당 수식에서 $X_{ij}$는 context word $j$가 center word $i$가 속한 context에 등장한 횟수를 가리킨다.
 
-**<center>미완성 게시물. 작성하다 맒.</center>**
+**<center>미완성 게시물. 작성하다 맒.졸림...</center>**
