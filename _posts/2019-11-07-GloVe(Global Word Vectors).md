@@ -53,7 +53,7 @@ $$F({ w }_{ i }-{ w }_{ j },\tilde{ { w }_{ k } })=\frac{ { P }_{ ik } }{ { P }_
 
 $$F(({ w }_{ i }-{ w }_{ j })^T\tilde{ { w }_{ k } })=\frac{ { P }_{ ik } }{ { P }_{ jk } }$$
 
-여기에서 주의할 점은 word-word co-occurrence matrices에서 center word($w_i$, $w_j$)와 context word($\tilde{{ w }_{ k }}$)는 임의로 결정되기 때문에 두 단어의 역할은 자유롭게 상호 교차($w\leftrightarrow\tilde{w}$)가 이루어질 수 있어야 하고, co-occurrence matrix $X$는 $X\leftrightarrow X^T$관계여야 한다는 것이다.
+여기에서 주의할 점은 word-word co-occurrence matrices에서 center word($w_i$, $w_j$)와 context word($\tilde{ w }_{ k }$)는 임의로 결정되기 때문에 두 단어의 역할은 자유롭게 상호 교차($w\leftrightarrow\tilde{w}$)가 이루어질 수 있어야 하고, co-occurrence matrix $X$는 $X\leftrightarrow X^T$관계여야 한다는 것이다.
 
 최종 모델은 재라벨링(relabeling)을 해도 변하지 않아야 한다. 하지만 위에 정의된 마지막 수식은 그렇지 않다. 라벨링에 따라 변하지 않기 위해 우선 함수 $F$는 Homomorphism(준동형)해야 한다. 이 조건을 만족시키기 위해 식은 다시 다음과 같이 변형된다:
 
