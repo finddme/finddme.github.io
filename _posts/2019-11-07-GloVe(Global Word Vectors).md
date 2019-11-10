@@ -71,7 +71,7 @@ $$exp(w_i^T\tilde{w}_k)=P_{ik}$$
 
 $$w_i^T\tilde{w}_k=\log(P_{ik})=\log(X_{ik})-\log(X_i)$$
 
-하지만 위에서 언급했 듯이 center word($w_i$ ,$w_j$)와 context word($\tilde{ w }_{ k }$)간의 상호 교차는 자유롭게 이루어질 수 있어야 하는데 위 수식의 $log(P_{ik})$는 $log(P_{ki})$과 상호 교차될 수 없다. 즉, 전자와 후자는 각각 $log(X_{ik})-log(X_i)$와 $log(X_{ki})-log(X_k)$인데 두 수식이 서로 다르기 때문에 상호 교차가 불가능하다. 이를 해결하기 위해 $log(X_i)$에 대해 $w_i$는 bias $b_i$로, $\tilde{ w }_{ k }$는 bias $\tilde{ b }_{ k }$로 처리한 후 각 변에 해당 상수항을 다시 더한다:
+하지만 위에서 언급했 듯이 center word($w_i$ ,$w_j$)와 context word($\tilde{ w }_{ k }$)간의 상호 교차는 자유롭게 이루어질 수 있어야 하는데 위 수식의 $log(P_{ik})$는 $log(P_{ki})$과 상호 교차될 수 없다. 즉, 전자와 후자는 각각 $log(X_{ik}) - log(X_i)$와 $log(X_{ki}) - log(X_k)$인데 두 수식이 서로 다르기 때문에 상호 교차가 불가능하다. 이를 해결하기 위해 $log(X_i)$에 대해 $w_i$는 bias $b_i$로, $\tilde{ w }_{ k }$는 bias $\tilde{ b }_{ k }$로 처리한 후 각 변에 해당 상수항을 다시 더한다:
 
 $${ w }_{ i }^{ T }\tilde { { w }_{ k } } =\log { X_{ ik }-{ b }_{ i }-\tilde { { b }_{ k } }  }$$
 
