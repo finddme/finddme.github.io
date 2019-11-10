@@ -71,11 +71,11 @@ $$exp(w_i^T\tilde{w}_k)=P_{ik}$$
 
 $$w_i^T\tilde{w}_k=\log(P_{ik})=\log(X_{ik})-\log(X_i)$$
 
-하지만 위에서 언급했 듯이 center word($w_i$ ,$w_j$)와 context word($\tilde{ w }_{ k }$)간의 상호 교차는 자유롭게 이루어질 수 있어야 하는데 위 수식의 $log(P_{ik})$는 $log(P_{ki})$과 상호 교차될 수 없다. 즉, 전자와 후자는 각각 $log(X_{ik})-log(X_i)$와 $log(X_{ki})-log(X_k)$인데 두 수식이 서로 다르기 때문에 상호 교차가 불가능하다. 이를 해결하기 위해 $log(X_i)$에 대해 $w_i$는 bias $b_i$로, $w ̃_k$는 bias $b ̃_k$로 처리한 후 각 변에 해당 상수항을 다시 더한다:
+하지만 위에서 언급했 듯이 center word($w_i$ ,$w_j$)와 context word($\tilde{w}_k$)간의 상호 교차는 자유롭게 이루어질 수 있어야 하는데 위 수식의 $log(P_{ik})$는 $log(P_{ki})$과 상호 교차될 수 없다. 즉, 전자와 후자는 각각 $log(X_{ik})-log(X_i)$와 $log(X_{ki})-log(X_k)$인데 두 수식이 서로 다르기 때문에 상호 교차가 불가능하다. 이를 해결하기 위해 $log(X_i)$에 대해 $w_i$는 bias $b_i$로, $\tilde{ w }_{ k }$는 bias $\tilde{ b }_{ k }$로 처리한 후 각 변에 해당 상수항을 다시 더한다:
 
 $${ w }_{ i }^{ T }\tilde { { w }_{ k } } =\log { X_{ ik }-{ b }_{ i }-\tilde { { b }_{ k } }  }$$
 
-$${ w }_{ i }^{ T }\tilde { { w }_{ k } } +{ b }_{ i }+\tilde { { b }_{ k } }& =\log { X_{ ik }}$$
+$${ w }_{ i }^{ T }\tilde { { w }_{ k } } +{ b }_{ i }+\tilde { { b }_{ k } } =\log { X_{ ik }}$$
 
 이제 $d$차원 벡터 공간에 우변과의 차이를 최소화한 좌변의 값이 embedding된다. 즉 $d$차원 벡터 공간 안에 동시 등장 확률이 높은 단어 vector간의 거리는 가깝게, 낮은 단어 vector간의 거리는 멀게 배치된다. 이를 수식으로 정의하면 다음과 같다:
 
@@ -83,7 +83,7 @@ $$J=\sum _{ i,j=1 }^{ V }{ { ({ w }_{ i }^{ T }\tilde { { w }_{ j } } +{ b }_{ i
 
 하지만 위 수식의 $log{X}_{ik}$부분에서 문제가 발생한다. $log{X}_{ik}$은 co-occurrence matrix에 로그를 취한 것인데, 행렬 값이 0이 될 경우에는 $log0$이 되어 무한 발산을 하게 된다. 그리고 적게 등장하는 단어와 너무 자주 등장하는 단어에 대한 값을 안정시키기 위해 weighting function $f(x)$를 추가하여 최종 목적함수(objective function)을 만든다:
 
-$$J=\sum _{ i,j=1 }^{ V }{ { f\left( { X }_{ ij } \right) ({ w }_{ i }^{ T }\tilde { { w }_{ j } } +{ b }_{ i }+\tilde { { b }_{ j } } -\log { X_{ ij } } ) }^{ 2 } } where\quad f(x)=\begin{cases} { (\frac { x }{ { x }_{ max } } ) }^{ \alpha  } \\ 1\quad otherwise \end{cases}if\quad x<{ x }_{ max }$$
+$$J=\sum _{ i,j=1 }^{ V }{ { f\left( { X }_{ ij } \right) ({ w }_{ i }^{ T }\tilde { { w }_{ j } } +{ b }_{ i }+\tilde { { b }_{ j } } -\log { X_{ ij } } ) }^{ 2 } } where\quadf(x)=\begin{cases} { (\frac { x }{ { x }_{ max } } ) }^{ \alpha  } \\ 1\quad otherwise \end{cases}if\quad x<{ x }_{ max }$$
 
 ## Model Training
 
