@@ -83,7 +83,7 @@ $$J=\sum _{ i,j=1 }^{ V }{ { ({ w }_{ i }^{ T }\tilde { { w }_{ j } } +{ b }_{ i
 
 하지만 위 수식의 $log{X}_{ik}$부분에서 문제가 발생한다. $log{X}_{ik}$은 co-occurrence matrix에 로그를 취한 것인데, 행렬 값이 0이 될 경우에는 $log0$이 되어 무한 발산을 하게 된다. 그리고 적게 등장하는 단어와 너무 자주 등장하는 단어에 대한 값을 안정시키기 위해 weighting function $f(x)$를 추가하여 최종 목적함수(objective function)을 만든다:
 
-$$J=\sum _{ i,j=1 }^{ V }{ { f\left( { X }_{ ij } \right) ({ w }_{ i }^{ T }\tilde { { w }_{ j } } +{ b }_{ i }+\tilde { { b }_{ j } } -\log { X_{ ij } } ) }^{ 2 } } where\quadf(x)=\begin{cases} { (\frac { x }{ { x }_{ max } } ) }^{ \alpha  } \\ 1\quad otherwise \end{cases}if\quad x<{ x }_{ max }$$
+$$J=\sum _{ i,j=1 }^{ V }{ { f\left( { X }_{ ij } \right) ({ w }_{ i }^{ T }\tilde { { w }_{ j } } +{ b }_{ i }+\tilde { { b }_{ j } } -\log { X_{ ij } } ) }^{ 2 } } where\quad f(x)=\begin{cases} { (\frac { x }{ { x }_{ max } } ) }^{ \alpha  } \\ 1\quad otherwise \end{cases}if\quad x<{ x }_{ max }$$
 
 ## Model Training
 
