@@ -71,7 +71,10 @@ $$exp(w_i^T\tilde{w}_k)=P_{ik}$$
 
 $$w_i^T\tilde{w}_k=\log(P_{ik})=\log(X_{ik})-\log(X_i)$$
 
-하지만 위에서 언급했 듯이 center word($w_i$ ,$w_j$)와 context word($ \tilde{ w }_{ k } $)간의 상호 교차는 자유롭게 이루어질 수 있어야 하는데 위 수식의 $log(P_{ik})$는 $log(P_{ki})$과 상호 교차될 수 없다. 즉 전자와 후자는 각각$log(X_{ik})-log(X_i)$와  $log(X_{ki}) - log(X_k)$인데 두 수식이 서로 다르기 때문에 상호 교차가 불가능하다. 이를 해결하기 위해 $log(X_i)$에 대해 $w_i$는 bias $b_i$로, $\tilde{ w }_{ k }$는 bias $\tilde{ b }_{ k }$로 처리한 후 각 변에 해당 상수항을 다시 더한다:
+하지만 위에서 언급했 듯이 center word($w_i$ ,$w_j$)와 context word($\tilde{ w }_{ k }$)간의 상호 교차는 자유롭게 이루어질 수 있어야 하는데 
+위 수식의 $log(P_{ik})$는 $log(P_{ki})$과 상호 교차될 수 없다. 
+즉 전자와 후자는 각각$log(X_{ik})-log(X_i)$와  $log(X_{ki}) - log(X_k)$인데 두 수식이 서로 다르기 때문에 상호 교차가 불가능하다. 
+이를 해결하기 위해 $log(X_i)$에 대해 $w_i$는 bias $b_i$로, $\tilde{ w }_{ k }$는 bias $\tilde{ b }_{ k }$로 처리한 후 각 변에 해당 상수항을 다시 더한다:
 
 $${ w }_{ i }^{ T }\tilde { { w }_{ k } } =\log { X_{ ik }-{ b }_{ i }-\tilde { { b }_{ k } }  }$$
 
@@ -87,7 +90,8 @@ $$J=\sum _{ i,j=1 }^{ V }{ { f\left( { X }_{ ij } \right) ({ w }_{ i }^{ T }\til
 
 ## Model Training
 
-마지막으로 이제 학습을 진행할 것인데 우선 행렬 $w_{i}^{T}$와 $\tilde{ w }_{j}$를 랜덤 초기화시킨 후 gradient descent를 사용해 최종 목적함수를 최소화시키는 방향으로 ${w}_{i}^{T}$와 $\tilde{ w }_{j}$를 업데이트하며 학습을 진행한다. 즉 행렬분해를 통해 최종 목적함수를 최소화하며 학습을 진행한다. 학습 후 나온 vector $w$를 embedding vector로 사용하면 된다.
+마지막으로 이제 학습을 진행할 것인데 우선 행렬 $w_{i}^{T}$와 $\tilde{ w }_{j}$를 랜덤 초기화시킨 후 gradient descent를 사용해 최종 목적함수를 최소화시키는 방향으로 ${w}_{i}^{T}$와 $\tilde{ w }_{j}$를 업데이트하며 학습을 진행한다.
+즉 행렬분해를 통해 최종 목적함수를 최소화하며 학습을 진행한다. 학습 후 나온 vector $w$를 embedding vector로 사용하면 된다.
 
 <center><img width="910" alt="2019-11-10 (1)" src="https://user-images.githubusercontent.com/53667002/68543574-19571200-03fc-11ea-9239-118791a34a1c.png"></center>
 
