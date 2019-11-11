@@ -32,6 +32,6 @@ Attention Mechanism에 대한 이해를 돕기 위해 간단한 비유로 해당
 
 아래 수식은 
 
-<center><img width="883" alt="2019-11-12 (3)" src="https://user-images.githubusercontent.com/53667002/68607454-fe67c900-04f3-11ea-8aa2-3a30ec087246.png"></center>
+<center><img width="800" alt="2019-11-12 (3)" src="https://user-images.githubusercontent.com/53667002/68607454-fe67c900-04f3-11ea-8aa2-3a30ec087246.png"></center>
 
 **<center>미완성 게시물. 너무 졸림.</center>**
