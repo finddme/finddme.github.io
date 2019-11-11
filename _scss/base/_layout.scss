@@ -19,14 +19,14 @@
  */
 
 .container {
-  max-width: 64rem;
+  max-width: 56rem;
   a {
     @if $theme-color != $default { color: $dblue; }
   }
 }
 @media (min-width: 38em) {
   .container {
-    max-width: 64rem;
+    max-width: 60rem;
     &.content {
       padding-top: 6.5rem;
     }
