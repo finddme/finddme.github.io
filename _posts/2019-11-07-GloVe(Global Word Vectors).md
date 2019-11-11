@@ -37,7 +37,7 @@ $$P_{ij}=P(j|i)=\frac{X_{ij}}{X_j}$$
 ### - Ratios of co-occurrence probabilities
 위 수식은 center word $i$에 대해 context word $j$가 등장할 확률을 표현한 것이다. 해당 수식에서 $X_{ij}$는 context word $j$가 center word $i$가 속한 context에 등장한 횟수를 가리킨다. 이렇게 정의한 확률을 사용하여 두 단어(각각 독립적인 단어 $i$와 $j$) 간의 상관관계를 파악하기 위해 임의의 단어 $k$에 대한 동시 등장 확률 비율(ratios of co-occurrence probabilities)을 정의해보도록 하겠다. $i$와 $j$에 대해 그들 간의 동시 등장 확률이 아닌 동시 등장 확률의 비율이 필요한 이유를 설명하기 위해 $i$를 ice로, $j$를 steam으로 가정하여 간단한 예시를 들도록 하겠다. 
 
-<center><img width="440" alt="2019-10-28 (9)" src="https://user-images.githubusercontent.com/53667002/68542575-5cf84e80-03f1-11ea-92ab-b5dc0c610455.png"></center>
+<center><img width="680" alt="2019-10-28 (9)" src="https://user-images.githubusercontent.com/53667002/68542575-5cf84e80-03f1-11ea-92ab-b5dc0c610455.png"></center>
 
 위 표는 지금부터 설명할 예시의 결과이다. 해당 표를 보면, ‘ice’와는 관련 있지만 ‘steam’과는 무관한 ‘solid’를 $k$로 정의한 경우, ‘ice’가 주어졌을 때 ‘solid’가 등장할 확률이 ‘steam’이 주어졌을 때 ‘solid’가 등장할 확률보다 높은 것을 확인할 수 있다. 이에 따라 확률들의 비율인 $P(solid\|ice)/P(solid\|steam)$의 값이 8.9로 굉장히 높게 나오게 된다. 다음으로, ‘steam’과 관련 있는 단어 ’gas’를 $k$로 정의한 경우에는 확률 비율이 이전보다 확연히 작아진 것을 볼 수 있다. 마지막으로, 세 번째 결과와 네 번째 결과는 비율이 모두 1에 가깝게 도출되었는데 이는 ‘ice’와 ‘steam’ 모두 관련 있는 단어 ‘water’와 두 단어 모두와 관련 없는 단어 ‘fashion’에 대한 결과이다. 이렇게 간단한 예시를 통해 동시 등장 확률이 아닌 동시 등장 확률 비율이 독립적인 두 단어의 관계를 더 잘 파악할 수 있게 해준다는 것을 알 수 있다. 
 
@@ -91,7 +91,7 @@ $$J=\sum _{ i,j=1 }^{ V }{ { f\left( { X }_{ ij } \right) ({ w }_{ i }^{ T }\til
 
 마지막으로 이제 학습을 진행할 것인데 우선 행렬 $w_{i}^{T}$와 $\tilde{ w }\_{j}$를 랜덤 초기화시킨 후 gradient descent를 사용해 최종 목적함수를 최소화시키는 방향으로 ${w}\_{i}^{T}$와 $\tilde{ w }\_{j}$를 업데이트하며 학습을 진행한다.즉 행렬분해를 통해 최종 목적함수를 최소화하며 학습을 진행한다. 학습 후 나온 vector $w$를 embedding vector로 사용하면 된다.
 
-<center><img width="910" alt="2019-11-10 (1)" src="https://user-images.githubusercontent.com/53667002/68543574-19571200-03fc-11ea-9239-118791a34a1c.png"></center>
+<center><img width="960" alt="2019-11-10 (1)" src="https://user-images.githubusercontent.com/53667002/68543574-19571200-03fc-11ea-9239-118791a34a1c.png"></center>
 
 <center><img width="1000" alt="2019-10-28 (10)" src="https://user-images.githubusercontent.com/53667002/68543645-350ee800-03fd-11ea-8067-af9d255d604c.png"></center>
 
