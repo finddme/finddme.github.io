@@ -42,7 +42,7 @@ Attention score는 어떤 입력 step에 집중할 것인가에 대한 정보를
 
 그리고 함수$a$는 이전 step의 decoder hidden state vector와 현재 step의 encoder hidden vector가 들어가는 linear function이다. 이는 아래와 같이 굉장히 다양한 방식이 제시된 상태이다:
 
-<center><img width="524" alt="2019-09-18 (1)" src="https://user-images.githubusercontent.com/53667002/68649711-b209a100-0566-11ea-90b1-727557a79c64.png"></center>
+<center><img width="800" alt="2019-09-18 (1)" src="https://user-images.githubusercontent.com/53667002/68649711-b209a100-0566-11ea-90b1-727557a79c64.png"></center>
 
 ### - Decoder hidden state
 
