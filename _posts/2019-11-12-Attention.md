@@ -12,7 +12,7 @@ Attention Mechanism에 대한 이해를 돕기 위해 간단한 비유로 해당
 
 ## Architecture of Attention
 
-<center><img width="1200" alt="2019-11-12 (1)" src="https://user-images.githubusercontent.com/53667002/68604933-e04b9a00-04ee-11ea-8210-09872e86b178.png"></center>
+<center><img width="1600" alt="2019-11-12 (1)" src="https://user-images.githubusercontent.com/53667002/68604933-e04b9a00-04ee-11ea-8210-09872e86b178.png"></center>
 
 이제 위 그림을 보며 Attention Mechanism의 진행 방식을 천천히 살펴보겠다.  
 
