@@ -36,7 +36,7 @@ Attention Mechanism에 대한 이해를 돕기 위해 간단한 비유로 해당
 
 ### - Attention score
 
-<center><img width="597" alt="2019-11-12 (5)" src="https://user-images.githubusercontent.com/53667002/68649276-9d78d900-0565-11ea-915b-38d4a06cf85f.png"></center>
+<img width="200" alt="2019-11-12 (5)" src="https://user-images.githubusercontent.com/53667002/68649276-9d78d900-0565-11ea-915b-38d4a06cf85f.png">
 
 Attention score는 어떤 입력 step에 집중할 것인가에 대한 정보를 담고 있는 점수이다. Attention score에 관련된 식을 이해하기 위해 우선 해당 수식의 첨자를 이해해야한다. 위 수식을 보면 $i$와 $j$, 두 첨자가 존재하는 것을 확인할 수 있다. 먼저 첨자 $i$는 context vecore, decoder hidden state, output을 순차적으로 구할 때 해당 step에 대한 위치 정보가 반영된 첨자이다. 쉽게 말해 예측하려는 것에 대한 위치 정보이다. 그리고 첨자 $j$는 hidden state와 x에 대한 정보를 담고 있는 첨자이다.
 
@@ -46,7 +46,7 @@ Attention score는 어떤 입력 step에 집중할 것인가에 대한 정보를
 
 ### - Decoder hidden state
 
-<center><img width="428" alt="2019-11-12 (7)" src="https://user-images.githubusercontent.com/53667002/68650805-3d843180-0569-11ea-99e2-2c51226d5c4b.png"></center>
+<img width="200" alt="2019-11-12 (7)" src="https://user-images.githubusercontent.com/53667002/68650805-3d843180-0569-11ea-99e2-2c51226d5c4b.png">
 
 이 부분이 Attention을 적용한 seq2seq의 가장 핵심 부분으로 볼 수 있다. Decoder의 hidden state값은 이전 Decoder hidden state와 직전 step의 output 그리고 Attention output vector를 이용하여 출력하는데 위에 제시된 두 수식을 보면 fixed-length vector가 attention mechanism 적용 후 각 index마다 다르게 반영된다는 것을 알 수 있다.
 
