@@ -58,7 +58,7 @@ Attention score는 어떤 입력 step에 집중할 것인가에 대한 정보를
 
 ### - Result
 
-<center><img width="712" alt="2019-09-18 (2)" src="https://user-images.githubusercontent.com/53667002/68652653-4a0a8900-056d-11ea-8a58-df3078f20670.png"></center>
+<center><img width="800" alt="2019-09-18 (2)" src="https://user-images.githubusercontent.com/53667002/68652653-4a0a8900-056d-11ea-8a58-df3078f20670.png"></center>
 
 ## Reference
 
