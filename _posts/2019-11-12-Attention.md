@@ -30,8 +30,36 @@ Attention Mechanism에 대한 이해를 돕기 위해 간단한 비유로 해당
 
 지금까지 Attention Mechanism을 진행 순서에 따라 살펴보았는데 이전에 언급한 바와 같이 Encoder의 각 step을 전부 활용하여 context vector에 적용되는 것을 볼 수 있다. 이는 seq2seq모델만 사용할 때 보다 더 방대한 양의 information을 함축하는 데에 있어 더 효율적이다. 
 
-아래 수식은 
+아래는 두 번째 단어 예측 시 적용되는 수식을 풀어 놓은 것이다:
 
 <center><img width="800" alt="2019-11-12 (3)" src="https://user-images.githubusercontent.com/53667002/68607454-fe67c900-04f3-11ea-8aa2-3a30ec087246.png"></center>
 
-**<center>미완성 게시물. 너무 졸림.</center>**
+### - Attention score
+
+<center><img width="597" alt="2019-11-12 (5)" src="https://user-images.githubusercontent.com/53667002/68649276-9d78d900-0565-11ea-915b-38d4a06cf85f.png"></center>
+
+Attention score는 어떤 입력 step에 집중할 것인가에 대한 정보를 담고 있는 점수이다. Attention score에 관련된 식을 이해하기 위해 우선 해당 수식의 첨자를 이해해야한다. 위 수식을 보면 $i$와 $j$, 두 첨자가 존재하는 것을 확인할 수 있다. 먼저 첨자 $i$는 context vecore, decoder hidden state, output을 순차적으로 구할 때 해당 step에 대한 위치 정보가 반영된 첨자이다. 쉽게 말해 예측하려는 것에 대한 위치 정보이다. 그리고 첨자 $j$는 hidden state와 x에 대한 정보를 담고 있는 첨자이다.
+
+그리고 함수$a$는 이전 step의 decoder hidden state vector와 현재 step의 encoder hidden vector가 들어가는 linear function이다. 이는 아래와 같이 굉장히 다양한 방식이 제시된 상태이다:
+
+<center><img width="524" alt="2019-09-18 (1)" src="https://user-images.githubusercontent.com/53667002/68649711-b209a100-0566-11ea-90b1-727557a79c64.png"></center>
+
+### - Decoder hidden state
+
+<center><img width="428" alt="2019-11-12 (7)" src="https://user-images.githubusercontent.com/53667002/68650805-3d843180-0569-11ea-99e2-2c51226d5c4b.png"></center>
+
+이 부분이 Attention을 적용한 seq2seq의 가장 핵심 부분으로 볼 수 있다. Decoder의 hidden state값은 이전 Decoder hidden state와 직전 step의 output 그리고 Attention output vector를 이용하여 출력하는데 위에 제시된 두 수식을 보면 fixed-length vector가 attention mechanism 적용 후 각 index마다 다르게 반영된다는 것을 알 수 있다.
+
+## Experiment
+
+### - Dataset
+
+해당 모델의 성능 평가를 위해 시행한 실험에 대해 간단히 언급하겠다. 성능 평가를 위한 실험으로 영어-프랑스어 번역을 과제로 삼았으며 dataset은 WMT’14 English-French corpora(totaling 850M words)이다. 그리고 데이터 크기를 줄이기 위해 [data selection method (by Axelrod et al. (2011))](http://www-lium.univ-lemans.fr/˜schwenk/cslm_joint_paper/)를 이용했으며, 이전에 언급한 parallel corpora이외에 monolingual data는 사용하지 않았다.
+
+### - Result
+
+<center><img width="712" alt="2019-09-18 (2)" src="https://user-images.githubusercontent.com/53667002/68652653-4a0a8900-056d-11ea-8a58-df3078f20670.png"></center>
+
+## Reference
+
+> Dzmitry Bahdanau, KyungHyun Cho."NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE,"ICLR(2015)
