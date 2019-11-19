@@ -79,7 +79,7 @@ sinusoid function을 사용하여 positional encoding을 해주는 이유는 인
 
 ## 3\. Multi-Head Attention
 
-embedding과 positional encoding과정을 거친 후 본격적으로 encoder와 decoder에 입력이 되어 multi head attention을 통과한다. Multi-head attention은 기존 seq2seq 모델에서 사용되던 source-target attention과는 다른 종류의 Attention이다. 
+Embedding과 positional encoding과정을 거친 후에는 본격적으로 encoder와 decoder에 입력이 되어 attention layer에 들어간다. 해당 모델에서는  Multi-head attention을 사용했는데 말 그대로 head가 여러개인 attention을 쓴다는 것이다. Transformer에서는 기존 seq2seq 모델에서 사용되던 source-target attention과는 다른 종류의 attention을 사용한다. 
 
 두 Attention의 차이를 설명하기 전, 이해를 돕기 위해 Query($Q$), Key($K$) 그리고 Value($V$)에 대해 먼저 언급하겠다. 우선 $Q$, $K$, $V$가 모두 벡터라는 것을 염두에 두어야한다.  $Q$는 현재의 단어를 표현하는 벡터이다. 그리고 $K$와 $V$는 해당 단어와 다른 단어 간의 상관관계를 파악하기 위해 필요한 벡터이다. $K$는 $Q$에 대한 상대 단어이기 때문에 $K$와 $Q$의 곱(행렬곱)은 attention weight가 되며 $V$는 hidden vector역할을 한다.
 
