@@ -194,3 +194,5 @@ Label smoothing이란, 일반적으로 label은 one-hot-vector로 표현되는�
 > Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin."Attention Is All You Need,"Cornell(2017)
 
 > http://jalammar.github.io/illustrated-transformer/
+
+> http://nlp.seas.harvard.edu/2018/04/03/attention.html
