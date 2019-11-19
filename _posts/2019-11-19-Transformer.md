@@ -54,7 +54,7 @@ Decoder는 self-attention, encoder-decoder attention 그리고 feed Forward, 이
 
 ## 1\. Embedding
 
-Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder에는 input이, decoder에는 right shifted된 output이 입력된다. Embedding은 일반적으로 자연어처리 과제 수행에 사용되는 Embedding Algorithm이 사용된다. 문장이 입력된 후에는 token별로 분리한 후 embedding과정을 거치는데 embedding시 중요한 것은 embedding vector의 차원이 $d_{model}$차원과 같아야 한다는 것이다. $d_{model}$의 크기는 사용자가 설정할 수 있는 hyperparameter로, 일반적을 train dataset에서 가장 긴 문장의 길이를 $d_{model}$ 크기로 설정한다. 따라서 embedding vector의 차원이자 모델 내부에서 흐르는 행렬의 크기는 항상 (seq_len, $d_model$)이다.
+Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder에는 input이, decoder에는 right shifted된 output이 입력된다. Embedding은 일반적으로 자연어처리 과제 수행에 사용되는 Embedding Algorithm이 사용된다. 문장이 입력된 후에는 token별로 분리한 후 embedding과정을 거치는데 embedding시 중요한 것은 embedding vector의 차원이 $d_{model}$차원과 같아야 한다는 것이다. $d_{model}$의 크기는 사용자가 설정할 수 있는 hyperparameter로, 일반적을 train dataset에서 가장 긴 문장의 길이를 $d_{model}$ 크기로 설정한다. 따라서 embedding vector의 차원이자 모델 내부에서 흐르는 행렬의 크기는 항상 (seq_len, $d_{model}$)이다.
 
 ## 2\. Positional Encoding
 
