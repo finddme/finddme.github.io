@@ -16,19 +16,19 @@ Transformer는 [이전 게시물](https://finddme.github.io/natural%20language%2
 
 아래 그림은 Transformer의 전체 구조이다. 해당 그림을 보면 encoder에 input(source language)이, decoder에는 right shifted된(start token이 있는) output(target language)이 들어가 이를 통해 최종적으로 output probability(다음에 오게 될 단어에 대한 예측 확률)가 도출되는 것을 볼 수 있다:
 
-<center><img width="800" alt="2019-11-19 (6)" src="https://user-images.githubusercontent.com/53667002/69123152-fd322f80-0ae3-11ea-9e07-19bb42ee011f.png"></center>
+<center><img width="680" alt="2019-11-19 (6)" src="https://user-images.githubusercontent.com/53667002/69123152-fd322f80-0ae3-11ea-9e07-19bb42ee011f.png"></center>
 
 ### - Hyperparameter of Transformer
 
-구조에 대한 이해를 돕기 위해 Transformer의 주요 hyperparameter들에 대해 먼저 짚어보겠다. 괄호 안에 있는 값은 해당 논문에서 설정한 hyperparameter값이다.
+구조에 대한 이해를 돕기 위해 논문에서 설정한 Transformer의 주요 hyperparameter들에 대해 먼저 짚어보겠다. 
 
-* $d_{model}$(=512): transformer encoder-decoder의 입,출력 크기.( transformer encoder-decoder의 입,출력 크기는 항상 같은 차원을 지니며 내부적으로도 항상 같은 차원의 벡터가 흐른다.) 
+* transformer encoder-decoder의 입,출력 크기는 항상 같은 차원을 지니며 내부적으로도 항상 같은 차원의 벡터가 흐르는데 이를 $d_{model}$라 부르며 논문에서는 512로 설정하였다.
 
-* $num\_layers$(=6) : encoer-decoder layer 수.
+* encoer-decoder를 여러번 수행하는데 이들의 layer 수는 6개로 설정하였다.
 
-* $num\_heads$(=8) : 병렬적으로 진행되는 attention의 수. 
+* attention연산도 병렬적으로 여러번 수행되는데 논문에서는 8개의 attention을 사용하였다.
 
-* $d_{ff}$(=2048) : feedforward 내부의 hidden state 크기. (feedforward의 hidden state 크기는 feedforward의 입출력 크기와 다르다. Feedforward의 입출력 크기는 $d_model$크기이다.) 
+* feedforward의 hidden state 크기($d_{ff}$)는 feedforward의 입출력 크기와 다르다. Feedforward의 입출력 크기는 $d_{model}$크기이지만 $d_{ff}$ 는 해당 논문에서 2048로 설정하였다.
 
 Transformer는 Attention을 발전시킨 모델이기 때문에 기존 encoder-decoder모델처럼 encoder와 decoder역할을 하는 부분이 존재한다. 하지만 기존 모델과는 달리 encoder-decoder layer N개를 연속으로 붙여서 사용하는데 해당 논문에서는 encoder와 decoder layer를 각각 6개를 사용하였다. 그리고 Transformer 내부에서는 Encoder와 Decoder layer 전반에 걸쳐 입력부터 출력까지 계속 같은 차원의 벡터($d_{model}$)가 흐른다.
 
@@ -54,7 +54,7 @@ Decoder는 self-attention, encoder-decoder attention 그리고 feed Forward, 이
 
 ## 1\. Embedding
 
-Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder에는 input이, decoder에는 right shifted된 output이 입력된다. Embedding은 일반적으로 자연어처리 과제 수행에 사용되는 Embedding Algorithm이 사용된다. 문장이 입력된 후에는 token별로 분리한 후 embedding과정을 거치는데 embedding시 중요한 것은 embedding vector의 차원이 $d_{model}$차원과 같아야 한다는 것이다. $d_{model}$의 크기는 사용자가 설정할 수 있는 hyperparameter로, 일반적을 train dataset에서 가장 긴 문장의 길이를 $d_{model}$ 크기로 설정한다. 따라서 embedding vector의 차원이자 모델 내부에서 흐르는 행렬의 크기는 항상 ($seq\_len$, $d_model$)이다.
+Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder에는 input이, decoder에는 right shifted된 output이 입력된다. Embedding은 일반적으로 자연어처리 과제 수행에 사용되는 Embedding Algorithm이 사용된다. 문장이 입력된 후에는 token별로 분리한 후 embedding과정을 거치는데 embedding시 중요한 것은 embedding vector의 차원이 $d_{model}$차원과 같아야 한다는 것이다. $d_{model}$의 크기는 사용자가 설정할 수 있는 hyperparameter로, 일반적을 train dataset에서 가장 긴 문장의 길이를 $d_{model}$ 크기로 설정한다. 따라서 embedding vector의 차원이자 모델 내부에서 흐르는 행렬의 크기는 항상 ($sequence length$, $d_model$)이다.
 
 ## 2\. Positional Encoding
 
@@ -93,7 +93,7 @@ Source-target attention은 attention input인 $Q$, $K$, $V$에 대해 $Q$는 tar
 
 Source-target attention과 달리 $Q$, $K$, $V$는 모두 동일한 곳으로부터 입력 받는다. 그리고 기존 attention의 $K$, $V$와 달리 해당 두 벡터의 쓰임을 구분한다. $K$는 attention weight를 도출하는데 사용되고, $V$는 기존 attention의 hidden state vector와 같은 역할을 한다. 이렇게 동일한 곳에서 온 벡터를 $Q$, $K$, $V$로 나누는 이유는 단순히 나눠서 성능이 좋아졌기 때문이다.
 
-이제 self-attention연산에 필요한 $Q$, $K$, $V$를 나누는 과정을 설명하겠다. 우선 embedding과 encoding이 완료된 벡터가 입력으로 들어오면 각 단어 벡터마다 각각 다른 가중치인 $W^{Q}$,  $W^{K}$,  $W^{V}$를 곱하여 각각의 $Q$, $K$, $V$를 얻는다($W^{Q}$,  $W^{K}$,  $W^{V}$는 훈련 과정 속에서 훈련되는 가중치 행렬이다). 각 단어 벡터는 $d_model$의 크기를 가지며, $Q$, $K$, $V$는 $d_{model}$을 $num\_\heads$(attention layer 수)로 나눈 만큼의 차원을 갖는다. 해당 논문에서 $d_{model}$은 512이고 $num\_\heads4는 8이었기 때문에 $Q$, $K$, $V$는 각각 64차원의 크기를 갖는다.
+이제 self-attention연산에 필요한 $Q$, $K$, $V$를 나누는 과정을 설명하겠다. 우선 embedding과 encoding이 완료된 벡터가 입력으로 들어오면 각 단어 벡터마다 각각 다른 가중치인 $W^{Q}$,  $W^{K}$,  $W^{V}$를 곱하여 각각의 $Q$, $K$, $V$를 얻는다($W^{Q}$,  $W^{K}$,  $W^{V}$는 훈련 과정 속에서 훈련되는 가중치 행렬이다). 각 단어 벡터는 $d_model$의 크기를 가지며, $Q$, $K$, $V$는 $d_{model}$을 attention layer 수로 나눈 만큼의 차원을 갖는다. 해당 논문에서 $d_{model}$은 512이고 attention layer 수는 8이었기 때문에 $Q$, $K$, $V$는 각각 64차원의 크기를 갖는다.
 
 <center><img width="413" alt="2019-11-19 (20)" src="https://user-images.githubusercontent.com/53667002/69126381-6ec1ac00-0aeb-11ea-97f0-1e4ce86f8f78.png"></center>
 
@@ -137,7 +137,7 @@ Multi-head attention의 경우 여러 layer에 대해 행렬 연산들이 모두
 
 위 그림은 5번째 encoder의 첫 번째 attention layer에서 “it”을 encoding하는 것을 나타낸 그림이다. 그리고 아래 그림은 attention을 병렬적을 처리했을 때 하나의 문장을 다양한 관점으로 볼 수 있다는 것을 증명하는 그림이다:
 
-<center><img width="600" alt="2019-11-19" src="https://user-images.githubusercontent.com/53667002/69128032-cdd4f000-0aee-11ea-8f86-83776109280a.png"></center>
+<center><img width="480" alt="2019-11-19" src="https://user-images.githubusercontent.com/53667002/69128032-cdd4f000-0aee-11ea-8f86-83776109280a.png"></center>
 
 위 그림을 보면 첫 번째 attention에서는 “it”이 “the animal”과 관련 있다는 결론이 도출되었지만 또 다른 attention layer에는 ”it”이 “tired”와 연관성이 높다는 결론이 도출되었다.
 
@@ -165,7 +165,7 @@ $$\text{FFNN}(x)=\text{MAX}(0, xW_1+b_1)W_2+b_2$$
 
 ## 6\. Linear Function
 
-이렇게 attention score를 구하고 난 후에는 나온 값들을 모두 concatenate하여 linear function을 통과시킨다. Linear function을 적용한 이유는 $d_model$ size와 word size가 다르기 때문에 이 크기를 linear mapping해주기 위함이다. 
+이렇게 attention score를 구하고 난 후에는 나온 값들을 모두 concatenate하여 linear function을 통과시킨다. Linear function을 적용한 이유는 $d_{model}$ size와 word size가 다르기 때문에 이 크기를 linear mapping해주기 위함이다. 
 
 ## 7\. Softmax
 
