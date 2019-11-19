@@ -48,13 +48,13 @@ Encoder layer는 위 그림에서 볼 수 있듯이 self-attention과 feed forwa
 
 ### - Decoder
 
-<center><img width="475" alt="2019-11-19 (14)" src="https://user-images.githubusercontent.com/53667002/69124253-bf82d600-0ae6-11ea-98f9-a38e04537671.png"></center>
+<center><img width="600" alt="2019-11-19 (14)" src="https://user-images.githubusercontent.com/53667002/69124253-bf82d600-0ae6-11ea-98f9-a38e04537671.png"></center>
 
 Decoder는 self-attention, encoder-decoder attention 그리고 feed Forward, 이렇게 총 3개의 sub-layer로 구성되어 있다. Decoder의 self-attention은 현재 단어 이후에 나올 단어들에 attention이 적용되지 않도록 masking을 한 masked multi-head attention을 사용한다. 그리고 이후 seq2seq에서 사용된 attention과 유사한 encoder-decoder attention도 사용된다. Decoder도 encoder와 마찬가지로 N개의 layer가 사용될 수 있으며 해당 논문에서 encoder와 같이 6개의 layer를 사용하였다. 그리고 attention과 feedforward layer 또한 encoder처럼 여러 번 사용되었다.
 
 ## 1\. Embedding
 
-Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder에는 input이, decoder에는 right shifted된 output이 입력된다. Embedding은 일반적으로 자연어처리 과제 수행에 사용되는 Embedding Algorithm이 사용된다. 문장이 입력된 후에는 token별로 분리한 후 embedding과정을 거치는데 embedding시 중요한 것은 embedding vector의 차원이 $d_{model}$차원과 같아야 한다는 것이다. $d_{model}$의 크기는 사용자가 설정할 수 있는 hyperparameter로, 일반적을 train dataset에서 가장 긴 문장의 길이를 $d_{model}$ 크기로 설정한다. 따라서 embedding vector의 차원이자 모델 내부에서 흐르는 행렬의 크기는 항상 ($sequence length$, $d_model$)이다.
+Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder에는 input이, decoder에는 right shifted된 output이 입력된다. Embedding은 일반적으로 자연어처리 과제 수행에 사용되는 Embedding Algorithm이 사용된다. 문장이 입력된 후에는 token별로 분리한 후 embedding과정을 거치는데 embedding시 중요한 것은 embedding vector의 차원이 $d_{model}$차원과 같아야 한다는 것이다. $d_{model}$의 크기는 사용자가 설정할 수 있는 hyperparameter로, 일반적을 train dataset에서 가장 긴 문장의 길이를 $d_{model}$ 크기로 설정한다. 따라서 embedding vector의 차원이자 모델 내부에서 흐르는 행렬의 크기는 항상 (seq_len, $d_model$)이다.
 
 ## 2\. Positional Encoding
 
@@ -93,7 +93,7 @@ Source-target attention은 attention input인 $Q$, $K$, $V$에 대해 $Q$는 tar
 
 Source-target attention과 달리 $Q$, $K$, $V$는 모두 동일한 곳으로부터 입력 받는다. 그리고 기존 attention의 $K$, $V$와 달리 해당 두 벡터의 쓰임을 구분한다. $K$는 attention weight를 도출하는데 사용되고, $V$는 기존 attention의 hidden state vector와 같은 역할을 한다. 이렇게 동일한 곳에서 온 벡터를 $Q$, $K$, $V$로 나누는 이유는 단순히 나눠서 성능이 좋아졌기 때문이다.
 
-이제 self-attention연산에 필요한 $Q$, $K$, $V$를 나누는 과정을 설명하겠다. 우선 embedding과 encoding이 완료된 벡터가 입력으로 들어오면 각 단어 벡터마다 각각 다른 가중치인 $W^{Q}$,  $W^{K}$,  $W^{V}$를 곱하여 각각의 $Q$, $K$, $V$를 얻는다($W^{Q}$,  $W^{K}$,  $W^{V}$는 훈련 과정 속에서 훈련되는 가중치 행렬이다). 각 단어 벡터는 $d_model$의 크기를 가지며, $Q$, $K$, $V$는 $d_{model}$을 attention layer 수로 나눈 만큼의 차원을 갖는다. 해당 논문에서 $d_{model}$은 512이고 attention layer 수는 8이었기 때문에 $Q$, $K$, $V$는 각각 64차원의 크기를 갖는다.
+이제 self-attention연산에 필요한 $Q$, $K$, $V$를 나누는 과정을 설명하겠다. 우선 embedding과 encoding이 완료된 벡터가 입력으로 들어오면 각 단어 벡터마다 각각 다른 가중치인 $W^{Q}$,  $W^{K}$,  $W^{V}$를 곱하여 각각의 $Q$, $K$, $V$를 얻는다($W^{Q}$,  $W^{K}$,  $W^{V}$는 훈련 과정 속에서 훈련되는 가중치 행렬이다). 각 단어 벡터는 $d_{model}$의 크기를 가지며, $Q$, $K$, $V$는 $d_{model}$을 attention layer 수로 나눈 만큼의 차원을 갖는다. 해당 논문에서 $d_{model}$은 512이고 attention layer 수는 8이었기 때문에 $Q$, $K$, $V$는 각각 64차원의 크기를 갖는다.
 
 <center><img width="413" alt="2019-11-19 (20)" src="https://user-images.githubusercontent.com/53667002/69126381-6ec1ac00-0aeb-11ea-97f0-1e4ce86f8f78.png"></center>
 
