@@ -58,7 +58,7 @@ Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder
 
 ## 2\. Positional Encoding
 
-RNN모델이 자연어처리 과제에서 보편적으로 활용될 수 있었던 이유는 해당 모델이 단어의 위치 및 순서 정보를 반영한다는 특징 때문이었다. 하지만 RNN을 전혀 사용하지 않는 Transformer는 따로 위치 정보를 반영해주어야 한다. Positional Encoding은 위와 같은 이유로 Embedding된 encoder와 decoder의 입력 값에 sine과 cosine함수를 사용하여 positional encoding값을 더해 위치정보를 주는 과정이다. 단어별(벡터별) positional encoding수행 과정을 그림으로 표현하면 다음과 같다:
+RNN모델이 자연어처리 과제에서 보편적으로 활용될 수 있었던 이유는 해당 모델이 단어의 위치 및 순서 정보를 반영한다는 특징 때문이었다. 하지만 RNN을 전혀 사용하지 않는 Transformer는 따로 위치 정보를 반영해주어야 한다. Positional Encoding은 위와 같은 이유로 Embedding된 encoder와 decoder의 입력 값에 sinusoid function을 사용하여 positional encoding값을 더해 위치정보를 주는 과정이다. 단어별(벡터별) positional encoding수행 과정을 그림으로 표현하면 다음과 같다:
 
 <center><img width="720" alt="2019-11-19 (16)" src="https://user-images.githubusercontent.com/53667002/69125094-5c923e80-0ae8-11ea-9c3d-fd39d69ef066.png"></center>
 
@@ -66,7 +66,7 @@ RNN모델이 자연어처리 과제에서 보편적으로 활용될 수 있었�
 
 <center><img width="386" alt="2019-11-19 (18)" src="https://user-images.githubusercontent.com/53667002/69125399-17224100-0ae9-11ea-92d0-ed13c64018eb.png"></center>
 
-위에서 언급했듯이 positional encoding은 sine과 cosine함수를 통해 위치정보를 가진 encoding값을 만들어 embedding 벡터와 더하는 과정이다. 이를 위한 sine과 cosine함수는 다음과 같이 정의된다:
+위에서 언급했듯이 positional encoding은 sine과 cosine함수를 통해 위치정보를 가진 encoding값을 만들어 embedding 벡터와 더하는 과정이다. 이를 위한 sinusoid function은 다음과 같이 정의된다:
 
 $$
 \begin{matrix}
@@ -75,7 +75,7 @@ PE_{(pos,2i+1)}=\cos(pos/10000^{2i/d_{\text{model}}})
 \end{matrix}
 $$
 
-sine과 cosine함수를 사용하여 positional encoding을 해주는 이유는 인코딩 값이 -1부터 1사이의 값이 나오게 되고, 학습데이터보다 긴 문장이 입력돼도 오류 없이 상대적인 encoding 값을 줄 수 있다는 장점이 있기 때문이다.
+sinusoid function을 사용하여 positional encoding을 해주는 이유는 인코딩 값이 -1부터 1사이의 값이 나오게 되고, 학습데이터보다 긴 문장이 입력돼도 오류 없이 상대적인 encoding 값을 줄 수 있다는 장점이 있기 때문이다.
 
 ## 3\. Multi-Head Attention
 
