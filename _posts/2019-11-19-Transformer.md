@@ -44,7 +44,7 @@ Encoder layer는 위 그림에서 볼 수 있듯이 self-attention과 feed forwa
 
 위 그림과 같이 여러 layer를 거친 후 마지막 layer의 출력 값이 encoder의 최종 출력 값이 되어 decoder로 넘어간다:
 
-<center><img width="387" alt="2019-11-19 (12)" src="https://user-images.githubusercontent.com/53667002/69124158-85193900-0ae6-11ea-9477-a33a974bfce3.png"></center>
+<center><img width="640" alt="2019-11-19 (12)" src="https://user-images.githubusercontent.com/53667002/69124158-85193900-0ae6-11ea-9477-a33a974bfce3.png"></center>
 
 ### - Decoder
 
