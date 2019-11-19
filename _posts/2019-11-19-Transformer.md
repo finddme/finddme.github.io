@@ -16,7 +16,7 @@ Transformer는 [이전 게시물](https://finddme.github.io/natural%20language%2
 
 아래 그림은 Transformer의 전체 구조이다. 해당 그림을 보면 encoder에 input(source language)이, decoder에는 right shifted된(start token이 있는) output(target language)이 들어가 이를 통해 최종적으로 output probability(다음에 오게 될 단어에 대한 예측 확률)가 도출되는 것을 볼 수 있다:
 
-<center><img width="355" alt="2019-11-19 (6)" src="https://user-images.githubusercontent.com/53667002/69123152-fd322f80-0ae3-11ea-9e07-19bb42ee011f.png"></center>
+<center><img width="1000" alt="2019-11-19 (6)" src="https://user-images.githubusercontent.com/53667002/69123152-fd322f80-0ae3-11ea-9e07-19bb42ee011f.png"></center>
 
 ### - Hyperparameter of Transformer
 
@@ -40,7 +40,7 @@ Attention에 사용되는 weight는 attention head마다 다르고, fully-connec
 
 Encoder layer는 위 그림에서 볼 수 있듯이 self-attention과 feed forward 이렇게 두 sub-layer로 이루어져 있다. 위에서 언급했듯이 N개의 encoder layer가 사용될 수 있는데 해당 논문에서는 6개의 layer를 사용했다. 그리고 self-attention이 Multi-Head Attention이라고 표현되어 있고, feed forward neural network는 position wise feed forward neural network라고 표현되어 있다. 이를 통해 attention과 feed forward layer가 여러 번 사용되었다는 것을 알 수 있다. Encoder 내부의 흐름은 다음과 같이 진행된다:
 
-<center><img width="510" alt="2019-11-19 (10)" src="https://user-images.githubusercontent.com/53667002/69124025-37043580-0ae6-11ea-8318-db3b676f803d.png"></center>
+<center><img width="800" alt="2019-11-19 (10)" src="https://user-images.githubusercontent.com/53667002/69124025-37043580-0ae6-11ea-8318-db3b676f803d.png"></center>
 
 위 그림과 같이 여러 layer를 거친 후 마지막 layer의 출력 값이 encoder의 최종 출력 값이 되어 decoder로 넘어간다:
 
@@ -60,7 +60,7 @@ Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder
 
 RNN모델이 자연어처리 과제에서 보편적으로 활용될 수 있었던 이유는 해당 모델이 단어의 위치 및 순서 정보를 반영한다는 특징 때문이었다. 하지만 RNN을 전혀 사용하지 않는 Transformer는 따로 위치 정보를 반영해주어야 한다. Positional Encoding은 위와 같은 이유로 Embedding된 encoder와 decoder의 입력 값에 sine과 cosine함수를 사용하여 positional encoding값을 더해 위치정보를 주는 과정이다. 단어별(벡터별) positional encoding수행 과정을 그림으로 표현하면 다음과 같다:
 
-<center><img width="505" alt="2019-11-19 (16)" src="https://user-images.githubusercontent.com/53667002/69125094-5c923e80-0ae8-11ea-9c3d-fd39d69ef066.png"></center>
+<center><img width="720" alt="2019-11-19 (16)" src="https://user-images.githubusercontent.com/53667002/69125094-5c923e80-0ae8-11ea-9c3d-fd39d69ef066.png"></center>
 
 위 그림은 이해를 용이하게 하기위해 embedding벡터와 positional encoding값이 더해지는 과정을 단어 하나하나 더해지는 것처럼 나타냈지만, 실제 문장을 처리할 때에는 embedding된 단어들은 각각 모두 벡터이고, 문장은 행렬이기 때문에 다음과 같이 embedding벡터가 모여서 만들어진 행렬과 positional encoding행렬이 더해지게 된다.
 
@@ -133,11 +133,11 @@ Multi-head attention의 경우 여러 layer에 대해 행렬 연산들이 모두
 
 병렬적 연산이 어떤 결과를 주는지 예시와 함께 살펴보면 도움이 될 것이다. 예를 들어 “The animal didn’t cross the street because it was too tired.”라는 문장에서 “it”이 지시하는 것이 무엇인지 쉽게 알아낼 수 있지만 기계의 경우에는 그렇지 않다. 따라서 기계는 해당 문장을 다각에서 바라본 후 확률적으로 “it”과 가장 연관성이 가장 높은 단어를 알아내는 과정을 거쳐야한다. 다음 그림은 해당 과정을 시각화한 것이다:
 
-<center><img width="338" alt="2019-11-19 (1)" src="https://user-images.githubusercontent.com/53667002/69127966-ac740400-0aee-11ea-9070-e830ce486598.png"></center>
+<center><img width="800" alt="2019-11-19 (1)" src="https://user-images.githubusercontent.com/53667002/69127966-ac740400-0aee-11ea-9070-e830ce486598.png"></center>
 
 위 그림은 5번째 encoder의 첫 번째 attention layer에서 “it”을 encoding하는 것을 나타낸 그림이다. 그리고 아래 그림은 attention을 병렬적을 처리했을 때 하나의 문장을 다양한 관점으로 볼 수 있다는 것을 증명하는 그림이다:
 
-<center><img width="271" alt="2019-11-19" src="https://user-images.githubusercontent.com/53667002/69128032-cdd4f000-0aee-11ea-8f86-83776109280a.png"></center>
+<center><img width="800" alt="2019-11-19" src="https://user-images.githubusercontent.com/53667002/69128032-cdd4f000-0aee-11ea-8f86-83776109280a.png"></center>
 
 위 그림을 보면 첫 번째 attention에서는 “it”이 “the animal”과 관련 있다는 결론이 도출되었지만 또 다른 attention layer에는 ”it”이 “tired”와 연관성이 높다는 결론이 도출되었다.
 
@@ -147,7 +147,7 @@ Multi-head attention의 경우 여러 layer에 대해 행렬 연산들이 모두
 
 Transformer 전체 구조를 표현한 그림을 보면 attention과 feed-forward neural network이후 residual connection과 layer normalization작업을 수행하는 것을 확인할 수 있다. residual connection을 해주는 이유는 word embedding 이후에 positional encoding을 해주었는데 학습을 진행하다 보면 backpropagation(역전파)에 의해 positional encoding 값이 손실될 가능성이 있기 때문이다. 간단히 말하자면 해당 정보에 대한 손실을 줄이기 위해 입력 값을 다시 더해준 것이다. 
 
-<center><img width="604" alt="2019-11-19 (32)" src="https://user-images.githubusercontent.com/53667002/69128600-0c1edf00-0af0-11ea-9549-134c5d7eb12b.png"></center>
+<center><img width="1000" alt="2019-11-19 (32)" src="https://user-images.githubusercontent.com/53667002/69128600-0c1edf00-0af0-11ea-9549-134c5d7eb12b.png"></center>
 
 그리고 해당 모델 내부에서 Residual 연산이 계속되기 때문에 모델 전반에 흐르는 차원을 $d_model$(=512)로 고정하여 연산을 간편하게 하였다. Residual connection이후에는 layer normalization을 통해 학습의 효율을 높였다.
 
@@ -155,7 +155,7 @@ Transformer 전체 구조를 표현한 그림을 보면 attention과 feed-forwar
 
 이 과정은 point wise로 진행되는 일반적인 feed forward network이다. 수식은 다음과 같다:
 
-$$\text{FFNN}(x)=\MAX(0, xW_1+b_1)W_2+b_2$$
+$$\text{FFNN}(x)=\text{MAX}(0, xW_1+b_1)W_2+b_2$$
 
 위 식을 보면 0보다 작으면 0을 내보내고 0보다 크면 weight bias 값을 내보낸다. 이 부분이 흡사 relu activation과 닮아 있는 것을 알 수 있다. 아래는 수식 이해를 돕기 위한 그림이다: 
 
