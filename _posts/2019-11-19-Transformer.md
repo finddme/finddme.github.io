@@ -196,3 +196,5 @@ Label smoothing이란, 일반적으로 label은 one-hot-vector로 표현되는�
 > http://jalammar.github.io/illustrated-transformer/
 
 > http://nlp.seas.harvard.edu/2018/04/03/attention.html
+
+> https://mchromiak.github.io/articles/2017/Sep/12/Transformer-Attention-is-all-you-need/#.XdO8r1czY2x
