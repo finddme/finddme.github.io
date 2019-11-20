@@ -16,7 +16,7 @@ Transformer는 [이전 게시물](https://finddme.github.io/natural%20language%2
 
 아래 그림은 Transformer의 전체 구조이다. 해당 그림을 보면 encoder에 input(source language)이, decoder에는 right shifted된(start token이 있는) output(target language)이 들어가 이를 통해 최종적으로 output probability(다음에 오게 될 단어에 대한 예측 확률)가 도출되는 것을 볼 수 있다:
 
-<center><img width="680" alt="2019-11-19 (6)" src="https://user-images.githubusercontent.com/53667002/69123152-fd322f80-0ae3-11ea-9e07-19bb42ee011f.png"></center>
+<center><img width="680" alt="2019-11-20 (3)" src="https://user-images.githubusercontent.com/53667002/69211133-5eb7d400-0ba0-11ea-8d50-40ae5b838a1a.png"></center>
 
 ### - Hyperparameter of Transformer
 
