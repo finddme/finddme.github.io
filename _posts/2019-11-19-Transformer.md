@@ -6,7 +6,7 @@ tag: NLP
 
 Transformer는 [이전 게시물](https://finddme.github.io/natural%20language%20processing/2019/11/12/Attention/)에서 소개한 기존 Attention기법을 발전시킨 모델로 Attention Is All You Need(2017)에서 처음 소개되었다. Transformer network의 가장 큰 특징은 자연어 처리과제에 보편적으로 사용되는 RNN계열의 모델을 전혀 사용하지 않고 Attention만으로 작업을 수행한다는 것이다.
 
-기존 기계번역에서 사용되던 RNN기반의 encoder-decoder는 RNN을 사용하기 때문에 factorization을 통해 연산이 진행되어 내 순서나 위치는 잘 반영하나 연쇄적인 연산이 이루어지기 때문에 첫 입력 값과 마지막 입력 값의 거리가 멀어질수록 초반에 입력된 정보에 대한 손실이 생기며 학습이 느리다는 문제가 있었다. 
+기존 기계번역에서 사용되던 RNN기반의 encoder-decoder는 RNN을 사용하기 때문에 factorization을 통해 연산이 진행되어 문장내 단어의 순서나 위치는 잘 반영하나 연쇄적인 연산으로 인해 첫 입력 값과 마지막 입력 값의 거리가 멀어질수록 초반에 입력된 정보에 대한 손실이 생기며 학습이 느리다는 문제가 있었다. 
 
 그리고 Transformer가 나오기 이전에 사용된 Attention mechanism은 기존 RNN based encoder-decoder에 Attention을 추가한 것이기 때문에 여전히 연산 속도는 느리다는 문제가 있었다.
 
@@ -40,7 +40,7 @@ Attention에 사용되는 weight는 attention head마다 다르고, fully-connec
 
 Encoder layer는 위 그림에서 볼 수 있듯이 self-attention과 feed forward 이렇게 두 sub-layer로 이루어져 있다. 위에서 언급했듯이 N개의 encoder layer가 사용될 수 있는데 해당 논문에서는 6개의 layer를 사용했다. 그리고 self-attention이 Multi-Head Attention이라고 표현되어 있고, feed forward neural network는 position wise feed forward neural network라고 표현되어 있다. 이를 통해 attention과 feed forward layer가 여러 번 사용되었다는 것을 알 수 있다. Encoder 내부의 흐름은 다음과 같이 진행된다:
 
-<center><img width="800" alt="2019-11-19 (10)" src="https://user-images.githubusercontent.com/53667002/69124025-37043580-0ae6-11ea-8318-db3b676f803d.png"></center>
+<center><img width="800" alt="2019-11-20 (1)" src="https://user-images.githubusercontent.com/53667002/69210276-878a9a00-0b9d-11ea-8fff-c568c3349473.png"></center>
 
 위 그림과 같이 여러 layer를 거친 후 마지막 layer의 출력 값이 encoder의 최종 출력 값이 되어 decoder로 넘어간다:
 
