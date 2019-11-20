@@ -6,7 +6,7 @@ tag: NLP
 
 Transformer는 [이전 게시물](https://finddme.github.io/natural%20language%20processing/2019/11/12/Attention/)에서 소개한 기존 Attention기법을 발전시킨 모델로 Attention Is All You Need(2017)에서 처음 소개되었다. Transformer network의 가장 큰 특징은 자연어 처리과제에 보편적으로 사용되는 RNN계열의 모델을 전혀 사용하지 않고 Attention만으로 작업을 수행한다는 것이다.
 
-기존 기계번역에서 사용되던 RNN기반의 encoder-decoder는 RNN을 사용하기 때문에 factorization을 통해 연산이 진행되어 문장내 단어의 순서나 위치는 잘 반영하나 연쇄적인 연산으로 인해 첫 입력 값과 마지막 입력 값의 거리가 멀어질수록 초반에 입력된 정보에 대한 손실이 생기며 학습이 느리다는 문제가 있었다. 
+기존 기계번역에서 사용되던 RNN기반의 encoder-decoder는 RNN을 사용하기 때문에 순차적으로 연산이 진행되어 문장내 단어의 순서나 위치는 잘 반영하나 연쇄적인 연산으로 인해 첫 입력 값과 마지막 입력 값의 거리가 멀어질수록 초반에 입력된 정보에 대한 손실이 생기며 학습이 느리다는 문제가 있었다. 
 
 그리고 Transformer가 나오기 이전에 사용된 Attention mechanism은 기존 RNN based encoder-decoder에 Attention을 추가한 것이기 때문에 여전히 연산 속도는 느리다는 문제가 있었다.
 
