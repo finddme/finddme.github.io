@@ -60,7 +60,7 @@ Embedding부터 차례대로 살펴보겠다. 위에서 언급했 듯이 encoder
 
 RNN모델이 자연어처리 과제에서 보편적으로 활용될 수 있었던 이유는 해당 모델이 단어의 위치 및 순서 정보를 반영한다는 특징 때문이었다. 하지만 RNN을 전혀 사용하지 않는 Transformer는 따로 위치 정보를 반영해주어야 한다. Positional Encoding은 위와 같은 이유로 Embedding된 encoder와 decoder의 입력 값에 sinusoid function을 사용하여 positional encoding값을 더해 위치정보를 주는 과정이다. 단어별(벡터별) positional encoding수행 과정을 그림으로 표현하면 다음과 같다:
 
-<center><img width="720" alt="2019-11-20 (5)" src="https://user-images.githubusercontent.com/53667002/69217070-11902e00-0bb1-11ea-92f9-c5f0752c61f6.png">
+<center><img width="680" alt="2019-11-20 (5)" src="https://user-images.githubusercontent.com/53667002/69217070-11902e00-0bb1-11ea-92f9-c5f0752c61f6.png">
 </center>
 
 위 그림은 이해를 용이하게 하기위해 embedding벡터와 positional encoding값이 더해지는 과정을 단어 하나하나 더해지는 것처럼 나타냈지만, 실제 문장을 처리할 때에는 embedding된 단어들은 각각 모두 벡터이고, 문장은 행렬이기 때문에 다음과 같이 embedding벡터가 모여서 만들어진 행렬과 positional encoding행렬이 더해지게 된다.
