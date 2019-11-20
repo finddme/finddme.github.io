@@ -103,7 +103,7 @@ Source-target attention과 달리 $Q$, $K$, $V$는 모두 동일한 곳으로부
 
 ## 3\.2 Scaled dot-product attention
 
-이제 위와 같은 과정(self-attention 방식)을 거쳐 $Q$, $K$, $V$벡터를 얻은 후 attention score function을통해 attention연산을 해야 한다. 이전 게시물에서 attention score를 산출하는 attention score function의 방식이 많이 제시되어 있다고 언급했다. Self-attention에서는 제시된 function중 scaled dot-product attention 함수를 사용하는데 해당 함수를 언급하기 전에 dot product attention에 대해 간단히 설명하겠다. Dot-product attention 연산은 매우 간단하다. 이름 그대로 곱해주면 된다. scaled dot-product attention도 말 그대로 dot product attention에 scaling작업을 추가한 것이다. dot product attention으로 도출된 attention score를 $k$벡터 차원 크기의 루트값으로 나눠 scaling을 해주는데 이렇게 하는 이유는 $k$벡터의 차원이 커질수록 dot product계산시 값이 너무 커지는 문제를 보완하기 위함이다. 아래 수식은 scaled dot-product attention score를 표현한 것이다:
+이제 위와 같은 과정(self-attention 방식)을 거쳐 $Q$, $K$, $V$벡터를 얻은 후 attention score function을통해 attention연산을 해야 한다. [이전 게시물](https://finddme.github.io/natural%20language%20processing/2019/11/12/Attention/)에서 attention score를 산출하는 attention score function의 방식이 많이 제시되어 있다고 언급했다. Self-attention에서는 제시된 function중 scaled dot-product attention 함수를 사용하는데 해당 함수를 언급하기 전에 dot product attention에 대해 간단히 설명하겠다. Dot-product attention 연산은 매우 간단하다. 이름 그대로 곱해주면 된다. scaled dot-product attention도 말 그대로 dot product attention에 scaling작업을 추가한 것이다. dot product attention으로 도출된 attention score를 $k$벡터 차원 크기의 루트값으로 나눠 scaling을 해주는데 이렇게 하는 이유는 $k$벡터의 차원이 커질수록 dot product계산시 값이 너무 커지는 문제를 보완하기 위함이다. 아래 수식은 scaled dot-product attention score를 표현한 것이다:
 
 $$\text{Score}(Q, K) =\frac{QK^T}{\sqrt{d_k}}$$
 
