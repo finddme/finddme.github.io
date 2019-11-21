@@ -96,11 +96,11 @@ Source-target attention과 달리 $Q$, $K$, $V$는 모두 동일한 곳으로부
 
 이제 self-attention연산에 필요한 $Q$, $K$, $V$를 나누는 과정을 설명하겠다. 우선 embedding과 encoding이 완료된 벡터가 입력으로 들어오면 각 단어 벡터마다 각각 다른 가중치인 $W^{Q}$,  $W^{K}$,  $W^{V}$를 곱하여 각각의 $Q$, $K$, $V$를 얻는다($W^{Q}$,  $W^{K}$,  $W^{V}$는 훈련 과정 속에서 훈련되는 가중치 행렬이다). 
 
-$$W_i_Q\text{with dimensions}\d_{model}\times d_q$$
+$$W_i^Q\text{with dimensions}\d_{model}\times d_q$$
 
-$$W_i_K\text{with dimensions}\d_{model}\times d_k$$
+$$W_i^K\text{with dimensions}\d_{model}\times d_k$$
 
-$$W_i_V\text{with dimensions}\d_{model}\times d_v$$
+$$W_i^V\text{with dimensions}\d_{model}\times d_v$$
 
 
 각 단어 벡터는 $d_{model}$의 크기를 가지며, $Q$, $K$, $V$는 $d_{model}$을 attention layer 수로 나눈 만큼의 차원을 갖는다. 해당 논문에서 $d_{model}$은 512이고 attention layer 수는 8이었기 때문에 $Q$, $K$, $V$는 각각 64차원의 크기를 갖는다.
@@ -109,11 +109,11 @@ $$W_i_V\text{with dimensions}\d_{model}\times d_v$$
 
 위 그림은 단어 벡터 하나에 대한 $Q$, $K$, $V$벡터를 구하는 과정을 표현한 것이다. 하지만 이전에도 언급했 듯이 문장은 단어벡터들을 합친 행렬이기 때문에 실제 연산은 다음과 같이 행렬곱으로 진행된다:
 
-$$xW_i_Q=q_i\text{with dimensions}\{seq}_{len}\times d_q$$
+$$xW_i^Q=q_i\text{with dimensions}\{seq}_{len}\times d_q$$
 
-$$xW_i_K=K_i\text{with dimensions}\{seq}_{len}\times d_k$$
+$$xW_i^K=K_i\text{with dimensions}\{seq}_{len}\times d_k$$
 
-$$xW_i_v=V_i\text{with dimensions}\{seq}_{len}\times d_v$$
+$$xW_i^V=V_i\text{with dimensions}\{seq}_{len}\times d_v$$
 
 <center><img width="458" alt="2019-11-19 (22)" src="https://user-images.githubusercontent.com/53667002/69126494-ae889380-0aeb-11ea-8648-cf6c70edad92.png"></center>
 
