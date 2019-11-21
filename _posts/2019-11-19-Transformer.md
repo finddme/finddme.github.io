@@ -96,7 +96,7 @@ Source-target attention과 달리 $Q$, $K$, $V$는 모두 동일한 곳으로부
 
 이제 self-attention연산에 필요한 $Q$, $K$, $V$를 나누는 과정을 설명하겠다. 우선 embedding과 encoding이 완료된 벡터가 입력으로 들어오면 각 단어 벡터마다 각각 다른 가중치인 $W^{Q}$,  $W^{K}$,  $W^{V}$를 곱하여 각각의 $Q$, $K$, $V$를 얻는다($W^{Q}$,  $W^{K}$,  $W^{V}$는 훈련 과정 속에서 훈련되는 가중치 행렬이다). 
 
-$$W_i^Q \with dimensions\ d_{model}\times d_q$$
+$$W_i^Q\text{with dimensions}\\ d_{model}\times d_q$$
 
 $$W_i^K\text{with dimensions} d_{model}\times d_k$$
 
