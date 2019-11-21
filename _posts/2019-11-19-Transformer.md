@@ -128,6 +128,8 @@ Multi-head attention은 이름에서도 알 수 있듯이 Attention을 병렬적
 
 여러 번 수행한 attention의 결과들(attention weight들)은 concatenate한 후 가중치 행렬 $W^{o}$와 내적하면 Multi-head attention의 최종 결과 값이 나온다.  $W^{o}$도 다른 가중치들과 같이 모델과 함께 학습된다.
 
+$$\text{Attention}(Q, K, V) =\text{Concat}({head}_{1}, \dots, {head}_{h}){W}^{o} \ where \ {head}_{i}=\text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$
+
 <center><img width="624" alt="2019-11-19 (30)" src="https://user-images.githubusercontent.com/53667002/69127790-45eee600-0aee-11ea-8d5c-8e1d3b9977ef.png"></center>
 
 Multi-head attention의 경우 여러 layer에 대해 행렬 연산들이 모두 병렬적으로 동시에 수행되는데 이러한 병렬화는 하나의 문장을 여러 관점에서 바라볼 수 있다는 장점을 지닌다. 자연어 문장에는 대용어가 빈번히 사용되며, 모호성과 중의성 또한 존재하는데 이러한 자연어의 특징을 기계가 이해하는 데에 병렬화가 중요한 역할을 한 것이다. 
