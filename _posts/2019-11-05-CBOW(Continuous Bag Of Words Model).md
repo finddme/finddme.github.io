@@ -24,7 +24,7 @@ CBOW는 context word(주변 단어)를 통해 center word를 예측하는 모델
 
 모델의 전체적인 구조가 진행되는 과정을 살펴보겠다.
 
-<center><img width="1000" alt="2019-11-04 (7)" src="https://user-images.githubusercontent.com/53667002/68124084-d0addd80-ff51-11e9-860e-6b040167f3cf.png"></center>
+<center><img width="800" alt="2019-11-04 (7)" src="https://user-images.githubusercontent.com/53667002/68124084-d0addd80-ff51-11e9-860e-6b040167f3cf.png"></center>
 
 1\. 우선 하나의 center word에 대한 context words의 one-hot-vectors를 만든다:
 
