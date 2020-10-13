@@ -63,7 +63,7 @@ tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
 hero:
-  image : '/public/ggonekim.PNG'
+  image : '/public/ggone.PNG'
 #  image: https://dPdlsdlek.github.io/public/oz.jpg
 #  caption: Original Artwork &copy; Pablo Picasso. Girl before a Mirror. Boisgeloup, March 1932. Oil on canvas
 #back: 
