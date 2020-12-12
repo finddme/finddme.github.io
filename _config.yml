@@ -74,9 +74,3 @@ mathjax: true # whether support mathjax
 #google_analytics_token: 'UA-93172815-1' # leave blank if you don't want google analytics
 disqus_short_name: 'dPdlsdlek-github-io' # leave blank if you don't want disqus
 
-# Conversion
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
