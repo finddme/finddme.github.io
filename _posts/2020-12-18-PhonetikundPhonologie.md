@@ -100,3 +100,36 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 \(3\) Allophone ermitteln(변이음 찾기): 음성 인식과 음소의 변이형에 대해 일반화시킨다.  
 
 ## 3\.1 Phonemsystem(음소시스템)
+### Phonem(음소)
+음소는 의미적으로 구분되고 분절된 소리의 최소단위이다.
+
+
+## 3\.1\(1\) Phoneme ermitteln(음소 찾기): 음운론은 음소를 결정하는데, 물리적 소리의 각 자질을 가장 작은 의미 구분 클래스에 귀속시킨다. 이것은 아래와 같은 단계를 통해 실행된다:  
+
+
+1\) 음성녹음을 통해 코퍼스를 모은다. 소리의 연쇄는 개별 소리들로 분절되고, 음운론적 표기법으로 표기된다.  
+2\) 결정된 소리는 대립쌍(최소대립쌍)을 통해 의미적으로 구분되는 기능을 검사하고 분류한다.  
+3\) 소리가 음소에 할당된다.  
+
+
+Phonem은 이러한 클래스 결정의 결과이고, Phone과 달리 정신적이며, 비물리적인 구조이다. 즉 Phone은 물리적 단위이고, Phonem은 추상적 클래스이다.
+
+### Minimalpaar(최소대립쌍)
+최소대립쌍분석(Minimalpaaranalyse)은 음소의 결정에 매우 중요한 과정이다. 최소대립쌍이란 딱 하나의 소리만 다르고 다른 의미를 가진 두 단어(e.g. *Tisch-Fisch*)로, 최소대립쌍의 비교를 통해 의미구분이 소리차이에 의해 나타난다는 가정을 할 수 있다. 
+<center><img width="431" alt="2020-12-17 (20)" src="https://user-images.githubusercontent.com/53667002/102479246-fe94a980-40a1-11eb-836b-d93096f9f1fb.png"></center>
+위 표에서 *Dichter*과 *Richter*의 경우, /d/와 /r/이 최소대립쌍이다. 그리고 *Lenker-Schenker*에서 *Schenker*의 경우, 'sch'이렇게 세 글자로 실현되었지만 이것의 소리는 [ʃ]로 나타나기 때문에 *Lenker*와 비교하여 하나의 소리만 다른 것이 된다. 따라서 이 두 단어는 최소대립쌍의 관계에 있는 것이다. 반면 *Schlichter-Lichter*는 최소대립쌍이 아니다. 왜냐하면 *Schlichter*는 *Lichter*보다 하나의 소리가 더 있기 때문이다. 이렇게 최소대립쌍 연구에서 소리의 대립은 결정적인 역할을 한다.
+
+<center><img width="250" alt="2020-12-17 (22)" src="https://user-images.githubusercontent.com/53667002/102479539-5d5a2300-40a2-11eb-9b1d-6d47bea7f230.png"></center>
+
+## 3\.1\(2\)  음소 체계 세우기
+이러한 규칙을 기반으로 독일어의 자음에 대한 음소 시스템을 만들 경우, 각 음소는 초성, 중성 그리고 종성에서 다른 소리를 지닌 최소 대립쌍을 통해 증명되어야 한다. 예를 들어:
+<center><img width="331" alt="2020-12-17 (21)" src="https://user-images.githubusercontent.com/53667002/102479762-a8743600-40a2-11eb-8505-73128d0f1faf.png"></center>
+
+### Auslautverhaertung(끝음 무성음화)
+위 표에서 Raub의 경우 종성에 있는 <b>는 음소 /p/로 실현된다. 이런 현상을 Auslautverhaertung(끝음 무성음화)(b->p, d->t, g->k)라고 한다. 이에 따라 음소 /b/에 대한 최소 대립쌍은 종성에 없다. 독일어 음소를 조음적 자질로 분류하면 다음과 같다:
+<center><img width="474" alt="2020-12-17 (23)" src="https://user-images.githubusercontent.com/53667002/102479982-01dc6500-40a3-11eb-9a80-aecd22e2ea1f.png"></center>
+모음 음소에서는 단음과 장음이 중요한 의미 구분 자질인 반면 자음에서는 위 표의 몇몇 위치에서 구분된다. 위 표와 phon을 조음적 자질로 분류한 표를 비교하여 음성학과 음운론을 비교해보도록 하겠다:
+<center><img width="470" alt="2020-12-17 (17)" src="https://user-images.githubusercontent.com/53667002/102480103-2b958c00-40a3-11eb-97e5-6483e5d1bd2c.png"></center>
+음성학 차원에서 [r], [ʀ], [ʁ]은 모든 다른 소리이다. 하지만 음운론 차원에서는 하나의 Lautklasse(하나의 음소)이다. 그래서 위 두 표를 비교해보면 소리(Phon) [r], [ʀ], [ʁ]이 음소(Phonem) /ʀ/로 표기된 것을 발견할 수 있다. 따라서 음성학적 차원은 Parole 차원, 음운론적 차원은 Langue 차원이라고 볼 수 있다. 결론적으로 음소(Phonem)는 추상적인 반면 소리(Phon)는 구체적이고 들을 수 있는 소리이다.
+
+## 3\.1\(3\)  Allophone ermitteln(변이음 찾기)
