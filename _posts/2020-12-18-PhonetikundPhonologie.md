@@ -48,13 +48,13 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 위 표를 통해 자음의 음성학적 변별 자질을 알 수 있다. 예를 들어 [v]의 변별자질은 Frikative, sth., labio-dental이다. 그리고 [b]와 [p]를 구분하는 변별자질은 Stimmhaftigkeit이다. 위 표를 보면 Affrikatien(파찰음)은 균등하게 평가되지 않음을 알 수 있다. 이는 단일 음성(Monophonematische Bewertung(단음)) 혹은 두 가지 음성 (Biphonematische Bewertung(양음))으로 볼 수 있다. 그리고 독일어에서 모음으로 시작되는 단어가 발음되는 Knacklaut(성문파열음)은 [ʔ]로 표현된다.
 ### Phonation – Stimmlos vs. Stimmhaft (발성 – 무성음 vs. 유성음)
 자음 생성 시 성대가 진동하면 유성음이고 진동하지 않으면 무성음이다. 유성음, 무성음과 밀접한 관련이 있는 개념쌍으로 Fortis(강함) vs. Lenis(부드러움) 그리고 Tenues(얇은) vs. Mediae(중간)이 있다. 전자의 경우, 유성음과 무성음을 파열음과 마찰음에서 구분하도록 하는 개념쌍이다:  
-<center><img width="288" alt="2020-12-17 (18)" src="https://user-images.githubusercontent.com/53667002/102472873-17995c80-409a-11eb-9f63-a4bb525c0367.png"></center>
+<center><img width="1000" alt="2020-12-17 (18)" src="https://user-images.githubusercontent.com/53667002/102472873-17995c80-409a-11eb-9f63-a4bb525c0367.png"></center>
 
 
 후자의 경우에는 무성 파열음과 유성 파열음을 구분하는 개념쌍이다:  
 
 
-<center><img width="265" alt="2020-12-17 (19)" src="https://user-images.githubusercontent.com/53667002/102472989-40215680-409a-11eb-8f73-3b9c4f903ed3.png"></center>
+<center><img width="1000" alt="2020-12-17 (19)" src="https://user-images.githubusercontent.com/53667002/102472989-40215680-409a-11eb-8f73-3b9c4f903ed3.png"></center>
 
 ### Aspiration(=Behauchung(유기음))
 앞서 살펴본 Tenues [p], [t], [k]는 유기음으로 볼 수 있는데, 유기음은 다소 많은 양의 공기가 새어나가는 것을 가리킨다. 예를 들어 단어의 시작과 끝에서 Pack [$p^hak^h$] 혹은 Tat [$t^ha: t^h$]처럼 한 박자 쉬는 것이다. 여기에서 짚고 넘어가야 하는 것은, Knacklaut와 Behauchung은 변별자질이 될 수 없다는 것이다. 
@@ -71,7 +71,7 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 
 
 이러한 자질들은 종종 사다리꼴로 묘사된다:  
-<center><img width="335" alt="2020-11-29 (6)" src="https://user-images.githubusercontent.com/53667002/102473346-b32acd00-409a-11eb-8470-c3e82a395d86.png"></center>
+<center><img width="1000" alt="2020-11-29 (6)" src="https://user-images.githubusercontent.com/53667002/102473346-b32acd00-409a-11eb-8470-c3e82a395d86.png"></center>
 
 ### Diphthonge(복모음)
 독일어의 복모음으로는 [ai], [au] 그리고 [ɔy]가 있다. 이것들의 경우, 파찰음과 같이 하나의 소리로 평가된 수 있는지 혹은 두개의 소리로 이해되는 것이 더 적절한지에 대한 의견이 다양하게 존재한다.
@@ -104,7 +104,9 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 음소는 의미적으로 구분되고 분절된 소리의 최소단위이다.
 
 
-## 3\.1\(1\) Phoneme ermitteln(음소 찾기): 음운론은 음소를 결정하는데, 물리적 소리의 각 자질을 가장 작은 의미 구분 클래스에 귀속시킨다. 이것은 아래와 같은 단계를 통해 실행된다:  
+## 3\.1-\(1\) Phoneme ermitteln(음소 찾기): 
+
+음운론은 음소를 결정하는데, 물리적 소리의 각 자질을 가장 작은 의미 구분 클래스에 귀속시킨다. 이것은 아래와 같은 단계를 통해 실행된다:  
 
 
 1\) 음성녹음을 통해 코퍼스를 모은다. 소리의 연쇄는 개별 소리들로 분절되고, 음운론적 표기법으로 표기된다.  
@@ -116,20 +118,37 @@ Phonem은 이러한 클래스 결정의 결과이고, Phone과 달리 정신적�
 
 ### Minimalpaar(최소대립쌍)
 최소대립쌍분석(Minimalpaaranalyse)은 음소의 결정에 매우 중요한 과정이다. 최소대립쌍이란 딱 하나의 소리만 다르고 다른 의미를 가진 두 단어(e.g. *Tisch-Fisch*)로, 최소대립쌍의 비교를 통해 의미구분이 소리차이에 의해 나타난다는 가정을 할 수 있다. 
-<center><img width="431" alt="2020-12-17 (20)" src="https://user-images.githubusercontent.com/53667002/102479246-fe94a980-40a1-11eb-836b-d93096f9f1fb.png"></center>
+<center><img width="1000" alt="2020-12-17 (20)" src="https://user-images.githubusercontent.com/53667002/102479246-fe94a980-40a1-11eb-836b-d93096f9f1fb.png"></center>
 위 표에서 *Dichter*과 *Richter*의 경우, /d/와 /r/이 최소대립쌍이다. 그리고 *Lenker-Schenker*에서 *Schenker*의 경우, 'sch'이렇게 세 글자로 실현되었지만 이것의 소리는 [ʃ]로 나타나기 때문에 *Lenker*와 비교하여 하나의 소리만 다른 것이 된다. 따라서 이 두 단어는 최소대립쌍의 관계에 있는 것이다. 반면 *Schlichter-Lichter*는 최소대립쌍이 아니다. 왜냐하면 *Schlichter*는 *Lichter*보다 하나의 소리가 더 있기 때문이다. 이렇게 최소대립쌍 연구에서 소리의 대립은 결정적인 역할을 한다.
 
-<center><img width="250" alt="2020-12-17 (22)" src="https://user-images.githubusercontent.com/53667002/102479539-5d5a2300-40a2-11eb-9b1d-6d47bea7f230.png"></center>
+<center><img width="1000" alt="2020-12-17 (22)" src="https://user-images.githubusercontent.com/53667002/102479539-5d5a2300-40a2-11eb-9b1d-6d47bea7f230.png"></center>
 
-## 3\.1\(2\)  음소 체계 세우기
+## 3\.1-\(2\)  음소 체계 세우기
 이러한 규칙을 기반으로 독일어의 자음에 대한 음소 시스템을 만들 경우, 각 음소는 초성, 중성 그리고 종성에서 다른 소리를 지닌 최소 대립쌍을 통해 증명되어야 한다. 예를 들어:
-<center><img width="331" alt="2020-12-17 (21)" src="https://user-images.githubusercontent.com/53667002/102479762-a8743600-40a2-11eb-8505-73128d0f1faf.png"></center>
+<center><img width="1000" alt="2020-12-17 (21)" src="https://user-images.githubusercontent.com/53667002/102479762-a8743600-40a2-11eb-8505-73128d0f1faf.png"></center>
 
 ### Auslautverhaertung(끝음 무성음화)
 위 표에서 Raub의 경우 종성에 있는 <b>는 음소 /p/로 실현된다. 이런 현상을 Auslautverhaertung(끝음 무성음화)(b->p, d->t, g->k)라고 한다. 이에 따라 음소 /b/에 대한 최소 대립쌍은 종성에 없다. 독일어 음소를 조음적 자질로 분류하면 다음과 같다:
-<center><img width="474" alt="2020-12-17 (23)" src="https://user-images.githubusercontent.com/53667002/102479982-01dc6500-40a3-11eb-9a80-aecd22e2ea1f.png"></center>
+<center><img width="1000" alt="2020-12-17 (23)" src="https://user-images.githubusercontent.com/53667002/102479982-01dc6500-40a3-11eb-9a80-aecd22e2ea1f.png"></center>
 모음 음소에서는 단음과 장음이 중요한 의미 구분 자질인 반면 자음에서는 위 표의 몇몇 위치에서 구분된다. 위 표와 phon을 조음적 자질로 분류한 표를 비교하여 음성학과 음운론을 비교해보도록 하겠다:
 <center><img width="470" alt="2020-12-17 (17)" src="https://user-images.githubusercontent.com/53667002/102480103-2b958c00-40a3-11eb-97e5-6483e5d1bd2c.png"></center>
 음성학 차원에서 [r], [ʀ], [ʁ]은 모든 다른 소리이다. 하지만 음운론 차원에서는 하나의 Lautklasse(하나의 음소)이다. 그래서 위 두 표를 비교해보면 소리(Phon) [r], [ʀ], [ʁ]이 음소(Phonem) /ʀ/로 표기된 것을 발견할 수 있다. 따라서 음성학적 차원은 Parole 차원, 음운론적 차원은 Langue 차원이라고 볼 수 있다. 결론적으로 음소(Phonem)는 추상적인 반면 소리(Phon)는 구체적이고 들을 수 있는 소리이다.
 
-## 3\.1\(3\)  Allophone ermitteln(변이음 찾기)
+## 3\.1-\(3\)  Allophone ermitteln(변이음 찾기)
+Allophone(변이음)은 음소의 실현 변이형이다. 따라서 음소 시스템에서는 개별적인 음소는 나타나지 않고 상위의, 포괄적인 음소만 나타난다. 예를 들어 독일어에서 주변 음절에서만 발생하고 강조되지 않는, 즉 어미 음절을 약하게 발음하는 Schwa-Laut[ə](Zucker, Butter, Wasser)는 여기에서 음소로 나타나지 않는다. [ə]는 음소/ɛ/의 Allophone으로 이해될 수 있다. 예를 하나 더 들자면, kom과 kam은 [o], [ɔ] [õ] 등 이런 실현 형들로 나타나는데, 모든 언어 사용자가 소유한 Langue를 거치면 음소 /o/가 되는 것이다. 즉, Langue 차원의 /o/가 Parole 차원으로 넘어가면 개개인마다 [o], [ɔ] [õ]와 같이 다 다른 소리를 내는 것이다. 따라서 /o/의 변이음(Allophone)이 [o], [ɔ] [õ]인 것이다. 저렇게 발음하고도 언어 사용자들 간에 공유하는 Langue때문에 저것들을 모두 /o/로 인식하는 것이다.
+### Frei Allophone
+러시아의 언어학자 Trubetzkoy는 Kombinatorisch Allophone과 Freie Allophone을 구분하였다. 그에 의하면 Kombinatorisch Allophone은 위치 결정적으로 주변 소리에 의존적인 변이음으로, 대표적인 예로 Ach-Laut와 Ich-Laut가 있다. Ach-Laut같은 경우, ‘ch’가 연구개에서 발음되는 /a/, /ɔ/, /ʊ/, /aʊ/ (a, o, u, au)와 결합할 때만 목 뒤에서 발음되는 것이 편하기 때문에 [x]로 발음이 되고, Ich-Laut는 경구개에서 발음되는 ‘I’의 영향으로 [ç] 발음이 난다. 즉, 음소/x/로 표현하고 [ç]와 [x]로 실현된다. 반면 Freie Allophone은 소리 환경과는 독립적으로 발생하는데, 소리 환경과 상관없이 그냥 자기 마음대로 발음해도 다 알아듣는 그런 존재이다. 예를 들어 ‘knurrt’의 발음은 화자의 출신 지역, 목상태에 따라 [r], [ʀ], [ʁ] 등으로 달리 발음될 수 있지만 어떻게 발음해도 다 이해 가능하다.
+
+## 3\.2 Silbe(음절)
+음운론적으로, (Silbekopf와 Silbenkoda로 이루어진) (자음적) 음절과 모음적 음절핵이 구분된다. Silbenkern과 Silbenkoda는 운율이라고도 불린다.
+<center><img width="1000" alt="2020-12-17 (24)" src="https://user-images.githubusercontent.com/53667002/102480442-9fd02f80-40a3-11eb-9580-07c147ffa7c9.png"></center>
+### Silbentypen(음절유형)
+음절의 구조에 따라 음절 유형이 구분될 수 있다:
+
+
+1\) Nackte Silbe: 모음으로 시작하는 것 (e.g. Ei)  
+2\) Bedeckte Silbe: 자음으로 시작하는 것 (e.g. Bei)  
+3\) Offen Silbe: 모음으로 끝나는 것 (e.g. So)  
+4\) Geschlossen Silbe: 자음으로 끝나는 것 (e.g. ein)  
+<center><img width="1000" alt="2020-12-17 (25)" src="https://user-images.githubusercontent.com/53667002/102480751-140ad300-40a4-11eb-9ce5-fe55c48e4472.png"></center>
+
