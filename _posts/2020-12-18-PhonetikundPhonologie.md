@@ -6,7 +6,7 @@ tag: Linguistik
 
 ## 1\.Phonetik und Phonologie(음성학과 음운론)
 음성학과 음운론은 구어를 다양한 관점에서 연구한다. 그들의 공통점은 소리의 자질과 다른 소리들과의 구분을 통해 문제를 제기하는 것이고, 차이점은 관심 연구 분야의 세부사항에 있다. 음성학(Phonetik)은 음성이 어떻게 물리적으로 만들어지고, 청각적으로 인식되는지와 같이 거의 자연과학적으로 연구하고 기술한다. 반면 음운론(Phonologie)는 언어의 소리 시스템에서 소리의 의미구분기능에 대해 인문학적 관점으로 연구한다.  
-<center><img width="400" alt="2020-12-17 (12)" src="https://user-images.githubusercontent.com/53667002/102470115-ec613e00-4096-11eb-9b6d-6bb9d724672d.png"></center>
+<center><img width="500" alt="2020-12-17 (12)" src="https://user-images.githubusercontent.com/53667002/102470115-ec613e00-4096-11eb-9b6d-6bb9d724672d.png"></center>
 
 ## 2\.Phonetik(음성학)
 음성학은 Lautlehre 혹은 Sprechaktlautlehre라고도 불린다. 음성학은 음성 언어적 산출(조음적 음성학(artikulatorische Phonetik)), 음성적 구조(음향적 음성학(akustische Phonetik)), 인지(청취적 음성학(auditive Phonetik))에 대한 학문으로, 듣고 말하는 과정에 대해 기술한다.  
@@ -58,3 +58,41 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 
 ### Aspiration(=Behauchung(유기음))
 앞서 살펴본 Tenues [p], [t], [k]는 유기음으로 볼 수 있는데, 유기음은 다소 많은 양의 공기가 새어나가는 것을 가리킨다. 예를 들어 단어의 시작과 끝에서 Pack [$p^hak^h$] 혹은 Tat [$t^ha: t^h$]처럼 한 박자 쉬는 것이다. 여기에서 짚고 넘어가야 하는 것은, Knacklaut와 Behauchung은 변별자질이 될 수 없다는 것이다. 
+
+## 2\.3 Artikulation der Vokale(모음의 조음)
+### Vokale(모음)
+모음은 열린소리이다. 즉 날숨 호흡이 성도(성대에서 입술로 이르는 통로)에서 폐쇄 혹은 마찰에 의해 차단되지 않는다. 모음은 구강에서 수정되는 유성음으로, 다음과 같은 자질을 통해 분류된다: 
+
+
+1) 수직적인 혀의 위치(혀 높이)/ 개방정도  
+2) 수평적인 혀의 위치/ 음색  
+3) 입의 둥글기(입술 모양)  
+4) (주변 근육들의) 긴장, 이완  
+
+
+이러한 자질들은 종종 사다리꼴로 묘사된다:  
+<center><img width="335" alt="2020-11-29 (6)" src="https://user-images.githubusercontent.com/53667002/102473346-b32acd00-409a-11eb-8470-c3e82a395d86.png"></center>
+
+### Diphthonge(복모음)
+독일어의 복모음으로는 [ai], [au] 그리고 [ɔy]가 있다. 이것들의 경우, 파찰음과 같이 하나의 소리로 평가된 수 있는지 혹은 두개의 소리로 이해되는 것이 더 적절한지에 대한 의견이 다양하게 존재한다.
+
+## 3\. Phonologie(음운론)
+앞서 설명한 소리 생성의 음성학적 과정은 아래와 같이 단순한 방정식을 통해 공식화될 수 있다:  
+
+
+`Rohschallerzeugung(기본사운드생성) + Artikulation(조음) = Sprachlaut(언어소리)`  
+
+
+이렇게 소리가 생성되는 방식에 대해서는 음성학 부분에서 다루었다. 음운론에서는 소리가 오염되거나 상이하게 조음 되어도 어떻게 잘 알아들을 수 있는지에 대해 다루어진다. 우선 우리는 소리의 의미구분적 자질(bedeutungsveraendernden Charakteristika eines Lautes)을 인지하여 언어적 소리를 다른 소리들과 구분하여 이해하며 그에 따라 단어와 문장을 인지한다. 이는 다음과 같이 표현될 수 있다:
+
+
+`Sprachlaut(언어적 소리) + Erkennung der bedeutungsunterscheidenden Merkmale(의미를 구분하는 자질의 인지) = Lautverstehen(소리 이해)`
+
+
+### Phonologie(음운론)
+음운론이란 음성 시스템과 그것의 기능을 언어적 대상으로 다루는 언어학 하위분야이다. 
+### Phonologische Analyse(음운론적 분석)
+음운론적 분석은 세 가지 핵심 목표를 지향한다:  
+
+
+\(3\) Phoneme ermitteln(음소 찾기): 언어에서 최소한으로 구분되는, 즉 의미 구분 소리 대립쌍(bedeutungsunterscheidenden lautlichen Oppositionen)(Minimalpaar(최소대립쌍), distinktive Merkmale(변별 자질))에 대한 조사를 통해 소리를 음소에 귀속시킨다.
