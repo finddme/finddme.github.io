@@ -63,5 +63,15 @@ Germann Osthoff와 Karl Brugmann의 „Morphologische Untersuchungen auf dem Geb
 1\) 모든 언어에는 언어를 구성하는 제한적인 단위의 수가 존재한다. -> 알파벳, 단어, 문장 등의 수에 제한이 있다.  
 2\) 모든 언어에는 제한된 문법적 범주가 존재한다. 범주 목록에서 선택한 것이 다른 언어와 일치할 필요는 없다. 언어 범주의 복합은 문법을 형성한다. -> 동사, 명사 등 품사들(형태론적 범주)과 평서문, 의문문 등 문장 구조(기능적 범주)가 한정되어 있다. 그리고 각 언어들 간의 품사가 상응할 필요는 없지만 그 기능을 하는 품사들이 각 언어에 있다.  
 3\) 언어 간의 유사성은 친족관계에 기반할 수 있고, 특히 영토 근접성으로 인해 생길 수 있다.  
+
+
 Boas의 연구 이후 Edward Sapir(1884-1939)와 Leonard Bloomfield(1887-1949)는 오늘날에도 사용되는 철자법을 포함한 많은 경험적 언어학(empirische Linguistik)의 기초를 발견했다. 예를 들어:  
-\- IC-Analyse(형태론에서 다루어진다.)
+\- IC-Analyse(형태론에서 다루어진다.)  
+\- 특정 맥락에서의 요소들 간 „분포(Distribution)“에 대한 검증. 여기에서 „분포“란 소리, 형태, 문장에 다 적용이 가능하다. 한 단어가 어떤 단어와 결합하는가, 다른 단어와 어떤 분포 상황에 놓여 있는가, 어떤 단어와 나란히 올 수 있는가 (e.g. heit, keit가 결합할 수 있는 단어가 다른데, 이는 heit와 keit의 분포상황이 다름을 의미한다.)  
+\- „Allo“와 함께 표기되는 변이형 현상에 대한 가정. 예를 들어 „Allophon(소리변이)“, „Allomorph(형태변이)“.  
+### Sprache als Organon(수단으로서의 언어)
+언어심리학자 Karl Buehler는 그의 논문 „Sprachtheorie. Die Darstellungsfunktion der Sprache“(1934)에서 언어는 수단이라고 강조한다. 그는 언어를 의사소통에서 중요한 과제를 수행하는 포괄적인 문화수단으로 이해했다. 그의 Organon Modell(수단 모델)은 기호학에서 자세히 다루어진다. Buehler는 언어가 행위의 형태라는 것을 특히 명확히 했고, 그에 따라 행동형태에 따라 기호체계가 어떻게 생성되는지 설명하는 것이 언어학의 주된 과제라고 하였다.
+### Sprache als Sprechaktensemble(앙상블로서의 언어)
+언어 철학자인 John Lanshaw Austin(1911-1960)과 John Rogers Searle(1932)도 Buehler와 마찬가지로 그들의 접근방식 중심에 행위성격(Handlungscharakter)을 배치한다. 두 언어학자는 본질적으로 언어를 언어행위조화(Sprachaktensemble)로 이해한다. 예를 들어 그들의 연구 중심에는 단어 혹은 문장 구조의 형식적 특성이 아닌 언어의 행위성격이 있다. 이러한 연구는 화용론의 주된 기반이 되며, 소위 발화행위이론(Sprechakttheorie)라 불린다.
+### Sprache als Kognition(인지로서의 언어)
+인지로서 언어를 파악하는 학파는 언어학의 영향력 있는 학파 중 하나이다. 이는 언어가 어떻게 우리의 머리 속에 자리잡는지, 우리는 어떻게 단기간에 모국어를 그것이 얼마나 복잡하든 상관없이 배울 수 있는 것인지에 대한 것이다. 이러한 질문에 20세기의 저명한 인문학자 중 한명인 Noam Chomsky(1928)이 답을 제시한다. 그의 이론에 따르면 자연어는 인간이 타고난 보편문법의 형태인 보편적인 문법 원칙을 따른다. 이에 따라 그는 보편문법이 모든 자연언어에 내재되어 있어서 모든 언어 기술에 적용될 수 있다고 주장했다. 평서문에 주어가 있다는 것이 간단한 예가 될 수 있다. 하지만 독일어에는 일반적으로 주어가 문장에서 필수적으로 표현되지만 예를 들어 이탈리아어에서는 그렇지 않다. 따라서 이 이론에 따르면 이탈리어어는 Null-Subjekt- (bzw. Pro-drop-) Sprache이다. Chomsky에 따르면 언어적 표현은 메타언어(Metasprache)를 통해 반복적인 규칙을 적용하여 만들어진다 즉, 유한한 규칙을 가지고 무한한 문장을 만들어낸다(메타언어(Metasprache=Terminologiesprache)는 아직 일상어가 되지 않는 전문용어들을 의미하는데, 간단하게 언어를 설명하는 언어라고 이해할 수 있다. 이와 반대되는 개념은 대상언어(Objektsprache)이다). 촘스키는 자신의 이론을 Prinzip und Parameter(원리와 매개변수)라고 요약했다(여기에서 Parameter는 언어에 따라 알맞게 살짝 바꿔주면 다 맞게 하는 변수이다). 그의 Universalgrammatik(보편문법)에는 많은 이론이 있는데, 그 중 유의하여 살펴볼 만한 것은 Generative Transformationsgrammatik(변형생성문법), Government and Binding- Theorie(GB이론), Minimalgrammatik(최소문법)이다.
