@@ -24,7 +24,7 @@ Komposition 중 가장 일반적인 경우는 Determinativ Kompositum(한정 합
 
 
 위 예시를 통해 Determinativ Kompositum의 두 가지 특성을 알 수 있다. 첫 번째 특성은 “AB는 B이다” 공식이 적용된다는 것이다. 예를 들어 *Foto-Kalender*는 *Kalender*이고 *Kalender-Foto*는 *Foto*이다. 두 번째 특성은 Unterdeterminiertheit(애매모호한), 즉 Unbestimmtheit-deutlich(불확실)이다. 대부분의 합성어는 일반적인 상식(allgemeines Weltwissen)을 참조해야만 이해할 수 있다. 예를 들어 *Kalender-Foto*와 같이 자주 사용되지 않는 복합어는 문맥 없이 정확한 의미 파악이 쉽지 않는다. 왜냐하면 이 단어는 가능하긴 하지만 사전적(lexikalisiert)이지 않기 때문이다. 즉 우리가 일상적으로 사용하지 않고, Duden에 기재되어 있지 않다. 
-<center><img width="400" alt="2020-12-18 (7)" src="https://user-images.githubusercontent.com/53667002/102547303-59f38580-40fc-11eb-8929-253df5d91d71.png"></center>
+<center><img width="500" alt="2020-12-18 (7)" src="https://user-images.githubusercontent.com/53667002/102547303-59f38580-40fc-11eb-8929-253df5d91d71.png"></center>
 1\) Ad-hoc-Bildung/Okkasionalismus(임의적 형성)  
 그리고 합성어에 대해서는 Ad-Hoc-Bildung(Okkasionalismen, Gelegenheitbildung, Augenblicksbildungen)(임의적 형성, 임시어)가 자주 언급된다. Ad-Hoc-Bildung은 상황과 연결하여 생성된 Wortbildungsprodukte로, 어휘에 영구적으로 받아들여지지 않는, 임의적으로 형성된 것으로, 어휘화 혹은 사전화가 되지 않는다. 이들은 종종 하이픈(‘-‘)으로 표시되고 문학작품에서 많이 발견된다. (유행어처럼 일시적으로 사용되다 사라진다.)
 
@@ -49,7 +49,7 @@ Determinativkompositum의 특수한 경우로, Rektionskompositum(지배합성�
 
 ### 2\.\(2\) Kopulativkompositum(연결하는 합성어)
 Determinativkomposita와는 달리 “AB는 B이다” 공식이 적용되지 않는 합성어가 있다. 예를 들어 Hosenrock, Radiowecker, Affenmensch, suesssauer, nasskalt 등의 경우 AB가 A인지 B인지 알 수 없다. 이러한 합성어를 Kopulativkomposita라고 한다. 여기에서는 두 구성요소가 동등한 관계이 있다. 
-<center><img width="400" alt="2020-12-18 (9)" src="https://user-images.githubusercontent.com/53667002/102547805-15b4b500-40fd-11eb-9f52-376e23750759.png"></center>
+<center><img width="500" alt="2020-12-18 (9)" src="https://user-images.githubusercontent.com/53667002/102547805-15b4b500-40fd-11eb-9f52-376e23750759.png"></center>
 
 ### 2\.\(3\) Exozentrisches Kompositum(외심적 합성어)
 Possessivkomposita는 무언가가 소유한 특징을 나타내는 합성어로, AB가 A도 아니고 B도 아니다. (예를 들어 Glatzkopf, Rotkelchen, Zwoelfzylnder는 eine rote Kehle, zwoelf Zylinder가 가능하다.) 이러한 단어는 단어 외부적인 것들이 중심이다. 따라서 Exozentrisches Kompositum(외심적 합성어)이라고 불린다. 
