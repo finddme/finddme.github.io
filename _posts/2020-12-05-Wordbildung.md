@@ -14,7 +14,7 @@ Kompositon(합성)은 두 lexikalische Morphem(어휘적 형태소)가 결합한
 
 
 
-### 2\.\(1\) Determinativ Kompositum(한정 합성어): 
+### 2\.1 Determinativ Kompositum(한정 합성어): 
 Komposition 중 가장 일반적인 경우는 Determinativ Kompositum(한정 합성어)으로, 첫 번째 부분이 두 번째 부분을 (더 상세하게) 한정시킨다.  
 
 
@@ -47,15 +47,15 @@ Determinativkompositum의 특수한 경우로, Rektionskompositum(지배합성�
 
 
 
-### 2\.\(2\) Kopulativkompositum(연결하는 합성어)
+### 2\.2 Kopulativkompositum(연결하는 합성어)
 Determinativkomposita와는 달리 “AB는 B이다” 공식이 적용되지 않는 합성어가 있다. 예를 들어 Hosenrock, Radiowecker, Affenmensch, suesssauer, nasskalt 등의 경우 AB가 A인지 B인지 알 수 없다. 이러한 합성어를 Kopulativkomposita라고 한다. 여기에서는 두 구성요소가 동등한 관계이 있다. 
 <center><img width="500" alt="2020-12-18 (9)" src="https://user-images.githubusercontent.com/53667002/102547805-15b4b500-40fd-11eb-9f52-376e23750759.png"></center>
 
-### 2\.\(3\) Exozentrisches Kompositum(외심적 합성어)
+### 2\.3 Exozentrisches Kompositum(외심적 합성어)
 Possessivkomposita는 무언가가 소유한 특징을 나타내는 합성어로, AB가 A도 아니고 B도 아니다. (예를 들어 Glatzkopf, Rotkelchen, Zwoelfzylnder는 eine rote Kehle, zwoelf Zylinder가 가능하다.) 이러한 단어는 단어 외부적인 것들이 중심이다. 따라서 Exozentrisches Kompositum(외심적 합성어)이라고 불린다. 
-### 2\.\(4\) Praepositionale Rektionskomposita(전치사적 지배합성어)
+### 2\.4 Praepositionale Rektionskomposita(전치사적 지배합성어)
 Exozentrisches Kompositum과 유사한 것은 Praepositionale Rektionskomposita인데, 이것의 예로는 Nachmittag, Untertasse 등이 있다. 이 경우는 두 번째 마디가 첫 번째 마디를 지배하는 Rektionskomposita와는 달리 첫 번째 마디가 두 번째 마디를 지배한다.
-### 2\.\(5\) Affixoid(접사)(Praefix+Suffix)
+### 2\.5 Affixoid(접사)(Praefix+Suffix)
 마지막으로 언급할 것은 Riesenueberraschung, wirkungvoll, abgasarm등과 같은 단어에서 겉으로는 Basismorphem인데 점처 Wortbildungsmorphem이 되어가는 현상이다. {Reisen}, {voll}, {arm}과 같은 구성요소들은 여기에서 동음이의의 독립형태소(gleichlautende freie Morphem)이지만, 더 이상 의미가 일치하지 않고 제한된 의미를 가지며 몇몇 단어형성물에서 사용된다. Riesenueberraschung같은 경우는 여행에서의 놀라움이 아니고 그냥 엄청 놀란거고, wirkungvolle Verpackung은 포장에 효과가 있는 것이 아니라 효과적인 포장을 뜻한다. 이러한 것들은 reihenbildend(어미처럼 붙어서 쓰이는)로 많이 쓰인다. 즉, Wortbiludngsmorphem으로 사용된다. 이러한 특수한 현상을 종종 Affixoid(접사)와 통합하여 취급되기도 하는데, 아직은 단어와 접사는 잘 구분되고 있다.
 
 ## 3\.Derivation(파생어)
@@ -65,7 +65,7 @@ Exozentrisches Kompositum과 유사한 것은 Praepositionale Rektionskomposita�
 
 이제 Derivaiton이 어디에 첨가되어지고 어떤 단어형성물을 만드는지에 따라 유형을 나누어 살펴보겠다.
 
-### 3\.\(1\) explizite Derivation(명시적 파생어)
+### 3\.1 explizite Derivation(명시적 파생어)
 #### \(1-1\) Praefixdervat(접두사파생어)
 명사적 (예를 들어 Erz-feind, Un-tat), 형용사적 (ur-alt,un-frei) 그리고 동사적(ver-antwort(en), be-lung(en), miss-acht(en)) Praefixderivaten이 구분된다.
 #### \(1-2\) Suffixderivat(접미사 파생어)
@@ -75,7 +75,7 @@ Suffixderivaten은 명사적 (Einsam-keit, Fiinster-nis, Anhoer-ung), 형용사�
 #### \(1-4\) Zusammenbildung
 Zusammenbildung은 명시적 Derivaiton의 특수한 케이스이다. 이는 komplexe Determinativkomposita처럼 기본어로서의 단어그룹(Wortgruppe als Basis)(Geld+geb(en), blau+Aug(e), dick+Haut)와 Derivationssuffix({er}, {ig})가 결합하여 파생어가 유래된 것이다.
 
-### 3\.\(2\) Implizite Derivation(암시적 파생어)
+### 3\.2 Implizite Derivation(암시적 파생어)
 지금까지 명시적(explizite) Derivaiton에 대해 살펴보았다. explizite Derivation은 뭐가 막 붙어서 파생어가 생성되는 반면 implizite Derivation는 Satz, Trank, Schritt와 같은 단어처럼 동사적 기본어(verbal Basis)인 {sitz}, {trink}, {schreit}에 뭔가가 첨가된 것이 아니라 기반형태소의 변형으로 파생어가 얻어진다. Wurf나 Flug같은 파생어는 중세고지독일어의 역사적 배경을 가지는데, 해당 시기에 Ablaut(모음교체)의 특수한 인 과거형에 뿌리를 둔 것으로 보여진다. 이렇게 파생된 implizite verbal Derivation으로 traenk(en)와 setz(en)등이 남아 있다. 각 경우, 이제 더 이상 생산적인(produktiv) 단어형성 패턴이 아니다.
 #### \(2-1\) Rueckbildung(퇴화, 후퇴)
 Sanftmut나 notland와 같은 어휘들은 종종 통시적 관점으로 관찰된다. 두 어휘에서부터 sanftmuetig와 Notlandung가 온 것 같지만 아니다. 왜냐하면 후자가 전자보다 더 오래됐기 때문이다. 이 경우는 접사가 첨가(Affigierung)된 것이 아니라 접사가 떼어졌는데(Gegenteil einer Affigierung), 이러한 것을 Rueckbildung이라고 한다.
@@ -85,7 +85,7 @@ Sanftmut나 notland와 같은 어휘들은 종종 통시적 관점으로 관찰�
 ## 4\.Kurzwortbildung(축약어)
 ### Ausdruckskuerzung
 지금까지 언급한 단어형성유형들의 Basis의 표현면이 확장된 경우들로, Ausdruckserweiterung이라고 볼 수 있다. 이제 그의 반대 경우인 Ausdruckskuerzung(Basis의 표현면이 축약됨)을 살펴보도록 하겠다. 문자소적(graphematisch), 음소적(phonologisch)으로 새로운 단어가 형성될 때에만 조어(Wortbildung)이 언급된다는 것을 유의해야 한다. 예를 들어서 z.B, d.h, ect., usw,같이 문어적(schriftsprachlich)으로 축약된 것은 포함되지 않는다.
-### 4\.\(1\) Unisegmentales Kurzwort(절단축약)
+### 4\.1 Unisegmentales Kurzwort(절단축약)
 가장 단순한 축약어 유형은 절단축약(Unisegmentales Kurzwort)이다. 여기에서는 단순히 각 Basis가 절단되는데, 절단되고 남아있는 섹션에 대해Langform에서 그의 원래 위치에 따라 명칭이 붙는다:
 
 
@@ -108,7 +108,7 @@ Sanftmut나 notland와 같은 어휘들은 종종 통시적 관점으로 관찰�
 
 때때로 축약어의 성이 변하기도 한다(e.g. der Furst <- die Frustration). 혹은 맥락 없이 의미가 많은 경우도 있다(e.g. Platte <- Schallplatte, Herdplate, Tischplatte etc.).
 
-### 4\.\(2\) Multisegmentales Kurzwort/Akronym(약어)
+### 4\.2 Multisegmentales Kurzwort/Akronym(약어)
 Multisegmental은 하나의 섹션이 아닌 Langform에서 여러 섹션에 대해 축약어가 생성된 것을 뜻하는데, 이러한 축약어를 Akronyme라고 한다.
 
 
@@ -129,11 +129,11 @@ Multisegmental은 하나의 섹션이 아닌 Langform에서 여러 섹션에 대
 
 
 
-### 4\.\(3\) Kontamination(혼성어)
+### 4\.3 Kontamination(혼성어)
 Kontamination의 경우, 두 단어가 축약되거나(최소한 원래의 단어 중 하나가 그의 음성적 혹은 정서법적 요소를 잃는것, e.g. jein, Teuro, Demonkrantur) 혹은 원래의 두 단어 모두 없어지지 않고 융합되는 경우이다. 대표적인 예로 Kontraktion이 있는데, 이는 전치사와 관사가 혼성되는 것이다(e.g. an, beim, zur, ins).
 
 ## 5\.그 밖의 어휘 확장 방식
-### 5\.\(1\) Konversion(변환)
+### 5\.1 Konversion(변환)
 지금까지의 조어 유형은 무언가를 추가하거나 결합하거나 잘라내거나 뭔가 변화가 있었지만, Wortbasis에 대한 외부적 변화 없이도 어휘 확장이 가능하다. 이러한 과정을 Konversion이라고 하며, 항상 품사 전환을 동반한다. 가장 일반적인 경우는 명사화(Substantivierung)이다. 예를 들어 Verstaemme {treff} -> Treff, {treff}의 Infiniviendung -> das Treffen. 이렇게 동사를 기반으로 하는 Konversion에는 두 가지 유형이 있다(여기에서 정서법적(대소문자)의 변형은 무시된다):
 
 
@@ -159,19 +159,19 @@ Kontamination의 경우, 두 단어가 축약되거나(최소한 원래의 단�
 - 형용사 -> 동사: gruen -> gruenen; 형용사 형태소의 변형 형태와 형태가 같다(e.g. die gruenen Baeumen)  
 - 명사 -> 동사: chatten, googlen, computern; 드물게 나타나는 경우인데, 컴퓨터 관련 용어에서 많이 보인다.  
 <center><img width="400" alt="2020-12-18 (12)" src="https://user-images.githubusercontent.com/53667002/102549180-0a628900-40ff-11eb-8f73-f20199dc2452.png"></center>
-### 5\.\(2\) Entlehnung(차용)
+### 5\.2 Entlehnung(차용)
 현대 언어에서 가장 빈번하게 사용되는 방법은 Entlehnung(차용)이다. 이는 외국어에서 가져온 단어에 대해 발음, 굴절 그리고 부분적으로는 정서법을 독일어에 맞춘 것이다. 이 방법이 가장 많이 사용되는 영역은 컴퓨터 어휘이다. 예를 들어 Computer, Internet, Browser, Hompage등과 같은 명사, downloaden, chatten 등의 동사 그리고 URL, RAM 등의 축약어.
-### 5\.\(3\) Lehnuebersetzung(차용번역)
+### 5\.3 Lehnuebersetzung(차용번역)
 때때로 외국어는 Lehnuebersetzung(차용번역)으로 대체된다. 예를 들어 Mouse는 Maus로, downloaden은 herunterladen으로 대체된다. 이러한 번역과정은 특히 독일어에서 개념적 은유가 명백하게 드러날 때 사용된다. Datenautobahn같은 경우에는 datahighway를 차용한 것이 아니라 information highway를 차용한 것이다.
-### 5\.\(4\) Fremdword(외국어)
+### 5\.4 Fremdword(외국어)
 공시적으로 봤을 때 Entlehnug과 Fremdword의 구분은 간단하지 않다. 사실 많은 토착어들은 통시적으로 Entlehung으로 판명된다. 라틴어 murus에서 Mauer가, fenstra에서 Fenster가, crassus에서 krass가, operai에서 opfern이 나온 것이다. 이렇게 „Lehnwort“라는 것에 대해 통시적 고찰이 간과되는 경우가 많은데, 그 이유는 Lehnwort가 더 이상 그 기원을 말할 수 없을 정도로 독일어의 많은 전통적이 속성에 스며들었기 때문이다. 따라서 Fremdword에는 차용된 단어이며 음소론적, 문자소적으로 독일어에 전형적이지 않은 단어를 포함시킨다.
-### 5\.\(5\) Assimilation(동화)
+### 5\.5 Assimilation(동화)
 차용해 온 것에 대해서 통사적, 형태론적, 음성학적 혹은 정서법적 동화(Assimilation)가 이루어진다. 독일어에서는 \*ich chat 혹은 \*ich habe chattes mit ihm이라고 하지 낳고 동사에 고유한 굴절접미사를 붙인다. 그 외에 자음복제, 과거분사(Pertizip Perfekt)형 실현, 음성적 그리고 정서법적 무성화(Auslautverhaertung)등을 통해 동화된다.
-### 5\.\(6\) Hybride Komposita, Hybride Derivation(혼성 합성어, 혼성 파생어)/
+### 5\.6 Hybride Komposita, Hybride Derivation(혼성 합성어, 혼성 파생어)/
 대부분의 차용된 어휘는 독일어에서 생산적이다. 즉 그들은 소위 Hybriden Komposita(Internetanbieter, Computerfachmann, URL-Adress) 혹은 Hybriden Derivation(to log in -> einloggen)에서 발견된다. 몇몇 Fremdwoerter는 frei(자립적)가 아닌 Komposita로만 나타난다(e.g. Biotechnologie의 구성요소인 Bio).
-### 5\.\(7\) Volksetymologie(민속 어원)
+### 5\.7 Volksetymologie(민속 어원)
 Volksetymologie는 차용과 밀접한 연관이 있는 현상이다. 예를 들어 Haengematte가 동사적 Basismorphem {haeng}과 명사적 Basismorphem {matte}로부터 형성된 것이라고 생각될 수 있지만, 이 단어는 아이티 원주민이 수면 망을 설명하는데에 사용하던 카리브어 hamaka에서 유래하여 이후 음성학적 이유로 Haengematte라고 불리게 된 것이다. 
-### 5\.\(8\) Bedeutungswandel(의미 변화)
+### 5\.8 Bedeutungswandel(의미 변화)
 지금까지 기술한 어휘 확장의 방식들과는 달리 Bedeutungsveraengerung 혹은 Bedeutungswandel은 어휘의 내용면에서만 변화가 발생한다.
 
 
@@ -179,7 +179,7 @@ Volksetymologie는 차용과 밀접한 연관이 있는 현상이다. 예를 들
 - Bedeutungsveraengerung(의미 축소): 이는 의미가 축소되는 경우이다. 전형적인 예로 Hochzeit가 있다. 중세 독일어에서 Hochzeit는 모든 축제를 지칭했고, Schirm은 원래 ‚보호‘라는 의미였다.  
 -Bedeutungserweiterung(의미 확장): 이는 의미가 확정되는 것으로, 이에 대한 예로는 Horn과 packen이 있다. 전자는 원래 동물의 뿔만 표현했고 후자는 16세기에 포장의 의미로만 쓰였는데, 오늘날에는 fassen, begreifen으로 통용된다.  
 -Bedeutungsuebertragung(의미 이동): 의미 이동의 예로는 toll(원래 혼란을 의미)와 gemein(원래 일반적임을 의미)에서 나타난다.  
-### 5\.\(9\) Wortschoepfung(신조어)
+### 5\.9 Wortschoepfung(신조어)
 마지막으로 완전히 새로운 형태소로 확장되는 어휘에 대해 언급하겠다. 이와 관련하여 종종 영어라고 잘못 추정되는 ‚Handy‘를 예로 들 수 있다. Handy는 영어에서 온 것이 아니다. 왜냐하면 영어에서는 mobile이나 cellphone이라고 부르기 때문이다. 신조어는 광고언어에서 자주 발견된다. 
 
 
