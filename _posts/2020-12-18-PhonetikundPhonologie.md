@@ -95,4 +95,8 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 음운론적 분석은 세 가지 핵심 목표를 지향한다:  
 
 
-\(3\) Phoneme ermitteln(음소 찾기): 언어에서 최소한으로 구분되는, 즉 의미 구분 소리 대립쌍(bedeutungsunterscheidenden lautlichen Oppositionen)(Minimalpaar(최소대립쌍), distinktive Merkmale(변별 자질))에 대한 조사를 통해 소리를 음소에 귀속시킨다.
+\(1\) Phoneme ermitteln(음소 찾기): 언어에서 최소한으로 구분되는, 즉 의미 구분 소리 대립쌍(bedeutungsunterscheidenden lautlichen Oppositionen)(Minimalpaar(최소대립쌍), distinktive Merkmale(변별 자질))에 대한 조사를 통해 소리를 음소에 귀속시킨다.  
+\(2\) Phonemsystem erstellen(음소 체계 세우기): 각 개별 언어의 음소 목록을 형성한다. 즉 어떤 언어에 어떤 Phonem(음소)가 존재하는지 결정한다.  
+\(3\) Allophone ermitteln(변이음 찾기): 음성 인식과 음소의 변이형에 대해 일반화시킨다.  
+
+## 3\.1 Phonemsystem(음소시스템)
