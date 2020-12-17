@@ -158,3 +158,36 @@ Kontamination의 경우, 두 단어가 축약되거나(최소한 원래의 단�
 - 동사적 형태소 -> 명사: Treff; 명사로 변하고 나서 독립적으로 존재.  
 - 형용사 -> 동사: gruen -> gruenen; 형용사 형태소의 변형 형태와 형태가 같다(e.g. die gruenen Baeumen)  
 - 명사 -> 동사: chatten, googlen, computern; 드물게 나타나는 경우인데, 컴퓨터 관련 용어에서 많이 보인다.  
+<center><img width="283" alt="2020-12-18 (12)" src="https://user-images.githubusercontent.com/53667002/102549180-0a628900-40ff-11eb-8f73-f20199dc2452.png"></center>
+### 5\.\(2\) Entlehnung(차용)
+현대 언어에서 가장 빈번하게 사용되는 방법은 Entlehnung(차용)이다. 이는 외국어에서 가져온 단어에 대해 발음, 굴절 그리고 부분적으로는 정서법을 독일어에 맞춘 것이다. 이 방법이 가장 많이 사용되는 영역은 컴퓨터 어휘이다. 예를 들어 Computer, Internet, Browser, Hompage등과 같은 명사, downloaden, chatten 등의 동사 그리고 URL, RAM 등의 축약어.
+### 5\.\(3\) Lehnuebersetzung(차용번역)
+때때로 외국어는 Lehnuebersetzung(차용번역)으로 대체된다. 예를 들어 Mouse는 Maus로, downloaden은 herunterladen으로 대체된다. 이러한 번역과정은 특히 독일어에서 개념적 은유가 명백하게 드러날 때 사용된다. Datenautobahn같은 경우에는 datahighway를 차용한 것이 아니라 information highway를 차용한 것이다.
+### 5\.\(4\) Fremdword(외국어)
+공시적으로 봤을 때 Entlehnug과 Fremdword의 구분은 간단하지 않다. 사실 많은 토착어들은 통시적으로 Entlehung으로 판명된다. 라틴어 murus에서 Mauer가, fenstra에서 Fenster가, crassus에서 krass가, operai에서 opfern이 나온 것이다. 이렇게 „Lehnwort“라는 것에 대해 통시적 고찰이 간과되는 경우가 많은데, 그 이유는 Lehnwort가 더 이상 그 기원을 말할 수 없을 정도로 독일어의 많은 전통적이 속성에 스며들었기 때문이다. 따라서 Fremdword에는 차용된 단어이며 음소론적, 문자소적으로 독일어에 전형적이지 않은 단어를 포함시킨다.
+### 5\.\(5\) Assimilation(동화)
+차용해 온 것에 대해서 통사적, 형태론적, 음성학적 혹은 정서법적 동화(Assimilation)가 이루어진다. 독일어에서는 \*ich chat 혹은 \*ich habe chattes mit ihm이라고 하지 낳고 동사에 고유한 굴절접미사를 붙인다. 그 외에 자음복제, 과거분사(Pertizip Perfekt)형 실현, 음성적 그리고 정서법적 무성화(Auslautverhaertung)등을 통해 동화된다.
+### 5\.\(6\) Hybride Komposita, Hybride Derivation(혼성 합성어, 혼성 파생어)/
+대부분의 차용된 어휘는 독일어에서 생산적이다. 즉 그들은 소위 Hybriden Komposita(Internetanbieter, Computerfachmann, URL-Adress) 혹은 Hybriden Derivation(to log in -> einloggen)에서 발견된다. 몇몇 Fremdwoerter는 frei(자립적)가 아닌 Komposita로만 나타난다(e.g. Biotechnologie의 구성요소인 Bio).
+### 5\.\(7\) Volksetymologie(민속 어원)
+Volksetymologie는 차용과 밀접한 연관이 있는 현상이다. 예를 들어 Haengematte가 동사적 Basismorphem {haeng}과 명사적 Basismorphem {matte}로부터 형성된 것이라고 생각될 수 있지만, 이 단어는 아이티 원주민이 수면 망을 설명하는데에 사용하던 카리브어 hamaka에서 유래하여 이후 음성학적 이유로 Haengematte라고 불리게 된 것이다. 
+### 5\.\(8\) Bedeutungswandel(의미 변화)
+지금까지 기술한 어휘 확장의 방식들과는 달리 Bedeutungsveraengerung 혹은 Bedeutungswandel은 어휘의 내용면에서만 변화가 발생한다.
+
+
+
+- Bedeutungsveraengerung(의미 축소): 이는 의미가 축소되는 경우이다. 전형적인 예로 Hochzeit가 있다. 중세 독일어에서 Hochzeit는 모든 축제를 지칭했고, Schirm은 원래 ‚보호‘라는 의미였다.  
+-Bedeutungserweiterung(의미 확장): 이는 의미가 확정되는 것으로, 이에 대한 예로는 Horn과 packen이 있다. 전자는 원래 동물의 뿔만 표현했고 후자는 16세기에 포장의 의미로만 쓰였는데, 오늘날에는 fassen, begreifen으로 통용된다.  
+-Bedeutungsuebertragung(의미 이동): 의미 이동의 예로는 toll(원래 혼란을 의미)와 gemein(원래 일반적임을 의미)에서 나타난다.  
+### 5\.\(9\) Wortschoepfung(신조어)
+마지막으로 완전히 새로운 형태소로 확장되는 어휘에 대해 언급하겠다. 이와 관련하여 종종 영어라고 잘못 추정되는 ‚Handy‘를 예로 들 수 있다. Handy는 영어에서 온 것이 아니다. 왜냐하면 영어에서는 mobile이나 cellphone이라고 부르기 때문이다. 신조어는 광고언어에서 자주 발견된다. 
+
+
+
+지금까지 어휘 확장 방식들을 살펴보았는데, Ad-hoc-Bildung(임의적 형성)과 신조어(주로 광고에서)를 제외하고는 현대에서 사실 아무런 역할을 하지 않는다.
+<center><img width="434" alt="2020-12-18 (13)" src="https://user-images.githubusercontent.com/53667002/102549612-c02dd780-40ff-11eb-9e81-8926faa91440.png"></center>
+
+
+## 6\.Flexion(굴절)
+Flexion은 추상적이고 사전적인(lexikalisch) 단어들을 구체적이고 통사적인 단어로 만드는 과정이다. 즉, 굴절은 단어가 문법적 자질을 갖게 한다. 조어(Wortbildung)와 굴절(Fleixon)은 둘 다 규칙적이고 접미사를 붙일 수 있어서 구분이 어려울 수 있는데, 간단히 말해서 Flexion은 비교급접미사(Komparationssuffix)를 붙일 수 있고, 품사를 바꾸지 않는다. 그리고 어휘는 Felxion을 통해 다른 어휘와 형태학적으로 sichtbar한 관계가 된다. Wortbildung의 경우에는 분사(Partizipsuffix), 즉 형용사적 파생어를 붙일 수 있다. 비교급을 Flexion에 해당시키면 3가지 Flexion유형이 뒤따른다: 1) Nominalflexion/ Deklination(명사의 변형), 2) Verbflexion/ Konjugation(동사의 변형), 3) Komparation(형용사의 비교급). Nominalflexion은 명사가 수, 격, 형용사, 대명사 그리고 다양한 성이 있는 관사로 인해 굴절되는 것이고, Verbflexion은 동사가 인칭, 수, 시간 그리고 화법에 따라 굴절되는 것이다. 아래는 독일어의 격변화(Starke und schwache Flexion)를 나타낸 표이다:
+<center><img width="518" alt="2020-12-18 (14)" src="https://user-images.githubusercontent.com/53667002/102549804-169b1600-4100-11eb-949c-efdc831dcb13.png"></center>
