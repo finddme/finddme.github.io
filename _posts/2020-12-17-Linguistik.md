@@ -40,16 +40,24 @@ Wilhelm von Humbolt(1767-1835)는 낭만주의시대 언어학자로, 언어를 
 ### Junggrammatiker Sprache als psycho-physische Tätigkeit
 하지만 소위 젊은 문법가들(Junggrammatiker)(최조의 이론가들)에게 언어는 유기체가 아닌 **정신물리학적 활동**이었다. 그들은 Schleicher의 원시언어에 대한 견해와 언어의 개화-성장-쇠퇴 이론을 거부한다. Junggrammatiker로 Hermann Paul이 대표적인 인물이다. ‚언어‘ 그 자체를 연구하는 현대구조주의의 시초는 Ferdinand de Saussure이지만 이것의 싹은 Junggrammatiker라고 볼 수 있다. 그들은 Lautwandel(음운변화) 등에 관심을 기울이기 시작했는데, 소리에도 규칙이 있을 것이라는 가정을 하기 시작한 것이다.  
 Germann Osthoff와 Karl Brugmann의 „Morphologische Untersuchungen auf dem Gebiete der indogermanischen Sprachen(인도게르만 영역에서의 형태론 연구)“에서 다음과 같이 그들의 개념을 제시한다:
-> Man erforschte zwar eifrigst die sprachen, aber viel zu wenig den sprecehnden menschen. Der menschliche sprechmechanismus hat eine doppelte Seite, eine psychische und eine leibliche. Ueber die art seiner taetigkeit ins klare zu kommen muss ein hauptziel des vergleichenden sprachforschers sein. Denn nur auf grund einer genaueren kenntnis der einrichtung und der wirkungsweise dieses seelisch-leblichen mechanismus kann er sich eine vorstellung davon machen, was sprachlich ueberhaupt moeglich ist. (Osthoff/ Brugmann 1878: Ⅲ) (인간은 언어를 열정적으로 연구했지만 말을 하는 인간에 대한 연구는 적게 있다. 인간의 언어 메커니즘은 양면적, 심리적, 물리적 측면이 있다. 비교 언어학자들의 주된 목표는 그의 활동의 본질을 명확히 하는 것이다. 정신적-물질적 메커니즘의 작동 방식과 도구에 대한 더 정확한 지식만으로 비교언어학자들은 언어적으로 가능한 것이 무엇인지에 대한 아이디어를 만들 수 있다.)   
+> Man erforschte zwar eifrigst die sprachen, aber viel zu wenig den sprecehnden menschen. Der menschliche sprechmechanismus hat eine doppelte Seite, eine psychische und eine leibliche. Ueber die art seiner taetigkeit ins klare zu kommen muss ein hauptziel des vergleichenden sprachforschers sein. Denn nur auf grund einer genaueren kenntnis der einrichtung und der wirkungsweise dieses seelisch-leblichen mechanismus kann er sich eine vorstellung davon machen, was sprachlich ueberhaupt moeglich ist. (Osthoff/ Brugmann 1878: Ⅲ) (인간은 언어를 열정적으로 연구했지만 말을 하는 인간에 대한 연구는 적게 있다. 인간의 언어 메커니즘은 양면적, 심리적, 물리적 측면이 있다. 비교 언어학자들의 주된 목표는 그의 활동의 본질을 명확히 하는 것이다. 정신적-물질적 메커니즘의 작동 방식과 도구에 대한 더 정확한 지식만으로 비교언어학자들은 언어적으로 가능한 것이 무엇인지에 대한 아이디어를 만들 수 있다.) 
+
+
 위의 인용문을 요약하자면, 언어학자들은 비교에 의해 주된 목적을 분명하게 도출해야 한다는 것이다.  
 이후 Hermann Paul(1846-1921)는 "Prinzipien der Sprachgeschichte(언어역사의 원리)"로 "Bible der Junggrammatiker(젊은 문법가의 성경)"을 집필했는데, 여기에는 라이프치히 대학의 입장이 요약되어 있다. Hermann Paul은 언어학이 인문학(Kulturwissenschaft)이라고 주장한다. 그는 인문학 가장 중요한 기초는 심리학이라고 하였는데, 그 이유는 문화적 활동에서 심리적 요소는 매우 중요하다고 생각했기 때문이다. 즉, 언어학은 하나의 인문학이고, 인문학은 심리를 이해하는 연구라는 것이다.  
 
 > Das pschische Element ist der wsentlichste Faktor in aller Kulturbewegung, um den sich alles dreht, und die Psychologie ist daher die vornehmste Basis aller in einem hoeheren Sinne gefassten Kulturwissenschaft. Das Psychishce ist darum aber nicht der einzige Faktor; es gibt keine Kultur auf rein psychischer Unterlage. (Paul: 1880) (심리적 요소는 모든 문화적 활동에서 중요한 요소이며, 따라서 심리학은 더 높은 의미에서 문화학의 가장 주요한 기초이다. 따라서 심리학자만이 유일한 요인은 아니다; 순전히 심리학을 기반한 문화는 없다.)  
+
+
 ### Lautgesetze(음운규칙)
 위에서 언급했듯이 Junggrammatiker는 개개인의 관찰 가능한 물리적 언어활동, 즉 Lautwandel(음운변화)에 대한 연구에 집중했다. 그들은 공식화된 Lautgesetze(음운규칙)은 예외 없는 규칙(ausnahmslos Gesetze)이라고 강조했다:  
 > Aller lautwandel [...] vollzieht sich nach ausnahmslosen gesetzen, d. h. die richtung der lautbewegung ist bei allen angehoerigen einer sprachgenossenschaft [...] stets dieselbe und alle woerter werden ohne ausnahme von der aenderung ergriffen. [...] (Osthoff/ Brugmann 1878: Ⅲ) (모든 음운변화는 예외 없이 규범으로부터 생긴다. 즉 소리 움직임의 방향은 모든 언어 공동체 구성원에게 항상 동일하고 모든 단어들은 예외 없이 변경된다.)  
+
+
 ### Sprach als Zeichensystem(기호 체계로서의 언어)
 언어학 역사에서 또 다른 전환점은 유럽 구조주의의 창시자 Ferdinand de Saussure(1857-1913)가 고안한 기호체계로서의 언어 개념이다. 그는 언어는 폐쇄된 기호체계(geschlossenes Zeichensystem)이며, 이를 파악하는 것이 언어학의 과제라고 가정한다. 
 ### Sprache als Struktur(구조로서의 언어)
 미국의 구조주의는 유럽 언어와 de Saussure와는 관계없이 독자적으로 발전했다. 즉 미국의 구조주의와 유럽의 구조주의는 상관관계가 없다. 미국 구조주의의 주요 주제는 북미 원주민어(Indianersprachen Nordamerikas)였다. Franz Boas(1858-1942)는 두 가지 기본 개념을 기반으로 원주민 언어를 연구하였다. 첫째, 유럽에서 전통적으로 인도유럽어에 대해 개발된 방식이 원주민 언어로 이전되지 않았을 수 있다는 단서가 있다. 둘째, 후퇴언어가 없다는 인문학적 이론이 있다. 이에 따라 그는 다음과 같은 세 가지 결론을 내린다:
+
+
 1\) 모든 언어에는 언어를 구성하는 제한적인 단위의 수가 존재한다. -> 알파벳, 단어, 문장 등의 수에 제한이 있다.
