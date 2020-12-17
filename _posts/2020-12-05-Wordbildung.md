@@ -24,7 +24,7 @@ Komposition 중 가장 일반적인 경우는 Determinativ Kompositum(한정 합
 
 
 위 예시를 통해 Determinativ Kompositum의 두 가지 특성을 알 수 있다. 첫 번째 특성은 “AB는 B이다” 공식이 적용된다는 것이다. 예를 들어 *Foto-Kalender*는 *Kalender*이고 *Kalender-Foto*는 *Foto*이다. 두 번째 특성은 Unterdeterminiertheit(애매모호한), 즉 Unbestimmtheit-deutlich(불확실)이다. 대부분의 합성어는 일반적인 상식(allgemeines Weltwissen)을 참조해야만 이해할 수 있다. 예를 들어 *Kalender-Foto*와 같이 자주 사용되지 않는 복합어는 문맥 없이 정확한 의미 파악이 쉽지 않는다. 왜냐하면 이 단어는 가능하긴 하지만 사전적(lexikalisiert)이지 않기 때문이다. 즉 우리가 일상적으로 사용하지 않고, Duden에 기재되어 있지 않다. 
-<center><img width="316" alt="2020-12-18 (7)" src="https://user-images.githubusercontent.com/53667002/102547303-59f38580-40fc-11eb-8929-253df5d91d71.png"></center>
+<center><img width="600" alt="2020-12-18 (7)" src="https://user-images.githubusercontent.com/53667002/102547303-59f38580-40fc-11eb-8929-253df5d91d71.png"></center>
 1\) Ad-hoc-Bildung/Okkasionalismus(임의적 형성)  
 그리고 합성어에 대해서는 Ad-Hoc-Bildung(Okkasionalismen, Gelegenheitbildung, Augenblicksbildungen)(임의적 형성, 임시어)가 자주 언급된다. Ad-Hoc-Bildung은 상황과 연결하여 생성된 Wortbildungsprodukte로, 어휘에 영구적으로 받아들여지지 않는, 임의적으로 형성된 것으로, 어휘화 혹은 사전화가 되지 않는다. 이들은 종종 하이픈(‘-‘)으로 표시되고 문학작품에서 많이 발견된다. (유행어처럼 일시적으로 사용되다 사라진다.)
 
@@ -40,7 +40,7 @@ Determinativkompositum의 특수한 경우로, Rektionskompositum(지배합성�
 
 
 하지만 두 번째 마디가 *Deutsch-Lehrer*와 같더라도 *Junglehrer*의 경우는 첫 번째마디가 두 번째 마디의 Ergaenzung이 아니라 Attribute이기 때문에 Determinativkomposita이다.
-<center><img width="315" alt="2020-12-18 (8)" src="https://user-images.githubusercontent.com/53667002/102547616-ce2e2900-40fc-11eb-8218-9843cf027876.png"></center>
+<center><img width="600" alt="2020-12-18 (8)" src="https://user-images.githubusercontent.com/53667002/102547616-ce2e2900-40fc-11eb-8218-9843cf027876.png"></center>
 
 3\) komplexe Determinativkomposita(복잡한 한정합성어)  
 지금까지 언급된 Determinativkomposita는 두개의 Konsituenten(구성요소)로 이루어져 있었지만, 그보다 더 복잡한 경우들이 있다 (e.g. Altherrenmannschaft, Mehrzweckwaffe). 앞의 예시와 같은 경우, 첫 번째 구성요소가 frei(독립적)로 나타나지 않고 항상 다른 구성요소와 결합하여 나타난다. 따라서 이것들은 형용사와 명사로 이루어진 한정해주는 단어그룹(bestimmenden Wortgruppe)(alte Herren, mehrere Zwecke)과 그것으로 한정지어지는 명사(Mannschaft, Waffe)로 이루어진 합성어이다. 마찬가지로 다른 품사로 이루어진 단어그룹으로 된 합성어도 있다(Geschirrspuelmaschine, Zwanzig-Euro-Schein, Arzt-Patienten-Verhaeltnis, Nahct-und Nabel-Aktion, Nachkreigsgeneration, Gewinn-und-Traenen-Rechnung, Fuenf-vor-zwoelf-Stimmung, Blut-Schweiss-und- Traennen-Rede). 
@@ -49,7 +49,7 @@ Determinativkompositum의 특수한 경우로, Rektionskompositum(지배합성�
 
 ### 2\.\(2\) Kopulativkompositum(연결하는 합성어)
 Determinativkomposita와는 달리 “AB는 B이다” 공식이 적용되지 않는 합성어가 있다. 예를 들어 Hosenrock, Radiowecker, Affenmensch, suesssauer, nasskalt 등의 경우 AB가 A인지 B인지 알 수 없다. 이러한 합성어를 Kopulativkomposita라고 한다. 여기에서는 두 구성요소가 동등한 관계이 있다. 
-<center><img width="300" alt="2020-12-18 (9)" src="https://user-images.githubusercontent.com/53667002/102547805-15b4b500-40fd-11eb-9f52-376e23750759.png"></center>
+<center><img width="700" alt="2020-12-18 (9)" src="https://user-images.githubusercontent.com/53667002/102547805-15b4b500-40fd-11eb-9f52-376e23750759.png"></center>
 
 ### 2\.\(3\) Exozentrisches Kompositum(외심적 합성어)
 Possessivkomposita는 무언가가 소유한 특징을 나타내는 합성어로, AB가 A도 아니고 B도 아니다. (예를 들어 Glatzkopf, Rotkelchen, Zwoelfzylnder는 eine rote Kehle, zwoelf Zylinder가 가능하다.) 이러한 단어는 단어 외부적인 것들이 중심이다. 따라서 Exozentrisches Kompositum(외심적 합성어)이라고 불린다. 
@@ -148,7 +148,7 @@ Kontamination의 경우, 두 단어가 축약되거나(최소한 원래의 단�
 - 형용사 -> 명사: eon guter Wein -> ein Guter  
 - 명사 -> 형용사(이 경우는 드물다): es ist mir ernst  
 - 이 외에도 명사적 부사(das Gegenueber), 접속사(ohne Wenn und Aber), 문장동격(ein klares Nein), 단어그룹(das So-tun-als -ob) 등이 있다.  
-<center><img width="249" alt="2020-12-18 (10)" src="https://user-images.githubusercontent.com/53667002/102548960-beafdf80-40fe-11eb-8b65-cb2c4085488c.png"></center>
+<center><img width="600" alt="2020-12-18 (10)" src="https://user-images.githubusercontent.com/53667002/102548960-beafdf80-40fe-11eb-8b65-cb2c4085488c.png"></center>
 
 2\) Morphologische Konversion(형태론적 변화)  
 이는 형태론적으로 Basis로부터 구분되는 단어형성물을 만드는 것이다. 예를 들어 동사에 기반을 둔(Verbstaemmen) Treff는 명사로 변하고나서 독립적으로 존재하게 되었다. 그리고 gruenen처럼 형용사에서 동사로 변형된 경우
@@ -158,7 +158,7 @@ Kontamination의 경우, 두 단어가 축약되거나(최소한 원래의 단�
 - 동사적 형태소 -> 명사: Treff; 명사로 변하고 나서 독립적으로 존재.  
 - 형용사 -> 동사: gruen -> gruenen; 형용사 형태소의 변형 형태와 형태가 같다(e.g. die gruenen Baeumen)  
 - 명사 -> 동사: chatten, googlen, computern; 드물게 나타나는 경우인데, 컴퓨터 관련 용어에서 많이 보인다.  
-<center><img width="283" alt="2020-12-18 (12)" src="https://user-images.githubusercontent.com/53667002/102549180-0a628900-40ff-11eb-8f73-f20199dc2452.png"></center>
+<center><img width="600" alt="2020-12-18 (12)" src="https://user-images.githubusercontent.com/53667002/102549180-0a628900-40ff-11eb-8f73-f20199dc2452.png"></center>
 ### 5\.\(2\) Entlehnung(차용)
 현대 언어에서 가장 빈번하게 사용되는 방법은 Entlehnung(차용)이다. 이는 외국어에서 가져온 단어에 대해 발음, 굴절 그리고 부분적으로는 정서법을 독일어에 맞춘 것이다. 이 방법이 가장 많이 사용되는 영역은 컴퓨터 어휘이다. 예를 들어 Computer, Internet, Browser, Hompage등과 같은 명사, downloaden, chatten 등의 동사 그리고 URL, RAM 등의 축약어.
 ### 5\.\(3\) Lehnuebersetzung(차용번역)
@@ -185,9 +185,9 @@ Volksetymologie는 차용과 밀접한 연관이 있는 현상이다. 예를 들
 
 
 지금까지 어휘 확장 방식들을 살펴보았는데, Ad-hoc-Bildung(임의적 형성)과 신조어(주로 광고에서)를 제외하고는 현대에서 사실 아무런 역할을 하지 않는다.
-<center><img width="434" alt="2020-12-18 (13)" src="https://user-images.githubusercontent.com/53667002/102549612-c02dd780-40ff-11eb-9e81-8926faa91440.png"></center>
+<center><img width="800" alt="2020-12-18 (13)" src="https://user-images.githubusercontent.com/53667002/102549612-c02dd780-40ff-11eb-9e81-8926faa91440.png"></center>
 
 
 ## 6\.Flexion(굴절)
 Flexion은 추상적이고 사전적인(lexikalisch) 단어들을 구체적이고 통사적인 단어로 만드는 과정이다. 즉, 굴절은 단어가 문법적 자질을 갖게 한다. 조어(Wortbildung)와 굴절(Fleixon)은 둘 다 규칙적이고 접미사를 붙일 수 있어서 구분이 어려울 수 있는데, 간단히 말해서 Flexion은 비교급접미사(Komparationssuffix)를 붙일 수 있고, 품사를 바꾸지 않는다. 그리고 어휘는 Felxion을 통해 다른 어휘와 형태학적으로 sichtbar한 관계가 된다. Wortbildung의 경우에는 분사(Partizipsuffix), 즉 형용사적 파생어를 붙일 수 있다. 비교급을 Flexion에 해당시키면 3가지 Flexion유형이 뒤따른다: 1) Nominalflexion/ Deklination(명사의 변형), 2) Verbflexion/ Konjugation(동사의 변형), 3) Komparation(형용사의 비교급). Nominalflexion은 명사가 수, 격, 형용사, 대명사 그리고 다양한 성이 있는 관사로 인해 굴절되는 것이고, Verbflexion은 동사가 인칭, 수, 시간 그리고 화법에 따라 굴절되는 것이다. 아래는 독일어의 격변화(Starke und schwache Flexion)를 나타낸 표이다:
-<center><img width="518" alt="2020-12-18 (14)" src="https://user-images.githubusercontent.com/53667002/102549804-169b1600-4100-11eb-949c-efdc831dcb13.png"></center>
+<center><img width="800" alt="2020-12-18 (14)" src="https://user-images.githubusercontent.com/53667002/102549804-169b1600-4100-11eb-949c-efdc831dcb13.png"></center>
