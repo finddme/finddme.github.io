@@ -48,13 +48,13 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 위 표를 통해 자음의 음성학적 변별 자질을 알 수 있다. 예를 들어 [v]의 변별자질은 Frikative, sth., labio-dental이다. 그리고 [b]와 [p]를 구분하는 변별자질은 Stimmhaftigkeit이다. 위 표를 보면 Affrikatien(파찰음)은 균등하게 평가되지 않음을 알 수 있다. 이는 단일 음성(Monophonematische Bewertung(단음)) 혹은 두 가지 음성 (Biphonematische Bewertung(양음))으로 볼 수 있다. 그리고 독일어에서 모음으로 시작되는 단어가 발음되는 Knacklaut(성문파열음)은 [ʔ]로 표현된다.
 ### Phonation – Stimmlos vs. Stimmhaft (발성 – 무성음 vs. 유성음)
 자음 생성 시 성대가 진동하면 유성음이고 진동하지 않으면 무성음이다. 유성음, 무성음과 밀접한 관련이 있는 개념쌍으로 Fortis(강함) vs. Lenis(부드러움) 그리고 Tenues(얇은) vs. Mediae(중간)이 있다. 전자의 경우, 유성음과 무성음을 파열음과 마찰음에서 구분하도록 하는 개념쌍이다:  
-<center><img width="1000" alt="2020-12-17 (18)" src="https://user-images.githubusercontent.com/53667002/102472873-17995c80-409a-11eb-9f63-a4bb525c0367.png"></center>
+<center><img width="500" alt="2020-12-17 (18)" src="https://user-images.githubusercontent.com/53667002/102472873-17995c80-409a-11eb-9f63-a4bb525c0367.png"></center>
 
 
 후자의 경우에는 무성 파열음과 유성 파열음을 구분하는 개념쌍이다:  
 
 
-<center><img width="1000" alt="2020-12-17 (19)" src="https://user-images.githubusercontent.com/53667002/102472989-40215680-409a-11eb-8f73-3b9c4f903ed3.png"></center>
+<center><img width="500" alt="2020-12-17 (19)" src="https://user-images.githubusercontent.com/53667002/102472989-40215680-409a-11eb-8f73-3b9c4f903ed3.png"></center>
 
 ### Aspiration(=Behauchung(유기음))
 앞서 살펴본 Tenues [p], [t], [k]는 유기음으로 볼 수 있는데, 유기음은 다소 많은 양의 공기가 새어나가는 것을 가리킨다. 예를 들어 단어의 시작과 끝에서 Pack [$p^hak^h$] 혹은 Tat [$t^ha: t^h$]처럼 한 박자 쉬는 것이다. 여기에서 짚고 넘어가야 하는 것은, Knacklaut와 Behauchung은 변별자질이 될 수 없다는 것이다. 
@@ -121,7 +121,7 @@ Phonem은 이러한 클래스 결정의 결과이고, Phone과 달리 정신적�
 <center><img width="1000" alt="2020-12-17 (20)" src="https://user-images.githubusercontent.com/53667002/102479246-fe94a980-40a1-11eb-836b-d93096f9f1fb.png"></center>
 위 표에서 *Dichter*과 *Richter*의 경우, /d/와 /r/이 최소대립쌍이다. 그리고 *Lenker-Schenker*에서 *Schenker*의 경우, 'sch'이렇게 세 글자로 실현되었지만 이것의 소리는 [ʃ]로 나타나기 때문에 *Lenker*와 비교하여 하나의 소리만 다른 것이 된다. 따라서 이 두 단어는 최소대립쌍의 관계에 있는 것이다. 반면 *Schlichter-Lichter*는 최소대립쌍이 아니다. 왜냐하면 *Schlichter*는 *Lichter*보다 하나의 소리가 더 있기 때문이다. 이렇게 최소대립쌍 연구에서 소리의 대립은 결정적인 역할을 한다.
 
-<center><img width="1000" alt="2020-12-17 (22)" src="https://user-images.githubusercontent.com/53667002/102479539-5d5a2300-40a2-11eb-9b1d-6d47bea7f230.png"></center>
+<center><img width="500" alt="2020-12-17 (22)" src="https://user-images.githubusercontent.com/53667002/102479539-5d5a2300-40a2-11eb-9b1d-6d47bea7f230.png"></center>
 
 ## 3\.1-\(2\)  음소 체계 세우기
 이러한 규칙을 기반으로 독일어의 자음에 대한 음소 시스템을 만들 경우, 각 음소는 초성, 중성 그리고 종성에서 다른 소리를 지닌 최소 대립쌍을 통해 증명되어야 한다. 예를 들어:
@@ -131,7 +131,7 @@ Phonem은 이러한 클래스 결정의 결과이고, Phone과 달리 정신적�
 위 표에서 Raub의 경우 종성에 있는 <b>는 음소 /p/로 실현된다. 이런 현상을 Auslautverhaertung(끝음 무성음화)(b->p, d->t, g->k)라고 한다. 이에 따라 음소 /b/에 대한 최소 대립쌍은 종성에 없다. 독일어 음소를 조음적 자질로 분류하면 다음과 같다:
 <center><img width="1000" alt="2020-12-17 (23)" src="https://user-images.githubusercontent.com/53667002/102479982-01dc6500-40a3-11eb-9a80-aecd22e2ea1f.png"></center>
 모음 음소에서는 단음과 장음이 중요한 의미 구분 자질인 반면 자음에서는 위 표의 몇몇 위치에서 구분된다. 위 표와 phon을 조음적 자질로 분류한 표를 비교하여 음성학과 음운론을 비교해보도록 하겠다:
-<center><img width="470" alt="2020-12-17 (17)" src="https://user-images.githubusercontent.com/53667002/102480103-2b958c00-40a3-11eb-97e5-6483e5d1bd2c.png"></center>
+<center><img width="1000" alt="2020-12-17 (17)" src="https://user-images.githubusercontent.com/53667002/102480103-2b958c00-40a3-11eb-97e5-6483e5d1bd2c.png"></center>
 음성학 차원에서 [r], [ʀ], [ʁ]은 모든 다른 소리이다. 하지만 음운론 차원에서는 하나의 Lautklasse(하나의 음소)이다. 그래서 위 두 표를 비교해보면 소리(Phon) [r], [ʀ], [ʁ]이 음소(Phonem) /ʀ/로 표기된 것을 발견할 수 있다. 따라서 음성학적 차원은 Parole 차원, 음운론적 차원은 Langue 차원이라고 볼 수 있다. 결론적으로 음소(Phonem)는 추상적인 반면 소리(Phon)는 구체적이고 들을 수 있는 소리이다.
 
 ## 3\.1-\(3\)  Allophone ermitteln(변이음 찾기)
@@ -141,7 +141,7 @@ Allophone(변이음)은 음소의 실현 변이형이다. 따라서 음소 시�
 
 ## 3\.2 Silbe(음절)
 음운론적으로, (Silbekopf와 Silbenkoda로 이루어진) (자음적) 음절과 모음적 음절핵이 구분된다. Silbenkern과 Silbenkoda는 운율이라고도 불린다.
-<center><img width="1000" alt="2020-12-17 (24)" src="https://user-images.githubusercontent.com/53667002/102480442-9fd02f80-40a3-11eb-9580-07c147ffa7c9.png"></center>
+<center><img width="500" alt="2020-12-17 (24)" src="https://user-images.githubusercontent.com/53667002/102480442-9fd02f80-40a3-11eb-9580-07c147ffa7c9.png"></center>
 ### Silbentypen(음절유형)
 음절의 구조에 따라 음절 유형이 구분될 수 있다:
 
@@ -150,5 +150,5 @@ Allophone(변이음)은 음소의 실현 변이형이다. 따라서 음소 시�
 2\) Bedeckte Silbe: 자음으로 시작하는 것 (e.g. Bei)  
 3\) Offen Silbe: 모음으로 끝나는 것 (e.g. So)  
 4\) Geschlossen Silbe: 자음으로 끝나는 것 (e.g. ein)  
-<center><img width="1000" alt="2020-12-17 (25)" src="https://user-images.githubusercontent.com/53667002/102480751-140ad300-40a4-11eb-9ce5-fe55c48e4472.png"></center>
+<center><img width="500" alt="2020-12-17 (25)" src="https://user-images.githubusercontent.com/53667002/102480751-140ad300-40a4-11eb-9ce5-fe55c48e4472.png"></center>
 
