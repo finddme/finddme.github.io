@@ -100,3 +100,62 @@ IC-Analyse는 분포주의자들이 고안한 것으로, 이를 형태론에 대
 
 ### Nullmorphem
 독일어에서는 각 문법적 자질이 고유한 형태소로 표현되지 않을 때가 있다. Nullmorphem이란 문법적 자질이 형태소를 통해 보여지지 않지만 하나의 형태소로 간주하는 형태소이다. 복수형에 -en이 붙지 않는 명사(e.g. der Fahrer-die Fahrer, der Kaiser-die Kaiser) 혹은 대부분의 명사 복수형의 다양한 격들(복수 1, 2, 3, 4격)에서 Nullmorphem이 나타난다. 예를 들어 명사 Aenderung은 „복수“라는 자질에 대한 형태소는 가지지만 격을 나타내는 어떠한 형태소도 가지지 않는다. 따라서 Aenderung에서 „1격“은 Nullmorphem인 것이다. 
+<center><img width="285" alt="2020-12-18 (2)" src="https://user-images.githubusercontent.com/53667002/102545525-b6a17100-40f9-11eb-96e8-1c0d7bda4e05.png"></center>
+
+### Klassifizierung(범주화)
+이제 단어의 형태는 모두 분절됐고, 이제 각 형태소들을 분류해야 한다. {en}은 gebundenes, grammatisches Flexionssuffix(굴절접미사)이고, {ung}은 gebundenes, grammatisches Wortbildungssuffix(조어접미사)이다. {aender}의 경우는 분류가 어렵다. 이는 동사적(aender-n) 혹은 형용사적(eine ander-e Gelegenheit) Basismorphem(기본형태소)로 분류될 수 있다. 후자의 경우 {aender}가 {ander}의 Allomorph라는 것을 의미한다. 하지만 형용사적 기본 형태소는 보통 자립적(자유롭게) 나타난다(ein gut-e Gelegenheit – die Gelegenheit ist gut 하지만 ein ander-e Gelegenheit – die Gelegenheit ist \*ander). 따라서 여기에서 {ander}를 형용사적 기본형태소로 보지 않고 Grossen Duden을 따라 대명사적 기본형태소로 본다. 예를 들어 {solch}나 {irgendein}처럼. 결론적으로 {aender}는 gebundenes, lexikalisches, verbales Basismorphem 혹은 gebundenen, grammatischen, pronominalen Basismorphem {ander}의 Allomorph로 분류된다.
+### Detaillierte IC-Analyse
+단어 „Schriftartabgleichungs-Ausnahmedatei“를 통해 IC-Anlayse에 대해 더 자세히 다뤄보겠다. 해당 단어 분석에서 이원원칙에 벗어나는 두 가지와 뭔가 불확실하고 잘 이해되지 않는 한가지 그리고 주의할 것 한가지, 총 4가지 경우에 대해 설명하도록 하겠다.
+<center><img width="468" alt="2020-12-18 (3)" src="https://user-images.githubusercontent.com/53667002/102545730-04b67480-40fa-11eb-961a-e1c942a1200b.png"></center>
+
+1\) Fugenelement(삽입,접합요소)  
+Fugenelement란, 음성학적 이유로 복잡한 단어형성물(Wortbildungsprodukte)에 끼워 넣어진 소리(Laut)나 소리사슬(Lautkette)(Umleitung-s-empfelung, Kontinent-al-verschiebung, Kind-er-garten, brasili-an-isch)로, 형태소가 아니다. 이는 의미구분(bedeutungsunterschiedend)일 수 있지만 의미수반(bedeutungstragend)는 아니다.
+위 그림에서 1.으로 표시된 부분을 보면 이원원칙을 벗어나며, 괄호 없이 표기된 ‚s‘가 있다. 이는 ‚s‘가 의미 혹은 문법적 자질을 포함하지 않기 때문이다. 이것은 Fugen-s인데, 단지 두 요소의 결합 시 발음의 용이함을 위해 삽입된 요소이다. 이것은 2격(Schriftartabgleichung-s에서의 -s) 혹은 복수형태(Kind-er-spielplatz의 -er-, Blume-n-vase의 -n-)로 보일 수 있지만 그냥 복잡한 단어의 발음적(음성학적) 이유로 인해 중간에 아무 의미없이, 아무런 문법적 자질 없이 (따라서 형태소가 아닌 것이) 삽입되는 것이다. 그래서 형태소 표기 기호인 괄호도 사용되지 않는다.
+
+
+
+2\) Weitere Segmentierung(더 자세한 분절)
+위 그림에서 2.로 표시된 부분에서도 이원원칙을 벗어난 경우를 찾을 수 있다. 여기에서는 {Schrift}로 끝내며 간과할 수 있는 사실을 설명하도록 하겠다. 이는 중세 고지 독일어에 사용되던 {ti}의 흔적으로 볼 수 있다. 예를 들어 Fahrt, Auskunft, 그리고 경우에 따라 Kunst, Brunst, Gunst와 같은 단어들에 붙은 {t}가 그것의 흔적이다. 따라서 {Schrift}는 {schreib}와 관계될 수 있고, {Gift}는 {geb}과 관계될 수 있다. 이는 현대 독일어에서는 생산적이지 않은 형태소이기 때문에 이들의 관계는 수직으로 표시한다. (이러한 경우는 어원사전이나 역순사전의 도움을 받아야 한다.)
+
+
+
+3\) 이번에는 분절 여부에 대해 충분히 고민될 만한 경우이다. 위 그림에서 3.으로 표시된 부분을 보면 Datei를 더 분절할 수 있는지에 대해 고민될 것이다. Wortbildungssuffix(조어접미사){ei}는 무언가 복구하거나 보존되어지는 장소를 의미한다. 이와 비슷한 예로 Kartei, Kantorei, Ziegelei가 있다.
+
+
+
+4\) 마지막으로 주의할 사항이다. ‚Ausnahme‘라는 요소는 동사에 뿌리를 둔 ausnehme로서 더 분절되어질 수 있다. Wortbildungssuffix {e}와 함께 모음도 변형되어지는데, 이런 현상은 자주 나타난다. 예를 들어 {back}와 {Baeck}+{er}에서 혹은 {geb}과 {Gab}+{e}에서. 종종 이러한 경우를 동사에서 명사가 유래한 것이 아니라 그 반대라고 주장하는 사람들도 있는데, 명사를 {aus}와 {nahme}로 분절할 경우 {nahme}가 뭔지 설명할 수 없기 때문에 이는 받아들여질 수 없는 주장이다.
+
+
+
+### Klassifizierung der Morpheme(형태소 분류)
+형태소 분절을 마치고 나면 얻어진 형태소들을 분류해야 한다. 
+<center><img width="382" alt="2020-12-18 (4)" src="https://user-images.githubusercontent.com/53667002/102545952-4c3d0080-40fa-11eb-9ac5-9ff3292611e4.png"></center>
+{schreib}와 {nehm}은 둘 다 동사에 뿌리를 두고 있지만 전자는 frei이고 후자는 gebunden이다. 이 이유는 {schreib}는 명령법으로서 독립적이고, {nehm}은 명령법 Nimm과 구분되기 때문이다. 즉, 동사에 뿌리를 둔 형태소의 경우, 동사의 명령법과 형태가 같으면 frei, 아니면 gebunden이다. Daten이라는 어휘는 현재 독일어에서 복수형으로만 나타난다. 따라서 명사적 Basismorphem {Dat}는 독립적으로 존재하지 못한다. 
+
+## 4\.Spezielle Probleme der IC-Analyse(IC-Analyse의 특수한 문제)
+
+이제 IC-Analyse에서 나타나는 몇몇 특수한 문제들에 대해 다루겠다. 
+
+
+
+1\) 분절순서:  
+분절 순서에 관한 문제가 나타날 수 있다. Unbescheidenheit와 같은 경우 아래와 같은 두 가지 경우가 나타날 수 있는데, 둘 다 받아들여진다.
+<center><img width="381" alt="2020-12-18 (5)" src="https://user-images.githubusercontent.com/53667002/102546164-92925f80-40fa-11eb-8b36-3acae1dc511e.png"></center>
+
+
+2\) Zirkumfix 분석  
+Zirkumfix 분석 시, 이원원칙에 충돌되는데, 이는 아래 그림처럼 문법적 형태소인 Flexionssuffix(굴절접미사)를 먼저 분리하고(이것이 기본 원칙이다), 그 후에 Zirkumfix를 분리하여 {be}+{ig}와 같이 표기한다. 동사에 기반을 둔 besaenftig는 Zirkumfix를 제외하고는 변모음화된(umgelautete) Allomorph {sanft}를 포함하고 있다.
+<center><img width="284" alt="2020-12-18 (6)" src="https://user-images.githubusercontent.com/53667002/102546271-bbb2f000-40fa-11eb-9eab-53bc70344577.png"></center>
+
+3\) Produktive und aktive Morpheme  
+구성요소들을 더 분절할 수 있는지에 대한 문제도 빈번하게 나타난다. 이와 관련하여 앞서 Datei를 다루었다. Datei의 경우 {ei}는 현재 독일어에서 존재하며, 활동적(aktiv)(자주 쓰이는)이지만 생산적(produktiv)이지는 않은 형태소로 확인했다. 모든 자연어들과 마찬가지로 독일어도 계속 변화하기 때문에 이렇게 특정 형태소가 잘 쓰이다가도 안 쓰이기도 한다. 따라서 aktiv와 produktiv와 추가적으로 unikales morphem에 대해 알아보도록 하겠다. 
+
+
+
+- Produktives Morphem(생산적 형태소): 현대 언어에서 단어 형성으로 사용되어지는 형태소 (e.g. {Computer}, {ung})  
+- Aktives Morphem(활동적 형태소): 현대 언어에서 여전히 존재하지만 더 이상 단어 형성에 사요되어지지 않는 형태소 (e.g. {ling}, {heisch})  
+- Unikales Morphem(고유한, 유일한 형태소): 하나의 어휘에만 남아있는 형태소 (e.g. {Him}: Himbeere)  
+
+### Konfix(쌍접사)
+외국어에 뿌리가 있고, 거기에서 단어형성이 사용되어진 gebundenes lexikalisches Morphem (e.g. {bio}: Biollogie, biometrisch, Biodynamik, Bioladen, Biogemuese, {elektr}: elektrisch, elektrisieren, Elektrik, {thek}, {polit}).
+
