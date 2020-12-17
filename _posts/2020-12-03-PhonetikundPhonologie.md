@@ -14,7 +14,7 @@ tag: Linguistik
 언어적 소리(Phone)는 호흡하는 공기, 후두, 능/수동적인 조음, 다양한 공명공간 그리고 뇌를 통해 만들어진다. 이러한 과정을 연구하기 위해 발신자와 수신지 측면의 과정을 자세히 살펴봐야 한다.  
 ### Artikulatorische Phonetik(조음적 음성학), Akustische Phonetik(음향적 음성학), Auditive Phonetik(청취적 음성학)
 Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방법과 과정을 연구하고, Akustische Phonetik(음향적 음성학)은 언어 신호의 특성과 전송특성을 기술한다. 그리고 Auditive Phonetik(청취적 음성학)은 청자에 대한 언언 신호 수용을 분석한다. 시간순에 따른 이상적인 이러한 과정은 아래와 같이 축약적으로 표현될 수 있다(signalphonetische Band und drei Teil gebiete der Phonetik):  
-<center><img width="1000" alt="2020-11-29 (1)" src="https://user-images.githubusercontent.com/53667002/102470614-917c1680-4097-11eb-876e-2402d96fe19c.png"></center>
+<center><img width="800" alt="2020-11-29 (1)" src="https://user-images.githubusercontent.com/53667002/102470614-917c1680-4097-11eb-876e-2402d96fe19c.png"></center>
 
 ### Selbstreflexive Komponenten(자아성찰적 요소)
 말하고 들을 때 자아성찰적 요소(Selbstreflexive Komponenten)도 매우 중요하다. Pompino-Marschall은 다음과 같이 말했다. “[화자]는 그의 조음 기관의 위치와 움직임을 기록하고, 예를 들어 입천장과 혀 혹은 두 입술 간의 접촉과 같은 촉각적 접촉 그리고 필요한 경우 자신을 바로잡기 위해 모든 감각을 이용하여 자신의 말을 듣는다.”(Pompino-Marschall 2003: 15)  
@@ -27,16 +27,16 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 
 1\) Initation(시작): Ausatmung(날숨): 소리 생성에 필요한 공기 흐름을 생성한다. 소리는 진동 현상과 밀접한 관련이 있는데, 호흡이 진행되는 과정에서 생긴 기류가 진동을 만들어낸다.  
 2\) Phonation(발성): 후두와 성대로 소리를 생성한다. 성내는 날숨에서 흔들리고 성문(Glottis)을 통해 공기가 밖으로 나간다. 이렇게 날숨에서 소리가 생성된다. 후두 근육조직과 날숨공기의 압력의 협력으로 진동의 속도, 강세, 형태 그리고 유성, 소리의 높낮이, 소리의 가세, 소리의 질이 조정된다.  
-<center><img width="1000" alt="2020-11-29 (3)" src="https://user-images.githubusercontent.com/53667002/102471131-297a0000-4098-11eb-9c91-43046bedad0f.png"></center>
+<center><img width="800" alt="2020-11-29 (3)" src="https://user-images.githubusercontent.com/53667002/102471131-297a0000-4098-11eb-9c91-43046bedad0f.png"></center>
 3\) Artikulation(조음): 언어 소리로 음성을 수정한다. 즉 후두에서 생성된 기본 소리를 음성으로 바꾼다. 조음은 비인두와 성문의 위쪽 경계 사이에 성문상부인 구강에서 발생한다. 구강의 중심이 열릴 때 음성이 만들어지는데, 이는 소리를 조정하는 방식으로 좁혀지거나 열리고 다시 폭발적으로 열리면서 자음(Konsonanten)이 생성된다.  
-<center><img width="1000" alt="2020-12-17 (13)" src="https://user-images.githubusercontent.com/53667002/102471261-5a5a3500-4098-11eb-8121-530d97272790.png"></center>
+<center><img width="800" alt="2020-12-17 (13)" src="https://user-images.githubusercontent.com/53667002/102471261-5a5a3500-4098-11eb-8121-530d97272790.png"></center>
 
 
 ## 2\.2 Artikulation der Konsonanten(자음의 조음)
 자음은 조음특성에 따라 분류될 수 있다. Kohler(1995: 51-64)는 소리를 분류할 수 있는 10가지 파라미터를 기술하였다. 이 10가지 파라미터는 세 가지 개념정의를 통해 얻을 수 있다. 조음장소(Artikulationsort), 조음유형(Artikulationsart) 그리고 발성유형(Art der Phonation)(유성음(stimmhaft) 혹은 무성음(stimmlos)).
 ### Artikulationsort(조음위치)
-<center><img width="1000" alt="2020-11-29 (5)" src="https://user-images.githubusercontent.com/53667002/102471682-d6ed1380-4098-11eb-8e13-2327e49844a7.png"></center>
-<center><img width="1000" alt="2020-12-17 (14)" src="https://user-images.githubusercontent.com/53667002/102471804-fc7a1d00-4098-11eb-82e3-c59ab4d69c4a.png"></center>
+<center><img width="800" alt="2020-11-29 (5)" src="https://user-images.githubusercontent.com/53667002/102471682-d6ed1380-4098-11eb-8e13-2327e49844a7.png"></center>
+<center><img width="800" alt="2020-12-17 (14)" src="https://user-images.githubusercontent.com/53667002/102471804-fc7a1d00-4098-11eb-82e3-c59ab4d69c4a.png"></center>
 ### Phonetische Notation(음성 표기법)
 <center><img width="1000" alt="2020-12-17 (15)" src="https://user-images.githubusercontent.com/53667002/102471971-27647100-4099-11eb-8bc0-2d1d3148f35e.png"></center>
 ### Artikulationsart(조음방법)
@@ -71,7 +71,7 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 
 
 이러한 자질들은 종종 사다리꼴로 묘사된다:  
-<center><img width="1000" alt="2020-11-29 (6)" src="https://user-images.githubusercontent.com/53667002/102473346-b32acd00-409a-11eb-8470-c3e82a395d86.png"></center>
+<center><img width="800" alt="2020-11-29 (6)" src="https://user-images.githubusercontent.com/53667002/102473346-b32acd00-409a-11eb-8470-c3e82a395d86.png"></center>
 
 ### Diphthonge(복모음)
 독일어의 복모음으로는 [ai], [au] 그리고 [ɔy]가 있다. 이것들의 경우, 파찰음과 같이 하나의 소리로 평가된 수 있는지 혹은 두개의 소리로 이해되는 것이 더 적절한지에 대한 의견이 다양하게 존재한다.
@@ -118,14 +118,14 @@ Phonem은 이러한 클래스 결정의 결과이고, Phone과 달리 정신적�
 
 ### Minimalpaar(최소대립쌍)
 최소대립쌍분석(Minimalpaaranalyse)은 음소의 결정에 매우 중요한 과정이다. 최소대립쌍이란 딱 하나의 소리만 다르고 다른 의미를 가진 두 단어(e.g. *Tisch-Fisch*)로, 최소대립쌍의 비교를 통해 의미구분이 소리차이에 의해 나타난다는 가정을 할 수 있다. 
-<center><img width="1000" alt="2020-12-17 (20)" src="https://user-images.githubusercontent.com/53667002/102479246-fe94a980-40a1-11eb-836b-d93096f9f1fb.png"></center>
+<center><img width="500" alt="2020-12-17 (20)" src="https://user-images.githubusercontent.com/53667002/102479246-fe94a980-40a1-11eb-836b-d93096f9f1fb.png"></center>
 위 표에서 *Dichter*과 *Richter*의 경우, /d/와 /r/이 최소대립쌍이다. 그리고 *Lenker-Schenker*에서 *Schenker*의 경우, 'sch'이렇게 세 글자로 실현되었지만 이것의 소리는 [ʃ]로 나타나기 때문에 *Lenker*와 비교하여 하나의 소리만 다른 것이 된다. 따라서 이 두 단어는 최소대립쌍의 관계에 있는 것이다. 반면 *Schlichter-Lichter*는 최소대립쌍이 아니다. 왜냐하면 *Schlichter*는 *Lichter*보다 하나의 소리가 더 있기 때문이다. 이렇게 최소대립쌍 연구에서 소리의 대립은 결정적인 역할을 한다.
 
 <center><img width="500" alt="2020-12-17 (22)" src="https://user-images.githubusercontent.com/53667002/102479539-5d5a2300-40a2-11eb-9b1d-6d47bea7f230.png"></center>
 
 ## 3\.1-\(2\)  음소 체계 세우기
 이러한 규칙을 기반으로 독일어의 자음에 대한 음소 시스템을 만들 경우, 각 음소는 초성, 중성 그리고 종성에서 다른 소리를 지닌 최소 대립쌍을 통해 증명되어야 한다. 예를 들어:
-<center><img width="1000" alt="2020-12-17 (21)" src="https://user-images.githubusercontent.com/53667002/102479762-a8743600-40a2-11eb-8505-73128d0f1faf.png"></center>
+<center><img width="500" alt="2020-12-17 (21)" src="https://user-images.githubusercontent.com/53667002/102479762-a8743600-40a2-11eb-8505-73128d0f1faf.png"></center>
 
 ### Auslautverhaertung(끝음 무성음화)
 위 표에서 Raub의 경우 종성에 있는 <b>는 음소 /p/로 실현된다. 이런 현상을 Auslautverhaertung(끝음 무성음화)(b->p, d->t, g->k)라고 한다. 이에 따라 음소 /b/에 대한 최소 대립쌍은 종성에 없다. 독일어 음소를 조음적 자질로 분류하면 다음과 같다:
