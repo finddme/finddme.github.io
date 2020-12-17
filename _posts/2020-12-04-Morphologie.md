@@ -72,7 +72,7 @@ feie grammatische Morphem(자립적 문법 형태소)에 대한 예시로 접속
 형태소가 앞서 소개한 세 가지 형태소 클래스(Freie Morphem, Gebundene Morphem, Flexionsmorphem)에 항상 귀속되는 것은 아니다. Basismorphem과 Gebundene Morphem의 경계는 어휘적 구성요소가 문법화 되는 경향의 과정인 언어변천(Sprachwandel)로 인해 유동적이다. 즉, Basismorphem은 경향에 따라 Gebundene Morphem으로 이행되기도 하는데, 그런 형태소는 조어 연구에서 Affixoid라는 이름 하에 연구된다. 예를 들어 한동안 Flug-zeug의 {zeug}, Maeh-werk의 {werk}, sorgen-frei에서의 {frei}와 같은 형태소가 Affixoid라고 불렸다. 이 문제는 조어론(Wortbildung)에서 자세히 다루어진다.
 ### Affix(접사)
 „Affixoid“라는 용어는 Affix에서 파생되었다. Affix는 형태소의 위치와 관련된 모든 개념의 상위개념이다.
-<center><img width="800" alt="2020-12-18" src="https://user-images.githubusercontent.com/53667002/102544990-fae04180-40f8-11eb-9204-cf5acfd73fa8.png"></center>
+<center><img width="350" alt="2020-12-18" src="https://user-images.githubusercontent.com/53667002/102544990-fae04180-40f8-11eb-9204-cf5acfd73fa8.png"></center>
 ### Praefix(접두사/전철)
 Praefix는 항상 어휘 앞에 오며, 이를 통해 새로운 단어를 만든다(예를 들어 auf-essen에서 {auf}).
 ### Suffix(접미사/후철)
@@ -100,7 +100,7 @@ IC-Analyse는 분포주의자들이 고안한 것으로, 이를 형태론에 대
 
 ### Nullmorphem
 독일어에서는 각 문법적 자질이 고유한 형태소로 표현되지 않을 때가 있다. Nullmorphem이란 문법적 자질이 형태소를 통해 보여지지 않지만 하나의 형태소로 간주하는 형태소이다. 복수형에 -en이 붙지 않는 명사(e.g. der Fahrer-die Fahrer, der Kaiser-die Kaiser) 혹은 대부분의 명사 복수형의 다양한 격들(복수 1, 2, 3, 4격)에서 Nullmorphem이 나타난다. 예를 들어 명사 Aenderung은 „복수“라는 자질에 대한 형태소는 가지지만 격을 나타내는 어떠한 형태소도 가지지 않는다. 따라서 Aenderung에서 „1격“은 Nullmorphem인 것이다. 
-<center><img width="800" alt="2020-12-18 (2)" src="https://user-images.githubusercontent.com/53667002/102545525-b6a17100-40f9-11eb-96e8-1c0d7bda4e05.png"></center>
+<center><img width="300" alt="2020-12-18 (2)" src="https://user-images.githubusercontent.com/53667002/102545525-b6a17100-40f9-11eb-96e8-1c0d7bda4e05.png"></center>
 
 ### Klassifizierung(범주화)
 이제 단어의 형태는 모두 분절됐고, 이제 각 형태소들을 분류해야 한다. {en}은 gebundenes, grammatisches Flexionssuffix(굴절접미사)이고, {ung}은 gebundenes, grammatisches Wortbildungssuffix(조어접미사)이다. {aender}의 경우는 분류가 어렵다. 이는 동사적(aender-n) 혹은 형용사적(eine ander-e Gelegenheit) Basismorphem(기본형태소)로 분류될 수 있다. 후자의 경우 {aender}가 {ander}의 Allomorph라는 것을 의미한다. 하지만 형용사적 기본 형태소는 보통 자립적(자유롭게) 나타난다(ein gut-e Gelegenheit – die Gelegenheit ist gut 하지만 ein ander-e Gelegenheit – die Gelegenheit ist \*ander). 따라서 여기에서 {ander}를 형용사적 기본형태소로 보지 않고 Grossen Duden을 따라 대명사적 기본형태소로 본다. 예를 들어 {solch}나 {irgendein}처럼. 결론적으로 {aender}는 gebundenes, lexikalisches, verbales Basismorphem 혹은 gebundenen, grammatischen, pronominalen Basismorphem {ander}의 Allomorph로 분류된다.
@@ -140,12 +140,12 @@ Fugenelement란, 음성학적 이유로 복잡한 단어형성물(Wortbildungspr
 
 1\) 분절순서:  
 분절 순서에 관한 문제가 나타날 수 있다. Unbescheidenheit와 같은 경우 아래와 같은 두 가지 경우가 나타날 수 있는데, 둘 다 받아들여진다.
-<center><img width="800" alt="2020-12-18 (5)" src="https://user-images.githubusercontent.com/53667002/102546164-92925f80-40fa-11eb-8b36-3acae1dc511e.png"></center>
+<center><img width="400" alt="2020-12-18 (5)" src="https://user-images.githubusercontent.com/53667002/102546164-92925f80-40fa-11eb-8b36-3acae1dc511e.png"></center>
 
 
 2\) Zirkumfix 분석  
 Zirkumfix 분석 시, 이원원칙에 충돌되는데, 이는 아래 그림처럼 문법적 형태소인 Flexionssuffix(굴절접미사)를 먼저 분리하고(이것이 기본 원칙이다), 그 후에 Zirkumfix를 분리하여 {be}+{ig}와 같이 표기한다. 동사에 기반을 둔 besaenftig는 Zirkumfix를 제외하고는 변모음화된(umgelautete) Allomorph {sanft}를 포함하고 있다.
-<center><img width="800" alt="2020-12-18 (6)" src="https://user-images.githubusercontent.com/53667002/102546271-bbb2f000-40fa-11eb-9eab-53bc70344577.png"></center>
+<center><img width="400" alt="2020-12-18 (6)" src="https://user-images.githubusercontent.com/53667002/102546271-bbb2f000-40fa-11eb-9eab-53bc70344577.png"></center>
 
 3\) Produktive und aktive Morpheme  
 구성요소들을 더 분절할 수 있는지에 대한 문제도 빈번하게 나타난다. 이와 관련하여 앞서 Datei를 다루었다. Datei의 경우 {ei}는 현재 독일어에서 존재하며, 활동적(aktiv)(자주 쓰이는)이지만 생산적(produktiv)이지는 않은 형태소로 확인했다. 모든 자연어들과 마찬가지로 독일어도 계속 변화하기 때문에 이렇게 특정 형태소가 잘 쓰이다가도 안 쓰이기도 한다. 따라서 aktiv와 produktiv와 추가적으로 unikales morphem에 대해 알아보도록 하겠다. 
