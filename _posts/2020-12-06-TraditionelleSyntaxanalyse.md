@@ -25,7 +25,7 @@ tag: Linguistik
 
 ### 2\.1 Traditionelle Satzanalyse(전통적 문장분석 방식)
 그 중 전통적인 시스템은 문장들의 형성 방식을 명확히 하기 위해 문장의 구조와 계층구조에 대해 연구한다. 이 방식은 주어가 Sonderstellung(특수한 지위)을 주어를 제외한 나머지는 다 술부로 취급한다. 다음은 기존 전통적 분석 방법으로 Der Professor haelt einen Vortrag을 분석한 것이다:
-<center><img width="500" alt="2020-12-18 (15)" src="https://user-images.githubusercontent.com/53667002/102550683-91b0fc00-4101-11eb-9a52-0f49b6ad397d.png"></center>
+<center><img width="300" alt="2020-12-18 (15)" src="https://user-images.githubusercontent.com/53667002/102550683-91b0fc00-4101-11eb-9a52-0f49b6ad397d.png"></center>
 ### 2\.2 Dependenz-oder Valenzgrammatik(의존문법, 결합가문법)
 의존문법 혹은 결합가문법은 각 문장의 구조적 중심이 정동사(finite Verb)라는 기본 개념을 기반으로 한다. 즉, 동사에 Sonderstellung이 있다고 가정한다. 따라서 Satzglieder(문장성분) 혹은 Konstituenten(구성요소)은 동사에 의해 결정된다. 다음은 위에서 사용된 예시 문장을 결합가문법으로 분석한 것이다:
 <center><img width="500" alt="2020-12-18 (16)" src="https://user-images.githubusercontent.com/53667002/102550798-cb820280-4101-11eb-9a04-68f55316fb09.png"></center>
@@ -69,7 +69,7 @@ Satzglied는 VEA-Prinzip(VEA-원리)를 통해 식별될 수 있다. VEA-원리�
 
 #### 2\) Syntaktische Kriterien(통사적 기준)
 앞서 다룬 형태론적 기준에 문제가 있는데, 위 기준을 따르면 예를 들어 heut, vielleicht, weil, ueber, sehr가 다 Partikel이라는 같은 품사에 속하게 된다. 따라서 추가적으로 통사적 기준을 적용하여 품사를 구분해보고자 한다. 우선 굴절 불가능한 단어들 중 Satzglied 기능을 하는 단어들 (e.g. heute, vielleicht, deswegen)은 부사에 할당된다. 나머지 품사의 경우 통사적 관계를 설정하는 단어와 그렇지 않은 단어로 구분될 수 있다. 후자의 경우, (좁은 의미에서의) Partikeln으로 표기된다(e.g. das hast du ja toll hingekriegt에서 ja),즉 구체적인 paraphrasierbare(=umschreibbare)의미가 없는 단어이지만 대신 Abschwaechung(약화) 혹은 Verstaerkung(강조)와 같은 의사소통적 기능이 있는 단어. 반면 전자의 경우에는 통사적 관게에서 격이 요구(Praeposition, 예를 들어 nach+Dativ)되거나 Satzglieder 혹은 Teilsaetzen의 결합(Konjunktion(접속사), 예를 들어 und, weil)에 따라 나뉜다. 그리고 형태론적 기준에서 Begleiter로 분류되었던 부분도 Satzglieder기능을 하는지에 따라 나뉠 수 있다.
-<center><img width="800" alt="2020-12-18 (20)" src="https://user-images.githubusercontent.com/53667002/102551885-98407300-4103-11eb-91eb-c4bdb181862d.png"></center>
+<center><img width="1000" alt="2020-12-18 (20)" src="https://user-images.githubusercontent.com/53667002/102551885-98407300-4103-11eb-91eb-c4bdb181862d.png"></center>
 
 #### 3\) Semantische Kriterien(의미론적 기준)
 지금까지 소개된 기준들을 통해 품사 구분이 어느정도 잘 되었지만 몇몇 문제점들이 있다. 예를 들어 oft라는 단어는 강약변화가 불가능하지만 비교급변화는 가능하다. 그리고 감탄사(Interjektion, e.g. ach!, oh!)와 문장과 대등한 표현(Satzaequivalente e.g. Ja, Danke)의 귀속도 모호하다. 따라서 단어의 품사는 문맥 속에서 결정된다. 이는 특히 여러 의미가 있는 단어들을 통해 확실해진다(e.g. natuerlich: 의미에 따라 형용사일 때도 있고 부사일 때도 있다). 반면 항상 같은 의미를 지닌 단어는 항상 같은 품사에 속한다. 예를 들어 schnell이라는 단어는 항상 형용사이다. 
@@ -100,7 +100,7 @@ Satzglied는 VEA-Prinzip(VEA-원리)를 통해 식별될 수 있다. VEA-원리�
 
 지금까지 전통적인 통사 분석에서 검증을 통해 문장을 그의 구성요소인 Satzglieder로 어떻게 나누고 이를 범주와 기능에 따라 더 면밀히 결정하는 방법에 대해 알아보았다. 이러한 전통적 문장성분분석을 요약하면 다음과 같다:
 
-<center><img width="800" alt="2020-12-18 (25)" src="https://user-images.githubusercontent.com/53667002/102552592-cd999080-4104-11eb-96c4-b1780fb11fce.png"></center>
+<center><img width="500" alt="2020-12-18 (25)" src="https://user-images.githubusercontent.com/53667002/102552592-cd999080-4104-11eb-96c4-b1780fb11fce.png"></center>
 
 ## 5\.문장 분석을 위한 모델
 이제 조금 더 복잡한 문장을 분석하기 위한 방법을 살펴보겠다. 
@@ -143,6 +143,6 @@ Hypotaxe는 주문장과 부문장이 결합하여 한 문장이 된 것으로, 
 
 주문장은 문장 성분들을 통해 보충되어진다. 예를 들어 Was ich nicht verstehen kann, ist, dass der Hauptsatz aus einem Wort besteht의 주문장은 술어 ist로만 이루어져 있다. 왜냐하면 주어와 술어가 부문장을 통해 보충되어지기 때문이다. 이렇게 축소된 주문장은 더 이상 문장이라고 말할 수 없기 때문에 주문장의 잔재(Hauptsatzrest/HSR)이라고 부른다.
 
-<center><img width="800" alt="2020-12-18 (29)" src="https://user-images.githubusercontent.com/53667002/102553482-40efd200-4106-11eb-8b0b-1cb094749a69.png"></center>
+<center><img width="500" alt="2020-12-18 (29)" src="https://user-images.githubusercontent.com/53667002/102553482-40efd200-4106-11eb-8b0b-1cb094749a69.png"></center>
 지금까지 설명한 복잡한 문장에 대한 분석 스키마를 도식화하면 다음과 같다:
 <center><img width="800" alt="2020-12-18 (30)" src="https://user-images.githubusercontent.com/53667002/102553575-68df3580-4106-11eb-98b0-ea0d85836812.png"></center>
