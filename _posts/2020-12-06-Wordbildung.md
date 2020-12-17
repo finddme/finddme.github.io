@@ -177,8 +177,8 @@ Volksetymologie는 차용과 밀접한 연관이 있는 현상이다. 예를 들
 
 
 - Bedeutungsveraengerung(의미 축소): 이는 의미가 축소되는 경우이다. 전형적인 예로 Hochzeit가 있다. 중세 독일어에서 Hochzeit는 모든 축제를 지칭했고, Schirm은 원래 ‚보호‘라는 의미였다.  
--Bedeutungserweiterung(의미 확장): 이는 의미가 확정되는 것으로, 이에 대한 예로는 Horn과 packen이 있다. 전자는 원래 동물의 뿔만 표현했고 후자는 16세기에 포장의 의미로만 쓰였는데, 오늘날에는 fassen, begreifen으로 통용된다.  
--Bedeutungsuebertragung(의미 이동): 의미 이동의 예로는 toll(원래 혼란을 의미)와 gemein(원래 일반적임을 의미)에서 나타난다.  
+- Bedeutungserweiterung(의미 확장): 이는 의미가 확정되는 것으로, 이에 대한 예로는 Horn과 packen이 있다. 전자는 원래 동물의 뿔만 표현했고 후자는 16세기에 포장의 의미로만 쓰였는데, 오늘날에는 fassen, begreifen으로 통용된다.  
+- Bedeutungsuebertragung(의미 이동): 의미 이동의 예로는 toll(원래 혼란을 의미)와 gemein(원래 일반적임을 의미)에서 나타난다.  
 
 
 
