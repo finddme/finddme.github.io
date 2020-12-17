@@ -21,4 +21,29 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 ### Kommunikative Aspekte(의사소통적 측면)
 실제 말하기와 듣기 과정은 서로 밀접한 관련이 있고 상황과 문맥에도 의존한다. “음성학의 대상은 언어적 의사소통의 소리 이벤트에 대한 모든 측면이다. 즉 화자와 청자 사이의 의사소통 상황에서 상징적 그리고 측정적 접근방식으로 심리적, 사회적 전제들을 포함하는 말소리의 전달과 생성을 기술한다.” (Kohler 1995: 22, Hervorh. A. B)  
 
-## 2\.1 Artikulation(조음) – Phonetik(1)
+## 2\.1 Artikulation(조음)
+말 할 때 행해지는 세 가지 과정은 다음과 같다:  
+
+
+1\) Initation(시작): Ausatmung(날숨): 소리 생성에 필요한 공기 흐름을 생성한다. 소리는 진동 현상과 밀접한 관련이 있는데, 호흡이 진행되는 과정에서 생긴 기류가 진동을 만들어낸다.  
+2\) Phonation(발성): 후두와 성대로 소리를 생성한다. 성내는 날숨에서 흔들리고 성문(Glottis)을 통해 공기가 밖으로 나간다. 이렇게 날숨에서 소리가 생성된다. 후두 근육조직과 날숨공기의 압력의 협력으로 진동의 속도, 강세, 형태 그리고 유성, 소리의 높낮이, 소리의 가세, 소리의 질이 조정된다.  
+<center><img width="247" alt="2020-11-29 (3)" src="https://user-images.githubusercontent.com/53667002/102471131-297a0000-4098-11eb-9c91-43046bedad0f.png"></center>
+3\) Artikulation(조음): 언어 소리로 음성을 수정한다. 즉 후두에서 생성된 기본 소리를 음성으로 바꾼다. 조음은 비인두와 성문의 위쪽 경계 사이에 성문상부인 구강에서 발생한다. 구강의 중심이 열릴 때 음성이 만들어지는데, 이는 소리를 조정하는 방식으로 좁혀지거나 열리고 다시 폭발적으로 열리면서 자음(Konsonanten)이 생성된다.  
+<center><img width="408" alt="2020-12-17 (13)" src="https://user-images.githubusercontent.com/53667002/102471261-5a5a3500-4098-11eb-8121-530d97272790.png"></center>
+
+
+## 2\.2 Artikulation der Konsonanten(자음의 조음)
+자음은 조음특성에 따라 분류될 수 있다. Kohler(1995: 51-64)는 소리를 분류할 수 있는 10가지 파라미터를 기술하였다. 이 10가지 파라미터는 세 가지 개념정의를 통해 얻을 수 있다. 조음장소(Artikulationsort), 조음유형(Artikulationsart) 그리고 발성유형(Art der Phonation)(유성음(stimmhaft) 혹은 무성음(stimmlos)).
+### Artikulationsort(조음위치)
+<center><img width="291" alt="2020-11-29 (5)" src="https://user-images.githubusercontent.com/53667002/102471682-d6ed1380-4098-11eb-8e13-2327e49844a7.png"></center>
+<center><img width="437" alt="2020-12-17 (14)" src="https://user-images.githubusercontent.com/53667002/102471804-fc7a1d00-4098-11eb-82e3-c59ab4d69c4a.png"></center>
+### Phonetische Notation(음성 표기법)
+<center><img width="388" alt="2020-12-17 (15)" src="https://user-images.githubusercontent.com/53667002/102471971-27647100-4099-11eb-8bc0-2d1d3148f35e.png"></center>
+### Artikulationsart(조음방법)
+지금까지 조음 위치를 기준으로 자음의 조음을 살펴보았다. 이제 조음 방법에 따른 자음의 조음을 살펴보겠다. 다음은 6가지 조음 방식으로 구분되는 독일어 자음 시스템이다:  
+<center><img width="444" alt="2020-12-17 (16)" src="https://user-images.githubusercontent.com/53667002/102472154-5bd82d00-4099-11eb-87f2-2e25d49973b5.png"></center>
+### Distinktive Merkmale(변별자질) – Art der Phonation(발음 유형)
+앞서 살펴본 조음 위치와 조음 방법은 발성 유형(유성음-무성음)과 함께 독일어 소리 전체를 서로 구분할 수 있게 한다. 다음은 음성학적으로 자음을 분류한 표이다:  
+<center><img width="470" alt="2020-12-17 (17)" src="https://user-images.githubusercontent.com/53667002/102472317-89bd7180-4099-11eb-966c-630d47d75c9c.png"></center>
+위 표를 통해 자음의 음성학적 변별 자질을 알 수 있다. 예를 들어 [v]의 변별자질은 Frikative, sth., labio-dental이다. 그리고 [b]와 [p]를 구분하는 변별자질은 Stimmhaftigkeit이다. 위 표를 보면 Affrikatien(파찰음)은 균등하게 평가되지 않음을 알 수 있다. 이는 단일 음성(Monophonematische Bewertung(단음)) 혹은 두 가지 음성 (Biphonematische Bewertung(양음))으로 볼 수 있다. 그리고 독일어에서 모음으로 시작되는 단어가 발음되는 Knacklaut(성문파열음)은 [ʔ]로 표현된다.
+
