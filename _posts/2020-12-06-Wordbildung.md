@@ -167,7 +167,7 @@ Kontamination의 경우, 두 단어가 축약되거나(최소한 원래의 단�
 공시적으로 봤을 때 Entlehnug과 Fremdword의 구분은 간단하지 않다. 사실 많은 토착어들은 통시적으로 Entlehung으로 판명된다. 라틴어 murus에서 Mauer가, fenstra에서 Fenster가, crassus에서 krass가, operai에서 opfern이 나온 것이다. 이렇게 „Lehnwort“라는 것에 대해 통시적 고찰이 간과되는 경우가 많은데, 그 이유는 Lehnwort가 더 이상 그 기원을 말할 수 없을 정도로 독일어의 많은 전통적이 속성에 스며들었기 때문이다. 따라서 Fremdword에는 차용된 단어이며 음소론적, 문자소적으로 독일어에 전형적이지 않은 단어를 포함시킨다.
 ### 5\.5 Assimilation(동화)
 차용해 온 것에 대해서 통사적, 형태론적, 음성학적 혹은 정서법적 동화(Assimilation)가 이루어진다. 독일어에서는 \*ich chat 혹은 \*ich habe chattes mit ihm이라고 하지 낳고 동사에 고유한 굴절접미사를 붙인다. 그 외에 자음복제, 과거분사(Pertizip Perfekt)형 실현, 음성적 그리고 정서법적 무성화(Auslautverhaertung)등을 통해 동화된다.
-### 5\.6 Hybride Komposita, Hybride Derivation(혼성 합성어, 혼성 파생어)/
+### 5\.6 Hybride Komposita, Hybride Derivation(혼성 합성어, 혼성 파생어)
 대부분의 차용된 어휘는 독일어에서 생산적이다. 즉 그들은 소위 Hybriden Komposita(Internetanbieter, Computerfachmann, URL-Adress) 혹은 Hybriden Derivation(to log in -> einloggen)에서 발견된다. 몇몇 Fremdwoerter는 frei(자립적)가 아닌 Komposita로만 나타난다(e.g. Biotechnologie의 구성요소인 Bio).
 ### 5\.7 Volksetymologie(민속 어원)
 Volksetymologie는 차용과 밀접한 연관이 있는 현상이다. 예를 들어 Haengematte가 동사적 Basismorphem {haeng}과 명사적 Basismorphem {matte}로부터 형성된 것이라고 생각될 수 있지만, 이 단어는 아이티 원주민이 수면 망을 설명하는데에 사용하던 카리브어 hamaka에서 유래하여 이후 음성학적 이유로 Haengematte라고 불리게 된 것이다. 
