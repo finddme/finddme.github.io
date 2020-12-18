@@ -23,13 +23,13 @@ tag: Linguistik
 어휘적 단어 혹은 어휘소(Lexem)로서 어휘의 추상적단위. 통사론적 단어(syntaktisches Wort) 혹은 단어 형태(Wortform)로서 구체적인 사용 안에 놓인 단위
 
 ### Lexikalisches Wort/Lexem
-a) *Die Tuerme der Burg waren schon von weitem zu sehen.*  
-b) *Auf den Tuermen wehten bunte Fahnen.*  
-c) *Der eine Turm war vierzig Meter hoch.*    
-d) *Der andere Turm war nur etwa dreissig Meter hoch.*    
-e) *Wir sind auf den Turm geklettert.*    
-f) *Auf dem Turm hatten wir eine praechtige Aussicht.*    
-g) *Die Mauern des Turms bestanden aus dicken Quadern.*  
+a) *Die **Tuerme** der Burg waren schon von weitem zu sehen.*  
+b) *Auf den **Tuermen** wehten bunte Fahnen.*  
+c) *Der eine **Turm** war vierzig Meter hoch.*    
+d) *Der andere **Turm** war nur etwa dreissig Meter hoch.*    
+e) *Wir sind auf den **Turm** geklettert.*    
+f) *Auf dem **Turm** hatten wir eine praechtige Aussicht.*    
+g) *Die Mauern des **Turms** bestanden aus dicken Quadern.*  
 
 
 
