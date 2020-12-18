@@ -72,7 +72,7 @@ $E_vrb$는 fragne, vorhaben같은 동사 혹은 es heisst, es gilt, mir scheint�
 
 
 그리고 $E_{ vrb }$와 Verbalkomplex(VK)는 헷갈릴 수 있는데, 간단히 말하자면 분사나 zu를 요하지 않는 부정문를 다 Verbalkomplex(VK: VK는 VP(VerbalPhrase)라고도 쓰인다. 그냥 동사도 하나의 구일 수 있는데, 동사 하나로 이루어진 구라고 V라고 쓰지 않는 것처럼)이고(e.g. *lassen, bleiben, gehen* (*Ich lasse dich arbeiten, Ich bleibe stehen, Ich gehe einkaufen*)), 그리고 zu를 요하는 부정문과 접속문은 $E_ {vrb}$이다. 
-<center><img width="300" alt="2020-12-18 (41)" src="https://user-images.githubusercontent.com/53667002/102563853-9388b880-411d-11eb-8fa9-2e08dd9761ef.png"></center>
+<center><img width="500" alt="2020-12-18 (41)" src="https://user-images.githubusercontent.com/53667002/102563853-9388b880-411d-11eb-8fa9-2e08dd9761ef.png"></center>
   
 ## 3\.Ergaenzung의 수형도적 설명
 수형도에서 통사적 기능들을 잇는 실선은 구조적 배열(Strukturelle Ordnung)을 나타내며, Konnexionsstrichen이라 불린다. 그리고 점선은 구조적, 통사적 기능과 그들의 구체적인, 선형적 실현을 일어주며, Projektionsstrich라고 한다. 
