@@ -110,4 +110,4 @@ Angabe(첨가어)는 문장 내 위치가 비교적 자유롭고, 주로 PP(In d
 아래 수형도는 위 표에 제시된 예문에 대한 수형도이다.
 <center><img width="800" alt="2020-12-18 (46)" src="https://user-images.githubusercontent.com/53667002/102564530-fa5aa180-411e-11eb-8c7c-542eaed9c355.png"></center>
 Angabe까지 첨가된 문장의 수형도는 Ergaenzung만 있을 때보다 복잡하다. 이 경우 주문장에서 시작해서 단계별로 도식화하는 것이 용이하다. 문장 Bevor Sie die Tube mit dem Gammer bearbeiten, sollten Sie sie probeweise oeffnen, indem Sie den Nippel vorsichtig durch die Lasche nach oben ziehen을 도식화 하면 아래와 같다(해당 문장은 전치사가 NP가 아닌 AdvP를 지배한다는 특이점이 있다.):
-<center><img width="800" alt="2020-12-18 (47)" src="https://user-images.githubusercontent.com/53667002/102564800-879df600-411f-11eb-9b84-1acd8114224a.png"></center>
+<center><img width="1000" alt="2020-12-18 (47)" src="https://user-images.githubusercontent.com/53667002/102564800-879df600-411f-11eb-9b84-1acd8114224a.png"></center>
