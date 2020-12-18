@@ -72,7 +72,7 @@ feie grammatische Morphem(자립적 문법 형태소)에 대한 예시로 접속
 형태소가 앞서 소개한 세 가지 형태소 클래스(Freie Morphem, Gebundene Morphem, Flexionsmorphem)에 항상 귀속되는 것은 아니다. Basismorphem과 Gebundene Morphem의 경계는 어휘적 구성요소가 문법화 되는 경향의 과정인 언어변천(Sprachwandel)로 인해 유동적이다. 즉, Basismorphem은 경향에 따라 Gebundene Morphem으로 이행되기도 하는데, 그런 형태소는 조어 연구에서 Affixoid라는 이름 하에 연구된다. 예를 들어 한동안 Flug-zeug의 {zeug}, Maeh-werk의 {werk}, sorgen-frei에서의 {frei}와 같은 형태소가 Affixoid라고 불렸다. 이 문제는 조어론(Wortbildung)에서 자세히 다루어진다.
 ### Affix(접사)
 „Affixoid“라는 용어는 Affix에서 파생되었다. Affix는 형태소의 위치와 관련된 모든 개념의 상위개념이다.
-<center><img width="200" alt="2020-12-18" src="https://user-images.githubusercontent.com/53667002/102544990-fae04180-40f8-11eb-9204-cf5acfd73fa8.png"></center>
+<center><img width="300" alt="2020-12-18" src="https://user-images.githubusercontent.com/53667002/102544990-fae04180-40f8-11eb-9204-cf5acfd73fa8.png"></center>
 ### Praefix(접두사/전철)
 Praefix는 항상 어휘 앞에 오며, 이를 통해 새로운 단어를 만든다(예를 들어 auf-essen에서 {auf}).
 ### Suffix(접미사/후철)
