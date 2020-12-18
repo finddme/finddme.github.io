@@ -88,7 +88,7 @@ Atrributsaetze는 동사구유형의 Attribute의 상이한 실현 형태이다.
 
 ## 3\. Attribute의 수형도적 설명
 Angabe(첨가어)의 수형도적 설명에서 간단히 그려졌던 문장(Die Bedienungsanleitung fuer die Installation der zugehoerigen Software wurde offensichtlich in gorsse Eile verfasst)을 다시 상세히 그리면 아래와 같이 표현된다:
-<center><img width="600" alt="2020-12-18 (53)" src="https://user-images.githubusercontent.com/53667002/102570584-064c6080-412b-11eb-9d69-ae58f6ad0305.png"></center>
+<center><img width="800" alt="2020-12-18 (53)" src="https://user-images.githubusercontent.com/53667002/102570584-064c6080-412b-11eb-9d69-ae58f6ad0305.png"></center>
 
 수형도를 그릴 때 복잡한 문장일수록 공간 부족 현상이 생기는데, 위 표와 같이 첫 번째 단계에서는 복잡한 Satzglieder부분의 (Determinativ)+Phrasenkopf만 표현하고, 해당 Satzglieder는 따로 빼서 분석하면 된다. 
 
@@ -174,13 +174,13 @@ Pertinenzdativ에 오는 것은 일반적으로 사건과 관련된 사람이 �
 
 여기에 나타나는 사건은 주로 인간의 신체 일부에 일어나는 일로 대게 E_prp(전치사 보족어)로 표현되기도 한다. 그리고 Pertinenzdativ의 경우에는 (obligatorisches) Attribut로 간주된다. 그 이유는 동사에 요구되는 것이 아니라 PP에 요구되는 것이기 때문이다. 예를 예를 들어 der ball klatschte an die Latte에서 동사 klatschen은 Dativergaenzung을 요구하지 않는 반면 der Ball klatschen dem Spieler an die Strin는 3격 dem Spieler가 없으면 의미론적으로 불완전하다. 여기에서 3격은 동사가 아닌 PP an die Strin에 의해 요구되는 것이다. 따라서 Pertinenzdativ의 경우에는 Attribte의 하위 범주에 추가되어진다($Attr_{pert}$(새로운 클래스에 추가 뾰로롱 아이템 득 개이 득)).
 
-<center><img width="400" alt="2020-12-18 (65)" src="https://user-images.githubusercontent.com/53667002/102574636-9a6ef580-4134-11eb-91d8-5ede83c5f799.png"></center>
+<center><img width="500" alt="2020-12-18 (65)" src="https://user-images.githubusercontent.com/53667002/102574636-9a6ef580-4134-11eb-91d8-5ede83c5f799.png"></center>
 
 ### 4\.5 Koordination(등위)
 Koordination은 독일어에서 매우 흔하고 다양하게 나타나는 현상으로, 모든 통사적 영역, 즉 Ergaenzung, Angabe 그리고 Attribute에서 모두 가능하다:
 <center><img width="600" alt="2020-12-18 (68)" src="https://user-images.githubusercontent.com/53667002/102574718-d1450b80-4134-11eb-9794-5403fa53867c.png"></center>
 위 예시에 나타난 접속사 이외에도 예를 들어 jedoch, naemlich, beziehungsweise, sondern 등 더 많은 것들이 있다. Koordination에서 주의할 것은 쉼표이다. (1a)의 수형도를 보면 쉼표도 Konjunktion으로 표시된다. 그리고 원칙적으로 Koordination은 und, oder, aber와 같은 접속사와 함께 쓰였을 때 koordiniertes Element들끼리 교환 가능하다((1b), (1c), (1d), (2b))의 경우는 교환 불가). Koordination 수형도를 보면 관계단어가 접속사에 의존하고 있다.
-<center><img width="700" alt="2020-12-18 (69)" src="https://user-images.githubusercontent.com/53667002/102574811-094c4e80-4135-11eb-9d5f-47808a39ee71.png"></center>
+<center><img width="1000" alt="2020-12-18 (69)" src="https://user-images.githubusercontent.com/53667002/102574811-094c4e80-4135-11eb-9d5f-47808a39ee71.png"></center>
 
 ///통사론 반가웠고 당분간은 보지 말자///
 
