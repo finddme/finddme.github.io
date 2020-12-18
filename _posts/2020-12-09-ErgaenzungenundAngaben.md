@@ -13,14 +13,15 @@ tag: Linguistik
 <center><img width="289" alt="2020-12-18 (38)" src="https://user-images.githubusercontent.com/53667002/102562576-b9f92480-411a-11eb-9a5e-b1d94081e744.png"></center>
 
 해당 예시문의 경우 하나의 Ergaenzung과 두 개의 Angabe로 이루어져 있고, Ergaenzung과 Angabe의 내부적으로 Attribute가 추가된 문장인데 위 도식을 통해 이러한 의존관계(Dependenzverhaeltniss)를 파악할 수 있다.
+
 ## 2\. Ergaenzungsklassen(보충어 범주)
 Engel(2004)는 11가지로 분류된 Ergaenzungsklassen을 제시하였다. Engel은 Ergaenzungsklassen의 구분을 위해 Anaphorisierung(e.g. 대명사로 대체)을 시도하였다. 예를 들어 Subjektergaenzung(E_sub)는 1격에서 대명사로 대체하고, Praepositivergaenzung(E_prp)는 대명사와 함께 있는 전치사나 Praeposotionaladverb라 불리는 것을 통해 대체하는 것이다:
 <center><img width="448" alt="2020-12-18 (39)" src="https://user-images.githubusercontent.com/53667002/102562670-edd44a00-411a-11eb-8f96-5df21b136479.png"></center>
 하지만 이러한 Anaphorisierung은 유용하긴 하지만 Genitivergaenzung과 같이 대명사로의 대체가 어려운 경우에 대해 설명이 불가능하기 때문에 아래 표에서는 Engel이 사용한 Anapher를 추가하지 않았다.
-<center><img width="366" alt="2020-12-18 (40)" src="https://user-images.githubusercontent.com/53667002/102562733-0fcdcc80-411b-11eb-9f09-04fd5c8a5951.png"><\center>
+<center><img width="366" alt="2020-12-18 (40)" src="https://user-images.githubusercontent.com/53667002/102562733-0fcdcc80-411b-11eb-9f09-04fd5c8a5951.png"></center>
   
 ## 2\.1 Subjek-(1격-), Akkusativ-(4격-), Genitiv-(2격-), Dativergaenzung(3격보충어)
-이 4가지 Ergaenzungsklassen은 NP를 통해 각 격으로 실현된다. 여기에서 Dativergaenzung을 제외한 나머지는 NP가 접속문(e.g. $E_sub$: ***Dass er zugestimmt hat**, war mir nicht bewusst*; $E_akk$: *Ich beantrage, **dass er ausgeliefert wird***)혹은 부정사구문(Infinitivkonstruktion)(e.g. $E_sub$: ***Dreimal taeglich zu essen** ist mir sehr wichtig*; $E_gen$: *Man beschuldigte ihn, **zu spaet gekommen zu sein***)으로 대체될 수 있다. 
+이 4가지 Ergaenzungsklassen은 NP를 통해 각 격으로 실현된다. 여기에서 Dativergaenzung을 제외한 나머지는 NP가 접속문(e.g. ${E}_{sub}$: ***Dass er zugestimmt hat*** *, war mir nicht bewusst*; ${E}_{akk}$: *Ich beantrage, **dass er ausgeliefert wird***)혹은 부정사구문(Infinitivkonstruktion)(e.g. ${E}_{sub}$: ***Dreimal taeglich zu essen*** *ist mir sehr wichtig*; ${E}_{gen}$: *Man beschuldigte ihn,* ***zu spaet gekommen zu sein***)으로 대체될 수 있다. 
 
 
 
@@ -71,24 +72,24 @@ $E_vrb$는 fragne, vorhaben같은 동사 혹은 es heisst, es gilt, mir scheint�
 
 
 그리고 $E_vrb$와 Verbalkomplex(VK)는 헷갈릴 수 있는데, 간단히 말하자면 분사나 zu를 요하지 않는 부정문를 다 Verbalkomplex(VK: VK는 VP(VerbalPhrase)라고도 쓰인다. 그냥 동사도 하나의 구일 수 있는데, 동사 하나로 이루어진 구라고 V라고 쓰지 않는 것처럼)이고(e.g. *lassen, bleiben, gehen* (*Ich lasse dich arbeiten, Ich bleibe stehen, Ich gehe einkaufen*)), 그리고 zu를 요하는 부정문과 접속문은 $E_vrb$이다. 
-<center><img width="270" alt="2020-12-18 (41)" src="https://user-images.githubusercontent.com/53667002/102563853-9388b880-411d-11eb-8fa9-2e08dd9761ef.png"><\center>
+<center><img width="270" alt="2020-12-18 (41)" src="https://user-images.githubusercontent.com/53667002/102563853-9388b880-411d-11eb-8fa9-2e08dd9761ef.png"></center>
   
 ## 3\.Ergaenzung의 수형도적 설명
 수형도에서 통사적 기능들을 잇는 실선은 구조적 배열(Strukturelle Ordnung)을 나타내며, Konnexionsstrichen이라 불린다. 그리고 점선은 구조적, 통사적 기능과 그들의 구체적인, 선형적 실현을 일어주며, Projektionsstrich라고 한다. 
-<center><img width="284" alt="2020-12-18 (42)" src="https://user-images.githubusercontent.com/53667002/102563978-d8acea80-411d-11eb-9c35-f6675c50255c.png"><\center>
+<center><img width="284" alt="2020-12-18 (42)" src="https://user-images.githubusercontent.com/53667002/102563978-d8acea80-411d-11eb-9c35-f6675c50255c.png"></center>
 위 수형도에서 관사가 Det(Determinativ(지시대명사))로 표기되어 있는데, 이는 해당 자리에 관사처럼 사용되는 대명사도 올 수 있기 때문이다. 그리고 VK는 Verbalkomplex의 줄임말로, Verbalkomplex는 분사나 동사
   
   
 
 조동사나 화법조동사 혹은 어떤 다른 결합으로 한 문장에 둘 이상의 동사가 포함된 경우, VK의 개별 구성요소들은 Verbalkomplex로 통합되며, 이들은 Projektionsstrich(점선)으로 연결된다:
-<center><img width="257" alt="2020-12-18 (43)" src="https://user-images.githubusercontent.com/53667002/102564054-fe39f400-411d-11eb-9296-1479bc8a79f1.png"><\center>
+<center><img width="257" alt="2020-12-18 (43)" src="https://user-images.githubusercontent.com/53667002/102564054-fe39f400-411d-11eb-9296-1479bc8a79f1.png"></center>
 
 위 수형도에서 VK(당연히 VP로 이루어진)의 Kopf는 정동사(finite Verb) haettest이다. 동사 haettest가 직접적으로 지배하는 것이 무엇인지 알기 위해서는 그냥 간단하게 haettest를 빼버리고 어떤 동사가 VK 내부적으로 정동사가 되는지 확인하면 된다. haettest를 빼면 Du solltest mir das Buch schenkten이 되기 때문에 sollen이 정동사가 된다. 여기에서 또 sollen을 제거하면 schenken이 정동사가 된다. 따라서 위 수형도에서 통사적 기능(syntaktische Funktion) „VK“는 Verbalkomplex의 모든 구성요소에 할당된다(그래서 haettest, schenken, sollen에 점선으로 VK가 다 연결된 거다).
 
 
 
 하지만 이렇게 VK를 나눠서 보면 Ergaenzung이 VK의 어떤 구성요소에 의존하는지 결정해야 하는데, 이것 또한 쉽지 않다. 예를 들어 위 예시 문장에서 의미상으로는 동사 schenken은 $E_sub$, $E_dat$ 그리고 E_akk를 지배하고 통사적으로는 E_sub는 조동사 haettest에 의존하는 것인데, 너무 어려우니까 그냥 VK를 그냥 하나의 통으로 보고 Ergaenzung과 Angabe가 VK에 의존하는 것으로 본다.
-<center><img width="562" alt="2020-12-18 (44)" src="https://user-images.githubusercontent.com/53667002/102564179-3b9e8180-411e-11eb-8527-6d6ce0edde48.png"><\center>
+<center><img width="562" alt="2020-12-18 (44)" src="https://user-images.githubusercontent.com/53667002/102564179-3b9e8180-411e-11eb-8527-6d6ce0edde48.png"></center>
   
 (1)번 수형도에서 „NP+격“은 기능적이지 않고 형식적인 표현일 뿐이기 때문에 PP에서만 중요하고 다른 Phrasentypen에서는 생략될 수 있기 때문에 괄호로 표시한다. (3)번 수형도를 보면 Ergaenzungssatz로 실현된 것을 볼 수 있는데, 여기에서 접속사(Konjunktion)와 Korrelat가 통합되어 있다. 이 경우 Korrelat는 접속사가 존재하면 접속사를 지배한다. 접속문은 자체적으로 고유한 VK가 있으며, 주절과 같은 과정을 통해 분석된다. (4)번 수형도의 경우 부정문이 나타나는데, 이 때 $E_sub$는 주절에만 실현된다. 그리고 분리동사의 경우에는 (4)번 수형도에 나온 것 처럼 Projektionsstrich로 표현된다.
 
@@ -102,11 +103,11 @@ Engel은 Angabeklassen을 situativ(상황적), existimatorische(평가되는), m
 : 사건에 대한 화자의 입장을 표현한다. 
 ## 4\.4 Negativ Angabe(부정 첨가어)
 : 상황을 반대로 바꾼다. 즉 사건이나 상대에 대한 부정을 나타낸다.
-<center><img width="350" alt="2020-12-18 (45)" src="https://user-images.githubusercontent.com/53667002/102564409-b9fb2380-411e-11eb-9e6c-6c29e0c5e556.png"><\center>
+<center><img width="350" alt="2020-12-18 (45)" src="https://user-images.githubusercontent.com/53667002/102564409-b9fb2380-411e-11eb-9e6c-6c29e0c5e556.png"></center>
 Angabe(첨가어)는 문장 내 위치가 비교적 자유롭고, 주로 PP(In drei Tagen ist sie wieder gesund), AdvPs(Hier koennen Sie nicht parken), Angabesaetze(Ich bleibe zuhause, weil ich krank bin), Aps(Verena hat sorgfaeltig gearbeitet)로 실현된다. 예외적으로 Konsekutivangabe(결과적 첨가어)는 sodass로 연결된 문장으로만 실현된다. 그리고 $A_abt$와 $A_neg$은 불변화사(Partikel)로 실현되기 때문에 전장에 위치할 수 없다. 
 
 ## 5\.Angabe의 수형도적 설명
 아래 수형도는 위 표에 제시된 예문에 대한 수형도이다.
-<center><img width="559" alt="2020-12-18 (46)" src="https://user-images.githubusercontent.com/53667002/102564530-fa5aa180-411e-11eb-8c7c-542eaed9c355.png"><\center>
+<center><img width="559" alt="2020-12-18 (46)" src="https://user-images.githubusercontent.com/53667002/102564530-fa5aa180-411e-11eb-8c7c-542eaed9c355.png"></center>
 Angabe까지 첨가된 문장의 수형도는 Ergaenzung만 있을 때보다 복잡하다. 이 경우 주문장에서 시작해서 단계별로 도식화하는 것이 용이하다. 문장 Bevor Sie die Tube mit dem Gammer bearbeiten, sollten Sie sie probeweise oeffnen, indem Sie den Nippel vorsichtig durch die Lasche nach oben ziehen을 도식화 하면 아래와 같다(해당 문장은 전치사가 NP가 아닌 AdvP를 지배한다는 특이점이 있다.):
-<center><img width="250" alt="2020-12-18 (47)" src="https://user-images.githubusercontent.com/53667002/102564800-879df600-411f-11eb-9b84-1acd8114224a.png"><\center>
+<center><img width="250" alt="2020-12-18 (47)" src="https://user-images.githubusercontent.com/53667002/102564800-879df600-411f-11eb-9b84-1acd8114224a.png"></center>
