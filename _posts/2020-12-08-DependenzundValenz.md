@@ -79,7 +79,7 @@ Angabe는 문장의 정동사와 관련된 Satzglieder로, 동사와 동사의 E
 
 ### Junktion(접합)
 Junktion은 해당 동사가 요하는 Ergaenzung보다 많은 Ergaenzung이 올 때 수반된다. Ergaenzung을 Junktiv를 통해 하나로 결합시키는 것으로, 연접원칙(Prinzip der Junktion)에 따라 연결사에 의해 연결된 것은 하나의 Ergaenzung으로 취급한다. 간단히 말하자면, „A und B“로 만드는 것이다. 이렇게 이어진 것은 수형도에서 아래와 같이 수평으로 표현한다.
-<center><img width="600" alt="2020-12-18 (36)" src="https://user-images.githubusercontent.com/53667002/102559711-dd6ca100-4113-11eb-9e8c-b1c85e73266a.png"></center>
+<center><img width="500" alt="2020-12-18 (36)" src="https://user-images.githubusercontent.com/53667002/102559711-dd6ca100-4113-11eb-9e8c-b1c85e73266a.png"></center>
 
 ## 2\.Tesniere 접근 방식의 문제
 지금까지 Tesniere의 접근방식을 알아보았다. 하지만 그의 접근법에는 몇 가지 문제점들이 있는데, 이에 대해 알아보도록 하겠다.
@@ -87,7 +87,7 @@ Junktion은 해당 동사가 요하는 Ergaenzung보다 많은 Ergaenzung이 올
 생략법은 일상 생활에서 흔히 사용된다. 예를 들어 마트에서 찾는 물건의 위치를 종업원에게 물었을 때, „Im zweiten Gang ganz am Ende“라는 완전하지 않은 문장(동사없음)이 대답으로 돌아온다. 하지만 이렇게 동사를 포함하지 않는 문장의 경우 동사가 어떻게 문장의 중심이 될 수 있는지에 대한 의문이 제기될 수 있다. Tesniere는 이런 문제에 대해 문장의 중심이 꼭 동사일 필요는 없고, 동사가 있을 때만 동사가 문장의 중심이 되면 된다고 반박했다.
 ## 2\.2 Synchronisationskomponente(동시구성요소)
 Tesniere는 단어의 의미론적 기본기능(Semantische Grundleistung)과 형식적 범주(Formale Klassenzugehoerigkeit) 그리고 결합가 기능(Valenzfunktion)이 모두 동기화된다고 했다. 즉 이 세 층위가 분리될 수 없다고 하였다.
-<center><img width="800" alt="2020-12-18 (37)" src="https://user-images.githubusercontent.com/53667002/102559816-1ad12e80-4114-11eb-9baa-19f62a70728c.png"></center>
+<center><img width="600" alt="2020-12-18 (37)" src="https://user-images.githubusercontent.com/53667002/102559816-1ad12e80-4114-11eb-9baa-19f62a70728c.png"></center>
 
 예를 들어 위 표와 같이 부사는 상황을 나타내고, 결합가적 기능으로는 첨가어 기능을 한다. 하지만 Er brachte die Angelegenheit zum Abschluss(그는 문제를 종결시켰다)와 같이 기능동사가 오는 경우에는 문장의 핵심 의미는 명사가 나타내는데, 이런 경우에는 동사가 사건을 나타내지 않기 때문에 문제가 된다. 그리고 Tesniere에 따르면 명사는 행위자를 나타내고 결합가적 기능은 보충어인데, Dass du so spaet noch kommst, ich haette nicht mehr erwartet. (니가 그렇게 늦게 올 줄 몰랐다)와 같이 접속문(Konjunktionalsatz, e.g. dass절)의 경우에는 접속문이 목적어로서 행위자 역할을 하기도 하기 때문에 문제가 된다. Tesniere는 이러한 문제에 대해 접속문 Dass du so spaet noch kommst가 명사의 문법적 범주로 옮겨진다고 했는데 별로 설득력 있는 해결책은 아닌 것 같다.
 
