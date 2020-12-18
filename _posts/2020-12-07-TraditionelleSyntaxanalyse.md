@@ -143,6 +143,6 @@ Hypotaxe는 주문장과 부문장이 결합하여 한 문장이 된 것으로, 
 
 주문장은 문장 성분들을 통해 보충되어진다. 예를 들어 Was ich nicht verstehen kann, ist, dass der Hauptsatz aus einem Wort besteht의 주문장은 술어 ist로만 이루어져 있다. 왜냐하면 주어와 술어가 부문장을 통해 보충되어지기 때문이다. 이렇게 축소된 주문장은 더 이상 문장이라고 말할 수 없기 때문에 주문장의 잔재(Hauptsatzrest/HSR)이라고 부른다.
 
-<center><img width="500" alt="2020-12-18 (29)" src="https://user-images.githubusercontent.com/53667002/102553482-40efd200-4106-11eb-8b0b-1cb094749a69.png"></center>
+<center><img width="600" alt="2020-12-18 (29)" src="https://user-images.githubusercontent.com/53667002/102553482-40efd200-4106-11eb-8b0b-1cb094749a69.png"></center>
 지금까지 설명한 복잡한 문장에 대한 분석 스키마를 도식화하면 다음과 같다:
 <center><img width="800" alt="2020-12-18 (30)" src="https://user-images.githubusercontent.com/53667002/102553575-68df3580-4106-11eb-98b0-ea0d85836812.png"></center>
