@@ -16,9 +16,9 @@ tag: Linguistik
 
 ## 2\. Ergaenzungsklassen(보충어 범주)
 Engel(2004)는 11가지로 분류된 Ergaenzungsklassen을 제시하였다. Engel은 Ergaenzungsklassen의 구분을 위해 Anaphorisierung(e.g. 대명사로 대체)을 시도하였다. 예를 들어 Subjektergaenzung(E_sub)는 1격에서 대명사로 대체하고, Praepositivergaenzung($E_{prp}$)는 대명사와 함께 있는 전치사나 Praeposotionaladverb라 불리는 것을 통해 대체하는 것이다:
-<center><img width="800" alt="2020-12-18 (39)" src="https://user-images.githubusercontent.com/53667002/102562670-edd44a00-411a-11eb-8f96-5df21b136479.png"></center>
+<center><img width="600" alt="2020-12-18 (39)" src="https://user-images.githubusercontent.com/53667002/102562670-edd44a00-411a-11eb-8f96-5df21b136479.png"></center>
 하지만 이러한 Anaphorisierung은 유용하긴 하지만 Genitivergaenzung과 같이 대명사로의 대체가 어려운 경우에 대해 설명이 불가능하기 때문에 아래 표에서는 Engel이 사용한 Anapher를 추가하지 않았다.
-<center><img width="800" alt="2020-12-18 (40)" src="https://user-images.githubusercontent.com/53667002/102562733-0fcdcc80-411b-11eb-9f09-04fd5c8a5951.png"></center>
+<center><img width="700" alt="2020-12-18 (40)" src="https://user-images.githubusercontent.com/53667002/102562733-0fcdcc80-411b-11eb-9f09-04fd5c8a5951.png"></center>
   
 ## 2\.1 Subjek-(1격-), Akkusativ-(4격-), Genitiv-(2격-), Dativergaenzung(3격보충어)
 이 4가지 Ergaenzungsklassen은 NP를 통해 각 격으로 실현된다. 여기에서 Dativergaenzung을 제외한 나머지는 NP가 접속문(e.g. $E_{sub}$: ***Dass er zugestimmt hat**, war mir nicht bewusst*; $E_{akk}$: *Ich beantrage, **dass er ausgeliefert wird***)혹은 부정사구문(Infinitivkonstruktion)(e.g. $E_{sub}$: ***Dreimal taeglich zu essen** ist mir sehr wichtig*; $E_{gen}$: *Man beschuldigte ihn, **zu spaet gekommen zu sein***)으로 대체될 수 있다. 
@@ -89,7 +89,7 @@ $E_vrb$는 fragne, vorhaben같은 동사 혹은 es heisst, es gilt, mir scheint�
 
 
 하지만 이렇게 VK를 나눠서 보면 Ergaenzung이 VK의 어떤 구성요소에 의존하는지 결정해야 하는데, 이것 또한 쉽지 않다. 예를 들어 위 예시 문장에서 의미상으로는 동사 schenken은 $E_{ sub }$, $E_{ dat }$ 그리고 $E_{ akk }$를 지배하고 통사적으로는 $E_{ sub }$는 조동사 haettest에 의존하는 것인데, 너무 어려우니까 그냥 VK를 그냥 하나의 통으로 보고 Ergaenzung과 Angabe가 VK에 의존하는 것으로 본다.
-<center><img width="800" alt="2020-12-18 (44)" src="https://user-images.githubusercontent.com/53667002/102564179-3b9e8180-411e-11eb-8527-6d6ce0edde48.png"></center>
+<center><img width="1000" alt="2020-12-18 (44)" src="https://user-images.githubusercontent.com/53667002/102564179-3b9e8180-411e-11eb-8527-6d6ce0edde48.png"></center>
   
 (1)번 수형도에서 „NP+격“은 기능적이지 않고 형식적인 표현일 뿐이기 때문에 PP에서만 중요하고 다른 Phrasentypen에서는 생략될 수 있기 때문에 괄호로 표시한다. (3)번 수형도를 보면 Ergaenzungssatz로 실현된 것을 볼 수 있는데, 여기에서 접속사(Konjunktion)와 Korrelat가 통합되어 있다. 이 경우 Korrelat는 접속사가 존재하면 접속사를 지배한다. 접속문은 자체적으로 고유한 VK가 있으며, 주절과 같은 과정을 통해 분석된다. (4)번 수형도의 경우 부정문이 나타나는데, 이 때 $E_{sub}$는 주절에만 실현된다. 그리고 분리동사의 경우에는 (4)번 수형도에 나온 것 처럼 Projektionsstrich로 표현된다.
 
@@ -103,7 +103,7 @@ Engel은 Angabeklassen을 situativ(상황적), existimatorische(평가되는), m
 : 사건에 대한 화자의 입장을 표현한다. 
 ## 4\.4 Negativ Angabe(부정 첨가어)
 : 상황을 반대로 바꾼다. 즉 사건이나 상대에 대한 부정을 나타낸다.
-<center><img width="800" alt="2020-12-18 (45)" src="https://user-images.githubusercontent.com/53667002/102564409-b9fb2380-411e-11eb-9e6c-6c29e0c5e556.png"></center>
+<center><img width="700" alt="2020-12-18 (45)" src="https://user-images.githubusercontent.com/53667002/102564409-b9fb2380-411e-11eb-9e6c-6c29e0c5e556.png"></center>
 Angabe(첨가어)는 문장 내 위치가 비교적 자유롭고, 주로 PP(In drei Tagen ist sie wieder gesund), AdvPs(Hier koennen Sie nicht parken), Angabesaetze(Ich bleibe zuhause, weil ich krank bin), Aps(Verena hat sorgfaeltig gearbeitet)로 실현된다. 예외적으로 Konsekutivangabe(결과적 첨가어)는 sodass로 연결된 문장으로만 실현된다. 그리고 $A_{abt}$와 $A_{neg}$은 불변화사(Partikel)로 실현되기 때문에 전장에 위치할 수 없다. 
 
 ## 5\.Angabe의 수형도적 설명
