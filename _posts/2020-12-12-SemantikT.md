@@ -36,12 +36,12 @@ Wortfeld는 의미가 유사한 어휘들의 뭉치이다. 예를 들어 어휘 
 
 
 
-    1\) Ganzheitlichkeit(완전성): 전체 어휘는 어휘장 안에 분류될 수 있다. 즉, 다 Begriffsverwand가 있다. 다 짝이 있으며 혼자인 것은 없다.  
-    2\) Lueckenlosigkeit(빈공간 없음): 한 어휘장에 속한 어휘들은 그 의미 범주를 완전히 포괄한다.
-    3\) Bedeutungsueberschneidung(의미중복): 단어장 어휘의 의미는 공통적인 교집합이 있다.  
-    4\) Wechselseitige Bedeutungsbestimmung(상호의미): 의미는 가치이다. 개별적 가치가 다 다르다. 상호 개념에 있어서 그 개념이 확실해진다. 즉 단어장 어휘의 의미는 서로를 결정한다.  
-    5\) Bedeutungsbeziegung(의미관계): 하나의 의미장 안의 어휘는 서로 명확하게 정의된 의미관계를 갖는다.   
-    6\) Hierarchisierbarkeit(계층구조): 단어장의 어휘는 계층적으로 표현될 수 있다. 즉 상위/하위 개념이 존재한다. 그래서 중심에서 멀어질수록 가치나 감정이 포함된 것이다.  
+   1\) Ganzheitlichkeit(완전성): 전체 어휘는 어휘장 안에 분류될 수 있다. 즉, 다 Begriffsverwand가 있다. 다 짝이 있으며 혼자인 것은 없다.  
+   2\) Lueckenlosigkeit(빈공간 없음): 한 어휘장에 속한 어휘들은 그 의미 범주를 완전히 포괄한다.
+   3\) Bedeutungsueberschneidung(의미중복): 단어장 어휘의 의미는 공통적인 교집합이 있다.  
+   4\) Wechselseitige Bedeutungsbestimmung(상호의미): 의미는 가치이다. 개별적 가치가 다 다르다. 상호 개념에 있어서 그 개념이 확실해진다. 즉 단어장 어휘의 의미는 서로를 결정한다.  
+   5\) Bedeutungsbeziegung(의미관계): 하나의 의미장 안의 어휘는 서로 명확하게 정의된 의미관계를 갖는다.   
+   6\) Hierarchisierbarkeit(계층구조): 단어장의 어휘는 계층적으로 표현될 수 있다. 즉 상위/하위 개념이 존재한다. 그래서 중심에서 멀어질수록 가치나 감정이 포함된 것이다.  
 
 <center><img width="181" alt="2020-12-18 (73)" src="https://user-images.githubusercontent.com/53667002/102578479-9bf0eb80-413d-11eb-9dd3-11b744ed2af8.png"></center>
 
