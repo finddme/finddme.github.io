@@ -35,8 +35,8 @@ Artikulatorische Phonetik(조음적 음성학)은 음성 생성의 생체적 방
 ## 2\.2 Artikulation der Konsonanten(자음의 조음)
 자음은 조음특성에 따라 분류될 수 있다. Kohler(1995: 51-64)는 소리를 분류할 수 있는 10가지 파라미터를 기술하였다. 이 10가지 파라미터는 세 가지 개념정의를 통해 얻을 수 있다. 조음장소(Artikulationsort), 조음유형(Artikulationsart) 그리고 발성유형(Art der Phonation)(유성음(stimmhaft) 혹은 무성음(stimmlos)).
 ### Artikulationsort(조음위치)
-<center><img width="500" alt="2020-11-29 (5)" src="https://user-images.githubusercontent.com/53667002/102471682-d6ed1380-4098-11eb-8e13-2327e49844a7.png"></center>
-<center><img width="400" alt="2020-12-17 (14)" src="https://user-images.githubusercontent.com/53667002/102471804-fc7a1d00-4098-11eb-82e3-c59ab4d69c4a.png"></center>
+<center><img width="400" alt="2020-11-29 (5)" src="https://user-images.githubusercontent.com/53667002/102471682-d6ed1380-4098-11eb-8e13-2327e49844a7.png"></center>
+<center><img width="600" alt="2020-12-17 (14)" src="https://user-images.githubusercontent.com/53667002/102471804-fc7a1d00-4098-11eb-82e3-c59ab4d69c4a.png"></center>
 ### Phonetische Notation(음성 표기법)
 <center><img width="800" alt="2020-12-17 (15)" src="https://user-images.githubusercontent.com/53667002/102471971-27647100-4099-11eb-8bc0-2d1d3148f35e.png"></center>
 ### Artikulationsart(조음방법)
@@ -150,5 +150,5 @@ Allophone(변이음)은 음소의 실현 변이형이다. 따라서 음소 시�
 2\) Bedeckte Silbe: 자음으로 시작하는 것 (e.g. Bei)  
 3\) Offen Silbe: 모음으로 끝나는 것 (e.g. So)  
 4\) Geschlossen Silbe: 자음으로 끝나는 것 (e.g. ein)  
-<center><img width="500" alt="2020-12-17 (25)" src="https://user-images.githubusercontent.com/53667002/102480751-140ad300-40a4-11eb-9ce5-fe55c48e4472.png"></center>
+<center><img width="400" alt="2020-12-17 (25)" src="https://user-images.githubusercontent.com/53667002/102480751-140ad300-40a4-11eb-9ce5-fe55c48e4472.png"></center>
 
