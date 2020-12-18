@@ -28,7 +28,7 @@ Attribute는 형용사구(*das **schoene** Haus*), 명사구(*das Haus **meines 
 
 ### Partikeln(불변화사)-Attribute
 Partikeln의 지위를 결정하는 것은 간단하지 않다. 이는 문장의 VK와 관련될 수 있고, 따라서 Anabe로서 폐와 관련될 뿐만 아니라 다른 Satzglieder(특히 형용사와 부사)와도 관련이 있다. Engel(2004)는 Attribute를 동사적 Phrasenkopf와 관련 없는 Sattelliten아라고 정의했고, Eisenberg(2004)는 의존문법에서 Angabe에 해당하는 부사구로 봐야한다고 했다. 하지만 Eisenberg의 의견을 따르게 되면 시스템적으로 혼란이 있기 때문에 Engel의 말 대로 Partikel을 Attribut로 보는게 더 낫다. 그리고 Engel은 형용사와 부사의 Satelliten을 Attribute로 분류하였는데 이는 문장이나 구의 분석을 용이하게 한다:
-<center><img width="500" alt="2020-12-18 (49)" src="https://user-images.githubusercontent.com/53667002/102569826-88d42080-4129-11eb-92de-d288e66a43f6.png"></center>
+<center><img width="700" alt="2020-12-18 (49)" src="https://user-images.githubusercontent.com/53667002/102569826-88d42080-4129-11eb-92de-d288e66a43f6.png"></center>
 그리고 *die heiss gekochte Suppe* 혹은 *aussen gestrichene Fassade*와 같은 구에서 형용사 *heiss*와 부사 *aussen*은 문제없이 Attribute zweiter Ordnung으로 Adjektivattribut *gekocht* 혹은 *gestrichene*에 귀속될 수 있다.
 
 ## 2\. Attributsklassen
