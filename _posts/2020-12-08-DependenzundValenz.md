@@ -10,7 +10,7 @@ tag: Linguistik
 의존문법은 주어에 Sonderstellung을 두는 전통문법과는 달리 모든 문장 성분들이 동사에 의존한다고 가정하는 문법이다. Dependenzgrammatik과 Valenzgrammatik은 결국 나중에 Dependenzgrammatik 혹은 Dependenzsyntax라고 불리게된다.
 ### Valenz
 Valenz라는 개념은 화학에서 온 개념으로, 일반적으로 무언가를 결합하는 능력을 말한다. 다음 그림을 보면 이해가 쉬울것이다:
-<center><img width="300" alt="2020-12-18 (31)" src="https://user-images.githubusercontent.com/53667002/102559199-9e8a1b80-4112-11eb-9dd4-286b81c575cf.png"></center>
+<center><img width="150" alt="2020-12-18 (31)" src="https://user-images.githubusercontent.com/53667002/102559199-9e8a1b80-4112-11eb-9dd4-286b81c575cf.png"></center>
 
 위 그림에서 산소원자는 2가이고 수소원자는 1가이다. 이러한 결합가(Wertigkeit)로 산소와 수소가 결합하여 물이 되는 것이다. Lucien Tesniere(1893-1954)는 이 개념을 언어학에 끌어왔고, 다음과 같은 예를 들며 하나의 문장에서 개별 단어들은 추상화를 통해 추출될 수 있음을 언급했다:
 
@@ -68,7 +68,7 @@ Angabe는 문장의 정동사와 관련된 Satzglieder로, 동사와 동사의 E
 
 ##### \- 0가(null-wertig): 
 가주어 es가 오는 경우(여기에서 es는 지배관계 없음. 즉, es에 대해서는 Regens나 Dependens가 없음. 단 첨가어(Angaeb)는 추가될 수 있음)(날씨표현에서 많이 발견된다(e.g. schneien, regnen). 이러한 표현은 행위가 아니기 때문에 주어가 필요하지 않다. 하지만 주어를 비워 둘 수 없으니 가주어 es를 Platzhater로 넣는 것이다.
-<center><img width="300" alt="2020-12-18 (35)" src="https://user-images.githubusercontent.com/53667002/102559637-a8604e80-4113-11eb-9ad7-bff6ed04b8de.png"></center>
+<center><img width="150" alt="2020-12-18 (35)" src="https://user-images.githubusercontent.com/53667002/102559637-a8604e80-4113-11eb-9ad7-bff6ed04b8de.png"></center>
 ##### \- 1가(einwertig): 주어만 요구하는 동사
 ##### \- 2가(zweiwertig): 주어, 목적어를 요구하는 동사(타동사)
 ##### \-3가(dreiwertig): 주어, 직접목적어, 간접목적어를 요구하는 동사(타동사)
