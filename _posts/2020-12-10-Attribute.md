@@ -84,7 +84,7 @@ Apposition은 관계단어(Bezugswort)와 밀접한 관계를 맺고 있어 거�
 <center><img width="269" alt="2020-12-18 (52)" src="https://user-images.githubusercontent.com/53667002/102570293-62fb4b80-412a-11eb-923f-3e74550317a7.png"></center>
 
 ### Atrributsaetze
-Atrributsaetze는 동사구유형의 Attribute의 상이한 실현 형태이다. 대부분 문장으로 실현된 Attribute는 하나의 Attribute가 될 수 있다(e.g. $Attr_{gen}$: *die Idee, **nach Muenchen zu fahren*** -> *die Idee einer **Fahrt nach Muenchen*** ; Attr_{prp}: *der Wunsch, **zu arbeiten*** -> *der Wunsch **nach Arbeit*** ; Attr_{adj}: *ein Vorschlag, **der mich ueberzeugt*** -> *ein **ueberzeugender** Vorschlag*).
+Atrributsaetze는 동사구유형의 Attribute의 상이한 실현 형태이다. 대부분 문장으로 실현된 Attribute는 하나의 Attribute가 될 수 있다(e.g. $Attr_{gen}$: *die Idee, **nach Muenchen zu fahren*** -> *die Idee einer **Fahrt nach Muenchen*** ; $Attr_{prp}$: *der Wunsch, **zu arbeiten*** -> *der Wunsch **nach Arbeit*** ; $Attr_{adj}$: *ein Vorschlag, **der mich ueberzeugt*** -> *ein **ueberzeugender** Vorschlag*).
 
 ## 3\. Attribute의 수형도적 설명
 Angabe(첨가어)의 수형도적 설명에서 간단히 그려졌던 문장(Die Bedienungsanleitung fuer die Installation der zugehoerigen Software wurde offensichtlich in gorsse Eile verfasst)을 다시 상세히 그리면 아래와 같이 표현된다:
@@ -144,3 +144,15 @@ es의 용법 중 가장 간단한 경우는 Pro-Form으로, 위 예시 중 1번�
 ### 4\.3-\(4\) Reflexivpronmen
 4a-b에서의 es는 echter Reflexivitaet에서 VK의 일부인 재귀대명사와 유사한 기능을 갖는다. 따라서 아래 수형도와 같이 표현된다:
 <center><img width="145" alt="2020-12-18 (62)" src="https://user-images.githubusercontent.com/53667002/102572064-73152a00-412e-11eb-833f-0d9cb6d8ff65.png"></center>
+
+### 4\.4 Freie Dativ
+3격은 다양한 기능을 수행하며 통사적 분석을 어렵게 만든다. 지금까지 3격과 관련된 것으로는 Dativergaenzung($E_{dat}$, e.g. er schenkt mir ein Auto)과 격지배전치사 PP로서의 3격($NP_{dat}$, e.g. Mit dem Hammer)만 다루었다. 하지만 3격은 아래와 같이 다양하게 기능으로 사용된다:
+<center><img width="365" alt="2020-12-18 (63)" src="https://user-images.githubusercontent.com/53667002/102572265-efa80880-412e-11eb-8300-a1fb5def6e5b.png"></center>
+
+### 4\.4-\(1\) Dativus ethicus(관심의 3격)
+Dativus ethicus는 두 가지 중요한 속성이 있다. 첫 번째, 주로 일상 언어적이고 구어적인 의사소통에서 많이 나타난다. 두 번째, 이것은 Abtoenungsangabe(뉘앙스angabe)와 유사하게 의사소통적 기능을 하며, 이름에서도 알 수 있듯이 특정 관심의 표현으로 나타난다. 
+
+
+
+Dativus ethicus의 경우에는 Abtoenungsangabe와 유사하여 $A_{abt}$으로 표기되는데, 이를 제외한 freien Dativ들의 경우에는 그들의 통사적 기능의 범주화가 여전히 제대로 되지 않아 논쟁의 여지가 있다.
+<center><img width="196" alt="2020-12-18 (64)" src="https://user-images.githubusercontent.com/53667002/102572378-4d3c5500-412f-11eb-87f7-44ece1dac9e1.png"></center>
