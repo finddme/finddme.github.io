@@ -15,7 +15,7 @@ tag: Linguistik
 해당 예시문의 경우 하나의 Ergaenzung과 두 개의 Angabe로 이루어져 있고, Ergaenzung과 Angabe의 내부적으로 Attribute가 추가된 문장인데 위 도식을 통해 이러한 의존관계(Dependenzverhaeltniss)를 파악할 수 있다.
 
 ## 2\. Ergaenzungsklassen(보충어 범주)
-Engel(2004)는 11가지로 분류된 Ergaenzungsklassen을 제시하였다. Engel은 Ergaenzungsklassen의 구분을 위해 Anaphorisierung(e.g. 대명사로 대체)을 시도하였다. 예를 들어 Subjektergaenzung(E_sub)는 1격에서 대명사로 대체하고, Praepositivergaenzung(E_prp)는 대명사와 함께 있는 전치사나 Praeposotionaladverb라 불리는 것을 통해 대체하는 것이다:
+Engel(2004)는 11가지로 분류된 Ergaenzungsklassen을 제시하였다. Engel은 Ergaenzungsklassen의 구분을 위해 Anaphorisierung(e.g. 대명사로 대체)을 시도하였다. 예를 들어 Subjektergaenzung(E_sub)는 1격에서 대명사로 대체하고, Praepositivergaenzung($E_{prp}$)는 대명사와 함께 있는 전치사나 Praeposotionaladverb라 불리는 것을 통해 대체하는 것이다:
 <center><img width="800" alt="2020-12-18 (39)" src="https://user-images.githubusercontent.com/53667002/102562670-edd44a00-411a-11eb-8f96-5df21b136479.png"></center>
 하지만 이러한 Anaphorisierung은 유용하긴 하지만 Genitivergaenzung과 같이 대명사로의 대체가 어려운 경우에 대해 설명이 불가능하기 때문에 아래 표에서는 Engel이 사용한 Anapher를 추가하지 않았다.
 <center><img width="800" alt="2020-12-18 (40)" src="https://user-images.githubusercontent.com/53667002/102562733-0fcdcc80-411b-11eb-9f09-04fd5c8a5951.png"></center>
@@ -96,9 +96,9 @@ $E_vrb$는 fragne, vorhaben같은 동사 혹은 es heisst, es gilt, mir scheint�
 ## 4\.Angabe
 Engel은 Angabeklassen을 situativ(상황적), existimatorische(평가되는), modifikative(규정되는) 그리고 Negativangaben(부정)으로 분류하였다. 이는 의미론적으로 분류된 범주이다.
 ## 4\.1 Situative Angaben(상황적 첨가어)
-:사건 상황에 대한 첨가성분으로, 사건을 시공간적으로 귀속시킨다.
+: 사건 상황에 대한 첨가성분으로, 사건을 시공간적으로 귀속시킨다.
 ## 4\.2 Modifikative Angabe(규정되는 첨가어)
-:사건의 방식을 상세하게 정의한다.
+: 사건의 방식을 상세하게 정의한다.
 ## 4\.3 Existimatorische Angabe(평가되는 첨가어)
 : 사건에 대한 화자의 입장을 표현한다. 
 ## 4\.4 Negativ Angabe(부정 첨가어)
