@@ -72,7 +72,7 @@ feie grammatische Morphem(자립적 문법 형태소)에 대한 예시로 접속
 형태소가 앞서 소개한 세 가지 형태소 클래스(Freie Morphem, Gebundene Morphem, Flexionsmorphem)에 항상 귀속되는 것은 아니다. Basismorphem과 Gebundene Morphem의 경계는 어휘적 구성요소가 문법화 되는 경향의 과정인 언어변천(Sprachwandel)로 인해 유동적이다. 즉, Basismorphem은 경향에 따라 Gebundene Morphem으로 이행되기도 하는데, 그런 형태소는 조어 연구에서 Affixoid라는 이름 하에 연구된다. 예를 들어 한동안 Flug-zeug의 {zeug}, Maeh-werk의 {werk}, sorgen-frei에서의 {frei}와 같은 형태소가 Affixoid라고 불렸다. 이 문제는 조어론(Wortbildung)에서 자세히 다루어진다.
 ### Affix(접사)
 „Affixoid“라는 용어는 Affix에서 파생되었다. Affix는 형태소의 위치와 관련된 모든 개념의 상위개념이다.
-<center><img width="350" alt="2020-12-18" src="https://user-images.githubusercontent.com/53667002/102544990-fae04180-40f8-11eb-9204-cf5acfd73fa8.png"></center>
+<center><img width="200" alt="2020-12-18" src="https://user-images.githubusercontent.com/53667002/102544990-fae04180-40f8-11eb-9204-cf5acfd73fa8.png"></center>
 ### Praefix(접두사/전철)
 Praefix는 항상 어휘 앞에 오며, 이를 통해 새로운 단어를 만든다(예를 들어 auf-essen에서 {auf}).
 ### Suffix(접미사/후철)
@@ -85,7 +85,7 @@ Suffix는 어휘 뒤에 온다(예를 들어 Tapfer-keit에서 {keit}).
 
 
 다음 표는 지금까지 설명한 형태소의 분류 가능 목록을 개괄한 것이다:
-<center><img width="800" alt="2020-12-18 (1)" src="https://user-images.githubusercontent.com/53667002/102545186-4266cd80-40f9-11eb-9e6b-dd712ea1fe4d.png"></center>
+<center><img width="600" alt="2020-12-18 (1)" src="https://user-images.githubusercontent.com/53667002/102545186-4266cd80-40f9-11eb-9e6b-dd712ea1fe4d.png"></center>
 
 ## 3\.IC-Analyse(직접적 구성요소 분석)
 
@@ -100,7 +100,7 @@ IC-Analyse는 분포주의자들이 고안한 것으로, 이를 형태론에 대
 
 ### Nullmorphem
 독일어에서는 각 문법적 자질이 고유한 형태소로 표현되지 않을 때가 있다. Nullmorphem이란 문법적 자질이 형태소를 통해 보여지지 않지만 하나의 형태소로 간주하는 형태소이다. 복수형에 -en이 붙지 않는 명사(e.g. der Fahrer-die Fahrer, der Kaiser-die Kaiser) 혹은 대부분의 명사 복수형의 다양한 격들(복수 1, 2, 3, 4격)에서 Nullmorphem이 나타난다. 예를 들어 명사 Aenderung은 „복수“라는 자질에 대한 형태소는 가지지만 격을 나타내는 어떠한 형태소도 가지지 않는다. 따라서 Aenderung에서 „1격“은 Nullmorphem인 것이다. 
-<center><img width="300" alt="2020-12-18 (2)" src="https://user-images.githubusercontent.com/53667002/102545525-b6a17100-40f9-11eb-96e8-1c0d7bda4e05.png"></center>
+<center><img width="400" alt="2020-12-18 (2)" src="https://user-images.githubusercontent.com/53667002/102545525-b6a17100-40f9-11eb-96e8-1c0d7bda4e05.png"></center>
 
 ### Klassifizierung(범주화)
 이제 단어의 형태는 모두 분절됐고, 이제 각 형태소들을 분류해야 한다. {en}은 gebundenes, grammatisches Flexionssuffix(굴절접미사)이고, {ung}은 gebundenes, grammatisches Wortbildungssuffix(조어접미사)이다. {aender}의 경우는 분류가 어렵다. 이는 동사적(aender-n) 혹은 형용사적(eine ander-e Gelegenheit) Basismorphem(기본형태소)로 분류될 수 있다. 후자의 경우 {aender}가 {ander}의 Allomorph라는 것을 의미한다. 하지만 형용사적 기본 형태소는 보통 자립적(자유롭게) 나타난다(ein gut-e Gelegenheit – die Gelegenheit ist gut 하지만 ein ander-e Gelegenheit – die Gelegenheit ist \*ander). 따라서 여기에서 {ander}를 형용사적 기본형태소로 보지 않고 Grossen Duden을 따라 대명사적 기본형태소로 본다. 예를 들어 {solch}나 {irgendein}처럼. 결론적으로 {aender}는 gebundenes, lexikalisches, verbales Basismorphem 혹은 gebundenen, grammatischen, pronominalen Basismorphem {ander}의 Allomorph로 분류된다.
@@ -129,7 +129,7 @@ Fugenelement란, 음성학적 이유로 복잡한 단어형성물(Wortbildungspr
 
 ### Klassifizierung der Morpheme(형태소 분류)
 형태소 분절을 마치고 나면 얻어진 형태소들을 분류해야 한다. 
-<center><img width="800" alt="2020-12-18 (4)" src="https://user-images.githubusercontent.com/53667002/102545952-4c3d0080-40fa-11eb-9ac5-9ff3292611e4.png"></center>
+<center><img width="700" alt="2020-12-18 (4)" src="https://user-images.githubusercontent.com/53667002/102545952-4c3d0080-40fa-11eb-9ac5-9ff3292611e4.png"></center>
 {schreib}와 {nehm}은 둘 다 동사에 뿌리를 두고 있지만 전자는 frei이고 후자는 gebunden이다. 이 이유는 {schreib}는 명령법으로서 독립적이고, {nehm}은 명령법 Nimm과 구분되기 때문이다. 즉, 동사에 뿌리를 둔 형태소의 경우, 동사의 명령법과 형태가 같으면 frei, 아니면 gebunden이다. Daten이라는 어휘는 현재 독일어에서 복수형으로만 나타난다. 따라서 명사적 Basismorphem {Dat}는 독립적으로 존재하지 못한다. 
 
 ## 4\.Spezielle Probleme der IC-Analyse(IC-Analyse의 특수한 문제)
@@ -140,7 +140,7 @@ Fugenelement란, 음성학적 이유로 복잡한 단어형성물(Wortbildungspr
 
 1\) 분절순서:  
 분절 순서에 관한 문제가 나타날 수 있다. Unbescheidenheit와 같은 경우 아래와 같은 두 가지 경우가 나타날 수 있는데, 둘 다 받아들여진다.
-<center><img width="400" alt="2020-12-18 (5)" src="https://user-images.githubusercontent.com/53667002/102546164-92925f80-40fa-11eb-8b36-3acae1dc511e.png"></center>
+<center><img width="500" alt="2020-12-18 (5)" src="https://user-images.githubusercontent.com/53667002/102546164-92925f80-40fa-11eb-8b36-3acae1dc511e.png"></center>
 
 
 2\) Zirkumfix 분석  
