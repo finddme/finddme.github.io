@@ -24,7 +24,7 @@ Engel(2004)는 11가지로 분류된 Ergaenzungsklassen을 제시하였다. Enge
 
 
 
-3격의 경우, 소위 Freiendativ라 불리는 현상(e.g. ***Mir** ist die Vase heruntergefallen*)이 발생하는데, 이는 언뜻 보기에 $E_dat$처럼 보이지만 이는 Ergaenzung이 아니다. Freiedativ는 단지 문맥 상 쓰이는 것으로, 동사가 요구하는 요소는 아니다. 
+3격의 경우, 소위 Freiendativ라 불리는 현상(e.g. ***Mir*** *ist die Vase heruntergefallen*)이 발생하는데, 이는 언뜻 보기에 ${E}_{dat}$처럼 보이지만 이는 Ergaenzung이 아니다. Freiedativ는 단지 문맥 상 쓰이는 것으로, 동사가 요구하는 요소는 아니다. 
 
 
 
