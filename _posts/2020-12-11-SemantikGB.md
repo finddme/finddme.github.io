@@ -80,7 +80,7 @@ Konventionalisiert(협약)으로서의 단어 의미는 특히 기호학적 의�
 
 ## 3\. 의미론적으로 단어란 무엇인가?
 의미론적으로 단어는 Autosemanitika(내용적단어)와 Synsemantika(기능적단어)로 구분된다. 형태론에서 Lexem이라는 것이 언급되는데, Lexem은 사전에 등재된 단어이다. 이러한 Lexem 하위에 언어의 Lexik(Wortschatz)을 앞서 언급한 Automanitika(내용적단어)와 Synsemantika(기능적단어)가 구분되는 것이다.
-<center><img width="143" alt="2020-12-18 (70)" src="https://user-images.githubusercontent.com/53667002/102576493-ffc4e580-4138-11eb-8c1a-af053ff5591b.png"></center>
+<center><img width="300" alt="2020-12-18 (70)" src="https://user-images.githubusercontent.com/53667002/102576493-ffc4e580-4138-11eb-8c1a-af053ff5591b.png"></center>
 
 - Autosemantika(내용적 단어)는 형태론적 개념으로 따지자면 Basismophem이다. 자립적이고 독자적인 의미를 지닌 단어로, 예를 들어 Baum, trinken, gruen, hoch와 같이 문맥에 의존적이지 않은 단어를 가리킨다.  
 
@@ -109,7 +109,7 @@ Konventionalisiert(협약)으로서의 단어 의미는 특히 기호학적 의�
 
 ## 5\. 의미론적 관계
 어휘는 내부적으로는 그들의 의미를 기반으로, 외부적으로는 구체적인 상황을 기반으로 다른 단어와 함께 기술되고 관계된다. 따라서 단어 의미의 이해에서 화용론적으로 각 단어는 암묵적(내재적)으로 받아들어진다. 예를 들어 oben(위)는 unten(아래)를 내재하고, alt(늙은)은 jung(젊은)을 내재한다. 이러한 의미관계는 일치, 상위, 하위, 반대의 개념에 따라 분류될 수 있다:
-<center><img width="450" alt="2020-12-18 (71)" src="https://user-images.githubusercontent.com/53667002/102576597-43b7ea80-4139-11eb-8478-ad930866ffa2.png"></center>
+<center><img width="600" alt="2020-12-18 (71)" src="https://user-images.githubusercontent.com/53667002/102576597-43b7ea80-4139-11eb-8478-ad930866ffa2.png"></center>
 
 ## 5\.1 Uebereinstimmung(의미의 일치)
 ### 5\.1-(1) Synonymie(동의어):
