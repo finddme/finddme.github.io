@@ -21,11 +21,11 @@ Engel(2004)는 11가지로 분류된 Ergaenzungsklassen을 제시하였다. Enge
 <center><img width="366" alt="2020-12-18 (40)" src="https://user-images.githubusercontent.com/53667002/102562733-0fcdcc80-411b-11eb-9f09-04fd5c8a5951.png"></center>
   
 ## 2\.1 Subjek-(1격-), Akkusativ-(4격-), Genitiv-(2격-), Dativergaenzung(3격보충어)
-이 4가지 Ergaenzungsklassen은 NP를 통해 각 격으로 실현된다. 여기에서 Dativergaenzung을 제외한 나머지는 NP가 접속문(e.g. ${E}_{sub}$: ***Dass er zugestimmt hat*** *, war mir nicht bewusst*; ${E}_{akk}$: *Ich beantrage, **dass er ausgeliefert wird***)혹은 부정사구문(Infinitivkonstruktion)(e.g. ${E}_{sub}$: ***Dreimal taeglich zu essen*** *ist mir sehr wichtig*; ${E}_{gen}$: *Man beschuldigte ihn,* ***zu spaet gekommen zu sein***)으로 대체될 수 있다. 
+이 4가지 Ergaenzungsklassen은 NP를 통해 각 격으로 실현된다. 여기에서 Dativergaenzung을 제외한 나머지는 NP가 접속문(e.g. ${E}_{sub}$: ***Dass er zugestimmt hat**, war mir nicht bewusst*; ${E}_{akk}$: *Ich beantrage, **dass er ausgeliefert wird***)혹은 부정사구문(Infinitivkonstruktion)(e.g. ${E}_{sub}$: ***Dreimal taeglich zu essen** ist mir sehr wichtig*; ${E}_{gen}$: *Man beschuldigte ihn, **zu spaet gekommen zu sein***)으로 대체될 수 있다. 
 
 
 
-3격의 경우, 소위 Freiendativ라 불리는 현상(e.g. ***Mir*** *ist die Vase heruntergefallen*)이 발생하는데, 이는 언뜻 보기에 ${E}_{dat}$처럼 보이지만 이는 Ergaenzung이 아니다. Freiedativ는 단지 문맥 상 쓰이는 것으로, 동사가 요구하는 요소는 아니다. 
+3격의 경우, 소위 Freiendativ라 불리는 현상(e.g. ***Mir** ist die Vase heruntergefallen*)이 발생하는데, 이는 언뜻 보기에 ${E}_{dat}$처럼 보이지만 이는 Ergaenzung이 아니다. Freiedativ는 단지 문맥 상 쓰이는 것으로, 동사가 요구하는 요소는 아니다. 
 
 
 
