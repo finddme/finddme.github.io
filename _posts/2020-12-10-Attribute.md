@@ -88,7 +88,7 @@ Atrributsaetze는 동사구유형의 Attribute의 상이한 실현 형태이다.
 
 ## 3\. Attribute의 수형도적 설명
 Angabe(첨가어)의 수형도적 설명에서 간단히 그려졌던 문장(Die Bedienungsanleitung fuer die Installation der zugehoerigen Software wurde offensichtlich in gorsse Eile verfasst)을 다시 상세히 그리면 아래와 같이 표현된다:
-<center><img width="800" alt="2020-12-18 (53)" src="https://user-images.githubusercontent.com/53667002/102570584-064c6080-412b-11eb-9d69-ae58f6ad0305.png"></center>
+<center><img width="700" alt="2020-12-18 (53)" src="https://user-images.githubusercontent.com/53667002/102570584-064c6080-412b-11eb-9d69-ae58f6ad0305.png"></center>
 
 수형도를 그릴 때 복잡한 문장일수록 공간 부족 현상이 생기는데, 위 표와 같이 첫 번째 단계에서는 복잡한 Satzglieder부분의 (Determinativ)+Phrasenkopf만 표현하고, 해당 Satzglieder는 따로 빼서 분석하면 된다. 
 
