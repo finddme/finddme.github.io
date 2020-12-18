@@ -156,3 +156,31 @@ Dativus ethicus는 두 가지 중요한 속성이 있다. 첫 번째, 주로 일
 
 Dativus ethicus의 경우에는 Abtoenungsangabe와 유사하여 $A_{abt}$으로 표기되는데, 이를 제외한 freien Dativ들의 경우에는 그들의 통사적 기능의 범주화가 여전히 제대로 되지 않아 논쟁의 여지가 있다.
 <center><img width="196" alt="2020-12-18 (64)" src="https://user-images.githubusercontent.com/53667002/102572378-4d3c5500-412f-11eb-87f7-44ece1dac9e1.png"></center>
+
+### 4\.4-(2) Dativus (in)commodi(이익의 3격/피해의 3격)
+Dativus (in)commodie에는 어떤 좋거나(commodi) 나쁜(incommodi)일이 생기는 사람이 온다. 
+Dativus (in)commodi은 통사적으로 A_mod(modifikative Angabe)에 속한다. 왜냐하면 동사로 인해 나타난 사건을 더 자세히 규정하기 때문이다.
+<center><img width="195" alt="2020-12-18 (66)" src="https://user-images.githubusercontent.com/53667002/102574449-22083480-4134-11eb-9d20-19e03a163661.png"></center>
+
+### 4\.4-(3) Dativus iudicantis(판단의 3격)
+Dativus iudicantis에는 상황을 판단하는 사람이 온다. 이 경우 zu나 genug과 함께 자주 나타난다. 
+Dativus iudicantis는 주관적인 관점을 표현한다는 점에서 A_ver(verifikative Angabe(추측angabe))과 유사하다.
+<center><img width="194" alt="2020-12-18 (67)" src="https://user-images.githubusercontent.com/53667002/102574527-57148700-4134-11eb-89c3-ed7501d5a551.png"></center>
+
+### 4\.4-(4) Pertinenzdativ(소유의 3격)
+Pertinenzdativ에 오는 것은 일반적으로 사건과 관련된 사람이 온다. (흔하지는 않지만 dem Haus viel ein Ziegel vom Dach와 같이 nicht-personal Pertinenzdativ도 있다.) 
+
+
+
+여기에 나타나는 사건은 주로 인간의 신체 일부에 일어나는 일로 대게 E_prp(전치사 보족어)로 표현되기도 한다. 그리고 Pertinenzdativ의 경우에는 (obligatorisches) Attribut로 간주된다. 그 이유는 동사에 요구되는 것이 아니라 PP에 요구되는 것이기 때문이다. 예를 예를 들어 der ball klatschte an die Latte에서 동사 klatschen은 Dativergaenzung을 요구하지 않는 반면 der Ball klatschen dem Spieler an die Strin는 3격 dem Spieler가 없으면 의미론적으로 불완전하다. 여기에서 3격은 동사가 아닌 PP an die Strin에 의해 요구되는 것이다. 따라서 Pertinenzdativ의 경우에는 Attribte의 하위 범주에 추가되어진다($Attr_{pert}$(새로운 클래스에 추가 뾰로롱 아이템 득 개이 득)).
+
+<center><img width="275" alt="2020-12-18 (65)" src="https://user-images.githubusercontent.com/53667002/102574636-9a6ef580-4134-11eb-91d8-5ede83c5f799.png"></center>
+
+### 4\.5 Koordination(등위)
+Koordination은 독일어에서 매우 흔하고 다양하게 나타나는 현상으로, 모든 통사적 영역, 즉 Ergaenzung, Angabe 그리고 Attribute에서 모두 가능하다:
+<center><img width="332" alt="2020-12-18 (68)" src="https://user-images.githubusercontent.com/53667002/102574718-d1450b80-4134-11eb-9794-5403fa53867c.png"></center>
+위 예시에 나타난 접속사 이외에도 예를 들어 jedoch, naemlich, beziehungsweise, sondern 등 더 많은 것들이 있다. Koordination에서 주의할 것은 쉼표이다. (1a)의 수형도를 보면 쉼표도 Konjunktion으로 표시된다. 그리고 원칙적으로 Koordination은 und, oder, aber와 같은 접속사와 함께 쓰였을 때 koordiniertes Element들끼리 교환 가능하다((1b), (1c), (1d), (2b))의 경우는 교환 불가). Koordination 수형도를 보면 관계단어가 접속사에 의존하고 있다.
+<center><img width="1000" alt="2020-12-18 (69)" src="https://user-images.githubusercontent.com/53667002/102574811-094c4e80-4135-11eb-9d5f-47808a39ee71.png"></center>
+
+///통사론 반가웠고 당분간은 보지 말자///
+
