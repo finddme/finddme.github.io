@@ -43,7 +43,7 @@ Wortfeld는 의미가 유사한 어휘들의 뭉치이다. 예를 들어 어휘 
    5\) Bedeutungsbeziegung(의미관계): 하나의 의미장 안의 어휘는 서로 명확하게 정의된 의미관계를 갖는다.   
    6\) Hierarchisierbarkeit(계층구조): 단어장의 어휘는 계층적으로 표현될 수 있다. 즉 상위/하위 개념이 존재한다. 그래서 중심에서 멀어질수록 가치나 감정이 포함된 것이다.  
 
-<center><img width="181" alt="2020-12-18 (73)" src="https://user-images.githubusercontent.com/53667002/102578479-9bf0eb80-413d-11eb-9dd3-11b744ed2af8.png"></center>
+<center><img width="300" alt="2020-12-18 (73)" src="https://user-images.githubusercontent.com/53667002/102578479-9bf0eb80-413d-11eb-9dd3-11b744ed2af8.png"></center>
 
 ## 2\.2-(2) Grenzen der Wortfeldbedungunen(의미장조건의 한계)
 의미장 조건 중 Lueckenlosigkeit의 경우 결함이 많다. 어휘 공백 가능성에 대해 주의할 만한 몇 가지 예시가 있다. 첫 번째로 durstig의 반대말이 딱히 없다는 것이다. schmoell이나 stulln 혹은 sitt와 같은 단어가 durstig의 반대말이 될 수 있겠지만 저런 단어 없이도 언어공동체는 괜찮다. 두 번째, 20년(zwanziger)과 30년(dreissiger)는 있지만 10년을 가리키는 말이 없다. 세 번째, 짜고 달고 시다는 표현은 있는데 일본어의 우마미라는 것에 상응하는 독일어는 없다.
@@ -53,7 +53,7 @@ Wortfeld는 의미가 유사한 어휘들의 뭉치이다. 예를 들어 어휘 
 
 
 Phraseologismen의 가능한 형태의 다양성은 Burger(2003)을 기반으로 10가지 범주로 나뉜다:
-<center><img width="254" alt="2020-12-18 (74)" src="https://user-images.githubusercontent.com/53667002/102578688-13bf1600-413e-11eb-8ed0-bc7dce6baa69.png"></center>
+<center><img width="600" alt="2020-12-18 (74)" src="https://user-images.githubusercontent.com/53667002/102578688-13bf1600-413e-11eb-8ed0-bc7dce6baa69.png"></center>
 
 ## 3\. Wortbedeutung im Gedaechtnis(머리속의 단어의미)
 ## 3\.1 Woerter Im Kopf
@@ -62,7 +62,7 @@ Phraseologismen의 가능한 형태의 다양성은 Burger(2003)을 기반으로
 단어가 우리의 머리 속 사전(Mentales Lexikon)에 저장될 때 질서 유형에 대한 문제가 발생한다. 심리언어학적 연구는 이에 대해 중요한 단서를 제공한다. 신경단위적, 정신적 사전을 연구하기 위해 단어가공에서 선택문제나 접근문제가 뇌손상이 있는 시험 대상자에게 나타나는지를 조사하여 사람, 사물, 동물에 대한 정보가 저장되는 뇌 영역을 알아낸다. 프랑크푸르트의 막스 플랑크 뇌연구소의 Wolf Singer와 같은 신경과학자들은 동적인 된(Dynamischen Gehirn)을 가정한다. 대뇌에는 수십억게의 신경세포(뉴런)이 분포되어 있는데 의미는 이러한 뉴런이 동시에 활성화되고 동시에 리듬을 받아들이는 것을 통해 발생한다.
 ## 3\.2 Prototypentheorie(프로토타입이론)
 이 이론은 앞서 말한 것과 같은 뇌 위치를 연구하는 것과는 달리 의미에는 prototype이 있어 그것대로 뇌에 저장된다는 이론이다. 즉, 머리속에는 대표적인 표상이 존재한다는 것이다. 우리는 인지하고 말로 표현하는 것들에 대해 의미론적 범주(예를 들어 인간, 동물, 식물, 사물 등)를 귀속시킨다. 이러한 자연적인 범주에 대해 가능한 전형적인 대표자가 생기게 되는데 이것이 prototype이다. 이렇게 단어의 의미가 하나의 카테고리 안에서 계층화되어 머리 속에 존재하게 되는데 범주의 영역이 넓어질수록 혹은 해당 단어가 범주의 가장자리에 위치할수록 귀속이 애매해진다. 예를 들어 “새”카테고리의 범주 가장자리에는 펭귄이나 타조 등이 귀속될 것이고 가운데에는 참새나 비둘기 등이 포함될 것이다.
-<center><img width="211" alt="2020-12-18 (75)" src="https://user-images.githubusercontent.com/53667002/102578841-6f899f00-413e-11eb-9c66-4d425ee94e83.png"></center>
+<center><img width="400" alt="2020-12-18 (75)" src="https://user-images.githubusercontent.com/53667002/102578841-6f899f00-413e-11eb-9c66-4d425ee94e83.png"></center>
 ## 3\.2-(1) Prototypen Experimente(프로토타입 실험)
 Elaenor Rosch의 프로토타입 실험이 유명하다. Rosch는 실험 1에서 1(아주 전형적인 것)부터 7(아주 전형적이지 않은 것)까지의 척도를 지정하여 특정 카테고리의 상이한 구성원들이 얼마나 전형적으로 보이는지를 실험자들이 평가하도록 했다. 이 실험의 “새”카테고리에서 Rotkehlchen(참새)는 1.1의 점수를, Huhn(닭)은 3.8을 받았다. 추가적인 실험에서 Rosch는 단어 대신 사물의 이미지를 분류하도록 했는데, 묘사된 객체가 카테고리에 더 전형적일수록 더 카테고리에 빨리 귀속시키는 것이 관찰됐다. 예를 들어 “과일”의 범주에 수박보다 사과를 더 빨리 귀속시켰다. Rosch는 세 번째 실험에서는 카테고리 이름에 대해 문장을 생성하였다. 예를 들어 “나는 새가 지저귀는 소리를 들었다.”, “세 마리의 새가 나뭇가지에 앉아있다.”, “새가 날아가서 먹기 시작했다.”라는 문장을 제시하고 ‘새’가 언급되는 자리에 “새”카테고리의 구성원을 대체해서 어떤 것이 해당 문장에서 자연스러운지를 판단하는 것이다. 따라서 전형적인 구성원이 덜 전형적인 구성원보다 더 잘 어울리게 느껴지게 된다.
 
@@ -76,7 +76,7 @@ William Labov(1927)의 찻잔실험도 유명하다. 이 실험은 찻잔이라�
 
 ## 3\.3 Framesemantik
 Framesemantik은 Fram과 Skript의 상위 개념인 Kognitive Schemata(인지스키마)를 설명하는 이론이다. 인지스키마는 질서가 있는 형태로 Sachwissen을 연결하는데, 단어 의미에 대한 Frame은 다음과 같다:
-<center><img width="428" alt="2020-12-16 (4)" src="https://user-images.githubusercontent.com/53667002/102578965-c98a6480-413e-11eb-80e3-1be6866957e9.png"></center>
+<center><img width="800" alt="2020-12-16 (4)" src="https://user-images.githubusercontent.com/53667002/102578965-c98a6480-413e-11eb-80e3-1be6866957e9.png"></center>
 Skript는 시나리오 형식의 스키마인데, 예를 들어 슈퍼마켓 계산대에서 하는 관습적인 행동이 있기 때문에 모든 슈퍼마켓에서 같은 Skript를 적용하여 행동할 수 있다.
 
 ## 4\. 언어적 실현: 언어-사고-실현
