@@ -69,12 +69,12 @@ RNN모델이 자연어처리 과제에서 보편적으로 활용될 수 있었�
 
 위에서 언급했듯이 positional encoding은 sine과 cosine함수를 통해 위치정보를 가진 encoding값을 만들어 embedding 벡터와 더하는 과정이다. 이를 위한 sinusoid function은 다음과 같이 정의된다:
 
-$$
+
 \begin{matrix}
 PE_{(pos,2i)}=\sin(pos/10000^{2i/d_{\text{model}}})\\
 PE_{(pos,2i+1)}=\cos(pos/10000^{2i/d_{\text{model}}})
 \end{matrix}
-$$
+
 
 sinusoid function을 사용하여 positional encoding을 해주는 이유는 인코딩 값이 -1부터 1사이의 값이 나오게 되고, 학습데이터보다 긴 문장이 입력돼도 오류 없이 상대적인 encoding 값을 줄 수 있다는 장점이 있기 때문이다.
 
@@ -97,13 +97,19 @@ Source-target attention과 달리 $Q$, $K$, $V$는 모두 동일한 곳으로부
 이제 self-attention연산에 필요한 $Q$, $K$, $V$를 나누는 과정을 설명하겠다. 우선 embedding과 encoding이 완료된 벡터가 입력으로 들어오면 각 단어 벡터마다 각각 다른 가중치인 $W^{Q}$,  $W^{K}$,  $W^{V}$를 곱하여 각각의 $Q$, $K$, $V$를 얻는다($W^{Q}$,  $W^{K}$,  $W^{V}$는 훈련 과정 속에서 훈련되는 가중치 행렬이다). 
 
 
-$$W_i^Q\text{with dimensions} \ d_{model}\times d_q$$
+\begin{matrix}
+W_i^Q\text{with dimensions} \ d_{model}\times d_q$$
+\end{matrix}
 
 
-$$W_i^K\text{with dimensions} \ d_{model}\times d_k$$
+\begin{matrix}
+W_i^K\text{with dimensions} \ d_{model}\times d_k$$
+\end{matrix}
 
 
-$$W_i^V\text{with dimensions} \ d_{model}\times d_v$$
+\begin{matrix}
+W_i^V\text{with dimensions} \ d_{model}\times d_v$$
+\end{matrix}
 
 
 
@@ -114,13 +120,19 @@ $$W_i^V\text{with dimensions} \ d_{model}\times d_v$$
 위 그림은 단어 벡터 하나에 대한 $Q$, $K$, $V$벡터를 구하는 과정을 표현한 것이다. 하지만 이전에도 언급했 듯이 문장은 단어벡터들을 합친 행렬이기 때문에 실제 연산은 다음과 같이 행렬곱으로 진행된다:
 
 
-$$xW_i^Q=q_i\text{with dimensions} \ \text{seq_len}\times d_q$$
+\begin{matrix}
+xW_i^Q=q_i\text{with dimensions} \ \text{seq_len}\times d_q
+\end{matrix}
 
 
-$$xW_i^K=K_i\text{with dimensions} \ \text{seq_len}\times d_k$$
+\begin{matrix}
+xW_i^K=K_i\text{with dimensions} \ \text{seq_len}\times d_k
+\end{matrix}
 
 
-$$xW_i^V=V_i\text{with dimensions} \ \text{seq_len}\times d_v$$
+\begin{matrix}
+xW_i^V=V_i\text{with dimensions} \ \text{seq_len}\times d_v
+\end{matrix}
 
 
 <center><img width="458" alt="2019-11-19 (22)" src="https://user-images.githubusercontent.com/53667002/69126494-ae889380-0aeb-11ea-8648-cf6c70edad92.png"></center>
@@ -130,7 +142,9 @@ $$xW_i^V=V_i\text{with dimensions} \ \text{seq_len}\times d_v$$
 이제 위와 같은 과정(self-attention 방식)을 거쳐 $Q$, $K$, $V$벡터를 얻은 후 attention score function을통해 attention연산을 해야 한다. [이전 게시물](https://finddme.github.io/natural%20language%20processing/2019/11/12/Attention/)에서 attention score를 산출하는 attention score function의 방식이 많이 제시되어 있다고 언급했다. Self-attention에서는 제시된 function중 scaled dot-product attention 함수를 사용하는데 해당 함수를 언급하기 전에 dot product attention에 대해 간단히 설명하겠다. Dot-product attention 연산은 매우 간단하다. 이름 그대로 곱해주면 된다. scaled dot-product attention도 말 그대로 dot product attention에 scaling작업을 추가한 것이다. dot product attention으로 도출된 attention score를 $k$벡터 차원 크기의 루트값으로 나눠 scaling을 해주는데 이렇게 하는 이유는 $k$벡터의 차원이 커질수록 dot product계산시 값이 너무 커지는 문제를 보완하기 위함이다. 아래 수식은 scaled dot-product attention score를 표현한 것이다:
 
 
-$$\text{Score}(Q, K) =\frac{QK^T}{\sqrt{d_k}}$$
+\begin{matrix}
+\text{Score}(Q, K) =\frac{QK^T}{\sqrt{d_k}}$$
+\end{matrix}
 
 
 <center><img width="754" alt="2019-11-19 (24)" src="https://user-images.githubusercontent.com/53667002/69126919-9d8c5200-0aec-11ea-8278-396fe554b2c7.png"></center>
@@ -138,7 +152,9 @@ $$\text{Score}(Q, K) =\frac{QK^T}{\sqrt{d_k}}$$
 이제 attention weight를 구해야 한다. 기존 seq2seq에 사용되던 attention에서 사용된 함수에서도 attention score를 구하여 softmax를 적용하여 attention distribution을 구한 후 hidden state vector와 weighted sum을 하여 attention score를 구했다. scaled dot-product attention도 마찬가지이다. 위에서 구한 attention score에 softmax를 적용하여 attention distribution을 구한 후 hidden vector역할을 하는 $V$를 곱하면 attention weight를 구할 수 있다. 이를 수식으로 표현하면 다음과 같다:
 
 
-$$\text{Attention}(Q, K, V) =\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
+\begin{matrix}
+\text{Attention}(Q, K, V) =\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
+\end{matrix}
 
 
 <center><img width="773" alt="2019-11-19 (26)" src="https://user-images.githubusercontent.com/53667002/69127098-f4922700-0aec-11ea-9fe1-424d0e948115.png"></center>
@@ -156,7 +172,9 @@ Multi-head attention은 이름에서도 알 수 있듯이 Attention을 병렬적
 여러 번 수행한 attention의 결과들(attention weight들)은 concatenate한 후 가중치 행렬 $W^{o}$와 내적하면 Multi-head attention의 최종 결과 값이 나온다.  $W^{o}$도 다른 가중치들과 같이 모델과 함께 학습된다.
 
 
-$$\text{Attention}(Q, K, V) =\text{Concat}({head}_ {1}, \dots, {head}_ {h}){W}^{o} \ where \ {head}_ {i}=\text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$
+\begin{matrix}
+\text{Attention}(Q, K, V) =\text{Concat}({head}_ {1}, \dots, {head}_ {h}){W}^{o} \ where \ {head}_ {i}=\text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+\end{matrix}
 
 
 <center><img width="624" alt="2019-11-19 (30)" src="https://user-images.githubusercontent.com/53667002/69127790-45eee600-0aee-11ea-8d5c-8e1d3b9977ef.png"></center>
@@ -188,7 +206,9 @@ Transformer 전체 구조를 표현한 그림을 보면 attention과 feed-forwar
 이 과정은 point wise로 진행되는 일반적인 feed forward network이다. 수식은 다음과 같다:
 
 
-$$\text{FFNN}(x)=\text{MAX}(0, xW_1+b_1)W_2+b_2$$
+\begin{matrix}
+\text{FFNN}(x)=\text{MAX}(0, xW_1+b_1)W_2+b_2
+\end{matrix}
 
 
 위 식을 보면 0보다 작으면 0을 내보내고 0보다 크면 weight bias 값을 내보낸다. 이 부분이 흡사 relu activation과 닮아 있는 것을 알 수 있다. 아래는 수식 이해를 돕기 위한 그림이다: 
