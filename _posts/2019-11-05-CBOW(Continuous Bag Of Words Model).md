@@ -98,6 +98,7 @@ H(\hat{y},y)=-y_i\log(\hat{y}_ {i})
 
 학습은 위 식의 결과를 최소화하는 방향으로 진행되는데 $H$($loss$)가 0에 가까울수록 예측이 잘 된 것이다(위 수식에서 $i$가 예측하고자 하는 단어이다). 목적함수를 최소화 시키는 것을 표현한 수식은 다음과 같다:
 
+
 $$
 \begin{align*}
 minimize J &=-\log P(w_c|w_{c-m},...,w_{c+m})\\
@@ -106,6 +107,7 @@ minimize J &=-\log P(w_c|w_{c-m},...,w_{c+m})\\
 &=-u_c^{intercal}\hat{v}+\log\sum^{|V|}_{j=1}exp(u_j^{\intercal}\hat{v})
 \end{align*}
 $$
+
 
 $u_c$와 $v$를 최적화(optimization)시키는 방법으로 SGD(stochastic gradient descent)가 사용된다.
 
