@@ -28,15 +28,27 @@ CBOW는 context word(주변 단어)를 통해 center word를 예측하는 모델
 
 1\. 우선 하나의 center word에 대한 context words의 one-hot-vectors를 만든다:
 
-$$(x^{ (c-m) },x^{ (c-m+1) },...,x^{ (c-1) },x^{ (c+1) },...x^{ (c+m-1) },x^{ (c+m) })\in\mathbb{R}^{|V|}$$
+
+\begin{matrix}
+(x^{ (c-m) },x^{ (c-m+1) },...,x^{ (c-1) },x^{ (c+1) },...x^{ (c+m-1) },x^{ (c+m) })\in\mathbb{R}^{|V|}
+\end{matrix}
+
 
 2\. 해당 모델의 파라미터는 input layer에서 hidden layer로 넘어가는 matrix $W$와 hidden layer에서 output layer로 넘어가는 matrix $W'$가 있다:
 
-$$\mathbf{W}\in\mathbb{R}^{|V|\times N},~\mathbf{W}^{\prime}\in\mathbb{R}^{N\times |V|}$$
+
+\begin{matrix}
+\mathbf{W}\in\mathbb{R}^{|V|\times N},~\mathbf{W}^{\prime}\in\mathbb{R}^{N\times |V|}
+\end{matrix}
+
 
 위에서 만든 one-hot-vectors와 파라미터를 내적하여 context에 대한 embedded word vectors를 얻는다($W$는 input words에 대한 $n$차원의 embedding된 단어 vector들의 집합이다.):
 
-$$(v_{ (c-m) }=\mathbf{W}x^{ (c-m) },v_{ (c-m+1) }=\mathbf{W}x^{ (c-m+1) }...,v_{ (c+m) }=\mathbf{W}x^{ (c+m) })\in\mathbb{R}^n$$
+
+\begin{matrix}
+(v_{ (c-m) }=\mathbf{W}x^{ (c-m) },v_{ (c-m+1) }=\mathbf{W}x^{ (c-m+1) }...,v_{ (c+m) }=\mathbf{W}x^{ (c+m) })\in\mathbb{R}^n
+\end{matrix}
+
 
 Input의 형태가 one-hot-vector이니 input과 파라미터의 내적은 아래 그림과 같이 파라미터에서 각 단어에 대한 행(column)을 look up해 오는 것이다. 즉, 파라미터와 내적하여 embedding된 vector를 불러오는 것이다.
 
@@ -44,36 +56,56 @@ Input의 형태가 one-hot-vector이니 input과 파라미터의 내적은 아�
 
 3\. 앞서 얻은 Embedded vector들의 평균을 구하여 Hidden layer값을 구한다:
 
-$$\hat{v}=\frac{v_{c-m}+v_{c-m+1}+\dotsm+v_{c+m}}{2m}\in\mathbb{R}^n$$
+
+\begin{matrix}
+\hat{v}=\frac{v_{c-m}+v_{c-m+1}+\dotsm+v_{c+m}}{2m}\in\mathbb{R}^n
+\end{matrix}
+
 
 4\. Hidden layer값에 $W'$를 내적하여 score값을 구한다: 
 
-$$z=\mathbf{W'}\hat{v}\in\mathbb{R}^{|V|}$$
+
+\begin{matrix}
+z=\mathbf{W'}\hat{v}\in\mathbb{R}^{|V|}
+\end{matrix}
+
 
 5\. 마지막으로 score값을 확률값으로 변환하기 위해 softmax를 적용시킨다:
 
-$$\hat{y}=softmax(z)\in\mathbb{R}^{|V|}$$
+
+\begin{matrix}
+\hat{y}=softmax(z)\in\mathbb{R}^{|V|}
+\end{matrix}
+
 
 ##  Model Training
 
 이제 $\hat{y}$(예측값)과 $y$(정답값)이 일치하는 방향으로 학습을 진행한다. 이는 파라미터들($W$, $W'$)의 학습을 통해 가능한데 학습을 위한 목적함수(objective function)는 loss fuction으로 cross entropy를 사용하여 다음과 같이 정의된다:
 
-$$H(\hat{y},y)=-\sum^{|V|}_{j=1}y_j\log(\hat{y_j})$$
+
+\begin{matrix}
+H(\hat{y},y)=-\sum^{|V|}_ {j=1}y_j\log(\hat{y_j})
+\end{matrix}
+
 
 위에서 언급했 듯이 $y$는 하나의 one-hot-vector이다. 위 목적함수에서 $y_j$를 발견할 수 있는데 이 또한 하나의 one-hot-vector이기 때문에 위 수식을 더 간단히 하면 다음과 같이 표현될 수 있다:
 
-$$H(\hat{y},y)=-y_i\log(\hat{y}_i)$$
+
+\begin{matrix}
+H(\hat{y},y)=-y_i\log(\hat{y}_ {i})
+\end{matrix}
+
 
 학습은 위 식의 결과를 최소화하는 방향으로 진행되는데 $H$($loss$)가 0에 가까울수록 예측이 잘 된 것이다(위 수식에서 $i$가 예측하고자 하는 단어이다). 목적함수를 최소화 시키는 것을 표현한 수식은 다음과 같다:
 
-$$
+
 \begin{align*}
 minimize J &=-\log P(w_c|w_{c-m},...,w_{c+m})\\
 &=-\log P(u_c|v^)\\
 &=-\log \frac{exp(u_c^{\intercal}\hat{v})}{\sum^{|V|}_{j=1}exp(u_j^{\intercal}\hat{v})}\\
 &=-u_c^{intercal}\hat{v}+\log\sum^{|V|}_{j=1}exp(u_j^{\intercal}\hat{v})
 \end{align*}
-$$
+
 
 $u_c$와 $v$를 최적화(optimization)시키는 방법으로 SGD(stochastic gradient descent)가 사용된다.
 
