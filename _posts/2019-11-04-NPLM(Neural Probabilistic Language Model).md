@@ -8,7 +8,7 @@ NPLM은 신경망을 이용하여 단어를 embedding하는 단어의 분산표�
 
 
 \begin{matrix}
-P({ w }_ { t }|{ w }_ { t-1 },...,{ w }_ { t-n+1 })=\frac { exp({ y }_ { { w }_ { t } }) }{ \sum _{ i }^{  }{ exp({ y }_{ i }) } }
+P({ w }_ { t }|{ w }_ { t-1 },...,{ w }_ { t-n+1 })=\frac { exp({ y }_ { { w }_ { t } }) }{ \sum _ { i }^{  }{ exp({ y }_ { i }) } }
 \end{matrix}
 
 
