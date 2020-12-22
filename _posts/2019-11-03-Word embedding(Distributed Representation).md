@@ -22,13 +22,15 @@ word embedding의 결과는 위 그림과 같이 similarity를 기반으로 embe
 
 Word embedding 학습 논리는 다음 수식을 통해 설명될 수 있다:
 
-$$
-p(context | w_t)=…
-$$
 
-$$
-J = 1- p({ { w }_{ -t } } | w_t)
-$$
+\begin{matrix}
+p(context | w_t)=…
+\end{matrix}
+
+
+\begin{matrix}
+J = 1- p({ { w }_ { -t } } | w_t)
+\end{matrix}
 
 이는 아래 수식과 같이 곧 Loss값으로, J가 0에 가까울수록 잘 예측한 것이고 1에 가까울수록 잘못 예측한 것이다. 따라서 loss값이 클수록 system내의 parameter값을 크게 조정하여 이후에 더 좋은 예측 결과를 내도록 하는 방식으로 진행된다.
 
