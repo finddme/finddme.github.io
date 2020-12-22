@@ -108,7 +108,7 @@ W_i^K\text{with dimensions} \ d_{model}\times d_k
 
 
 \begin{matrix}
-W_i^V\text{with dimensions} \ d_{model}\times d_v$$
+W_i^V\text{with dimensions} \ d_{model}\times d_v
 \end{matrix}
 
 
@@ -143,7 +143,7 @@ xW_i^V=V_i\text{with dimensions} \ \text{seq_len}\times d_v
 
 
 \begin{matrix}
-\text{Score}(Q, K) =\frac{QK^T}{\sqrt{d_k}}$$
+\text{Score}(Q, K) =\frac{QK^T}{\sqrt{d_k}}
 \end{matrix}
 
 
@@ -153,7 +153,7 @@ xW_i^V=V_i\text{with dimensions} \ \text{seq_len}\times d_v
 
 
 \begin{matrix}
-\text{Attention}(Q, K, V) =\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V$$
+\text{Attention}(Q, K, V) =\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 \end{matrix}
 
 
