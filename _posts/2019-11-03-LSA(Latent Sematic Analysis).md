@@ -8,7 +8,11 @@ tag: NLP
 
 해당 방법론에서는 입력으로 사용되는 행렬 데이터에 특이 값 분해(Singular Value Decomposition, SVD)를 수행하여 데이터의 차원을 축소한다. 따라서 잠시 SVD에 대해 설명하도록 하겠다. SVD는 다량의 전체 데이터(massive data)를 한 바퀴 탐색하며 여러 번 등장하는 단어(co-occurrence)들의 등장 빈도를 계산하여 이를 기반으로 matrix $A​$ 형태로 표현한 후 SVD를 수행하여  $U\Sigma { V }^{ T }​$ decomposition을 얻는다. 간단히 말하자면 빈도를 계산하여 표현된 matrix $A​$를 $U\Sigma { V }^{ T }​$로 분해하는 것이다. 특이 값 분해는 다음과 같이 정의된다:
 
-$$A=U\Sigma { V }^{ T }\\ $$
+
+\begin{matrix}
+A=U\Sigma { V }^{ T }\\ 
+\end{matrix}
+
 
 $U$는 $A { A }^{ T }$를 고유값 분해(eigenvalue decomposition)하여 얻은 직교행렬(orthogonal matrix)이고,  $V$는 ${ A }^{ T } A$를 고유값 분해해서 얻어진 직교행렬(orthogonal matrix)이다. 그리고 $\Sigma$는 $A { A }^{ T }$, ${ A }^{ T } A$를 고유 값 분해하여 얻은 고유값들의 제곱근을 대각원소로 갖는 행렬인데 해당 행렬의 대각 원소들이 바로 $A$의 특이값(singular value)들을 제곱한 값이다.
 
