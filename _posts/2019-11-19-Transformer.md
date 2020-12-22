@@ -98,12 +98,12 @@ Source-target attention과 달리 $Q$, $K$, $V$는 모두 동일한 곳으로부
 
 
 \begin{matrix}
-W_i^Q\text{with dimensions} \ d_{model}\times d_q$$
+W_i^Q\text{with dimensions} \ d_{model}\times d_q
 \end{matrix}
 
 
 \begin{matrix}
-W_i^K\text{with dimensions} \ d_{model}\times d_k$$
+W_i^K\text{with dimensions} \ d_{model}\times d_k
 \end{matrix}
 
 
