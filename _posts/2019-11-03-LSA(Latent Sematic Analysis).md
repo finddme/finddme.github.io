@@ -1,10 +1,10 @@
 ---
-title: 잠재 의미 분석(Latent Sematic Analysis, LSA)
+title: LSA(Latent Sematic Analysis)
 category: Natural Language Processing
 tag: NLP
 ---
 
-자연어처리 시 단어-문서 행렬(Word-Document Matrix), TF-IDF(Term Frequency-Inverse Document Frequency) 행렬, 그리고 단어-문맥(window based con-occurrence matrix) 행렬과 같이 문서를 벡터화하여 행렬로 표현한 데이터가 사용된다. 잠재 의미 분석(Latent Semantic Analysis)은 이러한 행렬의 차원을 줄여 계산의 복잡성을 낮추고 학습량을 줄임과 동시에 행간에 숨어있는(latent)의미를 이끌어내기 위한 방법론이다. 
+자연어처리 시 단어-문서 행렬(Word-Document Matrix), TF-IDF(Term Frequency-Inverse Document Frequency) 행렬, 그리고 단어-문맥(window based con-occurrence matrix) 행렬과 같이 문서를 벡터화하여 행렬로 표현한 데이터가 사용된다. **잠재 의미 분석(Latent Semantic Analysis)** 은 이러한 행렬의 차원을 줄여 계산의 복잡성을 낮추고 학습량을 줄임과 동시에 행간에 숨어있는(latent)의미를 이끌어내기 위한 방법론이다. 
 
 해당 방법론에서는 입력으로 사용되는 행렬 데이터에 특이 값 분해(Singular Value Decomposition, SVD)를 수행하여 데이터의 차원을 축소한다. 따라서 잠시 SVD에 대해 설명하도록 하겠다. SVD는 다량의 전체 데이터(massive data)를 한 바퀴 탐색하며 여러 번 등장하는 단어(co-occurrence)들의 등장 빈도를 계산하여 이를 기반으로 matrix $A​$ 형태로 표현한 후 SVD를 수행하여  $U\Sigma { V }^{ T }​$ decomposition을 얻는다. 간단히 말하자면 빈도를 계산하여 표현된 matrix $A​$를 $U\Sigma { V }^{ T }​$로 분해하는 것이다. 특이 값 분해는 다음과 같이 정의된다:
 
