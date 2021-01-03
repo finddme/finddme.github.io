@@ -29,3 +29,4 @@ tag: Y
 <span style="background-color:#A3A7C5; color:#EDE2F0">이것도 되나</span>
 
 <https://www.quackit.com/character_sets/emoji/emoji_v3.0/unicode_emoji_v3.0_characters_all.cfm>
+<https://ojji.wayful.com/2015/03/HTML-How-to--Set-FONT-Size-Color-Weight-Family-Variant-Line-Height-ect.html>
