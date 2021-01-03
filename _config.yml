@@ -78,3 +78,8 @@ disqus_short_name: 'dPdlsdlek-github-io' # leave blank if you don't want disqus
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
+
+# 
+plugins:
+  - jekyll-feed
+  - jemoji
