@@ -1,5 +1,5 @@
 ---
-title: ssss
+title: 1
 category: Y
 tag: Y
 ---
@@ -20,7 +20,7 @@ tag: Y
 
 &#128123; 
 
-<span style="color:#C57B59">sssskssksksskssks</span>
+<span style="color:#C57B59">!!!!</span>
 
 <span style="color:#9F9875">이천이십일년일월삼일한시삼십삼분</span> <span style="color:#9F9875">color: #9F9875</span>
 
