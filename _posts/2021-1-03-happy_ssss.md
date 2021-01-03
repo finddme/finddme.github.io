@@ -1,5 +1,5 @@
 ---
-title: 1
+title: 1_
 category: Y
 tag: Y
 ---
@@ -12,7 +12,7 @@ tag: Y
 
 &#129300; <span style="color:#A95762">아아아아아아</span> <span style="color:#A95762">color: #A95762</span>
 
-&#128077; <span style="color:#C2B7A1">이이이야아아아아</span> &#128077; <span style="color:#C2B7A1">color: #C2B7A1</span>
+&#128077; <span style="color:#C2B7A1">이이이야아아아아</span> <span style="color:#C2B7A1">color: #C2B7A1</span>
 
 &#128032; <span style="color:#648BC6">귀엽잖아</span>
 
