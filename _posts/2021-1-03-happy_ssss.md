@@ -26,7 +26,7 @@ tag: Y
 
 &#127904;
 
-<span style="background-color:#E2C5A3; color:#F1DBD8">이것도 되나</span>
+<span style="background-color:#C6AA87; color:#F1DBD8">이것도 되나</span>
 
 <https://www.quackit.com/character_sets/emoji/emoji_v3.0/unicode_emoji_v3.0_characters_all.cfm>
 
