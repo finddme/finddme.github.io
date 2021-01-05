@@ -71,7 +71,7 @@ hero:
 
 # Puglins
 mathjax: true # whether support mathjax
-#google_analytics_token: 'UA-93172815-1' # leave blank if you don't want google analytics
+google_analytics_token: 'G-S91SD1WYXX' # leave blank if you don't want google analytics
 disqus_short_name: 'dPdlsdlek-github-io' # leave blank if you don't want disqus
 
 # Math equation
@@ -80,8 +80,8 @@ excerpt_separator: "\n\n"
 incremental: false
 
 # Analytics
-analytics:
-  provider: "google"
-  google:
-    tracking_id: "G-S91SD1WYXX"
-    anonymize_ip: false # default
+#analytics:
+  #provider: "google"
+  #google:
+    #tracking_id: "G-S91SD1WYXX"
+    #anonymize_ip: false # default
