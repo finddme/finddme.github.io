@@ -71,7 +71,7 @@ hero:
 
 # Puglins
 mathjax: true # whether support mathjax
-google_analytics_token: 'G-N1RTMVJZKM' # leave blank if you don't want google analytics
+google_analytics_token: 'G-S91SD1WYXX' # leave blank if you don't want google analytics
 disqus_short_name: 'dPdlsdlek-github-io' # leave blank if you don't want disqus
 
 # Math equation
