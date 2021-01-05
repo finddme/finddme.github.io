@@ -79,7 +79,9 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-# 
-plugins:
-  - jekyll-feed
-  - jemoji
+# Analytics
+analytics:
+  provider: "google"
+  google:
+    tracking_id: "G-S91SD1WYXX"
+    anonymize_ip: false # default
