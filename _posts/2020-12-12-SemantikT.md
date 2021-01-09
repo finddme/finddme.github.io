@@ -53,7 +53,7 @@ Wortfeld는 의미가 유사한 어휘들의 뭉치이다. 예를 들어 어휘 
 
 
 Phraseologismen의 가능한 형태의 다양성은 Burger(2003)을 기반으로 10가지 범주로 나뉜다:
-<center><img width="600" alt="2020-12-18 (74)" src="https://user-images.githubusercontent.com/53667002/102578688-13bf1600-413e-11eb-8ed0-bc7dce6baa69.png"></center>
+<center><img width="600" alt="2021-01-09" src="https://user-images.githubusercontent.com/53667002/104077504-58316380-525d-11eb-81fb-2a9deada5ff0.png"></center>
 
 ## 3\. Wortbedeutung im Gedaechtnis(머리속의 단어의미)
 ## 3\.1 Woerter Im Kopf
