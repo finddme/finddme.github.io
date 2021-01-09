@@ -36,10 +36,10 @@ tag: Deutsch
 ### A
 
 **angehen von** -로부터 접근해야 한다
-> Ich denke, dass man die Frage der Liebe ausgehend <span style="color:#86937A">von</span> zwei Punkten <span style="color:#86937A">angehen</span> muss.
+> Ich denke, dass man die Frage der Liebe ausgehend <span style="color:#A95762">von</span> zwei Punkten <span style="color:#A95762">angehen</span> muss.
 
 **Anders gesagt** 달리 말하자면
-> <span style="color:#86937A">Anders gesagt</span>, Sie haben in der Libe ein erstes Element, naemlich die Unterscheidung, eine Trennung, einen Unterschied, eine Zwei.
+> <span style="color:#A95762">Anders gesagt</span>, Sie haben in der Libe ein erstes Element, naemlich die Unterscheidung, eine Trennung, einen Unterschied, eine Zwei.
 ### B
 
 **bezieht sich auf 4** -와 관련된, -에 대한
@@ -61,7 +61,7 @@ tag: Deutsch
 ### F
 
 **Form annehmen** -한 형태를 띄다
-> Der zweite Punkt ist: Eben weil die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente <span style="color:#86937A">Form annehmen</span>.
+> Der zweite Punkt ist: Eben weil die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente <span style="color:#A95762">Form annehmen</span>.
 
 ### G
 
@@ -121,7 +121,7 @@ tag: Deutsch
 > <span style="color:#A95762">(Waehrend)</span> Werden Graffiti in der öffentlichen Wahrnehmung, insbesondere die nicht genehmigten Graffiti, meist als Form des Vandalismus – im Sinne des Volksmundes: „Narrenhände beschmieren Tisch und Wände“ – betrachtet, werden sie von anderer Seite auch als Form der Kunst anerkannt.
 
 **Eben weil** 바로 그렇기 때문에
-> Der zweite Punkt ist: <span style="color:#86937A">Eben weil</span> die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente Form annehmen.
+> Der zweite Punkt ist: <span style="color:#A95762">Eben weil</span> die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente Form annehmen.
 
 ### X
 
