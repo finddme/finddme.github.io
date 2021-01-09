@@ -76,7 +76,7 @@ William Labov(1927)의 찻잔실험도 유명하다. 이 실험은 찻잔이라�
 
 ## 3\.3 Framesemantik
 Framesemantik은 Fram과 Skript의 상위 개념인 Kognitive Schemata(인지스키마)를 설명하는 이론이다. 인지스키마는 질서가 있는 형태로 Sachwissen을 연결하는데, 단어 의미에 대한 Frame은 다음과 같다:
-<center><img width="800" alt="2020-12-16 (4)" src="https://user-images.githubusercontent.com/53667002/102578965-c98a6480-413e-11eb-80e3-1be6866957e9.png"></center>
+<center><img width="500" alt="2020-12-16 (4)" src="https://user-images.githubusercontent.com/53667002/102578965-c98a6480-413e-11eb-80e3-1be6866957e9.png"></center>
 Skript는 시나리오 형식의 스키마인데, 예를 들어 슈퍼마켓 계산대에서 하는 관습적인 행동이 있기 때문에 모든 슈퍼마켓에서 같은 Skript를 적용하여 행동할 수 있다.
 
 ## 4\. 언어적 실현: 언어-사고-실현
