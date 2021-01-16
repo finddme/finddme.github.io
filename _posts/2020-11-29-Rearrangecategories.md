@@ -1,5 +1,5 @@
 ---
-title: -
+title: ㅡ
 category: Natural Language Processing and Linguistics
 tag: NLP & Linguistics
 ---
