@@ -194,3 +194,7 @@ Volksetymologie는 차용과 밀접한 연관이 있는 현상이다. 예를 들
 ## 6\.Flexion(굴절)
 Flexion은 추상적이고 사전적인(lexikalisch) 단어들을 구체적이고 통사적인 단어로 만드는 과정이다. 즉, 굴절은 단어가 문법적 자질을 갖게 한다. 조어(Wortbildung)와 굴절(Fleixon)은 둘 다 규칙적이고 접미사를 붙일 수 있어서 구분이 어려울 수 있는데, 간단히 말해서 Flexion은 비교급접미사(Komparationssuffix)를 붙일 수 있고, 품사를 바꾸지 않는다. 그리고 어휘는 Felxion을 통해 다른 어휘와 형태학적으로 sichtbar한 관계가 된다. Wortbildung의 경우에는 분사(Partizipsuffix), 즉 형용사적 파생어를 붙일 수 있다. 비교급을 Flexion에 해당시키면 3가지 Flexion유형이 뒤따른다: 1) Nominalflexion/ Deklination(명사의 변형), 2) Verbflexion/ Konjugation(동사의 변형), 3) Komparation(형용사의 비교급). Nominalflexion은 명사가 수, 격, 형용사, 대명사 그리고 다양한 성이 있는 관사로 인해 굴절되는 것이고, Verbflexion은 동사가 인칭, 수, 시간 그리고 화법에 따라 굴절되는 것이다. 아래는 독일어의 격변화(Starke und schwache Flexion)를 나타낸 표이다:
 <center><img width="700" alt="2020-12-18 (14)" src="https://user-images.githubusercontent.com/53667002/102549804-169b1600-4100-11eb-949c-efdc831dcb13.png"></center>
+
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
