@@ -36,4 +36,6 @@ tag: Deutsch
 ### Das Gerundivum
 
 
+## Reference
 
+> Dreyer."Lehr- und Übungsbuch der deutschen Grammatik," Hueber. 2000
