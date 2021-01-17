@@ -98,3 +98,7 @@ Temporaldeixis는 언어적 시점에 상대적인 시간방향을 나타낸다.
 Lokaldeixis는 대화 상대자의 공간적 방향을 나타내는데, 이를 통해 두 가지 기본 가능성으로 주변 공간을 나타낸다: 
 - 다른 물체와 관련된 자신의 위치(e.g. 나는 지금 복도에 있다).  
 - 자신의 위치와 관련된 객체(e.g. 왼쪽 앞에 파라다이스가 있다).  
+
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
