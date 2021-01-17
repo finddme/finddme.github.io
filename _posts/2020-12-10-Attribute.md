@@ -184,3 +184,6 @@ Koordination은 독일어에서 매우 흔하고 다양하게 나타나는 현�
 
 ///통사론 반가웠고 당분간 보지 말자///
 
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
