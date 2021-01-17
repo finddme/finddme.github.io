@@ -185,3 +185,7 @@ Ergaenzung과 Angebe는 다음 검증 절차를 통해 어느정도 구분이 �
 -> 연결테스트2(Anschlusstest2): es ist/war ... so, dass를 붙여본다.  
   e.g. Es ist <U>wahrscheinlich</U> so, dass Michael in Goettingen an seiner Hausarbeit arbeitet.
     *Es ist <U>an seiner Hausarbeit</U> so, dass Michael wahrscheinlich in Goettingen arbeitet.
+
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
