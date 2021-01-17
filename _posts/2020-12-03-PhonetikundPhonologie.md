@@ -152,3 +152,6 @@ Allophone(변이음)은 음소의 실현 변이형이다. 따라서 음소 시�
 4\) Geschlossen Silbe: 자음으로 끝나는 것 (e.g. ein)  
 <center><img width="400" alt="2020-12-17 (25)" src="https://user-images.githubusercontent.com/53667002/102480751-140ad300-40a4-11eb-9ce5-fe55c48e4472.png"></center>
 
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
