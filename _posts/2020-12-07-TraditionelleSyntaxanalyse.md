@@ -146,3 +146,7 @@ Hypotaxe는 주문장과 부문장이 결합하여 한 문장이 된 것으로, 
 <center><img width="600" alt="2020-12-18 (29)" src="https://user-images.githubusercontent.com/53667002/102553482-40efd200-4106-11eb-8b0b-1cb094749a69.png"></center>
 지금까지 설명한 복잡한 문장에 대한 분석 스키마를 도식화하면 다음과 같다:
 <center><img width="800" alt="2020-12-18 (30)" src="https://user-images.githubusercontent.com/53667002/102553575-68df3580-4106-11eb-98b0-ea0d85836812.png"></center>
+
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
