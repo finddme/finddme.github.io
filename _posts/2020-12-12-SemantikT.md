@@ -84,3 +84,7 @@ Skript는 시나리오 형식의 스키마인데, 예를 들어 슈퍼마켓 계
 이는 언어가 사고를 결정한다는 가설이다. 즉, 자연어의 개별 언어 시스템이 한 언어를 사용하는 구성원들의 사고 구조와 사고 가능성을 결정한다는 것이다. 예를 들어 이누이트나 사막에 사는 사람들에게 눈이나 모래에 대한 단어의 수를 물어본다면 우리가 아는 것 보다 더 세분화된 단어들을 대답할 것이다. 이러한 사례들을 기반으로 이 이론이 생성되었다. 
 ## 4\.2 Moderate Variante der Sapir-Whorf-Hypothese(linguistische Determinismus): 
 Sapir-Whorf-Hypothese에 의하면 개개인들은 언어-문화적으로만 완전히 결정되고, 그의 모국어의 구조와 샘플에서 발음될 수 있는 것만 생각할 수 있는데, 이는 너무 극단적이고 많은 반론이 제기되어 이후 변형된 가설이 제안되었다. 변형된 가설은 앞선 주장을 조금 유연하게 바꾼 것인데, 언어가 어느정도 사고구조에 영향을 미친다고 주장한다. 즉, 언어가 우리 생각을 결정하지는 못하지만 언어가 우리의 생각을 수정하는 정도의 영향은 마친다는 주장이다. 
+
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
