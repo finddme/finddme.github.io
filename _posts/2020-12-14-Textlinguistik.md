@@ -41,3 +41,7 @@ Kohaerenz(일관성)은 텍스트의 내용적-주제적 맥락과 관련된 텍
 ## 3\. Intertextualitaet(상호텍스트성)
 상호텍스트성은 텍스트들 간의 연관성을 나타내는 자질로, 일반적인 상호텍스트성와 특수한 상화텍스트성이 구분된다:
 <center><img width="700" alt="2021-01-09 (5)" src="https://user-images.githubusercontent.com/53667002/104077875-c0347980-525e-11eb-83c5-3e6dd3f5b521.png"></center>
+
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
