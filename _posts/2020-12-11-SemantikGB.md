@@ -163,3 +163,7 @@ Hyperonym(상위개념)은 Hyponym(하위개념)을 포괄한다. 이러한 관�
 
 - Polysemie(다의어): 언어 역사적으로 하나의 공통된 핵심 의미로 거슬러올라갈 수 있는 경우. 예를 들어 Bank/Stzmoebel과 Bank/Geldinstitut는 banca에서 왔는데, 중세에 환전소의 긴 탁자를 가리키는 말에서 유래했다.  
 - Homonymie(동음이의어): 여기에 속하는 단어들은 역사적으로 하나의 관련 단어를 공유하고 있지 않다. 예를 들어 Kiefer/Nadelbaum과 Kiefer/Kochen des Gesichtschaeldels.
+
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
