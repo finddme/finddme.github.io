@@ -159,3 +159,6 @@ Zirkumfix 분석 시, 이원원칙에 충돌되는데, 이는 아래 그림처�
 ### Konfix(쌍접사)
 외국어에 뿌리가 있고, 거기에서 단어형성이 사용되어진 gebundenes lexikalisches Morphem (e.g. {bio}: Biollogie, biometrisch, Biodynamik, Bioladen, Biogemuese, {elektr}: elektrisch, elektrisieren, Elektrik, {thek}, {polit}).
 
+## Reference
+
+> Albert Busch/Oliver Stenschke "Germanistische Linguistik: Eine Einführung," Gunter Narr Verlag Tübingen. 2007
