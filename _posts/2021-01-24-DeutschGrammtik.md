@@ -132,8 +132,16 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 
 
 ### 4. Modalverben mit zwei Infinitiven
-화법조동사가 두개의 동사원형을 가질 때가 있다. 이때 4격이 오면 4격을 1격처럼 해석하면 된다.
+화법조동사가 두개의 동사원형을 가질 때가 있다. 이때 4격이 오면 4격을 1격처럼 해석해야하는 경우가 있는데 그건 맥락에 따라 알아서 해석하면 된다. 그리고 Perfekt형태보다 Praeteritum보다 더 선호된다.**<span style="color:#86937A">(Praeteritum과 Perfek는 의미상 차이 없다)</span>**
 
+**-&nbsp;&nbsp;&nbsp;&nbsp;Praesens**  
+→ Ich *kann* dich nicht *weinen sehen*. 나는 <U>너가</U> 우는 것을 볼 수 있었다.<span style="color:#A95762">(해석주의)</span>  
+
+**-&nbsp;&nbsp;&nbsp;&nbsp;Praeteritum**  
+→ Er *konnte* den Verletzten nicht *rufen hoeren*. 그는 <U>부상자가</U> 부르는 것을 들을 수 없었다.<span style="color:#A95762">(해석주의)</span>  
+
+**-&nbsp;&nbsp;&nbsp;&nbsp;Perfekt**
+→ Sie *hat* ihn nicht *weggehen lassen wollen*. 그녀는 그를 놓아주고 싶지 않았다.
 
 
 ## Modalverben im Konjunktiv
