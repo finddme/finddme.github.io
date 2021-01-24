@@ -99,8 +99,7 @@ haben + Infinitiv + Modalverben(infinitiv form)
 **Plusquamperfekt(대과거)**  
 haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)  
 → Der Arbeiter *hatte* den Meister *sprechen wollen*.  
-
-**<span style="color:#617EB4"><Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.></span>**
+**<span style="color:#86937A">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>**
 
 ## Modalverben im Konjunktiv
 ## Das Passiv
