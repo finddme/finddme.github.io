@@ -108,13 +108,14 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 
 **1\) hoeren, lassen, sehen, helfen  
 **Praesens**: 화법조동사처럼 Vollverb끼고 나옴  
-→ Er *hoert* mich Klavier *spielen*. 그는 *내가* 피아노 치는 소리를 듣는다.(해석주의)
+→ Er *hoert* mich Klavier *spielen*. 그는 <U>내가</U> 피아노 치는 소리를 듣는다.<span style="color:#A95762">(해석주의)</span>   
 
 **Praeteritum**: 화법조동사처럼 Vollverb는 그대로 원형. 화법조동사만 konjugiert된다.  
 → Er *liess* den Taxifahrer *warten*. 그는 택시 운전기사를 기다리게 했다.  
 
 **Perfekt**: 화법조동사로 사용된 hoeren, lassen, sehen, helfen은 화법조동사의 완료형처럼 haben동사만 konjugieren하고 해당 동사는 그대로 원형을 사용한다.  
 → Du *hast* die Gefahr *kommen sehen*.
+→ <span style="color:#A95762">(Nebensatz에 왔을 때 순서 주의)</span> Ich weiss, dass du die Gefahr *<U>hast</U> kommen sehen*.
 
 ## Modalverben im Konjunktiv
 ## Das Passiv
