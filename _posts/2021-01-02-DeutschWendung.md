@@ -40,6 +40,10 @@ tag: Deutsch
 
 **Anders gesagt** 달리 말하자면
 > <span style="color:#A95762">Anders gesagt</span>, Sie haben in der Libe ein erstes Element, naemlich die Unterscheidung, eine Trennung, einen Unterschied, eine Zwei.
+
+**an sich** 그 자체
+Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur eine Begegnung, fast nichts ist.
+
 ### B
 
 **bezieht sich auf 4** -와 관련된, -에 대한
@@ -67,7 +71,7 @@ tag: Deutsch
 > Wir muessen uns <span style="color:#A95762">daran erinnern</span>, dass das, was wir beobachten, nicht die Natur selbst ist, sondern Natur, die unserer Art der Fragestellung ausgesetzt ist.
 
 **entscheiden** 결정하다    
-**entscheidend**결정적인(동사에 -d를 붙이면 영어에서 -ing를 붙이는 것 처럼 현재분사가 된다.)
+**entscheidend** 결정적인(동사에 -d를 붙이면 영어에서 -ing를 붙이는 것 처럼 현재분사가 된다.)
 > Das ist allerdings ein sehr merkwuerdiges Resultat, das zu zeigen sccheint, dass die Beobachtung eine <span style="color:#A95762">entscheidende</span> Rolle bei dem Vorgang spielt und dass die Wirklichkeit verschieden ist, je nachdem, ob wir sie beobachten oder nicht.
 
 
@@ -81,6 +85,15 @@ tag: Deutsch
 ### H
 
 ### I
+
+**interessieren sich fuer 4** 주어가 4에 관심 있다  
+**interesseiren 3** -의 흥미를 끌다  
+**Interesse an 3** 3에 관심 있다.
+> Ist Ihr eigenes <span style="color:#A95762">Interesse an</span> dieser Frage nicht urspruenglich in der Gruendungsgeste Platons enthalten, der die Liebe zu einer der Zugangsarten zur Idee macht?
+
+
+**Insofern** 그러한 점에 있어서
+> <span style="color:#A95762">Insofern</span> hat sie eine universelle Tragweite und ist eine persoenliche Erfahrung der moeglichen Universalitaet.
 
 ### J
 
@@ -123,6 +136,13 @@ tag: Deutsch
 **sein kann** -일 수 있는
 > Die Liebe hat zuerst mit einer Unterscheidung oder einer Trennung zu tun, die der schlichte Unterschied zwischen zwei Personen mit ihrer unendlichen Subjektivitaet <span style="color:#A95762">sein kann</span>.
 
+**selbst wenn** 비록 -일지라도
+> <span style="color:#A95762">Selbst wenn</span> ich einfach einen schoenen Koerper betrachte, bin ich somit ob ich es will oder nicht, auf dem Weg zur Idee des Schoenen.
+
+**selbst** -일지라도
+> <span style="color:#A95762">Selbst</span> beim schlechte Wetter.
+
+
 ### T
 
 **mit 3 zu tun haben** -와 관련있다
@@ -142,6 +162,11 @@ tag: Deutsch
 **3+ zur Verfuegung stehen** 3격이 마음대로 사용하다  
 **3+ zur Verfuegung stellen** 주어가 3격에게 마음대로 사용하게 내어주다
 > Unsere wissenschaftliche Arbeit in der Physik besteht darin, Fragen ueber die Natur zu stellen in der Sprache, die wir besitzen, und zu versuchen, eine Antwort zu erhalten durch Experimente, die wir mit den Mitteln ausfuehren, die zu unserer <span style="color:#A95762">Verfuegung stehen</span>.
+
+**vorstellen 3 4** 3에게 4를 소개하다  
+**vorstellen sich 4** 4를 상상하다/생각하다  
+**Vorstellung** 생각
+> Sie fuehrt uns in den Bereich einer Grunderfahrung dessen, was der Unterschied ist, und im Grunde zur <span style="color:#A95762">Vorstellung</span>, dass man die Welt vom Gesichtspunkt des Unterschieds aus erfahren kann.
 
 ### W
 
