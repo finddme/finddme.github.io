@@ -84,19 +84,19 @@ b\) 의향
 
 ### 2. Formen
 
-**-   Praesens(현재)**  
+**-&nbsp;&nbsp;&nbsp;&nbsp;Praesens(현재)**  
 Modalverben + Infinitiv  
 → Der Arbeiter *will* den Meister *sprechen*.  
 
-**-   Praeteritum(과거)**  
+**-&nbsp;&nbsp;&nbsp;&nbsp;Praeteritum(과거)**  
 Modalverben(praeteritum form) + Infinitiv  
 → Der Arbeiter *wollte* den Meister *sprechen*.  
 
-**-    Perfekt(완료)**  
+**-&nbsp;&nbsp;&nbsp;&nbsp;Perfekt(완료)**  
 haben + Infinitiv + Modalverben(infinitiv form)  
 → Der Arbeiter *hat* den Meister *sprechen wollen*.  
 
-**-    Plusquamperfekt(대과거)**  
+**-&nbsp;&nbsp;&nbsp;&nbsp;Plusquamperfekt(대과거)**  
 haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)  
 → Der Arbeiter *hatte* den Meister *sprechen wollen*.  
 **<span style="color:#86937A">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>**
@@ -110,13 +110,13 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 **1\) hoeren, lassen, sehen, helfen**  
 
 
-**-    Praesens**: 화법조동사처럼 Vollverb끼고 나옴  
+**-&nbsp;&nbsp;&nbsp;&nbsp;Praesens**: 화법조동사처럼 Vollverb끼고 나옴  
 → Er *hoert* mich Klavier *spielen*. 그는 <U>내가</U> 피아노 치는 소리를 듣는다.<span style="color:#A95762">(해석주의)</span>   
 
-**-    Praeteritum**: 화법조동사처럼 Vollverb는 그대로 원형. 화법조동사만 konjugiert된다.  
+**-&nbsp;&nbsp;&nbsp;&nbsp;Praeteritum**: 화법조동사처럼 Vollverb는 그대로 원형. 화법조동사만 konjugiert된다.  
 → Er *liess* den Taxifahrer *warten*. 그는 택시 운전기사를 기다리게 했다.  
 
-**-    Perfekt**: 화법조동사로 사용된 hoeren, lassen, sehen, helfen은 화법조동사의 완료형처럼 haben동사만 konjugieren하고 해당 동사는 그대로 원형을 사용한다.  
+**-&nbsp;&nbsp;&nbsp;&nbsp;Perfekt**: 화법조동사로 사용된 hoeren, lassen, sehen, helfen은 화법조동사의 완료형처럼 haben동사만 konjugieren하고 해당 동사는 그대로 원형을 사용한다.  
 → Du *hast* die Gefahr *kommen sehen*.  
 → <span style="color:#A95762">(Nebensatz에 왔을 때 순서 주의)</span> Ich weiss, dass du die Gefahr *<U>hast</U> kommen sehen*.
 
