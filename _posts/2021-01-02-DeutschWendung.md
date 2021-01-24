@@ -65,6 +65,8 @@ tag: Deutsch
 **entscheiden 결정하다**  
 **entscheidend 결정적인(동사에 -d를 붙이면 영어에서 -ing를 붙이는 것 처럼 현재분사가 된다.)**
 > Das ist allerdings ein sehr merkwuerdiges Resultat, das zu zeigen sccheint, dass die Beobachtung eine <span style="color:#A95762">entscheidende</span> Rolle bei dem Vorgang spielt und dass die Wirklichkeit verschieden ist, je nachdem, ob wir sie beobachten oder nicht.
+
+
 ### F
 
 **Form annehmen** -한 형태를 띄다
