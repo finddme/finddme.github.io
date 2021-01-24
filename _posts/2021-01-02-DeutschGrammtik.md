@@ -110,7 +110,7 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 **1\) hoeren, lassen, sehen, helfen**  
 
 
-**-&nbsp;&nbsp;&nbsp;&nbsp;Praesens**: 화법조동사처럼 Vollverb끼고 나옴  
+**-&nbsp;&nbsp;&nbsp;&nbsp;Praesens**: 화법조동사처럼 Vollverb를 끼고 나옴  
 → Er *hoert* mich Klavier *spielen*. 그는 <U>내가</U> 피아노 치는 소리를 듣는다.<span style="color:#A95762">(해석주의)</span>   
 
 **-&nbsp;&nbsp;&nbsp;&nbsp;Praeteritum**: 화법조동사처럼 Vollverb는 그대로 원형. 화법조동사만 konjugiert된다.  
@@ -119,6 +119,22 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 **-&nbsp;&nbsp;&nbsp;&nbsp;Perfekt**: 화법조동사로 사용된 hoeren, lassen, sehen, helfen은 화법조동사의 완료형처럼 haben동사만 konjugieren하고 해당 동사는 그대로 원형을 사용한다.  
 → Du *hast* die Gefahr *kommen sehen*.  
 → <span style="color:#A95762">(Nebensatz에 왔을 때 순서 주의)</span> Ich weiss, dass du die Gefahr *<U>hast</U> kommen sehen*.
+
+
+**2\) bleiben, gehen, lehren, lernen**
+
+**-&nbsp;&nbsp;&nbsp;&nbsp;Praesens**: 화법조동사처럼 Vollverb를 끼고 나온다.  
+→ Er *bleibt* bei der Begruessung *sitzen.* 그는 인사할 때 앉은 채로 있었다.  
+
+**-&nbsp;&nbsp;&nbsp;&nbsp;Perfekt**: 1의 동사들과 달리 여기에서는 일반동사의 완료형처럼 변화한다.  
+→ Er *ist* bei der Begruessung *sitzen* *<U>geblieben</U>*.
+→ <span style="color:#A95762">(Nebensatz에서 1과 달리 일반동사의 완료형과 같은 순서로 온다)</span> Ich weiss, dass dein Mantel im Restaurant *haengen geblieben ist*.
+
+
+### 4. Modalverben mit zwei Infinitiven
+화법조동사가 두개의 동사원형을 가질 때가 있다. 이때 4격이 오면 4격을 1격처럼 해석하면 된다.
+
+
 
 ## Modalverben im Konjunktiv
 ## Das Passiv
