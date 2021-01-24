@@ -30,10 +30,10 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 ### 1. Die Bedeutung der Modalverben
 
 
-***duerfen*** -하면 안된다.  
-a\) 허락, 허가  
+***duerfen***   
+a\) 허락, 허가(- 해도 된다)  
 → In diesem Park duerfen Kinder spielen  
-b\) 금지  
+b\) 금지(duerfen nicht 하면 안 된다)
 → Bei Rot darf man die Strasse nicht ueberqueren.  
 c\) 금지 명령  
 → Man darf Blumen in der Mittagshize nicht giessen.
