@@ -52,7 +52,7 @@ b\) 그냥 moegen동사 자체가 Vollverb로서도 사용된다.
 → Ich mag keine Schlagsahne.
 
 
-***moechten***  
+***moechten***(moegen의 Konjunktiv2 형태)
 a\) 소망  
 → Wir moechten ihn gern kennen lernen.  
 b\) 정중한 요청  
@@ -80,6 +80,27 @@ a\) 소망
 → Ich will dir die Wahrheit sagen.  
 b\) 의향  
 → Im Dezember wollen wir in das neue Gaus einziehen.
+
+
+### 2. Formen
+
+**Praesens(현재)**  
+Modalverben + Infinitiv  
+→ Der Arbeiter *will* den Meister *sprechen*.  
+
+**Praeteritum(과거)**  
+Modalverben(praeteritum form) + Infinitiv  
+→ Der Arbeiter *wollte* den Meister *sprechen*.  
+
+**Perfekt(완료)**  
+haben + Infinitiv + Modalverben(infinitiv form)  
+→ Der Arbeiter *hat* den Meister *sprechen wollen*.  
+
+**Plusquamperfekt(대과거)**  
+haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)  
+→ Der Arbeiter *hatte* den Meister *sprechen wollen*.  
+
+**<span style="color:#617EB4"><Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.></span>**
 
 ## Modalverben im Konjunktiv
 ## Das Passiv
