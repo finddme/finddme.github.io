@@ -84,11 +84,11 @@ b\) 의향
 
 ### 2. Formen
 
-**-    Praesens(현재)**  
+**-   Praesens(현재)**  
 Modalverben + Infinitiv  
 → Der Arbeiter *will* den Meister *sprechen*.  
 
-**-    Praeteritum(과거)**  
+**-   Praeteritum(과거)**  
 Modalverben(praeteritum form) + Infinitiv  
 → Der Arbeiter *wollte* den Meister *sprechen*.  
 
