@@ -43,8 +43,12 @@ tag: Deutsch
 ### B
 
 **bezieht sich auf 4** -와 관련된, -에 대한
-
 >  Die Bezeichnung Bohnenkaffee bedeutet nicht, dass der Kaffee noch ungemahlen ist, sondern <span style="color:#A95762">bezieht sich auf</span> die Reinheit des Produkts und dient der Unterscheidung von sogenanntem Ersatzkaffee.
+
+**Bezug auf 4** -와 관련된
+
+**Beziehung zu 3** -와 관련된
+> Es ist verstaendlich, dass in unserer wissenschaftlichen <span style="color:#A95762">Beziehung zur</span> Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es mit den Teilen der Natur zu tun bekommen, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.
 
 ### C
 
@@ -58,12 +62,12 @@ tag: Deutsch
 **Entfernung von** -로부터 떼어내다, 제거하다
 > Der Zentralverband der Deutschen Haus- und Grundeigentruemen teilte 2005 mit, dass die <span style="color:#A95762">Entfernung</span> unerlaubter Graffiti <span style="color:#A95762">von</span> Gebaeude und oeffentlichen Verkehrsmitteln pro Jahr rund 500 Milionen Euro koste.
 
-**erinnern + 2**  
-**erinnern + an +3**
+**erinnern + 2** -를 기억하다   
+**erinnern + an +3** -를 기억하다
 > Wir muessen uns <span style="color:#A95762">daran erinnern</span>, dass das, was wir beobachten, nicht die Natur selbst ist, sondern Natur, die unserer Art der Fragestellung ausgesetzt ist.
 
-**entscheiden 결정하다**  
-**entscheidend 결정적인(동사에 -d를 붙이면 영어에서 -ing를 붙이는 것 처럼 현재분사가 된다.)**
+**entscheiden** 결정하다    
+**entscheidend**결정적인(동사에 -d를 붙이면 영어에서 -ing를 붙이는 것 처럼 현재분사가 된다.)
 > Das ist allerdings ein sehr merkwuerdiges Resultat, das zu zeigen sccheint, dass die Beobachtung eine <span style="color:#A95762">entscheidende</span> Rolle bei dem Vorgang spielt und dass die Wirklichkeit verschieden ist, je nachdem, ob wir sie beobachten oder nicht.
 
 
@@ -80,9 +84,17 @@ tag: Deutsch
 
 ### J
 
-**je nach** -에 따라
-
+**je nach** -에 따라  
 > Röst- und Mahlgrad variieren <span style="color:#A95762">je nach</span> Zubereitungsart. Kaffee enthält das Vitamin Niacin.
+
+**je nachdem** -에 따라
+>  Das ist allerdings ein sehr merkwuerdiges Resultat, das zu zeigen sccheint, dass die Beobachtung eine entscheidende Rolle bei dem Vorgang spielt und dass die Wirklichkeit verschieden ist, <span style="color:#A95762">je nachdem</span>, ob wir sie beobachten oder nicht.
+
+
+**Jede(=every)** 모든 것 하나 하나 다  
+**Alle** 그냥 전체
+> <span style="color:#A95762">Jeder</span> Versuch, eine solche Beschreibung zu finden, wuerde zu Widerspruechen fuehren.
+
 
 ### K
 
@@ -117,12 +129,19 @@ tag: Deutsch
 > Die Liebe <span style="color:#A95762">hat</span> zuerst <span style="color:#A95762">mit</span> einer Unterscheidung oder einer Trennung <span style="color:#A95762">zu tun</span>, die der schlichte Unterschied zwischen zwei Personen mit ihrer unendlichen Subjektivitaet sein kann.
 
 
+**mit 3 zu tun bekommen** -와 관련있다
+> Es ist verstaendlich, dass in unserer wissenschaftlichen Beziehung zur Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es <span style="color:#A95762">mit</span> den Teilen der Natur <span style="color:#A95762">zu tun bekommen</span>, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.
+
 ### U
 
 ### V
 
 **im Sinne des Volksmundes** 속설에 의하면, 속설에 따르면
 > Werden Graffiti in der öffentlichen Wahrnehmung, insbesondere die nicht genehmigten Graffiti, meist als Form des Vandalismus – <span style="color:#A95762">im Sinne des Volksmundes</span>: „Narrenhände beschmieren Tisch und Wände“ – betrachtet, werden sie von anderer Seite auch als Form der Kunst anerkannt.
+
+**3+ zur Verfuegung stehen** 3격이 마음대로 사용하다  
+**3+ zur Verfuegung stellen** 주어가 3격에게 마음대로 사용하게 내어주다
+> Unsere wissenschaftliche Arbeit in der Physik besteht darin, Fragen ueber die Natur zu stellen in der Sprache, die wir besitzen, und zu versuchen, eine Antwort zu erhalten durch Experimente, die wir mit den Mitteln ausfuehren, die zu unserer <span style="color:#A95762">Verfuegung stehen</span>.
 
 ### W
 
