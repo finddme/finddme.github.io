@@ -23,16 +23,27 @@ tag: Deutsch
 ## *dass* Satz oder infinitiv
 
 ## Modalverben
-Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서 의미를 가진 동사(Vollverb)를 따로 필요로 하는데, 이는 Infinitiv(동사원형)형태로 온다.
-> Er *muss* heute laenger *arbeiten*.
+Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서 의미를 가진 동사(Vollverb)를 따로 필요로 하는데, 이는 Infinitiv(동사원형)형태로 온다.  
+→ Er *muss* heute laenger *arbeiten*.
 
 
 ### Die Bedeutung der Modalverben
 
 
-***duerfen***  
-a\) 허락, 허가
-> In diesem Park duerfen Kinder spielen
+***duerfen*** -하면 안된다.
+a\) 허락, 허가  
+→ In diesem Park duerfen Kinder spielen  
+b\) 금지  
+→ Bei Rot darf man die Strasse nicht ueberqueren.  
+c\) 금지 명령
+→ Man darf Blumen in der Mittagshize nicht giessen.
+
+***koennen*** -할 수 있다  
+a\) 가능
+→ In einem Jahr koennen wir das Haus bestimmt teurer verkaufen.  
+b\) 능력  
+→ Er kann gut Tennis spielen.
+
 
 ## Modalverben im Konjunktiv
 ## Das Passiv
