@@ -20,14 +20,14 @@ tag: Deutsch
 
 
 
-# *dass* Satz oder infinitiv
+## *dass* Satz oder infinitiv
 
-# Modalverben
+## Modalverben
 Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서 의미를 가진 동사(Vollverb)를 따로 필요로 하는데, 이는 Infinitiv(동사원형)형태로 온다.  
 → Er *muss* heute laenger *arbeiten*.
 
 
-## 1. Die Bedeutung der Modalverben
+### 1. Die Bedeutung der Modalverben
 
 
 ***&#10004; duerfen***   
@@ -82,7 +82,7 @@ b\) 의향
 → Im Dezember wollen wir in das neue Gaus einziehen.
 
 
-## 2. Formen
+### 2. Formen
 
 **-&nbsp;&nbsp;&nbsp;&nbsp;Praesens(현재)**  
 Modalverben + Infinitiv  
@@ -102,7 +102,7 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 **<span style="color:#86937A">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>**
 
 
-## 3. Verben, die wie Modalverben gebraucht werden
+### 3. Verben, die wie Modalverben gebraucht werden
 
 화법조동사는 아니지만 화법조동사처럼 사용되는 동사들이 있다. 이러한 동사는 Perfekt에서 나타나는 형태에 따라 두 가지 유형으로 나뉜다.
 
@@ -131,23 +131,23 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 → <span style="color:#A95762">(Nebensatz에서 1과 달리 일반동사의 완료형과 같은 순서로 온다)</span> Ich weiss, dass dein Mantel im Restaurant *haengen geblieben ist*.
 
 
-## 4. Modalverben mit zwei Infinitiven
+### 4. Modalverben mit zwei Infinitiven
 화법조동사가 두개의 동사원형을 가질 때가 있다. 이때 4격이 오면 4격을 1격처럼 해석하면 된다.
 
 
 
-# Modalverben im Konjunktiv
-# Das Passiv
-# zustandpassiv
-# FuturⅠ,Ⅱ
-# Nullposition(Satzverbindung: Konjunktionen in der Position Null)
-# Adjektive und Partizipien als Nomen
-# Die Partizipialkonstruktion
-# Partizipialsaetze
-# Konjunktiv Ⅰ
-# Konjunktiv Ⅱ
-# *haben* und *sein* + Infinitiv mit *zu*
-# Das Gerundivum
+## Modalverben im Konjunktiv
+## Das Passiv
+## zustandpassiv
+## FuturⅠ,Ⅱ
+## Nullposition(Satzverbindung: Konjunktionen in der Position Null)
+## Adjektive und Partizipien als Nomen
+## Die Partizipialkonstruktion
+## Partizipialsaetze
+## Konjunktiv Ⅰ
+## Konjunktiv Ⅱ
+## *haben* und *sein* + Infinitiv mit *zu*
+## Das Gerundivum
 
 
 
