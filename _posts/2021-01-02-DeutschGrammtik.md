@@ -30,7 +30,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 ### 1. Die Bedeutung der Modalverben
 
 
-***duerfen***   
+***&#10004;duerfen***   
 a\) 허락, 허가(- 해도 된다)  
 → In diesem Park duerfen Kinder spielen  
 b\) 금지(duerfen nicht 하면 안 된다)  
@@ -107,6 +107,8 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 화법조동사는 아니지만 화법조동사처럼 사용되는 동사들이 있다. 이러한 동사는 Perfekt에서 나타나는 형태에 따라 두 가지 유형으로 나뉜다.
 
 **1\) hoeren, lassen, sehen, helfen  
+
+
 **Praesens**: 화법조동사처럼 Vollverb끼고 나옴  
 → Er *hoert* mich Klavier *spielen*. 그는 <U>내가</U> 피아노 치는 소리를 듣는다.<span style="color:#A95762">(해석주의)</span>   
 
@@ -114,7 +116,7 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 → Er *liess* den Taxifahrer *warten*. 그는 택시 운전기사를 기다리게 했다.  
 
 **Perfekt**: 화법조동사로 사용된 hoeren, lassen, sehen, helfen은 화법조동사의 완료형처럼 haben동사만 konjugieren하고 해당 동사는 그대로 원형을 사용한다.  
-→ Du *hast* die Gefahr *kommen sehen*.
+→ Du *hast* die Gefahr *kommen sehen*.  
 → <span style="color:#A95762">(Nebensatz에 왔을 때 순서 주의)</span> Ich weiss, dass du die Gefahr *<U>hast</U> kommen sehen*.
 
 ## Modalverben im Konjunktiv
