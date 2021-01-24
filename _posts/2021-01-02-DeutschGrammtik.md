@@ -30,7 +30,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 ### 1. Die Bedeutung der Modalverben
 
 
-***&#10004;duerfen***   
+***&#10004; duerfen***   
 a\) 허락, 허가(- 해도 된다)  
 → In diesem Park duerfen Kinder spielen  
 b\) 금지(duerfen nicht 하면 안 된다)  
@@ -38,28 +38,28 @@ b\) 금지(duerfen nicht 하면 안 된다)
 c\) 금지 명령  
 → Man darf Blumen in der Mittagshize nicht giessen.
 
-***koennen*** -할 수 있다  
+***&#10004; koennen*** -할 수 있다  
 a\) 가능  
 → In einem Jahr koennen wir das Haus bestimmt teurer verkaufen.  
 b\) 능력  
 → Er kann gut Tennis spielen.
 
 
-***moegen***  
+***&#10004; moegen***  
 a\) 선호/경향  
 → Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.  
 b\) 그냥 moegen동사 자체가 Vollverb로서도 사용된다.  
 → Ich mag keine Schlagsahne.
 
 
-***moechten***(moegen의 Konjunktiv2 형태)
+***&#10004; moechten***(moegen의 Konjunktiv2 형태)
 a\) 소망  
 → Wir moechten ihn gern kennen lernen.  
 b\) 정중한 요청  
 → Sie moechten nach fuenf bitte noch einmal anrufen.  
 
 
-***muessen***  
+***&#10004; muessen***  
 a\) 외부 압박 (-해야 한다)  
 → Mein Grossvater ist krank, ich muss nach Hause fahren.  
 b\) 필수  
@@ -67,7 +67,7 @@ b\) 필수
 c\) muessen nicht -할 필요 없다  
 → Mein Vater ist wieder gesund, ich muss nicht nach Hause zu fahren.
 
-***sollen***  
+***&#10004; sollen***  
 a\) 법  
 → Du sollst nocht toeten.  
 b\) 도덕적 당위성  
@@ -75,7 +75,7 @@ b\) 도덕적 당위성
 c\) 명령  
 → Ich soll nuechtern zur Untersuchung kommen. Das hat der Arzt gesagt.  
 
-***wollen***  
+***&#10004; wollen***  
 a\) 소망  
 → Ich will dir die Wahrheit sagen.  
 b\) 의향  
@@ -84,19 +84,19 @@ b\) 의향
 
 ### 2. Formen
 
-**Praesens(현재)**  
+**- Praesens(현재)**  
 Modalverben + Infinitiv  
 → Der Arbeiter *will* den Meister *sprechen*.  
 
-**Praeteritum(과거)**  
+**- Praeteritum(과거)**  
 Modalverben(praeteritum form) + Infinitiv  
 → Der Arbeiter *wollte* den Meister *sprechen*.  
 
-**Perfekt(완료)**  
+**- Perfekt(완료)**  
 haben + Infinitiv + Modalverben(infinitiv form)  
 → Der Arbeiter *hat* den Meister *sprechen wollen*.  
 
-**Plusquamperfekt(대과거)**  
+**- Plusquamperfekt(대과거)**  
 haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)  
 → Der Arbeiter *hatte* den Meister *sprechen wollen*.  
 **<span style="color:#86937A">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>**
@@ -109,13 +109,13 @@ haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)
 **1\) hoeren, lassen, sehen, helfen  
 
 
-**Praesens**: 화법조동사처럼 Vollverb끼고 나옴  
+**- Praesens**: 화법조동사처럼 Vollverb끼고 나옴  
 → Er *hoert* mich Klavier *spielen*. 그는 <U>내가</U> 피아노 치는 소리를 듣는다.<span style="color:#A95762">(해석주의)</span>   
 
-**Praeteritum**: 화법조동사처럼 Vollverb는 그대로 원형. 화법조동사만 konjugiert된다.  
+**- Praeteritum**: 화법조동사처럼 Vollverb는 그대로 원형. 화법조동사만 konjugiert된다.  
 → Er *liess* den Taxifahrer *warten*. 그는 택시 운전기사를 기다리게 했다.  
 
-**Perfekt**: 화법조동사로 사용된 hoeren, lassen, sehen, helfen은 화법조동사의 완료형처럼 haben동사만 konjugieren하고 해당 동사는 그대로 원형을 사용한다.  
+**- Perfekt**: 화법조동사로 사용된 hoeren, lassen, sehen, helfen은 화법조동사의 완료형처럼 haben동사만 konjugieren하고 해당 동사는 그대로 원형을 사용한다.  
 → Du *hast* die Gefahr *kommen sehen*.  
 → <span style="color:#A95762">(Nebensatz에 왔을 때 순서 주의)</span> Ich weiss, dass du die Gefahr *<U>hast</U> kommen sehen*.
 
