@@ -25,8 +25,7 @@ tag: Deutsch
 ### Modalverben
 Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서 의미를 가진 동사(Vollverb)를 따로 필요로 하는데, 이는 Infinitiv(동사원형)형태로 온다.
 > Er *muss* heute laenger *arbeiten*.
-
-**1\. Die Bedeutung der Modalverben
+#### Die Bedeutung der Modalverben
 ***duerfen***
 a\) 허락, 허가
 > In diesem Park duerfen Kinder spielen
