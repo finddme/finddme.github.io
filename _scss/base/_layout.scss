@@ -19,7 +19,7 @@
  */
 
 .container {
-  max-width: 50rem;
+  max-width: 36rem;
   a {
     @if $theme-color != $default { color: $dblue; }
   }
