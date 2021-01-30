@@ -37,6 +37,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
     <style type="text/css">
       .line{border-bottom: 1px solid #BDB8C1;}
       .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #CDC7D3;}
       table, th, td {
          border:1px solid #BDB8C1;
          background-color: #FFFFFF;
@@ -46,7 +47,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line2" bgcolor="#CDC7D3">Modalverben</th><th class="line2">Bedeutung</th></tr>
-       <tr><td class="line"><strong><em>duerfen</em></strong></td><td class="line">a) 허락, 허가(- 해도 된다)<br> → In diesem Park duerfen Kinder spielen<br> b) 금지(duerfen nicht 하면 안 된다)<br> → Bei Rot darf man die Strasse nicht ueberqueren.<br> c) 금지 명령<br> → Man darf Blumen in der Mittagshize nicht giessen.</td></tr>
+       <tr><td class="line3"><strong><em>duerfen</em></strong></td><td class="line">a) 허락, 허가(- 해도 된다)<br> → In diesem Park duerfen Kinder spielen<br> b) 금지(duerfen nicht 하면 안 된다)<br> → Bei Rot darf man die Strasse nicht ueberqueren.<br> c) 금지 명령<br> → Man darf Blumen in der Mittagshize nicht giessen.</td></tr>
        <tr><td class="line"><strong><em>koennen</em></strong></td><td class="line">a) 가능<br> → In einem Jahr koennen wir das Haus bestimmt teurer verkaufen.<br> b) 능력<br> → Er kann gut Tennis spielen.</td></tr>
        <tr><td class="line"><strong><em>moegen</em></strong></td><td class="line">a) 선호/경향<br> → Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.<br> b) 그냥 moegen동사 자체가 Vollverb로서도 사용된다.<br> → Ich mag keine Schlagsahne.</td></tr>
        <tr><td class="line"><strong><em>moechten</em></strong>(moegen의 Konjunktiv2 형태)</td><td class="line">a) 소망<br> → Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.<br> b) 정중한 요청<br> → Sie moechten nach fuenf bitte noch einmal anrufen.</td></tr>
