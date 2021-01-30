@@ -45,7 +45,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line2">Modalverben</th><th>Bedeutung</th></tr>
+       <tr><th class="line2">Modalverben</th><th class="line2">Bedeutung</th></tr>
        <tr><td class="line"><strong><em>duerfen</em></strong></td><td class="line">a) 허락, 허가(- 해도 된다)<br> → In diesem Park duerfen Kinder spielen<br> b) 금지(duerfen nicht 하면 안 된다)<br> → Bei Rot darf man die Strasse nicht ueberqueren.<br> c) 금지 명령<br> → Man darf Blumen in der Mittagshize nicht giessen.</td></tr>
        <tr><td class="line"><strong><em>koennen</em></strong></td><td class="line">a) 가능<br> → In einem Jahr koennen wir das Haus bestimmt teurer verkaufen.<br> b) 능력<br> → Er kann gut Tennis spielen.</td></tr>
        <tr><td class="line"><strong><em>moegen</em></strong></td><td class="line">a) 선호/경향<br> → Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.<br> b) 그냥 moegen동사 자체가 Vollverb로서도 사용된다.<br> → Ich mag keine Schlagsahne.</td></tr>
