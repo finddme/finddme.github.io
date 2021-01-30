@@ -64,6 +64,32 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 ### 2. Formen
 
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #EEEDEF;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #EEEDEF;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#CDC7D3">Tempus</th><th class="line2">Form</th></tr>
+       <tr><td class="line3"><strong>Praesens(현재)</strong></td><td class="line">Modalverben + Infinitiv<br> → Der Arbeiter <em>will</em> den Meister <em>sprechen</em>.</td></tr>
+       <tr><td class="line3"><strong>Praeteritum(과거)</strong></td><td class="line">Modalverben(praeteritum form) + Infinitiv<br> → Der Arbeiter <em>wollte</em> den Meister <em>sprechen</em>.</td></tr>
+       <tr><td class="line3"><strong>Perfekt(완료)</strong></td><td class="line">haben + Infinitiv + Modalverben(infinitiv form)<br> → Der Arbeiter <em>hat</em> den Meister <em>sprechen wollen</em>.</td></tr>
+       <tr><td class="line3"><strong>Plusquamperfekt(대과거)</strong></td><td class="line">haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)<br> → Der Arbeiter <em>hatte</em> den Meister <em>sprechen wollen</em>.<br> <span style="color:#86937A"><strong>(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span></strong></td></tr>
+     </table>
+ </body>
+</html>
+
+
+
 **-&nbsp;&nbsp;&nbsp;&nbsp;Praesens(현재)**  
 Modalverben + Infinitiv  
 → Der Arbeiter *will* den Meister *sprechen*.  
