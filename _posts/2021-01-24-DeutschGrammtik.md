@@ -91,24 +91,6 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 
 
-**-&nbsp;&nbsp;&nbsp;&nbsp;Praesens(현재)**  
-Modalverben + Infinitiv  
-→ Der Arbeiter *will* den Meister *sprechen*.  
-
-**-&nbsp;&nbsp;&nbsp;&nbsp;Praeteritum(과거)**  
-Modalverben(praeteritum form) + Infinitiv  
-→ Der Arbeiter *wollte* den Meister *sprechen*.  
-
-**-&nbsp;&nbsp;&nbsp;&nbsp;Perfekt(완료)**  
-haben + Infinitiv + Modalverben(infinitiv form)  
-→ Der Arbeiter *hat* den Meister *sprechen wollen*.  
-
-**-&nbsp;&nbsp;&nbsp;&nbsp;Plusquamperfekt(대과거)**  
-haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)  
-→ Der Arbeiter *hatte* den Meister *sprechen wollen*.  
-**<span style="color:#86937A">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>**
-
-
 ### 3. Verben, die wie Modalverben gebraucht werden
 
 화법조동사는 아니지만 화법조동사처럼 사용되는 동사들이 있다. 이러한 동사는 Perfekt에서 나타나는 형태에 따라 두 가지 유형으로 나뉜다.
