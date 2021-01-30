@@ -60,58 +60,6 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 
 
-***&#10004; duerfen***   
-a\) 허락, 허가(- 해도 된다)  
-→ In diesem Park duerfen Kinder spielen  
-b\) 금지(duerfen nicht 하면 안 된다)  
-→ Bei Rot darf man die Strasse nicht ueberqueren.  
-c\) 금지 명령  
-→ Man darf Blumen in der Mittagshize nicht giessen.
-
-***&#10004; koennen*** -할 수 있다  
-a\) 가능  
-→ In einem Jahr koennen wir das Haus bestimmt teurer verkaufen.  
-b\) 능력  
-→ Er kann gut Tennis spielen.
-
-
-***&#10004; moegen***  
-a\) 선호/경향  
-→ Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.  
-b\) 그냥 moegen동사 자체가 Vollverb로서도 사용된다.  
-→ Ich mag keine Schlagsahne.
-
-
-***&#10004; moechten***(moegen의 Konjunktiv2 형태)
-a\) 소망  
-→ Wir moechten ihn gern kennen lernen.  
-b\) 정중한 요청  
-→ Sie moechten nach fuenf bitte noch einmal anrufen.  
-
-
-***&#10004; muessen***  
-a\) 외부 압박 (-해야 한다)  
-→ Mein Grossvater ist krank, ich muss nach Hause fahren.  
-b\) 필수  
-→ Nach dem Unfall mussten wir zu Fuss nach Hause gehen.  
-c\) muessen nicht -할 필요 없다  
-→ Mein Vater ist wieder gesund, ich muss nicht nach Hause zu fahren.
-
-***&#10004; sollen***  
-a\) 법  
-→ Du sollst nocht toeten.  
-b\) 도덕적 당위성  
-→ Jeder soll die Lebensart des anderen anerkennen.  
-c\) 명령  
-→ Ich soll nuechtern zur Untersuchung kommen. Das hat der Arzt gesagt.  
-
-***&#10004; wollen***  
-a\) 소망  
-→ Ich will dir die Wahrheit sagen.  
-b\) 의향  
-→ Im Dezember wollen wir in das neue Gaus einziehen.
-
-
 ### 2. Formen
 
 **-&nbsp;&nbsp;&nbsp;&nbsp;Praesens(현재)**  
