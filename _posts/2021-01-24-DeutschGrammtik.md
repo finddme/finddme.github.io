@@ -45,13 +45,13 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    <body>
      <table style="border-collapse:collapse">
        <tr><th>Modalverben</th><th>Bedeutung</th></tr>
-       <tr><td><strong><em>duerfen</em></strong></td><td>a) 허락, 허가(- 해도 된다)<br> → In diesem Park duerfen Kinder spielen<br> b) 금지(duerfen nicht 하면 안 된다)<br> → Bei Rot darf man die Strasse nicht ueberqueren.<br> c) 금지 명령<br> → Man darf Blumen in der Mittagshize nicht giessen.</td></tr>
-       <tr><td><strong><em>koennen</em></strong></td><td>a) 가능<br> → In einem Jahr koennen wir das Haus bestimmt teurer verkaufen.<br> b) 능력<br> → Er kann gut Tennis spielen.</td></tr>
-       <tr><td><strong><em>moegen</em></strong></td><td>a) 선호/경향<br> → Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.<br> b) 그냥 moegen동사 자체가 Vollverb로서도 사용된다.<br> → Ich mag keine Schlagsahne.</td></tr>
-       <tr><td><strong><em>moechten</em></strong>(moegen의 Konjunktiv2 형태)</td><td>a) 소망<br> → Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.<br> b) 정중한 요청<br> → Sie moechten nach fuenf bitte noch einmal anrufen.</td></tr>
-       <tr><td><strong><em>muessen</em></strong></td><td>a) 외부 압박 (-해야 한다)<br> → Mein Grossvater ist krank, ich muss nach Hause fahren.<br> b) 필수<br> → Nach dem Unfall mussten wir zu Fuss nach Hause gehen.<br> c) muessen nicht -할 필요 없다<br> → Mein Vater ist wieder gesund, ich muss nicht nach Hause zu fahren.</td></tr>
-       <tr><td><strong><em>sollen</em></strong></td><td>a) 법<br> → Du sollst nocht toeten.<br> b) 도덕적 당위성<br> → Jeder soll die Lebensart des anderen anerkennen.<br> c) 명령<br> → Ich soll nuechtern zur Untersuchung kommen. Das hat der Arzt gesagt.</td></tr>
-       <tr><td><strong><em>wollen</em></strong></td><td>a) 소망<br> → Ich will dir die Wahrheit sagen.<br> b) 의향<br> → Im Dezember wollen wir in das neue Gaus einziehen.
+       <tr><td class="line"><strong><em>duerfen</em></strong></td><td class="line">a) 허락, 허가(- 해도 된다)<br> → In diesem Park duerfen Kinder spielen<br> b) 금지(duerfen nicht 하면 안 된다)<br> → Bei Rot darf man die Strasse nicht ueberqueren.<br> c) 금지 명령<br> → Man darf Blumen in der Mittagshize nicht giessen.</td></tr>
+       <tr><td class="line"><strong><em>koennen</em></strong></td><td class="line">a) 가능<br> → In einem Jahr koennen wir das Haus bestimmt teurer verkaufen.<br> b) 능력<br> → Er kann gut Tennis spielen.</td></tr>
+       <tr><td class="line"><strong><em>moegen</em></strong></td><td class="line">a) 선호/경향<br> → Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.<br> b) 그냥 moegen동사 자체가 Vollverb로서도 사용된다.<br> → Ich mag keine Schlagsahne.</td></tr>
+       <tr><td class="line"><strong><em>moechten</em></strong>(moegen의 Konjunktiv2 형태)</td><td class="line">a) 소망<br> → Ich mag mit dem neuen Kollegen nicht zusammenarbeiten.<br> b) 정중한 요청<br> → Sie moechten nach fuenf bitte noch einmal anrufen.</td></tr>
+       <tr><td class="line"><strong><em>muessen</em></strong></td><td class="line">a) 외부 압박 (-해야 한다)<br> → Mein Grossvater ist krank, ich muss nach Hause fahren.<br> b) 필수<br> → Nach dem Unfall mussten wir zu Fuss nach Hause gehen.<br> c) muessen nicht -할 필요 없다<br> → Mein Vater ist wieder gesund, ich muss nicht nach Hause zu fahren.</td></tr>
+       <tr><td class="line"><strong><em>sollen</em></strong></td><td class="line">a) 법<br> → Du sollst nocht toeten.<br> b) 도덕적 당위성<br> → Jeder soll die Lebensart des anderen anerkennen.<br> c) 명령<br> → Ich soll nuechtern zur Untersuchung kommen. Das hat der Arzt gesagt.</td></tr>
+       <tr><td class="line"><strong><em>wollen</em></strong></td><td class="line">a) 소망<br> → Ich will dir die Wahrheit sagen.<br> b) 의향<br> → Im Dezember wollen wir in das neue Gaus einziehen.
 </td></tr>
   </table>
  </body>
