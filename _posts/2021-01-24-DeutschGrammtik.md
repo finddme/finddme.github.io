@@ -37,8 +37,8 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
     <style type="text/css">
       .line{border-bottom: 1px solid #BDB8C1;}
       .line2{border-bottom: 2px solid #BDB8C1;}
-      .line3{border-bottom: 1px solid #BDB8C1; background-color: #FDFDFE;}
-      .line4{border-bottom: 2px solid #BDB8C1; background-color: #FDFDFE;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F8F7F9;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F8F7F9;}
       table, th, td {
          border:1px solid #BDB8C1;
          background-color: #FFFFFF;
