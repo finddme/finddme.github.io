@@ -231,13 +231,30 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 - \-라면  
 - 비현실적인 상황을 가정하는 바람을 표현할 때 사용한다.   
-- 이 용법에서는 doch, bloss, nur, doch nur가 꼭 와야하고, 느낌표(!)가 자주 쓰인다.(doch해석: ‘내가 뜻한대로 되지 않았다’는 뉘앙스의 쓰인 감탄사로 해석을 해보고 이상하면 역접으로 해석.)
-&nbsp;&nbsp;&nbsp;&nbsp;-> Wenn sie nur(doch nur) mitgefahren waeren! 그들이 함께 왔다면!
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wuesste ich doch(bloss) ihre Adresse! 내가 그녀의 주소를 안다면!
-- 이 용법은 wenn이랑 자주 쓰이는데 wenn이 생략될 때는 동사를 맨 앞으로 뺀다.
+- 이 용법에서는 doch, bloss, nur, doch nur가 꼭 와야하고, 느낌표(!)가 자주 쓰인다.  
+<span style="color:#86937A; font-weight: bold;">(doch해석: ‘내가 뜻한대로 되지 않았다’는 뉘앙스의 쓰인 감탄사로 해석을 해보고 이상하면 역접으로 해석.)</span>  
+&nbsp;&nbsp;&nbsp;&nbsp;-> Wenn sie nur(doch nur) mitgefahren waeren! 그들이 함께 왔다면!  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wuesste ich doch(bloss) ihre Adresse! 내가 그녀의 주소를 안다면!  
+
+
+- 이 용법은 wenn이랑 자주 쓰이는데 wenn이 생략될 때는 동사를 맨 앞으로 뺀다.  
 &nbsp;&nbsp;&nbsp;&nbsp;-> Wenn sie nur(doch nur) mitgefahren waeren! 그들이 함께 왔다면!
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wenn ich doch gesund waere! 내가 건강하다면!
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waere ich doch gesund!
+
+
+**2.2 Irreale Bdingungssaetze / Irreale Konditionalsaetze(조건법/약속화법)**
+
+
+- 만약-라면 -일텐데  
+- 상상으로 만들어낸 사실과 그 사실에서 생긴 상상 속의 결론을 표현할 때 사용한다.  
+- Wenn과 자주 쓰이는데, 주문장과 wenn이 쓰인 부문장의 순서는 왔다 갔다 할 수 있다.  
+&nbsp;&nbsp;&nbsp;&nbsp;-> Wenn ich Zeit haette, kaeme ich zu dir. 내가 시간이 있다면 너에게 갔을 텐데.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ich kaeme zu dir, wenn ich Zeit haette.  
+- 하지만 의문문일 때는 wenn절은 무조건 뒤로 간다.
+&nbsp;&nbsp;&nbsp;&nbsp;-> Was machtet ihr, wenn jetzt ein Feuer ausbraeche? 지금 불이 나면 어쩔거냐?  
+- sonst와 andernfalls와 자주 쓰인다(그렇지 않았더라면)
+&nbsp;&nbsp;&nbsp;&nbsp;-> Er musste ein Taxi nehmen, ??????????? 어순 무엇...
 
 
 
