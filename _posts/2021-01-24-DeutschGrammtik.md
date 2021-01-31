@@ -227,6 +227,18 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 ### 2. Gebrauch des Konjunktivs2
 접속법2식의 여러 용법에 대해 살펴보겠다.
 
+**2.1 Irreale Wunschsaetze(비현실적 바람)**
+
+- \-라면  
+- 비현실적인 상황을 가정하는 바람을 표현할 때 사용한다.   
+- 이 용법에서는 doch, bloss, nur, doch nur가 꼭 와야하고, 느낌표(!)가 자주 쓰인다.(doch해석: ‘내가 뜻한대로 되지 않았다’는 뉘앙스의 쓰인 감탄사로 해석을 해보고 이상하면 역접으로 해석.)
+&nbsp;&nbsp;&nbsp;&nbsp;-> Wenn sie nur(doch nur) mitgefahren waeren! 그들이 함께 왔다면!
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wuesste ich doch(bloss) ihre Adresse! 내가 그녀의 주소를 안다면!
+- 이 용법은 wenn이랑 자주 쓰이는데 wenn이 생략될 때는 동사를 맨 앞으로 뺀다.
+&nbsp;&nbsp;&nbsp;&nbsp;-> Wenn sie nur(doch nur) mitgefahren waeren! 그들이 함께 왔다면!
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wenn ich doch gesund waere! 내가 건강하다면!
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waere ich doch gesund!
+
 
 
 
