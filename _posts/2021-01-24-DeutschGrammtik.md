@@ -1,6 +1,6 @@
 ---
 title: Deutsch; Grammatik
-category: Deutsch
+category: Language
 tag: Deutsch
 ---
 
