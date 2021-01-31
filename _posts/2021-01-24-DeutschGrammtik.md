@@ -239,8 +239,8 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 - 이 용법은 wenn이랑 자주 쓰이는데 wenn이 생략될 때는 동사를 맨 앞으로 뺀다.  
 &nbsp;&nbsp;&nbsp;&nbsp;→ Wenn sie nur(doch nur) mitgefahren waeren! 그들이 함께 왔다면!  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wenn ich doch gesund waere! 내가 건강하다면!  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waere ich doch gesund!  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wenn ich doch gesund waere! 내가 건강하다면!  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waere ich doch gesund!  
 
 
 **2.2 Irreale Bdingungssaetze / Irreale Konditionalsaetze(조건법/약속화법)**
