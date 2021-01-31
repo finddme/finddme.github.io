@@ -251,14 +251,125 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 - Wenn과 자주 쓰이는데, 주문장과 wenn이 쓰인 부문장의 순서는 왔다 갔다 할 수 있다.  
 &nbsp;&nbsp;&nbsp;&nbsp;-> Wenn ich Zeit haette, kaeme ich zu dir. 내가 시간이 있다면 너에게 갔을 텐데.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ich kaeme zu dir, wenn ich Zeit haette.  
-- 하지만 의문문일 때는 wenn절은 무조건 뒤로 간다.
+- 하지만 의문문일 때는 wenn절은 무조건 뒤로 간다.  
 &nbsp;&nbsp;&nbsp;&nbsp;-> Was machtet ihr, wenn jetzt ein Feuer ausbraeche? 지금 불이 나면 어쩔거냐?  
-- sonst와 andernfalls와 자주 쓰인다(그렇지 않았더라면)
+- sonst와 andernfalls와 자주 쓰인다(그렇지 않았더라면)  
 &nbsp;&nbsp;&nbsp;&nbsp;-> Er musste ein Taxi nehmen, ??????????? 어순 무엇...
 
 
+- 주문장과 부문장 중 앞에서 이미 접속법2식을 나타냈으면 뒤에는 그냥 직설법 형태로 써도 된다.  
+&nbsp;&nbsp;&nbsp;&nbsp;-> Wenn ich henug Geld haette, baute ich mir ein Haus. 돈이 충분하다면 집을 지을 텐데.
+- 주관적인 진술일 때(주로 비교급이 쓰임) 주문장 두개가 나란히 붙을 수 있다.  
+&nbsp;&nbsp;&nbsp;&nbsp;-> Es waere mir angenehmer, er kaeme schon am Freitag. 그가 금요일에 오면 더 편할 텐데.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Es waere besser gewesen, wir haetten vorher mit ihm gesprochen. 우리가 그에게 미리 얘기했다면 더 좋았을 텐데
 
 
+
+**2.3 Irreale Vergleichssaetze/ Irreale Komparationssaetze**
+- 마치 -와 같이
+- 비현실을 현실인 것처럼 표현할 때 사용한다.
+- als ob, als wenn, wie wenn과 함께 쓰인다.
+- 우선 직설법으로 실제 상황을 표현하고, 부문장에 접속법2식을 사용하여 비현실을 나타낸다.
+&nbsp;&nbsp;&nbsp;&nbsp;-> Sie schaut mich an, als ob sie mich nicht verstuende. 그녀는 나를 이해하지 못하는 것처럼 쳐다본다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er hat solchen Hunger, als haette er seit Tagen nichts gegessen. 그는 몇일동안 먹지 못한 것처럼 배가 고프다.
+
+
+**2.4 Irreale Folgesaetze/ Irrale Konsekutivsaetze(부정화법)**
+- \-하기에는 너무 -하다
+- 부문장의 내용이 비현실적 혹은 반사실적인 뜻을 나타낼 때 사용된다.
+- zu- als dass K2,   
+so-dass K2,  
+ohne dass K2,  
+statt dass K2로 쓰인다.
+&nbsp;&nbsp;&nbsp;&nbsp;-> Es ist *zu* spaet, *als dass* wir noch bei ihm anrufen koennten. 전화하기에는 너무 늦었다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er hat *so* viel Zeit, *dass* er das ganze Jahr verreisen koennte. 그는 일년 내내 여행할 수 있는 시간이 엄청 많다.(하지만 실제로 여행하지 않음)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Statt dass* ich dich bei der Arbeit faende, finde ich dich immer nur beim Schach. 나는 너를 직장에서 잡지 않고 체스에서 항상 잡는다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er ging weg, *ohne dass* er sich verabschiedet haette. 그는 작별인사 없이 떠났다.
+
+
+**2.5 Weitere Anwendungsbereiche**
+
+1) 정중한 요청
+&nbsp;&nbsp;&nbsp;&nbsp;-> Ich moechte noch ein Kaffee. 커피 한잔 더 주시겠어요?  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wuerden Sie mir bitte etwas zum Schreiben leihen? 볼펜 같은 거 좀 빌려주시겠어요?  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fuer wann koennten wir uns verabreden? 언제쯤 약속을 잡을 수 있을까요?  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ich haette gern ein Glas Wein. 와인 한잔 주세겠어요?
+
+
+2) 충고/제안
+&nbsp;&nbsp;&nbsp;&nbsp;An deiner Stelle wuerde ich mir vor der langen Fahrt noch etwas zu essen kaufen. 여기에서 나는 당신에게 긴 여정 전에 무언가 먹을 것을 사기를 권한다.(상대에게 권유하는 수사법)
+&nbsp;&nbsp;&nbsp;&nbsp;Du solltest dir vor der lange Fahrt noch etwas zu essen kaufen. 너는 긴 여정 전에 뭔가 먹을 것을 사야해.(정중하고 구속력 없는 충고/추천)
+
+
+3) 의견이나 요구를 조심스럽게 전달할 때 화법조동사 duerfen, moegen이 자주 사용된다.
+
+
+4) es sei denn (nun), dass K2  
+es muesste den (nun) sein, dass K2  
+denn(nun) K2 (-가 아니면, -가 아닌 한에는, -외에는)
+&nbsp;&nbsp;&nbsp;&nbsp;-> Niemand darf hier herein, *es sei denn*, *dass* er einen Ausweis *haette*. 증명서를 가진게 아니라면 아무도 여기에 들어갈 수 없다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, *es muesste denn sein*, *dass* er einen Ausweis *haette*.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *haette* *denn (nun)* einen Ausweis.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *muesste denn* einen Ausweis haben.
+
+
+5) 접속법2식 화법조동사(주관적 진술 표현)
+5.1) 형태
+
+-현재
+
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line2" bgcolor="#F8F7F9">Indikativ</th><th class="line2">Konjunktion2</th></tr>
+       <tr><td>koennen</td><td><strong>koennte</strong></td></tr>
+       <tr><td>duerfen</td><td><strong>duerfte</strong></td></tr>
+       <tr><td>muessen</td><td><strong>muesste</strong></td></tr>
+       <tr><td>sollen</td><td><strong>sollte</strong></td></tr>
+       <tr><td>moegen</td><td><strong>moechte</strong></td></tr>
+       <tr><td>wollen</td><td><strong>wollte</strong></td></tr>
+    </table>
+ </body>
+</html>
+
+
+- 과거
+haette+Infinitiv+Modalverben Infinitiv
+&nbsp;&nbsp;&nbsp;&nbsp;ich haette laenger schlafen sollen. 나는 조금 더 오래 잠을 잤어야 했다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wenn ich heute nicht so frueh haette aufstehen muessen, waere ich jetzt nicht so muede. 내가 오늘 그렇게 일찍 일어나지 않았다면 나는 지금 피곤하지 않을텐데.<span style="color:#86937A; font-weight: bold;">(순서주의 동사원형이 2개 이상일 때 동사가 후치된다면 변화하는 동사가 맨 앞에 자리한다.)</span>
+
+
+5.2) 사용
+- koennen
+&nbsp;&nbsp;&nbsp;&nbsp;-> 확실하지 않은 추측: Mein Freund koennte heute kommen. 내 친구가 오늘 올 수도 있어.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er koennte (vielleicht) Deutsch gesprochen haben. 그는 아마 독일어로 말했을거야.  
+&nbsp;&nbsp;&nbsp;&nbsp;-> 가능성에 대한 화자의 확신: Herr Mueller koennte jetzt wirklich siene Schulden bezahlen. 뮐러씨는 이제 진짜 그의 빚을 갚을 수 있을거야.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er koennte sein Studium laengst abgeschlossen haben. 그는 학업을 이미 오래 전에 마쳤을거야.
+
+- duerfen 
+&nbsp;&nbsp;&nbsp;&nbsp;-> 조심스러운 추측: Er duerfte jetzt 20 Jahre alt sein. 그는 지금 20살쯤 될거야.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Das duerfte sie nicht gewusst haben. 그 여자는 그것을 알지 못했을거야.
+
+- muessen 
+&nbsp;&nbsp;&nbsp;&nbsp;-> -면 좋겠다 -이어야 하는데: so muesste es immer sein 언제나 그래야하는데  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;man muesste noch einmal so jung sien wie er. 우리도 저 사람처럼 한 번 더 젊으면 좋겠다.
+
+- sollen
+&nbsp;&nbsp;&nbsp;&nbsp;-> 조건문에서의 선택적 결정: Wenn Sie mein Angebot annehmen sollte, so teilen Sie es mir bitte sofort mit. 당신이 내 제안을 받아들인다면, 바로 저에게 알려주세요.  
+&nbsp;&nbsp;&nbsp;&nbsp;-> 의문(놀람): Sollte ich ihn so beleidigt haben? 내가 그를 그렇게 모욕했다고?
 
 
 ## *haben* und *sein* + Infinitiv mit *zu*
