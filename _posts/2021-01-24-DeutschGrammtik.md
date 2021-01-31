@@ -143,6 +143,19 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 ## Partizipialsaetze
 ## Konjunktiv Ⅰ
 ## Konjunktiv Ⅱ
+
+### 1. Bildung der Formen
+
+접속법의 형태는 해당 동사의 과거형을 기준으로 만든다. 몇몇 동사들을 제외하고는 보통 wuerden + Infinitiv형으로 많이 쓰인다.
+
+
+#### 1.1 Gegenwartsformen
+
+
+
+
+
+
 ## *haben* und *sein* + Infinitiv mit *zu*
 ## Das Gerundivum
 
