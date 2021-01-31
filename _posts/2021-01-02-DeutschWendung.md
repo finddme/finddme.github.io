@@ -124,7 +124,7 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
 
 ### P
 
-**unter Pseudonym** 익명으로
+**unter Pseudonym (=anonymously)** 익명으로
 >  Die Graffiti werden zumeist <span style="color:#A95762">unter Pseudonym</span> und illegal gefertigt.
 
 ### Q
