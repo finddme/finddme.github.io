@@ -296,25 +296,25 @@ statt dass K2로 쓰인다.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ich haette gern ein Glas Wein. 와인 한잔 주세겠어요?
 
 
-**2.5.2 충고/제안** 
+**2.5.2 충고/제안**   
 &nbsp;&nbsp;&nbsp;&nbsp;An deiner Stelle wuerde ich mir vor der langen Fahrt noch etwas zu essen kaufen. 여기에서 나는 당신에게 긴 여정 전에 무언가 먹을 것을 사기를 권한다.(상대에게 권유하는 수사법)  
 &nbsp;&nbsp;&nbsp;&nbsp;Du solltest dir vor der lange Fahrt noch etwas zu essen kaufen. 너는 긴 여정 전에 뭔가 먹을 것을 사야해.(정중하고 구속력 없는 충고/추천)
 
 
-**2.5.3 의견/요구**
+**2.5.3 의견/요구**  
 의견이나 요구를 조심스럽게 전달할 때 화법조동사 duerfen, moegen이 자주 사용된다.
 
 
 **2.5.4 es sei denn (nun), dass K2  
-&nbsp;&nbsp;&nbsp;es muesste den (nun) sein, dass K2  
-&nbsp;&nbsp;&nbsp;denn(nun) K2 (-가 아니면, -가 아닌 한에는, -외에는)** 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es muesste den (nun) sein, dass K2  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denn(nun) K2 (-가 아니면, -가 아닌 한에는, -외에는)**   
 &nbsp;&nbsp;&nbsp;&nbsp;-> Niemand darf hier herein, *es sei denn*, *dass* er einen Ausweis *haette*. 증명서를 가진게 아니라면 아무도 여기에 들어갈 수 없다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, *es muesste denn sein*, *dass* er einen Ausweis *haette*.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *haette* *denn (nun)* einen Ausweis.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *muesste denn* einen Ausweis haben.
 
 
-**2.5.5 접속법2식 화법조동사(주관적 진술 표현)**
+**2.5.5 접속법2식 화법조동사(주관적 진술 표현)**  
 1) 형태
 
 - 현재
@@ -353,7 +353,7 @@ haette+Infinitiv+Modalverben Infinitiv
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wenn ich heute nicht so frueh haette aufstehen muessen, waere ich jetzt nicht so muede. 내가 오늘 그렇게 일찍 일어나지 않았다면 나는 지금 피곤하지 않을텐데.<span style="color:#86937A; font-weight: bold;">(순서주의 동사원형이 2개 이상일 때 동사가 후치된다면 변화하는 동사가 맨 앞에 자리한다.)</span>
 
 
-2) 사용
+2) 사용  
 - koennen  
 &nbsp;&nbsp;&nbsp;&nbsp;-> 확실하지 않은 추측:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mein Freund koennte heute kommen. 내 친구가 오늘 올 수도 있어.  
