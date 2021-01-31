@@ -1,6 +1,6 @@
 ---
 title: Deutsch; Wendung
-category: Deutsch
+category: Language
 tag: Deutsch
 ---
 
