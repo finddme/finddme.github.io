@@ -1,6 +1,6 @@
 ---
 title: Biohackers;1
-category: Deutsch
+category: Language
 tag: Deutsch
 ---
 
