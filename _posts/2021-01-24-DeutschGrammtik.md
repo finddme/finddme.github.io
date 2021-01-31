@@ -142,14 +142,90 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 ## Die Partizipialkonstruktion
 ## Partizipialsaetze
 ## Konjunktiv Ⅰ
-## Konjunktiv Ⅱ
+## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
 
 ### 1. Bildung der Formen
 
 접속법의 형태는 해당 동사의 과거형을 기준으로 만든다. 몇몇 동사들을 제외하고는 보통 wuerden + Infinitiv형으로 많이 쓰인다.
 
 
-#### 1.1 Gegenwartsformen
+**1.1 Gegenwartsformen**
+
+- 과거형에 인칭에 따라 아래와 같은 어미를 붙인다(-e를 기본적으로 붙이는게 특징).
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line2" bgcolor="#F8F7F9">Person</th><th class="line2">Endung</th></tr>
+       <tr><td>ich</td><td><strong>-e</strong></td></tr>
+       <tr><td>du</td><td><strong>-est</strong></td></tr>
+       <tr><td>er/sie/es</td><td><strong>-e</strong></td></tr>
+       <tr><td>wir</td><td><strong>-en</strong></td></tr>
+       <tr><td>ihr</td><td><strong>-et</strong></td></tr>
+       <tr><td>Sie</td><td><strong>-en</strong></td></tr>
+    </table>
+ </body>
+</html>
+
+
+- 접속법2식과 직설법 과거형의 형태가 같을 경우, wuerden+Infinitiv로 표현한다.  
+
+
+- 불규칙동사, 화법조동사(Modalverben), 조동사(Hilfsverben)의 경우 a,o,u에 움라우트를 붙인다.    
+&nbsp;&nbsp;&nbsp;-> haben, sein, werden, duerfen, sollen, muessen, koennen, moegen, lassen, brauchcen, kommen, geben, wissen, denken, bringen, gehen 등.  
+**(오늘날 구어에서는 Modalverben과 Hilfsverben을 제외하고는 거의 그냥 wuerden+Infivitiv로 쓴다. 과거형 생각하기 귀찮으니까.)**
+
+
+**1.2 Vergangenheitsformen**
+
+접속법의 현재형이 이미 동사의 과거형을 기반으로 만들어졌기 때문에 접속법1식과 2식의 과거는 완료형으로만 실현된다.
+
+- 기본형태: haetten/waeren+PP  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;haben – ich haette gehabt, du haettest gehabt...   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sien – ich waere gewesen, du waerest gewesen...  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arbeiten – ich haette gearbeitet, du haettest gearbeitet...  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kommen – ich waere gekommen, du waerest gekommen...  
+
+
+**1.3 Passiv im Konjunktiv2
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line2" bgcolor="#F8F7F9">Tempus</th><th class="line2">Form</th></tr>
+       <tr><td>수동태 현재</td><td><strong>wuerden + PP</strong></td></tr>
+       <tr><td>수동태 과거</td><td><strong>waeren + PP + worden</strong></td></tr>
+    </table>
+ </body>
+</html>
+
+
+### 2. Gebrauch des Konjunktivs2
+접속법2식의 여러 용법에 대해 살펴보겠다.
 
 
 
