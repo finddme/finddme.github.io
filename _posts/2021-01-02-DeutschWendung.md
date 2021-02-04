@@ -42,7 +42,7 @@ tag: Deutsch
 > <span style="color:#A95762">Anders gesagt</span>, Sie haben in der Libe ein erstes Element, naemlich die Unterscheidung, eine Trennung, einen Unterschied, eine Zwei.
 
 **an sich** 그 자체  
-Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur eine Begegnung, fast nichts ist.
+> Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur eine Begegnung, fast nichts ist.
 
 ### B
 
@@ -59,6 +59,9 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
   
 **befoerderlich 3**
 > Welche Einschraenkung aber ist der Aufklaerung hinderlich? welche nicht, sondern <span style="color:#A95762">ihr</span> wohl gar <span style="color:#A95762">befoerderlich</span>?
+
+**aus sich breiten** 퍼지다
+> Dieser Geist der Freiheit <span style="color:#A95762">breitet sich</span> auch ausserhalb <span style="color:#A95762">aus</span>, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung zu ringen hat</span>.
 
 ### C
 
@@ -95,6 +98,9 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
 
 **hinderlich 3** 3을 방해하다
 > Welche Einschraenkung aber ist <span style="color:#A95762">der Aufklaerung hinderlich</span>? welche nicht, sondern ihr wohl gar befoerderlich?
+
+**haben zu + infinitiv(=have to =muessen)** -해야만 한다   
+> Dieser Geist der Freiheit breitet sich auch ausserhalb aus, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung <span style="color:#A95762">zu ringen hat</span>.
 
 
 ### I
@@ -157,6 +163,9 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
 
 **selbst** -일지라도
 > <span style="color:#A95762">Selbst</span> beim schlechte Wetter.
+
+**sein zu*(=koennen werden PP)** 수동 가능  
+> Denn es leuchtet dieser doch ein Beispiel vor, dass bei Freiheit fuer die oeffentliche Ruhe und Einigkeit des gemeinen Wesens nicht das Mindeste <span style="color:#A95762">zu besorgen sei</span>.
 
 
 ### T
