@@ -54,6 +54,12 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
 **Beziehung zu 3** -와 관련된
 > Es ist verstaendlich, dass in unserer wissenschaftlichen <span style="color:#A95762">Beziehung zur</span> Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es mit den Teilen der Natur zu tun bekommen, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.
 
+**sich 2 bedienen** -를 사용하다, 다루다
+> Unmuendigkeit ist das Unvermoegen, sich <span style="color:#A95762">seines Verstandes(/span> ohne Leitung eines anderen zu <span style="color:#A95762">bedienen</span>.
+  
+**befoerderlich 3**
+> Welche Einschraenkung aber ist der Aufklaerung hinderlich? welche nicht, sondern <span style="color:#A95762">ihr</span> wohl gar <span style="color:#A95762">befoerderlich</span>?
+
 ### C
 
 ### D
@@ -82,7 +88,14 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
 
 ### G
 
+**von 3 Gebrauch machen** 사용하다  
+> Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; und zwar die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: <span style="color:#A95762">von</span> seiner Vernunft in allen Stuecken oeffentlichen <span style="color:#A95762">Gebrauch</span> zu <span style="color:#A95762">machen</span>.
+
 ### H
+
+**hinderlich 3** 3을 방해하다
+> Welche Einschraenkung aber ist <span style="color:#A95762">der Aufklaerung hinderlich</span>? welche nicht, sondern ihr wohl gar befoerderlich?
+
 
 ### I
 
@@ -117,6 +130,9 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
 
 **Massnahme treffen** 조치를 취한다
 > Oeffentliche Einrichtungen <span style="color:#A95762">treffen</span> vielsichtige <span style="color:#A95762">Massnahme</span>, um illegal angebrachte Graffiti zu verhindern.
+
+**unter Menschen** 인간들 간의
+> Ich antworte: der oeffengliche Gebrauch seiner Vernunft muss jederzeit frei sien, und der allein kann Aufklaerung <span style="color:#A95762">unter Menschen</span> zustande bringen.
 
 ### N
 
@@ -168,6 +184,9 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
 **Vorstellung** 생각
 > Sie fuehrt uns in den Bereich einer Grunderfahrung dessen, was der Unterschied ist, und im Grunde zur <span style="color:#A95762">Vorstellung</span>, dass man die Welt vom Gesichtspunkt des Unterschieds aus erfahren kann.
 
+**4 unter verstehen** unter이하가 4라고 생각하다
+> Ich <span style="color:#A95762">verstehe</span> aber <span style="color:#A95762">unter</span> dem oeffentlichen Gebrauche seiner eigenen Vernunft denjnigen, <span style="color:#A95762">den</span> jemand als Gelehrter von ihr vor dem ganzen Puvlikum der Leserwelt macht.
+
 ### W
 
 **Wenn, Waehrend, Nachdem** 생략
@@ -182,6 +201,7 @@ Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur 
 
 ### Z
 
-
+**und zwar** 즉, 보다 더 구체적으로 말하자면
+> Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; <span style="color:#A95762">und zwar</span> die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: von seiner Vernunft in allen Stuecken oeffentlichen Gebrauch zu machen.
 
 
