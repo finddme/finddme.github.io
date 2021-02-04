@@ -164,6 +164,9 @@ tag: Deutsch
 **selbst** -일지라도
 > <span style="color:#A95762">Selbst</span> beim schlechte Wetter.
 
+**selbst** 심지어
+> Dieser Geist der Freiheit breitet sich auch ausserhalb aus, <span style="color:#A95762">selbst</span> da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung zu ringen hat</span>.
+
 **sein zu*(=koennen werden PP)** 수동 가능  
 > Denn es leuchtet dieser doch ein Beispiel vor, dass bei Freiheit fuer die oeffentliche Ruhe und Einigkeit des gemeinen Wesens nicht das Mindeste <span style="color:#A95762">zu besorgen sei</span>.
 
