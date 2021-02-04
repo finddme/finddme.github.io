@@ -41,7 +41,7 @@ tag: Deutsch
 **Anders gesagt** 달리 말하자면
 > <span style="color:#A95762">Anders gesagt</span>, Sie haben in der Libe ein erstes Element, naemlich die Unterscheidung, eine Trennung, einen Unterschied, eine Zwei.
 
-**an sich** 그 자체
+**an sich** 그 자체  
 Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur eine Begegnung, fast nichts ist.
 
 ### B
