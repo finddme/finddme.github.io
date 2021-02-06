@@ -184,7 +184,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
       .line2{border-bottom: 2px solid #BDB8C1;}
       .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
       .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
-      .line5{border-bottom: 2px solid #BDB8C1; width= 80px;}
+      .line5{border-bottom: 2px solid #BDB8C1; width= 200px;}
       table, th, td {
          border:1px solid #BDB8C1;
          background-color: #FFFFFF;
