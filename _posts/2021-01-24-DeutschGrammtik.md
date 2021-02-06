@@ -193,7 +193,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Modalverben</th><th class="line2">Bedeutung</th><th class="line2">Beispiel</th></tr>
-       <tr><td class="line3"><strong>muessen</strong></td><td class="line">(sehr Wahrscheinlich)<br>-임에 틀림없다</td><td class="line">Er <em>muss</em> der Taeter gewesen sein, irgendein anderer kommt nicht in Frage.<br>→ 그는 범인이었음이 틀림없다, 어떤 다른 사람도 고려될 수 없다.</tr>
+       <tr><td class="line3"><strong>muessen</strong></td><td class="line">(sehr Wahrscheinlich)<br>-임에 틀림없다</td><td class="line">Er <em>muss</em> der Taeter gewesen sein, irgendein anderer kommt nicht in Frage.<br>→ 그는 범인이었음이 틀림없다, 어떤 다른 사람도 고려될 수 없다.</td></tr>
        <tr><td class="line3"><strong>koennen</strong></td><td class="line">(maybe, moeglich)<br>-일 가능성이 있다</td><td class="line">Sie <em>kann</em> mich gesehen haben<br>→ 그녀가 나를 봤을 가능성이 있다.</td></tr>
        <tr><td class="line3"><strong>moegen</strong></td><td class="line2">(vielleicht(가장 개연성이 낮음))<br>-그럴지도 모르지, 그런가보지 뭐</td><td class="line">Das <em>mag</em> sein<br>→ (= Es ist moeglich, dass es so ist.) 그럴지도 모른다.</td></tr>
        <tr><td class="line3"><strong>sollen</strong></td><td class="line">1. (someone says)<br>-라고 하더라<br>2. (should)<br>-해야 한다</td><td class="line">1. Er <em>soll</em> alles verstaendlich erklaeren.<br>→ 그는 모든 것을 이해할 수 있게 설명한다고 하더라.<br>2. Es <em>soll</em> dich nuetzen.<br>→ 너에게 유익하길 바란다(너에게 유익해야 해).</td></tr>
