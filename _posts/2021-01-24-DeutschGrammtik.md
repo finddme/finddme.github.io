@@ -142,7 +142,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 주관적인 진술을 표현할 때 사용되는 화법조동사의 형태는 접속법 2식으로 쓰인 형태와 그렇지 않은 형태로 나뉘며, 그에 따라 사용된 화법조동사의 의미도 달라진다. 먼저 접속법 2식이 사용되지 않은 경우의 형태와 의미에 대해 살펴보도록 하겠다.
 
-### 1. Formen und Bedeutung(nicht mit Kunjuktiv2)
+### 1. Subjektive Modalverben(nicht im Kunjuktiv2)
 
 **1\) Formen**
 
@@ -195,7 +195,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Modalverben</th><th class="line5">Bedeutung</th><th class="line2">Beispiel</th></tr>
        <tr><td class="line3"><strong>muessen</strong></td><td class="line">(sehr Wahrscheinlich)<br>-임에 틀림없다</td><td class="line">Er <em>muss</em> der Taeter gewesen sein, irgendein anderer kommt nicht in Frage.<br>→ 그는 범인이었음이 틀림없다, 어떤 다른 사람도 고려될 수 없다.</td></tr>
-       <tr><td class="line3"><strong>koennen</strong></td><td class="line">(maybe, moeglich)<br>-일 가능성이 있다</td><td class="line">Sie <em>kann</em> mich gesehen haben<br>→ 그녀가 나를 봤을 가능성이 있다.</td></tr>
+       <tr><td class="line3"><strong>koennen</strong></td><td class="line">(maybe, moeglich)<br>-일 가능성이 있다, -일거다</td><td class="line">Sie <em>kann</em> mich gesehen haben<br>→ 그녀가 나를 봤을 거다.(봤을 수 있다)</td></tr>
        <tr><td class="line3"><strong>moegen</strong></td><td class="line">(vielleicht(가장 개연성이 낮음))<br>-그럴지도 모르지, 그런가보지 뭐</td><td class="line">Das <em>mag</em> sein<br>→ (= Es ist moeglich, dass es so ist.) 그럴지도 모른다.</td></tr>
        <tr><td class="line3"><strong>sollen</strong></td><td class="line">1. (someone says)<br>-라고 하더라<br>2. (should)<br>-해야 한다</td><td class="line">1. Er <em>soll</em> alles verstaendlich erklaeren.<br>→ 그는 모든 것을 이해할 수 있게 설명한다고 하더라.<br>2. Es <em>soll</em> dich nuetzen.<br>→ 너에게 유익하길 바란다(너에게 유익해야 해).</td></tr>
        <tr><td class="line3"><strong>&#10004;wollen</strong></td><td class="line">(주어가 주장하는 것)<br>주어가 -라고 한다</td><td class="line">Der Angeklagte <em>will</em> die Zeugin nie gesehen haben.<br> → 피고인은 증인을 본 적 없다고 주장한다.<br><br><strong>wollen이 주관적 진술을 표현할 경우 사용되는 숙어:<br>- nicht von etwas wissen wollen </strong>→ -을 승인하지 않다, 단호히 물리치다.<br> e.g. Ich <em>will</em> nichts von ihm <em>wissen</em> → 그 놈에 대해서는 상관하지 않겠다.<br><strong>- etwas sagen(heissen) wollen</strong> → -을 의미하다, 중요한 의의가 담겨있다.<br>e.g. Er hat einen funkelnagelneuen Anzug an. Das <em>will</em> doch <em>etwas sagen</em>. → 그가 새옷을 입고 있다. 그건 뭔가를 의미하고 있는 것이다.</td></tr>
@@ -204,7 +204,35 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </html>
 
 
+### 2. Subjektive Modalverben im Konjunktiv2
 
+주관적 진술과 객관적 진술에 사용되는 화법조동사는 현재형이 동일하기 때문에 의미 혼동이 있을 수 있기 때문에 혼동을 피하기 위해 주관적 진술에서 접속법2식을 사용하기도 한다. 하지만 접속법2식으로 사용되었을 때 다른 의미를 지니기도 하는데 이는 문맥에 따라 판단하면 된다.(앞서 다룬 화법조동사의 주관적 용법 의미에 -거야를 붙이면 얼추 맞다. 불확실성 한 숟가락...)
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Modalverben</th><th class="line5">Bedeutung</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3"><strong>muessen</strong></td><td class="line">-임에 틀림없을 거야, -여야 하는데</td><td class="line">Sie muesste beim Chef sein, denn dort ist eine wichtige Besprechung.<br>→ 그녀는 중요한 회의 때문에 상사와 있을거야.</td></tr>
+       <tr><td class="line3"><strong>koennen</strong></td><td class="line">-일 가능성이 있을거야</td><td class="line">Mein Freund koennte heute kommen<br>→ 내 친구가 오늘 올 가능성이 있을 거야(올지도 몰라)</td></tr>
+       <tr><td class="line3"><strong>moegen</strong></td><td class="line">(vielleicht(가장 개연성이 낮음))<br>-그럴지도 모르지, 그런가보지 뭐</td><td class="line">Das <em>mag</em> sein<br>→ (= Es ist moeglich, dass es so ist.) 그럴지도 모른다.</td></tr>
+       <tr><td class="line3"><strong>sollen</strong></td><td class="line">1. (someone says)<br>-라고 하더라<br>2. (should)<br>-해야 한다</td><td class="line">1. Er <em>soll</em> alles verstaendlich erklaeren.<br>→ 그는 모든 것을 이해할 수 있게 설명한다고 하더라.<br>2. Es <em>soll</em> dich nuetzen.<br>→ 너에게 유익하길 바란다(너에게 유익해야 해).</td></tr>
+       <tr><td class="line3"><strong>&#10004;wollen</strong></td><td class="line">(주어가 주장하는 것)<br>주어가 -라고 한다</td><td class="line">Der Angeklagte <em>will</em> die Zeugin nie gesehen haben.<br> → 피고인은 증인을 본 적 없다고 주장한다.<br><br><strong>wollen이 주관적 진술을 표현할 경우 사용되는 숙어:<br>- nicht von etwas wissen wollen </strong>→ -을 승인하지 않다, 단호히 물리치다.<br> e.g. Ich <em>will</em> nichts von ihm <em>wissen</em> → 그 놈에 대해서는 상관하지 않겠다.<br><strong>- etwas sagen(heissen) wollen</strong> → -을 의미하다, 중요한 의의가 담겨있다.<br>e.g. Er hat einen funkelnagelneuen Anzug an. Das <em>will</em> doch <em>etwas sagen</em>. → 그가 새옷을 입고 있다. 그건 뭔가를 의미하고 있는 것이다.</td></tr>
+    </table>
+ </body>
+ </html>
 
 ## Das Passiv
 ## zustandpassiv
