@@ -225,11 +225,10 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Modalverben</th><th class="line5">Bedeutung</th><th class="line2">Beispiel</th></tr>
-       <tr><td class="line3"><strong>muessen</strong></td><td class="line">-임에 틀림없을 거야, -여야 하는데</td><td class="line">Sie muesste beim Chef sein, denn dort ist eine wichtige Besprechung.<br>→ 그녀는 중요한 회의 때문에 상사와 있을거야.</td></tr>
-       <tr><td class="line3"><strong>koennen</strong></td><td class="line">-일 가능성이 있을거야</td><td class="line">Mein Freund koennte heute kommen<br>→ 내 친구가 오늘 올 가능성이 있을 거야(올지도 몰라)</td></tr>
-       <tr><td class="line3"><strong>moegen</strong></td><td class="line">(vielleicht(가장 개연성이 낮음))<br>-그럴지도 모르지, 그런가보지 뭐</td><td class="line">Das <em>mag</em> sein<br>→ (= Es ist moeglich, dass es so ist.) 그럴지도 모른다.</td></tr>
-       <tr><td class="line3"><strong>sollen</strong></td><td class="line">1. (someone says)<br>-라고 하더라<br>2. (should)<br>-해야 한다</td><td class="line">1. Er <em>soll</em> alles verstaendlich erklaeren.<br>→ 그는 모든 것을 이해할 수 있게 설명한다고 하더라.<br>2. Es <em>soll</em> dich nuetzen.<br>→ 너에게 유익하길 바란다(너에게 유익해야 해).</td></tr>
-       <tr><td class="line3"><strong>&#10004;wollen</strong></td><td class="line">(주어가 주장하는 것)<br>주어가 -라고 한다</td><td class="line">Der Angeklagte <em>will</em> die Zeugin nie gesehen haben.<br> → 피고인은 증인을 본 적 없다고 주장한다.<br><br><strong>wollen이 주관적 진술을 표현할 경우 사용되는 숙어:<br>- nicht von etwas wissen wollen </strong>→ -을 승인하지 않다, 단호히 물리치다.<br> e.g. Ich <em>will</em> nichts von ihm <em>wissen</em> → 그 놈에 대해서는 상관하지 않겠다.<br><strong>- etwas sagen(heissen) wollen</strong> → -을 의미하다, 중요한 의의가 담겨있다.<br>e.g. Er hat einen funkelnagelneuen Anzug an. Das <em>will</em> doch <em>etwas sagen</em>. → 그가 새옷을 입고 있다. 그건 뭔가를 의미하고 있는 것이다.</td></tr>
+       <tr><td class="line3"><strong>muessen(muessten)</strong></td><td class="line">-임에 틀림없을 거야, -여야 하는데</td><td class="line">Sie muesste beim Chef sein, denn dort ist eine wichtige Besprechung.<br>→ 그녀는 중요한 회의 때문에 상사와 있을거야.</td></tr>
+       <tr><td class="line3"><strong>koennen(koennten)</strong></td><td class="line">-일 가능성이 있을거야</td><td class="line">Mein Freund koennte heute kommen<br>→ 내 친구가 오늘 올 가능성이 있을 거야(올지도 몰라)</td></tr>
+       <tr><td class="line3"><strong>sollen(sollten)</strong></td><td class="line">-해야 하는데...,-였어야 하는데...(일반적으로-해야하는데 그렇지 않을 떄 사용)</td><td class="line">Sie sollte (eingentlich) an ihrem Arbeitsplatz sein, denn die Mottagszeit ist schon vorbei.<br>→ 그녀는 점심시간이 끝났기 때문에 직장에 있어야 하는데...</td></tr>
+       <tr><td class="line3"><strong>duerfen(duerften)</strong></td><td class="line">-일거야(불확실한 것에 대한 추측)</td><td class="line">Sie duerfte jetzt 20 Jahre alt sein<br>→ 그녀는 지금 20살 정도 될 거야.</td></tr>
     </table>
  </body>
  </html>
