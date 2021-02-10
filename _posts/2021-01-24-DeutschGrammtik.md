@@ -235,7 +235,57 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 ## Das Passiv
 ## zustandpassiv
-## FuturⅠ,Ⅱ
+## <span style="background-color:#F2D8D3">FuturⅠ,Ⅱ</span>
+
+- 일반적으로 미래를 나타낼 때, 미래를 표현하는 부사 혹은 부사구와 함께 현재형을 사용한다.  
+
+
+→ **Zeitangabe(z.b. morgen, heute Abend, naechste Woche, bald) + Praesens**
+
+
+e.g. Ich <em>komme</em> morgen frueh zu dir und <em<bringe</em> dir die Fotos <em>mit</em>. 내일 아침에 와서 사진 가져다줄게.  
+&nbsp;&nbsp;&nbsp;&nbsp; Heute Abend gibt es bestimmt noch ein Gewitter. 오늘 밤에 뇌우가 또 올 것이다.  
+
+
+- Futru2(미래완료형) 대신 Perfekt(완료형)을 쓰기도 한다.
+
+
+e.g Wenn ihr mirgen erst um 10 Uhr kommt, <em>haben</em> wir schon <em>gefruehstueckt</em>. 너희가 내일 아침 10시에 오면 우리는 이미 아침을 먹었을 것이다.
+
+
+### Formen und Bedeutung
+
+Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.  
+
+
+미래시제와 wohl, vielleicht, wahrscheinlich와 같은 부사를 함께 사용하여 추측 뉘앙스를 더 강화할 수 있다.
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Tempus</th><th class="line5">Formen und Gebrauch</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3"><strong>Futur1(aktiv)</strong></td><td class="line">werden + Infinitiv<br>1. 미래에 대한 약속<br>2. 예언적 확신, 의도</td><td class="line">1. Ich <em>werde</em> dich <em>besuchen</em>. 너를 보러갈게<br>2. Wir <em>werden</em> bestimmt eine Loesung <em>finden</em>. 우리는 해결책을 분명 찾을 거야.<br>   Ich werde in die USA fliegen. 나 미국갈거야.</td></tr>
+       <tr><td class="line3"><strong>Futur2(aktiv)</strong></td><td class="line">werden + PP + haben<br>미래에 완료되었을 것에 대해 언급할 때 사용</td><td class="line"><br> Ich <em>werde</em> bis morgen ein Buch <em>gelesen haben</em>. 나는 내일까지 책 한 권을 읽을 것이다.</td></tr>
+       <tr><td class="line3"><strong>Futur1(passiv)</strong></td><td class="line">werden + PP + werden<br>(수동)미래에 완료되었을 것에 대해 언급할 때 사용</td><td class="line">Das Gesetz <em>wird</em> wohl bald <em>geaendert werden</em>. 법은 곧 변경될 것이다.</td></tr>
+       <tr><td class="line3"><strong>Futur2(passiv)</strong></td><td class="line">werden + PP + worden sien<br>(수동)미래에 완료되었을 것에 대해 언급할 때 사용</td><td class="line">Das Gesetz <em>wird</em> inzwischen <em>geaendert worden sien</em>. 그 사이에 법이 바뀔 것이다.</td></tr>
+    </table>
+ </body>
+ </html>
+
+
 ## Nullposition(Satzverbindung: Konjunktionen in der Position Null)
 ## Adjektive und Partizipien als Nomen
 ## Die Partizipialkonstruktion
