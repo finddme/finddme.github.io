@@ -233,7 +233,65 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </body>
  </html>
 
-## Das Passiv
+## <span style="background-color:#F2D8D3">Das Passiv</span>
+
+행하는 사람이 중요할 경우에는 능동문을 사용하지만, 행해지는 행위 자체가 중요할 경우에는 수동문이 선호된다.
+
+### Formen
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Tempus</th><th class="line2">Formen</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3">Praesens(현재)</td><td class="line">werden + PP</td><td class="line">ich werde gefragt.</td></tr>
+       <tr><td class="line3">Praeteritum(과거)</td><td class="line">wurde + PP</td><td class="line">ich wurde gefragt</td></tr>
+       <tr><td class="line3">Perfekt(완료)</td><td class="line">sein + PP + worden</td><td class="line">ich bin gefragt worden</td></tr>
+       <tr><td class="line3">Plusquamperfekt(대과거)</td><td class="line">war + PP + worden</td><td class="line">ich war gefragt worden</td></tr>
+     </table>
+ </body>
+ </html>
+ 
+ 
+**+\ werden, wurden, sein, war 변화**
+ 
+ <html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Person</th><th class="line2">werden</th><th class="line2">wurden</th><th class="line2">sein</th><th class="line2">war</th></tr>
+       <tr><td class="line3">ich</td><td class="line">werde</td><td class="line">wurde</td><td class="line">bin</td><td class="line">war</td></tr>
+       <tr><td class="line3">du</td><td class="line">wirst</td><td class="line">wurdest</td><td class="line">bist</td><td class="line">warst</td></tr>
+       <tr><td class="line3">er</td><td class="line">wird</td><td class="line">wurde</td><td class="line">ist</td><td class="line">war</td></tr>
+       <tr><td class="line3">wir</td><td class="line">werden</td><td class="line">wurden</td><td class="line">sind</td><td class="line">waren</td></tr>
+       <tr><td class="line3">ihr</td><td class="line">werdet</td><td class="line">wurdet</td><td class="line">seid</td><td class="line">wart</td></tr>
+       <tr><td class="line3">Sie</td><td class="line">werden</td><td class="line">wurden</td><td class="line">sind</td><td class="line">waren</td></tr>
+     </table>
+ </body>
+ </html>
+
 ## Zustandpassiv
 ## <span style="background-color:#F2D8D3">FuturⅠ,Ⅱ</span>
 
@@ -316,6 +374,13 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
  </html>
 
 분사를 Partizip1의 형태로 만들지 2로 만들지는 동사의 의미를 생각하면 수월하다. 예를 들어 *schreien*(소리지르다)의 경우, '소리지르는'으로 표현할 때 *schreiend-*로 쓸 수 있다. 반면 '소리지름 당한'은 좀 이상하니까 이렇게는 안 쓰인다. 그리고 *zerstoeren*(파괴하다)의 경우, '파괴한'으로 쓸 때는 *zerstoerend-*, '파괴당한'으로 쓸 때는 *zerstoert-* 으로 쓴다.
+
+**+\ 형용사 어미변화**
+
+
+<center><img width="700" alt="2020-12-18 (14)" src="https://user-images.githubusercontent.com/53667002/102549804-169b1600-4100-11eb-949c-efdc831dcb13.png"></center>
+
+
 
 
 **Beispiel**
