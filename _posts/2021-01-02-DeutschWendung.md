@@ -250,3 +250,31 @@ tag: Deutsch
 15. **etwas in Empfang nehmen** 접수하다, 수령하다
 
 16. **etwas zu Ende bringen; zu Ende kommen (=zu, Abschluss bringen)** 끝내다, 해내다
+
+17. **zu einem Entschluss kommen; zu einem Ergebnis kommen** 결심하다
+
+18. **etwas in Erfahrung bringen** -을 (물어서) 알게되다
+
+19. **jn. in Erstaunen setzen/ versetzen** 놀라게하다
+
+20. **etwas in Erwaegung ziehen (=erwaegen)** 숙고하다, 고려하다
+
+21. **etwas in Frage stellen; in Frage stehen; in Frage kommen** 질문하다
+
+22. **in Gang konnen** 진행/가동하기 시작하다
+
+23. **im eigenen Interesse (oder dem eines anderen) liegen** 자신의 관심사이다, 자신의 관심사와 관련되다
+
+24. **etwas in Kauf nehmen** (단점을) 수용하다, 감수하다
+
+25. **in Konflikt mit jm. oder etwas geraten/kommen** -와 갈등상태에 빠지다
+
+26. **etwas in Kraft setzen; in kraft treten** 유효해지다
+
+27. **auf Kritik stossen** 비판을 받다
+
+28. **jn. zum Lachen/Weinen bringen** -를 웃기다, 울게하다
+
+29. **von Nutzen sien** 유용하다
+
+30. **etwas zur Sprache bringen; zur Sprache kommen (=ausdruck)** 언급하다
