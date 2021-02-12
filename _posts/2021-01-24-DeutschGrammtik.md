@@ -234,7 +234,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </html>
 
 ## Das Passiv
-## zustandpassiv
+## Zustandpassiv
 ## <span style="background-color:#F2D8D3">FuturⅠ,Ⅱ</span>
 
 - 일반적으로 미래를 나타낼 때, 미래를 표현하는 부사 혹은 부사구와 함께 현재형을 사용한다.  
@@ -318,6 +318,15 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
 분사를 Partizip1의 형태로 만들지 2로 만들지는 동사의 의미를 생각하면 수월하다. 예를 들어 *schreien*(소리지르다)의 경우, '소리지르는'으로 표현할 때 *schreiend-*로 쓸 수 있다. 반면 '소리지름 당한'은 좀 이상하니까 이렇게는 안 쓰인다. 그리고 *zerstoeren*(파괴하다)의 경우, '파괴한'으로 쓸 때는 *zerstoerend-*, '파괴당한'으로 쓸 때는 *zerstoert-* 으로 쓴다.
 
 
+**Beispiel**
+
+1\. Das <span style="color:#648BC6">laut um Hilfe <span style="background-color:#DFDBE4">schreiende</span></span> Kind konnte rasch gerettet werden.  
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#648BC6"> 도움을 구하기 위해 크게 <span style="background-color:#DFDBE4">소리 지르는</span></span> 아이는 신속하게 구조될 수 있었다.  
+
+2\. Die <span style="color:#648BC6">im Krieg durch Bomben <span style="background-color:#DFDBE4">zerstoerte</span></span> Stadt war ein schrecklicher Anblick.  
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#648BC6"> 전쟁에서 폭탄에 의해 <span style="background-color:#DFDBE4">파괴된</span></span> 도시는 끔찍한 광경이었다.
+
+
 ## <span style="background-color:#F2D8D3">Partizipialsaetze</span>
 
 Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는 형용사처럼 쓰이지 않기 때문에 분사가 형용사 어미변화를 하지 않는다. 그리고 이는 특정 명사를 꾸며주는 것이 아닌, 주문장에 대해 동시적으로 진행되는 사건을 표현하기 때문에 '-하면서, -한 채'로 해석이 된다.  
@@ -366,9 +375,9 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line5">Formen</th><th class="line2">etc.</th></tr>
-       <tr><td class="line3"><strong>Partizip1</strong></td><td class="line">Infinitiv + d + 형용사 어미 변화</td><td class="line">- 능동의 의미<br>- 문장 전체의 시제와 일치</td></tr>
-       <tr><td class="line3"><strong>Partizip2</strong></td><td class="line">PP + 형용사 어미 변화</td><td class="line">- 수동의 의미<br>- 문장 전체의 시제보다 과거</td></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line5">Formen</th></tr>
+       <tr><td class="line3"><strong>능동</strong></td><td class="line">Infinitiv + d</td></tr>
+       <tr><td class="line3"><strong>수동</strong></td><td class="line">PP</td><td class="line"></tr>
     </table>
  </body>
  </html>
