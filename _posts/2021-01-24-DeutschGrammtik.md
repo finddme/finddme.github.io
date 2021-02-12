@@ -621,28 +621,27 @@ statt dass K2로 쓰인다.
 
 
 **2.5.2 충고/제안**   
-&nbsp;&nbsp;&nbsp;&nbsp;An deiner Stelle wuerde ich mir vor der langen Fahrt noch etwas zu essen kaufen. 여기에서 나는 당신에게 긴 여정 전에 무언가 먹을 것을 사기를 권한다.(상대에게 권유하는 수사법)  
-&nbsp;&nbsp;&nbsp;&nbsp;Du solltest dir vor der lange Fahrt noch etwas zu essen kaufen. 너는 긴 여정 전에 뭔가 먹을 것을 사야해.(정중하고 구속력 없는 충고/추천)
+&nbsp;&nbsp;&nbsp;&nbsp;→ An deiner Stelle wuerde ich mir vor der langen Fahrt noch etwas zu essen kaufen. 여기에서 나는 당신에게 긴 여정 전에 무언가 먹을 것을 사기를 권한다.(상대에게 권유하는 수사법)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Du solltest dir vor der lange Fahrt noch etwas zu essen kaufen. 너는 긴 여정 전에 뭔가 먹을 것을 사야해.(정중하고 구속력 없는 충고/추천)
 
 
 **2.5.3 의견/요구**  
 의견이나 요구를 조심스럽게 전달할 때 화법조동사 duerfen, moegen이 자주 사용된다.
 
 
-**2.5.4 es sei denn (nun), dass K2  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es muesste den (nun) sein, dass K2  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denn(nun) K2 (-가 아니면, -가 아닌 한에는, -외에는)**   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, *es sei denn*, *dass* er einen Ausweis *haette*. 증명서를 가진게 아니라면 아무도 여기에 들어갈 수 없다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, *es muesste denn sein*, *dass* er einen Ausweis *haette*.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *haette* *denn (nun)* einen Ausweis.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *muesste denn* einen Ausweis haben.
+**2.5.4**  
+
+**es sei denn (nun), dass K2  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es muesste den (nun) sein, dass K2  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denn(nun) K2 (-가 아니면, -가 아닌 한에는, -외에는)**   
+&nbsp;&nbsp;&nbsp;&nbsp;→ Niemand darf hier herein, *es sei denn*, *dass* er einen Ausweis *haette*. 증명서를 가진게 아니라면 아무도 여기에 들어갈 수 없다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, *es muesste denn sein*, *dass* er einen Ausweis *haette*.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *haette* *denn (nun)* einen Ausweis.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *muesste denn* einen Ausweis haben.
 
 
 **2.5.5 접속법2식 화법조동사(주관적 진술 표현)**  
-1) 형태
-
-- 현재
-
+1) Formen
 
 <html>
   <head>
@@ -659,49 +658,40 @@ statt dass K2로 쓰인다.
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line2" bgcolor="#F8F7F9">Indikativ</th><th class="line2">Konjunktion2</th></tr>
-       <tr><td>koennen</td><td><strong>koennte</strong></td></tr>
-       <tr><td>duerfen</td><td><strong>duerfte</strong></td></tr>
-       <tr><td>muessen</td><td><strong>muesste</strong></td></tr>
-       <tr><td>sollen</td><td><strong>sollte</strong></td></tr>
-       <tr><td>moegen</td><td><strong>moechte</strong></td></tr>
-       <tr><td>wollen</td><td><strong>wollte</strong></td></tr>
+       <tr><th class="line2" bgcolor="#F8F7F9">Tempus</th><th class="line2">Fromen</th><th class="line2">Beispiel</th></tr>
+       <tr><td>Praesens(현재)</td><td><strong>Modalverben Konjunktivformen</strong> + Infinitiv</td></tr>
+       <tr><td>Praeteritum(과거)</td><td><strong>haette</strong> + Infinitiv + <strong>Modalverben Infinitivformen</strong></td><td>ich haette laenger schlafen sollen. 나는 조금 더 오래 잠을 잤어야 했다.<br>Wenn ich heute nicht so frueh haette aufstehen muessen, waere ich jetzt nicht so muede. 내가 오늘 그렇게 일찍 일어나지 않았다면 나는 지금 피곤하지 않을텐데.<br><span style="color:#86937A; font-weight: bold;">(순서주의 동사원형이 2개 이상일 때 동사가 후치된다면 변화하는 동사가 맨 앞에 자리한다.)</span></td></tr>
     </table>
  </body>
 </html>
 
 
-- 과거  
-기본 형태: haette+Infinitiv+Modalverben Infinitiv  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ich haette laenger schlafen sollen. 나는 조금 더 오래 잠을 잤어야 했다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wenn ich heute nicht so frueh haette aufstehen muessen, waere ich jetzt nicht so muede. 내가 오늘 그렇게 일찍 일어나지 않았다면 나는 지금 피곤하지 않을텐데.<span style="color:#86937A; font-weight: bold;">(순서주의 동사원형이 2개 이상일 때 동사가 후치된다면 변화하는 동사가 맨 앞에 자리한다.)</span>
 
-
-2) 사용  
-- koennen  
-&nbsp;&nbsp;&nbsp;&nbsp;&#10145; 확실하지 않은 추측:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mein Freund koennte heute kommen. 내 친구가 오늘 올 수도 있어.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er koennte (vielleicht) Deutsch gesprochen haben. 그는 아마 독일어로 말했을거야.  
-&nbsp;&nbsp;&nbsp;&nbsp;&#10145; 가능성에 대한 화자의 확신:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Herr Mueller koennte jetzt wirklich siene Schulden bezahlen. 뮐러씨는 이제 진짜 그의 빚을 갚을 수 있을거야.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er koennte sein Studium laengst abgeschlossen haben. 그는 학업을 이미 오래 전에 마쳤을거야.
-
-- duerfen   
-&nbsp;&nbsp;&nbsp;&nbsp;&#10145; 조심스러운 추측:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er duerfte jetzt 20 Jahre alt sein. 그는 지금 20살쯤 될거야.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Das duerfte sie nicht gewusst haben. 그 여자는 그것을 알지 못했을거야.
-
-- muessen   
-&nbsp;&nbsp;&nbsp;&nbsp;&#10145; -면 좋겠다 -이어야 하는데:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;so muesste es immer sein 언제나 그래야하는데  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;man muesste noch einmal so jung sien wie er. 우리도 저 사람처럼 한 번 더 젊으면 좋겠다.
-
-- sollen  
-&nbsp;&nbsp;&nbsp;&nbsp;&#10145; 조건문에서의 선택적 결정:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wenn Sie mein Angebot annehmen sollte, so teilen Sie es mir bitte sofort mit. 당신이 내 제안을 받아들인다면, 바로 저에게 알려주세요.  
-&nbsp;&nbsp;&nbsp;&nbsp;&#10145; 의문(놀람):  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sollte ich ihn so beleidigt haben? 내가 그를 그렇게 모욕했다고?
-
+2) Gebrauch(위에 Subjektive Modalverben im Konjunktiv2와 동일)
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Modalverben</th><th class="line5">Bedeutung</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3"><strong>muessen(muessten)</strong></td><td class="line">-여야 하는데, -면 좋겠다</td><td class="line">Sie muesste beim Chef sein, denn dort ist eine wichtige Besprechung.<br>→ 그녀는 중요한 회의 때문에 상사와 있을거야.<br>so muesste es immer sein<br>→ 언제나 그래야하는데<br>man muesste noch einmal so jung sien wie er.<br>→ 우리도 저 사람처럼 한 번 더 젊으면 좋겠다.</td></tr>
+       <tr><td class="line3"><strong>koennen(koennten)</strong></td><td class="line">1. 확실하지 않은 추측<br>-일 가능성이 있을거야<br>2. 가능성에 대한 화자의 확신<br>그럴거야(아마도)</td><td class="line">1. Mein Freund koennte heute kommen<br>→ 내 친구가 오늘 올 가능성이 있을 거야(올 수도 있어)<br>Er koennte (vielleicht) Deutsch gesprochen haben.<br>→ 그는 아마 독일어로 말했을거야.<br>2. Herr Mueller koennte jetzt wirklich siene Schulden bezahlen.<br>→ 뮐러씨는 이제 진짜 그의 빚을 갚을 수 있을거야.<br>Er koennte sein Studium laengst abgeschlossen haben.<br>→ 그는 학업을 이미 오래 전에 마쳤을거야. </td></tr>
+       <tr><td class="line3"><strong>sollen(sollten)</strong></td><td class="line">1. -해야 하는데...,-였어야 하는데...(일반적으로-해야하는데 그렇지 않을 떄 사용)<br>2. 조건문에서의 선택적 결정<br>3. 의문(놀람)</td><td class="line">1. Sie sollte (eingentlich) an ihrem Arbeitsplatz sein, denn die Mottagszeit ist schon vorbei.<br>→ 그녀는 점심시간이 끝났기 때문에 직장에 있어야 하는데...<br>2. Wenn Sie mein Angebot annehmen sollte, so teilen Sie es mir bitte sofort mit.<br>→ 당신이 내 제안을 받아들인다면, 바로 저에게 알려주세요.<br>Sollte ich ihn so beleidigt haben?<br>→ 내가 그를 그렇게 모욕했다고? </td></tr>
+       <tr><td class="line3"><strong>duerfen(duerften)</strong></td><td class="line">-일거야(불확실한 것에 대한 조심스러운 추측)</td><td class="line">Sie duerfte jetzt 20 Jahre alt sein<br>→ 그녀는 지금 20살 정도 될 거야.<br>Das duerfte sie nicht gewusst haben.<br>→ 그 여자는 그것을 알지 못했을거야.</td></tr>
+    </table>
+ </body>
+ </html>
 
 ## *haben* und *sein* + Infinitiv mit *zu*
 ## Das Gerundivum
