@@ -20,7 +20,7 @@ tag: Deutsch
 
 
 
-## *dass* Satz oder infinitiv
+
 
 ## <span style="background-color:#F2D8D3">Modalverben</span>
 
@@ -286,9 +286,38 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
  </html>
 
 
-## Nullposition(Satzverbindung: Konjunktionen in der Position Null)
-## Adjektive und Partizipien als Nomen
-## Die Partizipialkonstruktion
+## <span style="background-color:#F2D8D3">Die Partizipialkonstruktion</span>
+
+분사는 명사를 꾸며주는 형용사와 같은 역할을 하기 때문에 형용사와 동일한 위치에 자리한다.  
+
+분사는 의미에 따라 만들어지는 방식이 달라지는데, 이에 따라 두 가지 유형으로 나뉜다:
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line5">Formen</th><th class="line2">etc.</th></tr>
+       <tr><td class="line3"><strong>Partizip1(aktiv)</strong></td><td class="line">Infinitiv + d + 형용사 어미 변화</td><td class="line">- 능동의 의미<br>- 문장 전체의 시제와 일치</td></tr>
+       <tr><td class="line3"><strong>Partizip2(aktiv)</strong></td><td class="line">PP + 형용사 어미 변화</td><td class="line">- 수동의 의미<br>- 문장 전체의 시제보다 과거</td></tr>
+    </table>
+ </body>
+ </html>
+
+분사를 Partizip1의 형태로 만들지 2로 만들지는 동사의 의미를 생각하면 수월하다. 예를 들어 *schreien*(소리지르다)의 경우, '소리지르는'으로 표현할 때 *schreiend-*로 쓸 수 있다. 반면 '소리지름 당한'은 좀 이상하니까 이렇게는 안 쓰인다. 그리고 *zerstoeren*(파괴하다)의 경우, '파괴한'으로 쓸 때는 *zerstoerend-*, '파괴당한'으로 쓸 때는 *zerstoert-* 으로 쓴다.
+
+
 ## Partizipialsaetze
 ## Konjunktiv Ⅰ
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
