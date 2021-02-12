@@ -296,6 +296,75 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </body>
  </html>
 
+
+### Passivsaetze
+
+**1. Passivsaetze mit Subjekt**
+
+능동문이 수동문으로 바뀔 때, 능동문의 4격이 수동문의 주어가 된다. 그리고 능동문의 주어는 von + 3격으로 올 수 있는데, 수동문의 행위자보다 행위 자체가 중요하기 때문에 행위자가 당연하거나 별로 크게 중요하지 않을 때는 생략된다.
+
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line3" bgcolor="#F8F7F9">Akusativ</th><th class="line">Die Aerztin untersucht <span style="color:#648BC6">den Patienten</span> vor der Operation.의사는 환자를 수술 전에 검사한다.</th></tr>
+       <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Der Patient</span> <storng>wird</strong> vor der Operation (<span style="color:#C57B59">von</span> Aerztin) <strong>untersucht</strong>. 환자는 수술 전에 (의사에 의해) 검사된다.</td></tr>
+     </table>
+ </body>
+ </html>
+
+
+**2. Subjektlose Passivsaetze**
+
+능동문에 4격이 없는 경우, 수동문으로 만들 때 Es를 주어로 둔다. 이 Es는 Platzhalter이기 때문에 position1만 올 수 있다. 예를 들어 dass절에서는 es가 생락되고, 능동문의 3격이 수동문에서 맨 앞으로 나올 때에도 es가 생략된다.
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line3" bgcolor="#F8F7F9">Akusativ</th><th class="line">Man arbeitet sonntags nicht.사람들은 일요일에 일하지 않는다.</th></tr>
+       <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Es</span> wird sonntags nicht gearbeitet.일요일에는 일이 없다.</td></tr>
+       <tr><th class="line3" bgcolor="#F8F7F9">Akusativ</th><th class="line">Man half den Verunglueckten erst nach zwei Tagen. 사람들은 조난자를 이틀 후에야 도왔다.</th></tr>
+       <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6"><span style="color:#648BC6">Es</span> wurde den Verunglueckten erst nach zwei Tagen geholfen.(Den Verunglueckten wurde erst nach zwei Tagen geholfen.) 조난자는 이틀후에야 도움을 받았다.</td></tr>
+     </table>
+ </body>
+ </html>
+ 
+ &#10004; 수동태에 주어가 있음에도 Es가 나오는 경우가 있다.  
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;e.g. Es wurden in diesem Jahr viele Aepfel geerntet.(Es와 동사의 수가 일치하지 않는다. 주어는 viele Aepfel이다.) 올해 많은 사과가 수확되었다.
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;einfacher: In diesem Jahr wurden viele Aepfel geerntet.
+ 
+ 
+ **Passiv mit Modalverben**
+ 
+ 
+ 
+ 
+
 ## Zustandpassiv
 ## <span style="background-color:#F2D8D3">FuturⅠ,Ⅱ</span>
 
