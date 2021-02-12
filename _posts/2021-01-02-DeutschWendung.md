@@ -33,7 +33,7 @@ tag: Deutsch
 
 
 
-### <span style="background-color:#F2D8D3">A</span>
+### <span style="background-color:#F2D8D3">A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **angehen von** -로부터 접근해야 한다
 > Ich denke, dass man die Frage der Liebe ausgehend <span style="color:#A95762">von</span> zwei Punkten <span style="color:#A95762">angehen</span> muss.
@@ -44,7 +44,7 @@ tag: Deutsch
 **an sich** 그 자체  
 > Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur eine Begegnung, fast nichts ist.
 
-### <span style="background-color:#F2D8D3">B</span>
+### <span style="background-color:#F2D8D3">B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **bezieht sich auf 4** -와 관련된, -에 대한
 >  Die Bezeichnung Bohnenkaffee bedeutet nicht, dass der Kaffee noch ungemahlen ist, sondern <span style="color:#A95762">bezieht sich auf</span> die Reinheit des Produkts und dient der Unterscheidung von sogenanntem Ersatzkaffee.
@@ -63,11 +63,11 @@ tag: Deutsch
 **aus sich breiten** 퍼지다
 > Dieser Geist der Freiheit <span style="color:#A95762">breitet sich</span> auch ausserhalb <span style="color:#A95762">aus</span>, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung zu ringen hat</span>.
 
-### <span style="background-color:#F2D8D3">C</span>
+### <span style="background-color:#F2D8D3">C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">D</span>
+### <span style="background-color:#F2D8D3">D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">E</span>
+### <span style="background-color:#F2D8D3">E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Oeffentliche Einrichtungen** 공공기관
 > <span style="color:#A95762">Oeffentliche Einrichtungen</span> treffen vielsichtige Massnahme, um illegal angebrachte Graffiti zu verhindern.
@@ -84,17 +84,17 @@ tag: Deutsch
 > Das ist allerdings ein sehr merkwuerdiges Resultat, das zu zeigen sccheint, dass die Beobachtung eine <span style="color:#A95762">entscheidende</span> Rolle bei dem Vorgang spielt und dass die Wirklichkeit verschieden ist, je nachdem, ob wir sie beobachten oder nicht.
 
 
-### <span style="background-color:#F2D8D3">F</span>
+### <span style="background-color:#F2D8D3">F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Form annehmen** -한 형태를 띄다
 > Der zweite Punkt ist: Eben weil die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente <span style="color:#A95762">Form annehmen</span>.
 
-### <span style="background-color:#F2D8D3">G</span>
+### <span style="background-color:#F2D8D3">G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **von 3 Gebrauch machen** 사용하다  
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; und zwar die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: <span style="color:#A95762">von</span> seiner Vernunft in allen Stuecken oeffentlichen <span style="color:#A95762">Gebrauch</span> zu <span style="color:#A95762">machen</span>.
 
-### <span style="background-color:#F2D8D3">H</span>
+### <span style="background-color:#F2D8D3">H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **hinderlich 3** 3을 방해하다
 > Welche Einschraenkung aber ist <span style="color:#A95762">der Aufklaerung hinderlich</span>? welche nicht, sondern ihr wohl gar befoerderlich?
@@ -236,3 +236,13 @@ tag: Deutsch
 8. **etwas in Betrieb setzen / nehmen** 작동시키다, 개시하다, 시행하다
 
 9. **etwas unter Beweis stellen** -을 입증하다
+
+10. **etwas in Beziehung setzen; in Beziehung stehen** -와 연관시키다
+
+11. **etwas in Brand setzen; in Brand geraten** 방화하다, 불을 붙이다
+
+12. **etwas zur Diskussion stellen; zur Diskussion stehen** -을 토론에 부치다
+
+13. **jn./ etwas unter Druck setzen; unter Druck stehen** 압박하다, 재촉하다
+
+14. **jn. zur Einsicht bringen; zur Einsicht kommen** 깨우치다, 이해하다(통찰 속으로 데려오다)
