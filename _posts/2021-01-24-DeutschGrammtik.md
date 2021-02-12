@@ -383,6 +383,15 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
  </html>
 
 
+**Beipiel**
+1\. Napileon, <span style="color:#648BC6">auf die Insel St. Helena <span style="background-color:#DFDBE4">verbannt</span></span>, schrieb seine Memorien.  
+&nbsp;&nbsp;&nbsp;&nbsp;나폴레옹은,<span style="color:#648BC6">St.Helena 섬에 <span style="background-color:#DFDBE4">추방당한 (채)</span></span>, 자신의 회고록을 썼다.
+
+
+2\. <span style="color:#648BC6">Den Verfolgern <span style="background-color:#DFDBE4">entkommen</span></span>, versteckte sich der Einbrecher in einer Scheune.  
+  &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#648BC6">추적자들로부터 <span style="background-color:#DFDBE4">달아난 채</span></span>, 그 도둑은 한 헛간 안에 숨었다.
+
+
 ## Konjunktiv Ⅰ
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
 
