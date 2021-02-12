@@ -1,5 +1,5 @@
 ---
-title: Word2vec:CBOW(Continuous Bag Of Words Model)
+title: Word2vec: CBOW(Continuous Bag Of Words Model)
 category: Natural Language Processing
 tag: word2vec
 ---
