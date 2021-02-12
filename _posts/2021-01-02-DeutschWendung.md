@@ -224,3 +224,7 @@ tag: Deutsch
 2. **etwas zum Abschluss bringen; zum Abschluss kommen** 완료하다, 종료하다
 
 3. **etwas in Angriff nehmen (=angreifen)** 착수하다
+
+4. **jn./ etwas in Anspruch nehmen** 필요로하다, 요구하다
+
+5. **etwas zum Ausdruck bringen; zum Ausdruck kommen (=ausdruecken)** -을 표현하다
