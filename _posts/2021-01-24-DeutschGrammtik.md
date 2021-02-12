@@ -1,5 +1,5 @@
 ---
-title: Deutsch; Grammatik
+title: Deutsch_Grammatik
 category: Language
 tag: Deutsch
 ---
