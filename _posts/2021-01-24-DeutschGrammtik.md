@@ -377,7 +377,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line5">Formen</th></tr>
        <tr><td class="line3"><strong>능동</strong></td><td class="line">Infinitiv + d</td></tr>
-       <tr><td class="line3"><strong>수동</strong></td><td class="line">PP</td><td class="line"></tr>
+       <tr><td class="line3"><strong>수동</strong></td><td class="line">PP</td></tr>
     </table>
  </body>
  </html>
