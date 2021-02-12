@@ -349,7 +349,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">Ordnung</th><th class="line5">Beispiel</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Ordnung</th><th class="line2">Beispiel</th></tr>
        <tr><td class="line3">주어 + 동사 + <span style="color:#648BC6">분사문장</span></td><td class="line">Der Politiker uebernahm, <span style="color:#648BC6">sich auf seine Verantwortung <span style="background-color:#DFDBE4">besinnend</span></span>, das schwere Amt. 그 정치인은 <span style="color:#648BC6">자신의 책임을 <span style="background-color:#DFDBE4">생각해보면서</span></span>, 그 중대한 공직을 넘겨받았다.</td></tr>
        <tr><td class="line3">주어 + <span style="color:#648BC6">분사문장</span> + 동사</td><td class="line">Der Politiker, <span style="color:#648BC6">sich auf seine Verantwortung <span style="background-color:#DFDBE4">besinnend</span></span>, uebernahm das schwere Amt. (해석동일)</td></tr>
        <tr><td class="line3">분사 + <span style="color:#648BC6">분사문장</span> + 주어</td><td class="line"><span style="color:#648BC6">Sich auf siene Verantwortung <span style="background-color:#DFDBE4">besinnend</span></span>, uebernahm der Politiker das schwere Amt.(해석동일)</td></tr>
@@ -375,7 +375,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line5">Formen</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Formen</th></tr>
        <tr><td class="line3"><strong>능동</strong></td><td class="line">Infinitiv + d</td></tr>
        <tr><td class="line3"><strong>수동</strong></td><td class="line">PP</td></tr>
     </table>
