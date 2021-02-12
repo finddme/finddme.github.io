@@ -659,7 +659,7 @@ statt dass K2로 쓰인다.
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line2" bgcolor="#F8F7F9">Tempus</th><th class="line2">Fromen</th><th class="line2">Beispiel</th></tr>
-       <tr><td>Praesens(현재)</td><td><strong>Modalverben Konjunktivformen</strong> + Infinitiv</td></tr>
+       <tr><td>Praesens(현재)</td><td><strong>Modalverben Konjunktivformen</strong> + Infinitiv</td><td>Er koennte Deutsch gesprochen haben. 그는 아마 독일어로 말했을거야.</td></tr>
        <tr><td>Praeteritum(과거)</td><td><strong>haette</strong> + Infinitiv + <strong>Modalverben Infinitivformen</strong></td><td>ich haette laenger schlafen sollen. 나는 조금 더 오래 잠을 잤어야 했다.<br>Wenn ich heute nicht so frueh haette aufstehen muessen, waere ich jetzt nicht so muede. 내가 오늘 그렇게 일찍 일어나지 않았다면 나는 지금 피곤하지 않을텐데.<br><span style="color:#86937A; font-weight: bold;">(순서주의 동사원형이 2개 이상일 때 동사가 후치된다면 변화하는 동사가 맨 앞에 자리한다.)</span></td></tr>
     </table>
  </body>
