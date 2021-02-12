@@ -309,8 +309,8 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line5">Formen</th><th class="line2">etc.</th></tr>
-       <tr><td class="line3"><strong>Partizip1(aktiv)</strong></td><td class="line">Infinitiv + d + 형용사 어미 변화</td><td class="line">- 능동의 의미<br>- 문장 전체의 시제와 일치</td></tr>
-       <tr><td class="line3"><strong>Partizip2(aktiv)</strong></td><td class="line">PP + 형용사 어미 변화</td><td class="line">- 수동의 의미<br>- 문장 전체의 시제보다 과거</td></tr>
+       <tr><td class="line3"><strong>Partizip1</strong></td><td class="line">Infinitiv + d + 형용사 어미 변화</td><td class="line">- 능동의 의미<br>- 문장 전체의 시제와 일치</td></tr>
+       <tr><td class="line3"><strong>Partizip2</strong></td><td class="line">PP + 형용사 어미 변화</td><td class="line">- 수동의 의미<br>- 문장 전체의 시제보다 과거</td></tr>
     </table>
  </body>
  </html>
@@ -318,7 +318,62 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
 분사를 Partizip1의 형태로 만들지 2로 만들지는 동사의 의미를 생각하면 수월하다. 예를 들어 *schreien*(소리지르다)의 경우, '소리지르는'으로 표현할 때 *schreiend-*로 쓸 수 있다. 반면 '소리지름 당한'은 좀 이상하니까 이렇게는 안 쓰인다. 그리고 *zerstoeren*(파괴하다)의 경우, '파괴한'으로 쓸 때는 *zerstoerend-*, '파괴당한'으로 쓸 때는 *zerstoert-* 으로 쓴다.
 
 
-## Partizipialsaetze
+## <span style="background-color:#F2D8D3">Partizipialsaetze</span>
+
+Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는 형용사처럼 쓰이지 않기 때문에 분사가 형용사 어미변화를 하지 않는다. 그리고 이는 특정 명사를 꾸며주는 것이 아닌, 주문장에 대해 동시적으로 진행되는 사건을 표현하기 때문에 '-하면서, -한 채'로 해석이 된다.  
+
+순서는 아래와 같이 가능하다:
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Ordnung</th><th class="line5">Beispiel</th></tr>
+       <tr><td class="line3">주어 + 동사 + <span style="color:#648BC6">분사문장</span></td><td class="line">Der Politiker uebernahm, <span style="color:#648BC6">sich auf seine Verantwortung <span style="background-color:#BDB8C1">besinnend</span></span>, das schwere Amt. 그 정치인은 자신의 책임을 생각해보면서, 그 중대한 공직을 넘겨받았다.</td></tr>
+       <tr><td class="line3">주어 + <span style="color:#648BC6">분사문장</span> + 동사</td><td class="line">Der Politiker, <span style="color:#648BC6">sich auf seine Verantwortung besinnend</span>, uebernahm das schwere Amt. (해석동일)</td></tr>
+       <tr><td class="line3">분사 + <span style="color:#648BC6">분사문장</span> + 주어</td><td class="line"><span style="color:#648BC6">Sich auf siene Verantwortung besinnend</span>, uebernahm der Politiker das schwere Amt.(해석동일)</td></tr>
+    </table>
+ </body>
+ </html>
+
+
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line5">Formen</th><th class="line2">etc.</th></tr>
+       <tr><td class="line3"><strong>Partizip1</strong></td><td class="line">Infinitiv + d + 형용사 어미 변화</td><td class="line">- 능동의 의미<br>- 문장 전체의 시제와 일치</td></tr>
+       <tr><td class="line3"><strong>Partizip2</strong></td><td class="line">PP + 형용사 어미 변화</td><td class="line">- 수동의 의미<br>- 문장 전체의 시제보다 과거</td></tr>
+    </table>
+ </body>
+ </html>
+
+
 ## Konjunktiv Ⅰ
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
 
