@@ -225,10 +225,10 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Modalverben</th><th class="line5">Bedeutung</th><th class="line2">Beispiel</th></tr>
-       <tr><td class="line3"><strong>muessen(muessten)</strong></td><td class="line">-임에 틀림없을 거야, -여야 하는데</td><td class="line">Sie muesste beim Chef sein, denn dort ist eine wichtige Besprechung.<br>→ 그녀는 중요한 회의 때문에 상사와 있을거야.</td></tr>
-       <tr><td class="line3"><strong>koennen(koennten)</strong></td><td class="line">-일 가능성이 있을거야</td><td class="line">Mein Freund koennte heute kommen<br>→ 내 친구가 오늘 올 가능성이 있을 거야(올지도 몰라)</td></tr>
-       <tr><td class="line3"><strong>sollen(sollten)</strong></td><td class="line">-해야 하는데...,-였어야 하는데...(일반적으로-해야하는데 그렇지 않을 떄 사용)</td><td class="line">Sie sollte (eingentlich) an ihrem Arbeitsplatz sein, denn die Mottagszeit ist schon vorbei.<br>→ 그녀는 점심시간이 끝났기 때문에 직장에 있어야 하는데...</td></tr>
-       <tr><td class="line3"><strong>duerfen(duerften)</strong></td><td class="line">-일거야(불확실한 것에 대한 추측)</td><td class="line">Sie duerfte jetzt 20 Jahre alt sein<br>→ 그녀는 지금 20살 정도 될 거야.</td></tr>
+       <tr><td class="line3"><strong>muessen(muessten)</strong></td><td class="line">-여야 하는데, -면 좋겠다</td><td class="line">Sie muesste beim Chef sein, denn dort ist eine wichtige Besprechung.<br>→ 그녀는 중요한 회의 때문에 상사와 있을거야.</td><br>so muesste es immer sein<br>→ 언제나 그래야하는데<br>man muesste noch einmal so jung sien wie er.<br>→ 우리도 저 사람처럼 한 번 더 젊으면 좋겠다.</tr>
+       <tr><td class="line3"><strong>koennen(koennten)</strong></td><td class="line">1. 확실하지 않은 추측<br>-일 가능성이 있을거야<br>2. 가능성에 대한 화자의 확신<br>그럴거야(아마도)</td><td class="line">1. Mein Freund koennte heute kommen<br>→ 내 친구가 오늘 올 가능성이 있을 거야(올 수도 있어)<br>Er koennte (vielleicht) Deutsch gesprochen haben.<br>→ 그는 아마 독일어로 말했을거야.<br>2. Herr Mueller koennte jetzt wirklich siene Schulden bezahlen.<br>→ 뮐러씨는 이제 진짜 그의 빚을 갚을 수 있을거야.<br>Er koennte sein Studium laengst abgeschlossen haben.<br>→ 그는 학업을 이미 오래 전에 마쳤을거야. </td></tr>
+       <tr><td class="line3"><strong>sollen(sollten)</strong></td><td class="line">1. -해야 하는데...,-였어야 하는데...(일반적으로-해야하는데 그렇지 않을 떄 사용)<br>2. 조건문에서의 선택적 결정<br>3. 의문(놀람)</td><td class="line">1. Sie sollte (eingentlich) an ihrem Arbeitsplatz sein, denn die Mottagszeit ist schon vorbei.<br>→ 그녀는 점심시간이 끝났기 때문에 직장에 있어야 하는데...<br>2. Wenn Sie mein Angebot annehmen sollte, so teilen Sie es mir bitte sofort mit.<br>→ 당신이 내 제안을 받아들인다면, 바로 저에게 알려주세요.<br>Sollte ich ihn so beleidigt haben?<br>→ 내가 그를 그렇게 모욕했다고? </td></tr>
+       <tr><td class="line3"><strong>duerfen(duerften)</strong></td><td class="line">-일거야(불확실한 것에 대한 조심스러운 추측)</td><td class="line">Sie duerfte jetzt 20 Jahre alt sein<br>→ 그녀는 지금 20살 정도 될 거야.<br>Das duerfte sie nicht gewusst haben.<br>→ 그 여자는 그것을 알지 못했을거야.</td></tr>
     </table>
  </body>
  </html>
@@ -264,7 +264,11 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </html>
  
  
-**+\ werden, wurden, sein, war 변화**
+ 원래 werden-wurden-geworden인데 Perfekt(완료)와 Plusquamperfekt(대과거) 수동태에서 **worden**으로 온다.
+ 
+ 
+ 
+**+ werden, wurde, sein, war 변화**
  
  <html>
   <head>
@@ -375,7 +379,7 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
 
 분사를 Partizip1의 형태로 만들지 2로 만들지는 동사의 의미를 생각하면 수월하다. 예를 들어 *schreien*(소리지르다)의 경우, '소리지르는'으로 표현할 때 *schreiend-*로 쓸 수 있다. 반면 '소리지름 당한'은 좀 이상하니까 이렇게는 안 쓰인다. 그리고 *zerstoeren*(파괴하다)의 경우, '파괴한'으로 쓸 때는 *zerstoerend-*, '파괴당한'으로 쓸 때는 *zerstoert-* 으로 쓴다.
 
-**+\ 형용사 어미변화**
+**+ 형용사 어미변화**
 
 
 <center><img width="700" alt="2020-12-18 (14)" src="https://user-images.githubusercontent.com/53667002/102549804-169b1600-4100-11eb-949c-efdc831dcb13.png"></center>
