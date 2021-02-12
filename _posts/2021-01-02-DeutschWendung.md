@@ -33,7 +33,7 @@ tag: Deutsch
 
 
 
-### <span style="background-color:#F2D8D3">A</sapn>
+### <span style="background-color:#F2D8D3">A</span>
 
 **angehen von** -로부터 접근해야 한다
 > Ich denke, dass man die Frage der Liebe ausgehend <span style="color:#A95762">von</span> zwei Punkten <span style="color:#A95762">angehen</span> muss.
@@ -44,7 +44,7 @@ tag: Deutsch
 **an sich** 그 자체  
 > Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur eine Begegnung, fast nichts ist.
 
-### <span style="background-color:#F2D8D3">B</sapn>
+### <span style="background-color:#F2D8D3">B</span>
 
 **bezieht sich auf 4** -와 관련된, -에 대한
 >  Die Bezeichnung Bohnenkaffee bedeutet nicht, dass der Kaffee noch ungemahlen ist, sondern <span style="color:#A95762">bezieht sich auf</span> die Reinheit des Produkts und dient der Unterscheidung von sogenanntem Ersatzkaffee.
@@ -63,11 +63,11 @@ tag: Deutsch
 **aus sich breiten** 퍼지다
 > Dieser Geist der Freiheit <span style="color:#A95762">breitet sich</span> auch ausserhalb <span style="color:#A95762">aus</span>, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung zu ringen hat</span>.
 
-### <span style="background-color:#F2D8D3">C</sapn>
+### <span style="background-color:#F2D8D3">C</span>
 
-### <span style="background-color:#F2D8D3">D</sapn>
+### <span style="background-color:#F2D8D3">D</span>
 
-### <span style="background-color:#F2D8D3">E</sapn>
+### <span style="background-color:#F2D8D3">E</span>
 
 **Oeffentliche Einrichtungen** 공공기관
 > <span style="color:#A95762">Oeffentliche Einrichtungen</span> treffen vielsichtige Massnahme, um illegal angebrachte Graffiti zu verhindern.
@@ -84,17 +84,17 @@ tag: Deutsch
 > Das ist allerdings ein sehr merkwuerdiges Resultat, das zu zeigen sccheint, dass die Beobachtung eine <span style="color:#A95762">entscheidende</span> Rolle bei dem Vorgang spielt und dass die Wirklichkeit verschieden ist, je nachdem, ob wir sie beobachten oder nicht.
 
 
-### <span style="background-color:#F2D8D3">F</sapn>
+### <span style="background-color:#F2D8D3">F</span>
 
 **Form annehmen** -한 형태를 띄다
 > Der zweite Punkt ist: Eben weil die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente <span style="color:#A95762">Form annehmen</span>.
 
-### <span style="background-color:#F2D8D3">G</sapn>
+### <span style="background-color:#F2D8D3">G</span>
 
 **von 3 Gebrauch machen** 사용하다  
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; und zwar die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: <span style="color:#A95762">von</span> seiner Vernunft in allen Stuecken oeffentlichen <span style="color:#A95762">Gebrauch</span> zu <span style="color:#A95762">machen</span>.
 
-### <span style="background-color:#F2D8D3">H</sapn>
+### <span style="background-color:#F2D8D3">H</span>
 
 **hinderlich 3** 3을 방해하다
 > Welche Einschraenkung aber ist <span style="color:#A95762">der Aufklaerung hinderlich</span>? welche nicht, sondern ihr wohl gar befoerderlich?
@@ -103,7 +103,7 @@ tag: Deutsch
 > Dieser Geist der Freiheit breitet sich auch ausserhalb aus, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung <span style="color:#A95762">zu ringen hat</span>.
 
 
-### <span style="background-color:#F2D8D3">I</sapn>
+### <span style="background-color:#F2D8D3">I</span>
 
 **interessieren sich fuer 4** 주어가 4에 관심 있다  
 **interesseiren 3** -의 흥미를 끌다  
@@ -114,7 +114,7 @@ tag: Deutsch
 **Insofern** 그러한 점에 있어서
 > <span style="color:#A95762">Insofern</span> hat sie eine universelle Tragweite und ist eine persoenliche Erfahrung der moeglichen Universalitaet.
 
-### <span style="background-color:#F2D8D3">J</sapn>
+### <span style="background-color:#F2D8D3">J</span>
 
 **je nach** -에 따라  
 > Röst- und Mahlgrad variieren <span style="color:#A95762">je nach</span> Zubereitungsart. Kaffee enthält das Vitamin Niacin.
@@ -128,11 +128,11 @@ tag: Deutsch
 > <span style="color:#A95762">Jeder</span> Versuch, eine solche Beschreibung zu finden, wuerde zu Widerspruechen fuehren.
 
 
-### <span style="background-color:#F2D8D3">K</sapn>
+### <span style="background-color:#F2D8D3">K</span>
 
-### <span style="background-color:#F2D8D3">L</sapn>
+### <span style="background-color:#F2D8D3">L</span>
 
-### <span style="background-color:#F2D8D3">M</sapn>
+### <span style="background-color:#F2D8D3">M</span>
 
 **Massnahme treffen** 조치를 취한다
 > Oeffentliche Einrichtungen <span style="color:#A95762">treffen</span> vielsichtige <span style="color:#A95762">Massnahme</span>, um illegal angebrachte Graffiti zu verhindern.
@@ -140,20 +140,20 @@ tag: Deutsch
 **unter Menschen** 인간들 간의
 > Ich antworte: der oeffengliche Gebrauch seiner Vernunft muss jederzeit frei sien, und der allein kann Aufklaerung <span style="color:#A95762">unter Menschen</span> zustande bringen.
 
-### <span style="background-color:#F2D8D3">N</sapn>
+### <span style="background-color:#F2D8D3">N</span>
 
-### <span style="background-color:#F2D8D3">O</sapn>
+### <span style="background-color:#F2D8D3">O</span>
 
-### <span style="background-color:#F2D8D3">P</sapn>
+### <span style="background-color:#F2D8D3">P</span>
 
 **unter Pseudonym (=anonymously)** 익명으로
 >  Die Graffiti werden zumeist <span style="color:#A95762">unter Pseudonym</span> und illegal gefertigt.
 
-### <span style="background-color:#F2D8D3">Q</sapn>
+### <span style="background-color:#F2D8D3">Q</span>
 
-### <span style="background-color:#F2D8D3">R</sapn>
+### <span style="background-color:#F2D8D3">R</span>
 
-### <span style="background-color:#F2D8D3">S</sapn>
+### <span style="background-color:#F2D8D3">S</span>
 
 **sein kann** -일 수 있는
 > Die Liebe hat zuerst mit einer Unterscheidung oder einer Trennung zu tun, die der schlichte Unterschied zwischen zwei Personen mit ihrer unendlichen Subjektivitaet <span style="color:#A95762">sein kann</span>.
@@ -171,7 +171,7 @@ tag: Deutsch
 > Denn es leuchtet dieser doch ein Beispiel vor, dass bei Freiheit fuer die oeffentliche Ruhe und Einigkeit des gemeinen Wesens nicht das Mindeste <span style="color:#A95762">zu besorgen sei</span>.
 
 
-### <span style="background-color:#F2D8D3">T</sapn>
+### <span style="background-color:#F2D8D3">T</span>
 
 **mit 3 zu tun haben** -와 관련있다
 > Die Liebe <span style="color:#A95762">hat</span> zuerst <span style="color:#A95762">mit</span> einer Unterscheidung oder einer Trennung <span style="color:#A95762">zu tun</span>, die der schlichte Unterschied zwischen zwei Personen mit ihrer unendlichen Subjektivitaet sein kann.
@@ -180,9 +180,9 @@ tag: Deutsch
 **mit 3 zu tun bekommen** -와 관련있다
 > Es ist verstaendlich, dass in unserer wissenschaftlichen Beziehung zur Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es <span style="color:#A95762">mit</span> den Teilen der Natur <span style="color:#A95762">zu tun bekommen</span>, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.
 
-### <span style="background-color:#F2D8D3">U</sapn>
+### <span style="background-color:#F2D8D3">U</span>
 
-### <span style="background-color:#F2D8D3">V</sapn>
+### <span style="background-color:#F2D8D3">V</span>
 
 **im Sinne des Volksmundes** 속설에 의하면, 속설에 따르면
 > Werden Graffiti in der öffentlichen Wahrnehmung, insbesondere die nicht genehmigten Graffiti, meist als Form des Vandalismus – <span style="color:#A95762">im Sinne des Volksmundes</span>: „Narrenhände beschmieren Tisch und Wände“ – betrachtet, werden sie von anderer Seite auch als Form der Kunst anerkannt.
@@ -199,7 +199,7 @@ tag: Deutsch
 **4 unter verstehen** unter이하가 4라고 생각하다
 > Ich <span style="color:#A95762">verstehe</span> aber <span style="color:#A95762">unter</span> dem oeffentlichen Gebrauche seiner eigenen Vernunft denjnigen, <span style="color:#A95762">den</span> jemand als Gelehrter von ihr vor dem ganzen Puvlikum der Leserwelt macht.
 
-### <span style="background-color:#F2D8D3">W</sapn>
+### <span style="background-color:#F2D8D3">W</span>
 
 **Wenn, Waehrend, Nachdem** 생략
 > <span style="color:#A95762">(Waehrend)</span> Werden Graffiti in der öffentlichen Wahrnehmung, insbesondere die nicht genehmigten Graffiti, meist als Form des Vandalismus – im Sinne des Volksmundes: „Narrenhände beschmieren Tisch und Wände“ – betrachtet, werden sie von anderer Seite auch als Form der Kunst anerkannt.
@@ -207,17 +207,17 @@ tag: Deutsch
 **Eben weil** 바로 그렇기 때문에
 > Der zweite Punkt ist: <span style="color:#A95762">Eben weil</span> die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente Form annehmen.
 
-### <span style="background-color:#F2D8D3">X</sapn>
+### <span style="background-color:#F2D8D3">X</span>
 
-### <span style="background-color:#F2D8D3">Y</sapn>
+### <span style="background-color:#F2D8D3">Y</span>
 
-### <span style="background-color:#F2D8D3">Z</sapn>
+### <span style="background-color:#F2D8D3">Z</span>
 
 **und zwar** 즉, 보다 더 구체적으로 말하자면
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; <span style="color:#A95762">und zwar</span> die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: von seiner Vernunft in allen Stuecken oeffentlichen Gebrauch zu machen.
 
 
-### <span style="background-color:#F2D8D3">Funktionsverbgefuege</sapn>
+### <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
 
 1. **auf Ablehnung stossen (=abgelehnt werden)** 거부되다
 
@@ -228,3 +228,11 @@ tag: Deutsch
 4. **jn./ etwas in Anspruch nehmen** 필요로하다, 요구하다
 
 5. **etwas zum Ausdruck bringen; zum Ausdruck kommen (=ausdruecken)** -을 표현하다
+
+6. **etwas in Aussicht stellen; in Aussicht stehen** 약속하다
+
+7. **etwas in Betracht ziehen (=betrachten)** -을 고려하다
+
+8. **etwas in Betrieb setzen / nehmen** 작동시키다, 개시하다, 시행하다
+
+9. **etwas unter Beweis stellen** -을 입증하다
