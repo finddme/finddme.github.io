@@ -217,3 +217,10 @@ tag: Deutsch
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; <span style="color:#A95762">und zwar</span> die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: von seiner Vernunft in allen Stuecken oeffentlichen Gebrauch zu machen.
 
 
+### Funktionsverbgefuege
+
+**1. auf Ablehnung stossen (=abgelehnt werden)** 거부되다
+
+**2. etwas zum Abschluss bringen; zum Abschluss kommen** 완료하다, 종료하다
+
+**3. etwas in Angriff nehmen (=angreifen)** 착수하다
