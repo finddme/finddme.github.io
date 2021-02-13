@@ -237,7 +237,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 행하는 사람이 중요할 경우에는 능동문을 사용하지만, 행해지는 행위 자체가 중요할 경우에는 수동문이 선호된다.
 
-### Formen
+### 1. Formen
 
 <html>
   <head>
@@ -297,9 +297,9 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </html>
 
 
-### Passivsaetze
+### 2. Passivsaetze
 
-**1. Passivsaetze mit Subjekt**
+**2.1 Passivsaetze mit Subjekt**
 
 능동문이 수동문으로 바뀔 때, 능동문의 4격이 수동문의 주어가 된다. 그리고 능동문의 주어는 von + 3격으로 올 수 있는데, 수동문의 행위자보다 행위 자체가 중요하기 때문에 행위자가 당연하거나 별로 크게 중요하지 않을 때는 생략된다.
 
@@ -327,7 +327,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </html>
 
 
-**2. Subjektlose Passivsaetze**
+**2.2 Subjektlose Passivsaetze**
 
 능동문에 4격이 없는 경우, 수동문으로 만들 때 Es를 주어로 둔다. 이 Es는 Platzhalter이기 때문에 position1만 올 수 있다. 예를 들어 dass절에서는 es가 생락되고, 능동문의 3격이 수동문에서 맨 앞으로 나올 때에도 es가 생략된다.
 
@@ -361,7 +361,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  
  
  
-### Passiv mit Modalverben
+### 3. Passiv mit Modalverben
  
  
  
@@ -384,10 +384,10 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
        <tr><th class="line4" bgcolor="#F8F7F9">Tempus</th><th class="line2">Typ</th><th class="line2">Form</th><th class="line2">Beispiel</th></tr>
        <tr><td class="line4" rowspan="2">Praesens</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man muss den Verletzten sofort operieren.</td></tr>
        <tr><td class="line2">Passiv</td><td class="line2">Modalverben(현재형) + PP + werden</td><td class="line2">Der Verletzte <strong>muss</strong> sofort <strong>operiert werden</strong>.</td></tr>
-       <tr><td class="line3">Praeteritum</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man musste den Verletzten sofort operieren.</td></tr>
-       <tr><td class="line4">Praeteritum</td><td class="line2">Passiv</td><td class="line2">Modalverben (과거형)+ PP + werden</td><td class="line2">Der Verletzte <strong>musste</strong> sofort <strong>operiert werden</strong>.</td></tr>
-       <tr><td class="line3">Perfekt</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man hat den Verletzten sofort operieren muessen.</td></tr>
-       <tr><td class="line3">Perfekt</td><td class="line">Passiv</td><td class="line">haben + PP + werden + Modalverben Infinitivform</td><td class="line">Der Verletzte <strong>hat</strong> sofort <strong>operiert werden muessen</strong>.</td></tr>
+       <tr><td class="line4" rowspan="2">Praeteritum</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man musste den Verletzten sofort operieren.</td></tr>
+       <tr><td class="line2">Passiv</td><td class="line2">Modalverben (과거형)+ PP + werden</td><td class="line2">Der Verletzte <strong>musste</strong> sofort <strong>operiert werden</strong>.</td></tr>
+       <tr><td class="line4" rowspan="2">Perfekt</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man hat den Verletzten sofort operieren muessen.</td></tr>
+       <tr><td class="line">Passiv</td><td class="line">haben + PP + werden + Modalverben Infinitivform</td><td class="line">Der Verletzte <strong>hat</strong> sofort <strong>operiert werden muessen</strong>.</td></tr>
      </table>
  </body>
  </html>
