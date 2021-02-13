@@ -22,7 +22,7 @@ tag: English
        <tr><td>1:33</td><td><span style="color:#BDB8C1">THERAPIST:</span> How's your blog going?</td><td>"존 H. 왓슨 박사의 개인 블로그" 블로그는 어때요?</td></tr>
        <tr><td>1:36</td><td><span style="color:#BDB8C1">WATSON:</span> Yeah, good. (CLEARS THROAT) Very good.</td><td>네, 좋아요 잘하고 있습니다.</td></tr>
        <tr><td>1:40</td><td><span style="color:#BDB8C1">Therapist:</span> You haven't written a word, have you?</td><td>아직 하나도 안 쓰셨죠?</td></tr>
-       <tr><td>1:41</td><td><span style="color:#BDB8C1">WATSON:</span> You just wrote, "Still has trust <span style="background-color:#DFDBE4">issues</span>."<br><blockquote>인용구가 먹히나</blockquote></td><td>불신증이 남아 있다고 썼죠?</td></tr>
+       <tr><td>1:41</td><td><span style="color:#BDB8C1">WATSON:</span> You just wrote, "Still has trust <span style="background-color:#EDDBD8">issues</span>."<br><blockquote>인용구가 먹히나</blockquote></td><td>불신증이 남아 있다고 썼죠?</td></tr>
        <tr><td>1:44</td><td><span style="color:#BDB8C1">Therapist:</span> And you read my writing upside down.</td><td>거꾸로 보이는 글씨까지 훔쳐보시잖아요.</td></tr>
        <tr><td>1:48</td><td><span style="color:#BDB8C1">Therapist:</span> You see what I mean?</td><td>무슨 말인지 아시겠죠?</td></tr>
        <tr><td>1:51</td><td><span style="color:#BDB8C1">Therapist:</span> John,</td><td>존,</td></tr>
