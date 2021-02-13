@@ -1020,11 +1020,12 @@ statt dass K2로 쓰인다.
 의견이나 요구를 조심스럽게 전달할 때 화법조동사 duerfen, moegen이 자주 사용된다.
 
 
-**2.5.4**  
-
+**2.5.4**   
 **&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es sei denn (nun), dass K2  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es muesste den (nun) sein, dass K2  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denn(nun) K2 (-가 아니면, -가 아닌 한에는, -외에는)**   
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;→ Niemand darf hier herein, *es sei denn*, *dass* er einen Ausweis *haette*. 증명서를 가진게 아니라면 아무도 여기에 들어갈 수 없다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, *es muesste denn sein*, *dass* er einen Ausweis *haette*.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *haette* *denn (nun)* einen Ausweis.  
