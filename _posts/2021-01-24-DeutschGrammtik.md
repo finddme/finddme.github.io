@@ -446,7 +446,6 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
 
 ### 4. Passiv in der infinitivkonstruktion
 
-**4.1 Formen**
 
 <html>
   <head>
@@ -471,7 +470,38 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </html>
 
 
-## Zustandpassiv
+## <span style="background-color:#F2D8D3">Zustandpassiv</span>
+
+상태수동은 '-되어져있는' 상태를 나타낸다. 형태는 **sein + PP**이다.
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Tempus</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3">Zustandpassiv Praesens</td><td class="line">Jetzt ist es 10 Uhr; seit zwei Stunden <strong>ist</strong> der Laden <strong>geoeffnet</strong>. 이제 10시다. 2시간동안 가게는 열려있다.</td></tr>
+       <tr><td class="line3">Zustandpassiv Vergangenheit</td><td class="line">Als ich kam, <strong>war </strong>der Laden schon <strong>geoeffnet</strong>. 내가 왔을 때 가게는 이미 열려있었다.</td></tr>
+     </table>
+ </body>
+ </html>
+
+&#10004; 상태수동이 형용사 역할을 하기도 한다. Partizip2에 형용사 어미변화.
+
+Der Teller ist zerbrochen → der zerbrochene Teller  
+Das Tor war verschlossen → das verschlossene Tor
+
+
 ## <span style="background-color:#F2D8D3">FuturⅠ,Ⅱ</span>
 
 - 일반적으로 미래를 나타낼 때, 미래를 표현하는 부사 혹은 부사구와 함께 현재형을 사용한다.  
