@@ -169,7 +169,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Tempus</th><th class="line2">Formen</th><th class="line2">Beispiel</th></tr>
        <tr><td class="line3">Praesens(현재)</td><td class="line"> Modalverben(Infinitiv Form) + Infinitiv</td><td class="line">Mein Freund <em>kann</em> heute <em>kommen</em><br>→ 내 친구는 오늘 올 가능성이 있다(올거다).</td></tr>
-       <tr><td class="line3">Praeteritum(과거)/Perfekt(완료)</td><td class="line"> Modalverben(<strong>Infinitiv Form</strong>) + PP(Partizip2 + haben/sein)</td><td class="line">so <em>muss</em> es <em>gewesen sein</em><br>→ 그랬던 것이 틀림없어(분명해)</td></tr>
+       <tr><td class="line3">Praeteritum(과거)/Perfekt(완료)</td><td class="line"> Modalverben(<strong>Infinitiv Form</strong>) + PP(Partizip Perfekt(Partizip2 + haben/sein))</td><td class="line">so <em>muss</em> es <em>gewesen sein</em><br>→ 그랬던 것이 틀림없어(분명해)</td></tr>
      </table>
  </body>
  </html>
@@ -439,6 +439,33 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
        <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Beispiel</th></tr>
        <tr><td class="line3">Aktiv</td><td class="line">Man <strong>will</strong> am Stadtrand eine neue Siedlung errichten. </td></tr>
        <tr><td class="line3">Passiv</td><td class="line">Am Stadtrand <strong>soll</strong> eine neue Siedlung errichtet werden.</td></tr>
+     </table>
+ </body>
+ </html>
+
+
+### 4. Passiv in der infinitivkonstruktion
+
+**4.1 Formen**
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Tempus</th><th class="line2">Formen</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3">Praesens</td><td class="line">Partizip2 + zu werden</td><td class="line"><em>Ich</em> fuerchte, <strong>dass</strong> <em>ich</em> bald entlassen werde.<br>Ich fuerchte, bald <strong>entlassen zu werden</strong>. 나는 해고될까봐 두렵다.<br> <em>Sie</em> hofft, <strong>dass</strong> <em>sie</em> vom Bahnhof abgeholt wird.<br> Sie hofft vom Bahnhof <strong>abgeholt zu werden</strong>. 그녀는 기차역에서 픽업되기를 원한다.</td></tr>
+       <tr><td class="line3">Perfekt</td><td class="line">Partizip2 + worden zu sein</td><td class="line"><em>Er</em> behauptet, <strong>dass</strong> <em>er</em> niemals vorher gefragt worden ist.<br> Er behauptet, niemals vorher <strong>gefragt worden zu sein</strong>. 그는 전에 질문 받은 적이 없다고 주장한다.</td></tr>
      </table>
  </body>
  </html>
