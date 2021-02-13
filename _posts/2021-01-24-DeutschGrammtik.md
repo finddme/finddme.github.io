@@ -744,7 +744,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 
 **1.2 Vergangenheitsformen**
 
-- 접속법1식과 2식 모두 과거시제로 완료형만 사용한다. <span style="color:#A05A54; font-weight: bold;">sei/habe + PP</span>
+- 접속법1식과 2식 모두 과거시제로 완료형만 사용한다. <span style="color:#648BC6; font-weight: bold;">sei/habe + PP</span>
 
 
 <html>
@@ -778,7 +778,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 
 **1.3 Zukunftsformen**
 
-<span style="color:#A05A54; font-weight: bold;">werde + Infinitiv</span>
+<span style="color:#648BC6; font-weight: bold;">werde + Infinitiv</span>
 
 
 <html>
@@ -798,7 +798,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">Person</th><th class="line2">werden</th><th class="line2">habe</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Person</th><th class="line2">werden</th></tr>
        <tr><td class="line3">ich</td><td class="line"><strong>wuerde kommen</strong></td></tr>
        <tr><td class="line3">du</td><td class="line">werdest kommen</td></tr>
        <tr><td class="line3">er</td><td class="line">werde kommen</td></tr>
@@ -813,7 +813,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 **1.4 Passiv im Konjuktion 1**
 
 
-<span style="color:#A05A54; font-weight: bold;">wuerden + PP</span> (그냥 passiv는 werden +PP)
+<span style="color:#648BC6; font-weight: bold;">wuerden + PP</span> (그냥 passiv는 werden +PP)
 
 <html>
   <head>
