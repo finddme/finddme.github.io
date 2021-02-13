@@ -355,9 +355,9 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </body>
  </html>
  
- &#10004; 수동태에 주어가 있음에도 Es가 나오는 경우가 있다.  
- &nbsp;&nbsp;&nbsp;&nbsp;e.g. Es wurden in diesem Jahr viele Aepfel geerntet.(Es와 동사의 수가 일치하지 않는다. 주어는 viele Aepfel이다.) 올해 많은 사과가 수확되었다.  
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;einfacher: In diesem Jahr wurden viele Aepfel geerntet.
+&#10004; 수동태에 주어가 있음에도 Es가 나오는 경우가 있다.  
+&nbsp;&nbsp;&nbsp;&nbsp;e.g. Es wurden in diesem Jahr viele Aepfel geerntet.(Es와 동사의 수가 일치하지 않는다. 주어는 viele Aepfel이다.) 올해 많은 사과가 수확되었다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;einfacher: In diesem Jahr wurden viele Aepfel geerntet.
  
  
  
@@ -386,14 +386,63 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
        <tr><td class="line2">Passiv</td><td class="line2">Modalverben(현재형) + PP + werden</td><td class="line2">Der Verletzte <strong>muss</strong> sofort <strong>operiert werden</strong>.</td></tr>
        <tr><td class="line4" rowspan="2">Praeteritum</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man musste den Verletzten sofort operieren.</td></tr>
        <tr><td class="line2">Passiv</td><td class="line2">Modalverben (과거형)+ PP + werden</td><td class="line2">Der Verletzte <strong>musste</strong> sofort <strong>operiert werden</strong>.</td></tr>
-       <tr><td class="line4" rowspan="2">Perfekt</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man hat den Verletzten sofort operieren muessen.</td></tr>
+       <tr><td class="line2" rowspan="2">Perfekt</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man hat den Verletzten sofort operieren muessen.</td></tr>
        <tr><td class="line">Passiv</td><td class="line">haben + PP + werden + Modalverben Infinitivform</td><td class="line">Der Verletzte <strong>hat</strong> sofort <strong>operiert werden muessen</strong>.</td></tr>
      </table>
  </body>
  </html>
  
+ &#10004;**수동가능** 표현은 아래와 같다:
+ 
+ <html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Formen</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3">koennen(im passivsaetze)</td><td class="line">Die Schuld des Angeklagten <strong>kann</strong> nicht bestritten werden. 피고인의 죄는 부인될 수 없다.</td></tr>
+       <tr><td class="line3">sein + zu Infinitiv</td><td class="line">Die Schuld des Angeklagten <strong>ist</strong> nicht <strong>zu bestreiten</strong>.</td></tr>
+       <tr><td class="line3">lassen sich + Infinitiv</td><td class="line">Die Schuld des Angeklagten <strong>laesst sich</strong> nicht <strong>bestreiten</strong>.</td></tr>
+       <tr><td class="line3">sein + -bar</td><td class="line">Dis Schuld des Angeklagten <strong>ist unbestreitbar</strong>.</td></tr>
+     </table>
+ </body>
+ </html>
  
  
+&#10004;능동문의 **wollen**은 수동문이 될 때 **sollen**으로 바뀐다.  
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3">Aktiv</td><td class="line">Man <strong>will</strong> am Stadtrand eine neue Siedlung errichten. </td></tr>
+       <tr><td class="line3">Passiv</td><td class="line">Am Stadtrand <strong>soll</strong> eine neue Siedlung errichtet werden.</td></tr>
+     </table>
+ </body>
+ </html>
+
 
 ## Zustandpassiv
 ## <span style="background-color:#F2D8D3">FuturⅠ,Ⅱ</span>
