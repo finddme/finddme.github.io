@@ -734,7 +734,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line6" bgcolor="#F8F7F9">Person</th><th class="line2">sei</th><th class="line2">habe</th></tr>
-       <tr><td class="line3">ich</td><td class="line">sei</td><td class="line"><stong>haette</strong></td></tr>
+       <tr><td class="line3">ich</td><td class="line">sei</td><td class="line"><strong>haette</strong></td></tr>
        <tr><td class="line3">du</td><td class="line">seiest</td><td class="line">habest</td></tr>
        <tr><td class="line3">er</td><td class="line">sei</td><td class="line">habe</td></tr>
        <tr><td class="line3">wir</td><td class="line">seien</td><td class="line"><strong>haetten</strong></td></tr>
