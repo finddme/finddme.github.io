@@ -319,11 +319,12 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line3" bgcolor="#F8F7F9">Akusativ</th><th class="line">Die Aerztin untersucht <span style="color:#648BC6">den Patienten</span> vor der Operation.의사는 환자를 수술 전에 검사한다.</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3">Akusativ</td><td class="line">Die Aerztin untersucht <span style="color:#648BC6">den Patienten</span> vor der Operation.의사는 환자를 수술 전에 검사한다.</td></tr>
        <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Der Patient</span> <storng>wird</strong> vor der Operation (<span style="color:#C57B59">von</span> Aerztin) <strong>untersucht</strong>. 환자는 수술 전에 (의사에 의해) 검사된다.</td></tr>
      </table>
- </body>
- </html>
+   </body>
+   </html>
 
 
 **2. Subjektlose Passivsaetze**
@@ -345,10 +346,11 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line3" bgcolor="#F8F7F9">Akusativ</th><th class="line">Man arbeitet sonntags nicht.사람들은 일요일에 일하지 않는다.</th></tr>
-       <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Es</span> wird sonntags nicht gearbeitet.일요일에는 일이 없다.</td></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3">Akusativ</td><td class="line">Man arbeitet sonntags nicht.사람들은 일요일에 일하지 않는다.</td></tr>
+       <tr><td class="line4">Passiv</td><td class="line2"><span style="color:#648BC6">Es</span> wird sonntags nicht gearbeitet.일요일에는 일이 없다.</td></tr>
        <tr><th class="line3" bgcolor="#F8F7F9">Akusativ</th><th class="line">Man half den Verunglueckten erst nach zwei Tagen. 사람들은 조난자를 이틀 후에야 도왔다.</th></tr>
-       <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6"><span style="color:#648BC6">Es</span> wurde den Verunglueckten erst nach zwei Tagen geholfen.(Den Verunglueckten wurde erst nach zwei Tagen geholfen.) 조난자는 이틀후에야 도움을 받았다.</td></tr>
+       <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Es</span> wurde den Verunglueckten erst nach zwei Tagen geholfen.(Den Verunglueckten wurde erst nach zwei Tagen geholfen.) 조난자는 이틀후에야 도움을 받았다.</td></tr>
      </table>
  </body>
  </html>
