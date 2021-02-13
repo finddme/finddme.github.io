@@ -85,7 +85,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
        <tr><td class="line3"><strong>Praesens(현재)</strong></td><td class="line">Modalverben + Infinitiv<br> → Der Arbeiter <em>will</em> den Meister <em>sprechen</em>.</td></tr>
        <tr><td class="line3"><strong>Praeteritum(과거)</strong></td><td class="line">Modalverben(praeteritum form) + Infinitiv<br> → Der Arbeiter <em>wollte</em> den Meister <em>sprechen</em>.</td></tr>
        <tr><td class="line3"><strong>Perfekt(완료)</strong></td><td class="line">haben + Infinitiv + Modalverben(infinitiv form)<br> → Der Arbeiter <em>hat</em> den Meister <em>sprechen wollen</em>.</td></tr>
-       <tr><td class="line3"><strong>Plusquamperfekt(대과거)</strong></td><td class="line">haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)<br> → Der Arbeiter <em>hatte</em> den Meister <em>sprechen wollen</em>.<br> <span style="color:#648BC6; font-weight: bold;">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>
+       <tr><td class="line3"><strong>Plusquamperfekt(대과거)</strong></td><td class="line">haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)<br> → Der Arbeiter <em>hatte</em> den Meister <em>sprechen wollen</em>.<br> <span style="color:##81D8D0; font-weight: bold;">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>
 </td></tr>
    </table>
  </body>
