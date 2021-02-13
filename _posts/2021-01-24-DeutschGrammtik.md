@@ -670,17 +670,91 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
   &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#648BC6">추적자들로부터 <span style="background-color:#DFDBE4">달아난 채</span></span>, 그 도둑은 한 헛간 안에 숨었다.
 
 
-## Konjunktiv Ⅰ
+## <span style="background-color:#F2D8D3">Konjunktiv Ⅰ</span>
+
+접속법1식은 간접화법이다. 
+### 1. Bildung der Formen
+
+**1.1 Gegenwartsformen**
+
+- 현재형에 -en을 빼고 인칭에 따라 아래와 같은 어미를 붙여준다.
+
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line2" bgcolor="#F8F7F9">Person</th><th class="line2">Endung</th></tr>
+       <tr><td>ich</td><td><strong>-e</strong></td></tr>
+       <tr><td>du</td><td><strong>-est</strong></td></tr>
+       <tr><td>er/sie/es</td><td><strong>-e</strong></td></tr>
+       <tr><td>wir</td><td><strong>-en</strong></td></tr>
+       <tr><td>ihr</td><td><strong>-et</strong></td></tr>
+       <tr><td>Sie</td><td><strong>-en</strong></td></tr>
+    </table>
+ </body>
+</html>
+
+- ich, wir, Sie는 직설법 현재형과 형태가 같아 헷갈릴 수 있으므로 접속법 2식 형태로 사용한다.(접속법 2식이 직설법 과거형과 형태가 같으면 wuerden + Infinitiv형태 사용)
+
+
+
+
+**1.2 Vergangenheitsformen**
+
+- 접속법1식과 2식 모두 과거시제로 완료형만 사용한다. <span style="color:#A05A54; font-weight: bold;">sei/habe + PP</span>
+
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      .line6{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line6" bgcolor="#F8F7F9">Person</th><th class="line2">sei</th><th class="line2">habe</th></tr>
+       <tr><td class="line3">ich</td><td class="line">sei</td><td class="line"><stong>haette</strong></td></tr>
+       <tr><td class="line3">du</td><td class="line">seiest</td><td class="line">habest</td></tr>
+       <tr><td class="line3">er</td><td class="line">sei</td><td class="line">habe</td></tr>
+       <tr><td class="line3">wir</td><td class="line">seien</td><td class="line"><strong>haetten</strong></td></tr>
+       <tr><td class="line3">ihr</td><td class="line">seiet</td><td class="line">habet</td></tr>
+       <tr><td class="line3">Sie</td><td class="line">seien</td><td class="line"><strong>haetten</strong></td></tr>
+    </table>
+ </body>
+ </html>
+
+
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
 
 ### 1. Bildung der Formen
 
-접속법의 형태는 해당 동사의 과거형을 기준으로 만든다. 몇몇 동사들을 제외하고는 보통 wuerden + Infinitiv형으로 많이 쓰인다.
+접속법의 형태는 해당 동사의 과거형을 기준으로 만든다. 몇몇 동사들을 제외하고는 보통 <span style="color:#A05A54; font-weight: bold;">wuerden + Infinitiv</span>형으로 많이 쓰인다.
 
 
 **1.1 Gegenwartsformen**
 
-- 과거형에 인칭에 따라 아래와 같은 어미를 붙인다(-e를 기본적으로 붙이는게 특징).
+- 과거형에 동사에 따라 움라우트를 붙인 후, 인칭에 따라 아래와 같은 어미를 붙인다(-e를 기본적으로 붙이는게 특징).
 
 <html>
   <head>
@@ -709,7 +783,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 </html>
 
 
-- 접속법2식과 직설법 과거형의 형태가 같을 경우, wuerden+Infinitiv로 표현한다.  
+- 접속법2식과 직설법 과거형의 형태가 같을 경우, <span style="color:#A05A54; font-weight: bold;">wuerden + Infinitiv</span>로 표현한다.  
 
 
 - 불규칙동사, 화법조동사(Modalverben), 조동사(Hilfsverben)의 경우 a,o,u에 움라우트를 붙인다.    
@@ -721,11 +795,14 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 
 접속법의 현재형이 이미 동사의 과거형을 기반으로 만들어졌기 때문에 접속법1식과 2식의 과거는 완료형으로만 실현된다.
 
-- 기본형태: haetten/waeren+PP  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;haben – ich haette gehabt, du haettest gehabt...   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sien – ich waere gewesen, du waerest gewesen...  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arbeiten – ich haette gearbeitet, du haettest gearbeitet...  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kommen – ich waere gekommen, du waerest gekommen...  
+- 기본형태: <span style="color:#A05A54; font-weight: bold;">haetten/waeren+PP</span>
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*haben* – ich haette gehabt, du haettest gehabt...   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*sein* – ich waere gewesen, du waerest gewesen...  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*arbeiten* – ich haette gearbeitet, du haettest gearbeitet...  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*kommen* – ich waere gekommen, du waerest gekommen...  
 
 
 **1.3 Passiv im Konjunktiv2**
