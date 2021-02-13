@@ -520,7 +520,7 @@ e.g. Ich <em>komme</em> morgen frueh zu dir und <em<bringe</em> dir die Fotos <e
 e.g Wenn ihr mirgen erst um 10 Uhr kommt, <em>haben</em> wir schon <em>gefruehstueckt</em>. 너희가 내일 아침 10시에 오면 우리는 이미 아침을 먹었을 것이다.
 
 
-### Formen und Bedeutung
+### 1. Formen und Gebrauch
 
 Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.  
 
@@ -673,6 +673,8 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅰ</span>
 
 접속법1식은 간접화법이다. 
+
+
 ### 1. Bildung der Formen
 
 **1.1 Gegenwartsformen**
@@ -709,6 +711,35 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 - ich, wir, Sie는 직설법 현재형과 형태가 같아 헷갈릴 수 있으므로 접속법 2식 형태로 사용한다.(접속법 2식이 직설법 과거형과 형태가 같으면 wuerden + Infinitiv형태 사용)
 
 
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      .line6{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line6" bgcolor="#F8F7F9">Person</th><th class="line2" colspan="2">Hilfs Verb</th><th class="line2">ModalVerb</th><th class="line2">Starkes Verb</th><th class="line2">Schwaches Verb</th><th class="line2">Verb mit Hilfs -e</th></tr>
+       <tr><td class="line3">ich</td><td class="line"><strong>haette</strong></td><td class="line"><strong>wuerde</strong></td><td class="line">duerfe</td><td class="line"><strong>kaeme</strong></td><td class="line"><strong>plante</strong></td><td class="line"><strong>schnitte</strong></td></tr>
+       <tr><td class="line3">du</td><td class="line">habest</td><td class="line">werdest</td><td class="line">duerfest</td><td class="line">kommest</td><td class="line">planest</td><td class="line"><strong>schnittest</strong></td></tr>
+       <tr><td class="line3">er</td><td class="line">habe</td><td class="line">werde</td><td class="line">duerfe</td><td class="line">komme</td><td class="line">plane</td><td class="line">schneide</td></tr>
+       <tr><td class="line3">wir</td><td class="line"><strong>haetten</strong></td><td class="line"><strong>wuerden</strong></td><td class="line"><strong>duerften</strong></td><td class="line"><strong>kaemen</strong></td><td class="line"><strong>planten</strong></td><td class="line"><strong>schnitten</strong></td></tr>
+       <tr><td class="line3">ihr</td><td class="line">habet</td><td class="line"><strong>wuerdet</strong></td><td class="line">duerfet</td><td class="line">kommet</td><td class="line">planet</td><td class="line"><strong>schnittet</strong></td></tr>
+       <tr><td class="line3">Sie</td><td class="line"><strong>haetten</strong></td><td class="line"><strong>wuerden</strong></td><td class="line"><strong>duerften</strong></td><td class="line"><strong>kaemen</strong></td><td class="line"><strong>planten</strong></td><td class="line"><strong>schnitten</strong></td></tr>
+    </table>
+ </body>
+ </html>
+
+- Verb mit Hilfs -e는 기본적으로 접속법1식 만드는 것 처럼 e가 붙기 때문에 단수3격을 제외하고는 모두 접속법2식 형태가 사용된다.
 
 
 **1.2 Vergangenheitsformen**
