@@ -764,7 +764,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line6" bgcolor="#F8F7F9">Person</th><th class="line2">sei</th><th class="line2">habe</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Person</th><th class="line2">sei</th><th class="line2">habe</th></tr>
        <tr><td class="line3">ich</td><td class="line">sei</td><td class="line"><strong>haette</strong></td></tr>
        <tr><td class="line3">du</td><td class="line">seiest</td><td class="line">habest</td></tr>
        <tr><td class="line3">er</td><td class="line">sei</td><td class="line">habe</td></tr>
@@ -779,6 +779,80 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 **1.3 Zukunftsformen**
 
 <span style="color:#A05A54; font-weight: bold;">werde + Infinitiv</span>
+
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      .line5{border-bottom: 2px solid #BDB8C1; width: 200px;}
+      .line6{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7; width: 200px;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Person</th><th class="line2">werden</th><th class="line2">habe</th></tr>
+       <tr><td class="line3">ich</td><td class="line"><strong>wuerde kommen</strong></td></tr>
+       <tr><td class="line3">du</td><td class="line">werdest kommen</td></tr>
+       <tr><td class="line3">er</td><td class="line">werde kommen</td></tr>
+       <tr><td class="line3">wir</td><td class="line"><strong>wuerden</strong> kommen</td></tr>
+       <tr><td class="line3">ihr</td><td class="line"><strong>wuerdet</strong> kommen</td></tr>
+       <tr><td class="line3">Sie</td><td class="line"><strong>wuerden</strong> kommen</td></tr>
+    </table>
+ </body>
+ </html>
+
+
+**1.4 Passiv im Konjuktion 1**
+
+
+<span style="color:#A05A54; font-weight: bold;">wuerden + PP</span> (그냥 passiv는 werden +PP)
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line2" bgcolor="#F8F7F9">Tempus</th><th class="line2">Form</th></tr>
+       <tr><td>수동태 현재</td><td><strong>wuerde + PP</strong></td></tr>
+       <tr><td>수동태 과거</td><td><strong>wuerde + PP + werden</strong></td></tr>
+       <tr><td>수동태 미래</td><td><strong>sei + PP + worden</strong></td></tr>
+    </table>
+ </body>
+</html>
+
+
+### 2. Gebrauch des Konjunktivs 1
+
+**2.1 Indirekte Rede**
+
+기본적으로 접속법1식은 간접화법이다.
+
+**2.2 Indirekte Frage**
+
+
+**2.3 Imperativ in der indirekten Rede**
+
+명령형이나 청유형으로도 사용된다.
+
+
 
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
 
@@ -840,7 +914,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*kommen* – ich waere gekommen, du waerest gekommen...  
 
 
-**1.3 Passiv im Konjunktiv2**
+**1.3 Passiv im Konjunktiv 2**
 
 <html>
   <head>
@@ -865,7 +939,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 </html>
 
 
-### 2. Gebrauch des Konjunktivs2
+### 2. Gebrauch des Konjunktivs 2
 접속법2식의 여러 용법에 대해 살펴보겠다.
 
 **2.1 Irreale Wunschsaetze(비현실적 바람)**
