@@ -728,13 +728,13 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">Person</th><th class="line2" colspan="2">Hilfs Verb</th><th class="line2">ModalVerb</th><th class="line2">Starkes Verb</th><th class="line2">Schwaches Verb</th><th class="line2">Verb mit Hilfs -e</th></tr>
-       <tr><td class="line3">ich</td><td class="line"><strong>haette</strong></td><td class="line"><strong>wuerde</strong></td><td class="line">duerfe</td><td class="line"><strong>kaeme</strong></td><td class="line"><strong>plante</strong></td><td class="line"><strong>schnitte</strong></td></tr>
-       <tr><td class="line3">du</td><td class="line">habest</td><td class="line">werdest</td><td class="line">duerfest</td><td class="line">kommest</td><td class="line">planest</td><td class="line"><strong>schnittest</strong></td></tr>
-       <tr><td class="line3">er</td><td class="line">habe</td><td class="line">werde</td><td class="line">duerfe</td><td class="line">komme</td><td class="line">plane</td><td class="line">schneide</td></tr>
-       <tr><td class="line3">wir</td><td class="line"><strong>haetten</strong></td><td class="line"><strong>wuerden</strong></td><td class="line"><strong>duerften</strong></td><td class="line"><strong>kaemen</strong></td><td class="line"><strong>planten</strong></td><td class="line"><strong>schnitten</strong></td></tr>
-       <tr><td class="line3">ihr</td><td class="line">habet</td><td class="line"><strong>wuerdet</strong></td><td class="line">duerfet</td><td class="line">kommet</td><td class="line">planet</td><td class="line"><strong>schnittet</strong></td></tr>
-       <tr><td class="line3">Sie</td><td class="line"><strong>haetten</strong></td><td class="line"><strong>wuerden</strong></td><td class="line"><strong>duerften</strong></td><td class="line"><strong>kaemen</strong></td><td class="line"><strong>planten</strong></td><td class="line"><strong>schnitten</strong></td></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Person</th><th class="line2" colspan="3">Hilfs Verb</th><th class="line2">ModalVerb</th><th class="line2">Starkes Verb</th><th class="line2">Schwaches Verb</th><th class="line2">Verb mit Hilfs -e</th></tr>
+       <tr><td class="line3">ich</td><td class="line">sei</td><td class="line"><strong>haette</strong></td><td class="line"><strong>wuerde</strong></td><td class="line">duerfe</td><td class="line"><strong>kaeme</strong></td><td class="line"><strong>plante</strong></td><td class="line"><strong>schnitte</strong></td></tr>
+       <tr><td class="line3">du</td><td class="line">seiest</td><td class="line">habest</td><td class="line">werdest</td><td class="line">duerfest</td><td class="line">kommest</td><td class="line">planest</td><td class="line"><strong>schnittest</strong></td></tr>
+       <tr><td class="line3">er</td><td class="line">sei</td><td class="line">habe</td><td class="line">werde</td><td class="line">duerfe</td><td class="line">komme</td><td class="line">plane</td><td class="line">schneide</td></tr>
+       <tr><td class="line3">wir</td><td class="line">seien</td><td class="line"><strong>haetten</strong></td><td class="line"><strong>wuerden</strong></td><td class="line"><strong>duerften</strong></td><td class="line"><strong>kaemen</strong></td><td class="line"><strong>planten</strong></td><td class="line"><strong>schnitten</strong></td></tr>
+       <tr><td class="line3">ihr</td><td class="line">seiet</td><td class="line">habet</td><td class="line"><strong>wuerdet</strong></td><td class="line">duerfet</td><td class="line">kommet</td><td class="line">planet</td><td class="line"><strong>schnittet</strong></td></tr>
+       <tr><td class="line3">Sie</td><td class="line">seien</td><td class="line"><strong>haetten</strong></td><td class="line"><strong>wuerden</strong></td><td class="line"><strong>duerften</strong></td><td class="line"><strong>kaemen</strong></td><td class="line"><strong>planten</strong></td><td class="line"><strong>schnitten</strong></td></tr>
     </table>
  </body>
  </html>
@@ -777,6 +777,8 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 
 
 **1.3 Zukunftsformen**
+
+<span style="color:#A05A54; font-weight: bold;">werde + Infinitiv</span>
 
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
 
