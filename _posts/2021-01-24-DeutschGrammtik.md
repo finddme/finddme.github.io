@@ -382,8 +382,8 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Tempus</th><th class="line2">Typ</th><th class="line2">Form</th><th class="line2">Beispiel</th></tr>
-       <tr><td class="line3" rowspan="2">Praesens</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man muss den Verletzten sofort operieren.</td></tr>
-       <tr><td class="line4">Praesens</td><td class="line2">Passiv</td><td class="line2">Modalverben(현재형) + PP + werden</td><td class="line2">Der Verletzte <strong>muss</strong> sofort <strong>operiert werden</strong>.</td></tr>
+       <tr><td class="line4" rowspan="2">Praesens</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man muss den Verletzten sofort operieren.</td></tr>
+       <tr><td class="line2">Passiv</td><td class="line2">Modalverben(현재형) + PP + werden</td><td class="line2">Der Verletzte <strong>muss</strong> sofort <strong>operiert werden</strong>.</td></tr>
        <tr><td class="line3">Praeteritum</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man musste den Verletzten sofort operieren.</td></tr>
        <tr><td class="line4">Praeteritum</td><td class="line2">Passiv</td><td class="line2">Modalverben (과거형)+ PP + werden</td><td class="line2">Der Verletzte <strong>musste</strong> sofort <strong>operiert werden</strong>.</td></tr>
        <tr><td class="line3">Perfekt</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man hat den Verletzten sofort operieren muessen.</td></tr>
