@@ -356,8 +356,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  </html>
  
  &#10004; 수동태에 주어가 있음에도 Es가 나오는 경우가 있다.  
- 
- &nbsp;&nbsp;&nbsp;&nbsp;e.g. Es wurden in diesem Jahr viele Aepfel geerntet.(Es와 동사의 수가 일치하지 않는다. 주어는 viele Aepfel이다.) 올해 많은 사과가 수확되었다.
+ &nbsp;&nbsp;&nbsp;&nbsp;e.g. Es wurden in diesem Jahr viele Aepfel geerntet.(Es와 동사의 수가 일치하지 않는다. 주어는 viele Aepfel이다.) 올해 많은 사과가 수확되었다.  
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;einfacher: In diesem Jahr wurden viele Aepfel geerntet.
  
  
