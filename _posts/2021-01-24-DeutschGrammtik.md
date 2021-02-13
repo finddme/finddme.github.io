@@ -728,7 +728,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line6" bgcolor="#F8F7F9">Person</th><th class="line2" colspan="2">Hilfs Verb</th><th class="line2">ModalVerb</th><th class="line2">Starkes Verb</th><th class="line2">Schwaches Verb</th><th class="line2">Verb mit Hilfs -e</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Person</th><th class="line2" colspan="2">Hilfs Verb</th><th class="line2">ModalVerb</th><th class="line2">Starkes Verb</th><th class="line2">Schwaches Verb</th><th class="line2">Verb mit Hilfs -e</th></tr>
        <tr><td class="line3">ich</td><td class="line"><strong>haette</strong></td><td class="line"><strong>wuerde</strong></td><td class="line">duerfe</td><td class="line"><strong>kaeme</strong></td><td class="line"><strong>plante</strong></td><td class="line"><strong>schnitte</strong></td></tr>
        <tr><td class="line3">du</td><td class="line">habest</td><td class="line">werdest</td><td class="line">duerfest</td><td class="line">kommest</td><td class="line">planest</td><td class="line"><strong>schnittest</strong></td></tr>
        <tr><td class="line3">er</td><td class="line">habe</td><td class="line">werde</td><td class="line">duerfe</td><td class="line">komme</td><td class="line">plane</td><td class="line">schneide</td></tr>
@@ -775,6 +775,8 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
  </body>
  </html>
 
+
+**1.3 Zukunftsformen**
 
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
 
