@@ -85,7 +85,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
        <tr><td class="line3"><strong>Praesens(현재)</strong></td><td class="line">Modalverben + Infinitiv<br> → Der Arbeiter <em>will</em> den Meister <em>sprechen</em>.</td></tr>
        <tr><td class="line3"><strong>Praeteritum(과거)</strong></td><td class="line">Modalverben(praeteritum form) + Infinitiv<br> → Der Arbeiter <em>wollte</em> den Meister <em>sprechen</em>.</td></tr>
        <tr><td class="line3"><strong>Perfekt(완료)</strong></td><td class="line">haben + Infinitiv + Modalverben(infinitiv form)<br> → Der Arbeiter <em>hat</em> den Meister <em>sprechen wollen</em>.</td></tr>
-       <tr><td class="line3"><strong>Plusquamperfekt(대과거)</strong></td><td class="line">haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)<br> → Der Arbeiter <em>hatte</em> den Meister <em>sprechen wollen</em>.<br> <span style="color:#86937A; font-weight: bold;">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>
+       <tr><td class="line3"><strong>Plusquamperfekt(대과거)</strong></td><td class="line">haben(praeteritum form) + Infinitiv + Modalverben(infinitiv form)<br> → Der Arbeiter <em>hatte</em> den Meister <em>sprechen wollen</em>.<br> <span style="color:#648BC6; font-weight: bold;">(Plusquamperfekt의 경우에는 nachdem이나 bevor등과 많이 쓰인다. 예를 들어 Nachdem ich gefruehstueck hatte, bin ich zur Uni gegangen.)</span>
 </td></tr>
    </table>
  </body>
@@ -858,7 +858,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 
 ### 1. Bildung der Formen
 
-접속법의 형태는 해당 동사의 과거형을 기준으로 만든다. 몇몇 동사들을 제외하고는 보통 <span style="color:#A05A54; font-weight: bold;">wuerden + Infinitiv</span>형으로 많이 쓰인다.
+접속법의 형태는 해당 동사의 과거형을 기준으로 만든다. 몇몇 동사들을 제외하고는 보통 <span style="color:#648BC6; font-weight: bold;">wuerden + Infinitiv</span>형으로 많이 쓰인다.
 
 
 **1.1 Gegenwartsformen**
@@ -892,7 +892,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 </html>
 
 
-- 접속법2식과 직설법 과거형의 형태가 같을 경우, <span style="color:#A05A54; font-weight: bold;">wuerden + Infinitiv</span>로 표현한다.  
+- 접속법2식과 직설법 과거형의 형태가 같을 경우, <span style="color:#648BC6; font-weight: bold;">wuerden + Infinitiv</span>로 표현한다.  
 
 
 - 불규칙동사, 화법조동사(Modalverben), 조동사(Hilfsverben)의 경우 a,o,u에 움라우트를 붙인다.    
@@ -904,7 +904,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 
 접속법의 현재형이 이미 동사의 과거형을 기반으로 만들어졌기 때문에 접속법1식과 2식의 과거는 완료형으로만 실현된다.
 
-- 기본형태: <span style="color:#A05A54; font-weight: bold;">haetten/waeren+PP</span>
+- 기본형태: <span style="color:#648BC6; font-weight: bold;">haetten/waeren+PP</span>
 
 
 
@@ -947,7 +947,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 - \-라면  
 - 비현실적인 상황을 가정하는 바람을 표현할 때 사용한다.   
 - 이 용법에서는 doch, bloss, nur, doch nur가 꼭 와야하고, 느낌표(!)가 자주 쓰인다.  
-<span style="color:#86937A; font-weight: bold;">(doch해석: ‘내가 뜻한대로 되지 않았다’는 뉘앙스의 쓰인 감탄사로 해석을 해보고 이상하면 역접으로 해석.)</span>  
+<span style="color:#648BC6; font-weight: bold;">(doch해석: ‘내가 뜻한대로 되지 않았다’는 뉘앙스의 쓰인 감탄사로 해석을 해보고 이상하면 역접으로 해석.)</span>  
 &nbsp;&nbsp;&nbsp;&nbsp;→ Wenn sie nur(doch nur) mitgefahren waeren! 그들이 함께 왔다면!  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wuesste ich doch(bloss) ihre Adresse! 내가 그녀의 주소를 안다면!  
 
@@ -1022,7 +1022,7 @@ statt dass K2로 쓰인다.
 
 **2.5.4**  
 
-**es sei denn (nun), dass K2  
+**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es sei denn (nun), dass K2  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;es muesste den (nun) sein, dass K2  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denn(nun) K2 (-가 아니면, -가 아닌 한에는, -외에는)**   
 &nbsp;&nbsp;&nbsp;&nbsp;→ Niemand darf hier herein, *es sei denn*, *dass* er einen Ausweis *haette*. 증명서를 가진게 아니라면 아무도 여기에 들어갈 수 없다.  
