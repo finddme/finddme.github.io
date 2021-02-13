@@ -320,7 +320,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Beispiel</th></tr>
-       <tr><td class="line3">Akusativ</td><td class="line">Die Aerztin untersucht <span style="color:#648BC6">den Patienten</span> vor der Operation.의사는 환자를 수술 전에 검사한다.</td></tr>
+       <tr><td class="line3">Aktiv</td><td class="line">Die Aerztin untersucht <span style="color:#648BC6">den Patienten</span> vor der Operation.의사는 환자를 수술 전에 검사한다.</td></tr>
        <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Der Patient</span> <strong>wird</strong> vor der Operation (<span style="color:#C57B59">von</span> Aerztin) <strong>untersucht</strong>. 환자는 수술 전에 (의사에 의해) 검사된다.</td></tr>
      </table>
  </body>
@@ -347,9 +347,9 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Beispiel</th></tr>
-       <tr><td class="line3">Akusativ</td><td class="line">Man arbeitet sonntags nicht.사람들은 일요일에 일하지 않는다.</td></tr>
+       <tr><td class="line3">Aktiv</td><td class="line">Man arbeitet sonntags nicht.사람들은 일요일에 일하지 않는다.</td></tr>
        <tr><td class="line4">Passiv</td><td class="line2"><span style="color:#648BC6">Es</span> wird sonntags nicht gearbeitet.일요일에는 일이 없다.</td></tr>
-       <tr><td class="line3">Akusativ</td><td class="line">Man half den Verunglueckten erst nach zwei Tagen. 사람들은 조난자를 이틀 후에야 도왔다.</td></tr>
+       <tr><td class="line3">Aktiv</td><td class="line">Man half den Verunglueckten erst nach zwei Tagen. 사람들은 조난자를 이틀 후에야 도왔다.</td></tr>
        <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Es</span> wurde den Verunglueckten erst nach zwei Tagen geholfen.(Den Verunglueckten wurde erst nach zwei Tagen geholfen.) 조난자는 이틀후에야 도움을 받았다.</td></tr>
      </table>
  </body>
@@ -364,7 +364,31 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
  ### Passiv mit Modalverben
  
  
- 
+ <html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Tempus</th><th class="line2">Typ</th><th class="line2">Form</th><th class="line2">Beispiel</th></tr>
+       <tr><td class="line3">Praesens</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man muss den Verletzten sofort operieren.</td></tr>
+       <tr><td class="line4">Praesens</td><td class="line2">Passiv</td><td class="line2">Modalverben(현재형) + PP + werden</td><td class="line2">Der Verletzte <strong>muss</strong> sofort <strong>operiert werden</strong>.</td></tr>
+       <tr><td class="line3">Praeteritum</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man musste den Verletzten sofort operieren.</td></tr>
+       <tr><td class="line4">Praeteritum</td><td class="line2">Passiv</td><td class="line2">Modalverben (과거형)+ PP + werden</td><td class="line2">Der Verletzte <strong>musste</strong> sofort <strong>operiert werden</strong>.</td></tr>
+       <tr><td class="line3">Perfekt</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man hat den Verletzten sofort operieren muessen.</td></tr>
+       <tr><td class="line3">Perfekt</td><td class="line">Passiv</td><td class="line">haben + PP + werden + Modalverben Infinitivform</td><td class="line">Der Verletzte <strong>hat</strong> sofort <strong>operiert werden muessen</strong>.</td></tr>
+     </table>
+ </body>
+ </html>
  
  
  
