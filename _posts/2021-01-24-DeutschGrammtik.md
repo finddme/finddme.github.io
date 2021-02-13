@@ -321,7 +321,7 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Beispiel</th></tr>
        <tr><td class="line3">Akusativ</td><td class="line">Die Aerztin untersucht <span style="color:#648BC6">den Patienten</span> vor der Operation.의사는 환자를 수술 전에 검사한다.</td></tr>
-       <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Der Patient</span> <storng>wird</strong> vor der Operation (<span style="color:#C57B59">von</span> Aerztin) <strong>untersucht</strong>. 환자는 수술 전에 (의사에 의해) 검사된다.</td></tr>
+       <tr><td class="line3">Passiv</td><td class="line"><span style="color:#648BC6">Der Patient</span> <strong>wird</strong> vor der Operation (<span style="color:#C57B59">von</span> Aerztin) <strong>untersucht</strong>. 환자는 수술 전에 (의사에 의해) 검사된다.</td></tr>
      </table>
  </body>
  </html>
