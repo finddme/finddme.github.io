@@ -1111,6 +1111,41 @@ statt dass K2로 쓰인다.
     </table>
  </body>
  </html>
+ 
+ 
+## Pronomen
+
+대명사는 문장 전체 혹은 부분을 대신하거나 이미 언급된 것을 대신하는 역할을 한다.
+
+대명사의 종류로는 인칭대명사(Personalpronomen), 지시대명사(Demonstrationspronomen), 부정대명사(Indefinitpronomen), 의문대명사(Fragepronomen), 재귀대명사(Reflexivpronomen), 관계대명사(Relativpronomen)가 있다.
+
+### 1. Personalpronomen
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line" bgcolor="#F8F7F9">1</th><th class="line">ich</th><th class="line">du</th><th class="line">er</th><th class="line">sie</th><th class="line">es</th><th class="line">wir</th><th class="line">ihr</th><th class="line">Sie</th></tr>
+       <tr><td class= "line">2</td><td class= "line">meiner</td><td class= "line">deiner</td><td class= "line">seiner</td><td class= "line">ihrer</td><td class= "line">seiner</td><td class= "line">unser</td><td class= "line">euer</td><td class= "line">Ihrer</td></tr>
+       <tr><td class= "line">3</td><td class= "line">mir</td><td class= "line">dir</td><td class= "line">ihm</td><td class= "line">ihr</td><td class= "line">ihm</td><td class= "line">uns</td><td class= "line">euch</td><td class= "line">Ihnen</td></tr>
+       <tr><td class= "line">4</td><td class= "line">mich</td><td class= "line">dich</td><td class= "line">ihn</td><td class= "line">sie</td><td class= "line">es</td><td class= "line">uns</td><td class= "line">euch</td><td class= "line">Sie</td></tr>
+    </table>
+ </body>
+</html>
+
+
+ 
 
 ## *haben* und *sein* + Infinitiv mit *zu*
 ## Das Gerundivum
