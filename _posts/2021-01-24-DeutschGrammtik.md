@@ -1113,7 +1113,7 @@ statt dass K2로 쓰인다.
  </html>
  
  
-## Pronomen
+## <span style="background-color:#F2D8D3">Pronomen</span>
 
 대명사는 문장 전체 혹은 부분을 대신하거나 이미 언급된 것을 대신하는 역할을 한다.
 
@@ -1143,6 +1143,77 @@ statt dass K2로 쓰인다.
     </table>
  </body>
 </html>
+
+
+### 2. Demonstrationspronomen
+
+- 지시대명사는 선행 명사를 지시하는 역할을 한다.  
+- **das**는 앞문장 전체를 받기도 한다.  
+- **복수 2격** deren은 명사를 받는 지시대명사로 사용될 때 쓰이고, <em>derer는 관계문의 선행사</em>로 사용될 때 쓰인다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Ich gedenke derer, die fuer die Kinder sich geopfert haben.
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line" bgcolor="#F8F7F9">1</th><th class="line">der</th><th class="line">die</th><th class="line">das</th><th class="line">die(PL.)</th></tr>
+       <tr><td class= "line">2</td><td class= "line">dessen</td><td class= "line">deren</td><td class= "line">dessen</td><td class= "line">deren,derer</td></tr>
+       <tr><td class= "line">3</td><td class= "line">dem</td><td class= "line">der</td><td class= "line">dem</td><td class= "line">denen</td></tr>
+       <tr><td class= "line">4</td><td class= "line">den</td><td class= "line">die</td><td class= "line">das</td><td class= "line">die</td></tr>
+    </table>
+ </body>
+</html>
+
+
+- **dieser, diese, dieses** 시리즈는 정관사와 같이 변화한다. 그리고 명사 없이 올 때는 지시대명사로 사용된 거다.  
+
+### 3. Indefinitpronomen
+
+- **jener, derjenige, derselbe**:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.derjenige와 derselbe의 경우, 앞부분(정관사 부분)은 정관사 변화하하고, 뒷부분의 어미변화는 형용사 약변화와 동일하게 진행된다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.derjenige, dasjenige, diejenige, diejenigen 등은 der, die, das의 강조형이다. 얘네 뒤에는 이 지시대명사를 규정하는 관계문장/2격명사/전치사구가 나온다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.derselbe, dasselbe, dieselbe의 의미는 동일한 것, 같은 것, 유사한 것이다.
+
+
+- **jeder, alle, manche**:  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.명사 없이 혼자 대명사로도 사용된다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.jder는 '전체의 하나하나, 각각'을 의미하고, alle는 '그냥 통으로 전체 다'를 의미한다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.jeder는 단수에만, alle는 복수에만 쓴다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.mache는 '중요한 몇몇, 여러 사람/사실/것'을 의미한다.
+
+
+- **beide, einige**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.대명사로 쓰일 때에는 정관사변화, 부가어로 쓰일 때에는 형용사 약변화 한다.
+
+- **einer, eine, eins, eines, welche(PL.)**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.얘네는 부정관사인데 뒤에 명사가 안 오면 부정대명사이다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.정관사 변화한다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.einer, eine, eins, eines의 복수형이 welche(어느정도의 수)이다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.eins와 eines 둘 다 중성 1, 4격 부정대명사이다. (중성 1, 4격부정관사는 ein이다. 헷갈릴 수 있다.)
+
+- **welcher, welche, welches, welche(PL.)**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ein시리즈의 복수형이다.
+
+- **keiner, keine, keins, keine(PL.)**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.keine 복수형 있다. ein 시리즈 때문에 헷갈릴 수 있다.
+
+- **irgendeiner, irgendeine, irgendeins, irgendwelche(PL.)**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.'무언가 뭐든 하나'를 의미한다.
+
+- **man**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.말 그대로 '사람들'을 의미한다. '이 세상에 있는 일반적인 대부분의 사람들'
 
 
  
