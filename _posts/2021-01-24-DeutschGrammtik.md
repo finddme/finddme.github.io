@@ -1150,7 +1150,8 @@ statt dass K2로 쓰인다.
 - 지시대명사는 선행 명사를 지시하는 역할을 한다.  
 - **das**는 앞문장 전체를 받기도 한다.  
 - **복수 2격** deren은 명사를 받는 지시대명사로 사용될 때 쓰이고, <em>derer는 관계문의 선행사</em>로 사용될 때 쓰인다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Ich gedenke derer, die fuer die Kinder sich geopfert haben.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Ich gedenke derer, die fuer die Kinder sich geopfert haben.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Die Namen derer, die mit ihm zusammenarbeiteten, sind unbekannt.
 
 <html>
   <head>
@@ -1181,42 +1182,134 @@ statt dass K2로 쓰인다.
 ### 3. Indefinitpronomen
 
 - **jener, derjenige, derselbe**:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.derjenige와 derselbe의 경우, 앞부분(정관사 부분)은 정관사 변화하하고, 뒷부분의 어미변화는 형용사 약변화와 동일하게 진행된다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.derjenige, dasjenige, diejenige, diejenigen 등은 der, die, das의 강조형이다. 얘네 뒤에는 이 지시대명사를 규정하는 관계문장/2격명사/전치사구가 나온다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.derselbe, dasselbe, dieselbe의 의미는 동일한 것, 같은 것, 유사한 것이다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. derjenige와 derselbe의 경우, 앞부분(정관사 부분)은 정관사 변화하하고, 뒷부분의 어미변화는 형용사 약변화와 동일하게 진행된다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. derjenige, dasjenige, diejenige, diejenigen 등은 der, die, das의 강조형이다. 얘네 뒤에는 이 지시대명사를 규정하는 관계문장/2격명사/전치사구가 나온다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. derselbe, dasselbe, dieselbe의 의미는 동일한 것, 같은 것, 유사한 것이다.
 
 
 - **jeder, alle, manche**:  
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.명사 없이 혼자 대명사로도 사용된다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.jder는 '전체의 하나하나, 각각'을 의미하고, alle는 '그냥 통으로 전체 다'를 의미한다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.jeder는 단수에만, alle는 복수에만 쓴다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.mache는 '중요한 몇몇, 여러 사람/사실/것'을 의미한다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 명사 없이 혼자 대명사로도 사용된다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. jder는 '전체의 하나하나, 각각'을 의미하고, alle는 '그냥 통으로 전체 다'를 의미한다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. jeder는 단수에만, alle는 복수에만 쓴다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. mache는 '중요한 몇몇, 여러 사람/사실/것'을 의미한다.
 
 
 - **beide, einige**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.대명사로 쓰일 때에는 정관사변화, 부가어로 쓰일 때에는 형용사 약변화 한다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 대명사로 쓰일 때에는 정관사변화, 부가어로 쓰일 때에는 형용사 약변화 한다.
 
 - **einer, eine, eins, eines, welche(PL.)**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.얘네는 부정관사인데 뒤에 명사가 안 오면 부정대명사이다.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.정관사 변화한다.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.einer, eine, eins, eines의 복수형이 welche(어느정도의 수)이다.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.eins와 eines 둘 다 중성 1, 4격 부정대명사이다. (중성 1, 4격부정관사는 ein이다. 헷갈릴 수 있다.)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 얘네는 부정관사인데 뒤에 명사가 안 오면 부정대명사이다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 정관사 변화한다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. einer, eine, eins, eines의 복수형이 welche(어느정도의 수)이다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. eins와 eines 둘 다 중성 1, 4격 부정대명사이다. (중성 1, 4격부정관사는 ein이다. 헷갈릴 수 있다.)
 
 - **welcher, welche, welches, welche(PL.)**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ein시리즈의 복수형이다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. ein시리즈의 복수형이다.
 
 - **keiner, keine, keins, keine(PL.)**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.keine 복수형 있다. ein 시리즈 때문에 헷갈릴 수 있다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. keine 복수형 있다. ein 시리즈 때문에 헷갈릴 수 있다.
 
 - **irgendeiner, irgendeine, irgendeins, irgendwelche(PL.)**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.'무언가 뭐든 하나'를 의미한다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. '무언가 뭐든 하나'를 의미한다.
 
 - **man**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.말 그대로 '사람들'을 의미한다. '이 세상에 있는 일반적인 대부분의 사람들'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 말 그대로 '사람들'을 의미한다. '이 세상에 있는 일반적인 대부분의 사람들'
+
+- **jemand, niemand**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. jemand는 '누군가'를 의미한다. wer(=irgendjemand)와 뉘앙스는 좀 다르지만 거의 같다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. niemand는 jemand의 부정형이다.
+
+- **wer, wen, wem**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. '누군지 모르겠지만 어떤 누구'를 의미한다. irgendjemand와 같은 의미이다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. jemand보다 구어에서 더 많이 쓰인다.  
+
+- **viel, wenig**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. viel은 '많은 것', wenig는 '적은 것'을 의미하는데 wenig의 경우, '거의 -하지 않다'를 의미할 때가 더 많다.
+
+- **alles, alle, allem**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. alles는 '모든 것'을 의미한다. 그래서 복수일 것 같지만 중성이다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 정관사 변화한다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 명사처럼 쓰일 때 alles는 사물/사람을 나타내고, alle는 사람을 나타낸다.
+
+- **etwas, nichts**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. etwas는 something이다. '어떤 것', '무엇', '일부분'을 의미한다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. nichts는 nothing으로, etwas의 부정형이다. 
+
+### 4. Fragepronomen
+
+- 의문대명사에는 Warum(왜), Wann(언제), Woher(어디로부터), Wo(어디에), Wohin(어디로), Wie(어떻게), Wer(누가), Was(무엇이(1격), 무엇을(4격)), Wen(누구를), Wem(누구에게)이 있다.
+
+- **Was fuer ein**과 **Welcher**의 차이:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. Was fuer ein은 사물이나 사람의 성질, 상태, 종류를 물을 때 사용한다.    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Was fuer ein moechten Sie? 어떤 것(종류)를 원하시나요?   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 추상명사나 복수의 물질명사에는 Was fuer만 사용한다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Was haben Sie fuer Nachrichten?  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. Was fuer ein에서 ein이 명사 자체로 쓰였을 때, 복수형은 Was fuer welch-이다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. A: Da waren sehr viele Leute.  거기에는 엄청 많은 사람들이 있다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B: Was fuer welche? 무슨 사람들이? 
 
 
- 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. Welcher는 같은 종류 중에 어떤 것을 물을 때 사용한다.
+
+
+- **전치사 +의문대명사**  
+1) 사람을 지칭할 때는 따로따로 가능(z.B. Ueber wen?)   
+2) 사물을 지칭할 때는 합체(이걸 관계부사라고 한다). 합체할 때 was는 wo로 바뀐다. 그리고 발음이 어려우면 중간에 r이 들어간다.(z.B. an + was= woran, mit + was = womit)
+
+
+### Reflexivpronomen
+
+재귀대명사는 원칙적으로 4격을 쓰지만, 문장 내 4격 목적어가 있으면 3격 재귀대명사를 사용한다.
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line" bgcolor="#F8F7F9">1</th><th class="line">ich</th><th class="line">du</th><th class="line">er/sie/es</th><th class="line">wir</th><th class="line">ihr</th><th class="line">Sie</th></tr>
+       <tr><td class= "line">4</td><td class= "line">mich</td><td class= "line">dich</td><td class= "line">sich</td><td class= "line">uns</td><td class= "line">euch</td><td class= "line">sich</td></tr>
+       <tr><td class= "line">3</td><td class= "line">mir</td><td class= "line">dir</td><td class= "line">sich</td><td class= "line">uns</td><td class= "line">euch</td><td class= "line">sich</td></tr>
+    </table>
+ </body>
+</html>
+
+
+### 5. Relativpronomen
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 관계대명사는
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line" bgcolor="#F8F7F9">1</th><th class="line">der</th><th class="line">die</th><th class="line">das</th><th class="line">die(PL.)</th></tr>
+       <tr><td class= "line">2</td><td class= "line">dessen</td><td class= "line">deren</td><td class= "line">dessen</td><td class= "line">deren</td></tr>
+       <tr><td class= "line">3</td><td class= "line">dem</td><td class= "line">der</td><td class= "line">dem</td><td class= "line">denen</td></tr>
+       <tr><td class= "line">4</td><td class= "line">den</td><td class= "line">die</td><td class= "line">das</td><td class= "line">die</td></tr>
+    </table>
+ </body>
+</html>
 
 ## *haben* und *sein* + Infinitiv mit *zu*
 ## Das Gerundivum
