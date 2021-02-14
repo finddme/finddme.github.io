@@ -843,14 +843,41 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
 
 **2.1 Indirekte Rede**
 
-기본적으로 접속법1식은 간접화법이다.
+기본적으로 접속법1식은 간접화법이다. '누가 -라고 했다', '누가 -라더라'이기 때문에 '-sagte, dass-'꼴로 많이 나타난다. (뒤에 말이 한 문장 이상 이어지면 dass절 없이 간접화법으로만 쭉 쓰면 된다.)
+
+
+Er sagte: "Ich wusste das nicht."  
+→ Er sagte, dass er das nicht *gewusst habe*. 그는 그것을 알지 못했다고 한다.
+
 
 **2.2 Indirekte Frage**
+
+간접의문문에서 Fragewort(W-의문사)가 없는 경우 접속사 ob을 사용한다.
+
+Er fragt: "Gehst du morgen zur Wahl?"  
+→ Er fragt, ob ich morgen zur Wahl ginge. 그는 내가 내일 투표하러 가냐고 물었다.
+
+Er fragt: "Wann gehst du zum Wahllokal?"  
+→ Er fragt, wann ich zum Wahllokal ginge. 그는 내가 언제 투표소에 가는지 물었다.
+
+Er fragt: "Welche Partei willst du waehlen?"  
+→ Er fragt, welche Partei ich waehlen wolle. 그는 내가 어느 정당을 선택하고 싶은지 물었다.
 
 
 **2.3 Imperativ in der indirekten Rede**
 
-명령형이나 청유형으로도 사용된다.
+명령형 / 청유형으로도 사용된다. 강한 명령에서는 muessen과 sollen이 사용되고, 정중한 부탁 / 청유에서는 moegen을 사용한다.
+
+
+직설법 명령문은 '-하세요'이고, 간접명령(접속법 1식 명령문)은 '-하십시오'느낌이다.
+
+"Hoert jetzt endlich auf ueber das Wahlergebnis zu diskutieren!"  
+→ Er befahl uns, wir sollten aufhoeren ueber das Wahlergebnis zu diskutieren. 그는 이제 선거 결과에 대해 그만 논의하라고 명령했다.
+
+"Reg dich doch bitte nicht so auf!"
+→ Er bat mich, ich moege mich nicht so aufregen. 그는 나에게 내가 그만 화내는게 좋겠다고 부탁했다.
+
+
 
 
 
