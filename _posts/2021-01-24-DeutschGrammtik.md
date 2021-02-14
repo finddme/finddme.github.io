@@ -553,7 +553,9 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
  </html>
 
 
-## <span style="background-color:#F2D8D3">Die Partizipialkonstruktion</span>
+## <span style="background-color:#F2D8D3">Partizip</span>
+
+## 1. Die Partizipialkonstruktion
 
 분사는 명사를 꾸며주는 형용사와 같은 역할을 하기 때문에 형용사와 동일한 위치에 자리한다.  
 
@@ -601,7 +603,7 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
 &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#648BC6"> 전쟁에서 폭탄에 의해 <span style="background-color:#DFDBE4">파괴된</span></span> 도시는 끔찍한 광경이었다.
 
 
-## <span style="background-color:#F2D8D3">Partizipialsaetze</span>
+### 2. Partizipialsaetze
 
 Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는 형용사처럼 쓰이지 않기 때문에 분사가 형용사 어미변화를 하지 않는다. 그리고 이는 특정 명사를 꾸며주는 것이 아닌, 주문장에 대해 동시적으로 진행되는 사건을 표현하기 때문에 '-하면서, -한 채'로 해석이 된다.  
 
@@ -1257,7 +1259,7 @@ statt dass K2로 쓰인다.
 2) 사물을 지칭할 때는 합체(이걸 관계부사라고 한다). 합체할 때 was는 wo로 바뀐다. 그리고 발음이 어려우면 중간에 r이 들어간다.(z.B. an + was= woran, mit + was = womit)
 
 
-### Reflexivpronomen
+### 5. Reflexivpronomen
 
 재귀대명사는 원칙적으로 4격을 쓰지만, 문장 내 4격 목적어가 있으면 3격 재귀대명사를 사용한다.
 
@@ -1284,7 +1286,7 @@ statt dass K2로 쓰인다.
 </html>
 
 
-### 5. Relativpronomen
+### 6. Relativpronomen
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 관계대명사는
 
