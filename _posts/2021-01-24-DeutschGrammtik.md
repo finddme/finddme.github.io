@@ -555,7 +555,7 @@ Futur1은 일반적인 미래형이고, Futur2는 미래완료형이다.
 
 ## <span style="background-color:#F2D8D3">Partizip</span>
 
-## 1. Die Partizipialkonstruktion
+### 1. Die Partizipialkonstruktion
 
 분사는 명사를 꾸며주는 형용사와 같은 역할을 하기 때문에 형용사와 동일한 위치에 자리한다.  
 
