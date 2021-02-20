@@ -57,6 +57,7 @@ tag: Deutsch
        <tr><td class="line2">Plusquamperfekt</td><td class="line2">war + PP + worden<br><span style="color:#BDB8C1">had benn PP</span></td></tr>
        <tr><td class="line4" rowspan="2">Zustandpassiv</td><td class="line">Praesens</td><td class="line"><strong>sein + PP</strong></td></tr>
        <tr><td class="line2">Vergangenheit</td><td class="line2"><strong>war + PP</strong></td></tr>
+       <tr><td class="line4" rowspan="2">Konjunktiv 1</td><td class="line">Praesens</td><td class="line">동사원형에서 -en 빼고 접속법 1식 어미변화.</td></tr>
     </table>
  </body>
  </html>
@@ -752,7 +753,7 @@ Partizipialsaetze는 분사가 부문장처럼 쓰이는 경우이다. 이때는
  </body>
 </html>
 
-- ich, wir, Sie는 직설법 현재형과 형태가 같아 헷갈릴 수 있으므로 접속법 2식 형태로 사용한다.(접속법 2식이 직설법 과거형과 형태가 같으면 wuerden + Infinitiv형태 사용)
+- **ich, wir, Sie는 직설법 현재형과 형태가 같아 헷갈릴 수 있으므로 접속법 2식 형태로 사용한다.**(접속법 2식이 직설법 과거형과 형태가 같으면 wuerden + Infinitiv형태 사용)
 
 
 <html>
@@ -963,7 +964,7 @@ Er fragt: "Welche Partei willst du waehlen?"
 </html>
 
 
-- 접속법2식과 직설법 과거형의 형태가 같을 경우, <span style="color:#648BC6; font-weight: bold;">wuerden + Infinitiv</span>로 표현한다.  
+- **접속법2식과 직설법 과거형의 형태가 같을 경우, <span style="color:#648BC6; font-weight: bold;">wuerden + Infinitiv</span>로 표현한다.**  
 
 
 - 불규칙동사, 화법조동사(Modalverben), 조동사(Hilfsverben)의 경우 a,o,u에 움라우트를 붙인다.    
