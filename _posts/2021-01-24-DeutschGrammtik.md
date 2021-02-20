@@ -45,8 +45,8 @@ tag: Deutsch
        <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Tempus</th><th class="line2">Formen</th></tr>
        <tr><td class="line4" rowspan="4">Indikativ</td><td class="line">Praesens</td><td class="line">Verb(Gegenwartsform)</td></tr>
        <tr><td class="line">Praeteritum</td><td class="line">Verb(Vergangenheitsform)</td></tr>
-       <tr><td class="line">Perfekt</td><td class="line">haben/sein + Partizip2<br><span style="color:#BDB8C1">have/has PP</span></td></tr>
-       <tr><td class="line2">Plusquamperfekt</td><td class="line2">hatte/war + Partizip2<br><span style="color:#BDB8C1">had + infinitive</span></td></tr>
+       <tr><td class="line">Perfekt</td><td class="line"><storng>haben/sein + PP</strong><br><span style="color:#BDB8C1">have/has PP</span></td></tr>
+       <tr><td class="line2">Plusquamperfekt</td><td class="line2"><strong>hatte/war + PP</stong><br><span style="color:#BDB8C1">had PP</span></td></tr>
        <tr><td class="line4" rowspan="2">Indikativ - Futur(aktiv)</td><td class="line">Futur 1</td><td class="line"><strong>werden + infinitiv</strong><br><span style="color:#BDB8C1">will + infinitive</span></td></tr>
        <tr><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + werden(infivitivform)<br><span style="color:#BDB8C1">will have PP</span></td></tr>
        <tr><td class="line4" rowspan="2">Indikativ - Futur(passiv)</td><td class="line">Futur 1</td><td class="line">werden(konjugation) + PP + haben(infivitivform)<br><span style="color:#BDB8C1">will be + PP</span></td></tr>
@@ -55,6 +55,8 @@ tag: Deutsch
        <tr><td class="line">Praeteritum</td><td class="line">wurde + PP<br><span style="color:#BDB8C1">was/were PP</span></td></tr>
        <tr><td class="line">Perfekt</td><td class="line">sein + PP + worden<br><span style="color:#BDB8C1">have/has benn PP</span></td></tr>
        <tr><td class="line">Plusquamperfekt</td><td class="line">war + PP + worden<br><span style="color:#BDB8C1">had benn PP</span></td></tr>
+       <tr><td class="line4" rowspan="2">Zustandpassiv</td><td class="line">Praesens</td><td class="line"><strong>sein + PP</strong></td></tr>
+       <tr><td class="line">Vergangenheit</td><td class="line"><strong>war + PP</strong></td></tr>
   </table>
  </body>
 </html>
