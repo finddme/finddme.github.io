@@ -44,13 +44,13 @@ tag: Deutsch
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Tempus</th><th class="line2">Formen</th></tr>
        <tr><td class="line4" rowspan="4">Indikativ</td><td class="line">Praesens</td><td class="line">Verb(Gegenwartsform)</td></tr>
-       <tr><td class="line3">Indikativ</td><td class="line">Praeteritum</td><td class="line">Verb(Vergangenheitsform)</td></tr>
-       <tr><td class="line3">Indikativ</td><td class="line">Perfekt</td><td class="line">haben/sein + Partizip2</td></tr>
-       <tr><td class="line3">Indikativ</td><td class="line2">Plusquamperfekt</td><td class="line2">hatte/war + Partizip2</td></tr>
-       <tr><td class="line4" rowspan="2">Indikativ - Futur(aktiv)</td><td class="line2">Futur 1</td><td class="line2"><strong>werden + infinitiv</strong></td></tr>
-       <tr><td class="line3">Indikativ - Futur(aktiv)</td><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + werden(infivitivform)</td></tr>
-       <tr><td class="line4" rowspan="2">Indikativ - Futur(passiv)</td><td class="line2">Futur 1</td><td class="line2">werden(konjugation) + PP + haben(infivitivform)</td></tr>
-       <tr><td class="line3">Indikativ - Futur(passiv)</td><td class="line2">Futur 2</td><td class="line2"werden(konjugation) + PP + worden sien</td></tr>
+       <tr><td class="line">Praeteritum</td><td class="line">Verb(Vergangenheitsform)</td></tr>
+       <tr><td class="line">Perfekt</td><td class="line">haben/sein + Partizip2</td></tr>
+       <tr><td class="line2">Plusquamperfekt</td><td class="line2">hatte/war + Partizip2</td></tr>
+       <tr><td class="line4" rowspan="2">Indikativ - Futur(aktiv)</td><td class="line2">Futur 1</td><td class="line"><strong>werden + infinitiv</strong></td></tr>
+       <tr><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + werden(infivitivform)</td></tr>
+       <tr><td class="line4" rowspan="2">Indikativ - Futur(passiv)</td><td class="line">Futur 1</td><td class="line">werden(konjugation) + PP + haben(infivitivform)</td></tr>
+       <tr><td class="line2">Futur 2</td><td class="line2"werden(konjugation) + PP + worden sien</td></tr>
   </table>
  </body>
 </html>
