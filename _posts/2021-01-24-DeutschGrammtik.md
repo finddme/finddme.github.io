@@ -1337,8 +1337,6 @@ statt dass K2로 쓰인다.
 
 ### 6. Relativpronomen
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 관계대명사는
-
 <html>
   <head>
     <style type="text/css">
@@ -1361,6 +1359,27 @@ statt dass K2로 쓰인다.
     </table>
  </body>
 </html>
+
+## <span style="background-color:#F2D8D3">Relativsaetze</span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 관계대명사는 인물이나 사물/사건을 자세히 묘사할 때 사용된다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 관계대명사는 명사, 대명사, 문장전체를 받을 수 있다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 관계문은 형용사절이다. 선행사(명사, 대명사, 문장전체)를 관계대명사가 받아 관계문으로 꾸며준다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 관계문은 두 개의 주문장을 하나의 주문장 + 부문장으로 만들 때 사용된다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 관계문 선행사에 바로 접해 있는 것이 일반적인데, 관계문이 너무 길거나 선행사 뒤에 주문장의 남은 단어가 몇 없을 때에는 주문장 뒤에 관계문을 쓴다. 그래야 보기에 깔끔하니까.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 2격 관계대명사 뒤에오는 형용사는 강변화한다. e.g. Der Turm, dessen feucht*es* Fundament...
+
+
+### 1. Relativsaetze mit Praepositionen
+
+동사가 전치사적 목적어를 갖는 경우, **전치사 + 관계대명사** 형태로 관계대명사 자리에 위치한다.  
+
+e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bleiben.  (Die Nachbarn haben *fuer* die Haeuser gekaempft.)  
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Man
+
+
 
 ## *haben* und *sein* + Infinitiv mit *zu*
 ## Das Gerundivum
