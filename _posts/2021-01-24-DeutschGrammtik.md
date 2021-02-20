@@ -22,6 +22,40 @@ tag: Deutsch
 
 
 
+
+
+## <span style="background-color:#F2D8D3">Resuemee der Formen</span>
+
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Typ</th><th class="line2">Tempus</th><th class="line2">Formen</th></tr>
+       <tr><td class="line4" rowspan="4">Indikativ</td><td class="line">Praesens</td><td class="line">Verb(Gegenwartsform)</td></tr>
+       <tr><td class="line3">Indikativ</td><td class="line">Praeteritum</td><td class="line">Verb(Vergangenheitsform)</td></tr>
+       <tr><td class="line3">Indikativ</td><td class="line">Perfekt</td><td class="line">haben/sein + Partizip2</td></tr>
+       <tr><td class="line3">Indikativ</td><td class="line2">Plusquamperfekt</td><td class="line2">hatte/war + Partizip2</td></tr>
+       <tr><td class="line4" rowspan="2">Indikativ - Futur(aktiv)</td><td class="line2">Futur 1</td><td class="line2"><strong>werden + infinitiv</strong></td></tr>
+       <tr><td class="line3">Indikativ - Futur(aktiv)</td><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + werden(infivitivform)</td></tr>
+       <tr><td class="line4" rowspan="2">Indikativ - Futur(passiv)</td><td class="line2">Futur 1</td><td class="line2">werden(konjugation) + PP + haben(infivitivform)</td></tr>
+       <tr><td class="line3">Indikativ - Futur(passiv)</td><td class="line2">Futur 2</td><td class="line2"werden(konjugation) + PP + worden sien</td></tr>
+  </table>
+ </body>
+</html>
+
+
 ## <span style="background-color:#F2D8D3">Modalverben</span>
 
 
@@ -386,8 +420,8 @@ Modalverben(화법조동사)는 행동의 태도를 나타내주는 동사라서
        <tr><td class="line2">Passiv</td><td class="line2">Modalverben(현재형) + PP + werden</td><td class="line2">Der Verletzte <strong>muss</strong> sofort <strong>operiert werden</strong>.</td></tr>
        <tr><td class="line4" rowspan="2">Praeteritum</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man musste den Verletzten sofort operieren.</td></tr>
        <tr><td class="line2">Passiv</td><td class="line2">Modalverben (과거형)+ PP + werden</td><td class="line2">Der Verletzte <strong>musste</strong> sofort <strong>operiert werden</strong>.</td></tr>
-       <tr><td class="line2" rowspan="2">Perfekt</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man hat den Verletzten sofort operieren muessen.</td></tr>
-       <tr><td class="line">Passiv</td><td class="line">haben + PP + werden + Modalverben Infinitivform</td><td class="line">Der Verletzte <strong>hat</strong> sofort <strong>operiert werden muessen</strong>.</td></tr>
+       <tr><td class="line4" rowspan="2">Perfekt</td><td class="line">Aktiv</td><td class="line">-</td><td class="line">Man hat den Verletzten sofort operieren muessen.</td></tr>
+       <tr><td class="line2">Passiv</td><td class="line2">haben + PP + werden + Modalverben Infinitivform</td><td class="line2">Der Verletzte <strong>hat</strong> sofort <strong>operiert werden muessen</strong>.</td></tr>
      </table>
  </body>
  </html>
