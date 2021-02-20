@@ -57,7 +57,13 @@ tag: Deutsch
        <tr><td class="line2">Plusquamperfekt</td><td class="line2">war + PP + worden<br><span style="color:#BDB8C1">had benn PP</span></td></tr>
        <tr><td class="line4" rowspan="2">Zustandpassiv</td><td class="line">Praesens</td><td class="line"><strong>sein + PP</strong></td></tr>
        <tr><td class="line2">Vergangenheit</td><td class="line2"><strong>war + PP</strong></td></tr>
-       <tr><td class="line4" rowspan="2">Konjunktiv 1</td><td class="line">Praesens</td><td class="line">동사원형에서 -en 빼고 접속법 1식 어미변화.</td></tr>
+       <tr><td class="line4" rowspan="4">Konjunktiv 1</td><td class="line">Praesens</td><td class="line">동사원형에서 -en 빼고 접속법 1식 어미변화</td></tr>
+       <tr><td class="line2">Vergangenheit</td><td class="line2">sei/habe + PP</td></tr>
+       <tr><td class="line2">Zukunftsformen</td><td class="line2">werde + Infinitiv</td></tr>
+       <tr><td class="line2">Passiv im Konjuktion 1</td><td class="line2">wuerde + PP</td></tr>
+       <tr><td class="line4" rowspan="4">Konjunktiv 2</td><td class="line">Praesens</td><td class="line"><strong>wuerden + Infinitiv</strong><br>(동사원형에서 -en 빼고 접속법 1식 어미변화 + 움라우트)</td></tr>
+       <tr><td class="line2">Vergangenheit</td><td class="line2">haetten/waeren + PP</td></tr>
+       <tr><td class="line2">Passiv im Konjuktion 1</td><td class="line2">wuerden + PP</td></tr>
     </table>
  </body>
  </html>
