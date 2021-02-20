@@ -46,7 +46,7 @@ tag: Deutsch
        <tr><td class="line4" rowspan="4">Indikativ</td><td class="line">Praesens</td><td class="line">Verb(Gegenwartsform)</td></tr>
        <tr><td class="line">Praeteritum</td><td class="line">Verb(Vergangenheitsform)</td></tr>
        <tr><td class="line">Perfekt</td><td class="line"><storng>haben/sein + PP</strong><br><span style="color:#BDB8C1">have/has PP</span></td></tr>
-       <tr><td class="line2">Plusquamperfekt</td><td class="line2"><strong>hatte/war + PP</stong><br><span style="color:#BDB8C1">had PP</span></td></tr>
+       <tr><td class="line2">Plusquamperfekt</td><td class="line2"><strong>hatte/war + PP</strong><br><span style="color:#BDB8C1">had PP</span></td></tr>
        <tr><td class="line4" rowspan="2">Indikativ - Futur(aktiv)</td><td class="line">Futur 1</td><td class="line"><strong>werden + infinitiv</strong><br><span style="color:#BDB8C1">will + infinitive</span></td></tr>
        <tr><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + werden(infivitivform)<br><span style="color:#BDB8C1">will have PP</span></td></tr>
        <tr><td class="line4" rowspan="2">Indikativ - Futur(passiv)</td><td class="line">Futur 1</td><td class="line">werden(konjugation) + PP + haben(infivitivform)<br><span style="color:#BDB8C1">will be + PP</span></td></tr>
