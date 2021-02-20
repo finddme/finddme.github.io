@@ -47,10 +47,14 @@ tag: Deutsch
        <tr><td class="line">Praeteritum</td><td class="line">Verb(Vergangenheitsform)</td></tr>
        <tr><td class="line">Perfekt</td><td class="line">haben/sein + Partizip2</td></tr>
        <tr><td class="line2">Plusquamperfekt</td><td class="line2">hatte/war + Partizip2</td></tr>
-       <tr><td class="line4" rowspan="2">Indikativ - Futur(aktiv)</td><td class="line">Futur 1</td><td class="line"><strong>werden + infinitiv</strong></td></tr>
+       <tr><td class="line4" rowspan="2">Indikativ - Futur(aktiv)</td><td class="line">Futur 1</td><td class="line"><strong>werden + infinitiv</strong><br><span style="color:#BDB8C1">will + infinitive</span></td></tr>
        <tr><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + werden(infivitivform)</td></tr>
-       <tr><td class="line4" rowspan="2">Indikativ - Futur(passiv)</td><td class="line">Futur 1</td><td class="line">werden(konjugation) + PP + haben(infivitivform)</td></tr>
-       <tr><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + worden sien</td></tr>
+       <tr><td class="line4" rowspan="2">Indikativ - Futur(passiv)</td><td class="line">Futur 1</td><td class="line">werden(konjugation) + PP + haben(infivitivform)<br><span style="color:#BDB8C1">will be + PP</span></td></tr>
+       <tr><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + worden sien<br><span style="color:#BDB8C1">will have been + PP</span></td></tr>
+       <tr><td class="line4" rowspan="4">Passiv</td><td class="line">Praesens</td><td class="line"><strong>werden + PP</strong><br><span style="color:#BDB8C1">be PP</span></td></tr>
+       <tr><td class="line">Praeteritum</td><td class="line">wurde + PP<br><span style="color:#BDB8C1">was/were PP</span></td></tr>
+       <tr><td class="line">Perfekt</td><td class="line">sein + PP + worden<br><span style="color:#BDB8C1">have/has benn PP</span></td></tr>
+       <tr><td class="line">Plusquamperfekt</td><td class="line">war + PP + worden<br><span style="color:#BDB8C1">had benn PP</span></td></tr>
   </table>
  </body>
 </html>
