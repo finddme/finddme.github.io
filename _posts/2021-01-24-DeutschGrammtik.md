@@ -50,7 +50,7 @@ tag: Deutsch
        <tr><td class="line4" rowspan="2">Indikativ - Futur(aktiv)</td><td class="line2">Futur 1</td><td class="line"><strong>werden + infinitiv</strong></td></tr>
        <tr><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + werden(infivitivform)</td></tr>
        <tr><td class="line4" rowspan="2">Indikativ - Futur(passiv)</td><td class="line">Futur 1</td><td class="line">werden(konjugation) + PP + haben(infivitivform)</td></tr>
-       <tr><td class="line2">Futur 2</td><td class="line2"werden(konjugation) + PP + worden sien</td></tr>
+       <tr><td class="line2">Futur 2</td><td class="line2">werden(konjugation) + PP + worden sien</td></tr>
   </table>
  </body>
 </html>
