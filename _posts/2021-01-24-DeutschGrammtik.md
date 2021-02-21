@@ -1444,7 +1444,7 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:#648BC6">Jeder, der</span> nicht hoeren will, muss fuehlen.
 
 &#10004; 주문장에서 관계절과 관계되는 관계대명사가 관계부사와 격이 같으면 생략이 가능하다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g. <span style="color:#648BC6">Wer</span> die Ehrlichkeit des Kaufmanns kennt, (<span style="color:#648BC6">der</span>) wird ihm auch glauben.  
+&nbsp;&nbsp;&nbsp;&nbsp; e.g. <span style="color:#648BC6">Wer</span> die Ehrlichkeit des Kaufmanns kennt, (<span style="color:#648BC6">der</span>) wird ihm auch glauben.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 사업자의 정직함을 아는 자, 그 자는 그를 믿을 것이다.  
 
 
