@@ -1398,7 +1398,7 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
 
 ### 2. Relativsaetze mit Relativadverb "wo(-), da(-), wann, wie" 
 
-전치사 + 관계대명사가 장소, 시간, 방법을 나타낼 경우 관계부사로 대체될 수 있다. 
+전치사 + 관계대명사가 장소, 시간, 방법을 나타낼 경우 관계부사로 대체될 수 있다. 근데 요즘 관계부사 별로 선호되지 않는다고 함. 그래도 도시이름이나 지역이름을 받을 때는 wo를 꼭 씀.
 
 <html>
   <head>
@@ -1428,10 +1428,40 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
 
 ### 3. Relativsaetze mit Indefinite Relativpronomen "wer, wen, wem, wessen, was"  
 
+부정관계대명사는 자체적으로 선행사를 포함하고 있다. 
+
 **3.1 wer, wen, wem, wessen**  
 
+&#10004; 해석은 "-인 자, 그 자는 -이다"로 된다.
+
+&#10004;이 경우 대개 관계문이 주문장 앞에 온다.
+
+&#10004; wer = Derjenige, der...  이런식으로 대체될 수 있다.  
+&nbsp;&nbsp;&nbsp;&nbsp; e.g. <span style="color:#648BC6">Wer</span> nicht hoeren will, muss fuehlen.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;듣기를 원치 않는 자, 그 자는 느끼기라도 해야 한다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:#648BC6">Derjenige, der</span> nicht hoeren will, muss fuehlen.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:#648BC6">Diejenige, die</span> nicht hoeren will, muss fuehlen.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:#648BC6">Jeder, der</span> nicht hoeren will, muss fuehlen.
+
+&#10004; 주문장에서 관계절과 관계되는 관계대명사가 관계부사와 격이 같으면 생략이 가능하다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#648BC6">Wer</span> die Ehrlichkeit des Kaufmanns kennt, (<span style="color:#648BC6">der</span>) wird ihm auch glauben.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 사업자의 정직함을 아는 자, 그 자는 그를 믿을 것이다.  
 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wessen Herz fuer die Freiheit schlaegt, den nenne ich einen edlen Mann.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
+
+**3.1 was**
+
+&#10004; 해석은 "-인 것, 그것은 -이다"로 된다.
+
+&#10004;이 경우도 대개 관계문이 주문장 앞에 온다.
+
+&#10004; was = Dasjenige, das...  이런식으로 대체될 수 있다.  
+&nbsp;&nbsp;&nbsp;&nbsp; e.g. Nimm dir, <span style="color:#648BC6">was</span> du brauchst.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;네가 필요한 것, 그것을 선택해라   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Nimm dir <span style="color:#648BC6">das, was</span> du brauchst.
 
 
 
