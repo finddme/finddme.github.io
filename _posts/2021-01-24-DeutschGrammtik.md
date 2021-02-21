@@ -1426,7 +1426,13 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
 </html>
 
 
-### 3. Relativsaetze mit Indefinite Relativpronomen "wer, wen, wem, wessen"  
+### 3. Relativsaetze mit Indefinite Relativpronomen "wer, wen, wem, wessen, was"  
+
+**3.1 wer, wen, wem, wessen**  
+
+
+
+
 
 
 
