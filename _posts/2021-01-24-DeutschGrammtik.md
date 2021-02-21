@@ -1460,7 +1460,7 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
 
 &#10004; was = Dasjenige, das...  이런식으로 대체될 수 있다.  
 &nbsp;&nbsp;&nbsp;&nbsp; e.g. Nimm dir, <span style="color:#648BC6">was</span> du brauchst.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;네가 필요한 것, 그것을 선택해라   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 네가 필요한 것, 그것을 선택해라   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Nimm dir <span style="color:#648BC6">das, was</span> du brauchst.
 
 
