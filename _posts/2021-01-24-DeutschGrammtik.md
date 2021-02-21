@@ -934,6 +934,8 @@ Er fragt: "Welche Partei willst du waehlen?"
 
 ## <span style="background-color:#F2D8D3">Konjunktiv Ⅱ</span>
 
+**<span style="color:#86937A">-했더라면</span>**
+
 ### 1. Bildung der Formen
 
 접속법의 형태는 해당 동사의 과거형을 기준으로 만든다. 몇몇 동사들을 제외하고는 보통 <span style="color:#648BC6; font-weight: bold;">wuerden + Infinitiv</span>형으로 많이 쓰인다.
@@ -1054,7 +1056,8 @@ Er fragt: "Welche Partei willst du waehlen?"
 &nbsp;&nbsp;&nbsp;&nbsp;→ Wenn ich henug Geld haette, baute ich mir ein Haus. 돈이 충분하다면 집을 지을 텐데.
 - 주관적인 진술일 때(주로 비교급이 쓰임) 주문장 두개가 나란히 붙을 수 있다.  
 &nbsp;&nbsp;&nbsp;&nbsp;→ Es waere mir angenehmer, er kaeme schon am Freitag. 그가 금요일에 오면 더 편할 텐데.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Es waere besser gewesen, wir haetten vorher mit ihm gesprochen. 우리가 그에게 미리 얘기했다면 더 좋았을 텐데
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Es waere besser gewesen, wir haetten vorher mit ihm gesprochen.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;우리가 그에게 미리 얘기했다면 더 좋았을 텐데
 
 
 
@@ -1063,20 +1066,24 @@ Er fragt: "Welche Partei willst du waehlen?"
 - 비현실을 현실인 것처럼 표현할 때 사용한다.
 - als ob, als wenn, wie wenn과 함께 쓰인다.
 - 우선 직설법으로 실제 상황을 표현하고, 부문장에 접속법2식을 사용하여 비현실을 나타낸다.  
-&nbsp;&nbsp;&nbsp;&nbsp;→ Sie schaut mich an, als ob sie mich nicht verstuende. 그녀는 나를 이해하지 못하는 것처럼 쳐다본다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er hat solchen Hunger, als haette er seit Tagen nichts gegessen. 그는 몇일동안 먹지 못한 것처럼 배가 고프다.
+&nbsp;&nbsp;&nbsp;&nbsp;→ Sie schaut mich an, als ob sie mich nicht verstuende.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그녀는 나를 이해하지 못하는 것처럼 쳐다본다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er hat solchen Hunger, als haette er seit Tagen nichts gegessen.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그는 몇일동안 먹지 못한 것처럼 배가 고프다.
 
 
 **2.4 Irreale Folgesaetze/ Irrale Konsekutivsaetze(부정화법)**
 - \-하기에는 너무 -하다
 - 부문장의 내용이 비현실적 혹은 반사실적인 뜻을 나타낼 때 사용된다.
-- zu- als dass K2,   
-so-dass K2,  
-ohne dass K2,  
-statt dass K2로 쓰인다.  
+- **zu- als dass K2,**   
+&nbsp;&nbsp;&nbsp;**so-dass K2,**    
+&nbsp;&nbsp;&nbsp;**ohne dass K2,**  
+&nbsp;&nbsp;&nbsp;**statt dass K2**로 쓰인다.  
 &nbsp;&nbsp;&nbsp;&nbsp;→ Es ist *zu* spaet, *als dass* wir noch bei ihm anrufen koennten. 전화하기에는 너무 늦었다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er hat *so* viel Zeit, *dass* er das ganze Jahr verreisen koennte. 그는 일년 내내 여행할 수 있는 시간이 엄청 많다.(하지만 실제로 여행하지 않음)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Statt dass* ich dich bei der Arbeit faende, finde ich dich immer nur beim Schach. 나는 너를 직장에서 잡지 않고 체스에서 항상 잡는다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er hat *so* viel Zeit, *dass* er das ganze Jahr verreisen koennte.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;그는 일년 내내 여행할 수 있는 시간이 엄청 많다.(하지만 실제로 여행하지 않음)   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Statt dass* ich dich bei der Arbeit faende, finde ich dich immer nur beim Schach.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;나는 너를 직장에서 잡지 않고 체스에서 항상 잡는다.    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Er ging weg, *ohne dass* er sich verabschiedet haette. 그는 작별인사 없이 떠났다.
 
 
@@ -1090,8 +1097,10 @@ statt dass K2로 쓰인다.
 
 
 **2.5.2 충고/제안**   
-&nbsp;&nbsp;&nbsp;&nbsp;→ An deiner Stelle wuerde ich mir vor der langen Fahrt noch etwas zu essen kaufen. 여기에서 나는 당신에게 긴 여정 전에 무언가 먹을 것을 사기를 권한다.(상대에게 권유하는 수사법)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Du solltest dir vor der lange Fahrt noch etwas zu essen kaufen. 너는 긴 여정 전에 뭔가 먹을 것을 사야해.(정중하고 구속력 없는 충고/추천)
+&nbsp;&nbsp;&nbsp;&nbsp;→ An deiner Stelle wuerde ich mir vor der langen Fahrt noch etwas zu essen kaufen.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;여기에서 나는 당신에게 긴 여정 전에 무언가 먹을 것을 사기를 권한다.(상대에게 권유하는 수사법)    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Du solltest dir vor der lange Fahrt noch etwas zu essen kaufen.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;너는 긴 여정 전에 뭔가 먹을 것을 사야해.(정중하고 구속력 없는 충고/추천)
 
 
 **2.5.3 의견/요구**  
@@ -1104,14 +1113,15 @@ statt dass K2로 쓰인다.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denn(nun) K2 (-가 아니면, -가 아닌 한에는, -외에는)**   
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;→ Niemand darf hier herein, *es sei denn*, *dass* er einen Ausweis *haette*. 증명서를 가진게 아니라면 아무도 여기에 들어갈 수 없다.  
+&nbsp;&nbsp;&nbsp;&nbsp;→ Niemand darf hier herein, *es sei denn*, *dass* er einen Ausweis *haette*.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;증명서를 가진게 아니라면 아무도 여기에 들어갈 수 없다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, *es muesste denn sein*, *dass* er einen Ausweis *haette*.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *haette* *denn (nun)* einen Ausweis.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niemand darf hier herein, er *muesste denn* einen Ausweis haben.
 
 
 **2.5.5 접속법2식 화법조동사(주관적 진술 표현)**  
-1) Formen
+**1) Formen**
 
 <html>
   <head>
@@ -1137,7 +1147,9 @@ statt dass K2로 쓰인다.
 
 
 
-2) Gebrauch(위에 Subjektive Modalverben im Konjunktiv2와 동일)
+
+
+**2) Gebrauch(위에 Subjektive Modalverben im Konjunktiv2와 동일)**
 <html>
   <head>
     <style type="text/css">
@@ -1249,9 +1261,9 @@ statt dass K2로 쓰인다.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 대명사로 쓰일 때에는 정관사변화, 부가어로 쓰일 때에는 형용사 약변화 한다.
 
 - **einer, eine, eins, eines, welche(PL.)**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 얘네는 부정관사인데 뒤에 명사가 안 오면 부정대명사이다.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 정관사 변화한다.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. einer, eine, eins, eines의 복수형이 welche(어느정도의 수)이다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 얘네는 부정관사인데 뒤에 명사가 안 오면 부정대명사이다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 정관사 변화한다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. einer, eine, eins, eines의 복수형이 welche(어느정도의 수)이다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. eins와 eines 둘 다 중성 1, 4격 부정대명사이다. (중성 1, 4격부정관사는 ein이다. 헷갈릴 수 있다.)
 
 - **welcher, welche, welches, welche(PL.)**  
@@ -1293,8 +1305,12 @@ statt dass K2로 쓰인다.
 - **Was fuer ein**과 **Welcher**의 차이:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. Was fuer ein은 사물이나 사람의 성질, 상태, 종류를 물을 때 사용한다.    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Was fuer ein moechten Sie? 어떤 것(종류)를 원하시나요?   
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 추상명사나 복수의 물질명사에는 Was fuer만 사용한다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Was haben Sie fuer Nachrichten?  
+
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. Was fuer ein에서 ein이 명사 자체로 쓰였을 때, 복수형은 Was fuer welch-이다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. A: Da waren sehr viele Leute.  거기에는 엄청 많은 사람들이 있다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B: Was fuer welche? 무슨 사람들이? 
@@ -1399,7 +1415,7 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">Antezedens</th><th class="line2">Relativadverb</th><th class="line2">Beispiel</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">Antezedens</th><th class="line4">Relativadverb</th><th class="line2">Beispiel</th></tr>
        <tr><td class= "line3">장소</td><td class= "line3">wo, da</td><td class= "line">&#10004; in + Dativ는 <strong>wo</strong> (정지상태니까)<br>Man hat <span style="color:#C57B59">das Haus</span>, <span style="color:#648BC6">in dem</span> wir zwanzig Jahre gewohnt haben, jetzt abgerissen.<br>Man hat <span style="color:#C57B59">das Haus</span>,<span style="color:#648BC6">wo</span> wir zwanzig Jahre gewohnt haben, jetzt abgerissen.<br><br>Wir kommen jetzt in <span style="color:#C57B59">das Zimmer</span>, <span style="color:#648BC6">wo</span> der Dichter seine groessten Werke geschrieben hat.<br><br>&#10004; in + 관계대명사가 도시나 나라 이름을 받으면 <strong>wo</strong><br>Das ist ein Bild von <span style="color:#C57B59">Koeln</span>, <span style="color:#648BC6">wo</span> ich lange gelebt habe.<br><br>In der Innenstadt von <span style="color:#C57B59">Hamburg</span>, <span style="color:#648BC6">wo</span> der Laerm unertraeglich ist, moechte ich nicht wohnen.<br><br>&#10004; in + Akkusativ는 <strong>wohin / woher</strong> (움직이니까)<br><span style="color:#C57B59">Die Kleinstadt</span>, <span style="color:#648BC6">in die</span> ich umgezogen bin, gefaellt mir sehr gut.<br><span style="color:#C57B59">Die Kleinstadt</span>, <span style="color:#648BC6">wohin</span> ich umgezogen bin, gefaellt mir sehr gut.<br><br>Er geht wieder <span style="color:#C57B59">dahin</span>, <span style="color:#648BC6">woher</span> er gekommen ist.</td></tr>
        <tr><td class= "line4">Adverb + was</td><td class= "line4">Adverb + was <br>&nbsp;&nbsp;&nbsp;&nbsp;=<br> <strong>wo(r) + Adverb</strong></td><td class= "line2">Man hat den alten Marktplatz umgebaut, <span style="color:#648BC6">ueber was</span> sich die Buerger sehr aufgeregt haben.<br>Man hat den Marktplatz umgebaut, <span style="color:#648BC6">worueber</span> sich die Buerger sehr aufgeregt haben.<br><br>In der Stadt bleibt nur noch wenig uebrig, <span style="color:#648BC6">an was</span> sich die Buerger erinnern.<br>In der Stadt bleibt nur noch wenig uebrig, <span style="color:#648BC6">woran</span> sich die Buerger erinnern.</td></tr>
        <tr><td class= "line4">시간</td><td class= "line4">da, wo, wann</td><td class= "line2"><span style="color:#C57B59">Die Zeit</span> kommt noch, <span style="color:#648BC6">da</span> sie ihr Unrecht einsehen wird.</td></tr>
@@ -1408,6 +1424,9 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
     </table>
  </body>
 </html>
+
+
+### 3. Relativsaetze mit Indefinite Relativpronomen "wer, wen, wem, wessen"  
 
 
 
