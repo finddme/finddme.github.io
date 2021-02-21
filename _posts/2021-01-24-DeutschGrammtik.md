@@ -1438,14 +1438,14 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
 
 &#10004; wer = Derjenige, der...  이런식으로 대체될 수 있다.  
 &nbsp;&nbsp;&nbsp;&nbsp; e.g. <span style="color:#648BC6">Wer</span> nicht hoeren will, muss fuehlen.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;듣기를 원치 않는 자, 그 자는 느끼기라도 해야 한다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;듣기를 원치 않는 자, 그 자는 느끼기라도 해야 한다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:#648BC6">Derjenige, der</span> nicht hoeren will, muss fuehlen.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:#648BC6">Diejenige, die</span> nicht hoeren will, muss fuehlen.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span style="color:#648BC6">Jeder, der</span> nicht hoeren will, muss fuehlen.
 
 &#10004; 주문장에서 관계절과 관계되는 관계대명사가 관계부사와 격이 같으면 생략이 가능하다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#648BC6">Wer</span> die Ehrlichkeit des Kaufmanns kennt, (<span style="color:#648BC6">der</span>) wird ihm auch glauben.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 사업자의 정직함을 아는 자, 그 자는 그를 믿을 것이다.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g. <span style="color:#648BC6">Wer</span> die Ehrlichkeit des Kaufmanns kennt, (<span style="color:#648BC6">der</span>) wird ihm auch glauben.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 사업자의 정직함을 아는 자, 그 자는 그를 믿을 것이다.  
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wessen Herz fuer die Freiheit schlaegt, den nenne ich einen edlen Mann.  
