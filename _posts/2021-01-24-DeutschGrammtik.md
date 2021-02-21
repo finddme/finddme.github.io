@@ -1448,7 +1448,7 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 사업자의 정직함을 아는 자, 그 자는 그를 믿을 것이다.  
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wessen Herz fuer die Freiheit schlaegt, den nenne ich einen edlen Mann.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#648BC6">Wessen</span> Herz fuer die Freiheit schlaegt, <span style="color:#648BC6">den</span> nenne ich einen edlen Mann.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 
