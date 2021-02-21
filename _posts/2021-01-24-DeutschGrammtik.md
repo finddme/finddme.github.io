@@ -1296,7 +1296,7 @@ statt dass K2로 쓰인다.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 추상명사나 복수의 물질명사에는 Was fuer만 사용한다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. Was haben Sie fuer Nachrichten?  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. Was fuer ein에서 ein이 명사 자체로 쓰였을 때, 복수형은 Was fuer welch-이다.  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. A: Da waren sehr viele Leute.  거기에는 엄청 많은 사람들이 있다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. A: Da waren sehr viele Leute.  거기에는 엄청 많은 사람들이 있다.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B: Was fuer welche? 무슨 사람들이? 
 
 
@@ -1305,7 +1305,7 @@ statt dass K2로 쓰인다.
 
 - **전치사 +의문대명사**  
 1) 사람을 지칭할 때는 따로따로 가능(z.B. Ueber wen?)   
-2) 사물을 지칭할 때는 합체(이걸 관계부사라고 한다). 합체할 때 was는 wo로 바뀐다. 그리고 발음이 어려우면 중간에 r이 들어간다.(z.B. an + was= woran, mit + was = womit)
+2) 사물을 지칭할 때는 합체(이걸 **관계부사**라고 한다). 합체할 때 was는 wo로 바뀐다. 그리고 발음이 어려우면 중간에 r이 들어간다.(z.B. an + was= woran, mit + was = womit)
 
 
 ### 5. Reflexivpronomen
@@ -1377,9 +1377,42 @@ statt dass K2로 쓰인다.
 e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bleiben.  (Die Nachbarn haben *fuer* die Haeuser gekaempft.)  
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Man
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Man will das Schloss, in dessen Park fetzt Festspiele stattfinden, renovieren.  (In dem Park des Schlosses finden jetzt Festspiele statt.)
 
 
+### 2. Relativsaetze mit Relativadverb "wo(-), da(-), wann, wie" 
+
+전치사 + 관계대명사가 장소, 시간, 방법을 나타낼 경우 관계부사로 대체될 수 있다. 
+
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #FFFFFF;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr><th class="line4" bgcolor="#F8F7F9">Ort/Adverb+was/Zeit/Weise</th><th class="line2">Relativadverb</th><th class="line2">Beispiel</th></tr>
+       <tr><td class= "line4">장소</td><td class= "line2">wo, da</td><td class= "line2">&#10004; in + Dativ는 <strong>wo</strong> (정지상태니까)<br>Man hat <span style="color:#C57B59">das Haus</span>, <span style="color:#648BC6">in dem</span> wir zwanzig Jahre gewohnt haben, jetzt abgerissen.<br>Man hat <span style="color:#C57B59">das Haus</span>, <em><span style="color:#648BC6">wo</span> wir zwanzig Jahre gewohnt haben, jetzt abgerissen.<br><br>Wir kommen jetzt in <span style="color:#C57B59">das Zimmer</span>, <span style="color:#648BC6">wo</span> der Dichter seine groessten Werke geschrieben hat.<br><br>&#10004; in + 관계대명사가 도시나 나라 이름을 받으면 wo<br>Das ist ein Bild von <span style="color:#C57B59">Koeln</span>, <span style="color:#648BC6">wo</span> ich lange gelebt habe.<br><br>In der Innenstadt von <span style="color:#C57B59">Hamburg</span>, <span style="color:#648BC6">wo</span> der Laerm unertraeglich ist, moechte ich nicht wohnen.&#10004; in + Akkusativ는 <strong>wohin / woher</strong> (움직이니까)<br><span style="color:#C57B59">Die Kleinstadt</span>, <span style="color:#648BC6">in die</span> ich umgezogen bin, gefaellt mir sehr gut.<br><span style="color:#C57B59">Die Kleinstadt</span>, <span style="color:#648BC6">wohin</span> ich umgezogen bin, gefaellt mir sehr gut.<br><br>Er geht wieder <span style="color:#C57B59">dahin</span>, <span style="color:#648BC6">woher</span> er gekommen ist.</td></tr>
+       <tr><td class= "line4">Adverb + was</td><td class= "line2">Adverb + was = wo(r) + Adverb</td><td class= "line2">der</td></tr>
+       <tr><td class= "line4">시간</td><td class= "line2">da, wo, wann</td><td class= "line2">der</td></tr>
+       <tr><td class= "line4">방법</td><td class= "line2">wie</td><td class= "line2">der</td></tr>
+    </table>
+ </body>
+</html>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 장소: wo, da  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 시간: da, wo, wann  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;. 방법: wie
+
+&#10004;
 
 ## *haben* und *sein* + Infinitiv mit *zu*
 ## Das Gerundivum
