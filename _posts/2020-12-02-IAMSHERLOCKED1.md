@@ -377,6 +377,474 @@ tag: English
        <tr><td>23:19</td><td>Aren't you going to put one on?</td><td>안 입어요?</td></tr>
        <tr><td>23:24</td><td>So where are we?</td><td>어딨죠?</td></tr>
        <tr><td>23:24</td><td>Upstairs.</td><td>위층에</td></tr>
+       <tr><td>23:34</td><td>I can give you two minutes.</td><td>딱 2분 주겠네</td></tr>
+       <tr><td>23:37</td><td>May need longer.</td><td>더 오래 걸릴지도 몰라요</td></tr>
+       <tr><td>23:39</td><td>Her name's Jennifer Wilson according to her credit cards,</td><td>사망자 이름은 제니퍼 윌슨 신용 카드상으로는 그래</td></tr>
+       <tr><td>23:42</td><td>we're running them now for contact details.</td><td>지금 자세한 정보와 연락처를 조회 중이야</td></tr>
+       <tr><td>23:45</td><td>Hasn't been here long. Some kids found her.</td><td>여기 도착한 지 얼마 안 됐어 아이들이 시신을 발견했지</td></tr>
+       <tr><td>24:20</td><td>Shut up.</td><td>조용!</td></tr>
+       <tr><td>24:23</td><td>I didn't say anything.</td><td>아무 말 안 했어</td></tr>
+       <tr><td>24:23</td><td>You were thinking. It's annoying.</td><td>생각도 하지 마요</td></tr>
+       <tr><td>25:38</td><td>Got anything?</td><td>알아낸 거 있나?</td></tr>
+       <tr><td>25:41</td><td>Not much.</td><td>별로 없어요</td></tr>
+       <tr><td>25:41</td><td>ANDERSON: She's German.</td><td>독일인이에요</td></tr>
+       <tr><td>25:45</td><td>Rache. It's German for "revenge." She could be trying to tell us something...</td><td>'라흐'는 독일어로 복수죠 뭔가 알리려고 한 거예요</td></tr>
+       <tr><td>25:48</td><td>Yes, thank you for your input.</td><td>고마워, 잘 들었어</td></tr>
+       <tr><td>25:50</td><td>LESTRADE: So she's German?</td><td>독일인 맞아?</td></tr>
+       <tr><td>25:50</td><td>Of course she's not.</td><td>아니요</td></tr>
+       <tr><td>25:52</td><td>She's from out of town though.</td><td>근데 런던 사람은 아니에요</td></tr>
+       <tr><td>25:53</td><td>Intended to stay in London for one night before returning home to Cardiff.</td><td>카디프로 돌아가기 전에 하룻밤 묵으러 온 거죠</td></tr>
+       <tr><td>25:57</td><td>So far, so obvious.</td><td>뻔하잖아요</td></tr>
+       <tr><td>25:58</td><td>Sorry, obvious?</td><td>뻔하다고요?</td></tr>
+       <tr><td>25:58</td><td>What about the message though?</td><td>그럼 이 글자는?</td></tr>
+       <tr><td>26:00</td><td>Dr Watson, what do you think?</td><td>박사는 어떻게 생각해요?</td></tr>
+       <tr><td>26:02</td><td>Of the message?</td><td>저 글자요?</td></tr>
+       <tr><td>26:02</td><td>Of the body. You're a medical man.</td><td>시신이요, 의사잖아요</td></tr>
+       <tr><td>26:04</td><td>We have a whole team right outside.</td><td>과학수사팀이 와 있네</td></tr>
+       <tr><td>26:06</td><td>They won't work with me.</td><td>나랑 안 맞는다니까</td></tr>
+       <tr><td>26:06</td><td>I'm breaking every rule -letting you in here...</td><td>난 규칙을 어기고 자네를 불렀어</td></tr>
+       <tr><td>26:08</td><td>Yes, because you need me.</td><td>제가 필요하니까요</td></tr>
+       <tr><td>26:12</td><td>Yes, I do.</td><td>하긴 그렇지</td></tr>
+       <tr><td>26:14</td><td>God help me.</td><td>미치겠네</td></tr>
+       <tr><td>26:16</td><td>Dr Watson!</td><td>왓슨 박사?</td></tr>
+       <tr><td>26:16</td><td>Hmm?</td><td>네?</td></tr>
+       <tr><td>26:19</td><td>Oh, do as he says. Help yourself.</td><td>저 사람 말대로 하세요</td></tr>
+       <tr><td>26:24</td><td>Anderson, keep everyone out for a couple of minutes.</td><td>앤더슨, 2분간 아무도 출입시키지 마</td></tr>
+       <tr><td>26:28</td><td>Well?</td><td>어때요? </td></tr>
+       <tr><td>26:28</td><td>What am I doing here?</td><td>내가 뭘 하는 거죠?</td></tr>
+       <tr><td>26:30</td><td>(WHISPERS) Helping me make a point.</td><td>날 돕는 거죠</td></tr>
+       <tr><td>26:30</td><td>I'm supposed to be helping you pay the rent.</td><td>난 월세만 내면 되는데</td></tr>
+       <tr><td>26:33</td><td>Yeah, well, this is more fun.</td><td>이게 더 재밌잖아요</td></tr>
+       <tr><td>26:33</td><td>Fun? There's a woman lying dead.</td><td>사람이 죽었는데 재밌다니요</td></tr>
+       <tr><td>26:37</td><td>Perfectly sound analysis, but I was hoping you'd go deeper.</td><td>정확한 분석이긴 한데 좀 더 자세히 살펴봐요</td></tr>
+       <tr><td>27:00</td><td>Asphyxiation, probably.</td><td>질식사한 것 같군요</td></tr>
+       <tr><td>27:02</td><td>Passed out, choked on her own vomit.</td><td>구토하다 질식해서 의식을 잃었죠</td></tr>
+       <tr><td>27:04</td><td>Can't smell any alcohol on her. It could have been a seizure. Possibly drugs.</td><td>술 냄새가 안 나니까 발작이나 독극물이 사인이겠군요</td></tr>
+       <tr><td>27:07</td><td>You know what it was, you've read the papers.</td><td>사인은 신문에서 봤잖아요</td></tr>
+       <tr><td>27:10</td><td>Well, she's one of the suicides. The fourth?</td><td>연쇄 자살 사건 피해자라고요?</td></tr>
+       <tr><td>27:12</td><td>Sherlock, two minutes, I said, I need anything you got.</td><td>2분 지났는데 수확은 있어?</td></tr>
+       <tr><td>27:15</td><td>Victim is in her late 30s. Professional person, going by her clothes.</td><td>30대 후반에 옷차림을 봐선 전문직 종사자예요</td></tr>
+       <tr><td>27:18</td><td>I'm guessing something in the media, going by the frankly alarming shade of pink.</td><td>분홍색으로 빼입었으니 방송계 종사자일 확률이 높고요</td></tr>
+       <tr><td>27:21</td><td>Travelled from Cardiff today intending to stay in London one night.</td><td>카디프에서 런던으로 하룻밤 묵으러 왔죠</td></tr>
+       <tr><td>27:24</td><td>It's obvious from the size of her suitcase.</td><td>가방 크기로 볼 때 확실합니다</td></tr>
+       <tr><td>27:26</td><td>Suitcase?</td><td>가방?</td></tr>
+       <tr><td>27:26</td><td>Suitcase, yes.</td><td>네, 가방이요</td></tr>
+       <tr><td>27:27</td><td>She's been married at least 10 years, but not happily.</td><td>최소 결혼 10년 차인데 부부 사이는 별로였죠</td></tr>
+       <tr><td>27:30</td><td>She's had a string of lovers but none of them knew she was married.</td><td>미혼 행세 하면서 남자를 꽤 만났어요</td></tr>
+       <tr><td>27:33</td><td>Oh, for God's sake, if you're just making this up...</td><td>지금 소설 쓰는 건가?</td></tr>
+       <tr><td>27:33</td><td>Her wedding ring. Ten years old at least.</td><td>반지가 10년 이상은 됐죠</td></tr>
+       <tr><td>27:37</td><td>The rest of her jewellery has been regularly cleaned, but not her wedding ring. State of her marriage right there.</td><td>장신구 중 반지만 더러워요 결혼 생활이 불행하단 뜻이죠</td></tr>
+       <tr><td>27:42</td><td>The inside is shinier than the outside. That means it's regularly removed.</td><td>반지 안쪽만 깨끗하다는 건 자주 뺐다는 뜻이고요</td></tr>
+       <tr><td>27:45</td><td>The only polishing it gets is when she works it off her finger.</td><td>반지를 뺄 때 때가 벗겨진 거죠</td></tr>
+       <tr><td>27:47</td><td>It's not for work, look at her nails. She doesn't work with her hands</td><td>손톱을 봐선 손을 쓰는 직업도 아니에요</td></tr>
+       <tr><td>27:50</td><td>so what or rather who does she remove her rings for?</td><td>그럼 반지를 자주 뺀 이유가 뭐겠어요?</td></tr>
+       <tr><td>27:53</td><td>Clearly not one lover, she'd never sustain the fiction of being single over that amount of time, so more likely a string of them. Simple.</td><td>지금껏 여러 남자를 만나느라 반지를 뺀 거예요, 간단하죠</td></tr>
+       <tr><td>27:58</td><td>Brilliant.</td><td>대단해요</td></tr>
+       <tr><td>27:59</td><td>Sorry.</td><td>미안해요</td></tr>
+       <tr><td>27:59</td><td>Cardiff?</td><td>카디프라고?</td></tr>
+       <tr><td>28:01</td><td>It's obvious, isn't it?</td><td>뻔하잖아요</td></tr>
+       <tr><td>28:03</td><td>It's not obvious to me.</td><td>난 모르겠는데요</td></tr>
+       <tr><td>28:05</td><td>Dear God, what is it like in your funny little brains, it must be so boring.</td><td>그렇게 덜떨어진 머리로 지루해서 어떻게들 삽니까?</td></tr>
+       <tr><td>28:08</td><td>Her coat. It's slightly damp. She's been in heavy rain the last few hours.</td><td>코트가 젖었으니 비를 맞은 지 몇 시간 안 됐는데</td></tr>
+       <tr><td>28:12</td><td>No rain anywhere in London in that time.</td><td>런던에는 비가 안 왔어요</td></tr>
+       <tr><td>28:14</td><td>Under her coat collar is damp too. She's turned it up against the wind.</td><td>코트 깃이 젖은 걸 봐선 바람을 막으려고 세운 거죠</td></tr>
+       <tr><td>28:18</td><td>She's got an umbrella in her left hand pocket but it's dry and unused.</td><td>주머니에 있던 우산은 쓰지도 않았으니까</td></tr>
+       <tr><td>28:20</td><td>Not just wind, strong wind, too strong to use her umbrella.</td><td>우산을 못 펼 정도로 바람이 강하게 분 겁니다</td></tr>
+       <tr><td>28:23</td><td>We know from her suitcase that she was intending to stay overnight</td><td>가방을 보면 하룻밤 묵는다는 소리니</td></tr>
+       <tr><td>28:25</td><td>so she must have come a decent distance,</td><td>제법 멀리서 왔단 거고</td></tr>
+       <tr><td>28:27</td><td>but she can't have travelled more than two or three hours because her coat still hasn't dried.</td><td>코트가 덜 마른 걸 보면 런던에서 두세 시간 거리죠</td></tr>
+       <tr><td>28:30</td><td>So, where has there been heavy rain and strong wind within the radius of that travel time?</td><td>그럼 그 반경에서 폭우가 내린 곳은 어딜까요?</td></tr>
+       <tr><td>28:34</td><td>Cardiff.</td><td>카디프!</td></tr>
+       <tr><td>28:36</td><td>Fantastic.</td><td>대단한데요</td></tr>
+       <tr><td>28:36</td><td>Do you know you do that out loud?</td><td>지금 소리 내서 말한 거 알죠?</td></tr>
+       <tr><td>28:38</td><td>Sorry, I'll shut up.</td><td>잠자코 있을게요</td></tr>
+       <tr><td>28:38</td><td>No, it's...fine.</td><td>아뇨, 괜찮아요</td></tr>
+       <tr><td>28:40</td><td>Why do you keep saying suitcase?</td><td>왜 자꾸 가방 타령이야?</td></tr>
+       <tr><td>28:40</td><td>Yes, where is it?</td><td>가방은 어디에 있죠?</td></tr>
+       <tr><td>28:43</td><td>She must have had a phone or an organiser. Find out who Rachel is.</td><td>휴대 전화나 수첩을 보면 레이첼이 누군지 알 수 있겠죠</td></tr>
+       <tr><td>28:46</td><td>She was writing Rachel?</td><td>레이첼이라고 쓴 건가?</td></tr>
+       <tr><td>28:48</td><td>No, she was leaving an angry note in German.</td><td>YELLS</td></tr>
+       <tr><td>28:50</td><td>Of course she was writing Rachel, no other word it can be. Question is, why did she wait until she was dying to write it?</td><td>당연히 레이첼일 수밖에 없죠 문제는 왜 죽기 직전에야 이걸 썼냐는 겁니다</td></tr>
+       <tr><td>28:55</td><td>How do you know she had a suitcase?</td><td>가방이 있는 건 어떻게 알았나?</td></tr>
+       <tr><td>28:57</td><td>Back of her right leg. Tiny splash marks on the right heel and calf not present on the left.</td><td>오른쪽 종아리와 신발에만 흙탕물이 튀었어요</td></tr>
+       <tr><td>29:01</td><td>She was dragging a wheeled suitcase behind her with her right hand.</td><td>가방을 오른손으로 끌고 갔다는 의미죠</td></tr>
+       <tr><td>29:03</td><td>Don't get that splash pattern any other way.</td><td>얼룩 형태를 보면 확실해요</td></tr>
+       <tr><td>29:05</td><td>Smallish case, going by the spread.</td><td>YEL얼룩진 범위를 봐선 소형 가방이죠LS</td></tr>
+       <tr><td>29:07</td><td>Case that size, woman this clothes-conscious, could only be an overnight bag so we know she was staying one night.</td><td>옷차림에 신경 쓰는 사람인데, 가방이 작으니 하룻밤만 자려 했던 거고요</td></tr>
+       <tr><td>29:11</td><td>Where is it, what have you done with it?</td><td>가방은 어쨌어요?</td></tr>
+       <tr><td>29:13</td><td>There wasn't a case.</td><td>처음부터 없었어</td></tr>
+       <tr><td>29:17</td><td>Say that again.</td><td>뭐라고요?</td></tr>
+       <tr><td>29:19</td><td>There wasn't a case. There was never any suitcase.</td><td>가방 같은 건 전혀 없었어</td></tr>
+       <tr><td>29:21</td><td>Suitcase! Did anyone find a suitcase? Was there a suitcase in this house?</td><td>가방! 가방 보신 분? 여기 가방 없어요?</td></tr>
+       <tr><td>29:25</td><td>Sherlock, there's no case!</td><td>없었다니까!</td></tr>
+       <tr><td>29:27</td><td>But they take the poison themselves. They chew, swallow the pills themselves. There are clear signs, even you lot couldn't miss them.</td><td>다들 스스로 독약을 먹었어요 당신들도 알만한 뻔한 상황이죠</td></tr>
+       <tr><td>29:32</td><td>Right, yeah, thanks. And?</td><td>고맙네, 그래서?</td></tr>
+       <tr><td>29:34</td><td>It's murder, all of them. I don't know how.</td><td>수법은 모르겠지만 살인입니다</td></tr>
+       <tr><td>29:36</td><td>But they're not suicides. They're killings, serial killings.</td><td>자살이 아니라 연쇄 살인 사건이라고요</td></tr>
+       <tr><td>29:39</td><td>We've got a serial killer. Love those. There's always something to look forward to.</td><td>연쇄 살인범이라니! 놈들은 기대를 저버리지 않죠</td></tr>
+       <tr><td>29:42</td><td>Why are you saying that?</td><td>그게 무슨 말이야?</td></tr>
+       <tr><td>29:42</td><td>Her case!</td><td>가방이요!</td></tr>
+       <tr><td>29:44</td><td>Come on, where is her case? Did she eat it?</td><td>가방이 없다고요! 설마 누가 먹었겠어요?</td></tr>
+       <tr><td>29:47</td><td>Someone else was here, and they took her case.</td><td>누가 가방을 가져갔단 말입니다</td></tr>
+       <tr><td>29:50</td><td>So the killer must have driven here. Forgot the case was in the car.</td><td>살인범이 깜빡하고 가방은 차에 둔 거야</td></tr>
+       <tr><td>29:53</td><td>She could have checked into a hotel, left her case there.</td><td>피해자가 호텔에 두고 나왔을 수도 있죠</td></tr>
+       <tr><td>29:55</td><td>No, she never got to the hotel. Look at her hair.</td><td>호텔에 안 갔어요 머리 모양을 봐요</td></tr>
+       <tr><td>29:58</td><td>She colour-coordinates her lipstick and her shoes.</td><td>신발과 립스틱 색을 맞추는 사람이</td></tr>
+       <tr><td>29:59</td><td>She'd never have left any hotel with her hair still looking...</td><td>저 머리로 호텔을 나섰을 리가...</td></tr>
+       <tr><td>30:07</td><td>Sherlock?</td><td>셜록?</td></tr>
+       <tr><td>30:07</td><td>What is it, what?</td><td>왜 그래?</td></tr>
+       <tr><td>30:09</td><td>Serial killers, always hard. You have to wait for them to make a mistake.</td><td>연쇄 살인범들은 까다로워요 실수할 때를 기다려야 하죠</td></tr>
+       <tr><td>30:13</td><td>We can't just wait!</td><td>못 기다려!</td></tr>
+       <tr><td>30:13</td><td>Oh, we're done waiting. Look at her, really look!</td><td>기다릴 필요 없어요</td></tr>
+       <tr><td>30:15</td><td>Houston, we have a mistake. Get on to Cardiff.</td><td>놈이 벌써 실수를 했잖아요 카디프에 연락해봐요</td></tr>
+       <tr><td>30:18</td><td>Find out who Jennifer Wilson's family and friends were. Find Rachel!</td><td>피해자 가족과 친구에게 연락하고 레이첼을 찾아요</td></tr>
+       <tr><td>30:21</td><td>Of course, yeah, but what mistake?</td><td>알았어, 근데 실수라니?</td></tr>
+       <tr><td>30:24</td><td>Pink!</td><td>핑크!</td></tr>
+       <tr><td>30:27</td><td>ANDERSON: Let's get on with it.</td><td>일 시작합시다</td></tr>
+       <tr><td>31:07</td><td>He's gone.</td><td>갔어요</td></tr>
+       <tr><td>31:07</td><td>Who, Sherlock Holmes?</td><td>셜록 홈즈요?</td></tr>
+       <tr><td>31:09</td><td>Yeah, he just took off. He does that.</td><td>그냥 가던데요 원래 그래요</td></tr>
+       <tr><td>31:11</td><td>Is he coming back?</td><td>다시 올까요?</td></tr>
+       <tr><td>31:11</td><td>Didn't look like it.</td><td>안 올걸요</td></tr>
+       <tr><td>31:14</td><td>Right.</td><td>네</td></tr>
+       <tr><td>31:17</td><td>Right.</td><td>네</td></tr>
+       <tr><td>31:21</td><td>Yes. Sorry, where am I?</td><td>실례지만 여기가 어디죠?</td></tr>
+       <tr><td>31:23</td><td>Brixton.</td><td>브릭스턴이요</td></tr>
+       <tr><td>31:25</td><td>Uh... Do you know where I could get a cab? It's just uh... Well... My leg.</td><td>어디서 택시를 잡아야 하죠? 그게... 다리 때문에요</td></tr>
+       <tr><td>31:36</td><td>Try the main road.</td><td>큰길로 나가세요</td></tr>
+       <tr><td>31:36</td><td>Thanks.</td><td>고마워요</td></tr>
+       <tr><td>31:39</td><td>But you're not his friend.</td><td>그 사람 친구 아니죠?</td></tr>
+       <tr><td>31:42</td><td>He doesn't have friends.</td><td>친구가 있을 리 없거든요</td></tr>
+       <tr><td>31:45</td><td>So who are you?</td><td>어떤 사이예요?</td></tr>
+       <tr><td>31:47</td><td>I'm... I'm nobody. I just met him.</td><td>안면만 있어요 안 지 얼마 안 됐죠</td></tr>
+       <tr><td>31:50</td><td>A bit of advice then. Stay away from that guy.</td><td>가까이하지 마세요</td></tr>
+       <tr><td>31:50</td><td>Why?</td><td>왜요?</td></tr>
+       <tr><td>31:55</td><td>You know why he's here?</td><td>그 사람이 왜 현장에 오는지 알아요?</td></tr>
+       <tr><td>31:59</td><td>He's not paid or anything.</td><td>그것도 무보수로요</td></tr>
+       <tr><td>32:01</td><td>He likes it. He gets off on it.</td><td>범죄 사건이 좋아서 날뛰는 거예요</td></tr>
+       <tr><td>32:04</td><td>The weirder the crime, the more he gets off. And you know what? One day just showing up won't be enough.</td><td>기괴한 사건일수록 더 좋아하죠. 이걸로 만족 못 하고</td></tr>
+       <tr><td>32:11</td><td>One day we'll be standing round a body and Sherlock Holmes will be the one that put it there.</td><td>언젠가는 직접 살인을 저지를 인간이에요</td></tr>
+       <tr><td>32:14</td><td>Why would he do that?</td><td>왜 그런 짓을 하겠어요?</td></tr>
+       <tr><td>32:14</td><td>Because he's a psychopath. Psychopaths get bored.</td><td>사이코패스니까요 놈들은 쉽게 지루해하거든요</td></tr>
+       <tr><td>32:20</td><td>LESTRADE: Donovan!</td><td>도노반</td></tr>
+       <tr><td>32:20</td><td>Coming.</td><td>가요</td></tr>
+       <tr><td>32:26</td><td>Stay away from Sherlock Holmes.</td><td>셜록 홈즈를 멀리하세요</td></tr>
+       <tr><td>32:59</td><td>Taxi! Taxi!</td><td>택시!</td></tr>
+       <tr><td>33:36</td><td>Hello?</td><td>여보세요?</td></tr>
+       <tr><td>33:38</td><td>MAN: There is a security camera on the building to your left. Do you see it?</td><td>좌측 건물에 있는 보안 카메라가 보이십니까?</td></tr>
+       <tr><td>33:46</td><td>Who's this?</td><td>누구시죠?</td></tr>
+       <tr><td>33:49</td><td>Who's speaking?</td><td>누구십니까?</td></tr>
+       <tr><td>33:51</td><td>Do you see the camera, Dr Watson?</td><td>카메라 보입니까, 왓슨 박사?</td></tr>
+       <tr><td>33:55</td><td>Yeah, I see it.</td><td>네, 보입니다</td></tr>
+       <tr><td>33:55</td><td>Watch...</td><td>잘 보십시오</td></tr>
+       <tr><td>34:02</td><td>There is another camera on the building opposite you. Do you see it?</td><td>맞은편 건물에도 카메라가 있는데 보입니까?</td></tr>
+       <tr><td>34:09</td><td>And finally, at the top of the building on your right.</td><td>마지막으로 우측 건물 위를 보세요</td></tr>
+       <tr><td>34:20</td><td>How are you doing this?</td><td>어떻게 한 거죠?</td></tr>
+       <tr><td>34:20</td><td>MAN: Get into the car, Dr Watson.</td><td>왓슨 박사, 차에 타십시오</td></tr>
+       <tr><td>34:24</td><td>I would make some sort of threat, but I'm sure your situation is quite clear to you.</td><td>협박 같은 걸 할 수도 있지만, 어떤 상황인지 이미 잘 아시겠죠</td></tr>
+       <tr><td>34:46</td><td>Hello.</td><td>안녕하세요</td></tr>
+       <tr><td>34:46</td><td>Hi.</td><td>안녕하세요</td></tr>
+       <tr><td>34:54</td><td>What's your name, then?</td><td>이름이 뭐예요?</td></tr>
+       <tr><td>34:56</td><td>Uh... Anthea.</td><td>안시아요</td></tr>
+       <tr><td>34:59</td><td>Is that your real name?</td><td>진짜 이름이 안시아예요?</td></tr>
+       <tr><td>35:01</td><td>No.</td><td>아니요</td></tr>
+       <tr><td>35:06</td><td>I'm John.</td><td>존이에요</td></tr>
+       <tr><td>35:06</td><td>Yes. I know.</td><td>알아요</td></tr>
+       <tr><td>35:13</td><td>Any point in asking where I'm going?</td><td>목적지를 물어도 소용없겠죠?</td></tr>
+       <tr><td>35:18</td><td>None at all... John.</td><td>당연하죠, 존</td></tr>
+       <tr><td>35:23</td><td>Okay.</td><td>알았어요</td></tr>
+       <tr><td>35:43</td><td>Have a seat, John.</td><td>존, 앉으시죠</td></tr>
+       <tr><td>35:50</td><td>You know, I've got a phone.</td><td>저 휴대 전화 있어요</td></tr>
+       <tr><td>35:53</td><td>I mean, very clever and all that, but uh... You could just phone me.</td><td>기발한 방법이긴 하지만 그냥 전화하지 그랬어요?</td></tr>
+       <tr><td>36:00</td><td>On my phone</td><td>제 휴대 전화로요</td></tr>
+       <tr><td>36:04</td><td>When one is avoiding the attention of Sherlock Holmes, one learns to be discreet, hence this place.</td><td>셜록 홈즈의 눈을 피하려면 조심해야 해서 이곳으로 모셨죠</td></tr>
+       <tr><td>36:09</td><td>Your leg must be hurting you. Sit down. </td><td>다리가 편치 않을 테니... 앉으시죠</td></tr>
+       <tr><td>36:12</td><td>I don't want to sit down.</td><td>괜찮습니다</td></tr>
+       <tr><td>36:16</td><td>You don't seem very afraid.</td><td>별로 두렵지 않은가 봐요?</td></tr>
+       <tr><td>36:16</td><td>You don't seem very frightening.</td><td>그쪽이 두렵지 않거든요</td></tr>
+       <tr><td>36:21</td><td>The bravery of the soldier.</td><td>용맹한 군인 정신이라!</td></tr>
+       <tr><td>36:25</td><td>Bravery is by far the kindest word for stupidity, don't you think?</td><td>용맹함이란 어리석음을 미화한 표현 아닐까요?</td></tr>
+       <tr><td>36:28</td><td>What is your connection to Sherlock Holmes?</td><td>셜록과는 어떤 관계죠?</td></tr>
+       <tr><td>36:32</td><td>I don't have one. I barely know him, I met him... Yesterday.</td><td>아무 관계 아닙니다 잘 알지도 못해요. 어제 처음 만났죠</td></tr>
+       <tr><td>36:36</td><td>Mmm. And since yesterday you've moved in with him</td><td>그런데 바로 동거하면서</td></tr>
+       <tr><td>36:39</td><td>and now you're solving crimes together.</td><td>수사까지 같이해요?</td></tr>
+       <tr><td>36:41</td><td>Might we expect a happy announcement by the end of the week?</td><td>이러다가 이번 주 내로 결혼 발표라도 하겠군요</td></tr>
+       <tr><td>36:45</td><td>Who are you?</td><td>정체가 뭐죠?</td></tr>
+       <tr><td>36:45</td><td>An interested party.</td><td>이해관계인이죠</td></tr>
+       <tr><td>36:47</td><td>Interested in Sherlock? Why? I'm guessing you're not friends.</td><td>왜 셜록에게 관심을 갖죠? 친구는 아닌 것 같은데</td></tr>
+       <tr><td>36:51</td><td>You've met him. How many friends do you imagine he has?</td><td>만나 봐서 알잖아요 그놈한테 친구가 몇이나 있겠어요?</td></tr>
+       <tr><td>36:56</td><td>I am the closest thing to a friend that Sherlock Holmes is capable of having.</td><td>그나마 내가 셜록한테는 친구에 가장 가까운 존재죠</td></tr>
+       <tr><td>37:00</td><td>And what's that?</td><td>무슨 뜻이죠?</td></tr>
+       <tr><td>37:00</td><td>An enemy.</td><td>적이거든요</td></tr>
+       <tr><td>37:01</td><td>An enemy?</td><td>적이요?</td></tr>
+       <tr><td>37:02</td><td>In his mind, certainly.</td><td>셜록의 입장에서는요</td></tr>
+       <tr><td>37:04</td><td>If you were to ask him, he'd probably say his arch-enemy.</td><td>셜록에게 물어보면 날 최대의 적이라고 할 겁니다</td></tr>
+       <tr><td>37:08</td><td>He does love to be dramatic.</td><td>워낙 극적인 걸 좋아하잖아요</td></tr>
+       <tr><td>37:10</td><td>Well, thank God you're above all that.</td><td>그쪽도 만만치 않은데요</td></tr>
+       <tr><td>37:18</td><td>I hope I'm not distracting you.</td><td>나 때문에 혼란스럽지 않았으면 좋겠군요</td></tr>
+       <tr><td>37:21</td><td>Not distracting me at all.</td><td>괜찮습니다</td></tr>
+       <tr><td>37:23</td><td>Do you plan to continue your association with Sherlock Holmes?</td><td>앞으로도 셜록 홈즈와 어울려 지낼 생각입니까?</td></tr>
+       <tr><td>37:26</td><td>I could be wrong, but I think that's none of your business.</td><td>제 생각이 틀릴 수도 있지만... 그건 당신이 상관할 바가 아닐 것 같은데요</td></tr>
+       <tr><td>37:29</td><td>It could be.</td><td>과연 그럴까요?</td></tr>
+       <tr><td>37:29</td><td>It really couldn't.</td><td>당연하죠</td></tr>
+       <tr><td>37:33</td><td>If you do move into, um... 221B Baker Street,</td><td>당신이 셜록과 함께... 베이커 가 221번지 B호에 산다면</td></tr>
+       <tr><td>37:42</td><td>I'd be happy to pay you a meaningful sum of money on a regular basis to ease your way.</td><td>경제적으로 도움이 되도록 선생에게 정기적으로 사례를 하고 싶습니다</td></tr>
+       <tr><td>37:48</td><td>Why?</td><td>왜죠?</td></tr>
+       <tr><td>37:48</td><td>Because you're not a wealthy man.</td><td>선생이 부자는 아니니까요</td></tr>
+       <tr><td>37:51</td><td>In exchange for what?</td><td>원하는 게 뭡니까?</td></tr>
+       <tr><td>37:53</td><td>Information.</td><td>정보요</td></tr>
+       <tr><td>37:55</td><td>Nothing indiscreet. Nothing you'd feel... Uncomfortable with. Just tell me what he's up to. </td><td>껄끄럽게 사소한 건 필요 없고 셜록의 근황만 알려 줘요</td></tr>
+       <tr><td>37:59</td><td>Why?</td><td>왜요?</td></tr>
+       <tr><td>38:02</td><td>I worry about him. Constantly.</td><td>그 녀석이 항상 걱정되거든요</td></tr>
+       <tr><td>38:06</td><td>That's nice of you.</td><td>고맙기도 하시지</td></tr>
+       <tr><td>38:08</td><td>But I would prefer for various reasons that my concern go unmentioned.</td><td>이런저런 이유가 있어서 그러니 셜록한테 비밀로 하면 좋겠군요</td></tr>
+       <tr><td>38:12</td><td>We have what you might call a... Difficult relationship.</td><td>우리는 뭐랄까... 꽤 복잡한 관계라서요</td></tr>
+       <tr><td>38:23</td><td>No.</td><td>됐습니다</td></tr>
+       <tr><td>38:23</td><td>But I haven't mentioned a figure.</td><td>액수도 말씀 안 드렸는데</td></tr>
+       <tr><td>38:25</td><td>Don't bother.</td><td>관심 없어요</td></tr>
+       <tr><td>38:27</td><td>You're very loyal very quickly.</td><td>벌써 우정이 싹 텄나요?</td></tr>
+       <tr><td>38:27</td><td>No, I'm not. I'm just not interested.</td><td>그냥 관심이 없어서요</td></tr>
+       <tr><td>38:36</td><td>"Trust issues," it says here.</td><td>불신증이 있다고 적혀 있던데...</td></tr>
+       <tr><td>38:42</td><td>What's that?</td><td>그게 뭐죠?</td></tr>
+       <tr><td>38:44</td><td>Could it be that you've decided to trust Sherlock Holmes of all people?</td><td>하필 셜록은 믿나 보군요</td></tr>
+       <tr><td>38:47</td><td>Who says I trust him?</td><td>누가 그럽니까?</td></tr>
+       <tr><td>38:49</td><td>You don't seem the kind to make friends easily.</td><td>사람과 쉽게 친해지지 못하는 것 같은데</td></tr>
+       <tr><td>38:51</td><td>Are we done?</td><td>할 말 끝났죠?</td></tr>
+       <tr><td>38:53</td><td>You tell me.</td><td>글쎄요</td></tr>
+       <tr><td>39:02</td><td>I imagine people have already warned you to stay away from him,</td><td>셜록을 멀리하라는 충고를 이미 들었을 텐데</td></tr>
+       <tr><td>39:05</td><td>but I can see from your left hand that's not going to happen.</td><td>왼손을 보니 충고를 들을 것 같지 않군요</td></tr>
+       <tr><td>39:11</td><td>My what?</td><td>뭐요?</td></tr>
+       <tr><td>39:11</td><td>Show me.</td><td>보여 줘요</td></tr>
+       <tr><td>39:25</td><td>Don't.</td><td>됐어요</td></tr>
+       <tr><td>39:34</td><td>Remarkable.</td><td>놀랍군요</td></tr>
+       <tr><td>39:34</td><td>What is?</td><td>뭐가요?</td></tr>
+       <tr><td>39:35</td><td>Most people blunder round this city, and all they see are streets and shops and cars.</td><td>사람들은 대부분 상점이나 자동차가 넘치는 도시의 화려함에 이끌리는데</td></tr>
+       <tr><td>39:43</td><td>When you walk with Sherlock Holmes, you see the battlefield.</td><td>선생은 셜록과 있으면 여기가 전장처럼 느껴지죠?</td></tr>
+       <tr><td>39:46</td><td>You've seen it already. Haven't you?</td><td>이미 경험했잖아요</td></tr>
+       <tr><td>39:46</td><td>What's wrong with my hand?</td><td>손 얘길 해 봐요</td></tr>
+       <tr><td>39:50</td><td>You have an intermittent tremor in your left hand. Your therapist thinks it's post-traumatic stress disorder. She thinks you're haunted by memories of your military service.</td><td>왼손이 간헐적으로 떨리는 증상이 있었고, 외상 후 스트레스 장애 진단을 받으셨어요. 주치의는 전쟁 후유증이라고 했죠</td></tr>
+       <tr><td>39:59</td><td>Who the hell are you?</td><td>대체 정체가 뭡니까?</td></tr>
+       <tr><td>40:03</td><td>How do you know that?</td><td>어떻게 안 거죠?</td></tr>
+       <tr><td>40:03</td><td>Fire her.</td><td>치료사 바꿔요</td></tr>
+       <tr><td>40:05</td><td>She's got it the wrong way round.</td><td>단단히 잘못 짚었죠</td></tr>
+       <tr><td>40:07</td><td>You're under stress right now and your hand is perfectly steady.</td><td>지금처럼 긴장된 상황에서는 손이 안 떨리잖아요</td></tr>
+       <tr><td>40:12</td><td>You're not haunted by the war, Dr Watson... You miss it.</td><td>전쟁 때문에 괴로운 게 아니라 전쟁터가 그리운 거예요</td></tr>
+       <tr><td>40:20</td><td>(WHISPERS) Welcome back.</td><td>돌아온 걸 환영해요</td></tr>
+       <tr><td>40:28</td><td>Time to choose a side, Dr Watson.</td><td>왓슨 박사 줄을 제대로 서요</td></tr>
+       <tr><td>40:40</td><td>I'm to take you home.</td><td>모셔다드릴게요</td></tr>
+       <tr><td>40:52</td><td>Address?</td><td>어디로 갈까요?</td></tr>
+       <tr><td>40:52</td><td>Uh, Baker Street. 221B Baker Street.</td><td>베이커 가요. 베이커 가 221번지 B호요</td></tr>
+       <tr><td>40:59</td><td>But I need to stop off somewhere first.</td><td>한 군데만 들렀다 가죠</td></tr>
+       <tr><td>41:29</td><td>Listen, your boss. Any chance you could not tell him this is where I went?</td><td>내가 어디로 갔는지 상관에게 비밀로 해 줄래요?</td></tr>
+       <tr><td>41:33</td><td>Sure.</td><td>그럼요</td></tr>
+       <tr><td>41:33</td><td>You've told him already, haven't you?</td><td>벌써 말했죠?</td></tr>
+       <tr><td>41:36</td><td>Yeah.</td><td>네</td></tr>
+       <tr><td>41:41</td><td>Hey um... Do you ever get any free time?</td><td>혹시... 시간 있어요?</td></tr>
+       <tr><td>41:45</td><td>(CHUCKLES) Oh, yeah. Lots.</td><td>차고 넘치죠</td></tr>
+       <tr><td>41:53</td><td>Bye...</td><td>잘 가요</td></tr>
+       <tr><td>41:53</td><td>Okay.</td><td>네</td></tr>
+       <tr><td>42:22</td><td>What are you doing?</td><td>뭐 하는 거예요?</td></tr>
+       <tr><td>42:27</td><td>Helps me think.</td><td>생각하는 데 도움이 되죠</td></tr>
+       <tr><td>42:29</td><td>Impossible to sustain a smoking habit in London these days.</td><td>요즘 런던에선 도무지 담배를 피울 수가 없다니까요</td></tr>
+       <tr><td>42:33</td><td>Bad news for brain work.</td><td>정신노동이 힘들어졌죠</td></tr>
+       <tr><td>42:33</td><td>It's good news for breathing.</td><td>숨쉬기는 편하잖아요</td></tr>
+       <tr><td>42:36</td><td>Breathing! Breathing's boring.</td><td>숨 쉬는 건 지루해요</td></tr>
+       <tr><td>42:36</td><td>Is that three patches?</td><td>세 개나 붙였어요?</td></tr>
+       <tr><td>42:39</td><td>It's a three-patch problem.</td><td>패치 세 개짜리 문제거든요</td></tr>
+       <tr><td>42:45</td><td>Well?</td><td>이봐요</td></tr>
+       <tr><td>42:49</td><td>You asked me to come, I'm assuming it's important.</td><td>중요한 일이 있으니까 부른 거겠죠?</td></tr>
+       <tr><td>42:52</td><td>Oh. Yeah, of course. Can I borrow your phone?</td><td>네, 그럼요 전화 좀 씁시다</td></tr>
+       <tr><td>42:56</td><td>My phone?</td><td>전화요?</td></tr>
+       <tr><td>42:56</td><td>Don't wanna use mine. Always a chance that my number will be recognised. It's on the website.</td><td>내 번호는 홈페이지에 있어서 들킬지도 모르거든요</td></tr>
+       <tr><td>43:00</td><td>Mrs Hudson's got a phone.</td><td>허드슨 부인 전화는요?</td></tr>
+       <tr><td>43:00</td><td>Yeah, she's downstairs. I tried shouting but she didn't hear.</td><td>아래층에 계시는데 불러도 못 듣더군요</td></tr>
+       <tr><td>43:03</td><td>I was the other side of London...</td><td>난 런던 반대편에 있었어요</td></tr>
+       <tr><td>43:03</td><td>There was no hurry.</td><td>급할 건 없었는데</td></tr>
+       <tr><td>43:09</td><td>Here.</td><td>여기요</td></tr>
+       <tr><td>43:15</td><td>So what's this about. The case?</td><td>사건 때문에 그래요?</td></tr>
+       <tr><td>43:17</td><td>Her case...</td><td>가방이요</td></tr>
+       <tr><td>43:19</td><td>Her case?</td><td>가방이요?</td></tr>
+       <tr><td>43:19</td><td>Her suitcase, yes, obviously.</td><td>네, 피살자 가방이요</td></tr>
+       <tr><td>43:22</td><td>The murderer took her suitcase, first big mistake.</td><td>살인범이 가방을 가져간 건 첫 번째 중대한 실수였어요</td></tr>
+       <tr><td>43:25</td><td>Okay, he took her case. So?</td><td>그래서 어쩔 건데요?</td></tr>
+       <tr><td>43:27</td><td>It's no use, there's no other way. We'll have to risk it.</td><td>다른 수가 없으니 위험을 감수해야죠</td></tr>
+       <tr><td>43:31</td><td>On my desk there's a number. I want you to send a text.</td><td>책상에 있는 번호로 문자 좀 보내 줘요</td></tr>
+       <tr><td>43:36</td><td>You've brought me here to send a text.</td><td>문자 보내라고 날 부른 거예요?</td></tr>
+       <tr><td>43:39</td><td>Text, yes. The number on my desk.</td><td>네, 책상에 있는 번호로 보내요</td></tr>
+       <tr><td>43:52</td><td>What's wrong?</td><td>왜 그래요?</td></tr>
+       <tr><td>43:52</td><td>Just met a friend of yours.</td><td>방금 당신 친구를 만났어요</td></tr>
+       <tr><td>43:55</td><td>A friend?</td><td>친구요?</td></tr>
+       <tr><td>43:55</td><td>An enemy.</td><td>적이요</td></tr>
+       <tr><td>43:57</td><td>Oh. Which one?</td><td>한둘이 아닌데, 누구요?</td></tr>
+       <tr><td>44:00</td><td>Well, your arch-enemy, (CLEARS THROAT) according to him. Do people have arch-enemies?</td><td>최대의 적이라던데 보통 사람한테 그런 적이 있나요?</td></tr>
+       <tr><td>44:06</td><td>Did he offer you money to spy on me?</td><td>날 염탐하면 돈 준대요?</td></tr>
+       <tr><td>44:08</td><td>Yes.</td><td>네</td></tr>
+       <tr><td>44:08</td><td>Did you take it?</td><td>수락했어요?</td></tr>
+       <tr><td>44:11</td><td>No.</td><td>아뇨</td></tr>
+       <tr><td>44:11</td><td>Pity, we could have split the fee. Think it through next time.</td><td>저런 같이 쓰면 됐을 텐데 다음부턴 신중히 처신해요</td></tr>
+       <tr><td>44:14</td><td>Who is he?</td><td>대체 누굽니까?</td></tr>
+       <tr><td>44:16</td><td>The most dangerous man you've ever met, and not my problem right now.</td><td>제일 위험한 인물인데 지금은 관심 밖이에요</td></tr>
+       <tr><td>44:18</td><td>On my desk, the number!</td><td>책상 위 번호로 문자 보내요</td></tr>
+       <tr><td>44:27</td><td>Jennifer Wilson. That was... Hang on. Wasn't that the dead woman?</td><td>제니퍼 윌슨? 잠깐만요 피살자 이름이잖아요</td></tr>
+       <tr><td>44:31</td><td>Yes. That's not important. Just enter the number.</td><td>신경 끄고 번호나 눌러요</td></tr>
+       <tr><td>44:34</td><td>Are you doing it?</td><td>하고 있어요?</td></tr>
+       <tr><td>44:34</td><td>Yes.</td><td>네</td></tr>
+       <tr><td>44:36</td><td>Have you done it?</td><td>했어요?</td></tr>
+       <tr><td>44:36</td><td>Yeah... Hang on!.</td><td>재촉하지 마요</td></tr>
+       <tr><td>44:39</td><td>These words exactly.</td><td>부르는 대로 입력해요</td></tr>
+       <tr><td>44:42</td><td>"What happened at Lauriston Gardens?"</td><td>'내가 왜 로리스톤 가든스에 있지?'</td></tr>
+       <tr><td>44:45</td><td>"I must have blacked out."</td><td>'기절했었나 봐'</td></tr>
+       <tr><td>44:47</td><td>"22 Northumberland St. Please come."</td><td>'노섬벌랜드 가 22번지로 빨리 와'</td></tr>
+       <tr><td>44:50</td><td>You blacked out?</td><td>기절했었어요?</td></tr>
+       <tr><td>44:52</td><td>What? No... No!</td><td>뭐요? 아니요</td></tr>
+       <tr><td>44:54</td><td>(SIGHS) Type and send it. Quickly.</td><td>빨리 좀 보내요</td></tr>
+       <tr><td>45:02</td><td>Have you sent it?</td><td>보냈어요?</td></tr>
+       <tr><td>45:02</td><td>What's the address?</td><td>주소가?</td></tr>
+       <tr><td>45:04</td><td>22 Northumberland St. Hurry up!</td><td>노섬벌랜드 가 22번지 서둘러요!</td></tr>
+       <tr><td>45:14</td><td>That's...</td><td>이건...</td></tr>
+       <tr><td>45:16</td><td>That's the pink lady's case, that's Jennifer Wilson's case.</td><td>피살자인 제니퍼 윌슨의 가방이죠?</td></tr>
+       <tr><td>45:19</td><td>Yes, obviously.</td><td>당연하죠</td></tr>
+       <tr><td>45:23</td><td>Oh, perhaps I should mention, I didn't kill her.</td><td>내가 안 죽였다고 해명부터 해야 했나요?</td></tr>
+       <tr><td>45:26</td><td>I never said you did.</td><td>누가 뭐래요?</td></tr>
+       <tr><td>45:28</td><td>Why not? Given that text I just had you send and the fact I have her case it's a perfectly logical assumption.</td><td>방금 보낸 문자에 가방까지 증거가 충분하잖아요</td></tr>
+       <tr><td>45:31</td><td>Do people usually assume you're the murderer?</td><td>살인자로 자주 의심받아요?</td></tr>
+       <tr><td>45:35</td><td>Now and then, yes.</td><td>이따금요</td></tr>
+       <tr><td>45:37</td><td>Okay...</td><td>그렇군요</td></tr>
+       <tr><td>45:41</td><td>How did you get this?</td><td>이건 어떻게 찾았어요?</td></tr>
+       <tr><td>45:41</td><td>By looking.</td><td>조사를 좀 했죠</td></tr>
+       <tr><td>45:43</td><td>Where?</td><td>어딜요?</td></tr>
+       <tr><td>45:44</td><td>The killer must have driven her to Lauriston Gardens.</td><td>놈은 로리스톤 가든스까지 왔는데</td></tr>
+       <tr><td>45:46</td><td>He could only keep her case by accident if it was in the car.</td><td>깜빡하고 가방을 차에 그냥 둔 거예요</td></tr>
+       <tr><td>45:49</td><td>Nobody could be seen with this case without drawing attention to themselves,</td><td>이런 가방을 갖고 다니면 주의를 끌게 마련이죠</td></tr>
+       <tr><td>45:51</td><td>particularly a man, which is statistically more likely.</td><td>특히 남자라면 더요 통계상으로 남자일 확률이 높죠</td></tr>
+       <tr><td>45:54</td><td>So obviously he'd feel compelled to get rid of it. The moment he noticed he still had it, wouldn't have taken him more than five minutes to realise his mistake.</td><td>그러니 가방을 본 즉시 버리려 했을 거예요. 차에 탄 지 5분도 안 돼 실수를 깨달았겠죠</td></tr>
+       <tr><td>46:01</td><td>I checked every backstreet wide enough for a car five minutes from Lauriston Gardens, and anywhere you could dispose of a bulky object without being observed.</td><td>사건 현장에서 차로 5분 거리 골목을 죄다 뒤졌어요. 부피가 큰 물건을 몰래 버릴 수 있는 곳들을요</td></tr>
+       <tr><td>46:09</td><td>Took me less than an hour to find the right skip.</td><td>1시간도 안 돼서 가방을 찾았죠</td></tr>
+       <tr><td>46:14</td><td>Pink. You got all that because you realised the case would be pink?</td><td>가방이 분홍색이라는 것만 알고 찾아낸 건가요?</td></tr>
+       <tr><td>46:17</td><td>Well, it had to be pink, obviously.</td><td>당연히 분홍색이죠</td></tr>
+       <tr><td>46:18</td><td>Why didn't I think of that?</td><td>난 왜 몰랐을까요?</td></tr>
+       <tr><td>46:18</td><td>Because you're an idiot.</td><td>멍청하니까요</td></tr>
+       <tr><td>46:21</td><td>No, no, no, don't look like that. Practically everyone is.</td><td>그렇게 보지 마요 남들도 다 멍청하니까</td></tr>
+       <tr><td>46:23</td><td>Now, look. Do you see what's missing?</td><td>뭐가 없어졌는지 알겠어요?</td></tr>
+       <tr><td>46:23</td><td>From the case? How could I?</td><td>가방 안에서요? 모르죠</td></tr>
+       <tr><td>46:28</td><td>Her phone. Where's her mobile phone? There was no phone on the body, there's no phone in the case.</td><td>휴대 전화가 없잖아요 시신에도 가방에도 없죠</td></tr>
+       <tr><td>46:32</td><td>We know she had one. That's her number there. You just texted it.</td><td>방금 문자 보냈듯이 전화는 있다고요</td></tr>
+       <tr><td>46:34</td><td>Maybe she left it at home.</td><td>집에 두고 왔을 수 있죠</td></tr>
+       <tr><td>46:36</td><td>She has a string of lovers and she's careful about it. She never leaves her phone at home.</td><td>불륜이 취미인 불륜녀가 절대 집에 뒀을 리 없어요</td></tr>
+       <tr><td>46:44</td><td>Why did I just send that text?</td><td>그럼 문자는 왜 보냈어요?</td></tr>
+       <tr><td>46:46</td><td>Well, the question is where is her phone now?</td><td>문제는 누가 지금 휴대 전화를 갖고 있느냐죠</td></tr>
+       <tr><td>46:49</td><td>She could have lost it.</td><td>잃어버렸나 보죠</td></tr>
+       <tr><td>46:49</td><td>Yes, or?</td><td>그게 아니면요?</td></tr>
+       <tr><td>46:53</td><td>The murderer... You think the murderer has the phone?</td><td>범인이 갖고 있다고 생각해요?</td></tr>
+       <tr><td>46:56</td><td>Maybe she left it when she left her case.</td><td>피해자가 차에 두고 내렸거나</td></tr>
+       <tr><td>46:59</td><td>Maybe he took it from her for some reason.</td><td>범인이 빼앗았겠죠</td></tr>
+       <tr><td>47:02</td><td>Either way, the balance of probability is the murderer has her phone.</td><td>아무튼 상황을 보건대 범인이 갖고 있을 확률이 높죠</td></tr>
+       <tr><td>47:13</td><td>A few hours after his last victim, and now he receives a text that can only be from her.</td><td>여자를 죽인 지 몇 시간 후에 여자한테 문자가 오다니</td></tr>
+       <tr><td>47:20</td><td>If somebody had just found that phone they'd ignore a text like that, but the murderer...</td><td>다른 사람 같으면 무시했겠지만 살인범이라면...</td></tr>
+       <tr><td>47:26</td><td>Would panic.</td><td>당황하겠죠</td></tr>
+       <tr><td>47:29</td><td>Have you talked to the police?</td><td>경찰에 말했어요?</td></tr>
+       <tr><td>47:31</td><td>Four people are dead, there isn't time to talk to the police.</td><td>네 명이 죽었는데 그럴 시간 없어요</td></tr>
+       <tr><td>47:33</td><td>So why are you talking to me?</td><td>그럼 나한테는 왜 말해요?</td></tr>
+       <tr><td>47:34</td><td>Mrs Hudson took my skull.</td><td>허드슨 부인이 두개골을 치웠어요</td></tr>
+       <tr><td>47:38</td><td>So I'm basically filling in for your skull?</td><td>내가 두개골 대신인가요?</td></tr>
+       <tr><td>47:38</td><td>Relax, you're doing fine.</td><td>훌륭한 대용품인데요</td></tr>
+       <tr><td>47:41</td><td>Well?</td><td>이제...</td></tr>
+       <tr><td>47:41</td><td>Well, what?</td><td>이제 뭐요?</td></tr>
+       <tr><td>47:43</td><td>Well, you could just sit there and watch telly.</td><td>앉아서 TV나 보든지요</td></tr>
+       <tr><td>47:46</td><td>What, you want me to come with you?</td><td>같이 가자는 거예요?</td></tr>
+       <tr><td>47:48</td><td>I like company when I go out, and I think better when I talk aloud.</td><td>대화하면서 생각하면 머리가 더 빨리 돌아가는데</td></tr>
+       <tr><td>47:50</td><td>The skull just attracts attention, so...</td><td>두개골은 너무 눈에 띄어서요</td></tr>
+       <tr><td>47:53</td><td>Problem?</td><td>문제 있어요?</td></tr>
+       <tr><td>47:53</td><td>Yeah, Sergeant Donovan.</td><td>도노반 경사요</td></tr>
+       <tr><td>47:56</td><td>What about her?</td><td>그 여자가 뭐요?</td></tr>
+       <tr><td>47:56</td><td>She said... You get off on this. You enjoy it.</td><td>당신이 이런 상황을 즐긴다고 하더군요</td></tr>
+       <tr><td>48:02</td><td>And I said "dangerous," and here you are.</td><td>위험하다고 했는데도 달려온 게 누구더라?</td></tr>
+       <tr><td>48:09</td><td>Damn it!</td><td>젠장</td></tr>
+       <tr><td>48:19</td><td>Where are we going?</td><td>어디 가는 거죠?</td></tr>
+       <tr><td>48:21</td><td>Northumberland St's a five minute walk from here.</td><td>노섬벌랜드 가는 걸어서 5분 거리죠</td></tr>
+       <tr><td>48:22</td><td>You think he's stupid enough to go there?</td><td>진짜 올 만큼 멍청할까요?</td></tr>
+       <tr><td>48:22</td><td>No, I think he's brilliant enough.</td><td>아뇨, 그만큼 똑똑한 거죠</td></tr>
+       <tr><td>48:26</td><td>I love the brilliant ones. They're all so desperate to get caught.</td><td>똑똑한 것들은 원래 잡히지 못해 안달하거든요</td></tr>
+       <tr><td>48:29</td><td>Why?</td><td>왜요?</td></tr>
+       <tr><td>48:31</td><td>Appreciation! Applause! At long last the spotlight.</td><td>감탄과 박수갈채 세간의 관심을 원하니까요</td></tr>
+       <tr><td>48:34</td><td>That's the frailty of genius, John, it needs an audience.</td><td>주목받길 원하는 게 천재들의 취약점이죠</td></tr>
+       <tr><td>48:36</td><td>Yeah.</td><td>그렇군요</td></tr>
+       <tr><td>48:38</td><td>This is his hunting ground. Right here in the heart of the city.</td><td>바로 이 도심 한가운데서 목표물을 사냥했어요</td></tr>
+       <tr><td>48:42</td><td>Now that we know his victims were abducted, that changes everything.</td><td>피해자가 납치된 걸 알았으니 상황이 전부 달라졌어요</td></tr>
+       <tr><td>48:45</td><td>Because all of his victims disappeared from busy streets, crowded places, but nobody saw them go.</td><td>다들 부산한 거리에서 사라졌는데도 목격자가 하나도 없었잖아요</td></tr>
+       <tr><td>48:51</td><td>Think! Who do we trust, even though we don't know them? Who passes unnoticed wherever they go? Who hunts in the middle of a crowd?</td><td>생각해 봐요 초면인데도 의심받지 않고, 어디를 가든 눈에 띄지 않는 사람, 인파 속에서 납치를 감행하는 사람</td></tr>
+       <tr><td>49:00</td><td>Don't know. Who?</td><td>모르겠는데, 누구죠?</td></tr>
+       <tr><td>49:02</td><td>Haven't the faintest. Hungry?</td><td>전혀 모르겠어요 배고파요?</td></tr>
+       <tr><td>49:08</td><td>Thank you, Billy.</td><td>빌리, 고마워요</td></tr>
+       <tr><td>49:14</td><td>22 Northumberland St. Keep your eyes on it.</td><td>노섬벌랜드 가 22번지를 계속 지켜봐요</td></tr>
+       <tr><td>49:18</td><td>He's not just going to ring the doorbell. He'd need to be mad.</td><td>미치지 않고서야 버젓이 나타나겠어요?</td></tr>
+       <tr><td>49:22</td><td>He has killed four people.</td><td>네 명을 죽인 놈이에요</td></tr>
+       <tr><td>49:24</td><td>Okay.</td><td>하긴</td></tr>
+       <tr><td>49:27</td><td>Sherlock! Anything on the menu, whatever you want, free.</td><td>셜록, 공짜로 줄 테니 아무거나 주문해요</td></tr>
+       <tr><td>49:31</td><td>On the house, for you and for your date.</td><td>데이트 식사비는 내가 대죠</td></tr>
+       <tr><td>49:33</td><td>Do you want to eat?</td><td>뭐 먹을래요?</td></tr>
+       <tr><td>49:33</td><td>I'm not his date.</td><td>데이트 아니에요</td></tr>
+       <tr><td>49:35</td><td>This man got me off a murder charge.</td><td>셜록이 살인 혐의를 벗겨 줬죠</td></tr>
+       <tr><td>49:37</td><td>This is Angelo. Three years ago I proved to Lestrade at the time of a particularly vicious triple murder</td><td>이쪽은 안젤로인데 3년 전에 내가 살인 혐의를 벗겨 줬어요</td></tr>
+       <tr><td>49:42</td><td>that Angelo was in a completely different part of town, house-breaking.</td><td>그때 안젤로는 반대편 동네를 털고 있었거든요</td></tr>
+       <tr><td>49:45</td><td>He cleared my name.</td><td>덕분에 결백을 증명했죠</td></tr>
+       <tr><td>49:45</td><td>I cleared it a bit.</td><td>살짝 도와준 거죠</td></tr>
+       <tr><td>49:47</td><td>Anything happening opposite?</td><td>건너편에는 별일 없죠?</td></tr>
+       <tr><td>49:47</td><td>Nothing.</td><td>네</td></tr>
+       <tr><td>49:50</td><td>But for this man, I'd have gone to prison.</td><td>셜록 덕분에 감옥행을 면했죠</td></tr>
+       <tr><td>49:50</td><td>You did go to prison.</td><td>감옥에 갔었잖아요</td></tr>
+       <tr><td>49:50</td><td>I'll get a candle for the table. It's more romantic.</td><td>로맨틱한 초를 갖다 줄게요</td></tr>
+       <tr><td>49:55</td><td>I'm not his date!</td><td>데이트 아니라니까요</td></tr>
+       <tr><td>49:59</td><td>You may as well eat. We might have a long wait.</td><td>오래 기다려야 할 테니 뭐라도 좀 먹어요</td></tr>
+       <tr><td>50:02</td><td>Thanks.</td><td>고마워요</td></tr>
+       <tr><td>50:11</td><td>People don't have arch-enemies.</td><td>보통 사람에게는 적이 없어요</td></tr>
+       <tr><td>50:15</td><td>I'm sorry?</td><td>네?</td></tr>
+       <tr><td>50:15</td><td>In real life.</td><td>현실에서 말이에요</td></tr>
+       <tr><td>50:17</td><td>There are no arch-enemies in real life. Doesn't happen.</td><td>보통 사람들에게 최대의 적 따윈 없어요</td></tr>
+       <tr><td>50:20</td><td>Doesn't it? Sounds a bit dull.</td><td>그래요? 엄청 따분하겠네</td></tr>
+       <tr><td>50:22</td><td>So who did I meet?</td><td>그 사람은 누구죠?</td></tr>
+       <tr><td>50:24</td><td>What do real people have, then, in their real lives?</td><td>보통 사람들에겐 누가 있죠?</td></tr>
+       <tr><td>50:29</td><td>Friends? People they know, people they like, people they don't like.</td><td>친구와 지인, 좋아하는 사람 싫어하는 사람...</td></tr>
+       <tr><td>50:35</td><td>Girlfriends, boyfriends.</td><td>남자친구, 여자친구</td></tr>
+       <tr><td>50:35</td><td>Yes, well, as I was saying... Dull.</td><td>역시 지루하기 짝이 없네요</td></tr>
+       <tr><td>50:39</td><td>You don't have a girlfriend, then.</td><td>여자친구 없어요?</td></tr>
+       <tr><td>50:41</td><td>Girlfriend? No, not really my area.</td><td>그런 거 없어요 여자한테 관심이 없거든요</td></tr>
+       <tr><td>50:46</td><td>Oh, right.</td><td>그렇군요</td></tr>
+       <tr><td>50:48</td><td>Do you have a boyfriend? Which is fine, by the way.</td><td>그럼 남자친구는요? 이상할 거 없잖아요</td></tr>
+       <tr><td>50:51</td><td>I know it's fine.</td><td>그건 나도 알아요</td></tr>
+       <tr><td>50:54</td><td>So you've got a boyfriend then.</td><td>남자친구 있어요?</td></tr>
+       <tr><td>50:54</td><td>No.</td><td>없어요</td></tr>
+       <tr><td>50:56</td><td>Right. Okay. (CHUCKLES)</td><td>그렇군요</td></tr>
+       <tr><td>50:59</td><td>You're unattached. Just like me.</td><td>나처럼 짝 없는 신세군요</td></tr>
+       <tr><td>51:03</td><td>Fine. (CLEARS THROAT) Good.</td><td>뭐, 좋아요</td></tr>
+       <tr><td>51:12</td><td>John, um...</td><td>존...</td></tr>
+       <tr><td>51:15</td><td>I think you should know that I consider myself married to my work, and while I'm flattered, I'm really not looking for any...</td><td>난 일과 결혼한 사람이에요 물론 마음은 고맙지만 그런 관계는...</td></tr>
+       <tr><td>51:19</td><td>No, I'm...not asking. No.</td><td>아니에요. 그런 뜻으로 물은 게 아니에요</td></tr>
+       <tr><td>51:24</td><td>I'm just saying, it's all fine.</td><td>나는 아무래도 상관없다고요</td></tr>
+       <tr><td>51:29</td><td>Good.</td><td>잘됐네요</td></tr>
+       <tr><td>51:32</td><td>Thank you.</td><td>고마워요</td></tr>
+       <tr><td>51:36</td><td>Look across the street. Taxi. It's stopped. Nobody getting in, and nobody getting out.</td><td>길 건너편에 택시가 섰어요 타고 내리는 사람도 없는데</td></tr>
+       <tr><td>51:42</td><td>Why a taxi?</td><td>왜 택시가 저기 있지?</td></tr>
+       <tr><td>51:44</td><td>Oh, that's clever.</td><td>영리하군</td></tr>
+       <tr><td>51:44</td><td>Is it clever? Why is it clever?</td><td>왜 영리하지?</td></tr>
+       <tr><td>51:44</td><td>That's him.</td><td>저놈이에요</td></tr>
+       <tr><td>51:48</td><td>Don't stare.</td><td>쳐다보지 마요</td></tr>
+       <tr><td>51:48</td><td>You're staring.</td><td>당신은 보고 있잖아요</td></tr>
+       <tr><td>51:50</td><td>We can't both stare.</td><td>둘 다 보면 안 돼요</td></tr>
+       <tr><td>52:15</td><td>Sorry.</td><td>죄송합니다</td></tr>
+       <tr><td>52:17</td><td>I've got the cab number.</td><td>차량 번호 외워 뒀어요</td></tr>
+       <tr><td>52:17</td><td>Good for you.</td><td>잘했네요</td></tr>
+       <tr><td>52:42</td><td>Come on, John. We're losing him!</td><td>빨리 와요, 존! 이러다 놓쳐요!</td></tr>
+       <tr><td>53:33</td><td>Oh! This way.</td><td>이쪽이에요!</td></tr>
+       <tr><td>53:36</td><td>No, this way!</td><td>아니, 이쪽!</td></tr>
+       <tr><td>53:36</td><td>Sorry.</td><td>미안해요</td></tr>
+       <tr><td>54:04</td><td>Police! Open her up.</td><td>경찰이다, 문 열어</td></tr>
+       <tr><td>54:10</td><td>No...</td><td>아니야</td></tr>
+       <tr><td>54:11</td><td>Teeth, tan. What, Californian?</td><td>치아 상태, 그을린 피부... 캘리포니아 사람입니까?</td></tr>
+       <tr><td>54:15</td><td>LA, Santa Monica. Just arrived.</td><td>LA 샌타모니카에서 방금 도착했군요</td></tr>
+       <tr><td>54:17</td><td>How could you possibly know that?</td><td>어떻게 알죠?</td></tr>
+       <tr><td>54:17</td><td>The luggage.</td><td>가방을 봤어요</td></tr>
+       <tr><td>54:20</td><td>Ah, probably your first trip to London, right?</td><td>런던은 처음이시죠?</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
      </table>
  </body>
