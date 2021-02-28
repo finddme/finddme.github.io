@@ -19,38 +19,38 @@ tag: English
        <tr><th>Time</th><th>Subtitle</th><th>Translation</th></tr>
        <tr><td>12s</td><td>(YELLS)</td><td>-</td></tr>
        <tr><td>18s</td><td>(INDISTINCT SPEECH)</td><td>-</td></tr>
-       <tr><td>1:33</td><td><span style="color:#BDB8C1">THERAPIST:</span> How's your blog going?</td><td>"존 H. 왓슨 박사의 개인 블로그" 블로그는 어때요?</td></tr>
-       <tr><td>1:36</td><td><span style="color:#BDB8C1">WATSON:</span> Yeah, good. (CLEARS THROAT) Very good.</td><td>네, 좋아요 잘하고 있습니다.</td></tr>
-       <tr><td>1:40</td><td><span style="color:#BDB8C1">Therapist:</span> You haven't written a word, have you?</td><td>아직 하나도 안 쓰셨죠?</td></tr>
-       <tr><td>1:41</td><td><span style="color:#BDB8C1">WATSON:</span> You just wrote, "Still has trust <span style="background-color:#EDDBD8">issues</span>."<br><blockquote>인용구가 먹히나</blockquote></td><td>불신증이 남아 있다고 썼죠?</td></tr>
-       <tr><td>1:44</td><td><span style="color:#BDB8C1">Therapist:</span> And you read my writing upside down.</td><td>거꾸로 보이는 글씨까지 훔쳐보시잖아요.</td></tr>
-       <tr><td>1:48</td><td><span style="color:#BDB8C1">Therapist:</span> You see what I mean?</td><td>무슨 말인지 아시겠죠?</td></tr>
-       <tr><td>1:51</td><td><span style="color:#BDB8C1">Therapist:</span> John,</td><td>존,</td></tr>
-       <tr><td>1:54</td><td><span style="color:#BDB8C1">Therapist:</span> you're a soldier</td><td>당신은 군인이에요.</td></tr>
-       <tr><td>1:56</td><td><span style="color:#BDB8C1">Therapist:</span> and it's going to take you a while to <span style="background-color:#EDDBD8">adjust to</span> civilian life.</td><td>민간인 생활에 적응하려면 시간이 좀 걸릴 거예요.</td></tr>
-       <tr><td>2:00</td><td><span style="color:#BDB8C1">Therapist:</span> And writing a blog about everything that happens to you will honestly help you.</td><td>블로그를 일기장처럼 활용하면 도움이 될 거라 생각해요.</td></tr>
-       <tr><td class="line">2:06</td><td class="line"><span style="color:#BDB8C1">WATSON:</span> Nothing happens to me.</td><td class="line">쓸거리가 전혀 없는걸요.</td></tr>
-       <tr><td>2:46</td><td><span style="color:#BDB8C1">JEFFREY:</span> What do you mean there's no ruddy car?</td><td>차가 없다니 무슨 소리야?</td></tr>
-       <tr><td>2:46</td><td><span style="color:#BDB8C1">Woman:</span> He went to Waterloo, I'm sorry.</td><td>워털루로 갔대, 미안</td></tr>
-       <tr><td>2:49</td><td><span style="color:#BDB8C1">Woman:</span> Get a cab! </td><td>택시 타</td></tr>
-       <tr><td>2:49</td><td><span style="color:#BDB8C1">JEFFREY:</span> I never get cabs!</td><td>나 택시 안 타잖아</td></tr>
-       <tr><td>2:53</td><td><span style="color:#BDB8C1">Woman:</span> I love you</td><td>사랑해</td></tr>
-       <tr><td>2:53</td><td><span style="color:#BDB8C1">JEFFREY:</span> When?</td><td>언제 올 거야?</td></tr>
-       <tr><td class="line">2:55</td><td class="line"><span style="color:#BDB8C1">Woman:</span> (LAUGHING) Get a cab!</td><td class="line">택시 타라니까!</td></tr>
-       <tr><td>3:17</td><td><span style="color:#BDB8C1">MARGARET:</span> "My husband was a happy man who <span style="background-color:#EDDBD8">lived life to the full</span>. </td><td>"남편은 행복한 사람이었습니다."</td></tr>
-       <tr><td class="line">3:24</td><td class="line"><span style="color:#BDB8C1">MARGARET:</span> "He loved his family and his work. And that he should have taken his own life in this way is a mystery and a shock to all who knew him."</td><td class="line">"충실한 삶을 살았고 가족과 일을 사랑했죠. 그가 이런 식으로 목숨을 끊다니 남편을 아는 모든 사람에게는 이해할 수 없는 충격적인 일입니다."</td></tr>
-       <tr><td>3:50</td><td><span style="color:#BDB8C1">Boy1:</span> Yes, yes, taxi. (WHISTLES)</td><td>택시, 택시!</td></tr>
-       <tr><td>3:56</td><td><span style="color:#BDB8C1">Boy2:</span> I'll be back in two minutes, <span style="background-color:#EDDBD8">mate</span>.</td><td>잠깐만 기다려</td></tr>
-       <tr><td>3:56</td><td><span style="color:#BDB8C1">Boy1:</span> What?</td><td>뭐?</td></tr>
-       <tr><td>3:58</td><td><span style="color:#BDB8C1">Boy2:</span> I'm just going home to get my umbrella.</td><td>집에 가서 우산 가져올게.</td></tr>
-       <tr><td>3:58</td><td><span style="color:#BDB8C1">Boy1:</span> You can share mine.</td><td>같이 쓰면 되잖아</td></tr>
-       <tr><td class="line">4:01</td><td class="line"><span style="color:#BDB8C1">Boy2:</span> Two minutes, all right?</td><td class="line">2분이면 돼</td></tr>
-       <tr><td>4:38</td><td><span style="color:#BDB8C1">Man:</span> She still dancing?</td><td>아직도 춤추셔?</td></tr>
-       <tr><td>4:38</td><td><span style="color:#BDB8C1">Woman:</span> Yeah, if you can call it that.</td><td>막춤 말이야?</td></tr>
+       <tr><td>1:33</td><td><span style="color:#BDB8C1">[THERAPIST]</span> How's your blog going?</td><td>"존 H. 왓슨 박사의 개인 블로그" 블로그는 어때요?</td></tr>
+       <tr><td>1:36</td><td><span style="color:#BDB8C1">[WATSON]</span> Yeah, good. (CLEARS THROAT) Very good.</td><td>네, 좋아요 잘하고 있습니다.</td></tr>
+       <tr><td>1:40</td><td><span style="color:#BDB8C1">[Therapist]</span> You haven't written a word, have you?</td><td>아직 하나도 안 쓰셨죠?</td></tr>
+       <tr><td>1:41</td><td><span style="color:#BDB8C1">[WATSON]</span> You just wrote, "Still has trust <span style="background-color:#EDDBD8">issues</span>."<br><blockquote>인용구가 먹히나</blockquote></td><td>불신증이 남아 있다고 썼죠?</td></tr>
+       <tr><td>1:44</td><td><span style="color:#BDB8C1">[Therapist]</span> And you read my writing upside down.</td><td>거꾸로 보이는 글씨까지 훔쳐보시잖아요.</td></tr>
+       <tr><td>1:48</td><td><span style="color:#BDB8C1">[Therapist]</span> You see what I mean?</td><td>무슨 말인지 아시겠죠?</td></tr>
+       <tr><td>1:51</td><td><span style="color:#BDB8C1">[Therapist]</span> John,</td><td>존,</td></tr>
+       <tr><td>1:54</td><td><span style="color:#BDB8C1">[Therapist]</span> you're a soldier</td><td>당신은 군인이에요.</td></tr>
+       <tr><td>1:56</td><td><span style="color:#BDB8C1">[Therapist]</span> and it's going to take you a while to <span style="background-color:#EDDBD8">adjust to</span> civilian life.</td><td>민간인 생활에 적응하려면 시간이 좀 걸릴 거예요.</td></tr>
+       <tr><td>2:00</td><td><span style="color:#BDB8C1">[Therapist]</span> And writing a blog about everything that happens to you will honestly help you.</td><td>블로그를 일기장처럼 활용하면 도움이 될 거라 생각해요.</td></tr>
+       <tr><td class="line">2:06</td><td class="line"><span style="color:#BDB8C1">[WATSON]</span> Nothing happens to me.</td><td class="line">쓸거리가 전혀 없는걸요.</td></tr>
+       <tr><td>2:46</td><td><span style="color:#BDB8C1">[JEFFREY]</span> What do you mean there's no ruddy car?</td><td>차가 없다니 무슨 소리야?</td></tr>
+       <tr><td>2:46</td><td><span style="color:#BDB8C1">[Woman]</span> He went to Waterloo, I'm sorry.</td><td>워털루로 갔대, 미안</td></tr>
+       <tr><td>2:49</td><td><span style="color:#BDB8C1">[Woman]</span> Get a cab! </td><td>택시 타</td></tr>
+       <tr><td>2:49</td><td><span style="color:#BDB8C1">[JEFFREY]</span> I never get cabs!</td><td>나 택시 안 타잖아</td></tr>
+       <tr><td>2:53</td><td><span style="color:#BDB8C1">[Woman]</span> I love you</td><td>사랑해</td></tr>
+       <tr><td>2:53</td><td><span style="color:#BDB8C1">[JEFFREY]</span> When?</td><td>언제 올 거야?</td></tr>
+       <tr><td class="line">2:55</td><td class="line"><span style="color:#BDB8C1">[Woman]</span> (LAUGHING) Get a cab!</td><td class="line">택시 타라니까!</td></tr>
+       <tr><td>3:17</td><td><span style="color:#BDB8C1">[MARGARET]</span> "My husband was a happy man who <span style="background-color:#EDDBD8">lived life to the full</span>. </td><td>"남편은 행복한 사람이었습니다."</td></tr>
+       <tr><td class="line">3:24</td><td class="line"><span style="color:#BDB8C1">[MARGARET]</span> "He loved his family and his work. And that he should have taken his own life in this way is a mystery and a shock to all who knew him."</td><td class="line">"충실한 삶을 살았고 가족과 일을 사랑했죠. 그가 이런 식으로 목숨을 끊다니 남편을 아는 모든 사람에게는 이해할 수 없는 충격적인 일입니다."</td></tr>
+       <tr><td>3:50</td><td><span style="color:#BDB8C1">[Boy1]</span> Yes, yes, taxi. (WHISTLES)</td><td>택시, 택시!</td></tr>
+       <tr><td>3:56</td><td><span style="color:#BDB8C1">[Boy2]</span> I'll be back in two minutes, <span style="background-color:#EDDBD8">mate</span>.</td><td>잠깐만 기다려</td></tr>
+       <tr><td>3:56</td><td><span style="color:#BDB8C1">[Boy1]</span> What?</td><td>뭐?</td></tr>
+       <tr><td>3:58</td><td><span style="color:#BDB8C1">[Boy2]</span> I'm just going home to get my umbrella.</td><td>집에 가서 우산 가져올게.</td></tr>
+       <tr><td>3:58</td><td><span style="color:#BDB8C1">[Boy1]</span> You can share mine.</td><td>같이 쓰면 되잖아</td></tr>
+       <tr><td class="line">4:01</td><td class="line"><span style="color:#BDB8C1">[Boy2]</span> Two minutes, all right?</td><td class="line">2분이면 돼</td></tr>
+       <tr><td>4:38</td><td><span style="color:#BDB8C1">[Man]</span> She still dancing?</td><td>아직도 춤추셔?</td></tr>
+       <tr><td>4:38</td><td><span style="color:#BDB8C1">[Woman]</span> Yeah, if you can call it that.</td><td>막춤 말이야?</td></tr>
        <tr><td>4:41</td><td>Did you get the car keys off her?</td><td>차 열쇠는 챙겼어?</td></tr>
        <tr><td>4:41</td><td>(SIGHS) Got them out of her bag.</td><td>차관님 가방에서 꺼냈어</td></tr>
        <tr><td>4:46</td><td>Where is she?</td><td>어디 계시지?</td></tr>
-       <tr><td>5:02</td><td>DONOVAN: The body of Beth Davenport, Junior Minister for Transport,</td><td>대븐포트 교통부 차관이 어젯밤 건축 부지에서 시신으로 발견됐습니다</td></tr>
+       <tr><td>5:02</td><td>[DONOVAN] The body of Beth Davenport, Junior Minister for Transport,</td><td>대븐포트 교통부 차관이 어젯밤 건축 부지에서 시신으로 발견됐습니다</td></tr>
        <tr><td>5:06</td><td>was found late last night on a building site in Greater London.</td><td>어젯밤 건축 부지에서시신으로 발견됐습니다"</td></tr>
        <tr><td>5:09</td><td>Preliminary investigations suggest that this was suicide.</td><td>초동 수사 결과사인은 자살인 듯하지만</td></tr>
        <tr><td>5:13</td><td>We can confirm that this apparent suicide</td><td>"제프리 피터슨과제임스 필리모어의 자살 사건과"</td></tr>
