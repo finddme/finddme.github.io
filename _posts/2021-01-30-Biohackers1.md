@@ -186,27 +186,27 @@ tag: Deutsch
        <tr><td>16:14</td><td>Und was machst du dann mit der Maus?</td><td>그런데 얘를 왜 데리고 있어요?/ 그럼 얘로 뭐하는거예요?</td></tr>
        <tr><td>16:14</td><td>Ich hab sie gerettet.</td><td>내가 얘를 구출했거든</td></tr>
        <tr><td>16:17</td><td>Du Held.</td><td>영웅이군요</td></tr>
-       <tr><td>16:18</td><td>Genveränderte Tiere <span style="background-color:#EDDBD8">müssen</span> nach Experimenten <span style="background-color:#EDDBD8">entsorgt werden</span>.<blockquote>&#10004; 화법조동사 수동태</blockquote></td><td>유전자변형동물은 폐기 처분되어야 해</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
+       <tr><td>16:18</td><td>Genveränderte Tiere <span style="background-color:#EDDBD8">müssen</span> nach Experimenten <span style="background-color:#EDDBD8">entsorgt werden</span>.<br><blockquote>&#10004; 화법조동사 수동태</blockquote></td><td>유전자변형동물은 폐기 처분되어야 해</td></tr>
+       <tr><td>16:21</td><td>Ich wollte schon immer ein Haustier.</td><td>난 늘 반려동물을 키우고 싶었거든</td></tr>
+       <tr><td>16:23</td><td>Und einen leuchtenden Husky hatten sie leider nicht.</td><td>안타깝게도 야광 허스키는 없더라</td></tr>
+       <tr><td>16:30</td><td>Wie ist es so, für Lorenz zu arbeiten?</td><td>로렌츠와 일하는 건 어때요?</td></tr>
+       <tr><td>16:30</td><td>Ganz cool.</td><td>아주 좋아</td></tr>
+       <tr><td>16:33</td><td>Sie stellt manchmal Medizinstudenten als Hiwis ein, für klinische Studien.</td><td>임상 실험할 때 의대생 조교도 고용한다면서요</td></tr>
+       <tr><td>16:37</td><td>Ja, manchmal. Dann musst du sie richtig beeindrucken.</td><td>가끔, 박사님 눈에 확실히 든다면 말이지</td></tr>
+       <tr><td>16:42</td><td>Kommst du heute Abend zur... </td><td>오늘 저녁에... </td></tr>
+       <tr><td>16:42</td><td>Kommst du heut... Ersti-Party?</td><td>혹시 너도... 신입생 파티에 가?</td></tr>
+       <tr><td>16:46</td><td>Vielleicht.</td><td>아마도요</td></tr>
+       <tr><td>16:50</td><td>Dann bis später, oder? Vielleicht.</td><td>나중에 보자, 아마도</td></tr>
+       <tr><td>17:18</td><td>Hi!</td><td>안녕!</td></tr>
+       <tr><td>17:19</td><td>Hey.</td><td>응</td></tr>
+       <tr><td>17:21</td><td>Spannendes Ding?</td><td>재밌는거야?</td></tr>
+       <tr><td>17:22</td><td>Ist nicht klar, mit wem die Oligonukleotiden zusammenkommen, aber ich lass es dich wissen.</td><td>올리고핵산염이 누구랑 합치는지 확실하지 않아, 나중에 알게되면 알려줄게</td></tr>
+       <tr><td>17:27</td><td>Es gibt wirklich interessantere Dinge, die man an seinem ersten Tag an der Uni machen kann.</td><td>대학에서 보내는 첫날인데 훨씬 더 재미있는 일을 해야지</td></tr>
+       <tr><td>17:31</td><td>Ich weiß.</td><td>알아</td></tr>
+       <tr><td>17:31</td><td>Wie beruhigend.</td><td>안심이 된다</td></tr>
+       <tr><td>17:33</td><td>Also kommst du mit zur Ersti-Party?</td><td>신입생 파티에 같이 갈 거지?</td></tr>
+       <tr><td>17:35</td><td>Ich hab morgen direkt Lorenz' Seminar und ich brauch noch eine <span style="background-color:#EDDBD8">zündende</span> Idee.<br><blockquote>&#10004; zünden의 분사형태(형용사)<br>zünden 점화하다, 불을 붙이다<br>zündend: -d(능동의 의미) 점화하는, 불을 붙이는<br> = sparkling 빛나는, 반짝이는</blockquote></td><td>내일 바로 로렌츠 수업이 있는데 반짝이는 아이디어가 필요해</td></tr>
+       <tr><td>17:39</td><td>Mm-mm. Mm-mm. Nee.</td><td>응 아니야~</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
