@@ -143,50 +143,50 @@ tag: Deutsch
        <tr><td>11:20</td><td>Hm?</td><td>네 거기</td></tr>
        <tr><td>11:20</td><td>Gentherapien?</td><td>유전자치료인가요?</td></tr>
        <tr><td>11:23</td><td>Was ist dafür die Basis?</td><td>그 기본이 되는 건 뭘까요?</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
+       <tr><td>11:25</td><td>Synthetische Biologie?</td><td>합성생물학요</td></tr>
+       <tr><td>11:29</td><td>Synthetische Biologie. Was ist das?</td><td>합성생물학 그게 뭐죠?</td></tr>
+       <tr><td>11:34</td><td>Ja?</td><td>거기</td></tr>
+       <tr><td>11:34</td><td>Mit synthetischer Biologie kann man existierende Lebensformen abändern oder neue schaffen.</td><td>합성생물학으로 존재하는 생명체를 바꾸고 새로운 종을 만들 수 있죠</td></tr>
+       <tr><td>11:40</td><td>Leute, denkt nicht so klein!</td><td>여러분, 좀 더 크게 생각해요!</td></tr>
+       <tr><td>11:43</td><td>Synthetische Biologie macht uns <span style="background-color:#EDDBD8">von</span> Geschöpfen <span style="background-color:#EDDBD8">zu</span> Schöpfern.<br><blockquote>&#10004; von- zu- -에서 -로</blockquote></td><td>합성생물학은 우리를 창조물에서 창조자로 만듭니다</td></tr>
+       <tr><td>11:50</td><td>Das ist nicht nur die Zukunft der Medizin, sondern der Menschheit.</td><td>단지 의학의 미래가 아니라 인류의 미래란 거죠</td></tr>
+       <tr><td>11:54</td><td>Wir können Krankheiten verhindern, bevor sie ausbrechen, können für Chancengleichheit über Grenzen und Gesellschaftsschichten hinaus sorgen.</td><td>우린 질병이 발생하기 전에 예방할 수 있어요. 국경과 사회 계급을 초월하는 공평한 기회를 제공하죠</td></tr>
+       <tr><td>12:04</td><td>Erbkrankheiten ausrotten.</td><td>유전질환을 제거합니다</td></tr>
+       <tr><td>12:08</td><td>Oder wenn wir unseren Beruf nicht richtig machen, die ganze Menschheit.</td><td>혹은 전 인류를 없앨 수 있죠 제대로 못 하면 말이에요</td></tr>
+       <tr><td>12:13</td><td>Es ist unsere Verantwortung, die Welt der Zukunft zu gestalten.</td><td>미래 세계를 창조하는 것이 우리의 의무입니다</td></tr>
+       <tr><td>12:18</td><td>Eure Verantwortung.</td><td>여러분의 의무죠</td></tr>
+       <tr><td>12:20</td><td>Ihr seid die Schöpfer von morgen.</td><td>여러분이 내일의 창조자입니다</td></tr>
+       <tr><td>12:23</td><td>[Studentin] Und was ist mit Gott?</td><td>신은 어떻게 되죠?</td></tr>
+       <tr><td>12:26</td><td>Ganz ehrlich?</td><td>솔직히 말할까요?</td></tr>
+       <tr><td>12:29</td><td>Wir machen Gott <span style="background-color:#EDDBD8">obsolet</span>.<br><blockquote>&#10004; obsolet 쓸모없는, 낡은, 시대에 뒤떨어진<br> 직역: 우리는 신을 쓸모없게 만들 것이다.</blockquote></td><td>신은 필요 없어질 겁니다</td></tr>
+       <tr><td>12:37</td><td>[Arzt] Midazolam IV, Notfall-CT vorbereiten.</td><td>미다졸람 정맥주사와 응급 CT 촬영 준비해</td></tr>
+       <tr><td>12:48</td><td>[Mann über Lautsprecher] Dr. Lorenz, bitte in den <span style="background-color:#EDDBD8">Schockraum</span>.<br><blockquote>&#10004; Schockraum<br> = ER(emergency room)</blockquote></td><td>로렌츠 박사님, 응급실로 와주세요</td></tr>
+       <tr><td>12:53</td><td>Dr. Lorenz, bitte in den Schockraum. Dr. Lorenz bitte.</td><td>로렌츠 박사님, 응급실 호출입니다</td></tr>
+       <tr><td>13:01</td><td>[Lorenz] Mein <span style="background-color:#EDDBD8">Hiwi</span> Jasper gibt euch Aufgaben. Bitte bis morgen vorstellen.<br><blockquote>&#10004; Hiwi<br> = assistant, 대학 조교</blockquote></td><td>조교인 야스퍼가 과제를 줄 테니 조사해서 내일 발표하세요</td></tr>
+       <tr><td>13:06</td><td>Er gehört <span style="background-color:#EDDBD8">quasi</span> mir, ich leih ihn euch aus.<br><blockquote>&#10004; quasi<br> = quasi, 준-, 유사-</blockquote> </td><td>내 개인 조교지만 당분간 여러분을 도울 겁니다</td></tr>
+       <tr><td>13:09</td><td>Falls ihr Fragen habt, fragt ihn.</td><td>질문이 있을 경우, 이 친구에게 해요</td></tr>
+       <tr><td>14:08</td><td>[Mann über Lautsprecher] Die Bibliothek bald. Bitte <span style="background-color:#EDDBD8">begeben</span> Sie <span style="background-color:#EDDBD8">sich</span> zum Ausgang.<br><blockquote>&#10004; sich begeben (어디로) 가다</blockquote></td><td>곧 도서관 문을 닫습니다 출구로 나가주세요</td></tr>
+       <tr><td>14:26</td><td>[Jasper] Hey, bleib stehen!</td><td>야, 거기 서!</td></tr>
+       <tr><td>14:30</td><td>Hallo?</td><td>누구세요?</td></tr>
+       <tr><td>14:32</td><td>[Jasper] Das ist nicht dein Ernst.</td><td>이럴 거냐?</td></tr>
+       <tr><td>14:52</td><td>Hallo?</td><td>저기요</td></tr>
+       <tr><td>15:22</td><td>Wer bist denn du, kleiner Freund?</td><td>넌 누구니, 꼬마야?</td></tr>
+       <tr><td>15:25</td><td>Das ist meiner.</td><td>그거 내 거야</td></tr>
+       <tr><td>15:26</td><td>Scheiße!</td><td>젠장!</td></tr>
+       <tr><td>15:29</td><td>Warte!</td><td>잠깐만요!</td></tr>
+       <tr><td>15:31</td><td>Mendel darf <span style="background-color:#EDDBD8">auf gar keinen Fall</span> abhauen.<br><blockquote>&#10004; auf gar keinen Fall<br> 어떤 경우에도, 무슨 일이 있어도, 꼭</blockquote></td><td>멘델을 꼭 잡아야 해!</td></tr>
+       <tr><td>15:31</td><td>Mendel?</td><td>멘델?</td></tr>
+       <tr><td>15:33</td><td>Die Maus.</td><td>그 쥐!</td></tr>
+       <tr><td>15:33</td><td>Ok.</td><td>알았어요</td></tr>
+       <tr><td>16:05</td><td>Warum leuchtet Mendel?</td><td>멘델이 왜 빛이 나죠?</td></tr>
+       <tr><td>16:05</td><td>Vielleicht hat er Angst im Dunkeln?</td><td>어두운 게 무섭나 보지</td></tr>
+       <tr><td>16:08</td><td>Weil er ein Gen für fluoreszierendes Protein in sich hat.</td><td>체내에 형광단백질 유전자가 있어</td></tr>
+       <tr><td>16:11</td><td>Hast du's synthetisiert?</td><td>체내에 형광단백질 유전자가 있어</td></tr>
+       <tr><td>16:13</td><td>Nee. <span style="background-color:#EDDBD8">Könnte</span> ich aber.<br><blockquote>&#10004; koennen의 접속법 2식(주관적 용법)<br>주관적 용법은 원래 추측 한 숟가락 넣으면 됨.<br>직역: 할 수 있을 거야/ 할 수 있겠지만. 하지만 아니</blockquote></td><td>할 순 있지만 내가 안 했어</td></tr>
+       <tr><td>16:14</td><td>Und was machst du dann mit der Maus?</td><td>그런데 얘를 왜 데리고 있어요?/ 그럼 얘로 뭐하는거예요?</td></tr>
+       <tr><td>16:14</td><td>Ich hab sie gerettet.</td><td>내가 얘를 구출했거든</td></tr>
+       <tr><td>16:17</td><td>Du Held.</td><td>영웅이군요</td></tr>
+       <tr><td>16:18</td><td>Genveränderte Tiere <span style="background-color:#EDDBD8">müssen</span> nach Experimenten <span style="background-color:#EDDBD8">entsorgt werden</span>.<blockquote>&#10004; 화법조동사 수동태</blockquote></td><td>유전자변형동물은 폐기 처분되어야 해</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
