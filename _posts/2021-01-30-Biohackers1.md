@@ -114,7 +114,7 @@ tag: Deutsch
        <tr><td>9:01</td><td><span style="background-color:#EDDBD8">(Wenn)</span>Kriegen wir eine Lebensmittelvergiftung, kannst du uns retten.<br><blockquote>&#10004; Wenn 생략<br> Wenn wir eine Lebensmittelvergiftung kreigen, kannst du uns retten.</blockquote></td><td>우리 식중독 걸리면 네가 구해주면 되겠다</td></tr>
        <tr><td>9:06</td><td>Ich lach komisch. Ich nehm's als <span style="background-color:#EDDBD8">Kompliment</span>.<br><blockquote>&#10004; Kompliment<br>공손한 말, 빈말<br>e.g. Vielen Dank für das Kompliment.칭찬해 주셔서 감사합니다.</blockquote></td><td>나 웃음소리 이상한데 같이 웃어주니 좋네</td></tr>
        <tr><td>9:09</td><td>Meine Eltern zogen mich damit auf.</td><td>부모님은 그것 가지고 날 놀리셨어</td></tr>
-       <tr><td>9:11</td><td>Ich hab keine Geschwister, wegen Ein-Kind-Policy, <span style="background-color:#EDDBD8">wäre</span> die Hölle. Ich wurde in der Schule verarscht.<br><blockquote>&#10004; war의 접속법 2식<br> Ich hab keine Geschwister, (es) waere die Hoelle. 직역: 나는 형제가 없다. 있었다면 지옥이었을 것이다.</td><td>다행히 한 자녀 정책 때문에 형제가 없어서 왕따는 학교에서만 당했지</td></tr>
+       <tr><td>9:11</td><td>Ich hab keine Geschwister, wegen Ein-Kind-Policy, <span style="background-color:#EDDBD8">wäre</span> die Hölle. Ich wurde in der Schule verarscht.<br><blockquote>&#10004; war의 접속법 2식<br> Ich hab keine Geschwister, (es) waere die Hoelle. 직역: 나는 형제가 없다. 있었다면 지옥이었을 것이다.</blockquote></td><td>다행히 한 자녀 정책 때문에 형제가 없어서 왕따는 학교에서만 당했지</td></tr>
        <tr><td>9:15</td><td>Ich hab kapiert, was uns unterscheidet, ist das, was uns ausmacht.</td><td>하지만 사람을 특별하게 해주는 건 공통점이 아니라 차이점이잖아</td></tr>
        <tr><td>9:19</td><td>Findest du nicht?</td><td>안 그래?</td></tr>
        <tr><td>9:21</td><td>Doch.</td><td>맞아</td></tr>
