@@ -239,7 +239,7 @@ tag: Deutsch
        <tr><td>20:38</td><td>Wie lange hält das mit deinen Tropfen?</td><td>네 약물 효과는 얼마나 가는 거야?</td></tr>
        <tr><td>20:38</td><td>icht mehr lang.</td><td>얼마 안 남았어</td></tr>
        <tr><td>20:40</td><td>Sagtest du vor 'ner Stunde.</td><td>1시간 전에도 한 말이지</td></tr>
-       <tr><td>20:42</td><td><span style="background-color:#EDDBD8">Es kann sein</span>, dass ich mich gestern so'n kleines bisschen verpipetiert hab.<br><blockquote>&#10004; Es kann sein 그랬을 수 있어, 그랬을 가능성이 있어<br> 직역: 내가 어제 피펫을 다루다가 실수 했을 수도 있고...</td><td>그래, 맞다, 피펫을 다루다 어제 실수 좀 했어</td></tr>
+       <tr><td>20:42</td><td><span style="background-color:#EDDBD8">Es kann sein</span>, dass ich mich gestern so'n kleines bisschen verpipetiert hab.<br><blockquote>&#10004; Es kann sein 그랬을 수 있어, 그랬을 가능성이 있어<br> 직역: 내가 어제 피펫을 다루다가 실수 했을 수도 있고...</blockquote></td><td>그래, 맞다, 피펫을 다루다 어제 실수 좀 했어</td></tr>
        <tr><td>20:47</td><td>Wer ist denn Charlotte Freiin zu Fürstenberg?</td><td>샤를로테 퓌르스텐베르크 여남작이 누구지?</td></tr>
        <tr><td>20:50</td><td>Die da simuliert.</td><td>저기서 연기하는 애</td></tr>
        <tr><td>20:50</td><td>Nee, echt?</td><td>응? 아 진짜?</td></tr>
@@ -293,7 +293,7 @@ tag: Deutsch
        <tr><td>24:31</td><td>Mit Pflanzen halt schon.</td><td>식물한텐 괜찮지만</td></tr>
        <tr><td>24:34</td><td>Was ist mit dem?</td><td>그건 어때?</td></tr>
        <tr><td>24:36</td><td>Das hab ich an. Das siehst du?</td><td>내가 입고 있잖아, 보이지?</td></tr>
-       <tr><td>24:38</td><td>Nachwirkungen von Oles Tropfen? Das <span style="background-color:#EDDBD8">wäre</span> wirklich schlecht.<br><blockquote>&#10004; sein의 접속법 2식<rb>직역: 진짜로 그것이라면 안되는데</blockquote></td><td>아니면 올레 약물 부작용을 겪는 거니? 그럼 안 되는데</td></tr>
+       <tr><td>24:38</td><td>Nachwirkungen von Oles Tropfen? Das <span style="background-color:#EDDBD8">wäre</span> wirklich schlecht.<br><blockquote>&#10004; sein의 접속법 2식<br>직역: 진짜로 그것이라면 안되는데</blockquote></td><td>아니면 올레 약물 부작용을 겪는 거니? 그럼 안 되는데</td></tr>
        <tr><td>24:43</td><td>Bitte.</td><td>부탁할게</td></tr>
        <tr><td>24:59</td><td>Cooles Shirt.</td><td>셔츠 멋지다</td></tr>
        <tr><td>24:59</td><td>Danke.</td><td>고마워요</td></tr>
@@ -316,81 +316,81 @@ tag: Deutsch
        <tr><td>25:56</td><td>Du bist'n Mega-Streber, sonst <span style="background-color:#EDDBD8">wärst</span> du nicht Lorenz' persönlicher Hiwi <span style="background-color:#EDDBD8">geworden</span>.<br><blockquote>&#10004; waerden의 접속법 2식 과거(haette/waere + PP)<br>직역: 그렇지 않으면 너가 로렌츠의 개인 조교가 되지 않았을 것이다.</blockquote></td><td>당신은 과잉성취자예요. 아니라면 로렌츠 개인 조교로 들어가지 않았겠죠</td></tr>
        <tr><td>26:00</td><td>Dass du während der Vorlesung pennst, heißt, dass du extrem gut bist.</td><td>수업 중엔 졸아요 대단히 머리가 좋다는 뜻이죠</td></tr>
        <tr><td>26:03</td><td>Sonst <span style="background-color:#EDDBD8">würde</span> sie das nicht <span style="background-color:#EDDBD8">durchgehen lassen</span>.<br><blockquote>&#10004; 접속법 2식 현재(wuerden + Infinitiv)<br>직역: 그렇지 않으면 교수가 그것을 지속되도록 하지 않을 테니까</blockquote></td><td>아니면 교수가 그냥 놔두지 않을 테니까</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
+       <tr><td>26:06</td><td>Oder du bist müde, da du durchgehend feierst.</td><td>아니면 밤새 파티하느라 너무 피곤한 걸 텐데</td></tr>
+       <tr><td>26:08</td><td>Aber das widerspricht deinem: Ich trink keinen Alkohol.</td><td>그건 '난 술 안 마셔'라고 한 것과 모순되니까 아닐 거예요</td></tr>
+       <tr><td>26:12</td><td>Ja.</td><td>맞아</td></tr>
+       <tr><td>26:12</td><td>Scheiße.</td><td>이런</td></tr>
+       <tr><td>26:13</td><td>Du bist doch mysteriöser als ich. Was machst du nachts? Bist du Spiderman?</td><td>당신이 나보다 더 신비하네요 밤엔 뭘 하죠? 스파이더맨?</td></tr>
+       <tr><td>26:18</td><td>Eher Ironman, aber shhhh...</td><td>아이언맨에 더 가깝지, 하지만...</td></tr>
+       <tr><td>26:21</td><td>Das heißt, du fliegst durch die Gegend und battelst dich mit Captain America?</td><td>날아다니면서 캡틴 아메리카와 싸운다는 뜻인가요?</td></tr>
+       <tr><td>26:25</td><td>Nicht ganz.</td><td>그건 아니야</td></tr>
+       <tr><td>26:26</td><td>Aber ich...</td><td>하지만 나는...</td></tr>
+       <tr><td>26:30</td><td>Egal, vergiss es.</td><td>관두자</td></tr>
+       <tr><td>26:33</td><td>Ok.</td><td>그러죠</td></tr>
+       <tr><td>26:40</td><td>Ich hab ein kleines Labor.</td><td>작은 실험실이 있어</td></tr>
+       <tr><td>26:43</td><td>Quatsch.</td><td>말도 안 돼요</td></tr>
+       <tr><td>26:43</td><td>Doch.</td><td>정말이야</td></tr>
+       <tr><td>26:46</td><td>Lorenz lässt dich doch machen, was du willst.</td><td>로렌츠가 학교에서 당신 맘대로 하게 둔다고요?</td></tr>
+       <tr><td>26:48</td><td>Sie lässt mich machen, nicht in der Uni.</td><td>내 맘대로 하게 두는데 학교에선 못 하게 하지</td></tr>
+       <tr><td>26:52</td><td>Seh ich aus wie Pepper Potts oder warum sollte ich dir glauben?</td><td>내가 페퍼 포츠 같아요? 어떻게 당신을 믿죠?</td></tr>
+       <tr><td>26:59</td><td>Lust auf einen Spaziergang?</td><td>산책할까?</td></tr>
+       <tr><td>27:27</td><td>Wo willst du hin?</td><td>어디로 데려가는 거죠?</td></tr>
+       <tr><td>27:29</td><td>Wart's ab.</td><td>잠깐 기다려</td></tr>
+       <tr><td>27:38</td><td>Angst?</td><td>무서워?</td></tr>
+       <tr><td>27:39</td><td>Nö, ist so idyllisch hier.</td><td>아뇨, 너무 조용해서요</td></tr>
+       <tr><td>27:57</td><td>[Jasper] Willkommen in meiner Welt.</td><td>내 세상에 온 걸 환영한다</td></tr>
+       <tr><td>28:16</td><td>Hab ich alles aus alten Laboren oder bei eBay gefunden.</td><td>전부 옛날 실험실에서 샀거나 이베이에서 구한 거지</td></tr>
+       <tr><td>28:19</td><td>Wow, soll ich die lieber aufziehen?</td><td>이거 써야 돼요?</td></tr>
+       <tr><td>28:22</td><td>Die ist für die Al-Qaida-Jobs, mit denen ich das finanziere.</td><td>그건 내 돈줄인 알카에다 일 할 때만 써</td></tr>
+       <tr><td>28:27</td><td>Was machst du wirklich?</td><td>정말 하는 일이 뭐죠?</td></tr>
+       <tr><td>28:29</td><td>Ich arbeite an einer Gen-Fähre.</td><td>유전자 벡터를 연구 중이야</td></tr>
+       <tr><td>28:31</td><td>Ein modifizierter Virus, mit dem man DNA in menschliche Zellen transportieren kann.</td><td>인간 세포 내로 DNA를 옮기는 변형 바이러스</td></tr>
+       <tr><td>28:35</td><td>Ok.</td><td>알겠어요</td></tr>
+       <tr><td>28:36</td><td>Pass auf.</td><td>이거 봐봐</td></tr>
+       <tr><td>28:42</td><td>Stell dir vor, die Zelle ist krank, ja? Weil sie fehlerhafte DNA trägt.</td><td>결함 있는 DNA 때문에 이 세포가 병든 거라고 치자</td></tr>
+       <tr><td>28:48</td><td>Beispielsweise aufgrund einer Erbkrankheit.</td><td>예를 들어 유전 질병 같은 원인으로</td></tr>
+       <tr><td>28:52</td><td>Man kann mithilfe meiner Gen-Fähre den fehlerhaften Teil raus-CRSPR-n... und durch andere, richtige DNA ersetzen.</td><td>유전자 벡터를 이용해서 병든 부분을 도려내고 다른 건강한 DNA로 대체하는 거지</td></tr>
+       <tr><td>29:00</td><td>Aber ist das nicht schon länger möglich?</td><td>그건 가능한 지 한참 됐잖아요?</td></tr>
+       <tr><td>29:00</td><td>Im Reagenzglas, ja.</td><td>시험관 내에서는</td></tr>
+       <tr><td>29:04</td><td>Und du kannst das am ausgewachsenen Körper?</td><td>당신은 실제 인간의 몸에 할 수 있다는 거죠?</td></tr>
+       <tr><td>29:10</td><td>Krass.</td><td>대단하네요</td></tr>
+       <tr><td>29:11</td><td>Also, wenn du eine Erbkrankheit hast, ruf an.</td><td>유전 질병에 걸리면 나한테 전화만 해</td></tr>
+       <tr><td>29:13</td><td>Nee, ich war noch nie krank. Nicht mal normal krank.</td><td>아뇨, 난 병이 없어요 그냥 아픈 적도</td></tr>
+       <tr><td>29:17</td><td>Geschweige denn genetisch.</td><td>유전병은 말할 것도 없죠</td></tr>
+       <tr><td>29:20</td><td>Kann man nie wissen, bevor man sich nicht sequencen lässt.</td><td>염기서열 순서를 밝히기 전엔 절대 알 수 없지</td></tr>
+       <tr><td>29:24</td><td>Ich mach DNA-Sequencing für Lorenz. Ich kann dich dazwischenschieben.</td><td>로렌츠 지시로 그 작업 하는데 네 거부터 살짝 해줄게</td></tr>
+       <tr><td>29:27</td><td>Das merkt keiner.</td><td>아무도 모를 거야</td></tr>
+       <tr><td>29:30</td><td>Du hast nicht mal meine Telefonnummer und ich soll dir meinen ganzen Bauplan geben?</td><td>내 전화번호도 없는 사람한테 내 청사진을 넘기라고요?</td></tr>
+       <tr><td>29:34</td><td>Du kannst auch gerne mit deiner Telefonnummer anfangen.</td><td>전화번호를 먼저 주면 되겠네</td></tr>
+       <tr><td>29:37</td><td>Funktioniert das normalerweise? </td><td>보통 잘 먹히나요?</td></tr>
+       <tr><td>29:40</td><td>Erst das Erzählen, dass du Ironman bist, und... das Labor zeigen?</td><td>신입생에게 아이언맨이라면서 실험실 보여주는 거</td></tr>
+       <tr><td>29:45</td><td>Manchmal.</td><td>가끔은</td></tr>
+       <tr><td>29:53</td><td>Ich geh jetzt mal besser.</td><td>집에 가야겠어요</td></tr>
+       <tr><td>29:56</td><td>Ok.</td><td>그래</td></tr>
+       <tr><td>29:58</td><td>Ich bring dich.</td><td>데려다줄게</td></tr>
+       <tr><td>29:59</td><td>Alles gut. CRSPR du mal weiter. Ich find den Weg.</td><td>됐어요, CRISPR 계속해요 난 혼자 갈게요</td></tr>
+       <tr><td>30:05</td><td>Willst du Hiwi bei Lorenz werden, musst du Formulare ausfüllen.</td><td>로렌츠 조교가 되고 싶다면 양식서를 작성해야 해</td></tr>
+       <tr><td>30:09</td><td>Die schick ich dir, ok?</td><td>내가 보내줄게, 됐지?</td></tr>
+       <tr><td>30:11</td><td>Findet sie dich interessant, lädt sie dich zum Gespräch ein.</td><td>교수님이 관심 있으면 면접 보자고 할 거다</td></tr>
+       <tr><td>30:13</td><td>Danke.</td><td>고마워요</td></tr>
+       <tr><td>30:37</td><td>Morgen um neun ist das Seminar an der Uni. Um 11 ist dann die Gremiensitzung.</td><td>내일 9시에 대학에서 세미나가 있고 11시에는 패널 토론이 있습니다</td></tr>
+       <tr><td>30:41</td><td>Der Dekan hatte angefragt wegen eines Gesprächs.</td><td>학장님께서 미팅 요청하셨고...</td></tr>
+       <tr><td>30:44</td><td>Ich bezahle dich, damit ich mir keine Gedanken um die Orga machen muss.</td><td>사소한 거 신경 안 쓰려고 너한테 돈을 주는 거야, 모니크</td></tr>
+       <tr><td>30:47</td><td>Bitte nur sagen, was als Nächstes dran ist.</td><td>다음 일정이나 말해</td></tr>
+       <tr><td>30:50</td><td>Als Nächstes wäre das Interview mit dem Stanford Quarterly.</td><td>다음으로는 '스탠퍼드 쿼털리'와 인터뷰가 있습니다</td></tr>
+       <tr><td>30:53</td><td>Der Journalist wartet seit zwei Stunden.</td><td>기자가 2시간째 기다리고 있어요</td></tr>
+       <tr><td>30:53</td><td>Bring ihn rein.</td><td>들여보내</td></tr>
+       <tr><td>31:08</td><td>[Monique] Dr. Andreas Winter.</td><td>안드레아스 빈터 박사님이세요</td></tr>
+       <tr><td>31:17</td><td>Andi.</td><td>안디</td></tr>
+       <tr><td>31:20</td><td>Tanja.</td><td>탄야</td></tr>
+       <tr><td>31:21</td><td>Lang nicht gesehen.</td><td>오랜만이군</td></tr>
+       <tr><td>31:24</td><td>Du kannst gehen, Monique, danke.</td><td>가봐, 모니크, 고마워</td></tr>
+       <tr><td>31:26</td><td>Ok.</td><td>알겠습니다</td></tr>
+       <tr><td>31:30</td><td>Setz dich doch.</td><td>앉아</td></tr>
+       <tr><td>31:36</td><td>Du bist Journalist?</td><td>기자가 된 거야?</td></tr>
+       <tr><td>31:36</td><td>Ja.</td><td>응</td></tr>
+       <tr><td>31:40</td><td>Schade. Du warst so gut.</td><td>안됐군 ‎아주 잘했잖아</td></tr>
+       <tr><td>31:42</td><td>Hättest was aus dir machen können.</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
