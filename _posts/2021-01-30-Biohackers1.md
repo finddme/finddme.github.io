@@ -93,7 +93,7 @@ tag: Deutsch
        <tr><td>5:35</td><td>Geht's?</td><td>괜찮아?</td></tr>
        <tr><td>5:38</td><td>Darf ich mal sehen?</td><td>내가 봐도 돼?</td></tr>
        <tr><td>5:40</td><td>Hast 'n Blutgefäß getroffen.</td><td>혈관을 다쳤네</td></tr>
-       <tr><td>5:41</td><td>Ja, das YouTube-Tutorial war so<span style="background-color:#EDDBD8">'n</span> bisschen... ...mittelgenau, sag ich mal.<br><blockquote>&#10004; 'n<br>1. 	= ein, einen: so’n dummer Kerl 저런 어리석은 놈.<br>2. = ihn, ihm: ich hab’n gern 나는 그가 좋다</blockquote></td><td>응, 유튜브 영상 보고 따라 했는데 반만 맞더라</td></tr>
+       <tr><td>5:41</td><td>Ja, das YouTube-Tutorial war so<span style="background-color:#EDDBD8">'n</span> bisschen... ...mittelgenau, sag ich mal.<br><blockquote>&#10004; 'n<br> 1. 	= ein, einen: so’n dummer Kerl 저런 어리석은 놈.<br> 2. = ihn, ihm: ich hab’n gern 나는 그가 좋다</blockquote></td><td>응, 유튜브 영상 보고 따라 했는데 반만 맞더라</td></tr>
        <tr><td>5:45</td><td>Na ja.</td><td>별거 아니야</td></tr>
        <tr><td>5:50</td><td>Besser als ein YouTube-Tutorial. Schenk ich dir.</td><td>유튜브 영상보다 이게 좋아, 네가 가져</td></tr>
        <tr><td>5:54</td><td>Cool! Danke. Ähm.</td><td>좋았어! 고맙다!</td></tr>
@@ -111,38 +111,38 @@ tag: Deutsch
        <tr><td>8:57</td><td>Mich interessieren Pflanzen, da ich Bio studiere. Und du?</td><td>그냥 식물에 관심이 많아. 생물학 전공이거든, 너는?</td></tr>
        <tr><td>9:00</td><td>Medizin.</td><td>의학</td></tr>
        <tr><td>9:00</td><td>Prima.</td><td>멋있다</td></tr>
-       <tr><td>9:01</td><td><span style="background-color:#EDDBD8">(Wenn)</span>Kriegen wir eine Lebensmittelvergiftung, kannst du uns retten.<br><blockquote>&#10004; Wenn 생략<br>Wenn wir eine Lebensmittelvergiftung kreigen, kannst du uns retten.</blockquote></td><td>우리 식중독 걸리면 네가 구해주면 되겠다</td></tr>
-       <tr><td>9:06</td><td>Ich lach komisch. Ich nehm's als <span style="background-color:#EDDBD8">Kompliment</span>.<br><blockquote>&#10004; Kompliment<br>공손한 말, 빈말<br>e.g. Vielen Dank für das Kompliment.칭찬해 주셔서 감사합니다.</blockquote></td><td>나 웃음소리 이상한데 같이 웃어주니 좋네</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
+       <tr><td>9:01</td><td><span style="background-color:#EDDBD8">(Wenn)</span>Kriegen wir eine Lebensmittelvergiftung, kannst du uns retten.<br><blockquote>&#10004; Wenn 생략<br> Wenn wir eine Lebensmittelvergiftung kreigen, kannst du uns retten.</blockquote></td><td>우리 식중독 걸리면 네가 구해주면 되겠다</td></tr>
+       <tr><td>9:06</td><td>Ich lach komisch. Ich nehm's als <span style="background-color:#EDDBD8">Kompliment</span>.<br><blockquote>&#10004; Kompliment<br>공손한 말, 빈말<br>e.g. Vielen Dank für das Kompliment.칭찬해 주셔서 감사합니다.</blockquote></td><td> 나 웃음소리 이상한데 같이 웃어주니 좋네</td></tr>
+       <tr><td>9:09</td><td>Meine Eltern zogen mich damit auf.</td><td>부모님은 그것 가지고 날 놀리셨어</td></tr>
+       <tr><td>9:11</td><td>Ich hab keine Geschwister, wegen Ein-Kind-Policy, <span style="background-color:#EDDBD8">wäre</span> die Hölle. Ich wurde in der Schule verarscht.<br><blockquote>&#10004; war의 접속법 2식<br> Ich hab keine Geschwister, (es) waere die Hoelle. 직역: 나는 형제가 없다. 있었다면 지옥이었을 것이다.</td><td>다행히 한 자녀 정책 때문에 형제가 없어서 왕따는 학교에서만 당했지</td></tr>
+       <tr><td>9:15</td><td>Ich hab kapiert, was uns unterscheidet, ist das, was uns ausmacht.</td><td>하지만 사람을 특별하게 해주는 건 공통점이 아니라 차이점이잖아</td></tr>
+       <tr><td>9:19</td><td>Findest du nicht?</td><td>안 그래?</td></tr>
+       <tr><td>9:21</td><td>Doch.</td><td>맞아</td></tr>
+       <tr><td>9:21</td><td>Und du? Hast du Geschwister?</td><td>너는? 형제 있니?</td></tr>
+       <tr><td>9:26</td><td>Nein.</td><td>없어</td></tr>
+       <tr><td>9:28</td><td><span style="background-color:#EDDBD8">Ich geh davon aus</span>, du weißt, wo du <span style="background-color:#EDDBD8">hinmusst</span> morgen. Wir können zusammen fahren, die Fakultät ist aufm Weg zu Bio. Ich kann dir alles zeigen. <br><blockquote>&#10004; ausgehen von-<br> -라고 생각하다, -를 가정하다/ -로부터 출발하다, 근거하다, 야기되다<br> 직역: 나는 생각한다(가정한다). 너가 안다는 것을. 너가 내일 어디로 가야하는지<br><br>&#10004; hinmusst <br>-로 가야한다</td><td>좋아, 내일 어디로 가야 할지 알겠지만 같이 가자 의학과는 생물학과 가는 길이니까 가면서 학교 안내해 줄게</td></tr>
+       <tr><td>9:33</td><td>Hast du ein Fahrrad?</td><td>자전거 있니?</td></tr>
+       <tr><td>9:51</td><td>Zum Mittagessen in der Mensa?</td><td>점심때 식당에서 만날래?</td></tr>
+       <tr><td>9:51</td><td>Gerne.</td><td>그래</td></tr>
+       <tr><td>9:53</td><td>Ok.</td><td>좋아</td></tr>
+       <tr><td>9:53</td><td>Ciao.</td><td>잘 가</td></tr>
+       <tr><td>9:54</td><td>Ciao.</td><td>안녕</td></tr>
+       <tr><td>10:14</td><td>[Dekan] Willkommen in Freiburg.</td><td>프라이부르크에 온 것을 환영합니다</td></tr>
+       <tr><td>10:16</td><td>Nehmen Sie sich einen Moment und sehen Sie sich um.</td><td>잠시 주위를 돌아보세요</td></tr>
+       <tr><td>10:19</td><td>Sagen Sie Ihrem Sitznachbarn Hallo.</td><td>옆 사람과 인사를 나누세요</td></tr>
+       <tr><td>10:22</td><td>Sie studieren Medizin an einer der besten Universitäten Deutschlands.</td><td>여러분이 의학을 공부할 이곳은 독일 최고 대학 중 하나입니다</td></tr>
+       <tr><td>10:26</td><td>In Ihrer Klasse waren Sie die Besten.</td><td>여러분은 모두 최고 학생이었죠</td></tr>
+       <tr><td>10:28</td><td>Hier sind Sie Durchschnitt.</td><td>여기서는 평범합니다</td></tr>
+       <tr><td>10:30</td><td><span style="background-color:#EDDBD8">Jeder Zweite</span> von Ihnen wird es nicht bis zum Physikum schaffen.<br><blockquote>&#10004; Jeder Zweite 둘 중 하나(직역: 두개 마다 하나)</td><td>여러분 둘 중 한 명은 자격시험까지도 못 버틸 겁니다</td></tr>
+       <tr><td>10:33</td><td>Und kaum einer wird es so weit schaffen wie sie, für die wir alle hier sind.</td><td>그 누구도 여러분이 곧 만날 사람만큼 잘되기 힘들죠</td></tr>
+       <tr><td>10:38</td><td>Sie ist Medizinerin, Biologin, jüngste Medizinprofessorin einer deutschen Uni jemals. Unternehmerin, Visionärin, Professorin Dr. med., Professorin h.c. Lorenz.</td><td>의학 박사이며 생물학자고 독일 대학 역사상 최연소 의대 교수이며 기업가이며 선지자이시죠. 의대 명예교수이신 로렌츠 박사님을 소개합니다!</td></tr>
+       <tr><td>11:04</td><td>Lasst uns über die Zukunft reden.</td><td>미래에 관해 얘기해 보죠</td></tr>
+       <tr><td>11:07</td><td>Was ist die Zukunft der Medizin?</td><td>의학의 미래는 뭐죠?</td></tr>
+       <tr><td>11:11</td><td>Telemedizin und künstliche Intelligenz.</td><td>원격 의료와 인공 지능입니다</td></tr>
+       <tr><td>11:15</td><td>Wenn das so wäre, dann würde jetzt eine Informatikerin vor Ihnen stehen, keine Biologin.</td><td>그러면 내가 생물학자가 아니라 컴퓨터 과학자여야 하겠죠</td></tr>
+       <tr><td>11:20</td><td>Hm?</td><td>네 거기</td></tr>
+       <tr><td>11:20</td><td>Gentherapien?</td><td>유전자치료인가요?</td></tr>
+       <tr><td>11:23</td><td>Was ist dafür die Basis?</td><td>그 기본이 되는 건 뭘까요?</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
