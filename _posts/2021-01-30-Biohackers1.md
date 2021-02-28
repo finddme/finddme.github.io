@@ -58,7 +58,7 @@ tag: Deutsch
        <tr><td>2:23</td><td>Ist alles ok bei dir?</td><td>괜찮니?</td></tr>
        <tr><td>2:25</td><td>Bitte fahren Sie mit der Herzmassage fort. Neuer Schock wird geladen.</td><td>심장 마사지를 계속하세요 다음 충격을 위해 충전합니다</td></tr>
        <tr><td>2:31</td><td>[Niklas] Hey!</td><td>얘!</td></tr>
-       <tr><td>2:33</td><td>Hey. Was ist los? Mia!</td><td>무슨 일이지? ‎미아!</td></tr>
+       <tr><td>2:33</td><td>Hey. Was ist los? Mia!</td><td>무슨 일이지? 미아!</td></tr>
        <tr><td>2:47</td><td>Fuck.</td><td>씨발</td></tr>
        <tr><td>4:02</td><td>Hallo?</td><td>계세요?</td></tr>
        <tr><td>4:06</td><td>Hi.</td><td>안녕</td></tr>
@@ -93,7 +93,7 @@ tag: Deutsch
        <tr><td>5:35</td><td>Geht's?</td><td>괜찮아?</td></tr>
        <tr><td>5:38</td><td>Darf ich mal sehen?</td><td>내가 봐도 돼?</td></tr>
        <tr><td>5:40</td><td>Hast 'n Blutgefäß getroffen.</td><td>혈관을 다쳤네</td></tr>
-       <tr><td>5:41</td><td>Ja, das YouTube-Tutorial war so<span style="background-color:#EDDBD8">'n</span> bisschen... ...mittelgenau, sag ich mal.<br><blockquote>'n<br>1. 	= ein, einen: so’n dummer Kerl 저런 어리석은 놈.<br>2. = ihn, ihm: ich hab’n gern 나는 그가 좋다</blockquote></td><td>응, 유튜브 영상 보고 따라 했는데 반만 맞더라</td></tr>
+       <tr><td>5:41</td><td>Ja, das YouTube-Tutorial war so<span style="background-color:#EDDBD8">'n</span> bisschen... ...mittelgenau, sag ich mal.<br><blockquote>&#10004; 'n<br>1. 	= ein, einen: so’n dummer Kerl 저런 어리석은 놈.<br>2. = ihn, ihm: ich hab’n gern 나는 그가 좋다</blockquote></td><td>응, 유튜브 영상 보고 따라 했는데 반만 맞더라</td></tr>
        <tr><td>5:45</td><td>Na ja.</td><td>별거 아니야</td></tr>
        <tr><td>5:50</td><td>Besser als ein YouTube-Tutorial. Schenk ich dir.</td><td>유튜브 영상보다 이게 좋아, 네가 가져</td></tr>
        <tr><td>5:54</td><td>Cool! Danke. Ähm.</td><td>좋았어! 고맙다!</td></tr>
@@ -111,8 +111,8 @@ tag: Deutsch
        <tr><td>8:57</td><td>Mich interessieren Pflanzen, da ich Bio studiere. Und du?</td><td>그냥 식물에 관심이 많아. 생물학 전공이거든, 너는?</td></tr>
        <tr><td>9:00</td><td>Medizin.</td><td>의학</td></tr>
        <tr><td>9:00</td><td>Prima.</td><td>멋있다</td></tr>
-       <tr><td>9:01</td><td>Kriegen wir eine Lebensmittelvergiftung, kannst du uns retten.<br><blockquote>Wenn 생략<br>Wenn wir eine Lebensmittelvergiftung kreigen, kannst du uns retten.</blockquote></td><td>우리 식중독 걸리면 네가 구해주면 되겠다</td></tr>
-       <tr><td>9:06</td><td>Ich lach komisch. Ich nehm's als <span style="background-color:#EDDBD8">Kompliment</span>.<br><blockquote>Kompliment<br>공손한 말, 빈말<br>e.g. Vielen Dank für das Kompliment.칭찬해 주셔서 감사합니다.</blockquote></td><td>나 웃음소리 이상한데 같이 웃어주니 좋네</td></tr>
+       <tr><td>9:01</td><td><span style="background-color:#EDDBD8">(Wenn)</span>Kriegen wir eine Lebensmittelvergiftung, kannst du uns retten.<br><blockquote>&#10004; Wenn 생략<br>Wenn wir eine Lebensmittelvergiftung kreigen, kannst du uns retten.</blockquote></td><td>우리 식중독 걸리면 네가 구해주면 되겠다</td></tr>
+       <tr><td>9:06</td><td>Ich lach komisch. Ich nehm's als <span style="background-color:#EDDBD8">Kompliment</span>.<br><blockquote>&#10004; Kompliment<br>공손한 말, 빈말<br>e.g. Vielen Dank für das Kompliment.칭찬해 주셔서 감사합니다.</blockquote></td><td>나 웃음소리 이상한데 같이 웃어주니 좋네</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
