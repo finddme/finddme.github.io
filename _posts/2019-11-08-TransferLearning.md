@@ -27,7 +27,7 @@ Transfer Learning은 Task1에 대해 학습한 parameter A를 Task2 학습에 �
 
 <center><img width="571" alt="2021-03-06" src="https://user-images.githubusercontent.com/53667002/110192326-aa16f400-7e70-11eb-99c9-1d8cf13f07ff.png"></center>
 
-위 그림은 $y$값을 예측하기 위해 input $x$로 output $y$ ̂을 구하는 과정을 도식화한 것인데, pedestrians, cars, stop signs, traffic lights을 동시에 인식하는 Multi-task Learning의 경우 $/hat{ y }$ ̂이 4x1 vector가 된다.
+위 그림은 $y$값을 예측하기 위해 input $x$로 output $y$ ̂을 구하는 과정을 도식화한 것인데 pedestrians, cars, stop signs, traffic lights을 동시에 인식하는 Multi-task Learning의 경우 $/hat{ y }$ ̂이 4x1 vector가 된다.
 
 
 (4개의 task를 각각 학습시켜 합치는 것도 가능하지만 하나의 NN을 학습시켜 4가지 Task를 수행하도록 하는 것이 성능면에서 뛰어나다고 한다.)
