@@ -1,5 +1,5 @@
 ---
-title: Transfer Learning, Multi-task Learning
+title: Transfer Learning, Multi-task Learning, End-to-End deep learning
 category: Deep Learning
 tag: Deep Learning
 ---
@@ -31,6 +31,14 @@ Transfer Learning은 Task1에 대해 학습한 parameter A를 Task2 학습에 �
 
 
 (4개의 task를 각각 학습시켜 합치는 것도 가능하지만 하나의 NN을 학습시켜 4가지 Task를 수행하도록 하는 것이 성능면에서 뛰어나다고 한다.)
+
+## End-to-End deep learning
+
+End-to-End deep learning은 기존의 Pipeline방식으로 여러 단계를 거치던 것을 하나의 NN으로 실현한 방식으로, 최근 크게 발전하고 있는 deep learning방식이다. 예를 들어 Pipeline방식을 통해 음성인식을 학습할 경우, input x에 대해 feature를 직접 추출한 후 머신러닝 모델로 음소를 추출하고 그 음소를 단어형태로 만들고 그 단어들로 문장을 만들었다. 하지만 deep learning에서는 End-to-End 방식을 적용하여 하나의 NN을 학습시켜 위 과정을 한번에 진행할 수 있게 한다. 
+
+
+이러한 End-to-End는 모델의 설계를 간소화시켜 시간을 단축하게 해주는 반면 feature를 직접 추출하지 않기 때문에 x->y 매핑에 필요한 데이터가 충분히 필요하다. 따라서 기존의 방식에서 사용되는 data보다 훨씬 더 많은 양의 data를 필요로 한다는 단점이 있다. 그렇기 때문에 data의 양이 적다면 hand-designed feature를 뽑아서 머신러닝을 돌리는게 더 낫다. 그리고 feature 추출에 관여할 수 없기 때문에 학습하고자 하는 x->y매핑 데이터 선택에 있어 신중해야 한다. 즉, 모델을 통해 얻고자하는 바가 무엇인지 정확히 파악하고 그에 맞는 데이터를 사용해야 한다는 것이다.
+
 
 
 ## Reference
