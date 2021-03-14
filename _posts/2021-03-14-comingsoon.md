@@ -5,21 +5,21 @@ tag: Y
 ---
 
 
-gpt3
+- gpt3
 
-elmo
+- elmo
 
-rnn
+- rnn
 
 ......
 
-evaluation metric
+- evaluation metric
 
-자료구조
+- 자료구조
 
-알고리즘
+- 알고리즘
 
-최적화
+- 최적화
 
-초기화
+- 초기화
 
