@@ -4,11 +4,16 @@ category: Y
 tag: Y
 ---
 
-evaluation metric
+
+gpt3
 
 elmo
 
 rnn
+
+......
+
+evaluation metric
 
 자료구조
 
