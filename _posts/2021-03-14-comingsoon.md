@@ -5,11 +5,16 @@ tag: Y
 ---
 
 
-- gpt3
+- gpt
 
 - elmo
 
 - rnn
+- T5
+- RoBERTa
+- ELECTRA
+- zero-shot/few-shot
+
 
 ......
 
@@ -23,3 +28,7 @@ tag: Y
 
 - 초기화
 
+- knn
+
+- ffnn
+- 
