@@ -114,12 +114,27 @@ Goffman은 자연과학자들이 동식물들을 관찰한 후에 분석하는 �
 컬렉션을 만들 때 고려할 수 있는 사항들은 아래와 같다:
 
 - Patterns across data samples(데이터 샘플들 간의 패턴)
-대화들을 다 보면서 비슷한 형태들을 묶는 것이다. 여러 데이터 안에서 나타나는 공통점들을 찾아내는 것이 관건이다.
+
+&nbsp;&nbsp;&nbsp;&nbsp;대화들을 다 보면서 비슷한 형태들을 묶는 것이다. 여러 데이터 안에서 나타나는 공통점들을 찾아내는 것이 관건이다.
 
 - Patterns within the data(데이터 내의 패턴)
-데이터 내부적으로 나타나는 패턴 찾기
 
--
+&nbsp;&nbsp;&nbsp;&nbsp;데이터 내부적으로 나타나는 패턴 찾기
+
+- Formulations
+
+&nbsp;&nbsp;&nbsp;&nbsp;동일한 것을 지칭하는 말들이 어떻게 표현되었는지를 관찰. 예를 들어 외솔관 420호는 독어독문학과 사무실, 421호 옆방, 주일선 교수님 연구실 옆방 등으로 표현될 수 있다. 이처럼 특정 표현은 여러 formulation이 가능한데 어떤 맥락에서 어떤 formulation이 사용되었는지를 확인.
+
+- Formats(문법 형태)
+
+&nbsp;&nbsp;&nbsp;&nbsp; 의문문의 형태, 서술문의 형태, 명령문의 형태, 명사 형태 등과 같은 문법형태에 대해 관찰. 동일한 행위를 놓고 사용하게 되는 여러 형태들이 있는데 왜 다른 형태를 사용하는지, 해당 형태를 선택한 근거가 무엇인지를 관찰. (대화의 시작과 끝 혹은 맥락이나 상황에 따라서도 다르게 나타날 수 있다.)
+
+- Technical features of talk-in-interation
+
+&nbsp;&nbsp;&nbsp;&nbsp; possible completion point(pcp), repair, sequence organization, overall structural organization
+
+
+이렇게 관찰을 통해 알아낸 것들을 Sorting하고 sub-collection을 나눈다.
 
 
 ## Reference
