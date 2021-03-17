@@ -92,6 +92,36 @@ CA는 귀납적 연구 방식을 추구한다. 대화를 관찰한 후에 이론
  </body>
 </html>
 
+
+## 3.3 Observation as a basis for theorizing
+
+전사 후에는 이론화를 위해 세세하게 관찰한다. 이 과정에서 중요한 것은 자료를 어떻게 분석해서 어떤 결과가 나왔는지이다. 어떤식으로 분석했는가에 따라 결과가 매우 상이해지기 때문이다.
+
+> Goffman:
+"What sorts of anumals are to be found in the interactional zoo? What plants in this particular garden?
+
+Goffman은 자연과학자들이 동식물들을 관찰한 후에 분석하는 방식과 마찬가지로 CA 또한 굉장히 상이한 형태를 띄는 대화 양상들을 먼저 관찰한 후에 분석을 하겠다고 했다.
+
+관찰에서 중요한 것은 아래와 같다:
+
+- Stick as closely as possible to the data itself. 데이터 자체에만 충실.
+- Avoid motivational and other psychologically framed descriptions. 대화 참여자의 심리상태에 대한 언급은 x.
+- Describe what a thing is rather than what it is like. 구체적으로 무엇인지 밝혀야 한다. -인 것 같다와 같은 불확실한 언급은 x. 딱 떨어지게 분석해야 한다. 이를 위해서는 다양한 분석 시도가 필요하다.
+
+
+## 3.4 Making collections
+
+컬렉션을 만들 때 고려할 수 있는 사항들은 아래와 같다:
+
+- Patterns across data samples(데이터 샘플들 간의 패턴)
+대화들을 다 보면서 비슷한 형태들을 묶는 것이다. 여러 데이터 안에서 나타나는 공통점들을 찾아내는 것이 관건이다.
+
+- Patterns within the data(데이터 내의 패턴)
+데이터 내부적으로 나타나는 패턴 찾기
+
+-
+
+
 ## Reference
 
 > Conversation analysis : An introduction. Sidnell,Jack. Wiley-Blackwell(2010)
