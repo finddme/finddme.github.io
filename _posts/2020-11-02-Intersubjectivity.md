@@ -4,13 +4,13 @@ category: Conversation Analysis
 tag: Conversation Analysis
 ---
 
-##1. Understanding in conversation: Intersubjectivity
+## 1. Understanding in conversation: Intersubjectivity
 
 대화를 할 때 대화 참여자들 간에는 상호 이해가 이루어진다. 이러한 상호 이해는 대화 과정을 통해 알 수 있다. 즉, 뒤에 오는 말을 들으면 앞의 말을 어떻게 이해했는지 알 수 있다. 그렇다면 어떻게 상호간의 이해를 이룰 수 있으며 어떤 방법을 통해 서로의 말을 이해하는가? 이와 같은 질문에 대해 사회과학 측면에서는 단순히 같은 문화를 공유하고 있다 등과 같이 대화자들의 상황을 고려하지만 CA에서는 대화하는 사람의 사회적 특성이나 심리상황은 고려하지 않은 상태에서 대화를 분석한다. 
 
 대화는 기본적으로 turn-by-turn으로 이루어진다. 대화 상대와 순차적으로 대화를 이어나가면서 서로의 말을 이해했다는 것을 '어 나 방금 너 말을 이해했고 나는 그것에 대해 -라고 답할거야'라고 하지 않는다.예를 들어 '몇시야?'라는 질문에 대해 '너가 나에게 시간에 대한 정보를 물어봤고 그에 대한 나의 대답은 5시야'라고 말하지 않는다. 대화의 순서를 나열했을 때, 예를 들어 대화에서 4의 대답을 보면 3을 잘 이해했는지 알 수 있다. 그리고 5를 보면 4의 발화자가 3을 잘 이해하고 4를 답한 것인지 알 수 있다. 만약 상대방이 잘못 이해했다면 그것을 고치기 위한 절차를 밟는데, 이는 나중에 포스팅 할 Repair부분에서 다뤄진다.
 
-##2. CA vs. other approaches to language and social interaction
+## 2. CA vs. other approaches to language and social interaction
 
 **1) Anthropology(인류학)**
 
