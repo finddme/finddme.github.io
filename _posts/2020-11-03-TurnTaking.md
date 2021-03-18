@@ -6,7 +6,7 @@ tag: Conversation Analysis
 
 말하는 차례를 주고 받을 때 한번에 한 사람이 말하는 것이 일반적이다. overlap이 발생하더라도 굉장히 짧게 발생한다. 또한 말이 끝나는 것을 확인하고 다음 차례를 갖는다면 말이 끝날 때 마다 Pause가 있어야 하지만 그렇지 않다. 말이 끝났다는 신호가 따로 존재하지 않음에도 불구하고 turn을 이어받아 대화를 이어나간다.
 
-## 1. Turn-Taking rules
+## 1. Turn-Taking 
 
 1) Speaker-change recurs, or at least occurs. 말하는 사람이 계속 바뀐다. 한명이 계속 말하지 않는다. 대화를 주고 받는다.
 
@@ -46,7 +46,44 @@ tag: Conversation Analysis
 
 Turn은 3가지 요소로 구성된다.
 
-### 3.1 TCU(Turn-Constructional Unit)
+### 3.1 TCU(Turn-Constructional Unit, 턴 구성 단위)
+
+- TCU는 단어, 구, 절, 문장 모두 가능하다. 하나의 단위는 문법, 억양 그리고 대화의 맥락을 고려하여 결정된다.
+- 청자는 화자의 말을 들으며 화자의 Turn이 언제 끝날 것인지 계속 Project하고 자신의 TCU를 시작한다. 대부분 문법적으로 Turn이 바뀌는 것이 가능할 때를 PCP로 가정하고 끼어드는데 이때 살짝의 overlap이 생긴다. 
+- 현재 Turn의 화자는 Turn을 유지하기 위해 한 TCU가 끝나고 PCP가 오기 전에 빠르게 (<)TCU를 시작한다. 따라서 TCU는 여러개일 수있다. TCU1이 끝나서 PCP가 와도 TCU2가 시작되면 TRP는 오지 못한다.
+
+### 3.2 PCP(Possible Complete Point)
+-TCU가 끝나는 것이 가능해지는 지점이 PCP이다.
+
+### 3.3 TRP(Transition Relevance Place)
+- TRP는 화자 전환이 적절해지는 부분이다. 일반적으로 PCP가 오게 되면 TRP가 오는데, 화자전환이 되지 않을 때는 PCP가 오고 TPR이 오지 않고 TCU가 한번 더 이어진다.
+
+## 4. Turn-Taking rules
+
+이 규칙은 gap과 overlap을 최소화하기 위해 존재한다.
+
+**Rule 1: applies initially at the first TRP of any turn**
+
+규칙 1은 첫 번째 TRP에 적용되는 규칙이다. 이는 아래 순서대로 적용된다. a가 가장 먼저 적용되고 이것이 효과가 없으면 b, 또 효과가 없으면 c로 넘어간다.
+
+(a) If C selects N in the current turn, then C must stop speaking, and N must speak next, transition occurring at the first PCP after N-selection. 화자가 다음 화자를 선택하게 되면 선택된 화자가 Turn을 이어야 한다. 이떄 화자 전환은 PCP에서 발생한다.
+
+(b) If C does not select N, then anyother party may self-select, first speaker gaining rights to the next turn. 화자가 다음 화자를 선택하지 않은 경우에는 다른 사람들이 알아서 스스로 Turn을 가져간다. 단, 제일 처음 말한 사람이 turn을 가져갈 권리를 지닌다.
+
+(c) If C does not select N, and no other party self-selects under option (b), then C may (but need not) continue. 아무도 turn을 이어서 말하지 않으면 C가 이어서 계속 말 할 수 있다. 하지만 필수는 아니다 C가 말을 안 하면 Pause가 생긴다.
+
+**Rule 2: applies at all subsequent TRPs**
+
+규칙 2는 첫 번째가 아닌 나머지 TRP에 적용되는 규칙이다.
+
+When Rule 1 (c) has benn applied by C, then at the next TRP Rules 1 (a)-(c) apply, and recursively at the next TRP, until speaker change is effected. Rule(c)가 되었을 때 원래 화자가 말을 하면 다시 Rule (a)(b)(c)가 반복될 수 있다. 이것은 화자전환이 나타날 때까지 계속 적용된다.
+
+## 5. occurrence of overlap
+
+1) 대화 참여자가 셋 이상일 경우 principle of scarcity(희소성의 원리)가 적용되어 Turn을 가져가기 위해 경쟁을 하게되어 overlap이 발생한다.
+
+2) 화자가 PCP에 도달하면 청자가 Turn을 가져갈 수 있다는 것을 알기 때문에 본인의 turn을 더 이어나가기 위해서 말을 빠르게 치고 나간다. 반면 청자는 PCP를 계속 예측하며 TRP를 시도하는데, 예측에 실패하여 TRP시도에도 화자가 말을 계속 이어나갈 경우 여기에서 overlap이 생긴다. 
+
 
 ## Reference
 
