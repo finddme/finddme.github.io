@@ -84,6 +84,31 @@ When Rule 1 (c) has benn applied by C, then at the next TRP Rules 1 (a)-(c) appl
 
 2) 화자가 PCP에 도달하면 청자가 Turn을 가져갈 수 있다는 것을 알기 때문에 본인의 turn을 더 이어나가기 위해서 말을 빠르게 치고 나간다. 반면 청자는 PCP를 계속 예측하며 TRP를 시도하는데, 예측에 실패하여 TRP시도에도 화자가 말을 계속 이어나갈 경우 여기에서 overlap이 생긴다. 
 
+## 6. Speaker selection(Turn-Allocation Component)
+
+**1. Adress Turn**
+
+상대방의 반응이 요구되는 행위를 하면서 다음 사람의 호칭을 붙인다. 즉 상대방의 반응이 필요한 행위에 Adress Turn을 함께 사용하여 다음 화자를 지정한다. 일상 대화에서 Adress Turn은 제스쳐나 눈빛과 같은 non verbal behavior로 대체될 수 있다. 
+
+**2. Tacit**
+
+Adress Turn과 Gaze는 굉장히 노골적인 지정방법인 반면 Tacit은 암묵적으로 화자를 지정하는 방법이다.
+
+01 C : Wul how was the races las' night.  
+02 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(0.8)((Mike nods head twice.))  
+03 C : Who w'n \[th'feature.\]  
+04 M :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\[Al won,\]  
+05 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(0.3)  
+06 C : \[(Who)\]=  
+07 M : \[AI.\]=  
+08 C : =AI did?
+
+위 예문에서 01에서 자동차 경주에 간 사람은 M밖에 없다는 것을 대화 참여자들이 모두 알고 있다. 특정 정보를 공유하고 있기 때문에 이 질문에 답변할 권리가 없는 것이다. 맥락상 M을 제외한 사람들은 다음 화자에서 자연스럽게 제외된다.
+
+## 7. Transition Space
+
+Transition Space를 확보하여 발원권을 지키는 방법은 그냥 바로 치고 나가서 말하는 것이나 inbreath 혹은 '어...' 이런 것을 사용하는 것이다. 그리고 말을 하다 말면서 TCU를 계속 이어나가기도 한다. 
+
 
 ## Reference
 
