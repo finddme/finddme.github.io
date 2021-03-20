@@ -70,4 +70,42 @@ Preferences related to the **design** of turns.
 
 말 자체의 표현과 관련되는 Preference. 이것은 yes/no 질문과 관련된 Preference이다. 
 
+Design-based preference는 행위 외에 행위를 이루는 말 자체 표현과 관련있다. 주로 yes/no question과 관련하여 나타난다.
+
 ### 2.2.1 Yes/No-Preferring Q design
+
+질문 형태에 따라 yes-prefer인 것이 있고 no-prefer인 것이 있다. (Action-based가 교차되어 나타난다.)
+
+1) "Yes"-preferring Q design  
+아래 4가지 경우는 yes가 선호되는 경우로, 순차적으로 점점 더 yes를 확신하고 하는 질문이다. 즉 yes에 대한 압박도/선호도가 높아진다.(아래로 내려갈 수록 답정너 질문임)  
+- Straight interrogatives(주어, 동사가 도치되어 질문되는 경우) : e.g. Are you married?  
+- Declaratives + negetive tag(서술문인데 부정이 덧붙여진 경우) : e.g. You're married, aren't you?  
+- Declarative questions(서술문으로 질문할 경우) : e.g. You're married.  
+- Negative interrogatives(주어, 동사가 도치되는데 동사에 부정형이 나타나는 경우) : e.g. Aren't you married?
+
+2) "No"-preferring Q design  
+아래 3가지 경우는 no가 선호되는 경우로, 아래에서부터 순차적으로 no를 강하게 예측한다.  
+- Negative declaratives(부정 서술문의 형태) : e.g. There's no chair.  
+- Negative delaratives + positive tag(부정 서술문 + 긍정형) : e.g. There's no chair, is there?  
+- Straight interrogatives with negative polarity items(any, ever, at all)(주어, 동사 도치되는데 부정의 의미를 지닌 요소들을 함께 동반할 경우): e.g. Was there any chair at all?
+
+### 2.2.2 Typ-conformity preference
+
+Typ-conformity preference에서는 Yes와 No 그 자체의 Lexical Item이 선호되는 것이다. 둘 중 하나 무엇이든 그 자체가 있어야 conformity respons(순응하는 반응)이고, 없으면 non-conformity respons이다. Lexical Item이 있으면 질문을 그대로 받아들인 것이고 그렇지 않으면 질문에 문제가 있었다는 것을 나타낸다.
+
+## 3. Progressivity
+
+Preference that appear to operate quite generally across converstaion.
+
+대화에서 나타나느 가장 큰 원칙은 progressivity이다. 대화는 진행되는 것이 선호된다. 대화 내에서 비선호의 단계는 preferred response < dispreferred response < non-answer-response 순이다. non-answer-response가 dispreferred response보다 비선호되는 이유는 progressive 측면에서 봤을 때 결국 질문에서 얻고자 하는 것을 아예 주지 않았기 때문이다. non-answer-response는 보통 대답을 못하는 이유와 함께 나타난다. 예를 들어 "열쇠 어디 있어? - 몰라"라는 대화에서 모른다는 것이 대답을 하지 못하는 이유인 것이다. 반대로 answer이 선호되는 것은 만약 질문에 대한 대답을 가지고 있지 않을 때 자신이 모르는 것에 대해 대답을 얻어주려는 노력에서 증명될 수 있다.
+
+progressivity는 대화에서 매우 중요하기 때문에 turn-taking이나 type-conformity등 다른 것들을 희생시키며 progressivity를 취하는 것도 나타난다. 즉 다른 것들보다 progressivity를 더 선호하는 것이, 우선시하는 것이 보여진다. 예를 들어 trun-taking rule에 의해 현재 말하는 사람이 다음 사람을 선택했을 때 선택된 사람이 대답을 해야 한다. 하지만 세명이 이야기 할 때 A가 C에게 질문을 했을 때 C가 질문에 대한 대답을 모를 경우 답을 아는 B가 대답을 한다. 즉 선택되지 않더라도 답을 아는 사람이 대답하는 것이 더 선호된다. 우선 선택받은 사람이 말할 차례를 기다렸다가 모른다고 판단되면 답을 아는 사람이 대답하는 것이 선호된다. 
+
+쉽게 말하자면 Progressivity는 대화에서의 조커카드라고 보면 된다.
+
+
+## Reference
+
+> Conversation analysis : An introduction. Sidnell,Jack. Wiley-Blackwell(2010)
+
+> Sacks et al."A simplest systematics for the organization of turn-taking for conversation," Language 50. 696-735. 1974
