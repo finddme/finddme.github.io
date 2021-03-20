@@ -55,8 +55,14 @@ Preference for agreement is reversed.
 
 - Compliment  
 Compliment에서는 다음 다섯가지 방법으로 agree를 하면서도 일부 측면에서는 disagree하는 현상이 나타난다. 즉, 청자가 자신에 대한 칭찬을 듣고 창찬에 완전히 반대하지 않으면서 어느정도만 동의하는 것이다.  
-"Down grade"  
-(1) Scaled-down agreement : 한 단계 낮은 평가를 한다(e.g. 너 굉장하다 - 고마워 조금 괜찮았지)
+**"Down grade"**  
+(1) Scaled-down agreement : 한 단계 낮은 평가를 한다.(e.g. 너 굉장하다 - 고마워 조금 괜찮았지)  
+(2) Disagreement : 칭찬의 일부에 부정을 표한다.(e.g. 너 살 진짜 많이 빠졌다 - 그렇게 많이는 아니야)  
+(3) Qualification : 칭찬에 제한을 둔다.(엄청 잘한다 - 그렇게까지는 아니야)  
+**"Reference shift(칭찬의 대상을 바꾼다)"**  
+(4) Re-assignment of praise : 나에 대한 칭찬을 사물에 돌린다.(e.g.노 잘 젓는다 - 노가 가벼워)  
+(5) Return compliment : 나에 대한 칭찬을 상대방에게 돌린다.(e.g. 너 좋아보인다 - 너도)  
+<br>일반적인 선호구조에서는 upgrade가 선호구조인데 칭찬에 대해서는 위와 같은 5가지 반응으로 선호구조가 나타난다.
 
 ## 2.2 Design-based preference
 
