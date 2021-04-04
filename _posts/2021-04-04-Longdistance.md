@@ -1,7 +1,7 @@
 ---
 title: Long-Distance Dependency(LDD)
-category: Linguistik(English)
-tag: Linguistik
+category: Linguistics(English)
+tag: Linguistics
 ---
 Long-Distance Dependency(장거리 의존)란 한 문장에서 어떤 성분과 그 성분이 원래 있던 자리, 즉 Filler와 Gap의 관계를 확인하는 것이다. 장거리 의존은 여러 종류가 있는데 아래 4가지가 영어에서 자주 나타나는 장거리 의존 구문이다.
 
