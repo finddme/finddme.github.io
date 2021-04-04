@@ -1478,3 +1478,5 @@ e.g. Einige Haeuser, *fuer die* die Nachbarn gekaempft haben, sollen erhalten bl
 
 
 > german.kr
+
+> 자\*쌤, 경\*쌤 &#9786;
