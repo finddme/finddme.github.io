@@ -36,24 +36,24 @@ tag: Deutsch
        <tr><td>2:21</td><td>Aber cool ist es schon, oder?</td><td>근데 쩔지?</td></tr>
        <tr><td>2:24</td><td>Ja. Cool ist es.</td><td>그래, 쩔긴하네</td></tr>
        <tr><td>2:27</td><td>Willst du Unterwasser-Pillen testen?</td><td>수중 알약 먹어볼래?</td></tr>
-       <tr><td>2:30</td><td>Hast du eigentlich was getrunken?<br><blockquote>&#10004; eigentlich: 의문형에서 쓰였을 때는 '그런데'라는 의미를지님.(평서문에서는 '원래의', '본래의', '실제의'의 의미)</td><td>근데 너 술 마셨어?</td></tr>
+       <tr><td>2:30</td><td>Hast du <span style="background-color:#EDDBD8">eigentlich</span> was getrunken?<br><blockquote>&#10004; eigentlich: 의문형에서 쓰였을 때는 '그런데'라는 의미를지님.(평서문에서는 '원래의', '본래의', '실제의'의 의미)</td><td>근데 너 술 마셨어?</td></tr>
        <tr><td>2:31</td><td>Wieso?</td><td>왜?</td></tr>
-       <tr><td>2:31</td><td>Weil dich die Pillen sonst wegballern.</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
-       <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
+       <tr><td>2:31</td><td>Weil dich die Pillen sonst wegballern.Hardcore mit Alk. Du pennst wie ein Biber im Winterschlaf.</td><td>이 약에 기절할 거야. 알콜이랑 만나면 완전 하드코어임. 겨울잠 자는 비버처럼 잘거야.</td></tr>
+       <tr><td>2:37</td><td>Keine Pillen vorm Frühstück. Danke.</td><td>아침 전엔 약 안 먹어, 고맙다</td></tr>
+       <tr><td>2:46</td><td>Du willst als Ersti einen HiWi-Job?</td><td>1학년인데 조교 일을 하고 싶어?</td></tr>
+       <tr><td>2:48</td><td>Ich lern mehr mit der Lorenz bei Studien, als wenn ich <span style="background-color:#EDDBD8">lauter</span> Lesungen besuche.<br><blockquote>&#10004; lauter: 순수한, 정직한<br>직역: 나는 Lorenz와 연구실에서 더 많이 배운다. 순전히 강의를 듣을때보다.</td><td>로렌츠 실험을 도우면 많이 배울 수 있어 매일 기초 과정을 반복하는 것보단 말이야</td></tr>
+       <tr><td>2:52</td><td>Man kann seine Zeit als Studentin anders nutzen.</td><td>다른 방법으로 ‎대학 생활을 할 수도 있지</td></tr>
+       <tr><td>2:55</td><td>Umweltinitiativen.</td><td>환경 인식 개선 운동이나</td></tr>
+       <tr><td>2:55</td><td>Leben zelebrieren.</td><td>인생 즐기기</td></tr>
+       <tr><td>2:55</td><td>Wandern.</td><td>등산</td></tr>
+       <tr><td>2:59</td><td>Als Zeitvertreib in Ordnung</td><td>좋은 일이지</td></tr>
+       <tr><td>2:59</td><td>Klar.</td><td>맞지</td></tr>
+       <tr><td>3:01</td><td>Hey. Na?</td><td>안녕, 다들 좋지?</td></tr>
+       <tr><td>3:01</td><td>Wir haben gerade von dir gesprochen.</td><td>재밌네요, 당신 얘기 중이었는데</td></tr>
+       <tr><td>3:03</td><td>Ja?</td><td>그래?</td></tr>
+       <tr><td>3:03</td><td>Ja.</td><td>네</td></tr>
+       <tr><td>3:05</td><td>Wie geht's?</td><td>어떻게 지냈니?</td></tr>
+       <tr><td>3:06</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
        <tr><td>12s</td><td>YELLS</td><td>YELLS</td></tr>
