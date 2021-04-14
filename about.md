@@ -9,7 +9,7 @@ title: About
 
 공부한 것을 기록하기 위한 블로그입니다.
 
-틀린 것이 있다면 <a href="mailto:info@example.com?subject=subject&cc=cc@example.com">yein4452@yonsei.ac.kr로 메일 </a> 부탁드립니다.
+틀린 것이 있다면 <a href="mailto:info@example.com?subject=subject&cc=cc@example.com">yein4452@yonsei.ac.kr </a>로 메일 부탁드립니다.
 
 
 ## FindDMe
