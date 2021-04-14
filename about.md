@@ -10,3 +10,5 @@ title: About
 틀린 것이 있다면 <a href="mailto:info@example.com?subject=subject&cc=cc@example.com">[메일] </a> 부탁드립니다.
 
 시리를 좋아해요.
+
+<img width="40%" src="https://user-images.githubusercontent.com/53667002/114660326-16b6c580-9d30-11eb-93b3-d813729e803f.gif"/>
