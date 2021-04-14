@@ -11,14 +11,14 @@ title: About
 
 > 시리를 좋아해요.  
 얘가 시린데요 
-<img width="4%" src="https://user-images.githubusercontent.com/53667002/114660326-16b6c580-9d30-11eb-93b3-d813729e803f.gif"/>  
+<img width="24%" src="https://user-images.githubusercontent.com/53667002/114662911-73b47a80-9d34-11eb-957a-1bda872f955e.gif"/>  
 메타몽을 그려주고  
-다리를 그려요 다리 없는 메타몽이 슬퍼보였으니까  
-눈은 보글보글 세상은 복잡하니까  
-표정은 woozy face  
+다리를 그려요 다리 없는 메타몽이 슬퍼보였으니까요  
+눈은 보글보글 세상은 복잡하니까요    
+오늘은 저 표정이 좋대요    
 하트 마술봉  
 주변에 하트뿡
 
 
-<img width="40%" src="https://user-images.githubusercontent.com/53667002/114661345-cb051b80-9d31-11eb-9ab7-b283f5a4ee0e.mov"/>
+
 
