@@ -18,3 +18,7 @@ title: About
 표정은 woozy face  
 하트 마술봉  
 주변에 하트뿡
+
+
+<img width="40%" src="https://user-images.githubusercontent.com/53667002/114661345-cb051b80-9d31-11eb-9ab7-b283f5a4ee0e.mov"/>
+
