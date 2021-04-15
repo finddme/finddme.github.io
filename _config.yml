@@ -3,8 +3,7 @@ title: finddme
 #tagline: '_textmining'
 #description: 'blog for textmining'
 url: http://finddme.github.io
-# logo: '/public/finddme.png'
-logo: '<img width="80%" src="https://user-images.githubusercontent.com/53667002/114807092-c8adca80-9de0-11eb-89db-6cbf5dbc6465.png"/>'
+logo: '/public/finddme.png'
 encoding: utf-8
 highlighter: rouge
 
