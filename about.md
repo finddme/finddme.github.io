@@ -21,8 +21,7 @@ title: About
 ## Siri
 
 >
-<img width="24%" src="https://user-images.githubusercontent.com/53667002/114662911-73b47a80-9d34-11eb-957a-1bda872f955e.gif"/> 
-
+<img width="24%" src="https://user-images.githubusercontent.com/53667002/114662911-73b47a80-9d34-11eb-957a-1bda872f955e.gif"/>  
 메타몽인데 뚱이가 됐다
 
  
