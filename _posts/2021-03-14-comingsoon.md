@@ -1,7 +1,7 @@
 ---
 title: plan
-category: Y
-tag: Y
+category: vi
+tag: vi
 ---
 
 - Bio NLP
