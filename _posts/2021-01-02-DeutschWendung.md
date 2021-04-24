@@ -232,6 +232,9 @@ tag: Deutsch
 **sich zusammensetzen aus 3** -로 구성되다, 이루어지다
 > das Team setzt sich aus mehreren Wissenschaftlern zusammen
 
+**zustande kommen** 되다, 실현되다
+> Wie und warum solche Nano-Effekte zustande kommen, ist aber meist noch unbekannt.
+
 
 ## <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
 
@@ -432,13 +435,17 @@ tag: Deutsch
 ### Beziehung
 
 - Bezug auf 4 nehmen -와 관련된
+- mit Bezug auf 4 -와 관련된
 - etwas(4) in Beziehung setzen -와 관련시키다
 - in Beziehung mit/zu 3 stehen -와 관련있다
 - etwas(4) in 4 einbeziehen -관련하다, 포함하다
+
 - mit 3 zu tun haben -와 관련있다
 - mit 3 zu tun bekommen -와 관련있다
+
 - etwas(4) in Verbindung mit 3 bringen  -과 관련하다, 결합하다
 - etwas(4) mit 3 verbinden -과 관련하다, 결합하다
 - etwas(4) miteinander in Verbindung setzen 서로 관련시키다, 연관시키다
 - in der Verbindung mit 3 -과 관련하여
+
 - mit 3 im Zusammenhang stehen -과 관련하여
