@@ -16,7 +16,6 @@ coreference에 대한 세 가지 일반적인 아키텍쳐는 mention-pair, ment
 
 <center><strong>Victoria Chen</strong>, CFO of <strong>Megabucks Banking</strong>, saw <strong>her pay</strong> jump to $2.3 million, as <strong>the 38-year-old</strong> also became the company’s president. It is widely known that <strong>she</strong> came to Megabucks from rival Lotsabucks.</center>
 <br>
-
 위 예문에 이 classifier의 task를 대입해보면 그림 22.2와 같이 된다. 이것은 예문에 있는 대명사 she와 그에 대한 잠재적 선행사 mention이 이루는 쌍에 대해 coreference link의 확률을 할당하는 것을 보여주는 그림이다. 
 
 <center><img width="772" alt="2021-04-24" src="https://user-images.githubusercontent.com/53667002/115947851-79b11500-a505-11eb-9c90-740061cfe251.png"></center>
