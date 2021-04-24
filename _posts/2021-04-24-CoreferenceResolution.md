@@ -15,6 +15,7 @@ coreference에 대한 세 가지 일반적인 아키텍쳐는 mention-pair, ment
 먼저 mention-based algorithm인 mention-pair architecture에 대해서 살펴보겠다. mention-pair architecture는 이름에서도 알 수 있듯이 한 쌍의 mention, candidate anaphor그리고 candidate antecedent(후보선행사)가 주어지는 classifier를 기반으로 하며, binary classification(이항분류; corefering하는지 안 하는지)를 통해 결론을 도출한다. 
 
 <center><strong>Victoria Chen</strong>, CFO of <strong>Megabucks Banking</strong>, saw <strong>her pay</strong> jump to $2.3 million, as <strong>the 38-year-old</strong> also became the company’s president. It is widely known that <strong>she</strong> came to Megabucks from rival Lotsabucks.</center>
+<br>
 
 위 예문에 이 classifier의 task를 대입해보면 그림 22.2와 같이 된다. 이것은 예문에 있는 대명사 she와 그에 대한 잠재적 선행사 mention이 이루는 쌍에 대해 coreference link의 확률을 할당하는 것을 보여주는 그림이다. 
 
@@ -88,7 +89,14 @@ Neural model은 cluster의 representation(cluster를 vector로 표현하는 것)
 
 anaphor mention과 potential antecedent mention이 있을 때 대부분의 feature based classifier는 세 가지 유형의 feature를 사용한다:
 
-1) 
+1) anaphor에 대한 feature,  
+2) 선행사 후보에 대한 feature,  
+3) 쌍 사이의 관계에 대한 feature.
+
+Entity-based model은 추가적으로 두 개의 클레스를 더 사용할 수 있다:
+
+4) 선행사의 개체 클러스터로부터 온 모든 mention들에 대한 feature,  
+5) 선행사 entity cluster의 mention과 anaphor간의 관계에 대한 feature.
 
 ## Reference
 
