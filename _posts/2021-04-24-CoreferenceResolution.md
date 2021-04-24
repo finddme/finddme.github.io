@@ -80,7 +80,7 @@ entity-based model도 mention-ranking model처럼 feature-based model과 neural 
 
 > feature-based model의 경우 클러스터에서 feature를 추출하여 이를 수행할 수 있다.  
 Neural model은 cluster의 representation(cluster를 vector로 표현하는 것)을 자동으로 학습할 수 있다. 예를 들어 cluster representation에 해당하는 상태를 인코딩하기 위해 일련의 cluster mention에 대해 RNN을 이용하거나, mention pair의 학습된 representation에 대해 pooling하여 cluster쌍에 대한 distiributed(dense) representation을 학습한다.  
-> 'Distiributed'라는 말이 붙는 이유는 하나의 정보가 여러 차원에 분산되어 표현되기 때문이다. 하나의 차원이 여러 속성들이 버무려진 정보를 들고 있다. 즉, 하나의 차원이 하나의 속성을 명시적으로 표현하는 것이 아니라 여러 차원들이 조합되어 나타내고자 하는 속성들을 표현하는 것이다.
+>> 'Distiributed'라는 말이 붙는 이유는 하나의 정보가 여러 차원에 분산되어 표현되기 때문이다. 하나의 차원이 여러 속성들이 버무려진 정보를 들고 있다. 즉, 하나의 차원이 하나의 속성을 명시적으로 표현하는 것이 아니라 여러 차원들이 조합되어 나타내고자 하는 속성들을 표현하는 것이다.
 
 ## 4. Classifiers using hand-built features
 
