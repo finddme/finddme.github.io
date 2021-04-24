@@ -50,6 +50,9 @@ tag: Deutsch
 **sich anschliessen etwas(3)** -에 동참하다, 동의하다
 > in dieser Frage kann ich mich Ihnen{Ihrer Meinung} nicht anschließen.
 
+**angesichts 2** -을 고려하여
+> angesichts dieser Tatsache ist es besser, dass...
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **beziehen sich auf 4** -와 관련된, -에 대한
@@ -190,6 +193,10 @@ tag: Deutsch
 > Es ist verstaendlich, dass in unserer wissenschaftlichen Beziehung zur Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es <span style="color:#A95762">mit</span> den Teilen der Natur <span style="color:#A95762">zu tun bekommen</span>, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+**im Umgang mit 3**  
+**mit 3 umgehen** 사용하다, 다루다  
+> Der alte Mensch will den Umgang mit dem Computer lernen.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -449,3 +456,10 @@ tag: Deutsch
 - in der Verbindung mit 3 -과 관련하여
 
 - mit 3 im Zusammenhang stehen -과 관련하여
+
+### Hinblick
+
+- im Hinblick auf 4 -에 대해, -를 고려하여
+- in bezug auf 4 -에 대해
+
+- angesichts 2 -을 
