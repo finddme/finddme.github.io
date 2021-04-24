@@ -191,7 +191,11 @@ $m(i)$와 $c(i,j)는 scoring 함수로, 각각 mention score, antecedent score�
 
 dummy 선행사의 경우에, score $s(i, \epsilon )$은 0으로 고정된다. 이 방법은 nondummy score가 양수면 모델이 가장 높은 점수의 선행사를 예측하지만 만약 모든 점수가 다 음수라면 제외하는 방법이다.
 
+<center><img width="555" alt="2021-04-25 (4)" src="https://user-images.githubusercontent.com/53667002/115966293-d7764900-a567-11eb-8d42-fbbecadb7fdc.png"></center>
 
+task는 각 스팬 $i$에 선행사 $y_i$를 할당하고, 이전 스팬 그리고 special dummy token $\epsilon$에 랜덤 변수, 즉 확률 변수를 할당하는 것이다.
+
+여기 식을 보면 
 
 
 ## Reference
