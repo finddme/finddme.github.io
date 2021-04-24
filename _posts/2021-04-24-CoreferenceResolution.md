@@ -71,12 +71,20 @@ Mention-ranking model 은 hand-build feature와 neural representation learning �
 앞서 소개한 mention-pair model과 mention-ranking model 둘 다 mention-based algorithm이었고, 이번에 소개할 모델은 entity-based model이다. 
 
 **- entity-based model**  
-
-entity-based model은 각 mention을 이전 mention이 아닌 이전 담화 개체(mentions들의 cluster)에 연결한다. 
+entity-based model은 각 mention을 이전 mention이 아닌 이전 담화 개체(mentions들의 cluster)에 연결한다.  
 
 **- entity-ranking model**  
-
 entity-ranking model은 단순히 mention-ranking model에서 classifier가 개별 mention들이 아니라 mention들의 cluster들에 대해 결정을 내리게 한 것이다. 
+
+entity-based model도 mention-ranking model처럼 feature-based model과 neural model 둘 다를 통해 구현될 수 있는데, 이전의 모델들보다 표현력이 더 뛰어나지만 cluster-level 정보를 이용하는 것이 실제로 큰 성능 향상으로 이어지지 않았기 때문에 mention-ranking model이 여전히 더 많이 사용된다. 그래서 entity-based model은 간단하게만 소개하고 넘어가도록 하겠다. 
+
+> feature-based model의 경우 클러스터에서 feature를 추출하여 이를 수행할 수 있다.  
+Neural model은 cluster의 representation(cluster를 vector로 표현하는 것)을 자동으로 학습할 수 있다. 예를 들어 cluster representation에 해당하는 상태를 인코딩하기 위해 일련의 cluster mention에 대해 RNN을 이용하거나, mention pair의 학습된 representation에 대해 pooling하여 cluster쌍에 대한 distiributed(dense) representation을 학습한다.  
+> 'Distiributed'라는 말이 붙는 이유는 하나의 정보가 여러 차원에 분산되어 표현되기 때문이다. 하나의 차원이 여러 속성들이 버무려진 정보를 들고 있다. 즉, 하나의 차원이 하나의 속성을 명시적으로 표현하는 것이 아니라 여러 차원들이 조합되어 나타내고자 하는 속성들을 표현하는 것이다.
+
+## 4. Classifiers using hand-built features
+
+
 
 
 
