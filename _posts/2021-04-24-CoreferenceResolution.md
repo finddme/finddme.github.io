@@ -84,7 +84,7 @@ Neural model은 cluster의 representation(cluster를 vector로 표현하는 것)
 
 ## 4. Classifiers using hand-built features
 
-
+이번 장에서는 coreference resolution을 위해 logistic regression, SVM 또는 random forest classifier에서 일반적으로 사용되는 feature들에 대해 기술한다. 
 
 
 
