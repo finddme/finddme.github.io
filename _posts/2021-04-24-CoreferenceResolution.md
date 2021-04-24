@@ -65,6 +65,20 @@ mention-ranking systems에서는 mention(anaphor)에 $i-1$에서 1까지, 그리
 
 Mention-ranking model 은 hand-build feature와 neural representation learning 둘 다를 통해 구현될 수 있느데, 전자는 2장에서, 후자는 3장에서 자세히 다룰 것이다.
 
+## 1.3 Entity-based Models
+
+앞서 소개한 mention-pair model과 mention-ranking model 둘 다 mention-based algorithm이었고, 이번에 소개할 모델은 entity-based model이다. 
+
+**- entity-based model**  
+
+entity-based model은 각 mention을 이전 mention이 아닌 이전 담화 개체(mentions들의 cluster)에 연결한다. 
+
+**- entity-ranking model**  
+
+entity-ranking model은 단순히 mention-ranking model에서 classifier가 개별 mention들이 아니라 mention들의 cluster들에 대해 결정을 내리게 한 것이다. 
+
+
+
 ## Reference
 
 > Daniel Jurafsky and James H. Martin. 2019. Speech and Language Processing, 3rd Edition.  
