@@ -8,8 +8,21 @@ tag: Coreference Resolution / Zero-Anaphora Resolution
 
 coreference에 대한 세 가지 일반적인 아키텍쳐는 mention-pair, mention-rank, 그리고 entity-based로 각각 feature-based 혹은 neural classifier를 사용할 수 있다. 이번 장에서는 우선 feature-based 알고리즘에 대해서 설명하겠다.
 
+따라서 이번 장에서는 categorization을 사용한 시스템의 다양한 architecture를 개괄적으로 살펴본다. 알고리즘은 크게 entity-based(담화모델에서 각 개체를 나타내는 방식으로 coreference를 결정)인지, mention-based(각 mention을 독립적으로 고려하는 방식으로 coreference를 결정)인지 혹은 잠재적 선행사를 직접적으로 비교하기 위해서 ranking model을 사용하는지의 여부에 따라 구분된다. 
 
+### 1.1 The Mention-Pair Architecture
 
+먼저 mention-based algorithm인 mention-pair architecture에 대해서 살펴보겠다. mention-pair architecture는 이름에서도 알 수 있듯이 한 쌍의 mention, candidate anaphor그리고 candidate antecedent(후보선행사)가 주어지는 classifier를 기반으로 하며, binary classification(이항분류; corefering하는지 안 하는지)를 통해 결론을 도출한다. 
+
+(example) **Victoria Chen**, CFO of **Megabucks Banking**, saw **her pay** jump to $2.3 million, as **the 38-year-old** also became the company’s president. It is widely known that **she** came to Megabucks from rival Lotsabucks.
+
+위 예문에 이 classifier의 task를 대입해보면 그림 22.2와 같이 된다. 이것은 예문에 있는 대명사 she와 그에 대한 잠재적 선행사 mention이 이루는 쌍에 대해 coreference link의 확률을 할당하는 것을 보여주는 그림이다. 
+
+<center><img width="772" alt="2021-04-24" src="https://user-images.githubusercontent.com/53667002/115947851-79b11500-a505-11eb-9c90-740061cfe251.png"></center>
+
+여기에서 각각의 *Victoria Chen*, *Megabucks Banking*, *her*과 같은 prior mention에 대해 binary classifier는 *she*의 선행사가 그 mention인지 아닌지 확률을 계산한다. 여기에서 우리는 이 확률을 실제 선행사(*Victoria Chen*, *her*, *the 38-year-old*)에 대해서는 높이고 선행사가 아닌 것(*Megabucks Banking*, *her pay*)에 대해서는 낮춰야 한다. 
+
+훈련을 위해서는 training samples를 선택해야 하는데 이때 문서의 대부분 mention쌍은 corefernent가 아닌데 이것을 다 훈련 샘플로 선택하면 너무 많은 negative sample이 생기기 때문에 heuristic method가 필요하다. 가장 일반적인 heuristic은 positive example로 가장 가까운 선행사를 택하고, 그 사이에 있는 모든 쌍들은 negative example로 선택하는 것이다. 이것을 조금 formal하게 표현하자면 
 
 ## Reference
 
