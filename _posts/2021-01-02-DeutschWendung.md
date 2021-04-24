@@ -44,15 +44,20 @@ tag: Deutsch
 **an sich** 그 자체  
 > Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur eine Begegnung, fast nichts ist.
 
+**sich aufbauen aus 3** -으로 구성되다, 
+> der Stoff baut sich aus folgenden Elementen auf.
+
+**sich anschliessen etwas(3)** -에 동참하다, 동의하다
+> in dieser Frage kann ich mich Ihnen{Ihrer Meinung} nicht anschließen.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-**bezieht sich auf 4** -와 관련된, -에 대한
+**beziehen sich auf 4** -와 관련된, -에 대한
 >  Die Bezeichnung Bohnenkaffee bedeutet nicht, dass der Kaffee noch ungemahlen ist, sondern <span style="color:#A95762">bezieht sich auf</span> die Reinheit des Produkts und dient der Unterscheidung von sogenanntem Ersatzkaffee.
-
-**Bezug auf 4** -와 관련된
 
 **Beziehung zu 3** -와 관련된
 > Es ist verstaendlich, dass in unserer wissenschaftlichen <span style="color:#A95762">Beziehung zur</span> Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es mit den Teilen der Natur zu tun bekommen, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.
+
 
 **sich 2 bedienen** -를 사용하다, 다루다
 > Unmuendigkeit ist das Unvermoegen, sich <span style="color:#A95762">seines Verstandes(/span> ohne Leitung eines anderen zu <span style="color:#A95762">bedienen</span>.
@@ -83,6 +88,8 @@ tag: Deutsch
 **entscheidend** 결정적인(동사에 -d를 붙이면 영어에서 -ing를 붙이는 것 처럼 현재분사가 된다.)
 > Das ist allerdings ein sehr merkwuerdiges Resultat, das zu zeigen sccheint, dass die Beobachtung eine <span style="color:#A95762">entscheidende</span> Rolle bei dem Vorgang spielt und dass die Wirklichkeit verschieden ist, je nachdem, ob wir sie beobachten oder nicht.
 
+**etwas(4) im Einklang mit 3 stehtn** -과 일치하다
+> Heutzutage ereignen sich viele Dinge, die mit dem gesunden Menschenverstand nicht im Einklang stehen.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -129,6 +136,8 @@ tag: Deutsch
 
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;K&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+**sich konstituieren aus 3** -로 구성되다, 조직되다
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -199,6 +208,7 @@ tag: Deutsch
 **4 unter verstehen** unter이하가 4라고 생각하다
 > Ich <span style="color:#A95762">verstehe</span> aber <span style="color:#A95762">unter</span> dem oeffentlichen Gebrauche seiner eigenen Vernunft denjnigen, <span style="color:#A95762">den</span> jemand als Gelehrter von ihr vor dem ganzen Puvlikum der Leserwelt macht.
 
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Wenn, Waehrend, Nachdem** 생략
@@ -218,6 +228,9 @@ tag: Deutsch
 
 **und zwar** 즉, 보다 더 구체적으로 말하자면
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; <span style="color:#A95762">und zwar</span> die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: von seiner Vernunft in allen Stuecken oeffentlichen Gebrauch zu machen.
+
+**sich zusammensetzen aus 3** -로 구성되다, 이루어지다
+> das Team setzt sich aus mehreren Wissenschaftlern zusammen
 
 
 ## <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
@@ -314,3 +327,118 @@ tag: Deutsch
 - behandeln
 - skizzieren
 - das Ziel verfolgen, ... zu ...
+
+### Ausgangspunkt
+
+- Ausgangspunkt in 3 nehmen
+- Ausgangspunkt bilden
+- davon ausgehen, dass ...
+
+### Ansatz, Auffassung
+
+- ich bin der Auffassung, dass ...
+- ich vertrete Auffassung, dass ...
+- etwas(4) ansetzen
+- etwas(4) annehmen
+- etwas(4) vorschlagen
+- eine Analyse vornehmen
+- Vorschlag machen
+- unter dem Gesichtpunkt 
+- unter der Interaktion
+
+### Teilthema
+
+- <span style="color:#A95762">jemandem Anlass zu 3 geben</span>
+- Untersuchung beanspruchen
+- sich widmen etwas(3)
+- sich beschraenken auf 4
+- sich beschaeftigen mit 3
+- sich befassen mit 3
+- sich konzentrieren auf 4
+- Vergleich anstellen / unternehmen
+- Versuch anstellen / unternehmen 
+- einen Beitrag zu 3 leisten
+
+### Argumentation 
+
+- fuer 4 eine Argument einbringen
+- fuer 4 Argumente anfuehren
+- fuer 4 Gruende anfuehren 
+- etwas(4) mit etwas(3) begruenden
+- gruenden sich auf 4
+- etwas(4) damit rechtfertigen
+- fuer 4 argumentieren
+- fuer 4 diskutieren
+- Argument
+- Gegenargument
+- mit Problem konfrontiert sein
+- die Einwaende erheben sich gegen 4 
+- der Grund fuer 4
+- auf der Grundlage der(2) 
+- <span style="color:#A95762">aufgrund dieser Eroerterungen</span>
+
+### Verfahren
+
+- auf 4 eingehen
+- sich einlassen auf 4
+- <span style="color:#A95762">Aufmerksamkeit jemandem/etwas(3) widmen</span>
+- auf 4 aufmerksam machen
+- <span style="color:#A95762">sich zuwenden etwas(3)</span>
+- etwas(3) nachgehen 
+- zu 3 uebergehen
+- etwas(3) Aufmerksamkeit zuwenden
+- <span style="color:#A95762">auf 4 zu sprechen kommen</span>
+- sich naehren etwas(3)
+- auf 4 zukommen
+
+### Beruecksichtigung 
+
+- zu 3 dienen
+- beruecksichtigen
+- etwas(3) Rechnung tragen
+- in Betracht kommen
+- ausser Betracht bleiben 
+- etwas(4) ausser acht lassen
+- etwas(4) in Erwaegung ziehen
+- etwas(4) in Betracht nehmen
+- betrachten
+- in Betracht, dass ...
+
+### Diskussion
+
+- <span style="color:#A95762">zur Debatte stehen</span> 
+- <span style="color:#A95762">etwas 4 zur Debatte stellen<span>
+- zur Diskussion stehen
+- etwas(4) zur Diskussino stellen
+- ausser Freage stehen
+- etwas(4) in Frage stellen
+
+### Basis
+
+- auf 3 beruhen
+- auf 3 fussen
+- sich stuetzen auf 3
+- basieren auf 3
+- sich orientieren an 3
+- <span style="color:#A95762">in Anlehnung an 3</span>
+- <span style="color:#A95762">sich anlehnen an 3</span>
+- auf 4 angewiesen sien
+- etwas(4) jemandem(3) verdanken
+- auf 4 zurueckgehen
+- auf 4 zurueckgreifen
+- etwas(4) zurueckfuehren 
+- auf 4 rekurriern
+
+### Beziehung
+
+- Bezug auf 4 nehmen -와 관련된
+- etwas(4) in Beziehung setzen -와 관련시키다
+- in Beziehung mit/zu 3 stehen -와 관련있다
+- etwas(4) in 4 einbeziehen -관련하다, 포함하다
+- mit 3 zu tun haben -와 관련있다
+- mit 3 zu tun bekommen -와 관련있다
+- etwas(4) in Verbindung mit 3 bringen  -과 관련하다, 결합하다
+- etwas(4) mit 3 verbinden -과 관련하다, 결합하다
+- etwas(4) miteinander in Verbindung setzen 서로 관련시키다, 연관시키다
+- in der Verbindung mit 3 -과 관련하여
+- mit 3 im Zusammenhang stehen -과 관련하여
