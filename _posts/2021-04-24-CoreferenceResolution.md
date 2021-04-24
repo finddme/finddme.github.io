@@ -1,7 +1,7 @@
 ---
 title: Coreference Resolution
 category: Coreference Resolution
-tag: CoreferenceResolution
+tag: Coreference Resolution
 ---
 
 ## 1. Architectures for Coreference Algorithms
