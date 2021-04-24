@@ -103,15 +103,15 @@ Entity-based model은 추가적으로 두 개의 클레스를 더 사용할 수 
 <center><strong>Victoria Chen</strong>, CFO of <strong>Megabucks Banking</strong>, saw <strong>her pay</strong> jump to $2.3 million, as <strong>the 38-year-old</strong> also became the company’s president. It is widely known that <strong>she</strong> came to Megabucks from rival Lotsabucks.</center>
 <br>
 
-<center><img width="750" alt="2021-04-24 (2)" src="https://user-images.githubusercontent.com/53667002/115949916-15954d80-a513-11eb-9d57-061d07c9413f.png"></center>
+<center><img width="700" alt="2021-04-24 (2)" src="https://user-images.githubusercontent.com/53667002/115949916-15954d80-a513-11eb-9d57-061d07c9413f.png"></center>
 
 > 위는 Aanphor나 선행 mention에 대한 feature들이다. 
 
-<center><img width="750" alt="2021-04-24 (3)" src="https://user-images.githubusercontent.com/53667002/115950101-35794100-a514-11eb-82a5-9571f8bd3f04.png"></center>
+<center><img width="700" alt="2021-04-24 (3)" src="https://user-images.githubusercontent.com/53667002/115950101-35794100-a514-11eb-82a5-9571f8bd3f04.png"></center>
 
 > 위는 선행사 entity에 대한 feature(여기에서는 *she*에 대한 선행사니까 *Victoria Chen*, *her*, *the 38-year-old*에 대한 것; 그래서 Antecedent cluster size가 3)이다. 
 
-<center><img width="750" alt="2021-04-24 (4)" src="https://user-images.githubusercontent.com/53667002/115950286-470f1880-a515-11eb-9ad5-d86172e1c480.png"></center>
+<center><img width="700" alt="2021-04-24 (4)" src="https://user-images.githubusercontent.com/53667002/115950286-470f1880-a515-11eb-9ad5-d86172e1c480.png"></center>
 
 > 위는 mention쌍에 대한 feature이다.   
 Longer anaphor는 anaphor가 선행사보다 기냐  
@@ -121,7 +121,7 @@ Mention distance는 선행사와 anaphor 사이에 있는 mention 수
 i-within-i는 어떠한 mention이 다른 mention에 포함되어 있으며 두 mention의 reference가 같은 것.  
 Appositive 동격(앞의 내용을 명사구나 다른 명사를 사용해 정의하거나 설명하는 것). anaphor가 선행사와 동격관계에 있는 경우. 이것은 mention들이 동격어가 아닌 경우에도 유용하다. 동격어를 선행 헤드와 연결하는 것을 알기 위해.  
 
-<center><img width="750" alt="2021-04-24 (5)" src="https://user-images.githubusercontent.com/53667002/115950332-8e95a480-a515-11eb-8a40-fe3b74cb1015.png"></center>
+<center><img width="700" alt="2021-04-24 (5)" src="https://user-images.githubusercontent.com/53667002/115950332-8e95a480-a515-11eb-8a40-fe3b74cb1015.png"></center>
 
 > 위는 entity쌍에 대한 feature이다.
 Exact String Match는 determiner와 modifier를 모두 포함하여 정확히 동일한 텍스트를 포함하는 경우에만 두 mention을 연관시키는 것이다. 즉 선행사와 anaphor cluster에 있는 아무 두 mention의 string(문자열)이 같으냐  
@@ -138,15 +138,15 @@ feature-based system에서 feature들의 결합을 사용하는 것은 중요하
 
 이번 장에서는 Lee et al. (2017b)의 neural mention-ranking system에 대해 기술하겠다. 이 [end-to-end system](https://finddme.github.io/machine%20learning,%20deep%20learning/2020/10/01/TransferLearning/)은 별도의 mention-detection단계를 가지고 있지 않다. 대신 가능한 모든 텍스트 범위를 설정된 length(예를 들어 길이 1, 2, 3, ... N의 모든 n-gram)까지를 가능한 mention으로 간주한다(Lee의 논문에서는 length를 10으로 설정했다).
 
-<center><img width="800" alt="2021-04-24 (6)" src="https://user-images.githubusercontent.com/53667002/115956461-b8f85980-a537-11eb-82cf-ca86671672bd.png"></center>
+<center><img width="900" alt="2021-04-24 (6)" src="https://user-images.githubusercontent.com/53667002/115956461-b8f85980-a537-11eb-82cf-ca86671672bd.png"></center>
 
 그림 22.5는 span representation과 mention score에 대한 계산을 보여준다. 
 
-<center><img width="800" alt="2021-04-24 (12)" src="https://user-images.githubusercontent.com/53667002/115960032-28774480-a54a-11eb-885b-d2b2ff475ff9.png"></center>
+<center><img width="900" alt="2021-04-24 (12)" src="https://user-images.githubusercontent.com/53667002/115960032-28774480-a54a-11eb-885b-d2b2ff475ff9.png"></center>
 
 그림 22.6은 그림 22.5의 예시 문장에서 *the company*의 가능한 세 가지 선행사에 대한 score $s$를 계산하는 것을 보여준다. 
 
-<center><img width="800" alt="2021-04-24 (8)" src="https://user-images.githubusercontent.com/53667002/115956541-505dac80-a538-11eb-91df-7071aa51cbda.png"></center>
+<center><img width="900" alt="2021-04-24 (8)" src="https://user-images.githubusercontent.com/53667002/115956541-505dac80-a538-11eb-91df-7071aa51cbda.png"></center>
 
 위 부분을 살펴보기 위해 나중에 계산될 span representations $g_i$에 대해서 잠시 얘기하도록 하겠다. span representations $g_i$는 스팬에서의 첫 번째 단어와 마지막 단어의 contextual representation 그리고 스팬에 있는 headword에 대한 representation 그리고 feature 하나로 구성된다.
 
@@ -156,7 +156,7 @@ feature-based system에서 feature들의 결합을 사용하는 것은 중요하
 
 그러니까 biLSTM은 $w_t$를 input으로 받아서 output으로 $h_t$를 내는 것이다. 
 
-<center><img width="800" alt="2021-04-24 (11)" src="https://user-images.githubusercontent.com/53667002/115956759-98c99a00-a539-11eb-8a3c-bc24cc2a4c8c.png"></center>
+<center><img width="900" alt="2021-04-24 (11)" src="https://user-images.githubusercontent.com/53667002/115956759-98c99a00-a539-11eb-8a3c-bc24cc2a4c8c.png"></center>
 
 위 부분은 스팬의 head를 나타내기 위한 부분이다. 시스템은 스팬의 head를 나타내기 위해 스팬의 단어들에 대해 [attention](https://finddme.github.io/natural%20language%20processing/2019/11/12/Attention/)을 사용하였다.
 
