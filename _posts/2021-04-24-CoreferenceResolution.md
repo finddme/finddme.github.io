@@ -97,6 +97,26 @@ Entity-based model은 추가적으로 두 개의 클레스를 더 사용할 수 
 4) 선행사의 개체 클러스터로부터 온 모든 mention들에 대한 feature,  
 5) 선행사 entity cluster의 mention과 anaphor간의 관계에 대한 feature.
 
+
+그림 22.4는 일반적으로 사용되는 feature들을 보여준다. 앞서 사용한 예문에서 잠재적 anaphor *she*와 잠재적 선행사 *Victoria Chen*에 대한 것이다. 노란색 박스로 표시된 것은 이전 연구에서 특히 유용하다고 밝혀진 feature이고 파란색 박스로 표시된 것은 neural model에 사용했을 때 도움이 될 수 있는 feature이다. 
+
+<center><strong>Victoria Chen</strong>, CFO of <strong>Megabucks Banking</strong>, saw <strong>her pay</strong> jump to $2.3 million, as <strong>the 38-year-old</strong> also became the company’s president. It is widely known that <strong>she</strong> came to Megabucks from rival Lotsabucks.</center>
+<br>
+
+<center><img width="679" alt="2021-04-24 (2)" src="https://user-images.githubusercontent.com/53667002/115949916-15954d80-a513-11eb-9d57-061d07c9413f.png"></center>
+
+위는 Aanphor나 선행 mention에 대한 feature들이다. 
+
+<center><img width="780" alt="2021-04-24 (3)" src="https://user-images.githubusercontent.com/53667002/115950101-35794100-a514-11eb-82a5-9571f8bd3f04.png"></center>
+
+위는 선행사 entity에 대한 feature(여기에서는 *she*에 대한 선행사니까 *Victoria Chen*, *her*, *the 38-year-old*에 대한 것; 그래서 Antecedent cluster size가 3)이다. 
+
+<center><img width="642" alt="2021-04-24 (4)" src="https://user-images.githubusercontent.com/53667002/115950286-470f1880-a515-11eb-9ad5-d86172e1c480.png"></center>
+
+위는 mention쌍에 대한 feature이다. 
+
+<center><img width="752" alt="2021-04-24 (5)" src="https://user-images.githubusercontent.com/53667002/115950332-8e95a480-a515-11eb-8a40-fe3b74cb1015.png"></center>
+
 ## Reference
 
 > Daniel Jurafsky and James H. Martin. 2019. Speech and Language Processing, 3rd Edition.  
