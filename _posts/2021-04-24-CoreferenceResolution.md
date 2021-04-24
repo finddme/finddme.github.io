@@ -1,7 +1,7 @@
 ---
 title: Coreference Resolution
-category: Coreference Resolution
-tag: Coreference Resolution
+category: Coreference Resolution / Zero-Anaphora Resolution
+tag: Coreference Resolution / Zero-Anaphora Resolution
 ---
 
 ## 1. Architectures for Coreference Algorithms
