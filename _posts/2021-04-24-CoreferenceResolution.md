@@ -160,7 +160,39 @@ feature-based system에서 feature들의 결합을 사용하는 것은 중요하
 
 위 부분은 스팬의 head를 나타내기 위한 부분이다. 시스템은 스팬의 head를 나타내기 위해 스팬의 단어들에 대해 [attention](https://finddme.github.io/natural%20language%20processing/2019/11/12/Attention/)을 사용하였다.
 
-1. attention에서와 마찬가지로 시스템은 가중치 벡터 $w_{\alpha}$를 학습하고 FFNN(Feed Forward Neural Networks)에 의해 변화된 hidden state $h_t$를 내적(dot product)해서 attention score를 구한다. 
+1. attention에서와 마찬가지로 시스템은 가중치 벡터 $w_{\alpha}$를 학습하고 FFNN(Feed Forward Neural Networks)에 의해 변화된 hidden state $h_t$를 내적(dot product)해서 attention score를 구한다.  
+2. 그리고 그 다음에 어텐션 과정에서 attention score를 softmax에 통과시켜서 attention weight을 구한 것 처럼 여기에서도 attention score를 softmax에 통과시켜 분포를 정규화한다.  
+3. attention distribution은 스팬 $i$에 있는 단어들을 attention-weighted sum(attention weight값들을 각각 모두 곱하고 최종적으로 모두 더한 값)을 한 vector $h_{ATT(i)}$를 생성하는데 사용된다.
+
+<center><img width="521" alt="2021-04-25" src="https://user-images.githubusercontent.com/53667002/115965583-e8718b00-a564-11eb-95b0-830900d0084e.png"></center>
+
+span representation $g_i$는 이전에 말한 것처럼 스팬의 시작과 끝의 hidden representation(hidden state 값), head 그리고 스팬의 $i$의 length같은 feature vector(이전 장에서 neural model에서 유용할 수 있는 feature 중 하나)를 모두 concatenate한 것이다.
+
+<center><img width="565" alt="2021-04-25 (1)" src="https://user-images.githubusercontent.com/53667002/115965717-633aa600-a565-11eb-9fb5-911d93e1783c.png"></center>
+
+위 그림은 *the company*의 가능한 세 가지 선행사에 대한 score $s$를 계싼하는 것을 보여주는 그림이다. antecedent score부분을 보면 *the company*에 대해서 *General Electric*이 선행사인 경우와 *the Postal Service*가 선행사인 경우 각각이 들어가는 것을 볼 수 있고, 이들의 요소별 곱도 들어가며, 추가적으로 다른 feature들도 들어간다. 
+
+$m(i)$와 $c(i,j)는 scoring 함수로, 각각 mention score, antecedent score를 나타내며 둘 다 스팬 $i$를 나타내는 백테 $g_i$를 기반으로 한다.
+
+> FFNN(Feed Forward Neural Network). 가중치의 반복적인 업데이트.   
+1) 인풋 $x$를 받아서  
+2) 이것의 $y=Wx+b$를 계산하고  
+3) 여기에 activation function(sigmoid, tanh, ReLU, etc.)를 적용
+
+선행사 score $c(i, j)$는 input으로 스팬 $i$와 $j$의 representation을 취하며, $g_i \circ g_j$($g_i$와 $g_j$의 요소별 곱)은 두 스팬의 요소별 유사도이다. 그리고 마지막에는 mention distances 그리고 화자와 장르에 대한 정보와 같은 유용한 feature들을 인코딩한 feature vector $\varphi(i, j)$가 들어간다.
+
+<center><img width="545" alt="2021-04-25 (2)" src="https://user-images.githubusercontent.com/53667002/115966073-08a24980-a567-11eb-88e2-2e54d05c858c.png"></center>
+
+이제 coreference score $s$를 보겠다. score $s(i, j)$는 세 가지 요소를 포함한다:
+
+- $m(i)$: span $i$가 mention인지에 대한 여부;  
+- $m(j)$: span $j$가 mention인지에 대한 여부;  
+- $c(i, j): $j$가 $i$의 선행사인지에 대한 여부를 포함한다.
+
+dummy 선행사의 경우에, score $s(i, \epsilon )$은 0으로 고정된다. 이 방법은 nondummy score가 양수면 모델이 가장 높은 점수의 선행사를 예측하지만 만약 모든 점수가 다 음수라면 제외하는 방법이다.
+
+
+
 
 ## Reference
 
