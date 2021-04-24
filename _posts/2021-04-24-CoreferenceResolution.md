@@ -142,6 +142,26 @@ feature-based system에서 feature들의 결합을 사용하는 것은 중요하
 
 그림 22.5는 span representation과 mention score에 대한 계산을 보여준다. 
 
+<center><img width="626" alt="2021-04-24 (7)" src="https://user-images.githubusercontent.com/53667002/115956492-07a5f380-a538-11eb-92a0-66b6bfce8707.png"></center>
+
+그림 22.6은 그림 22.5의 예시 문장에서 *the company*의 가능한 세 가지 선행사에 대한 score $s$를 계산하는 것을 보여준다. 
+
+<center><img width="521" alt="2021-04-24 (8)" src="https://user-images.githubusercontent.com/53667002/115956541-505dac80-a538-11eb-91df-7071aa51cbda.png"></center>
+
+위 부분을 살펴보기 위해 나중에 계산될 span representations $g_i$에 대해서 잠시 얘기하도록 하겠다. span representations $g_i$는 스팬에서의 첫 번째 단어와 마지막 단어의 contextual representation 그리고 스팬에 있는 headword에 대한 representation 그리고 feature 하나로 구성된다.
+
+여기에서 스팬의 첫 번째 단어와 마지막 단어의 contextual representation이 standard biLSTM으로 계산된다.
+
+그리고 biLSTM은 ELMo와 같은 contextual word embedding을 기반으로 해서 각 단어에 대한 representation $w_t$를 input으로 받는다 (ELMo대신 BERT를 사용하면 성능이 훨씬 향상된다).
+
+그러니까 biLSTM은 $w_t$를 input으로 받아서 output으로 $h_t$를 내는 것이다. 
+
+<center><img width="615" alt="2021-04-24 (11)" src="https://user-images.githubusercontent.com/53667002/115956759-98c99a00-a539-11eb-8a3c-bc24cc2a4c8c.png"></center>
+
+위 부분은 스팬의 head를 나타내기 위한 부분이다. 시스템은 스팬의 head를 나타내기 위해 스팬의 단어들에 대해 [attention](https://finddme.github.io/natural%20language%20processing/2019/11/12/Attention/)을 사용하였다.
+
+1. attention에서와 마찬가지로 시스템은 가중치 벡터 $w_{\alpha}$를 학습하고 FFNN(Feed Forward Neural Networks)에 의해 변화된 hidden state $h_t$를 내적(dot product)해서 attention score를 구한다. 
+
 ## Reference
 
 > Daniel Jurafsky and James H. Martin. 2019. Speech and Language Processing, 3rd Edition.  
