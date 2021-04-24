@@ -18,7 +18,7 @@ coreference에 대한 세 가지 일반적인 아키텍쳐는 mention-pair, ment
 <br>
 위 예문에 이 classifier의 task를 대입해보면 그림 22.2와 같이 된다. 이것은 예문에 있는 대명사 she와 그에 대한 잠재적 선행사 mention이 이루는 쌍에 대해 coreference link의 확률을 할당하는 것을 보여주는 그림이다. 
 
-<center><img width="772" alt="2021-04-24" src="https://user-images.githubusercontent.com/53667002/115947851-79b11500-a505-11eb-9c90-740061cfe251.png"></center>
+<center><img width="700" alt="2021-04-24" src="https://user-images.githubusercontent.com/53667002/115947851-79b11500-a505-11eb-9c90-740061cfe251.png"></center>
 
 여기에서 각각의 *Victoria Chen*, *Megabucks Banking*, *her*과 같은 prior mention에 대해 binary classifier는 *she*의 선행사가 그 mention인지 아닌지 확률을 계산한다. 여기에서 우리는 이 확률을 실제 선행사(*Victoria Chen*, *her*, *the 38-year-old*)에 대해서는 높이고 선행사가 아닌 것(*Megabucks Banking*, *her pay*)에 대해서는 낮춰야 한다. 
 
