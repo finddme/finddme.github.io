@@ -288,8 +288,29 @@ tag: Deutsch
 ### Thema
 
 - es geht (in dieser Arbeit) um 4
-
 - es handelt sich um 4
-
 - etwas(4) zum Thema haben
 - es zur Aufabe haben, dass ...
+- <span style="color:#A95762">das Ziel anstreben, ... zu ...</span>
+- <span style="color:#A95762">sich auseinandersetzen mit 3</span>
+
+### Ziel, Schwerpunkt
+
+- <span style="color:#A95762">etwas(4) in das Blickfeld (der Linguistik) ruecken</span>
+- <span style="color:#A95762">das Hauptaugenmerk auf 4 richten</span>
+- <span style="color:#A95762">richten sich nach 3</span>
+- ein Forschungsschwerpunkt einrichten
+- die Forschungsinteressen auf 4 lenken
+- liegt in 3
+- im Vordergrund stehen
+- im Mittelpunkt stehen
+- <span style="color:#A95762">eine einheitliche Behandlung erreichen</span>
+- einen Versuch darstellen, ... zu ...
+- <span style="color:#A95762">erlaeutern</span>
+- <span style="color:#A95762">eroertern</span>
+- beschreiben
+- darlegen
+- darstellen
+- behandeln
+- skizzieren
+- das Ziel verfolgen, ... zu ...
