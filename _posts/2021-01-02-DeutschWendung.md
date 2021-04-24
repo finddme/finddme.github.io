@@ -287,6 +287,9 @@ tag: Deutsch
 
 ### Thema
 
-\- es geht (in dieser Arbeit) um 4
+- es geht (in dieser Arbeit) um 4
 
-\- es handelt sich um 4
+- es handelt sich um 4
+
+- etwas(4) zum Thema haben
+- es zur Aufabe haben, dass ...
