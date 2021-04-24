@@ -44,6 +44,7 @@ best-first clustering에서 classifier는 모든 선행사들에 대해서 실�
 mention-pair model은 단순하다는 장점이 있지만 두 가지 주요한 문제가 있다.
 
 1) classifier가 직접적으로 후보 선행사들을 비교하지 못한다. 따라서 두 선행사 사이에서 실제로 더 나은 것이 무엇인지 결정하는 훈련이 이루어지지 못한다.
+
 2) 담화 모델을 무시하며, entity가 아닌 단지 mention만을 살핀다. 각 classifier decistion은 동일한 entity의 다른 mention들을 고려하지 않고 한 쌍에 대해서만 완전히 국부적으로 이루어진다. 
 
 
