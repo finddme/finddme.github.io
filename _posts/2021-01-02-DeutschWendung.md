@@ -33,7 +33,7 @@ tag: Deutsch
 
 
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **angehen von** -로부터 접근해야 한다
 > Ich denke, dass man die Frage der Liebe ausgehend <span style="color:#A95762">von</span> zwei Punkten <span style="color:#A95762">angehen</span> muss.
@@ -44,7 +44,7 @@ tag: Deutsch
 **an sich** 그 자체  
 > Ihr Ausgangspunkt ist etwas, das <span style="color:#A95762">an sich</span> nur eine Begegnung, fast nichts ist.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **bezieht sich auf 4** -와 관련된, -에 대한
 >  Die Bezeichnung Bohnenkaffee bedeutet nicht, dass der Kaffee noch ungemahlen ist, sondern <span style="color:#A95762">bezieht sich auf</span> die Reinheit des Produkts und dient der Unterscheidung von sogenanntem Ersatzkaffee.
@@ -63,11 +63,11 @@ tag: Deutsch
 **aus sich breiten** 퍼지다
 > Dieser Geist der Freiheit <span style="color:#A95762">breitet sich</span> auch ausserhalb <span style="color:#A95762">aus</span>, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung zu ringen hat</span>.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Oeffentliche Einrichtungen** 공공기관
 > <span style="color:#A95762">Oeffentliche Einrichtungen</span> treffen vielsichtige Massnahme, um illegal angebrachte Graffiti zu verhindern.
@@ -84,17 +84,17 @@ tag: Deutsch
 > Das ist allerdings ein sehr merkwuerdiges Resultat, das zu zeigen sccheint, dass die Beobachtung eine <span style="color:#A95762">entscheidende</span> Rolle bei dem Vorgang spielt und dass die Wirklichkeit verschieden ist, je nachdem, ob wir sie beobachten oder nicht.
 
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Form annehmen** -한 형태를 띄다
 > Der zweite Punkt ist: Eben weil die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente <span style="color:#A95762">Form annehmen</span>.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **von 3 Gebrauch machen** 사용하다  
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; und zwar die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: <span style="color:#A95762">von</span> seiner Vernunft in allen Stuecken oeffentlichen <span style="color:#A95762">Gebrauch</span> zu <span style="color:#A95762">machen</span>.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **hinderlich 3** 3을 방해하다
 > Welche Einschraenkung aber ist <span style="color:#A95762">der Aufklaerung hinderlich</span>? welche nicht, sondern ihr wohl gar befoerderlich?
@@ -103,7 +103,7 @@ tag: Deutsch
 > Dieser Geist der Freiheit breitet sich auch ausserhalb aus, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung <span style="color:#A95762">zu ringen hat</span>.
 
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **interessieren sich fuer 4** 주어가 4에 관심 있다  
 **interesseiren 3** -의 흥미를 끌다  
@@ -114,7 +114,7 @@ tag: Deutsch
 **Insofern** 그러한 점에 있어서
 > <span style="color:#A95762">Insofern</span> hat sie eine universelle Tragweite und ist eine persoenliche Erfahrung der moeglichen Universalitaet.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;J&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **je nach** -에 따라  
 > Röst- und Mahlgrad variieren <span style="color:#A95762">je nach</span> Zubereitungsart. Kaffee enthält das Vitamin Niacin.
@@ -128,11 +128,11 @@ tag: Deutsch
 > <span style="color:#A95762">Jeder</span> Versuch, eine solche Beschreibung zu finden, wuerde zu Widerspruechen fuehren.
 
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;K&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;K&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Massnahme treffen** 조치를 취한다
 > Oeffentliche Einrichtungen <span style="color:#A95762">treffen</span> vielsichtige <span style="color:#A95762">Massnahme</span>, um illegal angebrachte Graffiti zu verhindern.
@@ -140,20 +140,20 @@ tag: Deutsch
 **unter Menschen** 인간들 간의
 > Ich antworte: der oeffengliche Gebrauch seiner Vernunft muss jederzeit frei sien, und der allein kann Aufklaerung <span style="color:#A95762">unter Menschen</span> zustande bringen.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **unter Pseudonym (=anonymously)** 익명으로
 >  Die Graffiti werden zumeist <span style="color:#A95762">unter Pseudonym</span> und illegal gefertigt.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **sein kann** -일 수 있는
 > Die Liebe hat zuerst mit einer Unterscheidung oder einer Trennung zu tun, die der schlichte Unterschied zwischen zwei Personen mit ihrer unendlichen Subjektivitaet <span style="color:#A95762">sein kann</span>.
@@ -171,7 +171,7 @@ tag: Deutsch
 > Denn es leuchtet dieser doch ein Beispiel vor, dass bei Freiheit fuer die oeffentliche Ruhe und Einigkeit des gemeinen Wesens nicht das Mindeste <span style="color:#A95762">zu besorgen sei</span>.
 
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **mit 3 zu tun haben** -와 관련있다
 > Die Liebe <span style="color:#A95762">hat</span> zuerst <span style="color:#A95762">mit</span> einer Unterscheidung oder einer Trennung <span style="color:#A95762">zu tun</span>, die der schlichte Unterschied zwischen zwei Personen mit ihrer unendlichen Subjektivitaet sein kann.
@@ -180,9 +180,9 @@ tag: Deutsch
 **mit 3 zu tun bekommen** -와 관련있다
 > Es ist verstaendlich, dass in unserer wissenschaftlichen Beziehung zur Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es <span style="color:#A95762">mit</span> den Teilen der Natur <span style="color:#A95762">zu tun bekommen</span>, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **im Sinne des Volksmundes** 속설에 의하면, 속설에 따르면
 > Werden Graffiti in der öffentlichen Wahrnehmung, insbesondere die nicht genehmigten Graffiti, meist als Form des Vandalismus – <span style="color:#A95762">im Sinne des Volksmundes</span>: „Narrenhände beschmieren Tisch und Wände“ – betrachtet, werden sie von anderer Seite auch als Form der Kunst anerkannt.
@@ -199,7 +199,7 @@ tag: Deutsch
 **4 unter verstehen** unter이하가 4라고 생각하다
 > Ich <span style="color:#A95762">verstehe</span> aber <span style="color:#A95762">unter</span> dem oeffentlichen Gebrauche seiner eigenen Vernunft denjnigen, <span style="color:#A95762">den</span> jemand als Gelehrter von ihr vor dem ganzen Puvlikum der Leserwelt macht.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Wenn, Waehrend, Nachdem** 생략
 > <span style="color:#A95762">(Waehrend)</span> Werden Graffiti in der öffentlichen Wahrnehmung, insbesondere die nicht genehmigten Graffiti, meist als Form des Vandalismus – im Sinne des Volksmundes: „Narrenhände beschmieren Tisch und Wände“ – betrachtet, werden sie von anderer Seite auch als Form der Kunst anerkannt.
@@ -210,17 +210,17 @@ tag: Deutsch
 **Eben weil** 바로 그렇기 때문에
 > Der zweite Punkt ist: <span style="color:#A95762">Eben weil</span> die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente Form annehmen.
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;Y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
-### <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;Z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;Z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **und zwar** 즉, 보다 더 구체적으로 말하자면
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; <span style="color:#A95762">und zwar</span> die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: von seiner Vernunft in allen Stuecken oeffentlichen Gebrauch zu machen.
 
 
-### <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
+## <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
 
 1. **auf Ablehnung stossen (=abgelehnt werden)** 거부되다
 
@@ -281,3 +281,12 @@ tag: Deutsch
 29. **von Nutzen sien** 유용하다
 
 30. **etwas zur Sprache bringen; zur Sprache kommen (=ausdruck)** 언급하다
+
+
+## <span style="background-color:#F2D8D3">Akademische deutsche Redewendungen</span>
+
+### Thema
+
+\- es geht (in dieser Arbeit) um 4
+
+\- es handelt sich um 4
