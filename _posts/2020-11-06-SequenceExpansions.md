@@ -1,5 +1,5 @@
 ---
-title: Sequence expansions
+title: Sequence xpansions
 category: Conversation Analysis
 tag: Conversation Analysis
 ---
