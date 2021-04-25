@@ -195,8 +195,70 @@ dummy 선행사의 경우에, score $s(i, \epsilon )$은 0으로 고정된다. �
 
 task는 각 스팬 $i$에 선행사 $y_i$를 할당하고, 이전 스팬 그리고 special dummy token $\epsilon$에 랜덤 변수, 즉 확률 변수를 할당하는 것이다.
 
-여기 식을 보면 
+여기 식을 보면 exponential score $i$, $y_i$의 summation 분의 exponential score $i$, $y_i$해서 선행사에 대한 확률값 $P(y_i)$가 나오는 것을 볼 수 있다.
 
+만약 dummy token의 확률이 제일 높게 나온다면 $i$가 discourse-new이고 새로운 coreference chain을 시작하거나 nonanaphoric이기 때문에 선행사를 갖지 않는다는 것을 의미한다.
+
+\begin{matrix}
+\sum_{\hat{y}\in Y(i)\cap GOLD(i)}P(\hat{y})
+\end{matrix}
+
+학습 시에 legal antecedent 의 coreference 확률의합을 최대화하는 손실함수를 사용한다.
+
+가능한 선행사 $Y(i)$를 가진 특정 mention $i$에 대해, $GOLD(i)$는 $i$를 포함하는 gold cluster의 mention 집합이라고 가정한다. 
+
+$i$이전에 발생한 mention 집합은 $Y(i)$이기 때문에 $i$이전에 발생하는 gold cluster의 mention의 집합은 $Y(i)$와 $GOLD(i)$의 교집합이다. 따라서 이 확률을 최대화하는 방향으로 학습되어야 한다. mention $i$가 gold cluster에 없을 경우 $GOLD(i) = \epsilon$이다.
+
+\begin{matrix}
+L=\sum_{i-2}^{N} - log \sum_{\hat{y} \in Y(i) \cap GOLD(i)}P(\hat{y})
+\end{matrix}
+
+방금 언급한 그 확률을 손실함수로 바꾸기 위해 위 수식처럼 확률에 $-log$를 취하고 그 값을 모두 더해서 corss-entropy loss function을 사용한다. 이 손실함수 값을 최소화 하는 방향으로 학습이 진행되어야 한다.
+
+> 손실함수: 모델의 출력값과 사용자가 원하는 출력값의 차이, 즉 오차를 말한다. 이 손실함수 값이 최소화 되도록 하는 가중치와 편향을 찾는 것이 학습이다.
+
+
+## 4. Evaluation of Coreference Resolution
+
+우리는 시스템이 생산한 일련의 체인이나 클러스터를 human labeling이나 gold나 reference chain 혹은 클러스터 집합과 비교하고, precisiton과 recall을 보고하며 이론적으로 evaluate coreference algorithm을 평가한다.
+
+이 비교를 수행하기 위한 다양한 방법이 있다. coreference algorithm을 평가하는데 사용되는 5가지 일반적인 metric(측정방법)은 다음과 같다:
+
+1) MUC metric(link based)  
+2) BLANC metric(link based)  
+3) B^3 metric (mention based)  
+4) CEAF metric (entity based)  
+5) LEA metric (link based entity aware)  
+
+## 5. Entity Linking
+
+coreference와 밀접한 관련이 있는 entity linking task는 텍스트의 mention을 world에 있는 entity의 목록인 ontology에서 어떤 real-world entity의 representation과 연관시키는 것이다.
+
+이 task에 사용되는 가장 일반적인 온톨로지는 위키피디아이다. 위키피디아의 각 페이지는 특정 entity에 대한 고유한 id역할을 한다. 따라서 wikification의 entity linking task는 어떤 한 individual에 해당하는 Wikipedia page가 mention에 의해 지시되는지를 결정하는 작업이다.
+
+<center><img width="484" alt="2021-04-25 (5)" src="https://user-images.githubusercontent.com/53667002/115976769-4bd2db80-a5ac-11eb-8a12-d28ab4f3f9e7.png"></center>
+
+entity linking은 두 단계로 이루어진다: mention detection과 mention disambiguation.
+
+Coreference가 올바른 위키피디아 페이지에 연결하기 위해 더 많은 간으한 surface form들을 제공하여 entity linking에 도움을 주기도 하지만 entity linking이 coreference resolution을 개선하기 위해 다른 방향으로도 사용될 수 있다. entity linking을 coreference에 통합하면 백과사전적 지식(*Donald Tsang*이 대통령이라는 사실처럼)을 이끌어내서 *President*에 대한 언급을 명확하게 하는 데에 도움이 될 수 있다.
+
+## 6. Winograd Schema problems
+
+<center><img width="327" alt="2021-04-25 (6)" src="https://user-images.githubusercontent.com/53667002/115976841-fcd97600-a5ac-11eb-93bd-21cebd1cd641.png"></center>
+
+Winograd는 위 예시를 제시하며 coreference의 일부 사례가 상당히 어려운 것으로 나타나 세계 지식이나 복잡한 추론을 요구하는 것으로 보인다고 지적했다. Winogard는 대부분의 독자들이 대명사 뒤에 이어지는 것에 대해서 선호하는 선행사는 (a)에서는 *the city council*이지만 (b)에서는 *the demonstrators*라는 것을 알아챘다. 그는 이것이 두 번째 절은 첫 번째 절의 설명으로 의도된 것임을 이해해야 하고, 또한 우리의 문화 프레임은 시의회가 아마도 시위대보다 폭력을 두려워할 가능성이 있고, 시위대는 폭력을 옹호할 가능성이 더 높다는 것을 시사한다. 이와 관련된 challenge task도 있고 Winograd와 coreference resolution problem이 있는 dataset들도 있다고 한다.
+
+## 7. Gender Bias in Coreference
+
+Language processing의 다른 측면과 마찬가지로 coreference model도 성별과 기타 다른 편향들을 나타낸다. embedding은 그들의 training test에서 사회적 편향을 복제한다. 남성들은 의사와 같이 역사적으로 전형적인 남성 직업과 연관시키고, 여성은 비서와 같이 전형적인 여성 직업과 연관시킨다.
+
+> 전형적인 남성직업 여성직업이 뭔지... 뭔 개소리인지
+
+WinoBias dataset은 Winograd Schema 패러다임의 변형을 사용하며 coreference algorithn이 문화적 고정 관념과 일치하는 선행사와 성별 대명사를 연결하는 방향으로 편향된 정도를 테스트하는데, 이 데이터셋은 전형적인 남성 그리고 전형적인 여성 직업에 해당하는 두 mention과 그 중 하나에 연결되어야 하는 성별 대명사를 포함한다. 
+
+<center><img width="385" alt="2021-04-25 (8)" src="https://user-images.githubusercontent.com/53667002/115977155-48415380-a5b0-11eb-8ad4-9469b3bb15cc.png"></center>
+
+위 예시에서 22.66은 pro-stereotypical이고 22.67은 anti-stereotypical하다. 이런 편향의 원인 중 하나는 데이터셋에 female entity가 매우 적다는 것인데, 이것을 해소하기 위해 남성과 여성 entity를 바꿔서 데이터셋을 바꾸고 기존 데이터셋과 합쳐서 비율을 맞추는 등의 시도가 있었다고 한다.
 
 ## Reference
 
