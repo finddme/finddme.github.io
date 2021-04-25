@@ -1,5 +1,5 @@
 ---
-title: Coreference Resolution
+title: Coreference Resolution_Speech and Language Processing(Daniel Jurafsky and James H. Martin, 2019)
 category: Coreference Resolution / Zero-Anaphora Resolution
 tag: Coreference Resolution / Zero-Anaphora Resolution
 ---
