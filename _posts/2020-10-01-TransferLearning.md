@@ -21,6 +21,8 @@ Transfer Learning은 Task1에 대해 학습한 parameter A를 Task2 학습에 �
 
 (Transfer Learning을 하는데 새로운 Task에 대한 dataset이 충분할 경우에는 Task1에 대해 학습한 것을 Pre-training한다고 하고, 이후 Task2에 대해 학습하는 것을 Fine Tuning한다고 한다.)
 
+> 그냥 휘뚜루 마뚜루 만든 모델을 기반으로 세부적인 task를 수행하는 모델을 만들면 그냥 맨 땅에 헤딩하는 것보다 낫다 이거다
+
 ## Multi-task Learning
 
 앞서 살펴본 Transfer Learning은 Task1과 Task2를 순차적으로 학습했다. 반면 Multi-task Learning은 Task1과 2, 3, 4…를 동시에 학습한다. 예를 들어 자율주행 자동차를 만들 경우, 여기에 사용되는 모델은 우리가 운전 할 때 운전 상황을 동시다발적으로 인지하는 것과 마찬가지로 이미지 하나가 들어왔을 때 pedestrians, cars, stop signs, traffic lights 등을 동시에 인식해야 한다. 따라서 이러한 모델을 그림으로 표현하면 아래와 같다:
