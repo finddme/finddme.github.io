@@ -164,15 +164,15 @@ feature-based system에서 feature들의 결합을 사용하는 것은 중요하
 2. 그리고 그 다음에 어텐션 과정에서 attention score를 softmax에 통과시켜서 attention weight을 구한 것 처럼 여기에서도 attention score를 softmax에 통과시켜 분포를 정규화한다.  
 3. attention distribution은 스팬 $i$에 있는 단어들을 attention-weighted sum(attention weight값들을 각각 모두 곱하고 최종적으로 모두 더한 값)을 한 vector $h_{ATT(i)}$를 생성하는데 사용된다.
 
-<center><img width="521" alt="2021-04-25" src="https://user-images.githubusercontent.com/53667002/115965583-e8718b00-a564-11eb-95b0-830900d0084e.png"></center>
+<center><img width="900" alt="2021-04-25" src="https://user-images.githubusercontent.com/53667002/115965583-e8718b00-a564-11eb-95b0-830900d0084e.png"></center>
 
 span representation $g_i$는 이전에 말한 것처럼 스팬의 시작과 끝의 hidden representation(hidden state 값), head 그리고 스팬의 $i$의 length같은 feature vector(이전 장에서 neural model에서 유용할 수 있는 feature 중 하나)를 모두 concatenate한 것이다.
 
-<center><img width="565" alt="2021-04-25 (1)" src="https://user-images.githubusercontent.com/53667002/115965717-633aa600-a565-11eb-9fb5-911d93e1783c.png"></center>
+<center><img width="900" alt="2021-04-25 (1)" src="https://user-images.githubusercontent.com/53667002/115965717-633aa600-a565-11eb-9fb5-911d93e1783c.png"></center>
 
 위 그림은 *the company*의 가능한 세 가지 선행사에 대한 score $s$를 계싼하는 것을 보여주는 그림이다. antecedent score부분을 보면 *the company*에 대해서 *General Electric*이 선행사인 경우와 *the Postal Service*가 선행사인 경우 각각이 들어가는 것을 볼 수 있고, 이들의 요소별 곱도 들어가며, 추가적으로 다른 feature들도 들어간다. 
 
-$m(i)$와 $c(i,j)는 scoring 함수로, 각각 mention score, antecedent score를 나타내며 둘 다 스팬 $i$를 나타내는 백테 $g_i$를 기반으로 한다.
+$m(i)$와 $c(i,j)$는 scoring 함수로, 각각 mention score, antecedent score를 나타내며 둘 다 스팬 $i$를 나타내는 백테 $g_i$를 기반으로 한다.
 
 > FFNN(Feed Forward Neural Network). 가중치의 반복적인 업데이트.   
 1) 인풋 $x$를 받아서  
@@ -181,7 +181,7 @@ $m(i)$와 $c(i,j)는 scoring 함수로, 각각 mention score, antecedent score�
 
 선행사 score $c(i, j)$는 input으로 스팬 $i$와 $j$의 representation을 취하며, $g_i \circ g_j$($g_i$와 $g_j$의 요소별 곱)은 두 스팬의 요소별 유사도이다. 그리고 마지막에는 mention distances 그리고 화자와 장르에 대한 정보와 같은 유용한 feature들을 인코딩한 feature vector $\varphi(i, j)$가 들어간다.
 
-<center><img width="545" alt="2021-04-25 (2)" src="https://user-images.githubusercontent.com/53667002/115966073-08a24980-a567-11eb-88e2-2e54d05c858c.png"></center>
+<center><img width="900" alt="2021-04-25 (2)" src="https://user-images.githubusercontent.com/53667002/115966073-08a24980-a567-11eb-88e2-2e54d05c858c.png"></center>
 
 이제 coreference score $s$를 보겠다. score $s(i, j)$는 세 가지 요소를 포함한다:
 
@@ -191,7 +191,7 @@ $m(i)$와 $c(i,j)는 scoring 함수로, 각각 mention score, antecedent score�
 
 dummy 선행사의 경우에, score $s(i, \epsilon )$은 0으로 고정된다. 이 방법은 nondummy score가 양수면 모델이 가장 높은 점수의 선행사를 예측하지만 만약 모든 점수가 다 음수라면 제외하는 방법이다.
 
-<center><img width="555" alt="2021-04-25 (4)" src="https://user-images.githubusercontent.com/53667002/115966293-d7764900-a567-11eb-8d42-fbbecadb7fdc.png"></center>
+<center><img width="900" alt="2021-04-25 (4)" src="https://user-images.githubusercontent.com/53667002/115966293-d7764900-a567-11eb-8d42-fbbecadb7fdc.png"></center>
 
 task는 각 스팬 $i$에 선행사 $y_i$를 할당하고, 이전 스팬 그리고 special dummy token $\epsilon$에 랜덤 변수, 즉 확률 변수를 할당하는 것이다.
 
@@ -226,7 +226,7 @@ L=\sum_{i-2}^{N} - log \sum_{\hat{y} \in Y(i) \cap GOLD(i)}P(\hat{y})
 
 1) MUC metric(link based)  
 2) BLANC metric(link based)  
-3) B^3 metric (mention based)  
+3) $B^3$ metric (mention based)  
 4) CEAF metric (entity based)  
 5) LEA metric (link based entity aware)  
 
@@ -236,7 +236,7 @@ coreference와 밀접한 관련이 있는 entity linking task는 텍스트의 me
 
 이 task에 사용되는 가장 일반적인 온톨로지는 위키피디아이다. 위키피디아의 각 페이지는 특정 entity에 대한 고유한 id역할을 한다. 따라서 wikification의 entity linking task는 어떤 한 individual에 해당하는 Wikipedia page가 mention에 의해 지시되는지를 결정하는 작업이다.
 
-<center><img width="484" alt="2021-04-25 (5)" src="https://user-images.githubusercontent.com/53667002/115976769-4bd2db80-a5ac-11eb-8a12-d28ab4f3f9e7.png"></center>
+<center><img width="370" alt="2021-04-25 (5)" src="https://user-images.githubusercontent.com/53667002/115976769-4bd2db80-a5ac-11eb-8a12-d28ab4f3f9e7.png"></center>
 
 entity linking은 두 단계로 이루어진다: mention detection과 mention disambiguation.
 
@@ -244,7 +244,7 @@ Coreference가 올바른 위키피디아 페이지에 연결하기 위해 더 �
 
 ## 6. Winograd Schema problems
 
-<center><img width="327" alt="2021-04-25 (6)" src="https://user-images.githubusercontent.com/53667002/115976841-fcd97600-a5ac-11eb-93bd-21cebd1cd641.png"></center>
+<center><img width="370" alt="2021-04-25 (6)" src="https://user-images.githubusercontent.com/53667002/115976841-fcd97600-a5ac-11eb-93bd-21cebd1cd641.png"></center>
 
 Winograd는 위 예시를 제시하며 coreference의 일부 사례가 상당히 어려운 것으로 나타나 세계 지식이나 복잡한 추론을 요구하는 것으로 보인다고 지적했다. Winogard는 대부분의 독자들이 대명사 뒤에 이어지는 것에 대해서 선호하는 선행사는 (a)에서는 *the city council*이지만 (b)에서는 *the demonstrators*라는 것을 알아챘다. 그는 이것이 두 번째 절은 첫 번째 절의 설명으로 의도된 것임을 이해해야 하고, 또한 우리의 문화 프레임은 시의회가 아마도 시위대보다 폭력을 두려워할 가능성이 있고, 시위대는 폭력을 옹호할 가능성이 더 높다는 것을 시사한다. 이와 관련된 challenge task도 있고 Winograd와 coreference resolution problem이 있는 dataset들도 있다고 한다.
 
@@ -256,7 +256,7 @@ Language processing의 다른 측면과 마찬가지로 coreference model도 성
 
 WinoBias dataset은 Winograd Schema 패러다임의 변형을 사용하며 coreference algorithn이 문화적 고정 관념과 일치하는 선행사와 성별 대명사를 연결하는 방향으로 편향된 정도를 테스트하는데, 이 데이터셋은 전형적인 남성 그리고 전형적인 여성 직업에 해당하는 두 mention과 그 중 하나에 연결되어야 하는 성별 대명사를 포함한다. 
 
-<center><img width="385" alt="2021-04-25 (8)" src="https://user-images.githubusercontent.com/53667002/115977155-48415380-a5b0-11eb-8ad4-9469b3bb15cc.png"></center>
+<center><img width="440" alt="2021-04-25 (8)" src="https://user-images.githubusercontent.com/53667002/115977155-48415380-a5b0-11eb-8ad4-9469b3bb15cc.png"></center>
 
 위 예시에서 22.66은 pro-stereotypical이고 22.67은 anti-stereotypical하다. 이런 편향의 원인 중 하나는 데이터셋에 female entity가 매우 적다는 것인데, 이것을 해소하기 위해 남성과 여성 entity를 바꿔서 데이터셋을 바꾸고 기존 데이터셋과 합쳐서 비율을 맞추는 등의 시도가 있었다고 한다.
 
