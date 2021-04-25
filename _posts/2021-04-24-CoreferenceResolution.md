@@ -236,7 +236,7 @@ coreference와 밀접한 관련이 있는 entity linking task는 텍스트의 me
 
 이 task에 사용되는 가장 일반적인 온톨로지는 위키피디아이다. 위키피디아의 각 페이지는 특정 entity에 대한 고유한 id역할을 한다. 따라서 wikification의 entity linking task는 어떤 한 individual에 해당하는 Wikipedia page가 mention에 의해 지시되는지를 결정하는 작업이다.
 
-<center><img width="370" alt="2021-04-25 (5)" src="https://user-images.githubusercontent.com/53667002/115976769-4bd2db80-a5ac-11eb-8a12-d28ab4f3f9e7.png"></center>
+<center><img width="490" alt="2021-04-25 (5)" src="https://user-images.githubusercontent.com/53667002/115976769-4bd2db80-a5ac-11eb-8a12-d28ab4f3f9e7.png"></center>
 
 entity linking은 두 단계로 이루어진다: mention detection과 mention disambiguation.
 
@@ -244,7 +244,7 @@ Coreference가 올바른 위키피디아 페이지에 연결하기 위해 더 �
 
 ## 6. Winograd Schema problems
 
-<center><img width="370" alt="2021-04-25 (6)" src="https://user-images.githubusercontent.com/53667002/115976841-fcd97600-a5ac-11eb-93bd-21cebd1cd641.png"></center>
+<center><img width="490" alt="2021-04-25 (6)" src="https://user-images.githubusercontent.com/53667002/115976841-fcd97600-a5ac-11eb-93bd-21cebd1cd641.png"></center>
 
 Winograd는 위 예시를 제시하며 coreference의 일부 사례가 상당히 어려운 것으로 나타나 세계 지식이나 복잡한 추론을 요구하는 것으로 보인다고 지적했다. Winogard는 대부분의 독자들이 대명사 뒤에 이어지는 것에 대해서 선호하는 선행사는 (a)에서는 *the city council*이지만 (b)에서는 *the demonstrators*라는 것을 알아챘다. 그는 이것이 두 번째 절은 첫 번째 절의 설명으로 의도된 것임을 이해해야 하고, 또한 우리의 문화 프레임은 시의회가 아마도 시위대보다 폭력을 두려워할 가능성이 있고, 시위대는 폭력을 옹호할 가능성이 더 높다는 것을 시사한다. 이와 관련된 challenge task도 있고 Winograd와 coreference resolution problem이 있는 dataset들도 있다고 한다.
 
@@ -256,7 +256,7 @@ Language processing의 다른 측면과 마찬가지로 coreference model도 성
 
 WinoBias dataset은 Winograd Schema 패러다임의 변형을 사용하며 coreference algorithn이 문화적 고정 관념과 일치하는 선행사와 성별 대명사를 연결하는 방향으로 편향된 정도를 테스트하는데, 이 데이터셋은 전형적인 남성 그리고 전형적인 여성 직업에 해당하는 두 mention과 그 중 하나에 연결되어야 하는 성별 대명사를 포함한다. 
 
-<center><img width="440" alt="2021-04-25 (8)" src="https://user-images.githubusercontent.com/53667002/115977155-48415380-a5b0-11eb-8ad4-9469b3bb15cc.png"></center>
+<center><img width="490" alt="2021-04-25 (8)" src="https://user-images.githubusercontent.com/53667002/115977155-48415380-a5b0-11eb-8ad4-9469b3bb15cc.png"></center>
 
 위 예시에서 22.66은 pro-stereotypical이고 22.67은 anti-stereotypical하다. 이런 편향의 원인 중 하나는 데이터셋에 female entity가 매우 적다는 것인데, 이것을 해소하기 위해 남성과 여성 entity를 바꿔서 데이터셋을 바꾸고 기존 데이터셋과 합쳐서 비율을 맞추는 등의 시도가 있었다고 한다.
 
