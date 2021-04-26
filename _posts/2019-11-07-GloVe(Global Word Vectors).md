@@ -4,6 +4,23 @@ category: Natural Language Processing
 tag: word2vec
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 GloVe는 기존의 단어 embedding 방법의 한계를 개선하고자 제안된 방법이다. 기존의 단어 embedding방법은 크게 Matirx Factorization Method와 Shallow Window-Based Method가 있다. 우선 전자에 해당하는 것에는 대표적으로 LSA가 있는데 이 방법은 카운트 기반으로, corpus의 전체 통계 정보도 고려하고 학습도 빠르지만, 단어 간의 관계를 통해 의미를 유추하거나 단어간의 유사도를 구하기 어렵다는 한계를 지니고 있다. 그리고 후자에 해당하는 방법에는 NNLM과 Word2Vec(CBOW, Skip-gram)이 있는데 이 방법은 단어 간의 유사도도 구할 수 있고 성능도 좋지만 window를 이용해 주변 단어들만 살피기 때문에 전체 corpus의 통계정보를 반영하지 못한다는 문제가 있다. GloVe는 위와 같이 이전에 제안된 word embedding 방법들의 한계점들을 단어간의 동시 등장 확률(co-occurrence probapility)를 사용하여 개선하였다. 
 
 ## Co-occurrence Matrix
