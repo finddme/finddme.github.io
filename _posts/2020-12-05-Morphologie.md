@@ -4,6 +4,23 @@ category: Linguistik(Germanistik)
 tag: Linguistik
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 ## 1\.Morphologie(형태론)
 형태론은 단어의 형태, 굴절을 다루는 언어학 하위분야이다. 단어의 형태를 알아보기 전, 단어라는 개념을 먼저 정의해보겠다. 단어의 정의에 대해서는 다양한 의견이 있을 수 있다:  
 
