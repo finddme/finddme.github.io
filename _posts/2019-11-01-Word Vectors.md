@@ -4,6 +4,23 @@ category: Natural Language Processing
 tag: NLP
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 컴퓨터는 숫자 연산으로 모든 것들을 이해하기 때문에 인간의 언어를 컴퓨터가 받아들이기 위해서는 컴퓨터가 연산할 수 있도록 숫자로 바꿔 주어야한다. 즉 단어를 벡터(vector)화 시켜야한다.
 
 ## One-Hot Vector
