@@ -4,6 +4,23 @@ category: Conversation Analysis
 tag: Conversation Analysis
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 Adjacency Pair분석에서 중요한 것은 "Why that now?"이다. 그 행위를 왜 하필 그 순간에 하는가가 중요한데 이를 알기 위해 아래 세 가지에 대한 확인이 필요하다:
 
 1) 이전에 어떤 상황이었는지
