@@ -4,6 +4,23 @@ category: Natural Language Processing
 tag: NLP
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 NPLM은 신경망을 이용하여 단어를 embedding하는 단어의 분산표상(distributed representation)방식 중 하나로 간단히 만하면 N-gram model이다. 즉 NPLM은 NPLM 모델은 앞서 나온 N개의 단어를 통해 다음 단어를 예측하는 방식으로 학습하는 모델이다. 아래 수식은 모델의 출력에 대한 수식인데 해당 식에 정의된 조건부 확률을 최대화하도록 학습하는 것이 NPLM모델이다.
 
 
