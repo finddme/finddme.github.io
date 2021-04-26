@@ -4,6 +4,23 @@ category: Conversation Analysis
 tag: Conversation Analysis
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 말하는 차례를 주고 받을 때 한번에 한 사람이 말하는 것이 일반적이다. overlap이 발생하더라도 굉장히 짧게 발생한다. 또한 말이 끝나는 것을 확인하고 다음 차례를 갖는다면 말이 끝날 때 마다 Pause가 있어야 하지만 그렇지 않다. 말이 끝났다는 신호가 따로 존재하지 않음에도 불구하고 turn을 이어받아 대화를 이어나간다.
 
 ## 1. Turn-Taking 
