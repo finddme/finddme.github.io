@@ -4,6 +4,23 @@ category: Linguistik(Germanistik)
 tag: Linguistik
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 ## 1\. Attribute(부가어)
 Ergaenzung과 Angabe는 Satzglieder로, Verbalkomplex와 관련된 요소이다. 이러한 Satzglieder는 Attribute(부가어)를 통해 확장될 수 있다. 따라서 Attribute는 Verbalkomplex에 직접적으로 관련이 있는 문장성분(Satzglied)이 아닌 문장성분의 부분(Satzgliedteil)이다. 
 
