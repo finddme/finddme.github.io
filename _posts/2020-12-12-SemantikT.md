@@ -4,6 +4,23 @@ category: Linguistik(Germanistik)
 tag: Linguistik
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 ## 1\. Merkmalsemantik(자질의미론)
 단어는 의미요소들(의미적 자질들)의 합이다. 따라서 화학에서 분자가 원자로 구성되어 있다는 개념을 기반하여 Merkmalsemantik(자질의미론)은 의미자질을 “원자”로 보고 특정 어휘의 의미를 “분자”로 본다. 간단하게 말하자면 자질 의미론은 단어는 하나의 의미 덩어리로 보고 그 덩어리를, 즉 의미를 의미소로(Seme)로 쪼개서 자질을 따지는 분야이다. 예를 들어 의미분자(어휘) Frau는 의미원소(Seme(의미소)) \[+Mensch\], \[+weiblich\], \[+erwachsen\]로 이루어진다.
 ### Seme(의미소)
