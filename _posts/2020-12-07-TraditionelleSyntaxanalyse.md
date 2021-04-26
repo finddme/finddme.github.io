@@ -4,6 +4,23 @@ category: Linguistik(Germanistik)
 tag: Linguistik
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 ## 1\.Traditionelle Syntaxanalyse(전통적인 통사분석)
 ### Syntax(통사)
 통사란 작은 단위(단어와 단어그룹)의 기본목록으로부터 완성된(문법적인) 문장이 형성되는 하나의 규범체계이다.
