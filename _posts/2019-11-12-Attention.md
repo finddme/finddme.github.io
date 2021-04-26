@@ -4,6 +4,23 @@ category: Natural Language Processing
 tag: NLP
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 [이전 게시물](https://finddme.github.io/natural%20language%20processing/2019/11/11/Seq2Seq/)에서는 seq2seq모델에 대해 살펴보았다. 이제 seq2seq모델의 한계점 중 하나인 장기 기억력 문제를 해결하기 위해 고안된 Attention Mechanism을 seq2seq에 추가한 방식을 다룬 논문 '[NEURAL MACHINE TRANSLATION BY JOINTLY LEARNING TO ALIGN AND TRANSLATE](https://arxiv.org/abs/1409.0473)'에 대해 설명하도록 하겠다. Attention Mechanism은 현재 다양한 deep learning model에 활용되고 있지만 기계번역을 위한 seq2seq에 가장 처음 도입되어 소개되었다. 
 
 기존 seq2seq모델에서는 Encoder에서 나온 모든 state값을 활용하지 않고 단순히 마지막에 나온 hidden vector를 하나의 고정된 context vector로 사용하였다. 이는 seq2seq model이 장기 기억 한계에 부딪힌 가장 큰 원인으로 볼 수 있다. 왜냐하면 context vector는 Encoder부분의 정보를 압축하고 있는 것인데 문장이 길어질 수록 정보 압축 시 정보 손실이 발생하기 때문이다. 이러한 문제를 해결하기 위해 고안된 Attention Mechanism에서는 Encoder에서 나온 각각의 state값을 모두 활용하여 Decoder부분에서 dynamic하게 context vector를 만들어 하나의 고정된 context vector의 사용으로 인해 발생한 seq2seq model의 문제를 해결하였다. 즉, 각각의 state 별로 context vector를 새롭게 만들어내 seq2seq model의 한계를 개선한 것이다. 
