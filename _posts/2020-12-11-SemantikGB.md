@@ -4,6 +4,23 @@ category: Linguistik(Germanistik)
 tag: Linguistik
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 ## 1\. Semantik(의미론)
 의미론이란 기호(특히 언어기호)의 의미를 연구하는 학문 분야를 가리키는 명칭이다.
 ### Lexikalische Bedeutung(사전적 의미)
