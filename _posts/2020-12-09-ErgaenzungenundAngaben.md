@@ -4,6 +4,23 @@ category: Linguistik(Germanistik)
 tag: Linguistik
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 ## 1\. Satzglieder와 Satzgliedeteile
 여기에서는 Ergaenzung과 Angabe의 클래스(범주)를 결정하고 이를 수형도로 표현하는 것에 대해 다룬다. 둘의 범주 분류는 Urlich Engel의 “Deutsch Grammatik”을 기반으로 한다. 
 
