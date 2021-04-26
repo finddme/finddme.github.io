@@ -4,6 +4,23 @@ category: Natural Language Processing
 tag: NLP
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 Word embedding은 단어의 유사도를 표현하지 못하는 one-hot-encoding이 지닌 몇 가지 문제점를 해결하기 위해 고안된 방법이다. one-hot-encoding은 해당 단어를 제외한 모든 단어를 0으로 표현하는 binary한 구조를 가져 데이터가 많아질 수록 차원이 매우 커지며 벡터가 굉장히 sparse해진다는 문제와 두 벡터의 내적이 0이 되어 단어들 간의 유사도 표현이 불가능 하다는 문제가 있다.
 
 이러한 문제를 해결하기 위해 등장한 개념이 Word embedding인데 이는 분산 표상(distributed representation/Distributional similarity based representations)이라고도 불린다. 분산표상은 Distributional Hypothesis라는 언어학 개념으로부터 비롯되었다. 이 개념은 비슷한 분포를 가진 단어들은 의미 또한 비슷하다는 가정이다. 이러한 가정으로부터 착안된 분산 표상은 말 그대로 단어들의 유사도(similarity)를 기반으로 그들의 분포(Distributional)를 벡터 공간 안에 표현(representation)한 것이다. 간단히 말하자면 분산표상은 단어를 연속형의 실수값으로 표현함으로써 위에서 언급한 one-hot-encoding의 여러 문제점를 해결하였다. 앞서 언급했 듯이 분산표상은 단어 간의 유사도 정보를 포함하고 있기 때문에 다음 그림과 같이 유사한 의미를 지닌 단어들은 가깝게, 그렇지 않은 경우에는 멀게 배치 된다.
