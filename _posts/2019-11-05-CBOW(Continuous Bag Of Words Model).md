@@ -4,6 +4,23 @@ category: Natural Language Processing
 tag: word2vec
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 Word2vec은 [T. Mikolov,et al.,2013](https://code.google.com/archive/p/word2vec/)가 제안한 word embedding방법이다. [NPLM](https://finddme.github.io/natural%20language%20processing/2019/11/04/NPLM(Neural-Probabilistic-Language-Model)/)에 비해 계산량이 확연히 줄어 빠른 학습이 가능해져 더 좋은 성능을 보인다. Word2vec에는 CBOW(Continuous Bag-of-Words)와 Skip-gram 이렇게 두 가지 모델이 있다.
 
 <center><img width="606" alt="2019-10-26 (2)" src="https://user-images.githubusercontent.com/53667002/68114413-49ed0680-ff39-11e9-8dc4-fd8ca5b7cebe.png"></center>
