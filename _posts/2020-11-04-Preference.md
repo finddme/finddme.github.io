@@ -4,6 +4,23 @@ category: Conversation Analysis
 tag: Conversation Analysis
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 ## 1. Concept of preference
 
 *In the vast majority of sequence types, there are alternate types of response. These embody different alignments toward  the project undertaken in the first pair part. These are not symmetrical alternatives. The response to the first pair part that promotes the accomplishment of the activity underway is "preferred".*  
