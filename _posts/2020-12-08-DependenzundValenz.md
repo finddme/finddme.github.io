@@ -4,6 +4,23 @@ category: Linguistik(Germanistik)
 tag: Linguistik
 ---
 
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
 ## 1\.Dependenz und Valenz(의존문법과 결합가)
 현대 문법의 규정은 일반적으로 언어 관찰에서 비롯된다.
 ### Dependenzgrammatik(의존문법)
