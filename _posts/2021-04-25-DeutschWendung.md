@@ -72,7 +72,7 @@ tag: Deutsch
 > Mit Stand 31. Dezember 2014 waren nach <span style="color:#A95762">Angaben</span> der Deutschen Bundesbank noch DM Banknoten im Nennwert von 6,13 Mrd. DM und Münzen im Wert von 6,81 Mrd. DM nicht umgetauscht, das sind 5,29 % der Umlaufmenge des Jahres 2000 von 244,8 Mrd. DM.
 
 **Angelegenheit** 일, 용무  
-> Durch den Zwei-plus-Vier-Vertrag (Vertrag über die abschließende Regelung in bezug auf Deutschland) wurde der Einheit der beiden deutschen Staaten zugestimmt und dem vereinten Deutschland die volle Souveränität über seine inneren und äußeren <span style="color:#A95762">Angelegenheiten</span> zuerkannt
+> Durch den Zwei-plus-Vier-Vertrag (Vertrag über die abschließende Regelung in bezug auf Deutschland) wurde der Einheit der beiden deutschen Staaten zugestimmt und dem vereinten Deutschland die volle Souveränität über seine inneren und äußeren <span style="color:#A95762">Angelegenheiten</span> zuerkannt.
 
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -162,6 +162,24 @@ tag: Deutsch
 **fuehren zu** -로 이끈다 ('-하도록 한다'로 해석하면 더 자연스럽다)  
 > Als deutsche Wiedervereinigung oder deutsche Vereinigung (in der Gesetzessprache: Herstellung der Einheit Deutschlands) wird der durch die friedliche Revolution in der DDR angestoßene Prozess der Jahre 1989 und 1990 bezeichnet, der <span style="color:#A95762">zum</span> Beitritt der Deutschen Demokratischen Republik zur Bundesrepublik Deutschland am 3. Oktober 1990 <span style="color:#A95762">führte</span>.
 
+**faktisch** 사실상  
+> Ab 1949 war der Ostteil der Stadt <span style="color:#A95762">faktisch</span> Hauptstadt der Deutschen Demokratischen Republik.
+
+**in der Folge** 이후에  
+> Mit der deutschen Wiedervereinigung im Jahr 1990 war Berlin wieder gesamtdeutsche Hauptstadt und wurde <span style="color:#A95762">in der Folge</span> Sitz der Bundesregierung, des Bundespräsidenten, des Deutschen Bundestags, des Bundesrats sowie zahlreicher Bundesministerien und Botschaften.  
+
+**aus etwas(3) Folge ziehen** 3으로부터 결론을 내리다  
+> 
+
+**infolge** -에 의하여, -때문에  
+> Das Deutsche Kaiserreich ergänzte gegen Ende des 19. Jahrhunderts klassische Bildungsideale im Sinne von Wilhelm von Humboldt durch Forderungen nach moderner Bildung <span style="color:#A95762">infolge</span> des Welthandels und neuer technischer Errungenschaften.
+
+**zufolge** -에 의하면  
+> Vermutungen <span style="color:#A95762">zufolge</span> soll das Berliner Wappentier, der Bär, auf Albrecht I. „der Bär“, Eroberer und Begründer der Mark Brandenburg zurückzuführen sein.
+
+**feststehen** 확실하다  
+> <span style="color:#A95762">Es steht fest</span>, dass der Berliner Bär ununterbrochen seit 1280 im Siegel oder Wappen erscheint. 
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **von 3 Gebrauch machen** 사용하다  
@@ -180,9 +198,12 @@ tag: Deutsch
 > Wichtige Bereiche sind die Industrie und der Dienstleistungsbereich; die Produktion von landwirtschaftlichen <span style="color:#A95762">Gütern</span> hat eine relativ geringe Bedeutung.
 
 **gelten als, fuer** -라고 간주되다, -라고 한다  
->  <span style="color:#A95762">Als</span> weltweit konkurrenzfähigste Wirtschaftsbranchen der deutschen Industrie <span style="color:#A95762">gelten</span> die Automobil-, Nutzfahrzeug-, Elektrotechnische, Maschinenbau- und Chemieindustrie.
+> <span style="color:#A95762">Als</span> weltweit konkurrenzfähigste Wirtschaftsbranchen der deutschen Industrie <span style="color:#A95762">gelten</span> die Automobil-, Nutzfahrzeug-, Elektrotechnische, Maschinenbau- und Chemieindustrie.
 
 **gelten von 3** -에 대해 
+> <span style="color:#A95762">Gelegentlich</span> werden von den Besuchern Eintritt oder Parkgebühren erhoben.
+
+**gelegentlich** 때때로
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -281,6 +302,9 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 **relativ** 비교적  
 > Wichtige Bereiche sind die Industrie und der Dienstleistungsbereich; die Produktion von landwirtschaftlichen Gütern hat eine <span style="color:#A95762">relativ</span> geringe Bedeutung.
 
+**Rahmen** 틀, 범위  
+> Die professionell organisierten Flohmärkte finden meist in einem deutlich kleineren <span style="color:#A95762">Rahmen</span> als die traditionellen Flohmärkte statt.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **sein kann** -일 수 있는
@@ -308,6 +332,9 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 **mit Stand** 어떤 상태로, -현재(2021년 5월 2일 현재,-)  
 > <span style="color:#A95762">Mit Stand</span> 31. Dezember 2014 waren nach Angaben der Deutschen Bundesbank noch DM Banknoten im Nennwert von 6,13 Mrd. DM und Münzen im Wert von 6,81 Mrd. DM nichtumgetauscht, das sind 5,29 % der Umlaufmenge des Jahres 2000 von 244,8 Mrd. DM.
+
+**im Sinne**  -의미에서, -의도로  
+> Das Deutsche Kaiserreich ergänzte gegen Ende des 19. Jahrhunderts klassische Bildungsideale <span style="color:#A95762">im Sinne</span> von Wilhelm von Humboldt durch Forderungen nach moderner Bildung infolge des Welthandels und neuer technischer Errungenschaften.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -338,6 +365,9 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 **ueber weite Strecken** 상당부분  
 > Die Geschichte der europäischen klassischen Musik wird <span style="color:#A95762">über weite Strecken</span> von deutschen Komponisten geprägt.
 
+**urkundlich** 문서상으로  
+> <span style="color:#A95762">Urkundlich</span> erstmals im 13. Jahrhundert erwähnt, war Berlin im Verlauf der Geschichte und in verschiedenen Staatsformen Residenz- und Hauptstadt Brandenburgs, Preußens und des Deutschen Reichs.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **im Sinne des Volksmundes** 속설에 의하면, 속설에 따르면
@@ -363,6 +393,13 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 **Voraussetzung** 전제조건   
 > Notwendige äußere <span style="color:#A95762">Voraussetzung</span> der deutschen Wiedervereinigung war das Einverständnis der vier Siegermächte des Zweiten Weltkrieges, die bis dahin völkerrechtlich noch immer die Verantwortung für Deutschland als Ganzes innehatten beziehungsweise beanspruchten.
+
+**Vermutung** 추측  
+> <span style="color:#A95762">Vermutungen</span> zufolge soll das Berliner Wappentier, der Bär, auf Albrecht I. „der Bär“, Eroberer und Begründer der Mark Brandenburg zurückzuführen sein.
+
+**vermag zu** 할 수 있다 (=kann)  
+> Diese Theorie <span style="color:#A95762">vermag</span> jedoch nicht das mittelhochdeutsche Diminutivsuffix -lein / -lin <span style="color:#A95762">zu</span> erklären, was den Städtenamen „kleiner Bär“ (Bärlein) bedeutete.
+
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
