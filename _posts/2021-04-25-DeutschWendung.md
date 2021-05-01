@@ -53,6 +53,9 @@ tag: Deutsch
 **angesichts 2** -을 고려하여
 > angesichts dieser Tatsache ist es besser, dass...
 
+**sein arm an-** an 이하가 부족하다  
+> Deutschland <span style="color:#A95762">ist arm an</span> Rohstoffen und Energierohstoffen; der Abbau von Rohstoffen fällt volkswirtschaftlich kaum ins Gewicht.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **beziehen sich auf 4** -와 관련된, -에 대한
@@ -71,9 +74,18 @@ tag: Deutsch
 **aus sich breiten** 퍼지다
 > Dieser Geist der Freiheit <span style="color:#A95762">breitet sich</span> auch ausserhalb <span style="color:#A95762">aus</span>, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung zu ringen hat</span>.
 
+**besitzen** 가진다, 소유하다 (=haben)  
+>  Bedeutung <span style="color:#A95762">besitzen</span> die stark miteinander konkurrierenden Parteien, weswegen Deutschland auch als Parteiendemokratie bezeichnet wird.
+
+**bei** -의 경우, -할 때, -옆에서  
+> <span style="color:#A95762">Beim</span> Bruttoinlandsprodukt pro Kopf lag Deutschland 2012 in US-Dollar in Europa an zwölfter und international an 21. Stelle.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+**durchfuehren** 실행하다, 수행하다  
+> Die Wahlen werden überwiegend als personalisierte Verhältniswahlen <span style="color:#A95762">durchgeführt</span>.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -104,6 +116,18 @@ tag: Deutsch
 **von 3 Gebrauch machen** 사용하다  
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; und zwar die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: <span style="color:#A95762">von</span> seiner Vernunft in allen Stuecken oeffentlichen <span style="color:#A95762">Gebrauch</span> zu <span style="color:#A95762">machen</span>.
 
+**gehoeren zu 3** zu 이하에 속한다  
+> <span style="color:#A95762">Zum</span> politischen System der Bundesrepublik Deutschland <span style="color:#A95762">gehören</span> die politischen Institutionen, die Entscheidungsprozesse und ihre Inhalte in Deutschland.
+
+**ins Gewicht** 중요하다  
+> Deutschland ist arm an Rohstoffen und Energierohstoffen; der Abbau von Rohstoffen fällt volkswirtschaftlich kaum <span style="color:#A95762">ins Gewicht</span>.  
+
+**gering** 경미한  
+>  Wichtige Bereiche sind die Industrie und der Dienstleistungsbereich; die Produktion von landwirtschaftlichen Gütern hat eine relativ <span style="color:#A95762">geringe</span> Bedeutung.
+
+**Gut** (생산을 통해 얻어진) 재화  
+> Wichtige Bereiche sind die Industrie und der Dienstleistungsbereich; die Produktion von landwirtschaftlichen <span style="color:#A95762">Gütern</span> hat eine relativ geringe Bedeutung.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **hinderlich 3** 3을 방해하다
@@ -112,6 +136,8 @@ tag: Deutsch
 **haben zu + infinitiv(=have to =muessen)** -해야만 한다   
 > Dieser Geist der Freiheit breitet sich auch ausserhalb aus, selbst da, wo er mit aeusseren Hindernissen einer sich selbst missverstehenden Regierung <span style="color:#A95762">zu ringen hat</span>.
 
+**hinsichtlich** -와 관련하여  
+> Die Wirtschaft Deutschlands ist <span style="color:#A95762">hinsichtlich</span> des Bruttoinlandsprodukts die größte Volkswirtschaft Europas und die viertgrößte Volkswirtschaft weltweit.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -165,6 +191,9 @@ tag: Deutsch
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
+**relativ** 비교적  
+> Wichtige Bereiche sind die Industrie und der Dienstleistungsbereich; die Produktion von landwirtschaftlichen Gütern hat eine <span style="color:#A95762">relativ</ geringe Bedeutung.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **sein kann** -일 수 있는
@@ -198,6 +227,9 @@ tag: Deutsch
 **mit 3 umgehen** 사용하다, 다루다  
 > Der alte Mensch will den Umgang mit dem Computer lernen.
 
+**ueberwiegend** 주로  
+> Die Wahlen werden <span style="color:#A95762">überwiegend</span> als personalisierte Verhältniswahlen durchgeführt.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **im Sinne des Volksmundes** 속설에 의하면, 속설에 따르면
@@ -215,6 +247,8 @@ tag: Deutsch
 **4 unter verstehen** unter이하가 4라고 생각하다
 > Ich <span style="color:#A95762">verstehe</span> aber <span style="color:#A95762">unter</span> dem oeffentlichen Gebrauche seiner eigenen Vernunft denjnigen, <span style="color:#A95762">den</span> jemand als Gelehrter von ihr vor dem ganzen Puvlikum der Leserwelt macht.
 
+**vorschlagen** 제안하다, 추천하다  
+> Diese Person bestimmt die Richtlinien der Innen- und Außenpolitik auf Bundesebene (Richtlinienkompetenz) und <span style="color:#A95762">schlägt</span> die Bundesminister <span style="color:#A95762">vor</span>.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -237,7 +271,8 @@ tag: Deutsch
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; <span style="color:#A95762">und zwar</span> die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: von seiner Vernunft in allen Stuecken oeffentlichen Gebrauch zu machen.
 
 **sich zusammensetzen aus 3** -로 구성되다, 이루어지다
-> das Team setzt sich aus mehreren Wissenschaftlern zusammen
+> das Team setzt sich aus mehreren Wissenschaftlern zusammen  
+> Die Bundesländer, aus denen der Staat Deutschland <span style="color:#A95762">zusammengesetzt</span> ist, haben eine eigene Vertretung, den Bundesrat, der neben dem Bundestag an der Gesetzgebung mitwirkt.
 
 **zustande kommen** 되다, 실현되다
 > Wie und warum solche Nano-Effekte zustande kommen, ist aber meist noch unbekannt.
