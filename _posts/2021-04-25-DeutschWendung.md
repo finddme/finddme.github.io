@@ -71,6 +71,9 @@ tag: Deutsch
 **Angabe** 진술  
 > Mit Stand 31. Dezember 2014 waren nach <span style="color:#A95762">Angaben</span> der Deutschen Bundesbank noch DM Banknoten im Nennwert von 6,13 Mrd. DM und Münzen im Wert von 6,81 Mrd. DM nicht umgetauscht, das sind 5,29 % der Umlaufmenge des Jahres 2000 von 244,8 Mrd. DM.
 
+**Angelegenheit** 일, 용무  
+> Durch den Zwei-plus-Vier-Vertrag (Vertrag über die abschließende Regelung in bezug auf Deutschland) wurde der Einheit der beiden deutschen Staaten zugestimmt und dem vereinten Deutschland die volle Souveränität über seine inneren und äußeren <span style="color:#A95762">Angelegenheiten</span> zuerkannt
+
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -113,6 +116,10 @@ tag: Deutsch
 **befinden sich** 있다  
 > 
 
+**Betritt zu**  -에 가입
+**beitreten 2** -에 가입하다  
+> Als deutsche Wiedervereinigung oder deutsche Vereinigung (in der Gesetzessprache: Herstellung der Einheit Deutschlands) wird der durch die friedliche Revolution in der DDR angestoßene Prozess der Jahre 1989 und 1990 bezeichnet, der zum <span style="color:#A95762">Beitritt</span> der Deutschen Demokratischen Republik <span style="color:#A95762">zur</span> Bundesrepublik Deutschland am 3. Oktober 1990 führte.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -150,7 +157,10 @@ tag: Deutsch
 **fallen**  
 1. 떨어지다  
 2. 속한다 (날짜와 관련)  
-> Adventskalender, die sich auf das Kirchenjahr beziehen, umfassen den ganzen Advent (der erste Adventssonntag kann zwischen den 27. November und den 3. Dezember <span style="color:#A95762">fallen</span>) bis Weihnachten oder Heilige Drei Könige, während kalendarische Adventskalender am 1. Dezember beginnen und am 24. Dezember, dem Heiligen Abend, enden
+> Adventskalender, die sich auf das Kirchenjahr beziehen, umfassen den ganzen Advent (der erste Adventssonntag kann zwischen den 27. November und den 3. Dezember <span style="color:#A95762">fallen</span> bis Weihnachten oder Heilige Drei Könige, während kalendarische Adventskalender am 1. Dezember beginnen und am 24. Dezember, dem Heiligen Abend, enden.
+
+**fuehren zu** -로 이끈다 ('-하도록 한다'로 해석하면 더 자연스럽다)  
+> Als deutsche Wiedervereinigung oder deutsche Vereinigung (in der Gesetzessprache: Herstellung der Einheit Deutschlands) wird der durch die friedliche Revolution in der DDR angestoßene Prozess der Jahre 1989 und 1990 bezeichnet, der <span style="color:#A95762">zum</span> Beitritt der Deutschen Demokratischen Republik zur Bundesrepublik Deutschland am 3. Oktober 1990 <span style="color:#A95762">führte</span>.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -348,6 +358,12 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 **vorschlagen** 제안하다, 추천하다  
 > Diese Person bestimmt die Richtlinien der Innen- und Außenpolitik auf Bundesebene (Richtlinienkompetenz) und <span style="color:#A95762">schlägt</span> die Bundesminister <span style="color:#A95762">vor</span>.
 
+**vollziehen** 실행하다, 일어나다  
+> Die damit <span style="color:#A95762">vollzogene</span> deutsche Einheit, die seither an jedem 3. Oktober als Nationalfeiertag mit dem Namen Tag der Deutschen Einheit begangen wird, beendete den als Folge des Zweiten Weltkrieges in der Ära des Kalten Krieges vier Jahrzehnte währenden Zustand der deutschen Teilung
+
+**Voraussetzung** 전제조건   
+> Notwendige äußere <span style="color:#A95762">Voraussetzung</span> der deutschen Wiedervereinigung war das Einverständnis der vier Siegermächte des Zweiten Weltkrieges, die bis dahin völkerrechtlich noch immer die Verantwortung für Deutschland als Ganzes innehatten beziehungsweise beanspruchten.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Wenn, Waehrend, Nachdem** 생략
@@ -358,6 +374,12 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 **Eben weil** 바로 그렇기 때문에
 > Der zweite Punkt ist: <span style="color:#A95762">Eben weil</span> die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente Form annehmen.
+
+**waehrend** 동사 waehren(지속하다)의 Partizip 1 형태. -> -동안에/반면에  
+> Die damit vollzogene deutsche Einheit, die seither an jedem 3. Oktober als Nationalfeiertag mit dem Namen Tag der Deutschen Einheit begangen wird, beendete den als Folge des Zweiten Weltkrieges in der Ära des Kalten Krieges vier Jahrzehnte <span style="color:#A95762">währenden</span> Zustand der deutschen Teilung
+
+**auf dem Weg** 길 위에서 -> 과정 속에서  
+> Maßgebliche Zwischenstationen <span style="color:#A95762">auf dem Weg</span> der deutschen Wiedervereinigung waren die Volkskammerwahl im März 1990 sowie der Staatsvertrag über die Währungs-, Wirtschafts- und Sozialunion. 
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;X&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -378,6 +400,9 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 **zugrunde liegen** -의 기초가 되다  
 **zugrunde legen** -을 기초로 하다  
 >  Ebenso werden selbstgebastelte Kalender verwendet, denen oft ein ähnliches Prinzip <span style="color:#A95762">zugrunde liegt</span>.
+
+**zuerkennen 3** 허가하다  
+> Durch den Zwei-plus-Vier-Vertrag (Vertrag über die abschließende Regelung in bezug auf Deutschland) wurde der Einheit der beiden deutschen Staaten zugestimmt und dem vereinten Deutschland die volle Souveränität über seine inneren und äußeren Angelegenheiten <span style="color:#A95762">zuerkannt</span>.
 
 
 ## <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
