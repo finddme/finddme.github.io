@@ -54,7 +54,7 @@ tag: Deutsch
 > angesichts dieser Tatsache ist es besser, dass...
 
 **sein arm an-** an 이하가 부족하다  
-> Deutschland <span style="color:#A95762">ist arm an</span> Rohstoffen und Energierohstoffen; der <span style="color:#A95762">Abbau</span> von Rohstoffen fällt volkswirtschaftlich kaum ins Gewicht.
+> Deutschland <span style="color:#A95762">ist arm an</span> Rohstoffen und Energierohstoffen; der Abbau von Rohstoffen fällt volkswirtschaftlich kaum ins Gewicht.
 
 **Abbau** 감소  
 > Deutschland ist arm an Rohstoffen und Energierohstoffen; der <span style="color:#A95762">Abbau</span> von Rohstoffen fällt volkswirtschaftlich kaum ins Gewicht
@@ -64,6 +64,13 @@ tag: Deutsch
 
 **anzeigen** 나타내다  
 > Der Kalender ist in verschiedenen Formen und Ausprägungen verbreitet, <span style="color:#A95762">zeigt</span> jedoch in der Regel die verbleibenden Tage bis Weihnachten <span style="color:#A95762">an</span>.
+
+**Anlage** 시설, 설비  
+> Der König lebte nur wenige Monate im Schloss, er starb noch vor der Fertigstellung der <span style="color:#A95762">Anlage</span>.  
+
+**Angabe** 진술  
+> Mit Stand 31. Dezember 2014 waren nach <span style="color:#A95762">Angaben</span> der Deutschen Bundesbank noch DM Banknoten im Nennwert von 6,13 Mrd. DM und Münzen im Wert von 6,81 Mrd. DM nicht umgetauscht, das sind 5,29 % der Umlaufmenge des Jahres 2000 von 244,8 Mrd. DM.
+
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -80,9 +87,9 @@ tag: Deutsch
 > 
 
 **sich 2 bedienen** -를 사용하다, 다루다
-> Unmuendigkeit ist das Unvermoegen, sich <span style="color:#A95762">seines Verstandes(/span> ohne Leitung eines anderen zu <span style="color:#A95762">bedienen</span>.
+> Unmuendigkeit ist das Unvermoegen, sich <span style="color:#A95762">seines Verstandes</span> ohne Leitung eines anderen zu <span style="color:#A95762">bedienen</span>.
   
-**befoerderlich 3**
+**befoerderlich 3** 촉진하다
 > Welche Einschraenkung aber ist der Aufklaerung hinderlich? welche nicht, sondern <span style="color:#A95762">ihr</span> wohl gar <span style="color:#A95762">befoerderlich</span>?
 
 **aus sich breiten** 퍼지다
@@ -98,10 +105,13 @@ tag: Deutsch
 >  Als weltweit konkurrenzfähigste Wirtschafts<span style="color:#A95762">branchen</span> der deutschen Industrie gelten die Automobil-, Nutzfahrzeug-, Elektrotechnische, Maschinenbau- und Chemieindustrie. 
 
 **betrachtlich** 적잖은, 상당한  
-> Der Großteil des deutschen Außenhandels erfolgt mit anderen Industrieländern; dabei wird ein <span style="color:#A95762">beträchtlicher</span> Außenhandelsüberschuss erzielt.  
-
+> Der Großteil des deutschen Außenhandels erfolgt mit anderen Industrieländern; dabei wird ein <span style="color:#A95762">beträchtlicher</span> Außenhandelsüberschuss erzielt. 
+ 
 **Beitrag zu** zu 이하에 대한 기여  
 > Auch <span style="color:#A95762">zur</span> Quantenphysik leistete er wesentliche <span style="color:#A95762">Beiträge</span>. 
+
+**befinden sich** 있다  
+> 
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -109,6 +119,9 @@ tag: Deutsch
 
 **durchfuehren** 실행하다, 수행하다  
 > Die Wahlen werden überwiegend als personalisierte Verhältniswahlen <span style="color:#A95762">durchgeführt</span>.
+
+**dienen als** -로서 역할한다  
+> Heute sind Buchmessen weniger Ordermessen für das Bestellwesen zwischen Verlagen und verbreitendem Buchhandel, sondern <span style="color:#A95762">dienen</span> stärker <span style="color:#A95762">als</span> Informationsmessen
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -133,6 +146,11 @@ tag: Deutsch
 
 **Form annehmen** -한 형태를 띄다
 > Der zweite Punkt ist: Eben weil die Liebe eine Trennung behandelt, kann sie in dem Moment, in dem sich die Zwei zeigt, als solche die Vuehne betritt und uns die Welt in neuer Weise erfahren laesst, nur eine zufaellige oder kontingente <span style="color:#A95762">Form annehmen</span>.
+
+**fallen**  
+1. 떨어지다  
+2. 속한다 (날짜와 관련)  
+> Adventskalender, die sich auf das Kirchenjahr beziehen, umfassen den ganzen Advent (der erste Adventssonntag kann zwischen den 27. November und den 3. Dezember <span style="color:#A95762">fallen</span>) bis Weihnachten oder Heilige Drei Könige, während kalendarische Adventskalender am 1. Dezember beginnen und am 24. Dezember, dem Heiligen Abend, enden
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -197,6 +215,9 @@ tag: Deutsch
 **Alle** 그냥 전체
 > <span style="color:#A95762">Jeder</span> Versuch, eine solche Beschreibung zu finden, wuerde zu Widerspruechen fuehren.
 
+**jeweilig** 그때그때마다의, 당시의  
+> Eine Buchmesse informiert über den <span style="color:#A95762">jeweiligen</span> Buchmarkt. 
+
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;K&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -230,6 +251,9 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
+**nachdem** nachdem 이하 이후에  
+> Ab 1564 wurde Frankfurt der wichtigste Umschlagplatz, seit dem 17. Jahrhundert bis zum Ende des Zweiten Weltkrieges blieb Leipzig der zentrale Messeplatz für die Branche, <span style="color:#A95762">nachdem</span> sich die wichtigstenund größten Verlage dort angesiedelt hatten. 
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -245,7 +269,7 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **relativ** 비교적  
-> Wichtige Bereiche sind die Industrie und der Dienstleistungsbereich; die Produktion von landwirtschaftlichen Gütern hat eine <span style="color:#A95762">relativ</ geringe Bedeutung.
+> Wichtige Bereiche sind die Industrie und der Dienstleistungsbereich; die Produktion von landwirtschaftlichen Gütern hat eine <span style="color:#A95762">relativ</span> geringe Bedeutung.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -268,8 +292,12 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 > Adventskalender <span style="color:#A95762">sollen</span>, ähnlich wie der Adventskranz, die Wartezeit bis zum Weihnachtsfest verkürzen und die Vorfreude steigern.  
 
 **stammen aus** -에 비롯하다  
-> Ursprünglich aus einer lutherischen Sitte Deutschlands <span style="color:#A95762">stammend</span>, gehören Adventskalender heute 
-in christlich geprägten Ländern zur Vorbereitung auf das Fest der Geburt Jesu Christi.
+> Ursprünglich aus einer lutherischen Sitte Deutschlands <span style="color:#A95762">stammend</span>, gehören Adventskalender heute in christlich geprägten Ländern zur Vorbereitung auf das Fest der Geburt Jesu Christi.
+
+**sich** 재귀동사는 거의 수동적인 의미로 해석하면 될 때가 많다.  
+
+**mit Stand** 어떤 상태로, -현재(2021년 5월 2일 현재,-)  
+> <span style="color:#A95762">Mit Stand</span> 31. Dezember 2014 waren nach Angaben der Deutschen Bundesbank noch DM Banknoten im Nennwert von 6,13 Mrd. DM und Münzen im Wert von 6,81 Mrd. DM nichtumgetauscht, das sind 5,29 % der Umlaufmenge des Jahres 2000 von 244,8 Mrd. DM.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
