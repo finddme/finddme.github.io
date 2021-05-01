@@ -54,7 +54,16 @@ tag: Deutsch
 > angesichts dieser Tatsache ist es besser, dass...
 
 **sein arm an-** an 이하가 부족하다  
-> Deutschland <span style="color:#A95762">ist arm an</span> Rohstoffen und Energierohstoffen; der Abbau von Rohstoffen fällt volkswirtschaftlich kaum ins Gewicht.
+> Deutschland <span style="color:#A95762">ist arm an</span> Rohstoffen und Energierohstoffen; der <span style="color:#A95762">Abbau</span> von Rohstoffen fällt volkswirtschaftlich kaum ins Gewicht.
+
+**Abbau** 감소  
+> Deutschland ist arm an Rohstoffen und Energierohstoffen; der <span style="color:#A95762">Abbau</span> von Rohstoffen fällt volkswirtschaftlich kaum ins Gewicht
+
+**Auspraegung** 특색  
+> Der Kalender ist in verschiedenen Formen und <span style="color:#A95762">Ausprägungen</span> verbreitet, zeigt jedoch in der Regel die verbleibenden Tage bis Weihnachten an.
+
+**anzeigen** 나타내다  
+> Der Kalender ist in verschiedenen Formen und Ausprägungen verbreitet, <span style="color:#A95762">zeigt</span> jedoch in der Regel die verbleibenden Tage bis Weihnachten <span style="color:#A95762">an</span>.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -62,8 +71,13 @@ tag: Deutsch
 >  Die Bezeichnung Bohnenkaffee bedeutet nicht, dass der Kaffee noch ungemahlen ist, sondern <span style="color:#A95762">bezieht sich auf</span> die Reinheit des Produkts und dient der Unterscheidung von sogenanntem Ersatzkaffee.
 
 **Beziehung zu 3** -와 관련된
-> Es ist verstaendlich, dass in unserer wissenschaftlichen <span style="color:#A95762">Beziehung zur</span> Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es mit den Teilen der Natur zu tun bekommen, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.
+> Es ist verstaendlich, dass in unserer wissenschaftlichen <span style="color:#A95762">Beziehung zur</span> Natur unsere eigene Taetigkeit dort sehr wichtig wird, wo wir es mit den Teilen der Natur zu tun bekommen, in die wir nur durch die kompliziertesten technischen Gilfsmittel eingringen koennen.  
 
+**in Bezug auf 4** -과 관련된  
+> Adventskalender zählen entweder <span style="color:#A95762">in Bezug auf</span> das Kirchenjahr oder auf den bürgerlichen Kalender.
+
+**bezueglich 2** -와 관련하여  
+> 
 
 **sich 2 bedienen** -를 사용하다, 다루다
 > Unmuendigkeit ist das Unvermoegen, sich <span style="color:#A95762">seines Verstandes(/span> ohne Leitung eines anderen zu <span style="color:#A95762">bedienen</span>.
@@ -79,6 +93,15 @@ tag: Deutsch
 
 **bei** -의 경우, -할 때, -옆에서  
 > <span style="color:#A95762">Beim</span> Bruttoinlandsprodukt pro Kopf lag Deutschland 2012 in US-Dollar in Europa an zwölfter und international an 21. Stelle.
+
+**Bereich = Branch** 영역, 분야  
+>  Als weltweit konkurrenzfähigste Wirtschafts<span style="color:#A95762">branchen</span> der deutschen Industrie gelten die Automobil-, Nutzfahrzeug-, Elektrotechnische, Maschinenbau- und Chemieindustrie. 
+
+**betrachtlich** 적잖은, 상당한  
+> Der Großteil des deutschen Außenhandels erfolgt mit anderen Industrieländern; dabei wird ein <span style="color:#A95762">beträchtlicher</span> Außenhandelsüberschuss erzielt.  
+
+**Beitrag zu** zu 이하에 대한 기여  
+> Auch <span style="color:#A95762">zur</span> Quantenphysik leistete er wesentliche <span style="color:#A95762">Beiträge</span>. 
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -116,7 +139,7 @@ tag: Deutsch
 **von 3 Gebrauch machen** 사용하다  
 > Zu dieser Aufklaerung aber wird nichts erfordert als Freiheit; und zwar die unschaedlichste unter allem, was nur Freiheit heissen mag, naemlich die: <span style="color:#A95762">von</span> seiner Vernunft in allen Stuecken oeffentlichen <span style="color:#A95762">Gebrauch</span> zu <span style="color:#A95762">machen</span>.
 
-**gehoeren zu 3** zu 이하에 속한다  
+**gehoeren zu 3** zu 이하에 속다  
 > <span style="color:#A95762">Zum</span> politischen System der Bundesrepublik Deutschland <span style="color:#A95762">gehören</span> die politischen Institutionen, die Entscheidungsprozesse und ihre Inhalte in Deutschland.
 
 **ins Gewicht** 중요하다  
@@ -145,7 +168,10 @@ tag: Deutsch
 > Die Wirtschaft Deutschlands ist <span style="color:#A95762">hinsichtlich</span> des Bruttoinlandsprodukts die größte Volkswirtschaft Europas und die viertgrößte Volkswirtschaft weltweit.
 
 **Handel** 무역  
->Der Großteil des deutschen Außen<span style="color:#A95762">handel</span>s erfolgt mit anderen Industrieländern;
+>Der Großteil des deutschen Außen<span style="color:#A95762">handel</span>s erfolgt mit anderen Industrieländern;  
+
+**im Handel** 무역 안에 있다 -> 시판 중이다  
+>  <span style="color:#A95762">Im Handel</span> weit verbreitet sind Kalender, die mit weihnachtlichen Motiven bedruckt sind und an denen sich kleine Türen öffnen lassen, hinter denen sich Bilder, Sprüche, Süßigkeiten oder andere Überraschungen befinden.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -181,6 +207,12 @@ tag: Deutsch
 **Leit-** 주된  
 > Deutschland gilt als weltweit bedeutendster Messestandort; zahlreiche <span style="color:#A95762">Leit</span>messen finden hier statt.
 
+**leisten** 수행하다, 행하다  
+> Auch zur Quantenphysik <span style="color:#A95762">leistete</span> er wesentliche Beiträge.
+
+**im Lauf** 동안에  
+> <span style="color:#A95762">Im Lauf</span> seines Lebens war Einstein Staatsbürger mehrerer Länder: Durch Geburt besaß er die württembergische Staatsbürgerschaft.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **Massnahme treffen** 조치를 취한다
@@ -188,6 +220,13 @@ tag: Deutsch
 
 **unter Menschen** 인간들 간의
 > Ich antworte: der oeffengliche Gebrauch seiner Vernunft muss jederzeit frei sien, und der allein kann Aufklaerung <span style="color:#A95762">unter Menschen</span> zustande bringen.
+
+**massgeblich** 결정적으로  
+> Seine Forschungen zur Struktur von Materie, Raum 
+und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762">maßgeblich</span> das physikalische Weltbild.
+
+**im Gegensatz zur verbreiteten Meinung** 세간에 널리 알려진 바와 달리  
+> Seine theoretischen Arbeiten spielten – <span style="color:#A95762">im Gegensatz zur verbreiteten Meinung</span>– beim Bau der Atombombe und der Entwicklung der Kernenergie nur eine indirekte Rolle.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -197,6 +236,9 @@ tag: Deutsch
 
 **unter Pseudonym (=anonymously)** 익명으로
 >  Die Graffiti werden zumeist <span style="color:#A95762">unter Pseudonym</span> und illegal gefertigt.
+
+**praegen** 특징을 짓다 (주로 수동태로 많이 쓰인다; 특징지어진다) + '-특징이 있다'라고 해석하면 자연스럽다  
+> Die Geschichte der europäischen klassischen Musik wird über weite Strecken von deutschen Komponisten <span style="color:#A95762">geprägt</span>.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;Q&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -222,6 +264,12 @@ tag: Deutsch
 **sein zu*(=koennen werden PP)** 수동 가능  
 > Denn es leuchtet dieser doch ein Beispiel vor, dass bei Freiheit fuer die oeffentliche Ruhe und Einigkeit des gemeinen Wesens nicht das Mindeste <span style="color:#A95762">zu besorgen sei</span>.
 
+**sollen** -해야 한다/ -라고 하더라  
+> Adventskalender <span style="color:#A95762">sollen</span>, ähnlich wie der Adventskranz, die Wartezeit bis zum Weihnachtsfest verkürzen und die Vorfreude steigern.  
+
+**stammen aus** -에 비롯하다  
+> Ursprünglich aus einer lutherischen Sitte Deutschlands <span style="color:#A95762">stammend</span>, gehören Adventskalender heute 
+in christlich geprägten Ländern zur Vorbereitung auf das Fest der Geburt Jesu Christi.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -240,6 +288,17 @@ tag: Deutsch
 
 **ueberwiegend** 주로  
 > Die Wahlen werden <span style="color:#A95762">überwiegend</span> als personalisierte Verhältniswahlen durchgeführt.
+
+**Ueberschuss** 과잉  
+>  Der Großteil des deutschen Außenhandels erfolgt mit anderen Industrieländern; dabei wird ein beträchtlicher Außenhandels<span style="color:#A95762">überschuss</span> erzielt.
+
+**u. a.**  
+**unter anderem/n**; 특히  
+**und anderes**; 기타 등등(맨 뒤에 올 때)  
+> Wichtige Barockkomponisten waren <span style="color:#A95762">u. a.</span> Heinrich Schütz, Dietrich Buxtehude, Georg Friedrich Händel, Georg Philipp Telemann, Johann Sebastian Bach.
+
+**ueber weite Strecken** 상당부분  
+> Die Geschichte der europäischen klassischen Musik wird <span style="color:#A95762">über weite Strecken</span> von deutschen Komponisten geprägt.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -286,7 +345,11 @@ tag: Deutsch
 > Die Bundesländer, aus denen der Staat Deutschland <span style="color:#A95762">zusammengesetzt</span> ist, haben eine eigene Vertretung, den Bundesrat, der neben dem Bundestag an der Gesetzgebung mitwirkt.
 
 **zustande kommen** 되다, 실현되다
-> Wie und warum solche Nano-Effekte zustande kommen, ist aber meist noch unbekannt.
+> Wie und warum solche Nano-Effekte zustande kommen, ist aber meist noch unbekannt.  
+
+**zugrunde liegen** -의 기초가 되다  
+**zugrunde legen** -을 기초로 하다  
+>  Ebenso werden selbstgebastelte Kalender verwendet, denen oft ein ähnliches Prinzip <span style="color:#A95762">zugrunde liegt</span>.
 
 
 ## <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
