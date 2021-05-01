@@ -128,6 +128,11 @@ tag: Deutsch
 **Gut** (생산을 통해 얻어진) 재화  
 > Wichtige Bereiche sind die Industrie und der Dienstleistungsbereich; die Produktion von landwirtschaftlichen <span style="color:#A95762">Gütern</span> hat eine relativ geringe Bedeutung.
 
+**gelten als, fuer** -라고 간주되다, -라고 한다  
+>  <span style="color:#A95762">Als</span> weltweit konkurrenzfähigste Wirtschaftsbranchen der deutschen Industrie <span style="color:#A95762">gelten</span> die Automobil-, Nutzfahrzeug-, Elektrotechnische, Maschinenbau- und Chemieindustrie.
+
+**gelten von 3** -에 대해 
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **hinderlich 3** 3을 방해하다
@@ -138,6 +143,9 @@ tag: Deutsch
 
 **hinsichtlich** -와 관련하여  
 > Die Wirtschaft Deutschlands ist <span style="color:#A95762">hinsichtlich</span> des Bruttoinlandsprodukts die größte Volkswirtschaft Europas und die viertgrößte Volkswirtschaft weltweit.
+
+**Handel** 무역  
+>Der Großteil des deutschen Außen<span style="color:#A95762">handel</span>s erfolgt mit anderen Industrieländern;
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -169,6 +177,9 @@ tag: Deutsch
 **sich konstituieren aus 3** -로 구성되다, 조직되다
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+**Leit-** 주된  
+> Deutschland gilt als weltweit bedeutendster Messestandort; zahlreiche <span style="color:#A95762">Leit</span>messen finden hier statt.
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
