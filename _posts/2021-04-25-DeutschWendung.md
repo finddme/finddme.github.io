@@ -446,7 +446,7 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 ### bei
 
-**- 옆에, -할 때, -의 경우에**
+**- 옆에/ -할 때/ -의 경우에**
 
 - Hanau liegt bei Frankfurt. 프랑크푸르트 옆에  
 - Jetzt arbeitet er bei einer Baufirma, vorher war er beim Militaer. 건축회사에서, 군대에  
@@ -455,7 +455,7 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 ### um
 
-**-을 둘러싸고, -에 대해, 대략-, 연속**
+**-을 둘러싸고/ -에 대해/ 대략-/ 연속**
 
 - Tag um Tag 하루하루  
 - Schritt um Schritt zurückweichen. 한발한발 뒤로 물러나다  
@@ -464,10 +464,10 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 ### fuer  
 
-- Ich tue alles fuer dich **위해**  
-- Bitte geh fuer mich aufs Finanzamt **나를 대신해서**  
-- Ich komme nur fuer zwei Tage **이틀동안**  
-- Fuer sein Alter ist er noch sehr ruestig **나이에 비해**
+- Ich tue alles fuer dich 위해  
+- Bitte geh fuer mich aufs Finanzamt 나를 대신해서  
+- Ich komme nur fuer zwei Tage 이틀동안  
+- Fuer sein Alter ist er noch sehr ruestig 나이에 비해
 
 ## <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
 
