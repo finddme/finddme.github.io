@@ -442,6 +442,33 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 > Durch den Zwei-plus-Vier-Vertrag (Vertrag über die abschließende Regelung in bezug auf Deutschland) wurde der Einheit der beiden deutschen Staaten zugestimmt und dem vereinten Deutschland die volle Souveränität über seine inneren und äußeren Angelegenheiten <span style="color:#A95762">zuerkannt</span>.
 
 
+## <span style="background-color:#F2D8D3">Präpositionen</span>
+
+### bei
+
+**- 옆에, -할 때, -의 경우에**
+
+- Hanau liegt bei Frankfurt. 프랑크푸르트 옆에  
+- Jetzt arbeitet er bei einer Baufirma, vorher war er beim Militaer. 건축회사에서, 군대에  
+- Er hatte sich beim Rasieren geschnitten. 면도할 때  
+- Bei deiner Gewissenhaftigkeit und Sorgfalt ist der Fehler kaum erklaerlich. 너의 조심성과 꼼꼼함에
+
+## um
+
+**-을 둘러싸고, -에 대해, 대략-, 연속**
+
+- Tag um Tag 하루하루  
+- Schritt um Schritt zurückweichen. 한발한발 뒤로 물러나다  
+- Um den Turm standen viele alte Baeume. 탑 주위에  
+- Hehen Sie dort um die Ecke, da ist der Briefkasten. 모서리를 돌면
+
+### fuer  
+
+- Ich tue alles fuer dich **위해**  
+- Bitte geh fuer mich aufs Finanzamt **나를 대신해서**  
+- Ich komme nur fuer zwei Tage **이틀동안**  
+- Fuer sein Alter ist er noch sehr ruestig **나이에 비해**
+
 ## <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
 
 1. **auf Ablehnung stossen (=abgelehnt werden)** 거부되다
