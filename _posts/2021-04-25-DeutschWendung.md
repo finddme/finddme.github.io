@@ -453,7 +453,7 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 - Er hatte sich beim Rasieren geschnitten. 면도할 때  
 - Bei deiner Gewissenhaftigkeit und Sorgfalt ist der Fehler kaum erklaerlich. 너의 조심성과 꼼꼼함에
 
-## um
+### um
 
 **-을 둘러싸고, -에 대해, 대략-, 연속**
 
