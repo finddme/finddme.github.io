@@ -448,10 +448,14 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 **- 옆에/ -할 때/ -의 경우에**
 
+- Er hatte sich beim Rasieren geschnitten. 면도할 때  
+- Bei deiner Gewissenhaftigkeit und Sorgfalt ist der Fehler kaum erklaerlich. 너의 조심성과 꼼꼼함에  
 - Hanau liegt bei Frankfurt. 프랑크푸르트 옆에  
 - Jetzt arbeitet er bei einer Baufirma, vorher war er beim Militaer. 건축회사에서, 군대에  
-- Er hatte sich beim Rasieren geschnitten. 면도할 때  
-- Bei deiner Gewissenhaftigkeit und Sorgfalt ist der Fehler kaum erklaerlich. 너의 조심성과 꼼꼼함에
+
+### an
+
+**(측면 접촉)-에/ -가장자리에/ -가에/ 
 
 ### um
 
@@ -460,14 +464,49 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 - Tag um Tag 하루하루  
 - Schritt um Schritt zurückweichen. 한발한발 뒤로 물러나다  
 - Um den Turm standen viele alte Baeume. 탑 주위에  
-- Hehen Sie dort um die Ecke, da ist der Briefkasten. 모서리를 돌면
+- Hehen Sie dort um die Ecke, da ist der Briefkasten. 모서리를 돌면  
+- Um 20 Uhr beginnt die Tangesschau 20시에  
+- Die Cheopspyramide wurde um 3000 v. Chr. erbaut. 기원전 3000년 즈음에  
+- Die Temperatur ist um 5 Grad gestiegen. 5도 상승  
+
+### ueber
+
+**- 위에/ -를 건너서, 넘어서, 통과하여/ -이상/ -에 대한**
+
+- Wir fahren von Frankfurt uebr Muenchen nach Wien. 뮌헨을 통과(경우)하여  
+- Den ganzen Tag ueber hat er wenig geschafft. 하루 동안 계속/ 하루 종일 내내  
+- Die Bauarbeiten haben ueber einen Monat gedauert. 한 달 이상  
+- Sein Vortrag ueber die Eiszeiten war hochinteressant. 빙하기에 대한 그의 강연/진술
+- Die Kinder liefen ueber die Strasse und dann ueber die Bruecke. 거리 (위)를, 다리를 건너  
+- Der Entenschwarm fliegt ueber den Fluss. 강위를(움직임)  
+- Der Wasserkessel hing ueber dem Feuer. 불 위에  
+
+
+### vor
+
+**-앞에/ -전에/ -로 인해/ -에 대한 어떠한 감정**
+
+- Das Kind fürchtet sich vor dem Hund. 개에 대해 무서워하다  
+- Vor Angst und Schrecken fiel er in Ohnmacht. 두려움과 경엑으로 인해
+- Er zittert vor Kälte. 추위로 인해 떨고 있다  
+- Stell den Muelleimer vor das Gartentor. 정원 문 앞에(움직임)  
+- Das Tazi haelt vor unserem Haus. 우리집 앞에  
+- Vor drei Minuten hat er angerufen. 3분 전에
+
+### neben
+
+**-옆에/ -외에**
+
+- Der Kellner legt das Besteck neben den Teller. 수저를 접시 옆에 놓다(움직임)  
+- Neben seinen physikalischen Forschungen schrieb er Gedichte. 물리학적 연구 외에도
+
 
 ### fuer  
 
-- Ich tue alles fuer dich 위해  
-- Bitte geh fuer mich aufs Finanzamt 나를 대신해서  
-- Ich komme nur fuer zwei Tage 이틀동안  
-- Fuer sein Alter ist er noch sehr ruestig 나이에 비해
+- Ich tue alles fuer dich. 위해  
+- Bitte geh fuer mich aufs Finanzamt. 나를 대신해서  
+- Ich komme nur fuer zwei Tage. 이틀동안  
+- Fuer sein Alter ist er noch sehr ruestig. 나이에 비해
 
 ## <span style="background-color:#F2D8D3">Funktionsverbgefuege</span>
 
