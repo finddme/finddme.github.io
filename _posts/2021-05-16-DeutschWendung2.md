@@ -62,7 +62,7 @@ tag: Deutsch
 - Die Cheopspyramide wurde um 3000 v. Chr. erbaut. 기원전 3000년 즈음에  
 - Die Temperatur ist um 5 Grad gestiegen. 5도 상승  
 
-### ueber?
+### ueber
 
 **- 위에/ -를 건너서, 넘어서, 통과하여/ -이상/ -에 대한**
 
