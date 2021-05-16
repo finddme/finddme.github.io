@@ -34,6 +34,7 @@ tag: Deutsch
 
 
 
+
 ## <span style="background-color:#F2D8D3">Präpositionen</span>
 
 ### bei
@@ -49,7 +50,7 @@ tag: Deutsch
 
 측면 접촉-에/ -가장자리에/ -가에
 
-### um?
+### um
 
 **-을 둘러싸고/ -에 대해/ 대략-/ 연속**
 
