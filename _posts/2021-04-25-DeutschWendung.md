@@ -455,7 +455,7 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 
 ### an
 
-**(측면 접촉)-에/ -가장자리에/ -가에/**
+**(측면 접촉)-에/ -가장자리에/ -가에**
 
 ### um
 
