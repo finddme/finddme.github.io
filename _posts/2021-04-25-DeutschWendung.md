@@ -75,6 +75,7 @@ tag: Deutsch
 > Durch den Zwei-plus-Vier-Vertrag (Vertrag über die abschließende Regelung in bezug auf Deutschland) wurde der Einheit der beiden deutschen Staaten zugestimmt und dem vereinten Deutschland die volle Souveränität über seine inneren und äußeren <span style="color:#A95762">Angelegenheiten</span> zuerkannt.
 
 
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **beziehen sich auf 4** -와 관련된, -에 대한
