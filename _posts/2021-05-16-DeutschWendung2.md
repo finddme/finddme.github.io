@@ -46,7 +46,7 @@ tag: Deutsch
 - Hanau liegt bei Frankfurt. 프랑크푸르트 옆에  
 - Jetzt arbeitet er bei einer Baufirma, vorher war er beim Militaer. 건축회사에서, 군대에  
 
-### an
+### an?
 
 측면 접촉-에/ -가장자리에/ -가에
 
