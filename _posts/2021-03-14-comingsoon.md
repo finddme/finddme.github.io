@@ -9,6 +9,7 @@ tag: blog
 
 ................................................
 
+![image](https://user-images.githubusercontent.com/53667002/119254834-99665680-bbf3-11eb-9468-7b4536409097.png)
 
 - gpt
 
