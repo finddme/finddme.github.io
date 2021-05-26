@@ -372,6 +372,9 @@ und Zeit sowie dem Wesen der Gravitation veränderten <span style="color:#A95762
 **urkundlich** 문서상으로  
 > <span style="color:#A95762">Urkundlich</span> erstmals im 13. Jahrhundert erwähnt, war Berlin im Verlauf der Geschichte und in verschiedenen Staatsformen Residenz- und Hauptstadt Brandenburgs, Preußens und des Deutschen Reichs.
 
+**umso 비교급, als ...** -이기 때문에 더욱 -하다  
+> Das Buch ist <span style="color:#A95762">umso interessanter</span>, <span style="color:#A95762">als</span> es ohne Vulgariteat und ohne Polularisierung die Lehren der Philosophen mit ihrer Biografie verbindet.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;V&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 **im Sinne des Volksmundes** 속설에 의하면, 속설에 따르면
