@@ -121,6 +121,9 @@ tag: Deutsch
 **beitreten 2** -에 가입하다  
 > Als deutsche Wiedervereinigung oder deutsche Vereinigung (in der Gesetzessprache: Herstellung der Einheit Deutschlands) wird der durch die friedliche Revolution in der DDR angestoßene Prozess der Jahre 1989 und 1990 bezeichnet, der zum <span style="color:#A95762">Beitritt</span> der Deutschen Demokratischen Republik <span style="color:#A95762">zur</span> Bundesrepublik Deutschland am 3. Oktober 1990 führte.
 
+**sich beschaeftigen mit** -을 다루다  
+> Sie waren erstaunt darueber, dass so wenige Philosophen <span style="color:#A95762">sich</span> ernthaft <span style="color:#A95762">mit</span> der Liebe <span style="color:#A95762">beschaeftigt</span> haben.
+
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 ## <span style="background-color:#F2D8D3">&nbsp;&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
