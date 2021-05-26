@@ -115,7 +115,7 @@ tag: Deutsch
 > Auch <span style="color:#A95762">zur</span> Quantenphysik leistete er wesentliche <span style="color:#A95762">Beiträge</span>. 
 
 **befinden sich** 있다  
-> 
+> Die Philosophie <span style="color:#A95762">befindet sich</span>, wie Sie sehen, unter grosser Spannung.
 
 **Betritt zu**  -에 가입
 **beitreten 2** -에 가입하다  
