@@ -1,6 +1,6 @@
 ---
 title: Ergaenzungen und Angaben
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
