@@ -1,6 +1,6 @@
 ---
 title: Long-Distance Dependency(LDD)
-category: Linguistics(English)
+category: Linguistics | English
 tag: Linguistics
 ---
 
