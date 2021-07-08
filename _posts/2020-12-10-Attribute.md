@@ -1,6 +1,6 @@
 ---
 title: Attribute und syntaktische Einzelprobleme
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
