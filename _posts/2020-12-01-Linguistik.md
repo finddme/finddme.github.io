@@ -1,6 +1,6 @@
 ---
 title: Sprache und Linguistik
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
