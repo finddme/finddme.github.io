@@ -1,6 +1,6 @@
 ---
 title: Morphologie
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
