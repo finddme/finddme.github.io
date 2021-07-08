@@ -1,6 +1,6 @@
 ---
 title: Textlinguistik
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
