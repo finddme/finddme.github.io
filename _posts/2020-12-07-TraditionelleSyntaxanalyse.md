@@ -1,6 +1,6 @@
 ---
 title: Traditionelle Syntaxanalyse
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
