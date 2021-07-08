@@ -1,6 +1,6 @@
 ---
 title: Wordbildung und Flexion
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
