@@ -1,5 +1,5 @@
 ---
-title: Deutsch_Wendung2
+title: Deutsch | Wendung2
 category: Language
 tag: Deutsch
 ---
