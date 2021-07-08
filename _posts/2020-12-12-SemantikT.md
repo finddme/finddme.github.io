@@ -1,6 +1,6 @@
 ---
 title: Semantische Theoriebildung
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
