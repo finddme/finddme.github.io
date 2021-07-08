@@ -1,6 +1,6 @@
 ---
 title: ㅡ
-category: Linguistics(English)
+category: Linguistics | English
 tag: Linguistics
 ---
 
