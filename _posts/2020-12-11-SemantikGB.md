@@ -1,6 +1,6 @@
 ---
 title: Semantische Grundbegriffe
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
