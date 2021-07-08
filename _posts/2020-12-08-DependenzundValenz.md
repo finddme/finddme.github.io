@@ -1,6 +1,6 @@
 ---
 title: Dependenz und Valenz
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
