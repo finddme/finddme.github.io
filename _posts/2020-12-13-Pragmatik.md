@@ -1,6 +1,6 @@
 ---
 title: Pragmatik
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
