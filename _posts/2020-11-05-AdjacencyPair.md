@@ -1,5 +1,5 @@
 ---
-title: Adjacency Pair_Action and Understanding
+title: Adjacency Pair | Action and Understanding
 category: Conversation Analysis
 tag: Conversation Analysis
 ---
