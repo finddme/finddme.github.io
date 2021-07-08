@@ -1,6 +1,6 @@
 ---
 title: Phonetik und Phonologie
-category: Linguistik(Germanistik)
+category: Linguistik | Germanistik
 tag: Linguistik
 ---
 
