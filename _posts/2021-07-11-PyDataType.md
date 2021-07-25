@@ -29,7 +29,7 @@ tag: ETC.
 
 
 
-## 자료형 | 숫자 | 정수, 실수
+## <span style="background-color:#EDDBCA">자료형 | 숫자 | 정수, 실수</span>
 
 
 ```python
@@ -44,7 +44,7 @@ b = 20
 print(a + b)
 ```
 
-    30
+    output: 30
     
 
 
@@ -54,7 +54,7 @@ b = 20.4 # 실수의 연산
 print(a + b) # 정수가 실수처리 됨. 10.0 + 20.4 이렇게
 ```
 
-    30.4
+    output: 30.4
     
 
 
@@ -75,10 +75,10 @@ print(b + c + d)
 # 는 당연히 안된다. 10.9는 정수가 아니니까. 정수 변환이 안됨.
 ```
 
-    17.7
+    output: 17.7
     
 
-## 자료형 | 숫자 | 16진수
+## <span style="background-color:#EDDBCA">자료형 | 숫자 | 16진수</span>
 
 
 ```python
@@ -96,13 +96,13 @@ print(d) # 16진수에서 문자 하나는 4비트.
          # 4비트가 8개니까 32비트. 32비트로 표현할 수 있는 가장 큰 숫자가 출력됨.
 ```
 
-    1
-    16
-    15
-    4294967295
+    output: 1
+            16
+            15
+            4294967295
     
 
-## 자료형 | 시퀀스 | 문자열, 리스트, 튜플
+## <span style="background-color:#EDDBCA">자료형 | 시퀀스 | 문자열, 리스트, 튜플</span>
 
 
 ```python
@@ -111,7 +111,7 @@ list1 = ['H', 'e', 'y', ' ', 'W', 'o', 'r', 'l', 'd']
 tuple1 = ('H', 'e', 'y', ' ', 'W', 'o', 'r', 'l', 'd')
 ```
 
-### 자료형 | 시퀀스 | Slicing
+### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | Slicing</span>
 
 시퀀스 자료형은 순서를 가지며, 원소에 indexing이 되기 때문에 slicing이 가능하다.
 
@@ -122,12 +122,12 @@ print(list1[0:3])
 print(tuple1[0:3])
 ```
 
-    Hey
-    ['H', 'e', 'y']
-    ('H', 'e', 'y')
+    output: Hey
+            ['H', 'e', 'y']
+            ('H', 'e', 'y')
     
 
-### 자료형 | 시퀀스 | 개별 원소 | 접근
+### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | 개별 원소 | 접근</span>
 
 시퀀스 자료형의 경우, 개별 원소에 접근할 수 있다.
 
@@ -149,38 +149,38 @@ for i in tuple1:
     print(i)
 ```
 
-    H
-    e
-    y
+    output: H
+            e
+            y
      
-    W
-    o
-    r
-    l
-    d
-    --------
-    H
-    e
-    y
+            W
+            o
+            r
+            l
+            d
+            --------
+            H
+            e
+            y
      
-    W
-    o
-    r
-    l
-    d
-    --------
-    H
-    e
-    y
+            W
+            o
+            r
+            l
+            d
+            --------
+            H
+            e
+            y
      
-    W
-    o
-    r
-    l
-    d
+            W
+            o
+            r
+            l
+            d
     
 
-### 자료형 | 시퀀스 | 연산
+### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | 연산</span>
 
 연산자 사용도 가능하다.
 
@@ -190,10 +190,10 @@ string2 = " 세상아"
 print(string1 +string2)
 ```
 
-    Hey World 세상아
+    output: Hey World 세상아
     
 
-### 자료형 | 시퀀스 | in
+### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | in</span>
 
 in을 사용하여 시퀀스 자료형에 해당 원소가 있는지 찾을 수 있다.
 
@@ -204,9 +204,9 @@ print('H' in list1)
 print('H' in tuple1)
 ```
 
-    True
-    True
-    True
+    output: True
+            True
+            True
     
 
 
@@ -226,14 +226,14 @@ if 'o' in tuple1:
     print("오 있다")
 ```
 
-    오 있다
-    --------
-    오 있다
-    --------
-    오 있다
+    output: 오 있다
+            --------
+            오 있다
+            --------
+            오 있다
     
 
-### 자료형 | 시퀀스 | 함수 | len()
+### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | 함수 | len()</span>
 
 len()함수를 이용해서 자료의 길이를 구할 수 있다. 
 
@@ -245,13 +245,10 @@ print(len(tuple1))
 print(len(string1 +string2))
 ```
 
-    9
-    9
-    9
-    13
+    output: 9
+            9
+            9
+            13
     
 
 
-```python
-
-```
