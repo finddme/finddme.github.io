@@ -29,7 +29,7 @@ tag: ETC.
 
 
 
-## <span style="background-color:#EDDBCA">자료형 | 숫자 | 정수, 실수</span>
+## 자료형 | 숫자 | 정수, 실수
 
 
 ```python
@@ -78,7 +78,7 @@ print(b + c + d)
     output: 17.7
     
 
-## <span style="background-color:#EDDBCA">자료형 | 숫자 | 16진수</span>
+## 자료형 | 숫자 | 16진수
 
 
 ```python
@@ -102,7 +102,7 @@ print(d) # 16진수에서 문자 하나는 4비트.
             4294967295
     
 
-## <span style="background-color:#EDDBCA">자료형 | 시퀀스 | 문자열, 리스트, 튜플</span>
+## 자료형 | 시퀀스 | 문자열, 리스트, 튜플
 
 
 ```python
@@ -111,7 +111,7 @@ list1 = ['H', 'e', 'y', ' ', 'W', 'o', 'r', 'l', 'd']
 tuple1 = ('H', 'e', 'y', ' ', 'W', 'o', 'r', 'l', 'd')
 ```
 
-### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | Slicing</span>
+### 자료형 | 시퀀스 | Slicing
 
 시퀀스 자료형은 순서를 가지며, 원소에 indexing이 되기 때문에 slicing이 가능하다.
 
@@ -127,7 +127,7 @@ print(tuple1[0:3])
             ('H', 'e', 'y')
     
 
-### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | 개별 원소 | 접근</span>
+### 자료형 | 시퀀스 | 개별 원소 | 접근
 
 시퀀스 자료형의 경우, 개별 원소에 접근할 수 있다.
 
@@ -180,7 +180,7 @@ for i in tuple1:
             d
     
 
-### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | 연산</span>
+### 자료형 | 시퀀스 | 연산
 
 연산자 사용도 가능하다.
 
@@ -193,7 +193,7 @@ print(string1 +string2)
     output: Hey World 세상아
     
 
-### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | in</span>
+### 자료형 | 시퀀스 | in
 
 in을 사용하여 시퀀스 자료형에 해당 원소가 있는지 찾을 수 있다.
 
@@ -233,7 +233,7 @@ if 'o' in tuple1:
             오 있다
     
 
-### <span style="background-color:#EDDBCA">자료형 | 시퀀스 | 함수 | len()</span>
+### 자료형 | 시퀀스 | 함수 | len()
 
 len()함수를 이용해서 자료의 길이를 구할 수 있다. 
 
