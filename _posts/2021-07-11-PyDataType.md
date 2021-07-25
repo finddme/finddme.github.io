@@ -1,5 +1,5 @@
 ---
-title: Python | Data_Type
+title: Python | Data Type
 category: ETC.
 tag: ETC.
 ---
