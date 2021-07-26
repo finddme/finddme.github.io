@@ -1,7 +1,7 @@
 ---
 title: Python | Conditional/Iterative Structure
-category: ETC.
-tag: ETC.
+category: Python
+tag: Python
 ---
 
 
