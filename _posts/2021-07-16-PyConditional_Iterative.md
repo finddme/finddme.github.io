@@ -4,6 +4,8 @@ category: Python
 tag: Python
 ---
 
+[https://github.com/finddme/Python/blob/master/Python_Conditional_Iterative.ipynb](https://github.com/finddme/Python/blob/master/Python_Conditional_Iterative.ipynb)
+
 
 
 
