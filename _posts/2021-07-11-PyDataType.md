@@ -5,6 +5,8 @@ tag: Python
 ---
 
 
+[https://github.com/finddme/Python/blob/master/Python_DataType.ipynb](https://github.com/finddme/Python/blob/master/Python_DataType.ipynb)
+
 
 
 
