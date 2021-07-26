@@ -1,5 +1,5 @@
 ---
-title: Python | Conditional_Iterative Structure
+title: Python | Conditional/Iterative Structure
 category: ETC.
 tag: ETC.
 ---
