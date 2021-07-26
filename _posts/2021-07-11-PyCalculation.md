@@ -5,6 +5,9 @@ tag: Python
 ---
 
 
+[https://github.com/finddme/Python/blob/master/Python_Calculation.ipynb](https://github.com/finddme/Python/blob/master/Python_Calculation.ipynb)
+
+
 
 
 
