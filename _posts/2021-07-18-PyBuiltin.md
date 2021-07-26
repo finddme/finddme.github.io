@@ -4,6 +4,7 @@ category: Python
 tag: Python
 ---
 
+[https://github.com/finddme/Python/blob/master/Python_Built_in_function.ipynb](https://github.com/finddme/Python/blob/master/Python_Built_in_function.ipynb)
 
 
 
