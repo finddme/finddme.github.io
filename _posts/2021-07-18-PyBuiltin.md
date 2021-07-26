@@ -1,7 +1,7 @@
 ---
 title: Python | Built in function
-category: ETC.
-tag: ETC.
+category: Python
+tag: Python
 ---
 
 
