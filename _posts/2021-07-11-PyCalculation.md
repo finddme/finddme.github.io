@@ -1,7 +1,7 @@
 ---
 title: Python | Calculation
-category: ETC.
-tag: ETC.
+category: Python
+tag: Python
 ---
 
 
