@@ -1,18 +1,13 @@
 ---
 title: plan
-category: blog
-tag: blog
+category: ETC.
+tag: ETC.
 ---
 
 - Bio NLP
 
 
 ................................................
-
-
-<img width="60" src="https://user-images.githubusercontent.com/53667002/119254881-c581d780-bbf3-11eb-87ac-fc13d7835129.png">
-
-<img width="60" src="https://user-images.githubusercontent.com/53667002/119255007-5a84d080-bbf4-11eb-9932-267a1aba2d6c.png">
 
 
 
