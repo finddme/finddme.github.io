@@ -1,7 +1,7 @@
 ---
 title: Python | Exeption Handling
-category: ETC.
-tag: ETC.
+category: Python
+tag: Python
 ---
 
 
