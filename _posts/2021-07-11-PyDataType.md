@@ -1,7 +1,7 @@
 ---
 title: Python | Data Type
-category: ETC.
-tag: ETC.
+category: Python
+tag: Python
 ---
 
 
