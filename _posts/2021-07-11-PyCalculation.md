@@ -5,7 +5,7 @@ tag: Python
 ---
 
 
-[https://github.com/finddme/Python/blob/master/Python_Calculation.ipynb](https://github.com/finddme/Python/blob/master/Python_Calculation.ipynb)
+**파이썬 연산 실습 코드: [https://github.com/finddme/Python/blob/master/Python_Calculation.ipynb](https://github.com/finddme/Python/blob/master/Python_Calculation.ipynb)**
 
 
 
