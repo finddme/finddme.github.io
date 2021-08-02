@@ -4,7 +4,7 @@ category: Python
 tag: Python
 ---
 
-[https://github.com/finddme/Python/blob/master/Python_Function.ipynb](https://github.com/finddme/Python/blob/master/Python_Function.ipynb)
+**함수 실습 코드: [https://github.com/finddme/Python/blob/master/Python_Function.ipynb](https://github.com/finddme/Python/blob/master/Python_Function.ipynb)**
 
 
 
