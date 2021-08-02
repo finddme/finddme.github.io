@@ -4,7 +4,7 @@ category: Python
 tag: Python
 ---
 
-[https://github.com/finddme/Python/blob/master/Python_Built_in_function.ipynb](https://github.com/finddme/Python/blob/master/Python_Built_in_function.ipynb)
+**내장 함수 실습 코드: [https://github.com/finddme/Python/blob/master/Python_Built_in_function.ipynb](https://github.com/finddme/Python/blob/master/Python_Built_in_function.ipynb)**
 
 
 
