@@ -5,7 +5,7 @@ tag: Python
 ---
 
 
-[https://github.com/finddme/Python/blob/master/Python_DataType.ipynb](https://github.com/finddme/Python/blob/master/Python_DataType.ipynb)
+**파이썬 자료형 개요 실습 코드: [https://github.com/finddme/Python/blob/master/Python_DataType.ipynb](https://github.com/finddme/Python/blob/master/Python_DataType.ipynb)**
 
 
 
