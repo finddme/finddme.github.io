@@ -4,7 +4,7 @@ category: Python
 tag: Python
 ---
 
-**예외처리 실습 코드 : [https://github.com/finddme/Python/blob/master/Python_ExeptionHandling.ipynb](https://github.com/finddme/Python/blob/master/Python_ExeptionHandling.ipynb)**
+**예외처리 실습 코드: [https://github.com/finddme/Python/blob/master/Python_ExeptionHandling.ipynb](https://github.com/finddme/Python/blob/master/Python_ExeptionHandling.ipynb)**
 
 
 
