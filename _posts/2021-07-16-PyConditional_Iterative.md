@@ -4,7 +4,7 @@ category: Python
 tag: Python
 ---
 
-[https://github.com/finddme/Python/blob/master/Python_Conditional_Iterative.ipynb](https://github.com/finddme/Python/blob/master/Python_Conditional_Iterative.ipynb)
+**조건문/반복문 실습 코드: [https://github.com/finddme/Python/blob/master/Python_Conditional_Iterative.ipynb](https://github.com/finddme/Python/blob/master/Python_Conditional_Iterative.ipynb)**
 
 
 
