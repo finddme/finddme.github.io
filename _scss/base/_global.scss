@@ -41,18 +41,20 @@ h4, h6 {
 code {
   color: #666;
 }
-/*pre > code {
+pre > code {
+  margin: 1rem auto;
+  white-space: pre;
   max-height: 200px; 
   max-width:  850px;
   overflow-x: auto;
-  overflow-y:scroll !important; 
-}*/
+  overflow-y:scroll !important; /* scroll setting */
+}
 
-.hljs {
+/*.hljs {
     margin: 1rem auto;
     white-space: pre;
     max-height: 200px; 
     max-width:  850px;
     overflow-x: auto;
-    overflow-y:scroll !important; /* scroll setting */
-}
+    overflow-y:scroll !important; 
+}*/
