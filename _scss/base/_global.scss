@@ -46,6 +46,14 @@ pre {
   max-height: 700px;
   overflow-y: auto !important;
 }
+.article_view pre { 
+  padding: 20px; 
+  background: #4f5063; 
+  color: rgba(34, 85, 51, 0.87); 
+  white-space: pre-wrap; 
+}
+
+
 
 /*pre > code {
   margin: 1rem auto;
