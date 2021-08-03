@@ -49,7 +49,10 @@ code {
 }*/
 
 .hljs {
-   white-space: pre;
-   overflow-x: auto;
-   overflow-y:scroll !important; /* scroll setting */
+    margin: 1rem auto;
+    white-space: pre;
+    max-height: 200px; 
+    max-width:  850px;
+    overflow-x: auto;
+    overflow-y:scroll !important; /* scroll setting */
 }
