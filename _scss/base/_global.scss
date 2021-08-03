@@ -42,5 +42,6 @@ code {
   color: #666;
   max-height: 200px; 
   max-width:850px;
-  overflow-y:auto !important; /* scroll setting */
+  overflow-x: auto;
+  overflow-y: scroll; !important; /* scroll setting */
 }
