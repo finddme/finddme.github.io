@@ -42,8 +42,8 @@ code {
   color: #666;
 }
 pre {
-  overflow-y: auto;
-  max-height: 300px;
+  max-height: 200px !important;
+  overflow-y: auto !important;
 }
 
 /*pre > code {
