@@ -40,12 +40,6 @@ h4, h6 {
 /* Code block style */
 code {
   color: #666;
-  margin: 1rem auto;
-  white-space: pre;
-  max-height: 200px; 
-  max-width:  200px;
-  overflow-x: auto;
-  overflow-y:scroll !important; /* scroll setting */
 }
 
 /*pre > code {
