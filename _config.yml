@@ -13,6 +13,10 @@ gems:
 markdown: kramdown
 kramdown:
   input: GFM
+  highlighter: rouge
+  syntax_highlighter_opts:
+      block:
+          line_numbers: true
 excerpt_separator: "<!-- more -->"
 sass:
   style: compressed
