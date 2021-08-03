@@ -37,6 +37,18 @@ h4, h6 {
     height: 70%;
 }
 
+/* Code block style */
 code {
-  color: #666;
+    padding: 0.25rem;
+    background-color: #F1F1F1;
+    border-radius: 5px;
+    font-family: "Consolas", "Sans Mono", "Courier", "monospace";
+    font-size: 0.75rem;
+}
+pre > code {
+    margin: 1rem auto;
+    white-space: pre;
+    max-width:850px; 
+    max-height:500px; 
+    overflow:auto !important; /* scroll setting */
 }
