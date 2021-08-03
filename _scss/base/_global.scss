@@ -42,13 +42,5 @@ code {
   color: #666;
   max-height: 200px; 
   max-width:850px;
-}
-
-.article-view pre {
-	padding ; 5px //패딩 
-  background: #666;
-  font-size: 16px;
-  color: #666;
-  white-space: pre; // 가로 스크롤
-  max-height: 520px; // 세로 최대 높이 설정 (세로 스크롤)
+  overflow-y:auto !important; /* scroll setting */
 }
