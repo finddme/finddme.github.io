@@ -1,5 +1,5 @@
 ---
-title: CODE=TRUE | Tensorflow
+title: CODE = TRUE | Tensorflow
 category: Python
 tag: Python
 ---
