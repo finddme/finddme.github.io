@@ -1,0 +1,152 @@
+---
+title: CODE = TRUE | Crawling | Selenium
+category: Python
+tag: Python
+---
+
+**파이썬 크롤링(셀레니움) 실습 코드 : [https://github.com/finddme/Python/blob/master/Python_Selenium.ipynb](https://github.com/finddme/Python/blob/master/Python_Selenium.ipynb)**
+
+
+
+
+
+
+
+
+
+* 목차
+{:toc}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Crawling | Selenium
+
+selenium을 이용해서 크롤링을 해보자
+
+네이버에 자동 로그인해서 메일함 정보를 가져오는 프로그램이다.
+
+셀레니움은 구글 크롬 브라우저와 드라이버로 연동이 가능하여 다양한 디버깅을 진행할 수 있다.
+
+작성한 프로그램과 크롬을 연동하기 위해서는 Web Driver가 있어야 한다.
+
+[\[크롬 드라이버 설치\]](https://chromedriver.chromium.org/downloads)
+
+
+
+
+```python
+pip install selenium # 셀레니움을 설치한다
+```
+
+    Requirement already satisfied: selenium in c:\users\yein4\anaconda3\lib\site-packages (3.141.0)
+    Requirement already satisfied: urllib3 in c:\users\yein4\anaconda3\lib\site-packages (from selenium) (1.26.4)
+    Note: you may need to restart the kernel to use updated packages.
+    
+
+
+```python
+pip install pyperclip # 자동입력 방지를 막기 위해 사용할 pyperclip을 설치한다
+```
+
+    Requirement already satisfied: pyperclip in c:\users\yein4\anaconda3\lib\site-packages (1.8.2)
+    Note: you may need to restart the kernel to use updated packages.
+    
+
+
+```python
+from selenium import webdriver # webdriver를 불러온다
+# 설치한 크롬 웹드라이버를 사용할 것이기 때문에 저장된 경로를 적어준다
+driver = webdriver.Chrome('C:\Chromedriver\chromedriver.exe')
+# 웹드라이버가 불러와졌다.
+```
+
+
+```python
+# 네이버 로그인창 url을 넣어준다.
+# 이걸 처음 실행할 때 방화벽 관련 경고가 뜨는데 그냥 허용해준다.
+# 허용하고나면 셀레니움이 자동으로 크롬을 실행해서 네이버 로그인 화면을 띄운다
+driver.get('https://nid.naver.com/nidlogin.login') 
+```
+
+
+```python
+'''
+캡차를 피하기 위해 pyperclip라이브러리를 이용하여 
+아이디와 비밀번호를 클립보드에 저장한 후에 ctrl + v하는 방법을 사용했는데 이제 이 방법도 막혔다
+'''
+# 로딩 때 시간적 문제가 있을 수 있어 그것을 방지하기 위해 time객체의 sleep함수를 사용하여
+# 시간을 조금 지체시킨다
+from time import sleep
+import pyperclip
+from selenium.webdriver.common.keys import Keys
+
+# 너이버 로그인창 페이지 소스코드를 보면 아이디값의 파라미터명는 'id'이고 
+# 비밀번호값의 파라미터명은 'pw'이다
+
+sleep(0.5) # 0.5초 기다린다
+tag_id = driver.find_element_by_name('id') # 그래서 각각 'id'라는 name값(파라미터명)을 찾아서
+pyperclip.copy('아이디') # 로그인할 아이디를 복사해주고
+tag_id.send_keys(Keys.CONTROL, 'v') # 아까 복사한 아이디를 붙여넣어 send_keys함수로 아이디를 입력한다
+
+# 비밀번호도 마찬가지로 입력한다
+sleep(0.5)
+tag_pw = driver.find_element_by_name('pw')
+pyperclip.copy('비밀번호')
+tag_pw.send_keys(Keys.CONTROL, 'v')
+
+# 실행해보면 크롬이 자동으로 실행되고 네이버로그인 화면이 뜬 후 
+# 자동으로 아이디와 비밀번호가 된다.
+# 근데 캡차에 걸려서 이제 안된다
+```
+
+
+```python
+# 이제 로그인 버튼을 눌러서 로그인을 마무리해야 한다.
+# 개발자도구(f12)를 열어서 로그인 버튼에 해당하는 부분의 id값을 찾아 눌러준다
+driver.find_element_by_id('log.login').click()
+sleep(2)
+# 여기까지 실행하면 로그인이 된다
+```
+
+
+```python
+'''
+메일 제목을 끌어올 것이다. 
+메일함에 들어가서 개발자도구로 소스코드를 확인해보면 
+strog태그가 있다. class값으로는 mail_title이 들어가 있다.
+이 정보를 바탕으로 파싱을 하자
+'''
+from bs4 improt BeautifulSoup # 파싱을 위해 뷰숩을 불러준다
+
+driver.get('https://mail.naver.com/') # driver에서 메일페이지에 들어가도록 한다
+
+html1 = driver.page_source # 메일페이지 소스코드를 가져온다
+soup1 = BeautifulSoup(html1, 'lxml') # 뷰숩으로 소스코드를 파싱할 수 있는 형태로 초기화해준다
+
+# 메일 제목을 다 찾아낸다
+# strog태그 중에서 mail_title이라는 이름을 가진 class태그만 찾아내서 파싱한다
+title_list = soup1.find_all('strong','mail_title')
+
+# 추출한 메일 제목을 하나씩 돌면서 출력한다
+for title in title_list:
+    print(titel.text)
+```
+
+
+```python
+
+```
