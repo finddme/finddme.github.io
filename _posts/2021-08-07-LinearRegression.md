@@ -3,7 +3,7 @@ title: CODE = TRUE | Linear Regression
 category: Machine Learning, Deep Learning
 tag: Machine Learning, Deep Learning
 ---
-**K-Means 실습 코드1: [https://github.com/finddme/MachineLearning/blob/master/ML_Linear_Regression.ipynb](https://github.com/finddme/MachineLearning/blob/master/ML_Linear_Regression.ipynb)**  
+**Linear Regression 실습 코드: [https://github.com/finddme/MachineLearning/blob/master/ML_Linear_Regression.ipynb](https://github.com/finddme/MachineLearning/blob/master/ML_Linear_Regression.ipynb)**  
 
 
 
