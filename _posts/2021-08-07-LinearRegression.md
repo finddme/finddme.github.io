@@ -288,7 +288,7 @@ ax[1].set_ylabel('Y')
 
 
     
-![png](output_8_2.png)
+<img width="600" alt="Word Vectors" src="https://user-images.githubusercontent.com/53667002/128600420-1c5bdf59-5194-41b1-b7cb-b9e118ec2a7b.png">
     
 
 
@@ -418,7 +418,7 @@ print('MSE: ', get_mse(label_test, pred))
     MSE:  2807.8416311424967
     
 
-## 선형회귀 | 예제 | Scikit-learn 사용2 (보스턴 주택 가격 예측)
+## 선형회귀 | 예제 | Scikit-learn 사용3 (보스턴 주택 가격 예측)
 
 사이킷런에서 제공하는 Boston Data를 가지고 보스턴 집값을 예측해보자. 이 예제는 다항회귀예제이다.
 
@@ -651,7 +651,7 @@ BOSTON()
 
 
     
-![png](output_22_1.png)
+<img width="600" alt="Word Vectors" src="https://user-images.githubusercontent.com/53667002/128600449-e19e96b8-a2bb-45f7-a181-ad738c7589f4.png">
     
 
 
@@ -741,6 +741,4 @@ print("Day 8 predict: ", sess.run(H, feed_dict= {X : [8]}))
     
 
 
-```python
 
-```
