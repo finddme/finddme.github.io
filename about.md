@@ -12,6 +12,8 @@ title: About
 운이 좋아 공부를 계속하고 있습니다.  
 틀린 것이 있다면 <a href="mailto:info@example.com?subject=subject&cc=cc@example.com">yein4452@yonsei.ac.kr </a>로 메일 부탁드립니다.
 
+<iframe src="https://open.spotify.com/embed/playlist/3UR445ozP0PcjeQUbiXdpy" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
 
 
 
