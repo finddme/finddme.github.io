@@ -28,7 +28,7 @@ categorization을 사용한 시스템의 다양한 architecture를 개괄적으�
 
 ## 1.1 The Mention-Pair Architecture
 
-먼저 mention-based algorithm인 mention-pair architecture에 대해서 살펴보겠다. mention-pair architecture는 이름에서도 알 수 있듯이 한 쌍의 mention, candidate anaphor그리고 candidate antecedent(후보선행사)가 주어지는 classifier를 기반으로 하며, binary classification(이항분류; corefering하는지 안 하는지)를 통해 결론을 도출한다. 
+먼저 mention-based algorithm인 mention-pair architecture에 대해서 알아보겠다. mention-pair architecture는 이름에서도 알 수 있듯이 한 쌍의 mention, candidate anaphor그리고 candidate antecedent(후보선행사)가 주어지는 classifier를 기반으로 하며, binary classification(이항분류; corefering하는지 안 하는지)를 통해 결론을 도출한다. 
 
 <center><strong>Victoria Chen</strong>, CFO of <strong>Megabucks Banking</strong>, saw <strong>her pay</strong> jump to $2.3 million, as <strong>the 38-year-old</strong> also became the company’s president. It is widely known that <strong>she</strong> came to Megabucks from rival Lotsabucks.</center>
 <br>
