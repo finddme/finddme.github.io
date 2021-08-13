@@ -22,9 +22,9 @@ tag: Coreference Resolution / Zero-Anaphora Resolution
 
 ## 1. Architectures for Coreference Algorithms
 
-coreference에 대한 세 가지 일반적인 아키텍쳐는 mention-pair, mention-rank, 그리고 entity-based로 각각 feature-based 혹은 neural classifier를 사용할 수 있다. 이번 장에서는 우선 feature-based 알고리즘에 대해서 설명하겠다.
+coreference에 대한 세 가지 일반적인 아키텍쳐는 mention-pair, mention-rank, 그리고 entity-based로 각각 feature-based 혹은 neural classifier를 사용할 수 있다. 우선 feature-based 알고리즘에 대해서 설명하겠다.
 
-따라서 이번 장에서는 categorization을 사용한 시스템의 다양한 architecture를 개괄적으로 살펴본다. 알고리즘은 크게 entity-based(담화모델에서 각 개체를 나타내는 방식으로 coreference를 결정)인지, mention-based(각 mention을 독립적으로 고려하는 방식으로 coreference를 결정)인지 혹은 잠재적 선행사를 직접적으로 비교하기 위해서 ranking model을 사용하는지의 여부에 따라 구분된다. 
+categorization을 사용한 시스템의 다양한 architecture를 개괄적으로 살펴보자. 알고리즘은 크게 entity-based(담화모델에서 각 개체를 나타내는 방식으로 coreference를 결정)인지, mention-based(각 mention을 독립적으로 고려하는 방식으로 coreference를 결정)인지 혹은 잠재적 선행사를 직접적으로 비교하기 위해서 ranking model을 사용하는지의 여부에 따라 구분된다. 
 
 ## 1.1 The Mention-Pair Architecture
 
