@@ -1,7 +1,7 @@
 ---
 title: CODE = TRUE | Tensorflow
-category: Python
-tag: Python
+category: Python Basic Syntax
+tag: Python Basic Syntax
 ---
 
 **텐서플로우 실습 코드: [https://github.com/finddme/Python/blob/master/ML_Tensorflow1.ipynb](https://github.com/finddme/Python/blob/master/ML_Tensorflow1.ipynb)**
