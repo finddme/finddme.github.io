@@ -1,7 +1,7 @@
 ---
 title: Python | Data Type | Dictionary
-category: Python
-tag: Python
+category: Python Basic Syntax
+tag: Python Basic Syntax
 ---
 
 **딕셔너리 자료형 실습 코드: [https://github.com/finddme/Python/blob/master/Python_Dictionary.ipynb](https://github.com/finddme/Python/blob/master/Python_Dictionary.ipynb)**
