@@ -1,7 +1,7 @@
 ---
 title: Python | Calculation
-category: Python
-tag: Python
+category: Python Basic Syntax
+tag: Python Basic Syntax
 ---
 
 
