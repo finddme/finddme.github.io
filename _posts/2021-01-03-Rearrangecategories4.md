@@ -1,7 +1,7 @@
 ---
 title: ㅡ
-category: Python
-tag: Python
+category: Python Basic Syntax
+tag: Python Basic Syntax
 ---
 
 카테고리정렬
