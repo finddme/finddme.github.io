@@ -1,7 +1,7 @@
 ---
 title: Python | Conditional/Iterative Structure
-category: Python
-tag: Python
+category: Python Basic Syntax
+tag: Python Basic Syntax
 ---
 
 **조건문/반복문 실습 코드: [https://github.com/finddme/Python/blob/master/Python_Conditional_Iterative.ipynb](https://github.com/finddme/Python/blob/master/Python_Conditional_Iterative.ipynb)**
