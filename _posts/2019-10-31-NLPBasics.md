@@ -1,5 +1,5 @@
 ---
-title: CODE = TRUE | NLP Basics
+title: [CODE] NLP Basics
 category: Natural Language Processing
 tag: NLP
 ---
