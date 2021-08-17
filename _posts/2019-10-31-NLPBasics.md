@@ -924,7 +924,7 @@ tfidf_df
 
 
 
-```md
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1018,4 +1018,4 @@ tfidf_df
   </tbody>
 </table>
 </div>
-```
+
