@@ -1,5 +1,5 @@
 ---
-title: CODE = TRUE | RegularExpression
+title: CODE = TRUE | Regular Expression
 category: Natural Language Processing
 tag: NLP
 ---
