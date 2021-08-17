@@ -1,5 +1,5 @@
 ---
-title: CODE = TRUE | Tokenization
+title: [CODE] Tokenization
 category: Natural Language Processing
 tag: NLP
 ---
