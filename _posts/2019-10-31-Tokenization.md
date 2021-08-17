@@ -3,7 +3,7 @@ title: CODE = TRUE | Tokenization
 category: Natural Language Processing
 tag: NLP
 ---
-**Linear Regression 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021NLP1_Tokenization.ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021NLP1_Tokenization.ipynb)**  
+**Tokenization 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021NLP1_Tokenization.ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021NLP1_Tokenization.ipynb)**  
 
 
 
