@@ -36,7 +36,7 @@ author:
   #gravatar: 0a638fc7996869b1b67fb90ccf77dcfe # md5 hash of your email address
   gravatar: 753e5aac923755fc6a53de0a371ab12e
   
-  contact:
+  CONTACT:
     #linkedin:  
     email:     mailto:yein4452@yonsei.ac.kr
     github:    https://github.com/finddme
