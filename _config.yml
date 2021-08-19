@@ -49,7 +49,7 @@ author:
 nav:
   #Home: 
     #- '/'
-  Categories: 
+  CATEGORIES: 
     - '/blog/categories/'
   #Tags: 
     #- '/blog/tags/'
@@ -57,7 +57,7 @@ nav:
     #- '/blog/'
     #- { Categories: '/blog/categories/' }
     #- { Tags: '/blog/tags/' }
-  About:          
+  ABOUT:          
     - '/about/'
 
 # Where are tags and categories displayed
