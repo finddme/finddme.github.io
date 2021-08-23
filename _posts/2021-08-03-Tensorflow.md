@@ -1,5 +1,5 @@
 ---
-title: "[CODE] Tensorflow"
+title: "__CODE__ Tensorflow"
 category: Python Basic Syntax
 tag: Python Basic Syntax
 ---
