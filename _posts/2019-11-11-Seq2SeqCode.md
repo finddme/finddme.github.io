@@ -3,7 +3,7 @@ title: "[CODE] Seq2Seq"
 category: Natural Language Processing
 tag: NLP
 ---
-**Seq2Seq 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021NLP1_NLP_Basics.ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021NLP1_NLP_Basics.ipynb)**  
+**Seq2Seq 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_seq2seq_v2.ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_seq2seq_v2.ipynb)**  
 
 
 
@@ -651,6 +651,4 @@ for seq_idx in [1073, 7538, 50784]:
     
 
 
-```python
-
-```
+결과가 많이 이상하다. 이 코드에 Attention을 추가하니까 좀 나아졌다. -> [Add Attention](https://finddme.github.io/natural%20language%20processing/2019/11/12/AttentionCode/)
