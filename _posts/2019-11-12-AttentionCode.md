@@ -3,7 +3,7 @@ title: "[CODE] Seq2Seq with Attention"
 category: Natural Language Processing
 tag: NLP
 ---
-**Attention 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021NLP1_NLP_Basics.ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021NLP1_NLP_Basics.ipynb)**  
+**Attention 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_seq2seq_Attention_v2.ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_seq2seq_Attention_v2.ipynb)**  
 
 
 
@@ -711,9 +711,5 @@ for seq_idx in [1073, 7538, 50784]:
     target:  You can't change Tom.
     translate:  You can't stop Tom. 
     
-    
-
-
-```python
-
-```
+ 
+Seq2Seq만 썼을 때 보단 괜찮아졌다. -> [Seq2Seq](https://finddme.github.io/natural%20language%20processing/2019/11/11/Seq2SeqCode/)
