@@ -3,6 +3,7 @@ title: "__CODE__ Seq2Seq"
 category: Natural Language Processing
 tag: NLP
 ---
+**Seq2Seq 개념 설명: [https://finddme.github.io/natural%20language%20processing/2019/11/11/Seq2Seq/](https://finddme.github.io/natural%20language%20processing/2019/11/11/Seq2Seq/)**
 **Seq2Seq 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_seq2seq_v2.ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_seq2seq_v2.ipynb)**  
 
 
