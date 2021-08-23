@@ -1,5 +1,5 @@
 ---
-title: "[CODE] Regular Expression"
+title: "__CODE__ Regular Expression"
 category: Natural Language Processing
 tag: NLP
 ---
