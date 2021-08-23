@@ -1,5 +1,5 @@
 ---
-title: "[CODE] Seq2Seq"
+title: "__CODE__ Seq2Seq"
 category: Natural Language Processing
 tag: NLP
 ---
