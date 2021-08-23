@@ -1,5 +1,5 @@
 ---
-title: "__CODE__ Seq2Seq"
+title: "__CODE__ Seq2Seq(Neural Machine Translation)"
 category: Natural Language Processing
 tag: NLP
 ---
