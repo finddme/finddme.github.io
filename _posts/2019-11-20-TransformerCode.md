@@ -3,7 +3,7 @@ title: "__CODE__ Transformer(ChatBot)"
 category: Natural Language Processing
 tag: NLP
 ---
-**Transformer 개념 설명: [https://finddme.github.io/natural%20language%20processing/2019/11/19/Transformer/](https://finddme.github.io/natural%20language%20processing/2019/11/19/Transformer/)  
+**Transformer 개념 설명: [https://finddme.github.io/natural%20language%20processing/2019/11/19/Transformer/](https://finddme.github.io/natural%20language%20processing/2019/11/19/Transformer/)**  
 **Transformer 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_Transformer(v).ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_Transformer(v).ipynb)**  
 
 
