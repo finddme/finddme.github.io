@@ -3,7 +3,7 @@ title: "__CODE__ Transformer(ChatBot)"
 category: Natural Language Processing
 tag: NLP
 ---
-**NLP Basics 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_Transformer(v).ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_Transformer(v).ipynb)**  
+**Transformer 실습 코드: [https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_Transformer(v).ipynb](https://github.com/finddme/Finddme_Blog_Code/blob/master/NLP_Code/2021_Transformer(v).ipynb)**  
 
 
 
