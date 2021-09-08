@@ -3,6 +3,7 @@ title: Coreference Resolution | Speech and Language Processing(Daniel Jurafsky a
 category: Natural Language Processing and Linguistics
 tag: NLP & Linguistics
 ---
+(Coreference Resolution / Zero-Anaphora Resolution)
 
 
 
