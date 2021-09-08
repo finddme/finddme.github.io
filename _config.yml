@@ -51,8 +51,8 @@ nav:
     #- '/'
   CATEGORIES: 
     - '/blog/categories/'
-  #Tags: 
-    #- '/blog/tags/'
+  Tags: 
+    - '/blog/tags/'
   #Contents:           
     #- '/blog/'
     #- { Categories: '/blog/categories/' }
