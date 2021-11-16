@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-## VIEIN
+## x
 &#128374;
 
 안녕하세요. 그냥 학생입니다.  
