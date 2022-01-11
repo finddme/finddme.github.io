@@ -1,5 +1,5 @@
 ---
-title: Linux Cheat Sheet
+title: _
 category: Linux/Docker
 tag: Linux
 ---
