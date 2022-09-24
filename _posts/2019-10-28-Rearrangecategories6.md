@@ -1,7 +1,7 @@
 ---
 title: ㅡ
-category: Developement
-tag: Developement
+category: Development
+tag: Development
 ---
 
 카테고리정렬
