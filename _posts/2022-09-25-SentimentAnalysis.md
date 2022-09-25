@@ -29,7 +29,8 @@ tag: Development
 - Emotion class를 예측하는 KoELECTRA기반 classification fine-tune task
 
 ## 3\. model information
-- KoElectra(https://github.com/monologg/KoELECTRA/tree/024fbdd600e653b6e4bdfc64ceec84181b5ce6c4)
+
+- [KoElectra](https://github.com/monologg/KoELECTRA/tree/024fbdd600e653b6e4bdfc64ceec84181b5ce6c4)
 - version: KoELECTRA-Base-v3
 
 ## 4\. Environment
