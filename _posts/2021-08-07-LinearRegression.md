@@ -1,5 +1,5 @@
 ---
-title: "__CODE__ Linear Regression"
+title: "Linear Regression;CODE"
 category: Machine Learning, Deep Learning
 tag: Machine Learning, Deep Learning
 ---
