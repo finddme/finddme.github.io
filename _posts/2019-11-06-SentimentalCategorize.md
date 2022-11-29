@@ -1,5 +1,5 @@
 ---
-title: "__CODE__ Word2Vec(Sentimental Categorize)"
+title: "Word2Vec(Sentimental Categorize);CODE"
 category: Natural Language Processing
 tag: NLP
 ---
