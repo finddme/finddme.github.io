@@ -21,7 +21,7 @@ tag: Development
 
 
 
-## 1\. Sentiment_analysis_code
+## 1\. Sentiment analysis code
 
 [https://github.com/finddme/Sentiment_analysis](https://github.com/finddme/Sentiment_analysis)
 
@@ -30,8 +30,8 @@ tag: Development
 
 ## 3\. model information
 
-- [KoElectra](https://github.com/monologg/KoELECTRA/tree/024fbdd600e653b6e4bdfc64ceec84181b5ce6c4)
-- version: KoELECTRA-Base-v3
+- [KoElectra](https://github.com/monologg/KoELECTRA/tree/024fbdd600e653b6e4bdfc64ceec84181b5ce6c4)(version: KoELECTRA-Base-v3)
+- [KoBERT](https://github.com/monologg/KoBERT-Transformers)
 
 ## 4\. Environment
 - ubuntu 20.04
@@ -46,33 +46,32 @@ docker pull ayaanayaan/ayaan_nv
 - pymongo 4.1.1
 
 
-## 6\. run_classify.py(Koelectra)
+## 6\. Train 
 ```
-# Train
+# Train(Electra)
 python main.py --op train --target_gpu (0/1/2) --ck_path (ck_path)
 
-# Train with multi gpu
+# Train with multi gpu(Electra)
 python main.py --op train --target_gpu m --ck_path (ck_path)
 
-# Test
+# Test(Electra)
 python main.py --op test --target_gpu (0/1/2) --load_ck (ck_path)
 
 ```
 
-## 7\. run_bert.py(Kobert)
 ```
-# Train
+# Train(BERT)
 python main.py --op train_bert --target_gpu (0/1/2) --ck_path (ck_path)
 
-# Train with multi gpu
+# Train with multi gpu(BERT)
 python main.py --op train_bert --target_gpu m --ck_path (ck_path)
 
-# Test
+# Test(BERT)
 python main.py --op test_bert --target_gpu (0/1/2) --load_ck (ck_path)
 
 ```
 
-## 8\. api.py(Koelectra)
+## 7\. API
 ```
 python main.py --op api --target_gpu (0/1/2) --load_ck (ck_path) --port (port)
 ```
