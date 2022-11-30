@@ -40,9 +40,13 @@ OpenAI는 Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 m
 모델의 구조는 기존 GPT에서 layer normalization이 각 블록 뒤에 있던 게 앞에 위치한 것 외에는 모두 동일한데 size를 많이 키웠다. 
 
 $\text{n}_\text{params}$ = $175B$
+
 $\text{n}_\text{layers}$ = $96$
+
 $\text{d}_\text{model}$ = $12288$
+
 $\text{n}_\text{heads}$ = $96$
+
 $\text{d}_\text{head}$ = $128$
 
 > 전체 파라미터 수가 175B이기 때문에 이걸 사용하려면 billion을 대략 gigabyte로 보고 4byte(32 bit) 이상의  tensor를 사용한다고 가정하면 gpu 700GB 이상이 필요하다
