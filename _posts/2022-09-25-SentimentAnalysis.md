@@ -46,7 +46,7 @@ docker pull ayaanayaan/ayaan_nv
 - pymongo 4.1.1
 
 
-## 6\. Train 
+## 6\. Train/Test
 ```
 # Train(Electra)
 python main.py --op train --target_gpu (0/1/2) --ck_path (ck_path)
