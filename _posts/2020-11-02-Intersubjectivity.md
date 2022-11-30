@@ -1,7 +1,7 @@
 ---
-title: Conversation Analysis_Methods
-category: Conversation Analysis
-tag: Conversation Analysis
+title: Conversation Analysis | Conversation Analysis Methods
+category: Linguistics | English
+tag: Linguistics
 ---
 
 
