@@ -1,7 +1,7 @@
 ---
-title: Preference Structure
-category: Conversation Analysis
-tag: Conversation Analysis
+title: Conversation Analysis | Preference Structure
+category: Linguistics | English
+tag: Linguistics
 ---
 
 
