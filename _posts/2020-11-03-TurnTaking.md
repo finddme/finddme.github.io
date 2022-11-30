@@ -1,7 +1,7 @@
 ---
-title: Turn-Taking
-category: Conversation Analysis
-tag: Conversation Analysis
+title: Conversation Analysis | Turn-Taking
+category: Linguistics | English
+tag: Linguistics
 ---
 
 
