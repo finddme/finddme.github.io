@@ -1,5 +1,5 @@
 ---
-title: "NLP Basics:with code"
+title: "NLP Basics;with code"
 category: Natural Language Processing
 tag: NLP
 ---
