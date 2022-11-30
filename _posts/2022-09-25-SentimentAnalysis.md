@@ -26,7 +26,7 @@ tag: Development
 [https://github.com/finddme/Sentiment_analysis](https://github.com/finddme/Sentiment_analysis)
 
 ## 2\. Sentiment_analysis
-- Emotion class를 예측하는 KoELECTRA기반 classification fine-tune task
+- Emotion class를 예측하는 classification fine-tune task
 
 ## 3\. model information
 
