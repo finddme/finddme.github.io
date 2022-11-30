@@ -1,5 +1,5 @@
 ---
-title: "Tokenization:with code"
+title: "Tokenization;with code"
 category: Natural Language Processing
 tag: NLP
 ---
