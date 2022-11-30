@@ -1,7 +1,7 @@
 ---
-title: Adjacency Pair | Action and Understanding
-category: Conversation Analysis
-tag: Conversation Analysis
+title: "Conversation Analysis | Adjacency Pair: Action and Understanding"
+category: Linguistics | English
+tag: Linguistics
 ---
 
 
