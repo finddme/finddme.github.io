@@ -52,4 +52,4 @@ $\text{d}_\text{head}$ = $128$
 
 zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답 값을 예측하는 것인데 zero shot은 예시를 안 주는 거고 one shot은 예시를 하나 주는 거, few shot은 예시를 k개 주는 거다. 
 
-이게 가능한 이유는 [in-context learning](#gpt2-:-language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
+이게 가능한 이유는 [in-context learning](#gpt2-language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
