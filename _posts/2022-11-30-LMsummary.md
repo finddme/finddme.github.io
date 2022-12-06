@@ -60,7 +60,7 @@ zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답
 
 이게 가능한 이유는 [in-context learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
 
-# RoBERTa
+# RoBERTa : A Robustly Optimized BERT Pretraining Approach
 
 Roberta는 BERT계열의 모델이다. BERT와 구조는 거의 같은데 BERT가 under training되었다고 주장하며 이를 해결하기 위한 네 가지 방법을 제안했다.
  
