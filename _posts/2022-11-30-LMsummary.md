@@ -38,7 +38,7 @@ OpenAI는 Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 m
 
 GPT3는 기존의 GPT모델 사이즈를 엄청 키운 것이다. 
 
-Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 언어 모델의 scaling law가 실험적으로 입증된 이후 본격적으로 거대 언어 모델들이 등장하는데 그 대표적인 모델이 GPT3이다.
+[Jared et al. 2020(Scaling Laws for Neural Language Models)](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#scaling-laws-for-neural-language-models)를 통해 언어 모델의 scaling law가 실험적으로 입증된 이후 본격적으로 거대 언어 모델들이 등장하는데 그 대표적인 모델이 GPT3이다.
 
 모델의 구조는 기존 GPT에서 layer normalization이 각 블록 뒤에 있던 게 앞에 위치한 것 외에는 모두 동일한데 size를 많이 키웠다. 
 
