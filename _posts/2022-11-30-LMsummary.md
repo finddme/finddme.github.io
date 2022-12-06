@@ -59,3 +59,12 @@ $\text{d}_\text{head}$ = $128$
 zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답 값을 예측하는 것인데 zero shot은 예시를 안 주는 거고 one shot은 예시를 하나 주는 거, few shot은 예시를 k개 주는 거다. 
 
 이게 가능한 이유는 [in-context learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
+
+# RoBERTa
+
+Roberta는 BERT계열의 모델이다. Roberta의 경우 BERT가 under training되었다고 주장하며 이를 해결하기 위한 네 가지 방법을 제안했다.
+ 
+1) 더 많은 데이터를 더 큰 batch로 더 오래 학습시킨다.
+2) sequence length를 늘려 학습한다.
+3) BERT가 수행하는 task(MLM, NSP) 중 MLM만을 사용하여 학습한다.
+4) MLM 수행 시 masking pattern을 매 epoch마다 다르게 준다.
