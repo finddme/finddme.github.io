@@ -62,7 +62,7 @@ zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답
 
 # RoBERTa
 
-Roberta는 BERT계열의 모델이다. Roberta의 경우 BERT가 under training되었다고 주장하며 이를 해결하기 위한 네 가지 방법을 제안했다.
+Roberta는 BERT계열의 모델이다. BERT와 구조는 거의 같은데 BERT가 under training되었다고 주장하며 이를 해결하기 위한 네 가지 방법을 제안했다.
  
 1) 더 많은 데이터를 더 큰 batch로 더 오래 학습시킨다.
 
