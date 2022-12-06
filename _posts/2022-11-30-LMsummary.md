@@ -34,6 +34,8 @@ OpenAI는 Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 m
 
 <center><img width="900" src="https://user-images.githubusercontent.com/53667002/204688445-6359dd49-a8ce-4a96-b7a5-a3cd48b69a38.png"></center>
 
+<center><img width="600" src="https://user-images.githubusercontent.com/53667002/205824058-617f8a9c-ed23-4fe2-b1d3-55b205c02fd0.png"></center>
+
 # GPT3 : Language Models are Few-Shot Learners
 
 GPT3는 기존의 GPT모델 사이즈를 엄청 키운 것이다. 
