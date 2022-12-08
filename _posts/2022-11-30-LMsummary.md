@@ -23,10 +23,19 @@ tag: NLP
 
 최근 자연어처리 분야에서는 대용량의 corpus를 학습한 LM 뒤에 downstream task를 위한 layer를 붙여 특정 task를 풀 수 있도록 하는 방법론이 많이 사용된다. Language Model(LM)은 대용량의 unlabeled data를 학습하여 언어 자체에 대한 feature를 학습한 모델이다. 최근 LM의 학습에 사용되는 task는 크게 **masked language modeling**과 **language modeling**이 있다. 전자의 경우는 입력된 text의 일부 token에 대해 masking처리를 한 후, 앞뒤 문맥을 통해 masking token의 original token을 예측하는 task로, bert계열의 model들이 이러한 방식으로 학습된다. 후자는 token들을 하나씩 집어넣어서 첫 번째 token을 기반으로 다음 token을 예측하고 그 token을 가지고 다음 token을 예측하는 것을 sequence가 끝날 때까지 반복하는 방식으로 학습하는 task이다. 이 방법론은 gpt계열의 model에서 주로 사용된다.
 
+# GPT
+
+transformer의 decoder 구조를 기반으로 한 모델.
+
+language modeling task로 학습. 이 task는 sequence를 이루는 token들을 차례로 하나씩 예측하기 때문에 이 학습 방식을 autoregressive하다고 표현함.
+
+
 # GPT2 : Language Models are Unsupervised Multitask Learners
-GPT2에서는 in-context learning을 처음으로 제안하였다. in-context learning은 문맥 내에서 풀고자 하는 task를 학습하는 것을 의미하는데, language modeling task의 trainset으로 Table 1과 같은 data를 사용하면 translation이 가능한 LM을 만들 수 있다는 개념이다. 
+GPT2에서는 in-context learning을 처음으로 제안하였다. in-context learning은 문맥 내에서 풀고자 하는 task를 학습하는 것을 의미하는데, language modeling task의 trainset으로 Table 1과 같은 data를 사용하면 translation이 가능한 LM을 만들 수 있다는 개념이다. 이는 앞선 sequence를 기반으로 다음 sequence를 예측하는 language modeling objective의 특성을 통해 프랑스어로 번역하라는 prompt(지시사항)이 추가하여 번역과제를 수행하는 mechanism으로 이해할 수 있다.
 
 <center><img width="400" src="https://user-images.githubusercontent.com/53667002/204688283-77797c84-c4f1-49fa-9ae2-3d577735d9fd.png"></center>
+
+이 방법론을 통해 fine-tuning과정으로 downstream data에 대한 parameter를 따로 update하지 않고도 inference가 가능하다는 것이 밝혀졌다.
 
 # Scaling Laws for Neural Language Models
 
@@ -64,6 +73,8 @@ zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답
 이게 가능한 이유는 [in-context learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
 
 # BERT : Pre-training of Deep Bidirectional Transformers for Language Understanding
+
+transformer의 encoder구조를 기반으로 만들어진 모델.
 
 mlm과 nsp task로 학습됨.
 
