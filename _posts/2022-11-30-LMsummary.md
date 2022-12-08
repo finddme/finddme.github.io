@@ -35,7 +35,7 @@ GPT2에서는 in-context learning을 처음으로 제안하였다. in-context le
 
 <center><img width="400" src="https://user-images.githubusercontent.com/53667002/204688283-77797c84-c4f1-49fa-9ae2-3d577735d9fd.png"></center>
 
-이 방법론을 통해 fine-tuning과정으로 downstream data에 대한 parameter를 따로 update하지 않고도 task에 대한 정답을 추론할 수 있는 zero-shot inference가 가능하다는 것을 밝혔다.
+이 방법론을 통해 fine-tuning과정으로 downstream data에 대한 parameter를 따로 update하지 않고도 task에 대한 정답을 추론할 수 있는 zero-shot inference가 가능하다는 것을 밝혔다. zero-shot inference는 task description을 준 이후 prompt를 던져주고 정답을 맞추라고 하는 것이다.
 
 # Scaling Laws for Neural Language Models
 
@@ -72,6 +72,16 @@ $\text{d}_\text{head}$ = $128$
 zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답 값을 예측하는 것인데 zero shot은 예시를 안 주는 거고 one shot은 예시를 하나 주는 거, few shot은 예시를 k개 주는 거다. 
 
 이게 가능한 이유는 [in-context learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
+
+# T5
+text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행하는 모델.
+
+T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sentence 뒤에 task description이 붙어 이것이 하나의 input text로 모델에 들어가 task의 정답을 text로 내놓는 것이다.
+
+input : sentence + task description
+
+output : text
+
 
 # BERT : Pre-training of Deep Bidirectional Transformers for Language Understanding
 
