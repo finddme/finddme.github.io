@@ -23,7 +23,9 @@ tag: NLP
 
 최근 자연어처리 분야에서는 대용량의 corpus를 학습한 LM 뒤에 downstream task를 위한 layer를 붙여 특정 task를 풀 수 있도록 하는 방법론이 많이 사용된다. Language Model(LM)은 대용량의 unlabeled data를 학습하여 언어 자체에 대한 feature를 학습한 모델이다. 최근 LM의 학습에 사용되는 task는 크게 **masked language modeling**과 **language modeling**이 있다. 전자의 경우는 입력된 text의 일부 token에 대해 masking처리를 한 후, 앞뒤 문맥을 통해 masking token의 original token을 예측하는 task로, bert계열의 model들이 이러한 방식으로 학습된다. 후자는 token들을 하나씩 집어넣어서 첫 번째 token을 기반으로 다음 token을 예측하고 그 token을 가지고 다음 token을 예측하는 것을 sequence가 끝날 때까지 반복하는 방식으로 학습하는 task이다. 이 방법론은 gpt계열의 model에서 주로 사용된다.
 
-# GPT
+# GPT : Improving Language Understanding
+
+by Generative Pre-Training
 
 transformer의 decoder 구조를 기반으로 한 모델.
 
@@ -73,7 +75,7 @@ zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답
 
 이게 가능한 이유는 [in-context learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
 
-# T5
+# T5 : Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
 text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행하는 모델.
 
 T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sentence 뒤에 task description이 붙어 이것이 하나의 input text로 모델에 들어가 task의 정답을 text로 내놓는 것이다.
