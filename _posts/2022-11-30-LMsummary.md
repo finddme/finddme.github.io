@@ -31,11 +31,11 @@ language modeling task로 학습. 이 task는 sequence를 이루는 token들을 
 
 
 # GPT2 : Language Models are Unsupervised Multitask Learners
-GPT2에서는 in-context learning을 처음으로 제안하였다. in-context learning은 문맥 내에서 풀고자 하는 task를 학습하는 것을 의미하는데, language modeling task의 trainset으로 Table 1과 같은 data를 사용하면 translation이 가능한 LM을 만들 수 있다는 개념이다. 이는 앞선 sequence를 기반으로 다음 sequence를 예측하는 language modeling objective의 특성을 통해 프랑스어로 번역하라는 prompt(지시사항)이 추가하여 번역과제를 수행하는 mechanism으로 이해할 수 있다.
+GPT2에서는 in-context learning을 처음으로 제안하였다. in-context learning은 문맥 내에서 풀고자 하는 task를 학습하는 것을 의미하는데, language modeling task의 trainset으로 Table 1과 같은 data를 사용하면 translation이 가능한 LM을 만들 수 있다는 개념이다. 이는 앞선 sequence를 기반으로 다음 sequence를 예측하는 language modeling objective의 특성을 통해 프랑스어로 번역하라는 task description 추가하여 번역과제를 수행하는 mechanism으로 이해할 수 있다.
 
 <center><img width="400" src="https://user-images.githubusercontent.com/53667002/204688283-77797c84-c4f1-49fa-9ae2-3d577735d9fd.png"></center>
 
-이 방법론을 통해 fine-tuning과정으로 downstream data에 대한 parameter를 따로 update하지 않고도 inference가 가능하다는 것이 밝혀졌다.
+이 방법론을 통해 fine-tuning과정으로 downstream data에 대한 parameter를 따로 update하지 않고도 task에 대한 정답을 추론할 수 있는 zero-shot inference가 가능하다는 것을 밝혔다.
 
 # Scaling Laws for Neural Language Models
 
@@ -47,7 +47,7 @@ OpenAI는 Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 m
 
 # GPT3 : Language Models are Few-Shot Learners
 
-GPT3는 기존의 GPT모델 사이즈를 엄청 키운 것이다. 
+GPT3는 기존의 GPT모델 사이즈를 엄청 키운 것이다. layer수는 GPT2보다 2배 더 많고 총 parameter 수는 175B이다.
 
 [Jared et al. 2020(Scaling Laws for Neural Language Models)](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#scaling-laws-for-neural-language-models)를 통해 언어 모델의 scaling law가 실험적으로 입증된 이후 본격적으로 거대 언어 모델들이 등장하는데 그 대표적인 모델이 GPT3이다.
 
@@ -64,7 +64,8 @@ $\text{n}_\text{heads}$ = $96$
 $\text{d}_\text{head}$ = $128$
 
 > 전체 파라미터 수가 175B이기 때문에 이걸 사용하려면 billion을 대략 gigabyte로 보고 4byte(32 bit) 이상의  tensor를 사용한다고 가정하면 gpu 700GB 이상이 필요하다
-모델이 커서 fine-tuning은 힘들지만 GPT3 논문에서는 zero shot, one shot, few shot learning을 소개하며 fine-tuning이 필요 없다는 것을 보여줬다. 
+
+모델이 커서 fine-tuning은 힘들지만 GPT3 논문에서는 GPT2에서 소개된 zero shot 외에도 task description과 input 사이에 downstream task에 대한 정보를 예제 형식으로 주는 one shot, few shot learning을 소개하며 fine-tuning이 필요 없다는 것을 보여줬다.  
 
 <center><img width="800" src="https://user-images.githubusercontent.com/53667002/204688564-592daf36-427a-4989-850f-c3a1f2e160f4.png"></center>
 
