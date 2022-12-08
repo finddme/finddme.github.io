@@ -63,6 +63,17 @@ zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답
 
 이게 가능한 이유는 [in-context learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
 
+# BERT : Pre-training of Deep Bidirectional Transformers for Language Understanding
+
+mlm과 nsp task로 학습됨.
+
+mlm : input문장의 특정 token에 mask를 취하고 mask token에 위치할 실제 token을 예측하는 task
+
+nsp: 문장 두 개를 입력 받아 두 문장이 뒷 문장이 앞 문장과 이어지는 문장인지 아닌지 예측하는 task
+
+bert 계열의 모델들은 위와 같은 task를 통해 사전학습을 충분히 거친 이후 task specific한 head를 붙이는 방식으로 downstream task를 푼다.(e.g. classification task: classification head / qa: span prediction head)
+
+
 # RoBERTa : A Robustly Optimized BERT Pretraining Approach
 
 Roberta는 BERT계열의 모델이다. BERT와 구조는 거의 같은데 BERT가 under training되었다고 주장하며 이를 해결하기 위한 네 가지 방법을 제안했다.
