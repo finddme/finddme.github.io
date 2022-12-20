@@ -25,7 +25,9 @@ tag: NLP
 
 최근 LM의 학습에 사용되는 task는 크게 **masked language modeling**과 **language modeling**이 있다. 전자의 경우는 입력된 text의 일부 token에 대해 masking처리를 한 후, 앞뒤 문맥을 통해 masking token의 original token을 예측하는 task로, bert계열의 model들이 이러한 방식으로 학습된다. 후자는 token들을 하나씩 집어넣어서 첫 번째 token을 기반으로 다음 token을 예측하고 그 token을 가지고 다음 token을 예측하는 것을 sequence가 끝날 때까지 반복하는 방식으로 학습하는 task이다. 이 방법론은 gpt계열의 model에서 주로 사용된다.
 
-# GPT : Improving Language Understanding
+# Unidirectional LM(Auto-regressive model)
+
+## GPT : Improving Language Understanding
 
 by Generative Pre-Training
 
@@ -34,14 +36,14 @@ transformer의 decoder 구조를 기반으로 한 모델.
 language modeling task로 학습. 이 task는 sequence를 이루는 token들을 차례로 하나씩 예측하기 때문에 이 학습 방식을 autoregressive하다고 표현함.
 
 
-# GPT2 : Language Models are Unsupervised Multitask Learners
+## GPT2 : Language Models are Unsupervised Multitask Learners
 GPT2에서는 in-context learning을 처음으로 제안하였다. in-context learning은 문맥 내에서 풀고자 하는 task를 학습하는 것을 의미하는데, language modeling task의 trainset으로 Table 1과 같은 data를 사용하면 translation이 가능한 LM을 만들 수 있다는 개념이다. 이는 앞선 sequence를 기반으로 다음 sequence를 예측하는 language modeling objective의 특성을 통해 프랑스어로 번역하라는 task description 추가하여 번역과제를 수행하는 mechanism으로 이해할 수 있다.
 
 <center><img width="400" src="https://user-images.githubusercontent.com/53667002/204688283-77797c84-c4f1-49fa-9ae2-3d577735d9fd.png"></center>
 
 이 방법론을 통해 fine-tuning과정으로 downstream data에 대한 parameter를 따로 update하지 않고도 task에 대한 정답을 추론할 수 있는 zero-shot inference가 가능하다는 것을 밝혔다. zero-shot inference는 task description을 준 이후 prompt를 던져주고 정답을 맞추라고 하는 것이다.
 
-# Scaling Laws for Neural Language Models
+## Scaling Laws for Neural Language Models
 
 OpenAI는 Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 model size, data size 그리고 연산량을 증가시키면 LM의 performance는 계속 향상한다는 것을 실험적으로 밝혀냈다. 하지만 이 각각은 모두 bottleneck이 되지 않는 적정 정도 안에서 증량하는 것이 중요하다. Figure 1과 같이 model size나 연산량만 커지면 overfitting, data size만 커지면 underfitting이 발생하기 때문이다.
 
@@ -49,7 +51,7 @@ OpenAI는 Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 m
 
 <center><img width="600" src="https://user-images.githubusercontent.com/53667002/205824058-617f8a9c-ed23-4fe2-b1d3-55b205c02fd0.png"></center>
 
-# GPT3 : Language Models are Few-Shot Learners
+## GPT3 : Language Models are Few-Shot Learners
 
 GPT3는 기존의 GPT모델 사이즈를 엄청 키운 것이다. layer수는 GPT2보다 2배 더 많고 총 parameter 수는 175B이다.
 
@@ -77,7 +79,7 @@ zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답
 
 이게 가능한 이유는 [in-context learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
 
-# T5 : Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
+## T5 : Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
 text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행하는 모델.
 
 T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sentence 뒤에 task description이 붙어 이것이 하나의 input text로 모델에 들어가 task의 정답을 text로 내놓는 것이다.
@@ -86,8 +88,9 @@ input : sentence + task description
 
 output : text
 
+# Bidirectinoal LM
 
-# BERT : Pre-training of Deep Bidirectional Transformers for Language Understanding
+## BERT : Pre-training of Deep Bidirectional Transformers for Language Understanding
 
 transformer의 encoder구조를 기반으로 만들어진 모델.
 
@@ -100,7 +103,7 @@ nsp: 문장 두 개를 입력 받아 두 문장이 뒷 문장이 앞 문장과 �
 bert 계열의 모델들은 위와 같은 task를 통해 사전학습을 충분히 거친 이후 task specific한 head를 붙이는 방식으로 downstream task를 푼다.(e.g. classification task: classification head / qa: span prediction head)
 
 
-# RoBERTa : A Robustly Optimized BERT Pretraining Approach
+## RoBERTa : A Robustly Optimized BERT Pretraining Approach
 
 Roberta는 BERT계열의 모델이다. BERT와 구조는 거의 같은데 BERT가 under training되었다고 주장하며 이를 해결하기 위한 네 가지 방법을 제안했다.
  
