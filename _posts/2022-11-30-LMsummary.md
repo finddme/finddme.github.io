@@ -25,7 +25,7 @@ tag: NLP
 
 최근 LM의 학습에 사용되는 task는 크게 **masked language modeling**과 **language modeling**이 있다. 전자의 경우는 입력된 text의 일부 token에 대해 masking처리를 한 후, 앞뒤 문맥을 통해 masking token의 original token을 예측하는 task로, bert계열의 model들이 이러한 방식으로 학습된다. 후자는 token들을 하나씩 집어넣어서 첫 번째 token을 기반으로 다음 token을 예측하고 그 token을 가지고 다음 token을 예측하는 것을 sequence가 끝날 때까지 반복하는 방식으로 학습하는 task이다. 이 방법론은 gpt계열의 model에서 주로 사용된다.
 
-# Unidirectional LM(Auto-regressive model)
+# Unidirectional Language Model(Auto-regressive model)
 
 다음 token이 뭔지 쭉쭉 맞추는 방식으로 학습하니까 일방향적 LM
 
@@ -90,7 +90,7 @@ input : sentence + task description
 
 output : text
 
-# Bidirectinoal LM
+# Bidirectinoal Language Model
 
 mask token에 들어갈 token을 앞뒤 token을 기반으로 예측하는 방식으로 학습하니까 양방향 LM
 
@@ -119,5 +119,7 @@ Roberta는 BERT계열의 모델이다. BERT와 구조는 거의 같은데 BERT�
 
 4) MLM 수행 시 masking pattern을 매 epoch마다 다르게 준다.
 
+# Hybrid Language Model
 
+## XLNet
 
