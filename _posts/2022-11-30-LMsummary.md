@@ -119,7 +119,5 @@ Roberta는 BERT계열의 모델이다. BERT와 구조는 거의 같은데 BERT�
 
 4) MLM 수행 시 masking pattern을 매 epoch마다 다르게 준다.
 
-# Hybrid LM
 
-## XLNet
 
