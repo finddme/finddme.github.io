@@ -27,6 +27,8 @@ tag: NLP
 
 # Unidirectional LM(Auto-regressive model)
 
+다음 token이 뭔지 쭉쭉 맞추는 방식으로 학습하니까 일방향적 LM
+
 ## GPT : Improving Language Understanding
 
 by Generative Pre-Training
@@ -89,6 +91,8 @@ input : sentence + task description
 output : text
 
 # Bidirectinoal LM
+
+mask token에 들어갈 token을 앞뒤 token을 기반으로 예측하는 방식으로 학습하니까 양방향 LM
 
 ## BERT : Pre-training of Deep Bidirectional Transformers for Language Understanding
 
