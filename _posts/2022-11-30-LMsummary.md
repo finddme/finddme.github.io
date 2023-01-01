@@ -29,9 +29,7 @@ tag: NLP
 
 다음 token이 뭔지 쭉쭉 맞추는 방식으로 학습하니까 일방향적 LM
 
-## GPT : Improving Language Understanding
-
-by Generative Pre-Training
+## GPT : Improving Language Understanding by Generative Pre-Training
 
 transformer의 decoder 구조를 기반으로 한 모델.
 
