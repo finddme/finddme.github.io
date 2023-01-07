@@ -87,3 +87,7 @@ incremental: false
   #google:
     #tracking_id: "G-S91SD1WYXX"
     #anonymize_ip: false # default
+
+# dark mode
+dark_theme_toggle        : true 
+  - /assets/js/custom/dark-theme.js
