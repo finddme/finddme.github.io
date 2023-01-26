@@ -85,7 +85,21 @@ Encoder와 Decoder로 구성된 모델. Transformer의 구조에서 약간 변�
 
 - Layer Mormalization 시 bias는 주지 않고 rescale만 진행
 - Transformer는 sinusoidal position encoding 대신 relative positional embedding을 적용(BERT의 경우 Absolute positional embedding을 사용하였는데, 최근 모델들은 NSP를 제거하는 추세이기 때문에 absolute positional embedding으로 chunk strat position에 의존적인 absolute positional embedding은 적합하지 않아 relative positional embedding을 사용하는 모델이 늘어나는 중이라고 함: [Improve Transformer Models with Better Relative Position Embeddings](https://arxiv.org/pdf/2009.13658.pdf))
-> Relative positional embedding : self attention 수행 시 offset boundary 내의 token에 대해 relative position 값을 부여하는 것. 예를 들어 offset=2인 경우 relative position 값이 아래 그림 같이 부여됨.
+
+**Relative positional embedding**
+
+Relative positional embedding : self attention 수행 시 offset boundary 내의 token에 대해 relative position 값을 부여하는 것. 
+<center><img width="600" src="https://user-images.githubusercontent.com/53667002/214756079-f48c5c17-b484-4ee9-890a-139d0401e7fe.png"></center>
+
+예를 들어 offset=4, time step=3인 경우 relative position 값이 아래 그림 같이 부여되고
+<center><img width="600" src="https://user-images.githubusercontent.com/53667002/214755659-0ff8e1e5-3278-4f82-812f-d0515bbdb712.png"></center>
+
+offset=2,time step=3인 경우에는 아래와 같이 된다. 범위를 넘어갈 경우 가장 바깥쪽 index의 position값을 동일하게 부여한다.
+<center><img width="600" src="https://user-images.githubusercontent.com/53667002/214755546-c44b4dbc-e2df-471b-a2ba-7f409e7609ec.png"></center>
+
+
+Relative positional embedding에 대한 자세한 내용은 [https://medium.com/@_init_/how-self-attention-with-relative-position-representations-works-28173b8c245a](https://medium.com/@_init_/how-self-attention-with-relative-position-representations-works-28173b8c245a) 여기에 잘 정리되어 있다.
+
 
 
 ```python
