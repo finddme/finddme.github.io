@@ -81,12 +81,45 @@ zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답
 
 ## T5 : Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
 
-Encoder와 Decoder로 구성된 모델. text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행한다.
+Encoder와 Decoder로 구성된 모델. Transformer의 구조에서 약간 변형만 준 모델.
+
+- Layer Mormalization 시 bias는 주지 않고 rescale만 진행
+- Transformer는 sinusoidal position encoding 대신 relative positional embedding을 적용(BERT의 경우 Absolute positional embedding을 사용하였는데, 최근 모델들은 NSP를 제거하는 추세이기 때문에 absolute positional embedding으로 chunk strat position에 의존적인 absolute positional embedding은 적합하지 않아 relative positional embedding을 사용하는 모델이 늘어나는 중이라고 함: [Improve Transformer Models with Better Relative Position Embeddings](https://arxiv.org/pdf/2009.13658.pdf))
+> Relative positional embedding : self attention 수행 시 offset boundary 내의 token에 대해 relative position 값을 부여하는 것. 예를 들어 offset=2인 경우 relative position 값이 아래 그림 같이 부여됨.
+
+
+'''python
+def relative_position_bucket(relative_position, bidirectional=True, num_buckets=32, max_distance=128):
+    ret = 0
+    n = -relative_position
+    if bidirectional:
+        num_buckets //= 2
+        ret += (n < 0).to(torch.long) * num_buckets
+        n = torch.abs(n)
+    else:
+        n = torch.max(n, torch.zeros_like(n))
+    # now n is in the range [0, inf)
+
+    # half of the buckets are for exact increments in positions
+    max_exact = num_buckets // 2
+    is_small = n < max_exact
+
+    # The other half of the buckets are for logarithmically bigger bins in positions up to max_distance
+    val_if_large = max_exact + (
+            torch.log(n.float() / max_exact) / math.log(max_distance / max_exact) * (num_buckets - max_exact)
+    ).to(torch.long)
+    val_if_large = torch.min(val_if_large, torch.full_like(val_if_large, num_buckets - 1))
+    ret += torch.where(is_small, n, val_if_large)
+    return ret
+ '''
+
+- Model layer 전체에서 position embedding parameter를 sharing
+
+text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행한다.
 
 T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sentence 뒤에 task description이 prefix로 붙어 이것이 하나의 input text로 모델에 들어가 task의 정답을 text로 내놓는 것이다.
 
 > input : task description(task 정보) + input sentence
-
 > output : text
 
 <center><img width="600" src="https://user-images.githubusercontent.com/53667002/214738957-b11237ac-6732-4214-b396-cc1196134ee2.gif"></center>
@@ -95,6 +128,10 @@ T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sen
 
 - Classification task : input으로 분류하고자 하는 문장, output으로는 분류 label. (label은 model vocab내에 있는 토큰 중 하나로 추론되기 때문에 label 목록 외의 것이 나올 경우에는 틀린 것으로 간주)
 - Regression task : STS-B(semantic textual similarity : 텍스트 의미적 유사도 예측 과제)와 같은 regression task의 경우 특정 단위로 나누어서 그걸 라벨로 취급하여 classification task처럼 처리 (e.g. 1-5사이 스코어 추론 과제: 0.2 단위로 1, 1.2, 1.4, 1.6, ...으로 나눔)
+
+*T5에 대한 자세한 내용은 논문을 보는 게 좋고 간략한 내용은 [Google Research Blog](https://ai.googleblog.com/2020/02/exploring-transfer-learning-with-t5.html)를 보는 것이 좋다.*
+
+*[Closed-Book Question Answering](https://t5-trivia.glitch.me/) demo applicaion도 체험할 수 있다*
 
 # Bidirectinoal Language Model
 
