@@ -45,7 +45,7 @@ GPT2에서는 in-context learning을 처음으로 제안하였다. in-context le
 
 ## Scaling Laws for Neural Language Models
 
-OpenAI는 Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 model size, data size 그리고 연산량을 증가시키면 LM의 performance는 계속 향상한다는 것을 실험적으로 밝혀냈다. 하지만 이 각각은 모두 bottleneck이 되지 않는 적정 정도 안에서 증량하는 것이 중요하다. Figure 1과 같이 model size나 연산량만 커지면 overfitting, data size만 커지면 underfitting이 발생하기 때문이다.
+OpenAI는 Jared et al. 2020(Scaling Laws for Neural Language Models)를 통해 model size, data size 그리고 연산량을 증가시키면 LM의 performance는 계속 향상한다는 것을 실험적으로 밝혀냈다. 하지만 이 각각은 모두 bottleneck이 되지 않는 적정 정도 안에서 증량하는 것이 중요하다. Model size나 연산량만 커지면 overfitting, data size만 커지면 underfitting이 발생하기 때문이다.
 
 <center><img width="900" src="https://user-images.githubusercontent.com/53667002/204688445-6359dd49-a8ce-4a96-b7a5-a3cd48b69a38.png"></center>
 
