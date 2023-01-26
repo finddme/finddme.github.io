@@ -89,7 +89,7 @@ T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sen
 
 > output : text
 
-<center><img width="600" src="https://user-images.githubusercontent.com/53667002/214736217-55f3f4eb-d43c-4592-981b-0cb8d3f52751.png"></center>
+<center><img width="600" src="https://user-images.githubusercontent.com/53667002/214738957-b11237ac-6732-4214-b396-cc1196134ee2.gif"></center>
 
 **T5 task 처리 방식**
 
