@@ -80,13 +80,21 @@ zero shot, one shot, few shot 모두 task description만 주고 prompt의 정답
 이게 가능한 이유는 [in-context learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)에 있다고 한다. 즉, in-context learning을 통해 LM이  task를 풀 능력을 학습했다는 전제 하에 위와 같은 zero, one, few shot이 가능한 것이라고 한다.
 
 ## T5 : Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
-text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행하는 모델.
 
-T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sentence 뒤에 task description이 붙어 이것이 하나의 input text로 모델에 들어가 task의 정답을 text로 내놓는 것이다.
+Encoder와 Decoder로 구성된 모델. text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행한다.
 
-input : sentence + task description
+T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sentence 뒤에 task description이 prefix로 붙어 이것이 하나의 input text로 모델에 들어가 task의 정답을 text로 내놓는 것이다.
 
-output : text
+> input : task description(task 정보) + input sentence
+
+> output : text
+
+<center><img width="600" src="https://user-images.githubusercontent.com/53667002/214736217-55f3f4eb-d43c-4592-981b-0cb8d3f52751.png"></center>
+
+**T5 task 처리 방식**
+
+- Classification task : input으로 분류하고자 하는 문장, output으로는 분류 label. (label은 model vocab내에 있는 토큰 중 하나로 추론되기 때문에 label 목록 외의 것이 나올 경우에는 틀린 것으로 간주)
+- Regression task : STS-B(semantic textual similarity : 텍스트 의미적 유사도 예측 과제)와 같은 regression task의 경우 특정 단위로 나누어서 그걸 라벨로 취급하여 classification task처럼 처리 (e.g. 1-5사이 스코어 추론 과제: 0.2 단위로 1, 1.2, 1.4, 1.6, ...으로 나눔)
 
 # Bidirectinoal Language Model
 
