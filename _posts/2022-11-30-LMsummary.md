@@ -86,7 +86,8 @@ Encoder와 Decoder로 구성된 모델. Transformer의 구조에서 약간 변�
 - Layer Mormalization 시 bias는 주지 않고 rescale만 진행
 - Transformer는 sinusoidal position encoding 대신 relative positional embedding을 적용(BERT의 경우 Absolute positional embedding을 사용하였는데, 최근 모델들은 NSP를 제거하는 추세이기 때문에 absolute positional embedding으로 chunk strat position에 의존적인 absolute positional embedding은 적합하지 않아 relative positional embedding을 사용하는 모델이 늘어나는 중이라고 함: [Improve Transformer Models with Better Relative Position Embeddings](https://arxiv.org/pdf/2009.13658.pdf))
 - Model layer 전체에서 position embedding parameter를 sharing
-- 
+
+
 **Relative positional embedding**
 
 Relative positional embedding : self attention 수행 시 offset boundary 내의 token에 대해 relative position 값을 부여하는 것. 
