@@ -88,7 +88,7 @@ Encoder와 Decoder로 구성된 모델. Transformer의 구조에서 약간 변�
 > Relative positional embedding : self attention 수행 시 offset boundary 내의 token에 대해 relative position 값을 부여하는 것. 예를 들어 offset=2인 경우 relative position 값이 아래 그림 같이 부여됨.
 
 
-'''python
+```python
 def relative_position_bucket(relative_position, bidirectional=True, num_buckets=32, max_distance=128):
     ret = 0
     n = -relative_position
@@ -98,8 +98,9 @@ def relative_position_bucket(relative_position, bidirectional=True, num_buckets=
         n = torch.abs(n)
     else:
         n = torch.max(n, torch.zeros_like(n))
-    # now n is in the range [0, inf)
-
+        
+    # now n is in the range (0, inf)
+    
     # half of the buckets are for exact increments in positions
     max_exact = num_buckets // 2
     is_small = n < max_exact
@@ -111,7 +112,7 @@ def relative_position_bucket(relative_position, bidirectional=True, num_buckets=
     val_if_large = torch.min(val_if_large, torch.full_like(val_if_large, num_buckets - 1))
     ret += torch.where(is_small, n, val_if_large)
     return ret
- '''
+ ```
 
 - Model layer 전체에서 position embedding parameter를 sharing
 
