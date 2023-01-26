@@ -131,11 +131,12 @@ def relative_position_bucket(relative_position, bidirectional=True, num_buckets=
  ```
 
 
-text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행한다.
+T5는 text-to-text framework를 기반으로 pre-training과 fine-tuning을 수행한다.
 
 T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sentence 뒤에 task description이 prefix로 붙어 이것이 하나의 input text로 모델에 들어가 task의 정답을 text로 내놓는 것이다.
 
 > input : task description(task 정보) + input sentence
+> 
 > output : text
 
 <center><img width="600" src="https://user-images.githubusercontent.com/53667002/214738957-b11237ac-6732-4214-b396-cc1196134ee2.gif"></center>
