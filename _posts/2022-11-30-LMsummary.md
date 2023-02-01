@@ -25,9 +25,13 @@ tag: NLP
 
 최근 LM의 학습에 사용되는 task는 크게 **masked language modeling**과 **language modeling**이 있다. 전자의 경우는 입력된 text의 일부 token에 대해 masking처리를 한 후, 앞뒤 문맥을 통해 masking token의 original token을 예측하는 task로, bert계열의 model들이 이러한 방식으로 학습된다. 후자는 token들을 하나씩 집어넣어서 첫 번째 token을 기반으로 다음 token을 예측하고 그 token을 가지고 다음 token을 예측하는 것을 sequence가 끝날 때까지 반복하는 방식으로 학습하는 task이다. 이 방법론은 gpt계열의 model에서 주로 사용된다.
 
+그리고 bert와 gpt 계열 모델의 구조는 대부분 각각 transformer의 encoder와 decoder 기반으로 형성되어 있다. 따라서 bert 계열에서는 self-attention을, gpt 계열에서는 masked-self-attention을 사용한다.
+
 # Unidirectional Language Model(Auto-regressive model)
 
-다음 token이 뭔지 쭉쭉 맞추는 방식으로 학습하니까 일방향적 LM
+다음 token이 뭔지 쭉쭉 맞추는 방식으로 학습하니까 일방향적 LM. 보통 Auto-regressive model이라고 한다. 이전 time step의 출력이 다음 time step의 입력으로 들어가는 점이 자기 회기적이기 때문에 이렇게 부른다.
+
+여기에 속하는 모델들은 transformer의 decoder 구조를 기반으로 하기 때문에 masked-self-attention을 사용한다. masked-self-attentiondms 해당 time step의 오른쪽에 있는 단어들은 masking해 놓은 상태에서 attention을 계산하여 다음 단어를 예측하기 때문에 생성 과제에 강점을 보인다. 
 
 ## GPT : Improving Language Understanding by Generative Pre-Training
 
@@ -153,6 +157,8 @@ T5의 text-to-text는 GPT3의 task description-prompt와 유사하다. input sen
 # Bidirectinoal Language Model
 
 mask token에 들어갈 token을 앞뒤 token을 기반으로 예측하는 방식으로 학습하니까 양방향 LM
+
+여기에 속하는 모델들은 transformer의 encoder 구조를 기반으로 하기 때문에 self-attention을 사용한다. self-attentiondms 해당 time step의 양 옆의 단어들을 모두 고려하여 attention을 계산하기 때문에 gpt계열보다 sequence의 맥락 정보를 더 잘 학습한다.
 
 ## BERT : Pre-training of Deep Bidirectional Transformers for Language Understanding
 
