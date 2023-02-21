@@ -1,4 +1,4 @@
----
+
 title: Python | Data Type | Dictionary
 category: Python Basic Syntax
 tag: Python Basic Syntax
