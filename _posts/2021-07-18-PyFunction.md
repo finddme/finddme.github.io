@@ -1,4 +1,4 @@
----
+
 title: Python | Function
 category: Python Basic Syntax
 tag: Python Basic Syntax
