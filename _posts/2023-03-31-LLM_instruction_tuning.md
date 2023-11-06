@@ -181,14 +181,6 @@ tag: Development
     | --- | --- | --- |
     | 13b | ○ [LoRA] | 2 |
   
-- **beomi/KoAlpaca-LoRA**(Meta LLAMA기반 KoAlpaca)
-    
-    
-    | 모델 크기 | 시도 여부 | 추론 품질(최대 5점) |
-    | --- | --- | --- |
-    | 13b | X (시도 예정) | - |
-    | 30B | X (시도 예정) | - |
-    | 65B | X (시도 예정) | - |
 
 ⇒ 위 모델들 모두 Full Finetune하면 보다 좋은 결과가 나올 것으로 사료됨 [https://arxiv.org/pdf/2304.08109.pdf](https://arxiv.org/pdf/2304.08109.pdf)
 
