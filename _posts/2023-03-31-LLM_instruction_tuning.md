@@ -42,7 +42,7 @@ tag: Development
       - category → open_qa
       
     - KoVicuna Data 예시(1세트) → gpt와 human 대화
-    - KoVicuna Data 형식:
+    - KoVicuna Data sample:
       <pre>
       {'id': 'QWJhYvA_0',
                    'conversations': [{'from': 'human',
@@ -63,7 +63,7 @@ tag: Development
     - category → open_qa
     
   - Alpaca data 예시(1세트) → instruction, input, output
-  - Alpaca data 형식:
+  - Alpaca data sample:
     <pre>
       {'instruction': '다음 국가와 관련된 역사적 사건 3가지를 나열하십시오.',
       <br>'input': '캐나다',
@@ -79,7 +79,7 @@ tag: Development
     - category → open_qa
     
   - Korquad 2.0 data 예시(1세트) → Q, A, context
-  - Korquad 2.0 data 형식:
+  - Korquad 2.0 data sample:
     <pre>
        {'version': 'KorQuAD_2.0_train',
                 'data': {'title': '예고범',
@@ -102,7 +102,7 @@ tag: Development
     - category → open_qa
     
   - Korquad1.0 데이터  예시(1세트) → Q, A, context
-  - Korquad 2.0 data 형식:
+  - Korquad 1.0 data sample:
     <pre>
           {'qas': [{'question': '다테 기미코가 최초로 은퇴 선언을 한게 언제지',
              'answers': [{'answer_start': 260, 'text': '1996년 9월 24일'}],
