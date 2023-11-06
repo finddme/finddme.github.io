@@ -164,7 +164,7 @@ tag: Development
 
 (alpaca와 dolly 공개한 곳에서 5.8B이상 거대 모델 Full Finetune 시 사용한 gpu: A100 4개)
 
-- **EleutherAI/Polyglot (모델 세부 정보 :** [https://songys.github.io/2023Langcon/data/kevinko.pdf](https://songys.github.io/2023Langcon/data/kevinko.pdf))
+- EleutherAI/Polyglot (모델 세부 정보 :[https://songys.github.io/2023Langcon/data/kevinko.pdf](https://songys.github.io/2023Langcon/data/kevinko.pdf))
     
     
     | 모델 크기 | 시도 여부 | 추론 품질(최대 5점) |
@@ -173,6 +173,7 @@ tag: Development
     | 3.8b | ○ [LoRA] | 1 |
     | 5.8b | ○ [LoRA] | 1 |
     | 12.8b | ○ [LoRA] | 1 |
+  
 - **beomi/KoAlpaca-Polyglot**(EleutherAI/Polyglot을 lora 없이 학습시킨 모델 : EleutherAI/Polyglot-1.3b를 학습시킨 것과 동일한 방법)  
 → **사용 이유 : 현재 Polyglot을 Full Fine tune 할 수 없어서 해당 모델로 Full Fine tune과 유사한 결과를 만들어 봄. (dolly fine tune 전 후 LLM 추론 비교 자료는 아래 첨부함)**
     
@@ -181,18 +182,21 @@ tag: Development
     | --- | --- | --- |
     | 5.8B | ○ [LoRA] | 3.5 |
     | 12.8b | ○ [LoRA] | 4 |
+  
 - **decapoda-research/llama-13b-hf**
     
     
     | 모델 크기 | 시도 여부 | 추론 품질(최대 5점) |
     | --- | --- | --- |
     | 13b | ○ [LoRA] | 2 |
+  
 - **openlm-research/open_llama_13b**
     
     
     | 모델 크기 | 시도 여부 | 추론 품질(최대 5점) |
     | --- | --- | --- |
     | 13b | ○ [LoRA] | 2 |
+  
 - **beomi/KoAlpaca-LoRA**(Meta LLAMA기반 KoAlpaca)
     
     
@@ -202,7 +206,7 @@ tag: Development
     | 30B | X (시도 예정) | - |
     | 65B | X (시도 예정) | - |
 
-### ⇒ 위 모델들 모두 Full Finetune하면 보다 좋은 결과가 나올 것으로 사료됨 [https://arxiv.org/pdf/2304.08109.pdf](https://arxiv.org/pdf/2304.08109.pdf)
+⇒ 위 모델들 모두 Full Finetune하면 보다 좋은 결과가 나올 것으로 사료됨 [https://arxiv.org/pdf/2304.08109.pdf](https://arxiv.org/pdf/2304.08109.pdf)
 
 ## Base LLM과 Dolly 추론 결과 비교
 
