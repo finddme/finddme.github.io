@@ -1,7 +1,7 @@
-
+---
 title: ㅡ
-category: Development
-tag: Development
+category: Project
+tag: NLP
 ---
 
 카테고리정렬
