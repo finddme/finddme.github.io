@@ -189,6 +189,22 @@ Roberta는 BERT계열의 모델이다. BERT와 구조는 거의 같은데 BERT�
 
 Transformer의 Encoder를 기반으로 한 모델로, 기존 Language Model에서 많이 사용된 MLM이 아닌 replaced token detection task를 적용하여 연산량을 줄임으로써 효율을 높인 Language Model
 
+기존 LM에 많이 사용된 MLM보다 효율적인 방식인 replaced token detection task를 제안한 모델로, 이 방식은 연산량이 적은 것이 특징이다. 
+
+해당 task는 example당 token의 15%만 학습하는 bert의 mlm과 달리 일부 token을 다른 token으로 교체하여 모든 token에 대해 original token인지 replacement token인지 예측하는 방식으로 학습한다. 
+
+이러한 학습 방식은 모든 input token에 대해 학습을 하기 때문에 연산 효율이 높다. 
+모델의 구조는 아래와 같다:
+
+<center><img width="600" src="https://github.com/lm-sys/FastChat/assets/53667002/a7669c68-10ab-4b3f-9af6-0f0e6d1de076"></center>
+
+ELECTRA모델은 generator와 discriminator로 구성되어 있다. 
+
+discriminator에서는 token이 generator에서 다른 token으로 대체되었는지를 예측한다. 
+
+generator와 discriminator의 크기가 동일하다면 weight sharing이 가능하다.
+
+
 # Hybrid Language Model
 
 ## XLNet
