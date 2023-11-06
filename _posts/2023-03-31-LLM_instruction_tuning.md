@@ -41,6 +41,8 @@ tag: Development
       
     - KoVicuna Data 예시(1세트) → gpt와 human 대화
 
+
+
   <details>
   <summary>KoVicuna data sample</summary>
     <pre>
