@@ -166,7 +166,7 @@ tag: Development
         
     - + Fastchat 적용하지 않았을 때 추론 속도 약 5초 (아래 예시는 Fine tune하지 않은 **Polyglot 5.8**)
         
-        <center><img width="400" src="https://github.com/lm-sys/FastChat/assets/53667002/df69fc75-3cee-4f67-858d-05e5c788f4b6"></center>
+        <center><img width="300" src="https://github.com/lm-sys/FastChat/assets/53667002/df69fc75-3cee-4f67-858d-05e5c788f4b6"></center>
         
 - **Dolly(Polyglot 12.8 Fine-tune(Lora))**
     
