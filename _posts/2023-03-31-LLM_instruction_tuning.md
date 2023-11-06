@@ -84,7 +84,7 @@ tag: Development
        {'version': 'KorQuAD_2.0_train',
                 'data': {'title': '예고범',
                'url': 'https://ko.wikipedia.org/wiki/예고범',
-               'context': '<!DOCTYPE html>\n<html>\n<head>\n<meta>\n<title>예고범 - 위키백과, 우리 모두의 백과사전</title>\n\n\n<link>\n\n<meta>\n<link>\n<meta>\n<meta>\n<meta>\n<meta>\n<link>\n<link>\n<link>\n<link>\n<link>\n<link>\n<link>\n<link>\n<link>\n<link>\n<link>\n\n</head>\n<body>\n<div></div>\n<div></div>\n<div>\n<a></a>\n<div></div>\n<div>\n</div>\n<h1>예고범</h1>\n<div>\n<div>위키백과, 우리 모두의 백과사전.</div>\n<div></div>\n<div></div>\n<a>둘러보기로 가기</a>\n<a>검색하러 가기</a>\n<div><div><p>《<b>예고범</b>》(<span><a>일본어</a>: </span><span>予告犯</span>)은, 츠츠이 테츠야의 <a>만화</a> 작품이다.\n</p>\n<div><input><div><h2>목차</h2><span><label></label></span></div>\n<ul>\n<li><a><span>1</span> <span>개요</span></a></li>\n<li><a><span>2</span> <span>등장인물</span></a>\n<ul>\n<li><a><span>...
+               'context': WIKIPEDIA CONTEXT
                  'qas': [{'answer': {'text': '나카무라 요시히로, 히라바야시 카츠토시, 사와다 메구미',
                   'html_answer_start': 21842,
                   'html_answer_text': '나카무라 요시히로, 히라바야시 카츠토시, 사와다 메구미',
