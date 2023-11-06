@@ -185,6 +185,10 @@ Roberta는 BERT계열의 모델이다. BERT와 구조는 거의 같은데 BERT�
 
 4) MLM 수행 시 masking pattern을 매 epoch마다 다르게 준다.
 
+## ELECTRA : Efficiently Learning an Encoder that Classifies Token Replacements Accurately
+
+Transformer의 Encoder를 기반으로 한 모델로, 기존 Language Model에서 많이 사용된 MLM이 아닌 replaced token detection task를 적용하여 연산량을 줄임으로써 효율을 높인 Language Model
+
 # Hybrid Language Model
 
 ## XLNet
