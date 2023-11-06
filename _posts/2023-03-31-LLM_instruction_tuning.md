@@ -85,7 +85,8 @@ tag: Development
 <html>     
 <details>
 <summary>Alpaca data sample</summary>
-<div markdown="1">{'instruction': '다음 국가와 관련된 역사적 사건 3가지를 나열하십시오.',
+<div>
+  {'instruction': '다음 국가와 관련된 역사적 사건 3가지를 나열하십시오.',
   <br>'input': '캐나다',
   <br>'output': '치푸아츠(Fort Chippewyan)는 캐나다 알버타주의 따뜻한 해안에 위치한 미국 원주민 지역에 근접한 유일한 유럽인 거주지입니다. 캐나다 프랑스 식민지로 건설되었으며, 나스강을 따라 서부 지역으로 확장된 유일한 유럽인 거주지입니다. 1778 년 새로 지어진 건물에 현재는 휴게소가 있습니다. 시티오브 에드먼튼에서 선퍼드 언덕스를 향해 북쪽으로 4.5시간 떨어진 곳에 있습니다.'}
 </div>
