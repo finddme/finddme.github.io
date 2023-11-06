@@ -91,7 +91,7 @@ tag: Development
       </details>
                 
 
-- Korquad 2.0
+- **Korquad 2.0**
   - Korquad 2.0 data to Dolly data:
     - Q → instruction
     - A → response
@@ -121,7 +121,7 @@ tag: Development
       </details>
 
             
-- Korquad 1.0
+- **Korquad 1.0**
   
   - Korquad 1.0 data to Dolly data:
     - Q → instruction
@@ -196,32 +196,32 @@ tag: Development
 
 - **Base LLM (Fine Tune 하지 않은 LLM 자체 추론 결과)**
     - **Polyglot 12.8**
-        <center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/9ff6e9bf-bcfb-4f93-99a7-1ef86ca4e1d4"></center>
+        <center><img width="800" src="https://github.com/lm-sys/FastChat/assets/53667002/9ff6e9bf-bcfb-4f93-99a7-1ef86ca4e1d4"></center>
         
         
     - **Polyglot 1.3**
         
-        <center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/2e51d16b-9aff-459d-b7b6-c5bf119293ff"></center>
+        <center><img width="800" src="https://github.com/lm-sys/FastChat/assets/53667002/2e51d16b-9aff-459d-b7b6-c5bf119293ff"></center>
         
     - + Fastchat 적용하지 않았을 때 추론 속도 약 5초 (아래 예시는 Fine tune하지 않은 **Polyglot 5.8**)
         
-        <center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/df69fc75-3cee-4f67-858d-05e5c788f4b6"></center>
+        <center><img width="400" src="https://github.com/lm-sys/FastChat/assets/53667002/df69fc75-3cee-4f67-858d-05e5c788f4b6"></center>
         
 - **Dolly(Polyglot 12.8 Fine-tune(Lora))**
     
     <center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/8f771fc8-1b20-4c33-924a-1fd9e8a37a25"></center>
     
 
-## ChatGPT : Dolly
+## ChatGPT vs Dolly Chat
 
 <center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/c63ee341-f6b9-460d-ac34-52f3830da7f3"></center>
 
-<center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/20ab63f4-e8aa-4196-8860-cb7d3a2d9169"></center>
+<center><img width="900" src="https://github.com/lm-sys/FastChat/assets/53667002/20ab63f4-e8aa-4196-8860-cb7d3a2d9169"></center>
 
 ## 기타 예시
 
-<center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/d0c538a7-4ed3-4f69-a199-415ecee3431a"></center>
+<center><img width="800" src="https://github.com/lm-sys/FastChat/assets/53667002/d0c538a7-4ed3-4f69-a199-415ecee3431a"></center>
 
 <center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/44605f44-2706-4204-966a-80678ee6ceab"></center>
-<center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/41d254d8-566b-4512-a1fe-a2e1eea1bf1a"></center>
-<center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/fd58e7fb-0145-4ba3-99f4-8c4ef1996103"></center>
+<center><img width="900" src="https://github.com/lm-sys/FastChat/assets/53667002/41d254d8-566b-4512-a1fe-a2e1eea1bf1a"></center>
+<center><img width="900" src="https://github.com/lm-sys/FastChat/assets/53667002/fd58e7fb-0145-4ba3-99f4-8c4ef1996103"></center>
