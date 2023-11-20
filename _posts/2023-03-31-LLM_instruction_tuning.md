@@ -26,13 +26,13 @@ tag: Development
 
 (**총 923,590개** 한국어 dolly 데이터)
 
-## Dolly data 형식
+## instruction tuning data 형식
 
 <pre>
 {"instruction":instruction, "context": context, "response":response, "category": category}
 </pre>
 
-## Dolly data로 변환한 데이터 목록
+## instruction tuning data로 변환한 데이터 목록
 
 - **KoVicuna data**
     - 구성 : ko_dataset_chatgpt(2개), ko_alpaca_style_dataset
@@ -113,47 +113,7 @@ tag: Development
     
 # MODEL
 
-## Fine-tuning에 사용된 사전 학습 모델 목록 및 Fine-tuning 결과
-
-(alpaca와 dolly 공개한 곳에서 5.8B이상 거대 모델 Full Finetune 시 사용한 gpu: A100 4개)
-
-- EleutherAI/Polyglot (모델 세부 정보 :[https://songys.github.io/2023Langcon/data/kevinko.pdf](https://songys.github.io/2023Langcon/data/kevinko.pdf))
-    
-    
-    | 모델 크기 | 시도 여부 | 추론 품질(최대 5점) |
-    | --- | --- | --- |
-    | 1.3b | ○ [Full Finetune] | 3 |
-    | 3.8b | ○ [LoRA] | 1 |
-    | 5.8b | ○ [LoRA] | 1 |
-    | 12.8b | ○ [LoRA] | 1 |
-  
-- **beomi/KoAlpaca-Polyglot**(EleutherAI/Polyglot을 lora 없이 학습시킨 모델 : EleutherAI/Polyglot-1.3b를 학습시킨 것과 동일한 방법)  
-→ **사용 이유 : 현재 Polyglot을 Full Fine tune 할 수 없어서 해당 모델로 Full Fine tune과 유사한 결과를 만들어 봄. (dolly fine tune 전 후 LLM 추론 비교 자료는 아래 첨부함)**
-    
-    
-    | 모델 크기 | 시도 여부 | 추론 품질(최대 5점) |
-    | --- | --- | --- |
-    | 5.8B | ○ [LoRA] | 3.5 |
-    | 12.8b | ○ [LoRA] | 4 |
-  
-- **decapoda-research/llama-13b-hf**
-    
-    
-    | 모델 크기 | 시도 여부 | 추론 품질(최대 5점) |
-    | --- | --- | --- |
-    | 13b | ○ [LoRA] | 2 |
-  
-- **openlm-research/open_llama_13b**
-    
-    
-    | 모델 크기 | 시도 여부 | 추론 품질(최대 5점) |
-    | --- | --- | --- |
-    | 13b | ○ [LoRA] | 2 |
-  
-
-⇒ 위 모델들 모두 Full Finetune하면 보다 좋은 결과가 나올 것으로 사료됨 [https://arxiv.org/pdf/2304.08109.pdf](https://arxiv.org/pdf/2304.08109.pdf)
-
-## Base LLM과 Dolly 추론 결과 비교
+## 추론 결과 비교
 
 - **Base LLM (Fine Tune 하지 않은 LLM 자체 추론 결과)**
     - **Polyglot 12.8**
@@ -168,12 +128,12 @@ tag: Development
         
         <center><img width="300" src="https://github.com/lm-sys/FastChat/assets/53667002/df69fc75-3cee-4f67-858d-05e5c788f4b6"></center>
         
-- **Dolly(Polyglot 12.8 Fine-tune(Lora))**
+- **instruction tuning(Polyglot 12.8 Fine-tune(Lora))**
     
     <center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/8f771fc8-1b20-4c33-924a-1fd9e8a37a25"></center>
     
 
-## ChatGPT vs Dolly Chat
+## ChatGPT vs LLM instruction tuning Chat
 
 <center><img width="640" src="https://github.com/lm-sys/FastChat/assets/53667002/c63ee341-f6b9-460d-ac34-52f3830da7f3"></center>
 
