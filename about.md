@@ -13,7 +13,9 @@ title: About
 
 <details>
 <summary>Summary text.</summary>
+<div markdown="1">
 <code style="white-space:nowrap;">Hello World, how is it going?</code>
+</div>
 </details>
 
 
