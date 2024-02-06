@@ -16,6 +16,13 @@ title: About
 </div>
 </details>
 
+
+<label>
+  <input role="switch" type="checkbox" />
+  <span>알람</span>
+</label>
+
+
 ## x
 
 안녕하세요. 그냥 학생입니다.  
