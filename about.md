@@ -5,7 +5,7 @@ title: About
 
 
 <details>
-<summary><b><font size=10>&#128374;</font></b></summary>
+<summary><b><font size=4>&#128374;</font></b></summary>
 <div markdown="1">
 <code>
   안녕하세요. 그냥 학생입니다. 
