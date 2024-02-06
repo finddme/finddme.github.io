@@ -3,8 +3,8 @@ layout: page
 title: About
 ---
 
-## x
 &#128374;
+## x
 
 안녕하세요. 그냥 학생입니다.  
 공부한 것을 기록하기 위한 블로그입니다.  
@@ -12,7 +12,7 @@ title: About
 수정해야 할 내용이 있다면 <a href="mailto:info@example.com?subject=subject&cc=cc@example.com">yein4452@yonsei.ac.kr </a>로 메일 부탁드립니다.
 
 <details>
-<summary><b>Summary text.</b></summary>
+<summary><b><font size=10>Summary text.</font></b></summary>
 <div markdown="1">
 <code style="white-space:nowrap;">Hello World, how is it going?</code>
 </div>
