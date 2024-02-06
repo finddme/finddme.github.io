@@ -15,7 +15,7 @@ title: About
 <details>
 <summary><b><font size=10>x</font></b></summary>
 <div markdown="1">
-<code style="white-space:nowrap;">
+<code>
   안녕하세요. 그냥 학생입니다.  </br>
   공부한 것을 기록하기 위한 블로그입니다.  </br>
   운이 좋아 공부를 계속하고 있습니다.  </br>
