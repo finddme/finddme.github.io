@@ -60,6 +60,20 @@ nav:
   ABOUT:          
     - '/about/'
 
+newhomenav:
+  #Home: 
+    #- '/'
+  CATEGORIES: 
+    - '/blog/categories/'
+  #TAGS: 
+   # - '/blog/tags/'
+  #Contents:           
+    #- '/blog/'
+    #- { Categories: '/blog/categories/' }
+    #- { Tags: '/blog/tags/' }
+  # ABOUT:          
+  #   - '/about/'
+    
 # Where are tags and categories displayed
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
