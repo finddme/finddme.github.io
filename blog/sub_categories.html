@@ -11,7 +11,7 @@ title: sub_Categories
   </div>
   <hr/>
   <div class="categories-expo-section">
-    {% for nav in site.nav %}
+    {% for nav in site.newhomenav %}
       {% assign is_relative = nav[1][0] | slice: 0 %}
       {% assign url = nav[1][0] %}
       {% if is_relative == '/' %}
