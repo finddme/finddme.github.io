@@ -18,10 +18,10 @@ title: Home
         {% assign url = nav[1][0] | prepend: site.baseurl %}
       {% endif %}
 
-      {% assign sub_len = nav[1] | size | minus: 1 %}
+<!--       {% assign sub_len = nav[1] | size | minus: 1 %}
 
-      <span class="{% if sub_len > 0 %}foldable{% endif %}">
-        <a href="##{{ nav[1][0] | slugify }}" class="categories-expo-item {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
+      <span class="{% if sub_len > 0 %}foldable{% endif %}"> -->
+      <a class="categories-expo-item {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
           {{ nav[0] }}
 <!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
 <!--     <ul class="tags-expo-posts">
