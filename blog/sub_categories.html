@@ -4,16 +4,20 @@ title: sub_Categories
 ---
 
 <div class="tags-expo">
-  <div class="tags-expo-list">
+<!--   <div class="tags-expo-list">
     {% for tag in site.sub_categories %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
     {% endfor %}
   </div>
-  <hr/>
-  <div class="tags-expo-section">
+  <hr/> -->
+  <div class="categories-expo-section">
     {% for tag in site.sub_categories %}
-    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
-    <ul class="tags-expo-posts">
+      {% for nav in site.nav %}
+        <a class="categories-expo-item {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
+          {{ nav[0] }}
+      {% endfor %}
+<!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
+<!--     <ul class="tags-expo-posts">
       {% for post in tag[1] %}
         <h4><a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
       <li style="margin-bottom: -0.7rem;">
@@ -22,7 +26,7 @@ title: sub_Categories
       </li>
       </a></h4>
       {% endfor %}
-    </ul><br>
+    </ul><br> -->
     {% endfor %}
   </div>
 </div>
