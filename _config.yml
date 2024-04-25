@@ -63,7 +63,7 @@ nav:
 newhomenav:
   #Home: 
     #- '/'
-  CATEGORIES: 
+  ∙ CATEGORIES: 
     - '/blog/categories/'
   #TAGS: 
    # - '/blog/tags/'
