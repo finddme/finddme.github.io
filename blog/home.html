@@ -12,7 +12,7 @@ title: H o m e
   <hr/>
   <div class="tags-expo-section">
     {% for tag in site.home %}
-    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
+    <a href="#{{ tag[0] | slugify }}" class="tags-expo-section">{{ tag[0] }}</a>
     {% endfor %}
     {% for nav in site.newhomenav %}
       {% assign is_relative = nav[1][0] | slice: 0 %}
