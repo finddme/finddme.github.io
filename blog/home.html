@@ -10,7 +10,7 @@ title: Home
     {% endfor %}
   </div>
   <hr/>
-  <div class="tags-expo-section">
+  <div class="tags-expo-posts">
     {% for nav in site.newhomenav %}
       {% assign is_relative = nav[1][0] | slice: 0 %}
       {% assign url = nav[1][0] %}
@@ -21,7 +21,7 @@ title: Home
 <!--       {% assign sub_len = nav[1] | size | minus: 1 %}
 
       <span class="{% if sub_len > 0 %}foldable{% endif %}"> -->
-      <a class="tags-expo-section {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
+      <a class="tags-expo-posts {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
           {{ nav[0] }}
 <!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
 <!--     <ul class="tags-expo-posts">
