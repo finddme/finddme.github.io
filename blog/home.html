@@ -27,10 +27,10 @@ title: H o m e
       <span class="{% if sub_len > 0 %}foldable{% endif %}"> -->
 <!--       <a class="post-title {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}"> -->
       <li style="margin-bottom: -0.7rem;">
-        <h2 id="{% if page.url == nav[1][0] %}{% endif %}" href="{{ url }}">{{ nav[0] }}</h2>
-<!--         <h4><a class="tags-expo-section {% if page.url == nav[1][0] %}{% endif %}" href="{{ url }}"> -->
-<!--             {{ nav[0] }} -->
-<!--         </a></h4> -->
+<!--         <h2 id="{% if page.url == nav[1][0] %}{% endif %}" href="{{ url }}">{{ nav[0] }}</h2> -->
+        <h4><a class="tags-expo-section {% if page.url == nav[1][0] %}{% endif %}" href="{{ url }}">
+            {{ nav[0] }}
+        </a></h4>
       </li>
     {% endfor %}
   </div>
