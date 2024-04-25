@@ -23,14 +23,18 @@ title: Home
       <span class="{% if sub_len > 0 %}foldable{% endif %}"> -->
 <!--       <a class="post-title {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}">
           {{ nav[0] }} -->
-
-      <ul class="tags-expo-posts">
+      <a class="post-title" href="{{ url }}">
+          {{ nav[0] }}
+<!--       <ul class="tags-expo-posts">
         {% if page.url == nav[1][0] %}
           <h4><a class="post-title" href="{{ page.url }}">
         <li style="margin-bottom: -0.7rem;">
           {{ nav[0] }}
         </li>
-        </a></h4>
+        </a></h4> -->
+
+
+        
 <!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
 <!--     <ul class="tags-expo-posts">
       {% for post in tag[1] %}
