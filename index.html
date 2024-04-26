@@ -3,8 +3,8 @@ layout: page
 title: Categories #Home
 ---
 
-
-<div class="tags-expo">
+<!-- 카테고리가 홈일 때 -->
+<!-- <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.categories %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
@@ -26,12 +26,49 @@ title: Categories #Home
     </ul><br>
     {% endfor %}
   </div>
-</div>
-
-
-
-
-<!--<div class="hero">
+</div> -->
+<!-- <div class="hero">
   <img src="{{ site.baseurl }}{{ site.back.image }}" />-->
   <!--<p>{{ site.hero.caption }}</p> -->
+<!-- </div> -->
+
+
+<!-- 홈이 홈일 때 -->
+
+<div class="tags-expo">
+<!--   <div class="tags-expo-section">
+    {% for tag in site.home %}
+    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
+    {% endfor %}
+  </div> -->
+  <hr/>
+  <div class="tags-expo-list">
+    {% for tag in site.home %}
+    <li style="margin-bottom: -0.7rem;">
+      <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+  <!--     <a href="#{{ tag[0] | slugify }}" class="tags-expo-section">{{ tag[0] }}</a> -->
+      {% endfor %}
+      {% for nav in site.newhomenav %}
+        {% assign is_relative = nav[1][0] | slice: 0 %}
+        {% assign url = nav[1][0] %}
+        {% if is_relative == '/' %}
+          {% assign url = nav[1][0] | prepend: site.baseurl %}
+        {% endif %}
+  
+  <!--       {% assign sub_len = nav[1] | size | minus: 1 %}
+  
+        <span class="{% if sub_len > 0 %}foldable{% endif %}"> -->
+  <!--       <a class="post-title {% if page.url == nav[1][0] %}active{% endif %}" href="{{ url }}"> -->
+  <!--         <h2 id="{% if page.url == nav[1][0] %}{% endif %}" href="{{ url }}">{{ nav[0] }}</h2> -->
+          <h2><a class="tags-expo-list {% if page.url == nav[1][0] %}{% endif %}" href="{{ url }}" style="font-size: 36px">
+              {{ nav[0] }}
+          </a></h2>
+        
+      {% endfor %}
+    </li>
+  </div>
+
+<div class="hero">
+  <img src="{{ site.baseurl }}{{ site.back.image }}" />
+  <p>{{ site.hero.caption }}</p>
 </div>
