@@ -5,13 +5,13 @@ title: Categories2
 
 <div class="tags-expo">
   <div class="tags-expo-list">
-    {% for tag in site.categories2 %}
+    {% for tag in site.categories %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
     {% endfor %}
   </div>
   <hr/>
   <div class="tags-expo-section">
-    {% for tag in site.categories2 %}
+    {% for tag in site.categories %}
     {% if tag[0] == 'Natural Language Processing' %}
       <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
 
