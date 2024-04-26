@@ -12,7 +12,9 @@ title: Categories2
   <hr/>
   <div class="tags-expo-section">
     {% for tag in site.categories2 %}
-    <h2 id="{% if tag[0] == 'Natural Language Processing'}{% endif %}">{{ tag[0] }}</h2>
+    {% if tag[0] == 'Natural Language Processing' %}
+      <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
+    {% endif %}
 <!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
     <ul class="tags-expo-posts">
       {% for post in tag[1] %}
