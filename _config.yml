@@ -63,8 +63,10 @@ nav:
 newhomenav:
   #Home: 
     #- '/'
-  ∙ Natural Language Processing (basic): 
-    - '/blog/nlp_basic/'
+  ∙ Natural Language Processing: 
+    - '/blog/nlp/'
+  ∙ Natural Language Processing and Linguistics: 
+    - '/blog/nlp_linguistics/'
   #TAGS: 
    # - '/blog/tags/'
   #Contents:           
