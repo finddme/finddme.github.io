@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Categories2
+title: Natural Language Processing (basic)
 ---
 
 <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.categories %}
-    {% if tag[0]=='Natural Language Processing' or tag[0]=='Natural Language Processing and Linguistics' %}
+    {% if tag[0]=='Natural Language Processing' or tag[0]=='Machine Learning, Deep Learning' %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
     {% endif %}
     {% endfor %}
@@ -14,7 +14,7 @@ title: Categories2
   <hr/>
   <div class="tags-expo-section">
     {% for tag in site.categories %}
-    {% if tag[0]=='Natural Language Processing' or tag[0]=='Natural Language Processing and Linguistics' %}
+    {% if tag[0]=='Natural Language Processing' or tag[0]=='Machine Learning, Deep Learning' %}
       <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
 
 <!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
