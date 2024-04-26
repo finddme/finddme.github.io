@@ -6,7 +6,7 @@ title: Natural Language Processing (basic)
 <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.categories %}
-    {% if tag[0]=='Natural Language Processing and Linguistics' or tag[0]=='Linguistik | Germanistik' or tag[0]=='Linguistics | English' %}
+    {% if tag[0]=='Natural Language Processing and Linguistics' or tag[0]=='Linguistik | Germanistik' or tag[0]=='Linguistics | English' or tag[0]=='Language' %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
     {% endif %}
     {% endfor %}
@@ -14,7 +14,7 @@ title: Natural Language Processing (basic)
   <hr/>
   <div class="tags-expo-section">
     {% for tag in site.categories %}
-    {% if tag[0]=='Natural Language Processing and Linguistics' or tag[0]=='Linguistik | Germanistik' or tag[0]=='Linguistics | English' %}
+    {% if tag[0]=='Natural Language Processing and Linguistics' or tag[0]=='Linguistik | Germanistik' or tag[0]=='Linguistics | English' or tag[0]=='Language' %}
       <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
 
 <!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
