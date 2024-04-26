@@ -49,6 +49,8 @@ author:
 nav:
   #Home: 
     #- '/'
+  HOME: 
+    - '/blog/home/'
   CATEGORIES: 
     - '/blog/categories/'
   #TAGS: 
