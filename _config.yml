@@ -90,8 +90,8 @@ hero:
   image : '/public/ggone.PNG'
 #  image: https://dPdlsdlek.github.io/public/oz.jpg
 #  caption: Original Artwork &copy; Pablo Picasso. Girl before a Mirror. Boisgeloup, March 1932. Oil on canvas
-#back: 
-  #image: https://dPdlsdlek.github.io/public/oz.jpg
+back: 
+  image: https://dPdlsdlek.github.io/public/oz.jpg
 
 # Puglins
 mathjax: true # whether support mathjax
