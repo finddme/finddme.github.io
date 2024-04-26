@@ -6,7 +6,7 @@ title: Categories2
 <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.categories %}
-    {% if 'Natural Language Processing' in tag[0]%}
+    {% if 'Natural Language Processing' in tag[0] %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
     {% endif %}
     {% endfor %}
