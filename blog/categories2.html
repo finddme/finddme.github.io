@@ -14,7 +14,7 @@ title: Categories2
     {% for tag in site.categories2 %}
     {% if tag[0] == 'Natural Language Processing' %}
       <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
-    {% endif %}
+
 <!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
     <ul class="tags-expo-posts">
       {% for post in tag[1] %}
@@ -26,6 +26,7 @@ title: Categories2
       </a></h4>
       {% endfor %}
     </ul><br>
+    {% endif %}
     {% endfor %}
   </div>
 </div>
