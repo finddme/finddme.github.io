@@ -63,8 +63,8 @@ nav:
 newhomenav:
   #Home: 
     #- '/'
-  ∙ CATEGORIES: 
-    - '/blog/categories2/'
+  ∙ Natural Language Processing (basic): 
+    - '/blog/nlp_basic/'
   #TAGS: 
    # - '/blog/tags/'
   #Contents:           
