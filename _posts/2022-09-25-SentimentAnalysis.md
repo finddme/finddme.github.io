@@ -1,6 +1,6 @@
 ---
 title: Sentiment Analysis
-category: Development
+category: Dev Log
 tag: Development
 ---
 
