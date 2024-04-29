@@ -6,7 +6,7 @@ title: About
 <br>
 <hr/>
 
-<iframe src="https://lnivpjcq0w4z.embednotion.site/" style="width: 100%; height: 100vh; border: 2px solid #ccc; border-radius: 10px; padding: none;"></iframe>
+<iframe src="https://jj745882xebg.embednotion.site/" style="width: 100%; height: 100vh; border: 2px solid #ccc; border-radius: 10px; padding: none;"></iframe>
 
 <br>
 <br>
