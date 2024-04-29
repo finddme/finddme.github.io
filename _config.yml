@@ -51,7 +51,8 @@ nav:
   #Home: 
     #- '/'
   HOME: 
-    - '/blog/home/'
+    # - '/blog/home/'
+    - '/'
   CATEGORIES: 
     - '/blog/categories/'
   #TAGS: 
