@@ -3,11 +3,12 @@ layout: page
 title: About
 ---
 
-<br>
+
 <hr/>
 
 <iframe src="https://v2-embednotion.com/78d4af3dfa8f4d45b498cf24422fe721" style="width: 100%; height: 100vh; border: 2px solid #ccc; border-radius: 10px; padding: none;"></iframe>
 
+<br>
 <br>
 <br>
 <br>
