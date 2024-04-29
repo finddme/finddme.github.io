@@ -51,10 +51,17 @@ nav:
   #Home: 
     #- '/'
   HOME: 
-    # - '/blog/home/'
     - '/'
+    # - '/blog/home/'
+  # CATEGORIES: 
+  #   - '/blog/categories/'
+  
   CATEGORIES: 
-    - '/blog/categories/'
+    - { All categories: '/blog/categories/' }
+    - { Portfolio: '/blog/portfolio/' }
+    - { Natural Language Processing: '/blog/nlp/' }
+    - { Natural Language Processing and Linguistics: '/blog/nlp_linguistics/' }
+    - { etc.: '/blog/etc/' }
   #TAGS: 
    # - '/blog/tags/'
   #Contents:           
