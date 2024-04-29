@@ -66,8 +66,8 @@ nav:
 newhomenav:
   #Home: 
     #- '/'
-  ∙ Project log: 
-    - '/blog/project/'
+  ∙ Portfolio: 
+    - '/blog/portfolio/'
   ∙ Natural Language Processing: 
     - '/blog/nlp/'
   ∙ Natural Language Processing and Linguistics: 
