@@ -1,6 +1,6 @@
 ---
 title: ㅡ
-category: Project
+category: Project Log
 tag: NLP
 ---
 
