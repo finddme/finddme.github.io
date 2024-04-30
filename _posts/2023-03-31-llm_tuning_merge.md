@@ -248,3 +248,65 @@ tag: Development
   - dataset 출처는 instruction data와 동일
 
 
+
+# 3\. Model
+
+## 3.1 Model Architecture
+  - LLaMa 1,2
+  - Mistral
+  - Solar
+  - Kopolyglot
+
+## 3.2 Instruction/DPO tuning Hyperparameter
+
+## 3.2.1 Lora
+```
+    r=16,
+    lora_alpha=16,
+    lora_dropout=0.05,
+    bias="none"
+```
+
+## 3.2.2 Quantization
+```
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.float16,
+    bnb_4bit_use_double_quant=False
+```
+## 3.2.3 Training
+```
+    per_device_train_batch_size=4,
+    gradient_accumulation_steps=4,
+    gradient_checkpointing=True,
+    learning_rate=5e-5,
+    lr_scheduler_type="cosine",
+    num_train_epochs=6,
+    save_steps=5,
+    logging_steps=1,
+     optim="paged_adamw_32bit",
+    optim="adamw_torch",
+    warmup_steps=100,
+    bf16=True,
+    bf16=False,
+    report_to="wandb",
+    save_total_limit=8
+```
+
+## 3.2.4 DPO trainer
+```
+    beta=0.1,
+    max_prompt_length=1024,
+    max_length=1536,
+```
+
+# 4\. Train
+
+## 4.1 Training server environment
+  - A100 x2
+  - Ubuntu 22.04
+
+# 5\. Problems and Solutions
+  - LLM 추론 시 한국어 입력에 대한 영어 답변 반환 현상 -> DPO trainset rejected에 영어 답변 입력
+
+
