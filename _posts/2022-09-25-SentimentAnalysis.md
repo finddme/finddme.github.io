@@ -93,9 +93,9 @@ tag: Development
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">출처</th><th class="line2">포맷</th><th class="line2">수량</th></tr>
-       <tr><td class="line3">data labeling 업체 수집 데이터</td><td class="line">txt</td><td class="line">302,028문장</td></tr>
-       <tr><td class="line3">aihub data</td><td class="line">txt</td><td class="line">241,585문장</td></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">출처</th><th class="line4" bgcolor="#F8F7F9">포맷</th><th class="line4" bgcolor="#F8F7F9">수량</th></tr>
+       <tr><td class="line">data labeling 업체 수집 데이터</td><td class="line">txt</td><td class="line">302,028문장</td></tr>
+       <tr><td class="line">aihub data</td><td class="line">txt</td><td class="line">241,585문장</td></tr>
        <tr><td class="line3"><strong>total</strong></td><td class="line"> </td><td class="line">543,613문장</td></tr>
      </table>
  </body>
@@ -146,7 +146,7 @@ tag: Development
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">version</th><th class="line2">batch_size</th><th class="line2">max_len</th><th class="line2">optimizer</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">version</th><th class="line4" bgcolor="#F8F7F9">batch_size</th><th class="line4" bgcolor="#F8F7F9">max_len</th><th class="line4" bgcolor="#F8F7F9">optimizer</th></tr>
        <tr><td class="line3">34 emotion</td><td class="line">64</td><td class="line">64</td><td class="line">Adam</td></tr>
        <tr><td class="line3">8 emotion</td><td class="line">64</td><td class="line">64</td><td class="line">Adam</td></tr>
        <tr><td class="line3">3 emotion</td><td class="line">64</td><td class="line">64</td><td class="line">Adam</td></tr>
@@ -177,7 +177,7 @@ tag: Development
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">version</th><th class="line2">acc</th><th class="line2">f1 score</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">version</th><th class="line4" bgcolor="#F8F7F9">acc</th><th class="line4" bgcolor="#F8F7F9">f1 score</th></tr>
        <tr><td class="line3">34 emotion</td><td class="line">77.559</td><td class="line">0.7756</td></tr>
        <tr><td class="line3">8 emotion</td><td class="line">84</td><td class="line">0.84</td></tr>
        <tr><td class="line3">3 emotion</td><td class="line">79</td><td class="line">0.79</td></tr>
