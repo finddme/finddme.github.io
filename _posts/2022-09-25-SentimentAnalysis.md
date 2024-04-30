@@ -146,7 +146,7 @@ tag: Development
    </head>
    <body>
      <table style="border-collapse:collapse">
-       <tr><th class="line4" bgcolor="#F8F7F9">version</th><th class="line2">batch_size</th><th class="line2">seq_len</th><th class="line2">optimizer</th></tr>
+       <tr><th class="line4" bgcolor="#F8F7F9">version</th><th class="line2">batch_size</th><th class="line2">max_len</th><th class="line2">optimizer</th></tr>
        <tr><td class="line3">34 emotion</td><td class="line">64</td><td class="line">64</td><td class="line">Adam</td></tr>
        <tr><td class="line3">8 emotion</td><td class="line">64</td><td class="line">64</td><td class="line">Adam</td></tr>
        <tr><td class="line3">3 emotion</td><td class="line">64</td><td class="line">64</td><td class="line">Adam</td></tr>
@@ -188,7 +188,7 @@ tag: Development
 ## 6\. Problems and Solutions
   - 데이터 라벨 불균형
     - "중립" 문장 일부 제거
-    - 1차 학습 이후 web crawling 데이터 autolabeling 이후 부족한 라벨 보충 -> 예
+    - 1차 학습 이후 web crawling 데이터 autolabeling 이후 부족한 라벨 보충 -> 예정
 
 ## 7\. Sentiment analysis code
 
