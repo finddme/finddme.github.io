@@ -125,21 +125,6 @@ tag: Development
            <li><a href="https://github.com/finddme/RAG">RAG with langchain Code</a></li> -->
          </td>
        </tr>
-       <tr>
-         <td class="line3"><strong>RAG + Chatbot</strong></td>
-         <td class="line">
-           <li>base model:
-             <ul>
-               <li>openai gpt-4</li>
-               <li>LLaMa 2 13B</li>
-             </ul>
-           </li>
-         </td>
-         <td class="line">
-           <li><a href="https://finddme.github.io/natural%20language%20processing/2023/10/10/LLMA2/">Related Paper Review (LLaMa 2)</a></li>
-<!--            <li><a href="https://github.com/finddme/RAG">RAG with langchain Code</a></li> -->
-         </td>
-       </tr>
    </table>
  </body>
 </html>
