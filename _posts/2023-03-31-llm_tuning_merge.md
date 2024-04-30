@@ -149,13 +149,13 @@ tag: Development
 
 ## 1.1 instruction tuning data
 
-### 1.1.1 형식
+### 1) 형식
 
 <pre>
 {"instruction":instruction, "context": context, "response":response, "category": category}
 </pre>
 
-### 1.1.2 instruction tuning data로 변환한 데이터 목록
+### 2) instruction tuning data로 변환한 데이터 목록
 
 - **KoVicuna data**
     - 구성 : ko_dataset_chatgpt(2개), ko_alpaca_style_dataset
@@ -236,13 +236,13 @@ tag: Development
 
 ## 1.2 DPO train data
 
-### 1.2.1 형식
+### 1) 형식
 
 <pre>
 {"instruction":instruction, "context": context, "response":response, "category": category, "rejected", rejected}
 </pre>
 
-### 1.2.2 DPO traindata generate
+### 2) DPO traindata generate
   - openai api 사용
   - LLM 학습 데이터의 영어 비율이 높아 한국어 데이터를 통한 tuning 이후에도 추론 시 영어를 반환하는 경우가 있어 rejected에 response의 영어 번역 결과를 입력했음
   - dataset 출처는 instruction data와 동일
