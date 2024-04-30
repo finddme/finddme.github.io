@@ -44,7 +44,7 @@ tag: Development
        <tr>
          <th class="line4" bgcolor="#F8F7F9">Project</th>
          <th class="line2">Summary of the project</th><th class="line2">Related Pages</th>
-        <\tr>
+       </tr>
        <tr>
          <td class="line3"><strong>Model Merge</strong></td>
          <td class="line">
