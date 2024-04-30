@@ -150,6 +150,7 @@ tag: Development
 ## 1.1 instruction tuning data
 
 ### 1.1.1 형식
+
 <pre>
 {"instruction":instruction, "context": context, "response":response, "category": category}
 </pre>
@@ -236,6 +237,7 @@ tag: Development
 ## 1.2 DPO train data
 
 ### 1.2.1 형식
+
 <pre>
 {"instruction":instruction, "context": context, "response":response, "category": category, "rejected", rejected}
 </pre>
