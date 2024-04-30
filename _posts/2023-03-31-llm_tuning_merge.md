@@ -22,6 +22,127 @@ tag: Development
 
 
 
+
+## 1\. Dev summary
+<html>
+  <head>
+    <style type="text/css">
+      .line{border-bottom: 1px solid #BDB8C1;}
+      .line2{border-bottom: 2px solid #BDB8C1;}
+      .line3{border-bottom: 1px solid #BDB8C1; background-color: #F7F7F7;}
+      .line4{border-bottom: 2px solid #BDB8C1; background-color: #F7F7F7;}
+      table, th, td {
+         border:1px solid #BDB8C1;
+         background-color: #FFFFFF;
+       }
+    </style>
+   </head>
+   <body>
+     <table style="border-collapse:collapse">
+       <tr>
+         <th class="line4" bgcolor="#F8F7F9">Project</th>
+         <th class="line2">Summary of the project</th><th class="line2">Related Pages</th>
+       <tr>
+         <td class="line3"><strong>Model Merge</strong></td>
+         <td class="line">
+           <strong>[mergekit]</strong>
+           <li>base model:
+             <ul>
+               <li>7.24B급 모델</li>
+             </ul>
+           </li>
+           <li>merge method:
+             <ul>
+               <li>MOE : 각 모델이 학습한 데이터 분야가 상이할 경우에 사용했음</li>
+               <li>dare_ties</li>
+               <li>slerp</li>
+             </ul>
+           </li>
+         </td>
+         <td class="line">
+           <li><a href="https://finddme.github.io/natural%20language%20processing/2023/12/04/Mistral/">Related Paper Review (Mistral)</a></li>
+         </td>
+       </tr>
+       <tr>
+         <td class="line3"><strong>LLM DPO tuning</strong></td>
+         <td class="line">
+           <strong>[DPO + QLora]</strong>
+           <li>base model:
+             <ul>
+               <li>Mistral 7b → qlora + dpo</li>
+               <li>SOLAR-10.7B → qlora + dpo</li>
+               <li>Mixtral-8x7B → qlora + dpo</li>
+             </ul>
+           </li>
+           <strong>[Lora/ QLora / Full Fine tune]</strong>
+           <li>base model:
+             <ul>
+               <li>LLaMa 2 13b → qlora</li>
+               <li>LLaMa 13b → lora</li>
+               <li>polyglot 12.8b → full fine tune / lora</li>
+               <li>polyglot 5.8b → lora</li>
+               <li>polyglot 3.8b → full fine tune</li>
+               <li>polyglot 1.3b → full fine tune</li>
+             </ul>
+           </li>
+         </td>
+         <td class="line">
+           <li><a href="https://finddme.github.io/natural%20language%20processing/2023/12/04/Mistral/">Related Paper Review (Mistral)</a></li>
+<!--            <li><a href="https://github.com/finddme/LLM-Tuning/tree/main/DPO_QLora">DPO + QLora Tune Code</a></li>
+           <li><a href="https://github.com/finddme/LLM-Tuning/tree/main/Full_Fine-Tune">Full Fine Tune Code</a></li>
+           <li><a href="https://github.com/finddme/LLM-Tuning/tree/main/Lora_QLora">Lora/QLora instruction Tune Code</a></li> -->
+           <li><a href="https://finddme.github.io/natural%20language%20processing/2023/10/10/LLMA2/">Related Paper Review (LLaMa 2)</a></li>
+<!--            <li><a href="https://github.com/finddme/RAG/blob/main/make_instruction_Data_from_pdf.ipynb">Make Instruction Data from PDF Code</a></li> -->
+           <li><a href="https://finddme.github.io/development/2023/03/31/LLM_instruction_tuning/">Dev Log(data collenction + result)</a></li>
+         </td>
+       </tr>
+       <tr>
+         <td class="line3"><strong>LLM instruction tuning</strong></td>
+         <td class="line">
+           <strong>[vLLM RAG + DPO + Qlora]</strong>
+           <li>base model:
+             <ul>
+               <li>Mistral 7B</li>
+               <li>SOLAR-10.7B</li>
+               <li>Mixtral-8x7B</li>
+             </ul>
+           </li>
+           <strong>[Qlora]</strong>
+           <li>base model:
+             <ul>
+               <li>LLaMa 2 13B</li>
+             </ul>
+           </li>
+         </td>
+         <td class="line">
+           <li><a href="https://finddme.github.io/natural%20language%20processing/2023/12/04/Mistral/">Related Paper Review (Mistral)</a></li>
+           <li><a href="https://finddme.github.io/natural%20language%20processing/2023/10/10/LLMA2/">Related Paper Review (LLaMa 2)</a></li>
+<!--            <li><a href="https://github.com/finddme/LLM-Tuning/tree/main/DPO_QLora">DPO + QLora Tune Code</a></li>
+           <li><a href="https://github.com/finddme/LLM-Tuning/tree/main/Lora_QLora">Lora/QLora instruction Tune Code</a></li>
+           <li><a href="https://github.com/finddme/RAG">RAG with langchain Code</a></li> -->
+         </td>
+       </tr>
+       <tr>
+         <td class="line3"><strong>RAG + Chatbot</strong></td>
+         <td class="line">
+           <li>base model:
+             <ul>
+               <li>openai gpt-4</li>
+               <li>LLaMa 2 13B</li>
+             </ul>
+           </li>
+         </td>
+         <td class="line">
+           <li><a href="https://finddme.github.io/natural%20language%20processing/2023/10/10/LLMA2/">Related Paper Review (LLaMa 2)</a></li>
+<!--            <li><a href="https://github.com/finddme/RAG">RAG with langchain Code</a></li> -->
+         </td>
+       </tr>
+   </table>
+ </body>
+</html>
+
+
+
 # 1. DATA
 
 (**총 923,590개** 한국어 dolly 데이터)
