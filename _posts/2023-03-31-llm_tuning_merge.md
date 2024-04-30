@@ -23,7 +23,8 @@ tag: Development
 
 
 
-## 1\. Dev summary
+# 1\. Dev summary
+
 <html>
   <head>
     <style type="text/css">
@@ -142,8 +143,7 @@ tag: Development
 </html>
 
 
-
-# 1. DATA
+# 2. DATA
 
 (**총 923,590개** 한국어 dolly 데이터)
 
