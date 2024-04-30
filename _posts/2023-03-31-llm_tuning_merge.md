@@ -1,5 +1,5 @@
 ---
-title: LLM Instruction tuning / Merge
+title: LLM Tuning / Merge
 category: Dev Log
 tag: Development
 ---
