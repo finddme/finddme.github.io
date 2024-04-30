@@ -147,7 +147,7 @@ tag: Development
 
 (**총 923,590개** 한국어 dolly 데이터)
 
-## 1.1 instruction tuning data
+## 2.1 instruction tuning data
 
 ### 1) 형식
 
@@ -234,7 +234,7 @@ tag: Development
     </pre>
 
 
-## 1.2 DPO train data
+## 2.2 DPO train data
 
 ### 1) 형식
 
