@@ -22,17 +22,18 @@ tag: Development
 
 
 
-# DATA
+# 1. DATA
 
 (**총 923,590개** 한국어 dolly 데이터)
 
-## instruction tuning data 형식
+## 1.1 instruction tuning data
 
+### 1.1.1 형식
 <pre>
 {"instruction":instruction, "context": context, "response":response, "category": category}
 </pre>
 
-## instruction tuning data로 변환한 데이터 목록
+### 1.1.2 instruction tuning data로 변환한 데이터 목록
 
 - **KoVicuna data**
     - 구성 : ko_dataset_chatgpt(2개), ko_alpaca_style_dataset
@@ -109,3 +110,18 @@ tag: Development
              'id': '9_f2_wiki_2822-1'}],
            'context': "재팬 오픈에서 4회 우승하였으며, 통산 단식 200승 이상을 거두었다. 1994년 생애 최초로 세계 랭킹 10위권에 진입하였다. 1992년에는 WTA로부터 '올해 가장 많은 향상을 보여준 선수상'(Most Improved Player Of The Year)을 수여받았으며, 일본 남자 패션 협회(Japan Men's Fashion Association)는 그녀를 '가장 패셔너블한 선수'(Most Fashionable)로 칭했다. 생애 두 번째 올림픽 참가 직후인 1996년 9월 24일 최초로 은퇴를 선언하였다. 이후 12년만인 2008년 4월에 예상치 못한 복귀 선언을 하고 투어에 되돌아왔다. 2008년 6월 15일 도쿄 아리아케 인터내셔널 여자 오픈에서 복귀 후 첫 우승을 기록했으며, 2009년 9월 27일에는 한국에서 열린 한솔 코리아 오픈 대회에서 우승하면서 복귀 후 첫 WTA 투어급 대회 우승을 기록했다. 한숨 좀 작작 쉬어!"}
     </pre>
+
+
+## 1.2 DPO train data
+
+### 1.2.1 형식
+<pre>
+{"instruction":instruction, "context": context, "response":response, "category": category, "rejected", rejected}
+</pre>
+
+### 1.2.2 DPO traindata generate
+  - openai api 사용
+  - LLM 학습 데이터의 영어 비율이 높아 한국어 데이터를 통한 tuning 이후에도 추론 시 영어를 반환하는 경우가 있어 rejected에 response의 영어 번역 결과를 입력했음
+  - dataset 출처는 instruction data와 동일
+
+
