@@ -93,7 +93,7 @@ tag: Development
            <li><a href="https://github.com/finddme/LLM-Tuning/tree/main/Lora_QLora">Lora/QLora instruction Tune Code</a></li> -->
            <li><a href="https://finddme.github.io/natural%20language%20processing/2023/10/10/LLMA2/">Related Paper Review (LLaMa 2)</a></li>
 <!--            <li><a href="https://github.com/finddme/RAG/blob/main/make_instruction_Data_from_pdf.ipynb">Make Instruction Data from PDF Code</a></li> -->
-           <li><a href="https://finddme.github.io/development/2023/03/31/LLM_instruction_tuning/">Dev Log(data collenction + result)</a></li>
+<!--            <li><a href="https://finddme.github.io/development/2023/03/31/LLM_instruction_tuning/">Dev Log(data collenction + result)</a></li> -->
          </td>
        </tr>
        <tr>
