@@ -13,7 +13,7 @@ title: About
 <br>
 <br>
 
-<span style="color:#FFFFFF"> yellow 
+<span style="color:#FFFFFF">  
 &#128374;
 ## x
 
