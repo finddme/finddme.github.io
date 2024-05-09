@@ -37,5 +37,4 @@ chat history와 query를 LLM에 입력하여 새로운 query를 생성한 후 RA
 
 
 
-7. Agents in RAG 이어서
 
