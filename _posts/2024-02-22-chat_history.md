@@ -33,7 +33,7 @@ Chat Engine에서 이전 대화 내용을 반영하여 답변을 반환한는 �
 
 chat history와 query를 LLM에 입력하여 새로운 query를 생성한 후 RAG을 수행하는 방법이다.
 
-<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/207505b5-e07e-42eb-bebd-8107fffaf8b5"></center>
+<center><img width="900" src="https://github.com/finddme/finddme.github.io/assets/53667002/207505b5-e07e-42eb-bebd-8107fffaf8b5"></center>
 
 
 
