@@ -26,7 +26,7 @@ Chat Engine에서 이전 대화 내용을 반영하여 답변을 반환한는 �
 가장 간단하게 chat history를 다루는 방법이다. retrieval 결과+query와 함께 chat history를 LLM에 입력하는 방식이다.
 
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/976ccece-43e4-45af-89bb-e0cf4c40d5f1"></center>
-
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 
 ## 2. Chat Engine condense plus context
@@ -34,7 +34,7 @@ Chat Engine에서 이전 대화 내용을 반영하여 답변을 반환한는 �
 chat history와 query를 LLM에 입력하여 새로운 query를 생성한 후 RAG을 수행하는 방법이다.
 
 <center><img width="700" src="https://github.com/finddme/finddme.github.io/assets/53667002/207505b5-e07e-42eb-bebd-8107fffaf8b5"></center>
-
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 
 
