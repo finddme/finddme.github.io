@@ -35,6 +35,7 @@ Transformer는 [이전 게시물](https://finddme.github.io/natural%20language%2
 아래 그림은 Transformer의 전체 구조이다. 해당 그림을 보면 encoder에 input(source language)이, decoder에는 right shifted된(start token이 있는) output(target language)이 들어가 이를 통해 최종적으로 output probability(다음에 오게 될 단어에 대한 예측 확률)가 도출되는 것을 볼 수 있다:
 
 <center><img width="680" alt="2019-11-20 (3)" src="https://user-images.githubusercontent.com/53667002/69211133-5eb7d400-0ba0-11ea-8d50-40ae5b838a1a.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ### - Hyperparameter of Transformer
 
@@ -55,18 +56,22 @@ Attention에 사용되는 weight는 attention head마다 다르고, fully-connec
 ### - Encoder
 
 <center><img width="563" alt="2019-11-19 (8)" src="https://user-images.githubusercontent.com/53667002/69123896-e68cd800-0ae5-11ea-8033-fd99dd2af856.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 Encoder layer는 위 그림에서 볼 수 있듯이 self-attention과 feed forward 이렇게 두 sub-layer로 이루어져 있다. 위에서 언급했듯이 N개의 encoder layer가 사용될 수 있는데 해당 논문에서는 6개의 layer를 사용했다. 그리고 self-attention이 Multi-Head Attention이라고 표현되어 있고, feed forward neural network는 position wise feed forward neural network라고 표현되어 있다. 이를 통해 attention과 feed forward layer가 여러 번 사용되었다는 것을 알 수 있다. Encoder 내부의 흐름은 다음과 같이 진행된다:
 
 <center><img width="800" alt="2019-11-20 (1)" src="https://user-images.githubusercontent.com/53667002/69210276-878a9a00-0b9d-11ea-8fff-c568c3349473.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 위 그림과 같이 여러 layer를 거친 후 마지막 layer의 출력 값이 encoder의 최종 출력 값이 되어 decoder로 넘어간다:
 
 <center><img width="580" alt="2019-11-19 (12)" src="https://user-images.githubusercontent.com/53667002/69124158-85193900-0ae6-11ea-9477-a33a974bfce3.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ### - Decoder
 
 <center><img width="600" alt="2019-11-19 (14)" src="https://user-images.githubusercontent.com/53667002/69124253-bf82d600-0ae6-11ea-98f9-a38e04537671.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 Decoder는 self-attention, encoder-decoder attention 그리고 feed Forward, 이렇게 총 3개의 sub-layer로 구성되어 있다. Decoder의 self-attention은 현재 단어 이후에 나올 단어들에 attention이 적용되지 않도록 masking을 한 masked multi-head attention을 사용한다. 그리고 이후 seq2seq에서 사용된 attention과 유사한 encoder-decoder attention도 사용된다. Decoder도 encoder와 마찬가지로 N개의 layer가 사용될 수 있으며 해당 논문에서 encoder와 같이 6개의 layer를 사용하였다. 그리고 attention과 feedforward layer 또한 encoder처럼 여러 번 사용되었다.
 
@@ -80,10 +85,12 @@ RNN모델이 자연어처리 과제에서 보편적으로 활용될 수 있었�
 
 <center><img width="680" alt="2019-11-20 (5)" src="https://user-images.githubusercontent.com/53667002/69217070-11902e00-0bb1-11ea-92f9-c5f0752c61f6.png">
 </center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 위 그림은 이해를 용이하게 하기위해 embedding벡터와 positional encoding값이 더해지는 과정을 단어 하나하나 더해지는 것처럼 나타냈지만, 실제 문장을 처리할 때에는 embedding된 단어들은 각각 모두 벡터이고, 문장은 행렬이기 때문에 다음과 같이 embedding벡터가 모여서 만들어진 행렬과 positional encoding행렬이 더해지게 된다.
 
 <center><img width="386" alt="2019-11-19 (18)" src="https://user-images.githubusercontent.com/53667002/69125399-17224100-0ae9-11ea-92d0-ed13c64018eb.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 위에서 언급했듯이 positional encoding은 sine과 cosine함수를 통해 위치정보를 가진 encoding값을 만들어 embedding 벡터와 더하는 과정이다. 이를 위한 sinusoid function은 다음과 같이 정의된다:
 
@@ -134,6 +141,7 @@ W_i^V\text{with dimensions} \ d_{model}\times d_v
 각 단어 벡터는 $d_{model}$의 크기를 가지며, $Q$, $K$, $V$는 $d_{model}$을 attention layer 수로 나눈 만큼의 차원을 갖는다. 해당 논문에서 $d_{model}$은 512이고 attention layer 수는 8이었기 때문에 $Q$, $K$, $V$는 각각 64차원의 크기를 갖는다.
 
 <center><img width="413" alt="2019-11-19 (20)" src="https://user-images.githubusercontent.com/53667002/69126381-6ec1ac00-0aeb-11ea-97f0-1e4ce86f8f78.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 위 그림은 단어 벡터 하나에 대한 $Q$, $K$, $V$벡터를 구하는 과정을 표현한 것이다. 하지만 이전에도 언급했 듯이 문장은 단어벡터들을 합친 행렬이기 때문에 실제 연산은 다음과 같이 행렬곱으로 진행된다:
 
@@ -154,6 +162,7 @@ xW_i^V=V_i\text{with dimensions} \ \text{seq_len}\times d_v
 
 
 <center><img width="458" alt="2019-11-19 (22)" src="https://user-images.githubusercontent.com/53667002/69126494-ae889380-0aeb-11ea-8648-cf6c70edad92.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ## 3\.2 Scaled dot-product attention
 
@@ -166,6 +175,7 @@ xW_i^V=V_i\text{with dimensions} \ \text{seq_len}\times d_v
 
 
 <center><img width="754" alt="2019-11-19 (24)" src="https://user-images.githubusercontent.com/53667002/69126919-9d8c5200-0aec-11ea-8278-396fe554b2c7.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 이제 attention weight를 구해야 한다. 기존 seq2seq에 사용되던 attention에서 사용된 함수에서도 attention score를 구하여 softmax를 적용하여 attention distribution을 구한 후 hidden state vector와 weighted sum을 하여 attention score를 구했다. scaled dot-product attention도 마찬가지이다. 위에서 구한 attention score에 softmax를 적용하여 attention distribution을 구한 후 hidden vector역할을 하는 $V$를 곱하면 attention weight를 구할 수 있다. 이를 수식으로 표현하면 다음과 같다:
 
@@ -176,6 +186,7 @@ xW_i^V=V_i\text{with dimensions} \ \text{seq_len}\times d_v
 
 
 <center><img width="773" alt="2019-11-19 (26)" src="https://user-images.githubusercontent.com/53667002/69127098-f4922700-0aec-11ea-9fe1-424d0e948115.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ## 3\.3 Masked Multi head attention
 
@@ -186,6 +197,7 @@ Decoder layer에는 특이하게 Masked Multi head attention이 있는데 이는
 Multi-head attention은 이름에서도 알 수 있듯이 Attention을 병렬적으로 여러 번 수행하는 것을 뜻한다. 
 
 <center><img width="640" alt="2019-11-19 (28)" src="https://user-images.githubusercontent.com/53667002/69127360-7a15d700-0aed-11ea-8cab-52763ed5ac5a.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 여러 번 수행한 attention의 결과들(attention weight들)은 concatenate한 후 가중치 행렬 $W^{o}$와 내적하면 Multi-head attention의 최종 결과 값이 나온다.  $W^{o}$도 다른 가중치들과 같이 모델과 함께 학습된다.
 
@@ -196,6 +208,7 @@ Multi-head attention은 이름에서도 알 수 있듯이 Attention을 병렬적
 
 
 <center><img width="624" alt="2019-11-19 (30)" src="https://user-images.githubusercontent.com/53667002/69127790-45eee600-0aee-11ea-8d5c-8e1d3b9977ef.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 Multi-head attention의 경우 여러 layer에 대해 행렬 연산들이 모두 병렬적으로 동시에 수행되는데 이러한 병렬화는 하나의 문장을 여러 관점에서 바라볼 수 있다는 장점을 지닌다. 자연어 문장에는 공지시관계의 단어들이 빈번히 사용되며, 모호성과 중의성 또한 존재하는데 이러한 자연어의 특징을 기계가 이해하는 데에 병렬화가 중요한 역할을 한 것이다. 
 
@@ -216,6 +229,7 @@ Multi-head attention의 경우 여러 layer에 대해 행렬 연산들이 모두
 Transformer 전체 구조를 표현한 그림을 보면 attention과 feed-forward neural network이후 residual connection과 layer normalization작업을 수행하는 것을 확인할 수 있다. residual connection을 해주는 이유는 word embedding 이후에 positional encoding을 해주었는데 학습을 진행하다 보면 backpropagation(역전파)에 의해 positional encoding 값이 손실될 가능성이 있기 때문이다. 간단히 말하자면 해당 정보에 대한 손실을 줄이기 위해 입력 값을 다시 더해준 것이다. 
 
 <center><img width="1000" alt="2019-11-19 (32)" src="https://user-images.githubusercontent.com/53667002/69128600-0c1edf00-0af0-11ea-9549-134c5d7eb12b.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 그리고 해당 모델 내부에서 Residual 연산이 계속되기 때문에 모델 전반에 흐르는 차원을 $d_{model}$(=512)로 고정하여 연산을 간편하게 하였다. Residual connection이후에는 layer normalization을 통해 학습의 효율을 높였다.
 
@@ -232,6 +246,7 @@ Transformer 전체 구조를 표현한 그림을 보면 attention과 feed-forwar
 위 식을 보면 0보다 작으면 0을 내보내고 0보다 크면 weight bias 값을 내보낸다. 이 부분이 흡사 relu activation과 닮아 있는 것을 알 수 있다. 아래는 수식 이해를 돕기 위한 그림이다: 
 
 <center><img width="270" alt="2019-11-19 (34)" src="https://user-images.githubusercontent.com/53667002/69128945-b1d24e00-0af0-11ea-8252-ccb7b364d95a.png"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 따라서 해당 과정은 relu activation function을 사용하여 feed forward해주는 것으로 생각하면 된다.
 
