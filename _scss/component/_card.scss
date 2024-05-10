@@ -5,8 +5,8 @@
     --font-color-sub: #666;
     --bg-color: #fff;
     --main-color: #323232;
-    width: 200px;
-    height: 254px;
+    width: 400px;
+    height: 454px;
     background: var(--bg-color);
     border: 2px solid var(--main-color);
     -webkit-box-shadow: 4px 4px var(--main-color);
@@ -32,11 +32,11 @@
     -webkit-transform: scale(0.3) translate(220px, 230px);
         -ms-transform: scale(0.3) translate(220px, 230px);
             transform: scale(0.3) translate(220px, 230px);
-    width: 250px;
-    height: 250px;
+    width: 400px;
+    height: 400px;
     margin-left: -125px;
     margin-top: -125px;
-    background: no-repeat url("https://finddme.github.io/public/oz.jpg");;
+    background: no-repeat url("https://finddme.github.io/public/oz.jpg");
     background-color: #ccc;
     background-repeat: no-repeat;
     border-radius: 30%;
@@ -68,8 +68,8 @@
   }
   
   .card-socials-btn {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     border: none;
     background: transparent;
     cursor: pointer;
