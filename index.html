@@ -34,7 +34,8 @@ title:   #Categories Home
 
 
 <!-- 홈이 홈일 때 -->
-<div class="card-expo" style="float: left; width: 40%; overflow-y: hidden">
+<!-- <div class="card-expo" style="float: left; width: 40%; overflow-y: hidden"> -->
+<div class="card-expo" style="overflow-y: hidden">
     <div class="card">
       <div class="card-photo"></div>
       <div class="card-title">Yein Hwang<br>
@@ -68,7 +69,8 @@ title:   #Categories Home
     {% endfor %}
   </div> -->
 <!--   <hr/> -->
-  <div class="tags-expo-list" style="float: left; width: 50%;">
+<!--   <div class="tags-expo-list" style="float: left; width: 50%;"> -->
+  <div class="tags-expo-list">
     {% for tag in site.home %}
     <li style="margin-bottom: -0.7rem;">
       <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
