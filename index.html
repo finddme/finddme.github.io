@@ -35,12 +35,12 @@ title:   #Categories Home
 
 <!-- 홈이 홈일 때 -->
 <!-- <div class="card-expo" style="float: left; width: 40%; overflow-y: hidden"> -->
-<div class="card-expo" style="overflow-y: hidden">
-    <div class="card">
-      <div class="card-photo"></div>
-      <div class="card-title">Yein Hwang<br>
-          <span>Artificial Intelligence developer</span>
-      </div>
+<div class="card-expo" style="text-align:center">
+      <div class="card" onclick="location.href='https://finddme.github.io/about/'" style="cursor:pointer;>
+        <div class="card-photo"></div>
+        <div class="card-title">Yein Hwang<br>
+            <span>Artificial Intelligence developer</span>
+        </div>
       <div class="card-socials">
         <a href="https://finddme.github.io/about/">
           <button class="card-socials-btn about">
@@ -70,7 +70,7 @@ title:   #Categories Home
   </div> -->
 <!--   <hr/> -->
 <!--   <div class="tags-expo-list" style="float: left; width: 50%;"> -->
-  <div class="tags-expo-list">
+  <div class="tags-expo-list" >
     {% for tag in site.home %}
     <li style="margin-bottom: -0.7rem;">
       <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
