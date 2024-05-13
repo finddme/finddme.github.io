@@ -14,11 +14,9 @@ title:   # H o m e
 <!--   <div class="tags-expo-list" style="float: left; width: 50%;"> -->
   <div class="tags-expo-list" >
     {% for tag in site.home %}
-    {% if tag[0]=='Natural Language Processing' or tag[0]=='Natural Language Processing and Linguistics' or tag[0]=='etc.' %}
     <li style="margin-bottom: -0.7rem;">
       <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
   <!--     <a href="#{{ tag[0] | slugify }}" class="tags-expo-section">{{ tag[0] }}</a> -->
-      {% endif %}
       {% endfor %}
       {% for nav in site.newhomenav %}
         {% assign is_relative = nav[1][0] | slice: 0 %}
