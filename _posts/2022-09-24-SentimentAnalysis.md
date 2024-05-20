@@ -94,9 +94,11 @@ tag: Development
    <body>
      <table style="border-collapse:collapse">
        <tr><th class="line4" bgcolor="#F8F7F9">출처</th><th class="line4" bgcolor="#F8F7F9">포맷</th><th class="line4" bgcolor="#F8F7F9">수량</th></tr>
-       <tr><td class="line">data labeling 업체 수집 데이터</td><td class="line">txt</td><td class="line">302,028문장</td></tr>
-       <tr><td class="line">aihub data</td><td class="line">txt</td><td class="line">241,585문장</td></tr>
-       <tr><td class="line3"><strong>total</strong></td><td class="line3"> </td><td class="line3">543,613문장</td></tr>
+       <tr><td class="line">data labeling 업체 수집 데이터(raw data: web crawling data)</td><td class="line">txt</td><td class="line">302,028문장</td></tr>
+       <tr><td class="line">data labeling 업체 수집 데이터(raw data: aihub 한국어 SNS, 자유대화 데이터)</td><td class="line">txt</td><td class="line">184,585문장</td></tr>
+       <tr><td class="line">aihub data (한국어 단발성 대화 데이터셋: 기쁨, 슬픔, 놀람, 분노, 공포, 혐오, 중립)</td><td class="line">txt</td><td class="line">37,000문장</td></tr>
+       <tr><td class="line">aihub data (감성 대화 말뭉치: 기쁨, 당황, 분노, 불안, 상처, 슬픔)</td><td class="line">txt</td><td class="line">28,000문장</td></tr>
+       <tr><td class="line3"><strong>total</strong></td><td class="line3"> </td><td class="line3">551,613문장</td></tr>
      </table>
  </body>
  </html>
