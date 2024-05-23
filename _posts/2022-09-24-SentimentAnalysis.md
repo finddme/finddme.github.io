@@ -192,8 +192,6 @@ tag: Development
     - "중립" 문장 일부 제거
     - 1차 학습 이후 web crawling 데이터 autolabeling 이후 부족한 라벨 보충 -> 예정
 
-## 7\. Sentiment analysis code
 
-[https://github.com/finddme/Sentiment_analysis](https://github.com/finddme/Sentiment_analysis)
 
 
