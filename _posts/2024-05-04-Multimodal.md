@@ -48,9 +48,11 @@ Modality에 따라 Transformer의 Tokenization/Embedding 방식이 다르다.<br
 <center><em style="color:gray;">Pinecone(https://www.pinecone.io/learn/series/image-search/vision-transformers/)</em></center><br>
 
 
-# 2. Multimodel Transformers
+# 3. Multimodel Transformers
 
 
 # Reference
 
 > Multimodal Learning with Transformers:A Survey
+
+> https://www.pinecone.io/learn/series/image-search/vision-transformers/
