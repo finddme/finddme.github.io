@@ -28,8 +28,17 @@ tag: Multimodal
 
 본 논문은 다양한 modality와 task를 transformer를 통해 구현하고 학습시키는 것과 관련된 다양한 정보에 대해 다룬다. 
 
-> [Transformers](https://finddme.github.io/natural%20language%20processing/2019/11/19/Transformer/)<br>
-> 번역과제를 위해 NLP 분야에서 나온 모델로, 최근 다양한 인공지능 모델에 변형되어 활용되는 모델이다.
+> <strong>[Transformers](https://finddme.github.io/natural%20language%20processing/2019/11/19/Transformer/)</strong><br>
+> 번역과제를 위해 NLP 분야에서 나온 모델로, 최근 다양한 인공지능 모델에 변형되어 활용되는 모델이다.<br>
+> Transformers의 구조도 중요하지만 Transformers에서 사용된 Attention도 중요하다. Transformers에 크게 두 가진 Attention이 사용된다<br>
+>   <strong>1. Self Attention:</strong> 하나의 sequence 내에서 수행되는 attention <br>
+>   <strong>2. Encoder-Decoder Cross Attention:</strong> encoder에서 decoder로 넘어갈 때 사용되는 attention <br>
+> Modality에 따라 Transformer의 Tokenization/Embedding 방식이 다르다.<br>
+>   <strong>1. Vanilla Transformer(NLP)</strong><br>
+>     
+>   2. 
+
+
 
 # 2. Multimodel Transformers
 
