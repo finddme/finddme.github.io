@@ -44,7 +44,7 @@ Modality에 따라 Transformer의 Tokenization/Embedding 방식이 다르다.<br
 &nbsp;&nbsp;<strong>2. Vision Transformer: ViT</strong><br>
 &nbsp;&nbsp;&nbsp;&nbsp;Vision Transformer(ViT)에서 Vanilla Transformer의 token embedding 과정에 해당하는 과정은 입력된 이미지를 고정된 크기의 patch로 잘라 Linear Projection layer에 넣어 flatten 시켜 patch embedding을 구하는 방식으로 수행된다.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;그리고 Vanilla Transformer과 마찬가지로 positional embedding과 더하여 모델에 입력한다.
-<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/0eac7634-5786-4ee7-97c4-71643ebfef75"></center>
+<center><img width="600" src="https://github.com/finddme/finddme.github.io/assets/53667002/0eac7634-5786-4ee7-97c4-71643ebfef75"></center>
 ><center><em style="color:gray;">Pinecone(https://www.pinecone.io/learn/series/image-search/vision-transformers/)</em></center><br>
 
 
