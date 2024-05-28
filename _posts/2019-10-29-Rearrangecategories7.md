@@ -1,7 +1,7 @@
 ---
 title: ㅡ
-category: Development
-tag: Development
+category: Multimodal
+tag: Multimodal
 ---
 
 카테고리정렬
