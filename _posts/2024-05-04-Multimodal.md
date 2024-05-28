@@ -70,7 +70,7 @@ Modality에 따라 Transformer의 Tokenization/Embedding 방식이 다르다.<br
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;예를 들어 아래 표와 같이 token의 modality가 RGB이면 token의 단위는 patch, embedding은 linear projection. token의 modality가 text이면 token 단위는 word, embedding은 learned embedding(Model parameter를 통해 embedding한 결과) 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아래 표와 같이 다양한 modality에 대해 다양한 tokenizing 방식과 embedding space가 존재한다.
 
-<center><img width="600" src="https://github.com/finddme/finddme.github.io/assets/53667002/1ef8d6ae-a0d0-47d9-b2ba-2b210767f58f"></center>
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/1ef8d6ae-a0d0-47d9-b2ba-2b210767f58f"></center>
 <center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
 
 
