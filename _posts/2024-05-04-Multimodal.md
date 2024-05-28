@@ -50,6 +50,27 @@ Modality에 따라 Transformer의 Tokenization/Embedding 방식이 다르다.<br
 
 # 3. Multimodel Transformers
 
+최근 Transformer를 활용한 Multimodal 연구가 활발히 이루어지고 있다. 연구 결과, discriminative task와 generative tasks에서 모두 여러 modlaity에 대해 호환되는 것으로 확인되었다. 
+
+## 3.1  Multimodal Input
+
+### 3.1.1 Tokenization and Embedding Processing
+
+1) 임의의 modality
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Reference
 
