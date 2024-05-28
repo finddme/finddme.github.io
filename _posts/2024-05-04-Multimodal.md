@@ -80,8 +80,8 @@ Modality에 따라 Transformer의 Tokenization/Embedding 방식이 다르다.<br
 
 가장 단순한 fusion은 여러 modality들에 대한 embedding들을 token-wise sum하는 것이다. transformer는 하나의 position에 대해 여러 token embedding을 반영할 수 있기 때문에 가능한 방법이다. 예를 들어 BERT의 경우 한 position embedding에 token embedding과 segment embedding을 element-wise sum하여 모델에 입력한다. 이를 시각적으로 표현하면 아래 이미지와 같다.
 
-<center><img width="600" src="https://github.com/finddme/finddme.github.io/assets/53667002/ac4ec1b0-7cd9-4fff-ac57-a6f6f0ba21a4"></center>
-<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
+<center><img width="400" src="https://github.com/finddme/finddme.github.io/assets/53667002/ac4ec1b0-7cd9-4fff-ac57-a6f6f0ba21a4"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey(edited by author)</em></center><br>
 
 
 
