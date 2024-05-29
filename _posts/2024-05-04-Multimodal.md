@@ -79,10 +79,10 @@ Modality에 따라 Transformer의 Tokenization/Embedding 방식이 다르다.<br
 
 가장 단순한 fusion은 여러 modality들에 대한 embedding들을 token-wise sum하는 것이다. transformer는 하나의 position에 대해 여러 token embedding을 반영할 수 있기 때문에 가능한 방법이다. 예를 들어 BERT의 경우 한 position embedding에 token embedding과 segment embedding을 position을 기준으로 원소값별로 더하여(element-wise sum하여) 모델에 입력한다. 이를 시각적으로 표현하면 아래 이미지와 같다.
 
-<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/ac4ec1b0-7cd9-4fff-ac57-a6f6f0ba21a4"></center>
+<center><img width="250" src="https://github.com/finddme/finddme.github.io/assets/53667002/ac4ec1b0-7cd9-4fff-ac57-a6f6f0ba21a4"></center>
 <center><em style="color:gray;">Multimodal Learning with Transformers:A Survey(edited by author)</em></center><br>
 
-## 3.2 Cross-modal interaction 방법
+## 3.2 Cross-modal interaction
 
 Token Embedding Fusion외에도 다양한 modal간의 interaction 방법들이 있는데 multimodal Transformers에서는 self-attention과 변형된 self-attention을 통해 modality 간의 interaction을 수행한다. 
 
@@ -98,7 +98,7 @@ self-attention design 관점으로 Transformer의 multimodal modelling 방법을
 - 단순한 방식으로 수행되는 만큼 계산 복잡도가 증가하지 않는다는 것이 주요 장점이다.
 - 주요 단점은 가중치가 수동으로 설정되었다는 것이다. 
 
-<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/c4448e6c-4287-4f19-a6c4-afa4ce5f8fd2"></center>
+<center><img width="180" src="https://github.com/finddme/finddme.github.io/assets/53667002/c4448e6c-4287-4f19-a6c4-afa4ce5f8fd2"></center>
 <center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
 
 
@@ -109,17 +109,55 @@ self-attention design 관점으로 Transformer의 multimodal modelling 방법을
 - VideoBERT는  multimodal Transformer의 초기 연구 중 하나로, 이와 같은 방식을 통해 video와 text를 결합하여 global multimodal context를 잘 encoding한 모델이다.
 - 이 방법은 concatenation으로 길어진 Sequence로 인해 계산 복잡도가 증가된다는 단점을 가진다. 이는 Attention 자체의 한계점으로, sequence가 길어질수록 계산 복잡도가 높아진다.
 
-<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/bc6e332e-9b4a-4b31-a131-c79b8517a4eb"></center>
+<center><img width="300" src="https://github.com/finddme/finddme.github.io/assets/53667002/bc6e332e-9b4a-4b31-a131-c79b8517a4eb"></center>
 <center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
 
 
-### 3.2.2  Hierarchical attention (multi-stream to one-stream)
+### 3.2.3  Hierarchical attention (multi-stream to one-stream)
 
 - Modality에 따라 각각 독립적인 Transformer를 통해 input을 encoding한 이후 각 Transformer stream들의 output embedding을 concat하여 하나의 또다른 Transformer에 입력함으로써 Embedding들을 융합시키는 방식이다.
 - 이러한 방식은 late interaction/fusion로 분류될 수도 있고 early concatenation의 특수 케이스로 분류될 수도 있다.
 
-<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/b8b0027f-6828-437b-953f-c83cd212e942"></center>
+<center><img width="300" src="https://github.com/finddme/finddme.github.io/assets/53667002/b8b0027f-6828-437b-953f-c83cd212e942"></center>
 <center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
+
+### 3.2.4  Hierarchical attention (one-stream to multi-stream)
+
+- 각 Modality들의 token embedding들을 concat한 이후 하나의 Transformer Layer에 입력하고 그 Transformer output을 각 modality별로 나누어 각각 별도의 Transformer에 다시 입력하는 방식이다.
+- 이와 같은 방식은 one-stream 단계에서 각 modality들의 toekn embedding이 concat된 것이 Transformer에 함께 임력됨으로써 modality들 간의 self-attention이 수행되어 이로 인해 각 modality 간의 interaction이 반영된다.
+- 그리고 multi-stream 단계에서는 각 modality별로 독립적인 Transformer에 입력되어 최종 embedding을 산출하기 때문에 uni-modal representation의 독립성을 유지할 수 있다는 장점이 있다.
+- 이 방법론이 적용된 대표적인 모델은 InterBERT이다.
+
+<center><img width="300" src="https://github.com/finddme/finddme.github.io/assets/53667002/e3bda481-0fa9-4be5-bee0-7315e759bfbb"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
+
+### 3.2.5 Cross-attention (= Coattention)
+
+- 각 Modality별로 별도의 Transformer를 사용하고, Modality별 Q(Query) embedding을 cross-stream 방식으로 교환 및 교체하는 방식이다.
+- 각 Modality의 최종 Embedding을 산출할 때 다른 Modality를 반영하면서도 계산 복잡도는 증가되지 않는다는 장점을 가진다.
+- 하지만 각 Modality가 각각의 Transformer에 입력되기 전 cross-modal attention을 수행하지 못하여 전체 context를 놓칠 수 있다는 단점이 있다.
+- 이 방법론은 VilBERT에서 처음 제안되었다. 해당 논문에서는  two-stream cross attention 은 modality 간의 interaction을 수행하긴 하지만 각 modality 내 자체 context에 대한 self-attention은 수행하지 않는다고 밝혔다.
+
+<center><img width="300" src="https://github.com/finddme/finddme.github.io/assets/53667002/61ebbb75-eacc-4e66-82c5-f18b4970e4e1"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
+
+### 3.2.6 cross-attention to concatenation
+
+- Cross-attention의 단점을 보완하기 위해 나온 방법으로, Cross-attention에 Hierarchical 구조를 추가하여 global context를 반영할 수 있도록 만든 방법이다.
+- 이는 Cross-attention을 통해 산출된 Embedding을 concat한 이후 또다른 Transformer layer에 입력한다.
+
+<center><img width="300" src="https://github.com/finddme/finddme.github.io/assets/53667002/b5313a57-3878-4cea-be44-b4424318f036"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
+
+
+### + Network Architectures
+
+
+
+
+
+
+
 
 
 
