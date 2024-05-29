@@ -1,5 +1,5 @@
 ---
-title: Multimodal Learning with Transformers:A Survey
+title: Multimodal Learning with Transformers : A Survey
 category: Multimodal
 tag: Multimodal
 ---
@@ -26,7 +26,7 @@ tag: Multimodal
 
 인공지능은 인간의 지각 능력을 모방한 것이다. 일반적으로 modality는 특정한 센서를 통해 생성된 vison과 language와 같은 unique communication channel을 지칭한다. 인간은 세상과 상호작용할 때 다양한 modality 정보를 적절히 활용한다. 각 modality는 각각 다른 informationo source로 표현된다. 예를 들어 이미지는 수천개의 pixel을 통해 시각적으로 표현되고, 텍스트는 이산적인 단어들을 통해 표현된다. 인공지능 multimodal 구현을 위해서는 인간이 처리하는 각 modality 표현들과 유사한 정보를 데이터로 사용하고 각 정보들을 연결해야 한다.
 
-본 논문은 다양한 modality와 task를 transformer를 통해 구현하고 학습시키는 것과 관련된 다양한 정보에 대해 다룬다. 
+본 논문은 Transformer를 이용한 Multimdoal Learning 방법론들에 대해 초점을 맞춘 Survey논문dmfh, 다양한 modality와 task를 transformer를 통해 구현하고 학습시키는 것과 관련된 다양한 정보에 대해 다룬다. 
 
 # 2. [Transformers](https://finddme.github.io/natural%20language%20processing/2019/11/19/Transformer/)
 
@@ -158,9 +158,61 @@ self-attention design 관점으로 Transformer의 multimodal modelling 방법을
 <center><em style="color:gray;">Multimodal Learning with Transformers:A Survey(edited by author)</em></center><br>
 
 
-# 4. Application Scenarios
+# 4. Multimodal Pretraining task Taxonomy
+
+Multimodal Pretraining에 사용되는 task의 종류는 아래 표와 같이 매우 다양하다. task들은 크게 Masking, Describing, Matching, Ordering로 분류된다. 
+
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/7348b6b9-72ef-4824-a0f2-bd0a11c14bea"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey(edited by author)</em></center><br>
 
 
+# 5. Challenges and Designs
+
+## 5.1. Fusion
+
+- 일반적으로 multimodal transformer 모델은 input단에서 하는 Fusion인 Early Fusion, Intermediate Representation단에서 Middle Fusion, Prediction단(Transformer의 output)에서 Late Fusion 이렇게 세 Level에서 modality간의 정보를 Fusion한다. 
+- 이에 대해 해당 연구진들은 Future Work로서 Multimodal Transformer의 Fusion을 조금 더 향상시키고, 해석 가능하게 하기 위하여 Modality간의 interaction이 어떻게 진행되는지를 연구하고 Modality간의 Fusion을 정량적으로 측정하는 것을 연구하는 것도 의미 있을 것이라고 한다. 
+
+## 5.2. Alignment
+- Modality 간의 Alignment는 실제 Multimodal 활용 측면에서 매우 중요하다.
+- 다양한 downstream task에 대해 연구가 활발히 진행되고 있다. (예를 들어 Text-to-Speech Alignment, Text-to-Video Retrieval 등)
+- Paired Sample에 대한 Contrastive Learning을 통해 두 modality를 공통된 REpresentation Space로 매핑하는 것이 대표적인 방법이다. 
+- 그러나 이를 위해 수백 수십억개의 학습 데이터가 필요하기 때문에 막대한 cost가 필요하다는 것이 문제라 이 문제를 해결하기 위한 연구도 multimodal 연구에서 중요한 과제 중 하나일 것이다. 
+
+## 5.3. Transferabililty
+- 서로 다른 데이터셋과 Application에 대해 Multimodal Model을 어떻게 Transfer 시킬 것인가가 Transferability이다.
+- 모델 학습에 사용되는 Training data와 Practical(실제) data 간의 분포차이가 존재한다. (ML/DL에서는 일반적인 문제.)
+- Label이 잘 되어 있거나 Align이 잘 되어 있는 Supervised data (well-labeled, well-aligned)를 통해 pretrain된 multimodal transformer를 실제로는 label이 없거나 align이 잘 되어 있지 않은 실제 데이터에 바로 적용한는 것은, 즉 transfer하는 것은 매우 어렵다. 
+- 실제 application 상황에서 예를 들어 이미지와 텍스트 정보를 이용해서 downstream task를 수행하는 모델을 가지고 사용하려 했는데 이미지 혹은 텍스트 둘 중 하나의 modality의 데이터가 없는 경우 실제 inference하는 것은 매우 어려운 일이다. 
+
+## 5.4. Efficiency
+- 모든 transformer계열 모델들이 지적받는 문제인 효율성.
+- model parameter 크기가 크기 때문에 학습에 많은 데이터를 필요로 한다. 왜냐하면 transformer라는 모델 자체가 layer를 많이 쌓을수록 downstream task에 대한 성능이 높아진다는 것이 그동안 다양한 연구를 통해 실증적으로 입증된 것이기 떄문이다. Multi modal transformer에서도 각 modality별로 별개의 transformer 방법론을 사용할 경우 이에따라 단일 modality보다 더 많은 모델 파라미터가 사용된다는 단점이 존재한다. 모델 파라미터가 더 많기 때문에 이에 준하는 더 많은 학습 데이터가 필요하게 된다. 
+- 그리고 Self-attention의 특성 상 입력 sequence의 길에에 따라 시간과 메모리 복잡도가 기하급수적으로 증가한다는 단점도 존재한다. 
+- 이전 연구들 중에서 이러한 efficiency 문제를 완화하기 위해 제안된 방법들은 주로 Knowledge Distillation 혹은 각 modality에 대해서 서로 다른 크기의 model을 사용하는 방법 혹은 self-attention을 효율적으로 전개하는 시도들이 있었다. 
+
+## 5.5. Robustness
+- 대규모 데이터로 Pretrain된 multimodal transformer는 다양한 Multimodal application(downstream task)에서 SOTA를 달성한 반면 Robustness에 대한 연구는 아직 덜 진행되었다. 
+- 이에 따라 해당 연구진들은 Robustness를 어떻게 이론적으로 설명할 것이고 Robustness를 어떻게 증가시킬 것인가에 대한 연구도 multimodal 연구에서 중요한 방향이라고 말했다. 
+
+## 5.6. Universalness
+- Multimodal Learning의 매우 다양한 Task와 Modality로 인해 Universlness는 Multimodal Transfer Model에게 매우 중요한 문제이다. 
+- Universalness와 관련하여 도전한 몇 가지 연구들이 있다. 
+
+(1) Uni-modal과 multimodal input 혹은 task에 대한 pipeline 통합하는 시도
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실제 상황에서는 modality의 누락으로 인해 uni-modal data를 처리해야 할 수도 있기 때문에 uni-modal 그리고 multi modal 두 가지 pipeline을 통합하는 것도 매우 유의미한 연구이다.
+
+(2) Multimodal Understanding과 Generation을 위한 Pipeline을 통합하는 것이다.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자연어처리 측면에서 이해해 보자면 natural language understanding은 BERT와 같은 transformer encoder가 잘하는 task, 그리고 natural language generation은 GPT와 같은 transformer decoder가 잘하는 task이다. 
+    이처럼 multimodal에서도 understanding과 generation을 둘 다 수행할 수 있도록 multi task learning을 시도하는 연구들이 있었다고 한다. 
+
+(3) Task 자체를 통합하고 변형하는 시도
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLIP이 매우 대표적인 시도이다. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CLIP은 Zero-shot Recognition을 Retrieval Task로 바꿔서 Model을 변경하지 않고도 해당 Task를 수행할 수 있도록 했다. 
+
+## 5.7. Interpretability
+- 해석 가능성. 이는 multimodal transformer 뿐만 아니라 deeplearnign 모델들에 있어서도 공통적인 challange이다. 
+- transformer가 왜 그리고 어떻게 multimodal learning에서 좋은 성능을 보이는가에 대한 해석 가능성도 중요한 연구 방향임을 해당 연구진들은 밝혔다. 
 
 
 # Reference
