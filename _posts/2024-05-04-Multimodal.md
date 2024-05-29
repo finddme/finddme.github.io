@@ -152,15 +152,13 @@ self-attention design 관점으로 Transformer의 multimodal modelling 방법을
 
 ### + Network Architectures
 
+지금까지 알아본 multimodal Transformer는 Network Architecture와 interaction timing을 기준으로 아래 그림과 같이 분류할 수 있다.
+
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/dd7cc526-d8f2-499a-9751-a4fa16ee5759"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey(edited by author)</em></center><br>
 
 
-
-
-
-
-
-
-
+# 4. Application Scenarios
 
 
 
