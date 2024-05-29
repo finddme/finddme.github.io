@@ -73,17 +73,53 @@ Modality에 따라 Transformer의 Tokenization/Embedding 방식이 다르다.<br
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/1ef8d6ae-a0d0-47d9-b2ba-2b210767f58f"></center>
 <center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
 
-
-## 3.2 Token Embedding Fusion(Cross-modal interaction 방법)
+### 3.1.1 Token Embedding Fusion
 
 각 modality별로 tokenizing-embedding을 모두 마친 이후 중요한 것 각 modality별 embedding을 어떻게 합쳐서 multimodal 처리를 가능하게 할 것인가이다.
 
 가장 단순한 fusion은 여러 modality들에 대한 embedding들을 token-wise sum하는 것이다. transformer는 하나의 position에 대해 여러 token embedding을 반영할 수 있기 때문에 가능한 방법이다. 예를 들어 BERT의 경우 한 position embedding에 token embedding과 segment embedding을 position을 기준으로 원소값별로 더하여(element-wise sum하여) 모델에 입력한다. 이를 시각적으로 표현하면 아래 이미지와 같다.
 
-<center><img width="300" src="https://github.com/finddme/finddme.github.io/assets/53667002/ac4ec1b0-7cd9-4fff-ac57-a6f6f0ba21a4"></center>
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/ac4ec1b0-7cd9-4fff-ac57-a6f6f0ba21a4"></center>
 <center><em style="color:gray;">Multimodal Learning with Transformers:A Survey(edited by author)</em></center><br>
 
+## 3.2 Cross-modal interaction 방법
 
+Token Embedding Fusion외에도 다양한 modal간의 interaction 방법들이 있는데 multimodal Transformers에서는 self-attention과 변형된 self-attention을 통해 modality 간의 interaction을 수행한다. 
+
+self-attention design 관점으로 Transformer의 multimodal modelling 방법을 나누면 크게 6가지로 분류할 수 있다.
+
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/507d0807-d1d8-4396-b161-bb40f6c8f0d8"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
+
+### 3.2.1 Early summation (token-wise, weighted)
+
+- 가장 단순한 Fusion 방식으로, token-wise sum 하는 방법이다. 3.1.1에서 다룬 방식과 동일.
+- 각 modality의 token embedding들을 position을 기준으로 더하여 Transformers에 입력되는 방식.
+- 단순한 방식으로 수행되는 만큼 계산 복잡도가 증가하지 않는다는 것이 주요 장점이다.
+- 주요 단점은 가중치가 수동으로 설정되었다는 것이다. 
+
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/c4448e6c-4287-4f19-a6c4-afa4ce5f8fd2"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
+
+
+### 3.2.2 Early concatenation(= all-attention, CoTransformer)
+
+- Modality들의 token embedding sequence concatenate하여 Transformer layer에 입력하는 방법이다.
+- 이 방법은 modality들의 token position이 하나의 sequence로 처리되어 각 modality의 context를 반영할 수 있다는 장점을 가진다.
+- VideoBERT는  multimodal Transformer의 초기 연구 중 하나로, 이와 같은 방식을 통해 video와 text를 결합하여 global multimodal context를 잘 encoding한 모델이다.
+- 이 방법은 concatenation으로 길어진 Sequence로 인해 계산 복잡도가 증가된다는 단점을 가진다. 이는 Attention 자체의 한계점으로, sequence가 길어질수록 계산 복잡도가 높아진다.
+
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/bc6e332e-9b4a-4b31-a131-c79b8517a4eb"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
+
+
+### 3.2.2  Hierarchical attention (multi-stream to one-stream)
+
+- Modality에 따라 각각 독립적인 Transformer를 통해 input을 encoding한 이후 각 Transformer stream들의 output embedding을 concat하여 하나의 또다른 Transformer에 입력함으로써 Embedding들을 융합시키는 방식이다.
+- 이러한 방식은 late interaction/fusion로 분류될 수도 있고 early concatenation의 특수 케이스로 분류될 수도 있다.
+
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/b8b0027f-6828-437b-953f-c83cd212e942"></center>
+<center><em style="color:gray;">Multimodal Learning with Transformers:A Survey</em></center><br>
 
 
 
