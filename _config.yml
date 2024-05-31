@@ -59,6 +59,7 @@ nav:
     - '/blog/categories/'
     - { All categories: '/blog/categories/' }
     - { Portfolio: '/blog/portfolio/' }
+    - { Multimodal: '/blog/multimodal/' }
     - { Natural Language Processing: '/blog/nlp/' }
     - { Natural Language Processing and Linguistics: '/blog/nlp_linguistics/' }
     - { etc.: '/blog/etc/' }
