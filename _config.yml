@@ -79,6 +79,8 @@ newhomenav:
   #   - '/blog/portfolio/'
   ∙ Project: 
     - '/blog/project/'
+  ∙ Multimodal:
+    - '/blog/multimodal/'
   ∙ Natural Language Processing: 
     - '/blog/nlp/'
   ∙ Natural Language Processing and Linguistics: 
