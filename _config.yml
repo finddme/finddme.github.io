@@ -57,7 +57,7 @@ nav:
   
   CATEGORIES: 
     - '/blog/categories/'
-    - { All categories: '/blog/categories/' }
+    - { - All categories: '/blog/categories/' }
     - { Portfolio: '/blog/portfolio/' }
     - { Multimodal: '/blog/multimodal/' }
     - { Natural Language Processing: '/blog/nlp/' }
