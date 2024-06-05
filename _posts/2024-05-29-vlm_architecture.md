@@ -55,7 +55,7 @@ Fusion Block은 Vision Encoder와 Language Encoder를 통해 visual과 textual d
 
 Contrastive Learning(대조 학습)은 입력된 image와 text를 동일한 vector space에 놓고 쌍을 이룬 image-text의 각 embedding 거리를 최소화 하면서 맞춰가는 방법이다.(맞지 않는 쌍 간의 거리는 최대화 시키다.) 이때 거리 최소화 작업에 사용되는 vector간 거리 산출 공식은 보통 cosine distance formula이다. OpenAI도 CLIP(Contrastive Language-Image Pre-training) 모델에서 cosine distance formula를 사용하였다. 
 
-<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/a630e86f-3544-4b8e-a110-4f96e0195cca"></center>
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/35558d2c-d9a0-4efa-9032-16208671d81d"></center>
 <center><em style="color:gray;">https://towardsdatascience.com/clip-intuitively-and-exhaustively-explained-1d02c07dbf40</em></center><br>
 
 
