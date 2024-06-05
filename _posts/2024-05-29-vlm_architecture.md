@@ -41,5 +41,14 @@ Vision Encoder는 visual input을 처리한다. 해당 부분에서는 visual da
 
 Language Encoder는 textual input을 처리한다. 해당 부분에서는 text data의 semantic information이 잘 포함된 embedding을 생성한다. Language Encoder가 text data의 seqence를 잘 파악할 수록 VLM의 성능이 올라간다.
 
+# 3. Fusion Block
+
+Fusion Block은 Vision Encoder와 Language Encoder를 통해 visual과 textual data를 각각의 vector representation으로 encoding한 이후 이를 잘 융합시켜 시각적 정보와 텍스트 정보를 모두 포괄하는 최종 embedding 결과를 도출하는 단계이다. Fusion 방식에는 매우 다양한 방법론이 존재한다.
+
+# 4. Output Block
+
+Output Block은 fused representation(embedding)을 통해 task에 따라 적절한 output을 생성하는 부분이다. Output Block은 해결하고자 하는 task에 따라 다르게 설계된다.
+
+
 
 
