@@ -87,4 +87,12 @@ Output Block은 fused representation(embedding)을 통해 task에 따라 적절�
 
 
 
+# Reference
 
+> VisualGPT: Data-efficient Adaptation of Pretrained Language Models for Image Captioning
+
+> MASKED VISION AND LANGUAGE MODELING FOR MULTI-MODAL REPRESENTATION LEARNING
+
+> SIMVLM: SIMPLE VISUAL LANGUAGE MODEL PRETRAINING WITH WEAK SUPERVISION
+
+> https://towardsdatascience.com/clip-intuitively-and-exhaustively-explained-1d02c07dbf40
