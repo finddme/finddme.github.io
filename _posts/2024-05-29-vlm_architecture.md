@@ -1,5 +1,5 @@
 ---
-title: "Vision Language Model : Architecture (작성 중)"
+title: "Vision Language Model : Architecture / Fusion Methods (작성 중)"
 category: Multimodal
 tag: Multimodal
 ---
@@ -70,8 +70,16 @@ PrefixLM은 Transformer의 Encoder와 Decoder가 결합된 모델로, prefix tok
 
 Multi-modal Fusing with Cross Attention은 cross-attention mechanism을 통해 시각적 정보를 language model에 통합시키는 방법이다. 아래 이미지와 같이 visual encoder를 통해 image를 embedding한 후 이 embedding 결과를 language model의 cross-attention layer에 입력한다. 이 방법을 사용한 대표적인 모델은 VisualGPT이다. 
 
-<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/69485549-121c-4aae-a176-8b7c07da2418"></center>
+<center><img width="600" src="https://github.com/finddme/finddme.github.io/assets/53667002/69485549-121c-4aae-a176-8b7c07da2418"></center>
 <center><em style="color:gray;">VisualGPT: Data-efficient Adaptation of Pretrained Language Models for Image Captioning</em></center><br>
+
+## 3.4 Masked-Language Modeling
+
+Masked-Language Modeling은 self-attention을 통해 input image와 input text를 align시킬 때 사용되는 task로, 이를 학습한 모델은 주로 주어진 caption이 어떠한 이미지에 대한 것인지 예측하는 과제로 많이 사용된다.
+
+<center><img width="600" src="https://github.com/finddme/finddme.github.io/assets/53667002/42c2e63b-e813-4ed7-a531-a76015e20e0b"></center>
+<center><em style="color:gray;">MASKED VISION AND LANGUAGE MODELING FOR MULTI-MODAL REPRESENTATION LEARNING</em></center><br>
+
 
 # 4. Output Block
 
