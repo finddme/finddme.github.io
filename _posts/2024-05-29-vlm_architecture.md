@@ -25,3 +25,8 @@ Vision Language Model(VLM)은 visual data와 text data를 동시에 학습하여
 
 <center><img width="800" src="https://github.com/finddme/finddme.github.io/assets/53667002/800c5d79-5816-4a6f-979c-2b00fef6dd38"></center>
 <center><em style="color:gray;">Edited by author</em></center><br>
+
+<center><img width="800" src="https://github.com/finddme/finddme.github.io/assets/53667002/a630e86f-3544-4b8e-a110-4f96e0195cca"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+vision language model에는 one-size-fits-all architecture가 딱히 없다. vision language model의 구조는 task나 output에 따라 달라질 수 있다. 일반적인 task와 task별 input과 output은 본 블로그 [Vision Language Model : Applications](https://finddme.github.io/multimodal/2024/05/28/vlm_task/) 게시물에서 확인 가능하다. 
