@@ -70,7 +70,8 @@ PrefixLM은 Transformer의 Encoder와 Decoder가 결합된 모델로, prefix tok
 
 Multi-modal Fusing with Cross Attention은 cross-attention mechanism을 통해 시각적 정보를 language model에 통합시키는 방법이다. 아래 이미지와 같이 visual encoder를 통해 image를 embedding한 후 이 embedding 결과를 language model의 cross-attention layer에 입력한다. 이 방법을 사용한 대표적인 모델은 VisualGPT이다. 
 
-
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/69485549-121c-4aae-a176-8b7c07da2418"></center>
+<center><em style="color:gray;">VisualGPT: Data-efficient Adaptation of Pretrained Language Models for Image Captioning</em></center><br>
 
 # 4. Output Block
 
