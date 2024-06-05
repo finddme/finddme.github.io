@@ -66,6 +66,11 @@ PrefixLM은 Transformer의 Encoder와 Decoder가 결합된 모델로, prefix tok
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/21877fa0-454d-433f-9819-4a6be520b9ff"></center>
 <center><em style="color:gray;">SIMVLM: SIMPLE VISUAL LANGUAGE MODEL PRETRAINING WITH WEAK SUPERVISION</em></center><br>
 
+## 3.3 Multi-modal Fusing with Cross Attention
+
+Multi-modal Fusing with Cross Attention은 cross-attention mechanism을 통해 시각적 정보를 language model에 통합시키는 방법이다. 아래 이미지와 같이 visual encoder를 통해 image를 embedding한 후 이 embedding 결과를 language model의 cross-attention layer에 입력한다. 이 방법을 사용한 대표적인 모델은 VisualGPT이다. 
+
+
 
 # 4. Output Block
 
