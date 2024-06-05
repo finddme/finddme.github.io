@@ -1,5 +1,5 @@
 ---
-title: "Vision Language Model : Architecture / Fusion Methods (작성 중)"
+title: "Vision Language Model : Architecture / Fusion Methods"
 category: Multimodal
 tag: Multimodal
 ---
