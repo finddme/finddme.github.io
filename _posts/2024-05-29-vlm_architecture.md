@@ -61,6 +61,9 @@ Contrastive Learning(대조 학습)은 입력된 image와 text를 동일한 vect
 
 ## 3.2 PrefixLM
 
+PrefixLM은 Transformer의 Encoder와 Decoder가 결합된 모델로, prefix token set이 주어졌을 때 다음 token을 예측하는 모델이다. 
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/21877fa0-454d-433f-9819-4a6be520b9ff"></center>
+<center><em style="color:gray;">SIMVLM: SIMPLE VISUAL LANGUAGE MODEL PRETRAINING WITH WEAK SUPERVISION</em></center><br>
 
 
 # 4. Output Block
