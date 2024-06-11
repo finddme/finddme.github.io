@@ -6,7 +6,6 @@ title: Categories
 <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.categories %}
-    {% assign sorted = tag.post | sort: 'date' | reverse %}
     <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
     {% endfor %}
   </div>
