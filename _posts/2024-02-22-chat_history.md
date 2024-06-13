@@ -1,6 +1,6 @@
 ---
 title: Handling Chat history(RAG)
-category: Natural Language Processing
+category: LLM / Multimodal
 tag: NLP
 ---
 
