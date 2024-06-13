@@ -1,6 +1,6 @@
 ---
 title: "Multimodal Learning with Transformers : A Survey"
-category: LLM / Multimodal
+category: "LLM / Multimodal"
 tag: Multimodal
 ---
 
