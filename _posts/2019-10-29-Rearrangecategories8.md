@@ -1,6 +1,6 @@
 ---
 title: ㅡ
-category: Multimodal
+category: LLM / Multimodal
 tag: Multimodal
 ---
 
