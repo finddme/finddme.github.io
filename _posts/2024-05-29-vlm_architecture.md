@@ -1,6 +1,6 @@
 ---
 title: "Vision Language Model : Architecture / Fusion Methods"
-category: Multimodal
+category: LLM / Multimodal
 tag: Multimodal
 ---
 
