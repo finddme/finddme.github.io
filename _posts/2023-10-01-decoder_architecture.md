@@ -1,5 +1,5 @@
 ---
-title: "LLM : Decoder only Model"
+title: "LLM architecture"
 category: LLM / Multimodal
 tag: NLP
 ---
