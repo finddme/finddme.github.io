@@ -1,5 +1,5 @@
 ---
-title: "About Finetuning"
+title: "About Fine-tuning"
 category: LLM / Multimodal
 tag: NLP
 ---
@@ -22,3 +22,4 @@ tag: NLP
 
 
 
+# Fine-tuning pipeline
