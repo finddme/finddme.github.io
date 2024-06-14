@@ -87,7 +87,9 @@ Decoder 모델은 이전 token의 key, value matrix를 다음 token 예측에 �
 
 ## Autoregressive 
 
-Decoder Model에서는 Masked Self-Attention을 사용하여 현재 시점을 기준으로 다음 token들은 참조하지 못하고 이전 token을 현재 시점의 입력으로 받아 예측을 수행한다. 이를 autoregressive하다고 표현한다.
+Decoder Model에서는 Masked Multi-Head Self-Attention을 사용한다. 여기에서 집중해야 하는 것은 "Masked"와 "Multi-Head"이다. 
+
+"Masked"가 의미하는 것은 현재 시점을 기준으로 다음 token들은 참조하지 못하도록 막아 놓는 다는 것이다. 다음 token은 참조하지 않고 이전 token을 현재 시점의 입력으로 받아 예측을 수행한다. 이를 autoregressive하다고 표현한다.
 
 아래 그림과 같이 Casual Decoder Model은 "am"을 예측할 때 이전 token인 "I"만 보고 "a"를 예측할 때는 "I"와 "am"을 본다. 
 
@@ -100,6 +102,12 @@ Autoregressive라는 특징이 생성 과제에 도움을 주는 이유는 atten
 >> $m×n$ matrix에서 $m≤nm$일 때, rank가 $m$인 경우, $m≥n$일 때, rank가 $n$인 경우
 >
 > rank: matrix에서 서로 선형적으로 독립적인 행과 열의 최대 개수.
+
+"Multi-Head"는 여러 attention head들이 있을 때 각 head가 각각 고유한 Query, Key, Value set을 가지고 있어 입력 문장의 다양한 측면을 동시에 집중하여 sequence 내 token 간의 복잡한 관계를 잘 파악하도록 한다. 
+
+각 헤드는 고유한 Query, Key, Value 벡터 세트를 가지고 있어 입력 문장의 다른 측면에 동시에 집중할 수 있습니다.
+
+
 
 # Reference
 
