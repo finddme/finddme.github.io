@@ -27,10 +27,12 @@ Decoder architecture는 최근 각광 받고 있는 LLM의 backbone으로 사용
 
 # [Transformers 요약](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/)
 
+Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다. 
+
 ## Encoder and Decoder
 
 - Encoder
-  - input를 representation을 변환하는 부분. 문장을 입력 받아 언어적 특징과 의미를 vector화한다.
+  - input를 representation을 변환하는 부분. 자연어의 의미를 vector space의 representation으로 변환하는 부분이다. 즉, contextualized embedding으로 input을 변환시킨다. 
   - input으로 들어온 token은 self-attention layer를 통과하는데 이는 input token encoding 시 token들의 관계를 파악하도록 돕는다.
   - Attention
     - 모델이 입력 sequence의 모든 token들이 서로의 관계를 학습할 수 있도록 Multi-Head Self-Attention을 사용한다. 이는 모델이 각 token의 context를 이해하는데 도움을 준다.
@@ -71,7 +73,6 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
 
 - 대표 모델: T5, BART, Gemini
 - Pretraining Approach/Task: Task에 따라 다르다.
-
 
 # Reasons Why Causal Decoders Are Often Used for Generative Tasks
 
