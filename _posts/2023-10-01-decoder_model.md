@@ -31,6 +31,7 @@ tag: NLP
 
 - Encoder
   - input를 representation을 변환하는 부분. 문장을 입력 받아 언어적 특징과 의미를 vector화한다.
+  - input으로 들어온 token은 self-attention layer를 통과하는데 이는 input token encoding 시 token들의 관계를 파악하도록 돕는다.
   - Attention
     - 모델이 입력 sequence의 모든 token들이 서로의 관계를 학습할 수 있도록 Multi-Head Self-Attention을 사용한다. 이는 모델이 각 token의 context를 이해하는데 도움을 준다.
 
