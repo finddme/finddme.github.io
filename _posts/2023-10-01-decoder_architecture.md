@@ -23,7 +23,7 @@ tag: NLP
 
 
 
-Decoder architecture는 최근 각광 받고 있는 LLM의 backbone으로 사용되고 있다. 본 포스트에서는 LLM의 기반 모델로 Decoder model이 많이 사용되는 이유를 간략하게 설명하고, 해당 설명을 위해 Transformers와 Transformers로부터 파생된 Model 구조에 대해 매우 간단하게 소개한다.
+Decoder architecture는 최근 각광 받고 있는 LLM의 backbone으로 사용되고 있다. 본 포스트에서는 LLM의 기반 모델로 Decoder model이 많이 사용되는 이유를 간략하게 설명하고, 해당 설명을 위해 Transformers와 Transformers로부터 파생된 Model 구조에 대해 소개한다.
 
 # [Transformers 요약](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/)
 
