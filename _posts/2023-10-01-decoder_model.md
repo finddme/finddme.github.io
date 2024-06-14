@@ -1,5 +1,5 @@
 ---
-title: "LLM Summary"
+title: "Decoder only Model"
 category: LLM / Multimodal
 tag: NLP
 ---
@@ -49,6 +49,8 @@ tag: NLP
  
 ## Attention
 
+Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 수 있도록 하여 sequence 내부에서의 token 간의 거리와는 무관하게 token 간의 관련성을 파악하도록 하는 알고리즘이다.
+
 # Transformers 기반 Model 요약
 
 ## Encoder-Only Models
@@ -77,7 +79,6 @@ LLM은 Decoder architecture는 최근 각광 받고 있는 LLM의 backbone으로
 ## [In-Context Learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)
 
 GPT-2에서 제안된 In-Context Learning은 Decoder 기반 모델의 생성 과제 수행 능력을 높인다. in-context learning은 문맥 내에서 풀고자 하는 task를 학습하는 것을 의미한다. LLM은 이 능력을 통해 문맥이나 task에 대한 이해를 높이는 prompt를 활용하여 다양한 생성 과제들을 잘 수행할 수 있다.
-
 
 ## Efficiency Optimization
 
