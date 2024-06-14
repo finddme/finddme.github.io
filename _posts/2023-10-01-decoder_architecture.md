@@ -65,7 +65,7 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
 
 - 대표 모델: GPT
 - Pretraining Approach/Task: Next Token Prediction. Original Language Modeling이라고도 많이 불린다.
-- Use Case: 일반적으로 Generative task에 많이 사용된다.
+- Use Case: 일반적으로 Generative task에 많이 사용된다. (e.g. generating text, completing sentences, answering questions based on context, etc. )
    
 ## Encoder-Decoder Models
 
