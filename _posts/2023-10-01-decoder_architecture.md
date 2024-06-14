@@ -23,7 +23,7 @@ tag: NLP
 
 
 
-대부분의 LLM은 Transformer의 Decoder 구조를 기반으로 한다.
+Decoder architecture는 최근 각광 받고 있는 LLM의 backbone으로 사용되고 있다. 본 포스트에서는 LLM의 기반 모델로 Decoder model이 많이 사용되는 이유를 간략하게 설명하고, 해당 설명을 위해 Transformers와 Transformers로부터 파생된 Model 구조에 대해 매우 간단하게 소개한다.
 
 # [Transformers 요약](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/)
 
@@ -74,8 +74,6 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
 
 
 # Reasons Why Causal Decoders Are Often Used for Generative Tasks
-
-LLM은 Decoder architecture는 최근 각광 받고 있는 LLM의 backbone으로 사용된다.
 
 ## [In-Context Learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)
 
