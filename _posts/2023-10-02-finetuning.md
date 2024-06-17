@@ -86,3 +86,16 @@ Fine-tuning을 더욱 효과적으로 수행하기 위해 Reinforcement Learning
 
 
 ### 2.2.1 RLHF/PPO
+
+GPT-3.5와 같이 LLM 유행 초기에 많이 사용된 방법이다. 이는 크게 두 단계로 작동된다.
+
+1. Step 1. Reward Model 구축
+   - prompt dataset(instruction, context, output pair)으로 모델을 fine-tuning 시킨다. 이때 두 개 이상의 추론 결과를 반환하도록 한다.
+   - human labeler에게 추론 결과에 대한 점수/순위를 매기게 한다.(“Anthropic/hh-rlhf”와 같이 honesty와 harmlessness를 검증하는 open-sourced preference ranking dataset도 있다.)
+   - 매겨진 점수의 normalization 과정을 거친 후 이것을 single sample-reward pair로 만들어 reward model을 학습시킨다. 
+
+2. Step 2.
+   - Reward Model을 진짜로 구축하고자 하는 모델 학습에 사용한다.
+   - Tuning할 모델에 prompt dataset을을 넣어 모델의 추론 결과를 생성하고 이걸 Reward Model에 입력해서 Reward를 도출시킨다.
+   - Proximal Policy Optimization (PPO)라는 policy기반의 RL algorithm을 통해 모델의 가중치를 점진적으로 조정하며 모델의 응답에 할당된 reward를 최대화시킨다.
+   - 
