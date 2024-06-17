@@ -27,6 +27,8 @@ Decoder architecture는 최근 각광 받고 있는 LLM의 backbone으로 사용
 
 # [Transformers 요약](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/)
 
+관련 포스트: [Transformer | Attention Is All You Need](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/)
+
 Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다. 
 
 ## Encoder and Decoder
@@ -76,7 +78,9 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
 
 # Reasons Why Causal Decoders Are Often Used for Generative Tasks
 
-## [In-Context Learning](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)
+## In-Context Learning
+
+관련 포스트: [Language Models Summary - GPT2 : Language Models are Unsupervised Multitask Learners](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/#gpt2--language-models-are-unsupervised-multitask-learners)
 
 GPT-2에서 제안된 In-Context Learning은 Decoder 기반 모델의 생성 과제 수행 능력을 높인다. in-context learning은 문맥 내에서 풀고자 하는 task를 학습하는 것을 의미한다. LLM은 이 능력을 통해 문맥이나 task에 대한 이해를 높이는 prompt를 활용하여 다양한 생성 과제들을 잘 수행할 수 있다.
 
