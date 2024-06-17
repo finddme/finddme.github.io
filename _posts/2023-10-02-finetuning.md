@@ -79,6 +79,7 @@ Pre-trained Model에 대해 Pre-trained Model이 학습한 데이터셋보다 �
 
 ## 3.3 Representation Fine-tuning (ReFT)
 
+Pre-trained Model의 가중치는 frozen시키고, Model의 representation의 일부를 조작하여 downstream task를 해결하도록 하는 방법이다. ReFT의 종류 중 하나인 Low-rank Linear Subspace(LoReFT)는 PEFT보다 10배에서 50배 더 parmeter를 효율적으로 사용한다고 한다. 
 
 # 4. Fine-tuning variations : RLHF/PPO, DPO, ORPO
 
