@@ -41,3 +41,5 @@ labeled data는 un-labelled data에 비해 수집에 많은 비용이 들고, �
   - tokenisation, embedding, chunking
 
 # 2. Training
+
+Tranformers 계열의 모델이 self-supervised learning
