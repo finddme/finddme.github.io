@@ -63,7 +63,7 @@ Tranformers 계열의 모델은 label이 없는 데이터에 대해서도 superv
 
 Pre-training 과정에서는 앞서 언급한 CLM과 같이 단순히 다음 token을 예측하는 task를 수행하며 학습이 진행된다. 하지만 보다 task/domain specific한 모델을 만들기 위해서는 supervised fine-tuning(SFT) 접근 방식 필요하다. SFT는 일반적으로 pre-trained Model에 대해 labeled data를 학습시키는 과정으로 진행된다. 예를 들어 CLM으로 학습된 모델로 conversation 혹은 instruction following 과제를 잘 수행하는 모델을 만들기 위해 이와 같은 target application을 잘 나타내는 dataset을 학습시킨다. 이렇게 학습한 모델은 특수한 요구사항 혹은 과제에 더 적합한 답변을 생성할 수 있다. 
 
-## 2.2 Fine-tuning variations : RLHF/PPO, DPO, KTO, ORPO
+## 2.2 Fine-tuning variations : RLHF/PPO, DPO, ORPO
 
 Fine-tuning을 더욱 효과적으로 수행하기 위해 Reinforcement Learning(강화학습) 아이디어를 SFT에 적용한 방법론들이 있다. 강화학습은 Agent가 주어진 환경에서 어떠한 행동을 취하고 그에 대한 보상을 얻으며 학습이 진행되는 방법론이다. 이를 SFT에 적용하여 LLM은 Agent, 환경은 LLM의 vocabulary에서 가능한 모든 token 조합, action space는 모델의 vocabulary, Agent의 행동은 token-prediction으로 설정한 후 학습을 진행할 수 있다. 
 
@@ -116,3 +116,15 @@ RLHF에는 아래와 같은 단점이 있다:
 품질 좋은 데이터를 선별하여 데이터의 양은 줄이되 학습되었으면 하는 데이터 종류의 분포를 조절하는 것이 좋다고 한다.
 
 ## 2.2.3 Odds Ration Preference Optimization (ORPO)
+
+ORPO는 CLM에 새로운 preference alignment algorithm를 도입한 것이다. ORPO의 objective function은 SFT loss와 relative ratio loss (LOR)로 구성된다. LOR항은 favored response와 disfavored response간의 likelihood를 최대화함으로써 rejected response를 반환한 모델에 패널티를 적용한다.
+
+
+# Reference
+> https://levelup.gitconnected.com/the-5-prompt-engineering-techniques-ai-engineers-need-to-know-a208af13d8e4
+>
+> https://towardsdatascience.com/different-ways-of-training-llms-c57885f388ed
+>
+> https://medium.com/@animeshchaturvedi007/fine-tuning-large-language-models-a-comprehensive-guide-0446975dc40e
+> 
+> https://towardsdatascience.com/stepping-out-of-the-comfort-zone-through-domain-adaptation-a-deep-dive-into-dynamic-prompting-4860c6d16224
