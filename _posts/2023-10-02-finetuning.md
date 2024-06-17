@@ -46,7 +46,7 @@ Tranformers 계열의 모델은 label이 없는 데이터에 대해서도 superv
 
 학습은 기본적으로 loss function을 최적화 하는 model weight를 찾는 것을 목표로 한다. GPT계열(decoder based model)은 학습 시 일반적으로 Causal Language Modeling(CLM)을 사용하는데, CLM 수행 시 모델은 vocabulary의 모든 token에 대한 예측 확률을 ground truth값과 비교하여 loss를 계산한다.(이때 prediction값은 1.0의 확률을 가진 sparse vector이다.) loss function은 모델의 세부 architecture에 따라 다를 수 있지만 일반적으로 cross-entropy 혹은 perplexity loss를 많이 사용한다. 모델이 loss function을 최적화하는 방식은 loss를 최소화 하는 방향으로 weight를 조정해나가는 것이다. loss를 계속 최소화하기 위해 매 iteration마다 backpropagation 과정에서 경사 하강(gradient descent)을 수행한다.
 
-> Backpropagation
+> Backpropagation, Gradient Descent
 >> neural network의 weight를 학습시킬 때 사용되는 알고리즘으로, 역으로(출력에서 입력 방향으로) 오류를 전파하여 가중치를 업데이트하는 방법이다. Backpropagation 과정은 간략하게 아래와 같다:<br>
 >> 1. Forward Pass (순전파): Backpropagation을 위해서는 예측값이 있어야 하니까 우선 순전파로 모델의 예측값을 구한다.
 >> 2. Loss 계산: loss function을 통해 예측값과 실제값 간의 오를 계산한다. (cross-entropy, perplexity loss 등을 사용)<br>
