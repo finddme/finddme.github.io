@@ -65,4 +65,24 @@ Pre-training 과정에서는 앞서 언급한 CLM과 같이 단순히 다음 tok
 
 ## 2.2 Fine-tuning variations : RLHF/PPO, DPO, KTO, ORPO
 
-Fine-tuning을 더욱 효과적으로 할 수 있는 다양한 reinforcement learning(RL) 방법들이 있다. 
+Fine-tuning을 더욱 효과적으로 수행하기 위해 Reinforcement Learning(강화학습) 아이디어를 SFT에 적용한 방법론들이 있다. 강화학습은 Agent가 주어진 환경에서 어떠한 행동을 취하고 그에 대한 보상을 얻으며 학습이 진행되는 방법론이다. 이를 SFT에 적용하여 LLM은 Agent, 환경은 LLM의 vocabulary에서 가능한 모든 token 조합, action space는 모델의 vocabulary, Agent의 행동은 token-prediction으로 설정한 후 학습을 진행할 수 있다. 
+
+> Reinforcement Learning(RL)
+>> 주요 구성요소<br>
+>> 1) Agent: 학습을 수행하는 주체. 주어진 환경 내에서 행동을 선택하고 그 결과로 보상을 받는 주체.
+>> 2) Environment: Agent가 상호작용하는 세계. Agent의 행동에 대한 보상(feedback)을 제공한다.
+>> 3) State: Environment의 상태
+>> 4) Action(Action Space): Agent가 취할 수 있는 선택지
+>> 5) Reward: Agent가 특정 행동을 취했을 때 환경으로부터 받는 feedback. 이것을 기준으로 학습이 진행된다.
+>> 6) Policy: Agent가 특정 State에서 어떤 행동을 취할지 결정하는 전략
+>> 7) Value Function: 특정 State에서 시작하여 장기적으로 얻을 것으로 기대되는 보상들의 누적 총합.
+>> 8) Q-Function: 특정 State에서 특정 행동을 취했을 때 장기적으로 얻을 것으로 기대되는 보상들의 누적 총합.
+>>
+>> 학습과정(아래 과정을 반복하며 최적의 Policy를 얻는다.)
+>> 1) 초기화: Agent를 초기화 시킨 후 Agent의 초기 Policy를 가지고 Environment와 상호작용한다.
+>> 2) Action 선택: 현재 State를 기반으로 Policy에 따라 Action을 선택한다.
+>> 3) Environment와의 상호작용: Agent가 선택한 행동을 실행한 후 그 결과로 새로운 State와 Reward를 받는다.
+>> 4) Policy update: Agent는 받은 State와 Reward를 기반으로 더 나은 보상을 얻기 위한 Policy를 개선한다.
+
+
+### 2.2.1 RLHF/PPO
