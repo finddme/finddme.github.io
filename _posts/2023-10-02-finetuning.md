@@ -42,4 +42,6 @@ labeled data는 un-labelled data에 비해 수집에 많은 비용이 들고, �
 
 # 2. Training
 
-Tranformers 계열의 모델이 self-supervised learning
+Tranformers 계열의 모델은 label이 없는 데이터에 대해서도 supervised learning을 한다. 이는 un-labeled data를 입력 받아 모델 내부에서 각 모델마다 설정된 task에 맞게 데이터를 처리하여 학습에 사용하기 때문이다. 예를 들어 BERT는 입력 문장의 일부를 masking 처리하여 자체적으로 masking한 부분을 예측하며 학습을 수행하고, GPT의 경우에는 현재 시점 이후의 token들을 보지 않고 다음 token들을 예측해 나가며 학습을 수행한다. 이와 같이 알고리즘이 자체적으로 스스로 통제/감독하며 학습하는 방식을 self-supervised learning이라고 한다. 
+
+학습은 기본적으로 loss function을 최적화 하는 model weight를 찾는 것을 목표로 한다. 
