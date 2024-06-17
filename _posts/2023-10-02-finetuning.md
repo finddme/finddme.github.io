@@ -59,11 +59,28 @@ Tranformers 계열의 모델은 label이 없는 데이터에 대해서도 superv
 >>    2) 가중치 업데이트 공식에 산출된 기울기와 Learning Rate를 넣어 가중치를 업데이트한다. 이때 사용되는 가중치 업데이트 공식이 경사하강법이다.<br>
 >>       Learning Rate는 얼마나 빨리 학습시킬지 정하는 것인데 일반적으로 0.1보다 낮은 값으로 직접 설정한다.<br>
 
-## 2.1 Supervised Fine-Tuning (SFT)
+# 3. Supervised Fine-Tuning (SFT)
 
 Pre-training 과정에서는 앞서 언급한 CLM과 같이 단순히 다음 token을 예측하는 task를 수행하며 학습이 진행된다. 하지만 보다 task/domain specific한 모델을 만들기 위해서는 supervised fine-tuning(SFT) 접근 방식 필요하다. SFT는 일반적으로 pre-trained Model에 대해 labeled data를 학습시키는 과정으로 진행된다. 예를 들어 CLM으로 학습된 모델로 conversation 혹은 instruction following 과제를 잘 수행하는 모델을 만들기 위해 이와 같은 target application을 잘 나타내는 dataset을 학습시킨다. 이렇게 학습한 모델은 특수한 요구사항 혹은 과제에 더 적합한 답변을 생성할 수 있다. 
 
-## 2.2 Fine-tuning variations : RLHF/PPO, DPO, ORPO
+## 3.1 Full Fine-Tuning
+
+Pre-trained Model에 대해 Pre-trained Model이 학습한 데이터셋보다 작은 데이터로 모델 전체 layer를 다시 훈련 시키는 것이다. 즉, 모델 전체 parameter를 업데이트시키는 것이다. Full Fine-Tuning에는 몇 가지 문제점이 있다. 
+
+1. model의 전체 layer를 학습시키기 위해서는 많은 계산비용이 요구되는데 이는 곧 긴 훈련 시간과 큰 컴퓨터 자원 요구로 이어진다.
+2. Catastrophic forgetting문제 발생 가능성이 있다. 이는 모델이 모델이 새로운 task에 대해 학습하는 동안 pre-training 과정에서 배운 general knowledge를 잊어버리는 문제이다. 이는 잘 학습된 사전학습 모델을 무쓸모로 만든다.
+3. 모델의 전체 wight가 업데이트되기 때문에 사전학습 모델과 동일한 크기의 모델이 서버에 또 저장되기 때문에 용량 문제가 생길 수 있다.
+
+위와 같은 문제를 완화하기 위해 Parameter-Efficient Fine-Tuning와 같은 대안들이 많이 연구되고 있다.
+
+## 3.2 Parameter-Efficient Fine-Tuning (PEFT)
+
+[Parameter-Efficient Finetuning (PEFT) methods](https://finddme.github.io/llm%20/%20multimodal/2023/10/04/lora/)
+
+## 3.3 Representation Fine-tuning (ReFT)
+
+
+# 4. Fine-tuning variations : RLHF/PPO, DPO, ORPO
 
 Fine-tuning을 더욱 효과적으로 수행하기 위해 Reinforcement Learning(강화학습) 아이디어를 SFT에 적용한 방법론들이 있다. 강화학습은 Agent가 주어진 환경에서 어떠한 행동을 취하고 그에 대한 보상을 얻으며 학습이 진행되는 방법론이다. 이를 SFT에 적용하여 LLM은 Agent, 환경은 LLM의 vocabulary에서 가능한 모든 token 조합, action space는 모델의 vocabulary, Agent의 행동은 token-prediction으로 설정한 후 학습을 진행할 수 있다. 
 
@@ -85,7 +102,7 @@ Fine-tuning을 더욱 효과적으로 수행하기 위해 Reinforcement Learning
 >> 4) Policy update: Agent는 받은 State와 Reward를 기반으로 더 나은 보상을 얻기 위한 Policy를 개선한다.<br>
 
 
-### 2.2.1 RLHF/PPO
+## 4.1 RLHF/PPO
 
 GPT-3.5와 같이 LLM 유행 초기에 많이 사용된 방법이다. 이는 크게 두 단계로 작동된다.
 
@@ -101,7 +118,7 @@ GPT-3.5와 같이 LLM 유행 초기에 많이 사용된 방법이다. 이는 크
      (경사 하강법(gradient descent)을 사용하는 일반적인 학습 방식과 달리 경사 상승(gradient ascent)법을 사용한다. (reward에 대해서는 경사 하강.))<br>
    - Reinforcement Learning 기반 접근 방식으로 인해 모델의 행동이 과도하게 변형되는 것을 방지하기 위해 prediction shift penalty를 보상에 추가하여 동일한 입력 prompt에 대한 초기 모델의 예측 확률 분포에서 너무 벗어나는 답변에 대해서는 penalty를 부여한다.
 
-### 2.2.2 Direct Policy Optimization (DPO)
+## 4.2 Direct Policy Optimization (DPO)
 
 RLHF에는 아래와 같은 단점이 있다:
 
@@ -115,12 +132,14 @@ RLHF에는 아래와 같은 단점이 있다:
 
 품질 좋은 데이터를 선별하여 데이터의 양은 줄이되 학습되었으면 하는 데이터 종류의 분포를 조절하는 것이 좋다고 한다.
 
-## 2.2.3 Odds Ration Preference Optimization (ORPO)
+## 4.3 Odds Ration Preference Optimization (ORPO)
 
 ORPO는 CLM에 새로운 preference alignment algorithm를 도입한 것이다. ORPO의 objective function은 SFT loss와 relative ratio loss (LOR)로 구성된다. LOR항은 favored response와 disfavored response간의 likelihood를 최대화함으로써 rejected response를 반환한 모델에 패널티를 적용한다.
 
 
 # Reference
+> https://medium.com/@aipapers/reft-representation-finetuning-for-language-models-4e804753e886
+>
 > https://levelup.gitconnected.com/the-5-prompt-engineering-techniques-ai-engineers-need-to-know-a208af13d8e4
 >
 > https://towardsdatascience.com/different-ways-of-training-llms-c57885f388ed
