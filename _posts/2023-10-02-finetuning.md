@@ -101,4 +101,18 @@ GPT-3.5와 같이 LLM 유행 초기에 많이 사용된 방법이다. 이는 크
      (경사 하강법(gradient descent)을 사용하는 일반적인 학습 방식과 달리 경사 상승(gradient ascent)법을 사용한다. (reward에 대해서는 경사 하강.))<br>
    - Reinforcement Learning 기반 접근 방식으로 인해 모델의 행동이 과도하게 변형되는 것을 방지하기 위해 prediction shift penalty를 보상에 추가하여 동일한 입력 prompt에 대한 초기 모델의 예측 확률 분포에서 너무 벗어나는 답변에 대해서는 penalty를 부여한다.
 
-## 2.2.2 Direct Policy Optimization (DPO)
+### 2.2.2 Direct Policy Optimization (DPO)
+
+RLHF에는 아래와 같은 단점이 있다:
+
+1. Reward Model을 위한 학습에 자원이 필요하고, 이 자원도 Reward Model의 크기에 따라 매우 많은 자원이 요구될 수 있다.
+2. initial LM, tuned LM, reward model이 한번에 돌아가야 하기 때문에 최소 세 개의 모델을 구동시킬 대규모 컴퓨터 자원이 필요하다.
+
+위와 같은 단점을 완화하기 위해 나온 것이 DPO이다. DPO의 핵심 아이디어는 Reward Model 훈련을 건너뛰고 LLM을 직접적으로 preference data에 맞추는 것이다. Reward Model의 역할은 손실함수를 조작하여 대체한다. 자세한 수식은 "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"에서 확인 가
+
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/004d3411-f533-47c0-be08-5deaa716a8a9"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+품질 좋은 데이터를 선별하여 데이터의 양은 줄이되 학습되었으면 하는 데이터 종류의 분포를 조절하는 것이 좋다고 한다.
+
+## 2.2.3 Odds Ration Preference Optimization (ORPO)
