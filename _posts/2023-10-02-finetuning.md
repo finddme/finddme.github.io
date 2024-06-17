@@ -49,15 +49,15 @@ Tranformers 계열의 모델은 label이 없는 데이터에 대해서도 superv
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/d9babebd-88a4-4367-bc58-f6b1b1e71314"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
-> Backpropagation, Gradient Descent
+> **Backpropagation, Gradient Descent**
 >> neural network의 weight를 학습시킬 때 사용되는 알고리즘으로, 역으로(출력에서 입력 방향으로) 오류를 전파하여 가중치를 업데이트하는 방법이다. Backpropagation 과정은 간략하게 아래와 같다:<br>
->> 1. Forward Pass (순전파): Backpropagation을 위해서는 예측값이 있어야 하니까 우선 순전파로 모델의 예측값을 구한다.
->> 2. Loss 계산: loss function을 통해 예측값과 실제값 간의 오를 계산한다. (cross-entropy, perplexity loss 등을 사용)<br>
+>> 1. **Forward Pass (순전파)**: Backpropagation을 위해서는 예측값이 있어야 하니까 우선 순전파로 모델의 예측값을 구한다.
+>> 2. **Loss 계산**: loss function을 통해 예측값과 실제값 간의 오를 계산한다. (cross-entropy, perplexity loss 등을 사용)<br>
 >>                (오차함수(error function) = 손실함수(loss function) = 비용함수(cost function))
->> 3. Backward Pass (역전파): 손실함수를 통해 산출된 전체 에러값($E$)을 출력층->입력층으로 전파하며 각 layer마다의 weight가 전체 에러값 $E$에 얼마나 영향을 미쳤는지 그 기여도를 구하하고 그걸 경사하강법에 대입하여 가중치를 업데이트 한다.
->>    1) 산출된 오차값을 출력층->입력층으로 전파하여 각 layer의 weight가 전체 오차에 얼마나 영향을 주었는지 그 기여도 Chain Rule을 통해 구한다. 이 값은 해당 layer의 weight에 대한 기울기이다.
+>> 3. **Backward Pass (역전파)**: 손실함수를 통해 산출된 전체 에러값($E$)을 출력층->입력층으로 전파하며 각 layer마다의 weight가 전체 에러값 $E$에 얼마나 영향을 미쳤는지 그 기여도를 구하하고 그걸 경사하강법에 대입하여 가중치를 업데이트 한다.
+>>    1) 산출된 오차값을 출력층->입력층으로 전파하여 각 layer의 weight가 전체 오차에 얼마나 영향을 주었는지 그 기여도 Chain Rule을 통해 구한다. 이 값은 해당 layer의 weight에 대한 기울기이다.<br>
 >>    2) 가중치 업데이트 공식에 산출된 기울기와 Learning Rate를 넣어 가중치를 업데이트한다. 이때 사용되는 가중치 업데이트 공식이 경사하강법이다.<br>
->>       Learning Rate는 얼마나 빨리 학습시킬지 정하는 것인데 일반적으로 0.1보다 낮은 값으로 직접 설정한다.
+>>       Learning Rate는 얼마나 빨리 학습시킬지 정하는 것인데 일반적으로 0.1보다 낮은 값으로 직접 설정한다.<br>
 
 ## 2.1 Supervised Fine-Tuning (SFT)
 
@@ -67,22 +67,22 @@ Pre-training 과정에서는 앞서 언급한 CLM과 같이 단순히 다음 tok
 
 Fine-tuning을 더욱 효과적으로 수행하기 위해 Reinforcement Learning(강화학습) 아이디어를 SFT에 적용한 방법론들이 있다. 강화학습은 Agent가 주어진 환경에서 어떠한 행동을 취하고 그에 대한 보상을 얻으며 학습이 진행되는 방법론이다. 이를 SFT에 적용하여 LLM은 Agent, 환경은 LLM의 vocabulary에서 가능한 모든 token 조합, action space는 모델의 vocabulary, Agent의 행동은 token-prediction으로 설정한 후 학습을 진행할 수 있다. 
 
-> Reinforcement Learning(RL)
->> 주요 구성요소<br>
->> 1) Agent: 학습을 수행하는 주체. 주어진 환경 내에서 행동을 선택하고 그 결과로 보상을 받는 주체.
->> 2) Environment: Agent가 상호작용하는 세계. Agent의 행동에 대한 보상(feedback)을 제공한다.
->> 3) State: Environment의 상태
->> 4) Action(Action Space): Agent가 취할 수 있는 선택지
->> 5) Reward: Agent가 특정 행동을 취했을 때 환경으로부터 받는 feedback. 이것을 기준으로 학습이 진행된다.
->> 6) Policy: Agent가 특정 State에서 어떤 행동을 취할지 결정하는 전략
->> 7) Value Function: 특정 State에서 시작하여 장기적으로 얻을 것으로 기대되는 보상들의 누적 총합.
->> 8) Q-Function: 특정 State에서 특정 행동을 취했을 때 장기적으로 얻을 것으로 기대되는 보상들의 누적 총합.
+> **Reinforcement Learning(RL)**
+>> **주요 구성요소<br>**
+>> 1) Agent: 학습을 수행하는 주체. 주어진 환경 내에서 행동을 선택하고 그 결과로 보상을 받는 주체.<br>
+>> 2) Environment: Agent가 상호작용하는 세계. Agent의 행동에 대한 보상(feedback)을 제공한다.<br>
+>> 3) State: Environment의 상태<br>
+>> 4) Action(Action Space): Agent가 취할 수 있는 선택지<br>
+>> 5) Reward: Agent가 특정 행동을 취했을 때 환경으로부터 받는 feedback. 이것을 기준으로 학습이 진행된다.<br>
+>> 6) Policy: Agent가 특정 State에서 어떤 행동을 취할지 결정하는 전략<br>
+>> 7) Value Function: 특정 State에서 시작하여 장기적으로 얻을 것으로 기대되는 보상들의 누적 총합.<br>
+>> 8) Q-Function: 특정 State에서 특정 행동을 취했을 때 장기적으로 얻을 것으로 기대되는 보상들의 누적 총합.<br>
 >>
->> 학습과정(아래 과정을 반복하며 최적의 Policy를 얻는다.)
->> 1) 초기화: Agent를 초기화 시킨 후 Agent의 초기 Policy를 가지고 Environment와 상호작용한다.
->> 2) Action 선택: 현재 State를 기반으로 Policy에 따라 Action을 선택한다.
->> 3) Environment와의 상호작용: Agent가 선택한 행동을 실행한 후 그 결과로 새로운 State와 Reward를 받는다.
->> 4) Policy update: Agent는 받은 State와 Reward를 기반으로 더 나은 보상을 얻기 위한 Policy를 개선한다.
+>> **학습과정(아래 과정을 반복하며 최적의 Policy를 얻는다.)**
+>> 1) 초기화: Agent를 초기화 시킨 후 Agent의 초기 Policy를 가지고 Environment와 상호작용한다.<br>
+>> 2) Action 선택: 현재 State를 기반으로 Policy에 따라 Action을 선택한다.<br>
+>> 3) Environment와의 상호작용: Agent가 선택한 행동을 실행한 후 그 결과로 새로운 State와 Reward를 받는다.<br>
+>> 4) Policy update: Agent는 받은 State와 Reward를 기반으로 더 나은 보상을 얻기 위한 Policy를 개선한다.<br>
 
 
 ### 2.2.1 RLHF/PPO
