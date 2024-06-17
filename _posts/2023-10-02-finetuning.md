@@ -65,4 +65,4 @@ Pre-training 과정에서는 앞서 언급한 CLM과 같이 단순히 다음 tok
 
 ## 2.2 Fine-tuning variations : RLHF/PPO, DPO, KTO, ORPO
 
-
+Fine-tuning을 더욱 효과적으로 할 수 있는 다양한 reinforcement learning(RL) 방법들이 있다. 
