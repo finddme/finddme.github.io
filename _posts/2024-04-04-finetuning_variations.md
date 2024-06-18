@@ -71,9 +71,9 @@ RLHF에는 아래와 같은 단점이 있다:
 
 # 3. Odds Ration Preference Optimization (ORPO)
 
-ORPO는 CLM(SFT 학습)에 새로운 preference alignment algorithm를 도입하여 하나의 단계로 통합한 것이다. 통합에 주요한 역할을 하는 ORPO의 대표 특징은 아래와 같다:
+ORPO는 CLM(SFT 학습)에 새로운 preference alignment algorithm를 도입하여 하나의 단계로 통합한 것이다. 통합에 주요한 역할을 하는 ORPO의 대표 특징을 요약하 아래와 같다:
 
-  1. Preference Pairs
+  1. Preference Pairs<br>
     ORPO 학습 시, data에는 Preference Pairs가 포함되어야 한다. Preference Pairs는 주어진 입력에 대한 선호 및 비선호 예시가 구체적으로 작성된 요소이다. 
     
     - Preference Pairs example
@@ -88,12 +88,25 @@ ORPO는 CLM(SFT 학습)에 새로운 preference alignment algorithm를 도입하
       
       dispreferred output: 쭈꾸미를 잘 씻고 고추장 등 적당한 양념들을 배합하여 볶아줍니다.
       ```
-  2. Odds Ratio Calculation
-    ORPO는 주어진 입력에 대해 선호 출력과 비선호 출력을 생성할 확률 간의 승산비를 계산한다.
-  3. 
+  2. Odds Ratio Calculation(승산비)<br>
+    ORPO는 주어진 입력에 대해 선호 출력과 비선호 출력을 생성할 확률 간의 승산비를 계산한다. 승산비는 모델의 출력에서 선호 / 비선호 답변 반환률을 정량화한다. 따라서 승산비가 높으면 선호 답변 출력 가능성이 높은 모델이고, 승산비가 낮으면 비선호 답변 출력 가능성이 높은 것이다.
+  3. Model Update
+     모델은 계산된 승산비를 기반으로 weight 업데이트를 진행한다. 모델이 비선호 출력을 많이 반환하면 선호 출력을 생성하도록 조정된다. 이와 같은 방식으로 ORPO는 모델의 의사 결정 과정을 지속적으로 통제 및 조정하여 preference pairs를 통해 입력 받은 인간의 선호도에 맞는 텍스트를 생성하도록 유도된다.
 
 
+## 3.1 Benefits of ORPO
 
+- Efficiency<br>
+  SFT와 preference alignment 개념을 간단하게 결합하여 SFT 수행 이후 별도의 preference alignment 과정을 거칠 필요가 없어 학습 시간과 계산량을 줄어들었다.
+
+- Improved Alignment<br>
+  preference pairs를 통해 fine-tuning을 진행하면서 인간의 선호도를 학습하기 때문에 반환된 답변과 선호도 간의 align이 더 잘 된다.
+
+- Reduced Bias<br>
+  preference pairs는 데이터 내에 존재하는 bias를 완화하는데 도움을 준다. preference pairs 구축에는 인간이 개입되기 때문에 모델이 편향된 텍스트를 생성하기보다는 더욱 객관적이고 윤리적인 답변을 반환하는 것에 도움을 줄 수 있다.
+
+- Flexibility<br>
+  ORPO는 preference pairs를 생성할 수 있다는 조건만 충족된다면 매우 다양한 도메인에 간단히 적용될 수 있다.
 
 ORPO의 objective function은 SFT loss와 relative ratio loss (LOR)로 구성된다. LOR항은 favored response와 disfavored response간의 likelihood를 최대화함으로써 rejected response를 반환한 모델에 패널티를 적용한다.
 
