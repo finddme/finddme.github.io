@@ -71,20 +71,27 @@ RLHF에는 아래와 같은 단점이 있다:
 
 # 3. Odds Ration Preference Optimization (ORPO)
 
-ORPO는 CLM(SFT 학습)에 새로운 preference alignment algorithm를 도입하여 하나의 단계로 통합한 것이다. ORPO 학습 시, data에는 Preference Pairs가 포함되어야 한다. Preference Pairs는 주어진 입력에 대한 선호 및 비선호 예시가 구체적으로 작성된 요소이다. 
+ORPO는 CLM(SFT 학습)에 새로운 preference alignment algorithm를 도입하여 하나의 단계로 통합한 것이다. 통합에 주요한 역할을 하는 ORPO의 대표 특징은 아래와 같다:
 
-- Preference Pairs example
-  ```
-  input: 쭈꾸미 볶음 레시피 알려줘.
-  
-  preferred output: 쭈꾸미 볶음은 매콤하고 달콤한 양념이 매력적인 한국 인기 요리입니다.
-                    재료는 쭈꾸미 500g을 기준으로 양파 1개, 대파 1개, ...(중략)..., 양념장 재료로는 고추장 3큰술, 설탕 2큰술, ...(중략).
-                    + 준비 및 요리 과정 상세 설명
-                    + 요리 팁
-                    맛있는 쭈꾸미 볶음 즐기시기 바랍니다!
-  
-  dispreferred output: 쭈꾸미를 잘 씻고 고추장 등 적당한 양념들을 배합하여 볶아줍니다.
-  ```
+  1. Preference Pairs
+    ORPO 학습 시, data에는 Preference Pairs가 포함되어야 한다. Preference Pairs는 주어진 입력에 대한 선호 및 비선호 예시가 구체적으로 작성된 요소이다. 
+    
+    - Preference Pairs example
+      ```
+      input: 쭈꾸미 볶음 레시피 알려줘.
+      
+      preferred output: 쭈꾸미 볶음은 매콤하고 달콤한 양념이 매력적인 한국 인기 요리입니다.
+                        재료는 쭈꾸미 500g을 기준으로 양파 1개, 대파 1개, ...(중략)..., 양념장 재료로는 고추장 3큰술, 설탕 2큰술, ...(중략).
+                        + 준비 및 요리 과정 상세 설명
+                        + 요리 팁
+                        맛있는 쭈꾸미 볶음 즐기시기 바랍니다!
+      
+      dispreferred output: 쭈꾸미를 잘 씻고 고추장 등 적당한 양념들을 배합하여 볶아줍니다.
+      ```
+  2. Odds Ratio Calculation
+    ORPO는 주어진 입력에 대해 선호 출력과 비선호 출력을 생성할 확률 간의 승산비를 계산한다.
+  3. 
+
 
 
 
