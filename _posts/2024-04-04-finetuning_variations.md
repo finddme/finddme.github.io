@@ -58,19 +58,33 @@ GPT-3.5와 같이 LLM 유행 초기에 많이 사용된 방법이다. 이는 크
 
 # 2. Direct Policy Optimization (DPO)
 
-DPO는 RLHF의 대안으로 제안된 방법론이다. DPO는 Reward Model이 필요하지 않기 때문에 
+DPO는 RLHF의 대안으로 제안된 방법론이다. DPO는 RLHF와 동일하게 모델을 인간의 선호에 맞게 조정하는 것을 목적으로 한다. 그러나 DPO는 Reward Model이 필요하지 않기 때문에 RLHF보다 비용 측면에서 효율적이다.
 
 RLHF에는 아래와 같은 단점이 있다:
 
 1. Reward Model을 위한 학습에 자원이 필요하고, 이 자원도 Reward Model의 크기에 따라 매우 많은 자원이 요구될 수 있다.
 2. initial LM, tuned LM, reward model이 한번에 돌아가야 하기 때문에 최소 세 개의 모델을 구동시킬 대규모 컴퓨터 자원이 필요하다.
 
-위와 같은 단점을 완화하기 위해 나온 것이 DPO이다. DPO의 핵심 아이디어는 Reward Model 훈련을 건너뛰고 LLM을 직접적으로 preference data에 맞추는 것이다. Reward Model의 역할은 손실함수를 조작하여 대체한다. 자세한 수식은 "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"에서 확인 가
+위와 같은 단점을 완화하기 위해 나온 것이 DPO이다. DPO의 핵심 아이디어는 Reward Model 훈련을 건너뛰고 LLM을 직접적으로 preference data에 맞추는 것이다. Reward Model의 역할은 손실함수를 조작하여 대체한다. 자세한 수식은 "Direct Preference Optimization: Your Language Model is Secretly a Reward Model"에서 확인 가능하다.
 
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/004d3411-f533-47c0-be08-5deaa716a8a9"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 품질 좋은 데이터를 선별하여 데이터의 양은 줄이되 학습되었으면 하는 데이터 종류의 분포를 조절하는 것이 좋다고 한다.
+
+## 2.1 Preference Dataset
+
+DPO data는 pormpt(instruction), preferred response 그리고 dispreferred response가 기본적으로 포함되어야 한다. 
+
+DPO data의 형식은 아래와 같다:
+
+```json
+{"instruction":instruction, "context": context, "response":response, "category": category, "rejected", rejected}
+```
+
+## 2.2 DPO Fine-tuning
+
+DPO에서는 따로 강화학습을 진행하지 않는다. 
 
 
 # 3. Odds Ration Preference Optimization (ORPO)
