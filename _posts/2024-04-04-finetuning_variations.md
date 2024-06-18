@@ -19,7 +19,7 @@ tag: NLP
 
 
 
-Fine-tuning을 더욱 효과적으로 수행하기 위해 Reinforcement Learning(강화학습) 아이디어를 SFT에 적용한 방법론들이 있다. 강화학습은 Agent가 주어진 환경에서 어떠한 행동을 취하고 그에 대한 보상을 얻으며 학습이 진행되는 방법론이다. 이를 SFT에 적용하여 LLM은 Agent, 환경은 LLM의 vocabulary에서 가능한 모든 token 조합, action space는 모델의 vocabulary, Agent의 행동은 token-prediction으로 설정한 후 학습을 진행할 수 있다. 
+SFT는 학습 데이터와 일치하는 텍스트 생성 가능성 극대화에 집중하여 인간의 선호도에 반하는 답변을 반환할 확률이 비교적 높다는 한계점이 있다. 이와 같은 한계를 완화하고 Fine-tuning을 더욱 효과적으로 수행하기 위해 Reinforcement Learning(강화학습) 아이디어를 SFT에 적용한 방법론들이 있다. 강화학습은 Agent가 주어진 환경에서 어떠한 행동을 취하고 그에 대한 보상을 얻으며 학습이 진행되는 방법론이다. 이를 SFT에 적용하여 LLM은 Agent, 환경은 LLM의 vocabulary에서 가능한 모든 token 조합, action space는 모델의 vocabulary, Agent의 행동은 token-prediction으로 설정한 후 학습을 진행할 수 있다. 
 
 > **Reinforcement Learning(RL)**
 >> **주요 구성요소<br>**
@@ -71,7 +71,24 @@ RLHF에는 아래와 같은 단점이 있다:
 
 # 3. Odds Ration Preference Optimization (ORPO)
 
-ORPO는 CLM에 새로운 preference alignment algorithm를 도입한 것이다. ORPO의 objective function은 SFT loss와 relative ratio loss (LOR)로 구성된다. LOR항은 favored response와 disfavored response간의 likelihood를 최대화함으로써 rejected response를 반환한 모델에 패널티를 적용한다.
+ORPO는 CLM(SFT 학습)에 새로운 preference alignment algorithm를 도입하여 하나의 단계로 통합한 것이다. ORPO 학습 시, data에는 Preference Pairs가 포함되어야 한다. Preference Pairs는 주어진 입력에 대한 선호 및 비선호 예시가 구체적으로 작성된 요소이다. 
+
+- Preference Pairs example
+  ```
+  input: 쭈꾸미 볶음 레시피 알려줘.
+  
+  preferred output: 쭈꾸미 볶음은 매콤하고 달콤한 양념이 매력적인 한국 인기 요리입니다.
+                    재료는 쭈꾸미 500g을 기준으로 양파 1개, 대파 1개, ...(중략)..., 양념장 재료로는 고추장 3큰술, 설탕 2큰술, ...(중략).
+                    + 준비 및 요리 과정 상세 설명
+                    + 요리 팁
+                    맛있는 쭈꾸미 볶음 즐기시기 바랍니다!
+  
+  dispreferred output: 쭈꾸미를 잘 씻고 고추장 등 적당한 양념들을 배합하여 볶아줍니다.
+  ```
+
+
+
+ORPO의 objective function은 SFT loss와 relative ratio loss (LOR)로 구성된다. LOR항은 favored response와 disfavored response간의 likelihood를 최대화함으로써 rejected response를 반환한 모델에 패널티를 적용한다.
 
 
 # Reference
