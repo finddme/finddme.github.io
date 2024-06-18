@@ -71,6 +71,9 @@ RLHF에는 아래와 같은 단점이 있다:
 
 # 3. Odds Ration Preference Optimization (ORPO)
 
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/bff933cc-4d07-4b47-bfeb-fd8bbbfbe027"></center>
+<center><em style="color:gray;">ORPO: Monolithic Preference Optimization without Reference Model</em></center><br>
+
 Instruction tuning(SFT)과 preference alignment는 최근 LLM tuning 시 많이 사용되는 방법이다. 이는 일반적으로 아래와 같이 두 단계를 통해 수행된다:
 
   1 단계. Supervised Fine-Tuning (SFT) : 일단 instruction dataset에 대한 tuning을 수행한다.
