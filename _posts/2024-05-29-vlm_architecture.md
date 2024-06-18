@@ -1,5 +1,5 @@
 ---
-title: "Vision Language Model : Architecture / Fusion Methods"
+title: "VLM : Architecture / Fusion Methods"
 category: LLM / Multimodal
 tag: Multimodal
 ---
