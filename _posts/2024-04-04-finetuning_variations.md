@@ -81,31 +81,42 @@ Instruction tuning(SFT)과 preference alignment는 최근 LLM tuning 시 많이 
 
 SFT가 학습 데이터와 일치하는 텍스트 생성 가능성 극대화에 집중하여 학습이 진행되기 때문에 특정 domain 혹은 task에 대해서는 효과적으로 tuning되지만 인간이 선호하지 않는 답변 반환률이 비교적 높다는 문제점이 있다. 이에 따라 preference alignment단계에서는 선호되는 답변과 그렇지 않는 답변 사이의 확률 격차를 확실히 넓혀야 하는 것이 핵심 과제가 된다.
 
-ORPO는 SFT와 preference alignment algorithm를 single process로 결합하였다. ORPO가 두 단계를 결합할 수 있던 요인에는 CLM 목표 수정에 있. ORPO는 CLM의 목표를 수정하여 negative log-likelihood(NLL) loss와 odds ratio (OR)를 결합하였다. 이것을 OR loss라고 부르는데 이는 rejected response에 대해서는 약한 패널티를 주고, preferred response에 대해서는 강한 보상을 주어 모델이 학습 과정에서 자연스럽게 인간의 선호도도 학습할 수 있도록 한다. ORPO의 대표 특징을 요약하면 아래와 같다:
+ORPO는 SFT와 preference alignment algorithm를 single process로 결합하였다. ORPO가 두 단계를 결합할 수 있던 요인에는 목표 함수 수정에 있다. ORPO는 CLM의 목표 함수를 수정하여 negative log-likelihood(NLL) loss와 odds ratio (OR)를 결합하였다. 이것을 OR loss라고 부르는데 이는 rejected response에 대해서는 약한 패널티를 주고, preferred response에 대해서는 강한 보상을 주어 모델이 학습 과정에서 자연스럽게 인간의 선호도도 학습할 수 있도록 한다.
 
-  1. Preference Pairs<br>
-    ORPO 학습 시, data에는 Preference Pairs가 포함되어야 한다. Preference Pairs는 주어진 입력에 대한 선호 및 비선호 예시가 구체적으로 작성된 요소이다. 
+## 3.1 Preference Pairs
+
+  ORPO 학습 시, data에는 Preference Pairs가 포함되어야 한다. Preference Pairs는 주어진 입력에 대한 선호 및 비선호 예시가 구체적으로 작성된 요소이다. 
+  
+  - Preference Pairs example
     
-    - Preference Pairs example
-      ```
-      input: 쭈꾸미 볶음 레시피 알려줘.
+    ```
+    input: 쭈꾸미 볶음 레시피 알려줘.
+    
+    preferred output: 쭈꾸미 볶음은 매콤하고 달콤한 양념이 매력적인 한국 인기 요리입니다.
+                      재료는 쭈꾸미 500g을 기준으로 양파 1개, 대파 1개, ...(중략)..., 양념장 재료로는 고추장 3큰술, 설탕 2큰술, ...(중략).
+                      + 준비 및 요리 과정 상세 설명
+                      + 요리 팁
+                      맛있는 쭈꾸미 볶음 즐기시기 바랍니다!
+    
+    dispreferred output: 쭈꾸미를 잘 씻고 고추장 등 적당한 양념들을 배합하여 볶아줍니다.
+    ```
       
-      preferred output: 쭈꾸미 볶음은 매콤하고 달콤한 양념이 매력적인 한국 인기 요리입니다.
-                        재료는 쭈꾸미 500g을 기준으로 양파 1개, 대파 1개, ...(중략)..., 양념장 재료로는 고추장 3큰술, 설탕 2큰술, ...(중략).
-                        + 준비 및 요리 과정 상세 설명
-                        + 요리 팁
-                        맛있는 쭈꾸미 볶음 즐기시기 바랍니다!
-      
-      dispreferred output: 쭈꾸미를 잘 씻고 고추장 등 적당한 양념들을 배합하여 볶아줍니다.
-      ```
-      
-  2. Odds Ratio Calculation(승산비)<br>
-    ORPO는 주어진 입력에 대해 선호 출력과 비선호 출력을 생성할 확률 간의 승산비를 계산한다. 승산비는 모델의 출력에서 선호 / 비선호 답변 반환률을 정량화한다. 따라서 승산비가 높으면 선호 답변 출력 가능성이 높은 모델이고, 승산비가 낮으면 비선호 답변 출력 가능성이 높은 것이다.
-  3. Model Update
-     모델은 계산된 승산비를 기반으로 weight 업데이트를 진행한다. 모델이 비선호 출력을 많이 반환하면 선호 출력을 생성하도록 조정된다. 이와 같은 방식으로 ORPO는 모델의 의사 결정 과정을 지속적으로 통제 및 조정하여 preference pairs를 통해 입력 받은 인간의 선호도에 맞는 텍스트를 생성하도록 유도된다.
+## 3.2 Odds Ratio Calculation(승산비)
+  ORPO는 주어진 입력에 대해 선호 출력과 비선호 출력을 생성할 확률 간의 odds ratio를 계산한다. odds ratio는 모델의 출력에서 선호 / 비선호 답변 반환률을 정량화한다. 
+
+아래 식에서 $\mathcal{L}OR$는 preferred response와 dispreferred response 간의 odds ratio이다. odds ratio는 한 사건이 다른 사건의 존재 하에 발생할 확률을 나타낸다. 즉, LLM에 대한 입력 시퀀스 $x$가 주어졌을 때 모델이 $yw$ preferred response 혹은 $yl$ dispreferred response을 선택할 확률을 나타낸다. 아래 식을 보면 $yw$에 대한 확률이 높을수록 odds ratio가 높아진다. 
+
+따라서 odds ratio가 높으면 선호 답변 출력 가능성이 높은 모델이고, odds ratio가 낮으면 비선호 답변 출력 가능성이 높은 것이다.
+
+<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/dc5c150c-f3a6-4260-a9a3-15a9cf805ba8"></center>
+<center><em style="color:gray;">ORPO: Monolithic Preference Optimization without Reference Model</em></center><br>
 
 
-## 3.1 Benefits of ORPO
+## 3.3 Model Update
+   모델은 계산된 승산비를 기반으로 weight 업데이트를 진행한다. 모델이 비선호 출력을 많이 반환하면 선호 출력을 생성하도록 조정된다. 이와 같은 방식으로 ORPO는 모델의 의사 결정 과정을 지속적으로 통제 및 조정하여 preference pairs를 통해 입력 받은 인간의 선호도에 맞는 텍스트를 생성하도록 유도된다.
+
+
+## 3.4 Benefits of ORPO
 
 - Efficiency<br>
   SFT와 preference alignment 개념을 간단하게 결합하여 SFT 수행 이후 별도의 preference alignment 과정을 거칠 필요가 없어 학습 시간과 계산 자원이 줄어들었다.
