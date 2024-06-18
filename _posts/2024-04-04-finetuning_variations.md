@@ -101,7 +101,7 @@ ORPO는 SFT와 preference alignment algorithm를 single process로 결합하였�
     dispreferred output: 쭈꾸미를 잘 씻고 고추장 등 적당한 양념들을 배합하여 볶아줍니다.
     ```
       
-## 3.2 Odds Ratio Calculation(승산비)
+## 3.2 Odds Ratio Calculation
   ORPO는 주어진 입력에 대해 선호 출력과 비선호 출력을 생성할 확률 간의 odds ratio를 계산한다. odds ratio는 모델의 출력에서 선호 / 비선호 답변 반환률을 정량화한다. 
 
 아래 식에서 $\mathcal{L}OR$는 preferred response와 dispreferred response 간의 odds ratio이다. odds ratio는 한 사건이 다른 사건의 존재 하에 발생할 확률을 나타낸다. 즉, LLM에 대한 입력 시퀀스 $x$가 주어졌을 때 모델이 $yw$ preferred response 혹은 $yl$ dispreferred response을 선택할 확률을 나타낸다. 아래 식을 보면 $yw$에 대한 확률이 높을수록 odds ratio가 높아진다. 
