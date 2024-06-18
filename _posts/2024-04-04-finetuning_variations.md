@@ -95,6 +95,7 @@ ORPO는 SFT와 preference alignment algorithm를 single process로 결합하였�
       
       dispreferred output: 쭈꾸미를 잘 씻고 고추장 등 적당한 양념들을 배합하여 볶아줍니다.
       ```
+      
   2. Odds Ratio Calculation(승산비)<br>
     ORPO는 주어진 입력에 대해 선호 출력과 비선호 출력을 생성할 확률 간의 승산비를 계산한다. 승산비는 모델의 출력에서 선호 / 비선호 답변 반환률을 정량화한다. 따라서 승산비가 높으면 선호 답변 출력 가능성이 높은 모델이고, 승산비가 낮으면 비선호 답변 출력 가능성이 높은 것이다.
   3. Model Update
