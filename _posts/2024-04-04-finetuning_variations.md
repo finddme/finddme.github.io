@@ -90,6 +90,9 @@ DPO data의 형식은 아래와 같다:
 4. preferred response score의 확률이 rejected response score보다 높은 경우 모델은 보상을 받는다.
 5. 학습이 이루어지는 모델의 점수가 frozen 모델의 점수와 가까울 수록 모델은 보상을 받는다. 이는 DPO 학습 중 pre-trained model이 지닌 지식에서 벗어나 fine-tuning data에 과적합되는 것을 방지하기 위한 장치이다.
 
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/d2319a65-95b8-4bbb-aa52-a3cc99e41a04"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
 ### 2.2.1 DPO loss equation 요약
 
 \begin{matrix}
