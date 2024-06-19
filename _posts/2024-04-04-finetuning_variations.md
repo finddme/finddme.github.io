@@ -1,5 +1,5 @@
 ---
-title: "Fine-tuning variations : RLHF/PPO, DPO, ORPO (작성 중)"
+title: "Fine-tuning variations : RLHF/PPO, DPO, ORPO"
 category: LLM / Multimodal
 tag: NLP
 ---
