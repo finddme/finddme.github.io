@@ -32,7 +32,7 @@ SFT는 학습 데이터와 일치하는 텍스트 생성 가능성 극대화에 
 >> 7) Value Function: 특정 State에서 시작하여 장기적으로 얻을 것으로 기대되는 보상들의 누적 총합.<br>
 >> 8) Q-Function: 특정 State에서 특정 행동을 취했을 때 장기적으로 얻을 것으로 기대되는 보상들의 누적 총합.<br>
 >>
->> **학습과정(아래 과정을 반복하며 최적의 Policy를 얻는다.)**
+>> **학습과정(아래 과정을 반복하며 최적의 Policy를 얻는다.)<br>**
 >> 1) 초기화: Agent를 초기화 시킨 후 Agent의 초기 Policy를 가지고 Environment와 상호작용한다.<br>
 >> 2) Action 선택: 현재 State를 기반으로 Policy에 따라 Action을 선택한다.<br>
 >> 3) Environment와의 상호작용: Agent가 선택한 행동을 실행한 후 그 결과로 새로운 State와 Reward를 받는다.<br>
@@ -48,7 +48,7 @@ GPT-3.5와 같이 LLM 유행 초기에 많이 사용된 방법이다. 이는 크
    - human labeler에게 추론 결과에 대한 점수/순위를 매기게 한다.(“Anthropic/hh-rlhf”와 같이 honesty와 harmlessness를 검증하는 open-sourced preference ranking dataset도 있다.)<br>
    - 매겨진 점수의 normalization 과정을 거친 후 이것을 single sample-reward pair로 만들어 reward model을 학습시킨다. <br>
 
-2. Step 2.
+2. Step 2. SFT
    - Reward Model을 진짜로 구축하고자 하는 모델 학습에 사용한다.<br>
    - Tuning할 모델에 prompt dataset을을 넣어 모델의 추론 결과를 생성하고 이걸 Reward Model에 입력해서 Reward를 도출시킨다.<br>
    - Proximal Policy Optimization (PPO)라는 policy기반의 RL algorithm을 통해 모델의 가중치를 점진적으로 조정하며 모델의 응답에 할당된 reward를 최대화시킨다.<br>
@@ -84,7 +84,31 @@ DPO data의 형식은 아래와 같다:
 
 ## 2.2 DPO Fine-tuning
 
-DPO에서는 따로 강화학습을 진행하지 않는다. 
+1. DPO에서는 따로 강화학습을 진행하지 않는다. DPO를 활용한 fine-tuning 과정에서는 우선 모델의 사본이 생성된다.
+2. 생성된 사본의 parameter는 frozen 시킨다.
+3. 각 datapoint에 대해 preferred response, rejected response가 두 모델에 모두 입력되어 각각 점수가 매겨진다. 
+4. preferred response score의 확률이 rejected response score보다 높은 경우 모델은 보상을 받는다.
+5. 학습이 이루어지는 모델의 점수가 frozen 모델의 점수와 가까울 수록 모델은 보상을 받는다. 이는 DPO 학습 중 pre-trained model이 지닌 지식에서 벗어나 fine-tuning data에 과적합되는 것을 방지하기 위한 장치이다.
+
+### 2.2.1 DPO loss equation 요약
+
+\begin{matrix}
+Loss= Winner(W)-Loser(L)\\
+\downarrow \text{minimizing} \downarrow \\ 
+Loss = - \{Winner(W)-Loser(L)\}
+\end{matrix}
+
+- $\pi_\theta$ : parameter update가 이루어지는 model, 즉 학습되고 있는 model
+- $\pi_{ref}$ : forzen model
+- $y_w$ : preferred response score
+- $y_l$ : rejected response score
+  
+$\pi_\theta$와 $\pi_{ref}$에 대한 preferred response, rejected response에 대한 각 token별 예측 확률(정답 token을 예측할 확률)의 곱을 각각 구하여 $\pi_\theta$와 $\pi_{ref}$ 간의 비율을 구한다. 이때 prompt에 해당하는 token들은 점수에 반영되지 않는다. 산출된 비율은 아래 수식에서 확인할 수 있듯 loss 산출에 사용되고, 이 loss는 gradient descent update과정에서 model weight를 update하는데에 사용된다. 수식에서 $\beta$는 hyperparameter로, 논문 저자는 0.1로 지정하였고, $\sigma$ sigmoid(logistic) 함수이다.
+
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/c2e32166-11a4-442c-a446-a80e0cf59d0a"></center>
+<center><em style="color:gray;">Cross-entropy loss function used in DPO pipeline(https://medium.com/@pakhapoomsarapat/forget-rlhf-because-dpo-is-what-you-actually-need-f10ce82c9b95)</em></center><br>
+
+DPO 논문에서는 classification loss를 활용하여 Reinforcement Learning(RL)를 대체하는 방법을 제안한다. loss는 모델이 어떠한 데이터에 대하여 잘 학습되고 있는지 측정하는 지표로, 모델은 loss를 최소화 하는 방향으로 학습을 진행한다. DPO data에는 preferred response, rejected response가 포함되어 있는데, 이 두 답변에 대한 점수를 구한 후 
 
 
 # 3. Odds Ration Preference Optimization (ORPO)
