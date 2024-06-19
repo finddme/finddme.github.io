@@ -27,7 +27,7 @@ Decoder architecture는 최근 각광 받고 있는 LLM의 backbone으로 사용
 
 # [Transformers 요약](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/)
 
-관련 포스트: [Transformer | Attention Is All You Need](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/)
+관련 포스트: [Transformer \| Attention Is All You Need](https://finddme.github.io/natural%20language%20processing/2022/11/30/LMsummary/)
 
 Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다. 
 
