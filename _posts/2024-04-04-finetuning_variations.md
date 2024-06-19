@@ -97,9 +97,13 @@ DPO data의 형식은 아래와 같다:
 
 \begin{matrix}
 Loss= Winner(W)-Loser(L)
-\\
+\end{matrix}
+
+\begin{matrix}
 \downarrow \text{minimizing} \downarrow 
-\\ 
+\end{matrix}
+
+\begin{matrix}
 Loss = - \{Winner(W)-Loser(L)\}
 \end{matrix}
 
