@@ -105,6 +105,9 @@ Tranformers 계열의 모델은 label이 없는 데이터에 대해서도 superv
 
 - BLEU Score : 번역 과제 평가에 많이 사용된다. 번역된 텍스트와 target 텍스트 간의 n-gram 일치를 측정한다. 
 
+- Perplexity : 언어 모델의 예측 성능을 평가하는 지표로, 낮을수록 모델의 예측이 정확함을 의미한다.
+  - $PPL = e^{-\frac{1}{N} \sum_{i=1}^{N} \log p(w_i)}$
+  - 언어 모델의 생성 품질이나 자연스러운 언어생성 평가는 어렵다.
 
 # 3. Supervised Fine-Tuning (SFT)
 
