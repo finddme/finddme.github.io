@@ -38,7 +38,10 @@ labeled data는 un-labelled data에 비해 수집에 많은 비용이 들고, �
 1. Quality-related pre-processing(데이터 품질 관련 전처리)
   - 형식 구조화, 중복 제거, 개인정보 제거 
 2. Basic pre-processing in NLP (기본적인 자연어 전처리)
-  - tokenisation, embedding, chunking
+  - normalization: 문장 내 과도한 공백 혹은 과도한 emoji 등(노이즈)을 제거
+  - tokenization: text를 token으로 변환 
+  - embedding: token을 모델이 처리할 수 있는 embedding 값으로 변환
+  - chunking, splitting ...
 
 # 2. Training
 
@@ -58,6 +61,50 @@ Tranformers 계열의 모델은 label이 없는 데이터에 대해서도 superv
 >>    1) 산출된 오차값을 출력층->입력층으로 전파하여 각 layer의 weight가 전체 오차에 얼마나 영향을 주었는지 그 기여도 Chain Rule을 통해 구한다. 이 값은 해당 layer의 weight에 대한 기울기이다.<br>
 >>    2) 가중치 업데이트 공식에 산출된 기울기와 Learning Rate를 넣어 가중치를 업데이트한다. 이때 사용되는 가중치 업데이트 공식이 경사하강법이다.<br>
 >>       Learning Rate는 얼마나 빨리 학습시킬지 정하는 것인데 일반적으로 0.1보다 낮은 값으로 직접 설정한다.<br>
+
+## 2.1 Training Strategies
+
+- Supervised Fine-tuning : labeled data로 모델 학습
+- Unsupervised Fine-tuning : un-labled data로 모델 학습
+- Transfer Learning : pre-trained model을 freeze 시키고 마지막 layer만 pre-trained model이 학습한 task와 동일한 task에 대해 다른 데이터로 학습시키는 것.<br>
+                      (Fine-tuning은 pre-trained model을 가져와서 model parameter 전체를 작은 Learning Rate로 학습시킴)
+
+## 2.2 Hyperparameter
+
+- Learning Rate : 학습 시 weight update 속도를 결정하는 값으로, 매 iteration마다 weight가 얼마나 크게 조정될지를 결정하는 요소이다. 예를 들어 Learning Rate가 0.01이라면, 매 iteration마다 weight가 변화하는 양은 0.01배로 조정다.
+  - Learning Rate 값이 작을 때는 모델이 천천히 학습한다. 수렴하는 데 시간이 오래 걸리지만, 최적의 값을 찾을 가능성이 높다.
+  - Learning Rate 값이 클 때는 모델이 빠르게 학습한다. 하지만 너무 크면 최적의 값을 지나쳐 버리거나 학습이 불안정해질 수 있다.
+
+- Batch Size : 모델이 학습할 때 한 번에 처리하는 데이터 샘플의 개수이다.
+  - Batch Size가 작으면 한 번에 적은 양의 데이터를 처리한다. 메모리 사용량은 적지만 느리게 학습될 가능성이 높다.
+  - Batch Size가 크면 한 번에 많은 데이터를 처리한다. 학습이 빠를 수 있지만 메모리 사용이 많다는 문제가 있다.
+
+- Epochs : 모델이 전체 데이터셋을 보는 횟수이다.
+  
+- Warm-up Steps : 훈련 초기에 Learning Rate 점진적으로 증가시켜 안정성을 높이는 요소이다.
+
+## 2.3 Regularization Techniques
+
+모델 학습 시 overfitting(과적합) 방지를 위해 몇 가지 정규화 기법이 사용된다.
+
+- Dropout : 학습 시 일 neuron을 랜덤하게 비활성화하는 기법. 이를 통해 특정 뉴런에 모델이 너무 의존하지 않도록 할 수 있고, 다양한 neuron 조합을 학습하게 되어 모델의 일반화 능력을 향상시킬 수 있다.
+  예를 들어 Dropout 비율이 0.5라면, 학습 중 각 학습 단계마다 neuron의 절반을 무작위로 비활성화한다.
+
+- Weight Decay : weight에 작은 패널티를 부과하여 weight 값이 너무 커지지 않도록 하는 방법이다. 예를 들어 Weight Decay 값이 0.01이라면, 가중치 업데이트 시 가중치 값의 1%가 패널티로 추가된다. 
+
+- Early Stopping : validation set에서 성능 개선, 즉 loss 가 더이상 떨어지지 않을 때 학습을 중단시킨다.
+
+## 2.4 Evaluation Metrics
+
+- Accuracy : 전체 예측 중에서 맞게 예측한 비율을 나타내는 지표
+  - $\text{Accuracy} = \frac{\text{맞게 예측한 샘플 수}}{\text{전체 샘플 수}}$
+  - 분류 문제에서 자주 사용된다. 하지만 class 불균형이 있는 경우 성능을 제대로 반영하지 못한다는 한계점이 있다.
+
+- F1 Score : precision과 recall의 조화 평균으로, Precision과 Recall의 균형을 잡아주기 때문에 불균형 데이터셋 평가에 유용하다.
+  - $\text{F1 Score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}$
+
+- BLEU Score : 번역 과제 평가에 많이 사용된다. 번역된 텍스트와 target 텍스트 간의 n-gram 일치를 측정한다. 
+
 
 # 3. Supervised Fine-Tuning (SFT)
 
