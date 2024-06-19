@@ -96,8 +96,10 @@ DPO data의 형식은 아래와 같다:
 ### 2.2.1 DPO loss equation 요약
 
 \begin{matrix}
-Loss= Winner(W)-Loser(L)\\
-\downarrow \text{minimizing} \downarrow \\ 
+Loss= Winner(W)-Loser(L)
+\\
+\downarrow \text{minimizing} \downarrow 
+\\ 
 Loss = - \{Winner(W)-Loser(L)\}
 \end{matrix}
 
