@@ -33,6 +33,8 @@ Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large L
 
 # LLAVA
 
+관련 포스트 : [LLaVA : Visual Instruction Tuning](https://finddme.github.io/llm%20/%20multimodal/2024/05/11/llava/)
+
 # GPT4V
 
 # Gemini
