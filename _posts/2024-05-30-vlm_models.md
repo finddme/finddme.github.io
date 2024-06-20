@@ -1,5 +1,5 @@
 ---
-title: "VLM : Models"
+title: "VLM : Models (작성 중)"
 category: LLM / Multimodal
 tag: Multimodal
 ---
