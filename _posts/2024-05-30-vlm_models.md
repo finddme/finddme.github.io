@@ -31,6 +31,8 @@ tag: Multimodal
 
 [https://huggingface.co/blog/idefics2](https://huggingface.co/blog/idefics2)
 
+[Fine-tune-IDEFICS-Vision-Language-Model](https://github.com/NSTiwari/Fine-tune-IDEFICS-Vision-Language-Model?tab=readme-ov-file)
+
 8B모델로, Idefics1보다 OCR 성능이 향상되었고, VAQ benchmark에서 공개 당시 최고 성능을 기록했다. 
 
 학습데이터는 webdocuments (Wikipedia,OBELICS), image-caption pairs (Public Multimodal Dataset, LAION-COCO), OCR data (PDFA (en), IDL and Rendered-text, image-to-code data (WebSight)) 등을 혼합하여 사용했다. 
