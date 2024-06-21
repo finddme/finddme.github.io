@@ -1,5 +1,5 @@
 ---
-title: "VLM : Models (작성 중)"
+title: "VLM : Models Summary(unfinished post)"
 category: LLM / Multimodal
 tag: Multimodal
 ---
@@ -33,7 +33,6 @@ Gemini는 Google에서 공개한 multi-modal large language model로, 모델 사
 
 버전에 상관 없이 해당 모델은 vision과 language 뿐만 아니라 audio와 video도 처리할 수 있다. 
  
-# CLIP
 
 # BLIP-2
 
@@ -46,4 +45,10 @@ BLIP에서는 lightweight Querying Transformer(Q-Former)로 vision과 language m
 
 BLIP-2는 기존의 모델들보다 적은 trainable parameter로 다양한 vision-language task에 대해 좋은 성능을 보인다는 점에서 주목 받았다.
 
-# CoCa
+# CLIP
+
+Contrastive Language-Image Pre-training(CLIP)
+
+웹 페이지에서 크롤링한 약 4억 개의 image-text pair dataset을 학습한 모델. 
+
+두 modality encoder 간의 연결이 dot product로만 되어 있어 복잡한 task 수행에는 최근 나오는 모델들에 비해 추론 품질이 좋지는 않다고 한다. 
