@@ -23,11 +23,16 @@ tag: Multimodal
 
 # CLIP
 
-# BLIP2
+# BLIP-2
 
 Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models(BLIP)
 
+BLIP에서는 lightweight Querying Transformer(Q-Former)로 vision과 language modality를 연결한다. Q-Former는 아래와 같이 두 단계의 사전 학습 과정을 거치는데, 이를 통해 vision-language alignment를 모델에 효과적으로 학습시켜 high-quality text output 생성을 가능하도록 한다.  
 
+1. frozen image encoder로부터 visual feature를 추출하여 vision-language representation 학습
+2. frozen language model과 연결하여 vision-to-language 생성 학습
+
+BLIP-2는 기존의 모델들보다 적은 trainable parameter로 다양한 vision-language task에 대해 좋은 성능을 보인다는 점에서 주목 받았다.
 
 # CoCa
 
