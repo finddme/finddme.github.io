@@ -22,6 +22,9 @@ tag: Multimodal
 
 
 
+# OpenVLM Leaderboard
+
+[https://huggingface.co/spaces/opencompass/open_vlm_leaderboard](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)
 
 # LLAVA
 
@@ -36,6 +39,8 @@ tag: Multimodal
 8B모델로, Idefics1보다 OCR 성능이 향상되었고, VAQ benchmark에서 공개 당시 최고 성능을 기록했다. 
 
 학습데이터는 webdocuments (Wikipedia,OBELICS), image-caption pairs (Public Multimodal Dataset, LAION-COCO), OCR data (PDFA (en), IDL and Rendered-text, image-to-code data (WebSight)) 등을 혼합하여 사용했다. 
+
+# Florence-2
 
 # Gemini
 
