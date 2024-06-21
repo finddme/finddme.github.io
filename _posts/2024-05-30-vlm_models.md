@@ -27,6 +27,14 @@ tag: Multimodal
 
 관련 포스트 : [LLaVA : Visual Instruction Tuning](https://finddme.github.io/llm%20/%20multimodal/2024/05/11/llava/)
 
+# Idefics2
+
+[https://huggingface.co/blog/idefics2](https://huggingface.co/blog/idefics2)
+
+8B모델로, Idefics1보다 OCR 성능이 향상되었고, VAQ benchmark에서 공개 당시 최고 성능을 기록했다. 
+
+학습데이터는 webdocuments (Wikipedia,OBELICS), image-caption pairs (Public Multimodal Dataset, LAION-COCO), OCR data (PDFA (en), IDL and Rendered-text, image-to-code data (WebSight)) 등을 혼합하여 사용했다. 
+
 # Gemini
 
 Gemini는 Google에서 공개한 multi-modal large language model로, 모델 사이즈에 따라 Ultra, Pro, Nano 버전이 있다. Ultra 버전은 세 버전 중 모델 사이즈가 가장 큰 버전으로, 복잡한 multimodal task를 위해 개발되었다. Pro는 중간 사이즈의 모델로, performance와 scalability의 균형을 잘 맞춘 모델이다. 마지막으로 Nano 버전은 세 버전 중 가장 작은 모델이다. 
