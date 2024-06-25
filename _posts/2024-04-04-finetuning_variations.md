@@ -104,7 +104,7 @@ Loss= Winner(W)-Loser(L)
 \end{matrix}
 
 \begin{matrix}
-Loss = - \{Winner(W)-Loser(L)\}
+Loss = - {Winner(W)-Loser(L)}
 \end{matrix}
 
 - $\pi_\theta$ : parameter update가 이루어지는 model, 즉 학습되고 있는 model
