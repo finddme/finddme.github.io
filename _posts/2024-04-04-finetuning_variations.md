@@ -127,7 +127,7 @@ DPO 논문에서는 classification loss를 활용하여 Reinforcement Learning(R
 
 Instruction tuning(SFT)과 preference alignment는 최근 LLM tuning 시 많이 사용되는 방법이다. 이는 일반적으로 아래와 같이 두 단계를 통해 수행된다:
 
-  1 단계. Supervised Fine-Tuning (SFT) : 일단 instruction dataset에 대한 tuning을 수행한다.
+  1 단계. Supervised Fine-Tuning (SFT) : 일단 instruction dataset에 대한 tuning을 수행한다.<br>
   2 단계. preference alignment : RLHF 혹은 DPO를 통해 rejected response보다 preferred response를 반환할 확률을 높인다.
 
 SFT가 학습 데이터와 일치하는 텍스트 생성 가능성 극대화에 집중하여 학습이 진행되기 때문에 특정 domain 혹은 task에 대해서는 효과적으로 tuning되지만 인간이 선호하지 않는 답변 반환률이 비교적 높다는 문제점이 있다. 이에 따라 preference alignment단계에서는 선호되는 답변과 그렇지 않는 답변 사이의 확률 격차를 확실히 넓혀야 하는 것이 핵심 과제가 된다.
