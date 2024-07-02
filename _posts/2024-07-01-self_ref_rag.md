@@ -29,3 +29,4 @@ tag: Multimodal
 - Inference accelerate : GROQ
 - text embedding : Openai
 - vector DB : Wevieate
+- web search : Tavily
