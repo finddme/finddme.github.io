@@ -45,7 +45,7 @@ tag: Multimodal
        </tr>
        <tr>
          <td class="line3"><strong>RAG Framework</strong></td>
-         <td class="line" colspan="2" align=center>
+         <td class="line" colspan="2" valign=middle>
            <li>langchain</li>
            <li>langGraph</li>
          </td>
@@ -84,7 +84,7 @@ tag: Multimodal
        </tr>
        <tr>
          <td class="line3"><strong>vector DB</strong></td>
-         <td class="line" colspan="2" align=center>
+         <td class="line" colspan="2" valign=middle>
            <li>Wevieate</li>
            <li>Faiss</li>
            <li>...</li>
