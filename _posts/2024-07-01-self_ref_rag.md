@@ -45,11 +45,10 @@ tag: Multimodal
        </tr>
        <tr>
          <td class="line3"><strong>RAG Framework</strong></td>
-         <td class="line">
+         <td class="line" colspan="2">
            <li>langchain</li>
            <li>langGraph</li>
          </td>
-         <td class="line"> </td>
        </tr>
        <tr>
          <td class="line3"><strong>LLM</strong></td>
@@ -85,12 +84,11 @@ tag: Multimodal
        </tr>
        <tr>
          <td class="line3"><strong>vector DB</strong></td>
-         <td class="line">
+         <td class="line" colspan="2">
            <li>Wevieate</li>
            <li>Faiss</li>
            <li>...</li>
          </td>
-         <td class="line"> </td>
        </tr>
        <tr>
          <td class="line3"><strong>web search</strong></td>
