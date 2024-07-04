@@ -109,6 +109,7 @@ tag: Multimodal
          <td class="line">
            <li>llama_index -> FlagEmbeddingReranker(?)</li>
            <li>huggingface rerank model</li>
+           <li>langchain_community -> JinaRerank</li>
          </td>
        </tr>
        <tr>
