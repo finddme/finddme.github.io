@@ -120,6 +120,7 @@ tag: Multimodal
            <li>Streamlit (graphic interface o)</li>
            <li>cherrypy</li>
            <li>Django</li>
+           <li>Chainlit</li>
            <li>...</li>
          </td>
        </tr>
