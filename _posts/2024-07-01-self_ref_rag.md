@@ -113,13 +113,13 @@ tag: Multimodal
        <tr>
          <td class="line3"><strong>Application Interface</strong></td>
          <td class="line" colspan="2" valign=middle>
-           <li>FastAPI</li>
+           <li>FastAPI (graphic interface o)</li>
            <li>Flask</li>
-           <li>Gradio</li>
-           <li>Streamlit</li>
+           <li>Gradio (graphic interface o)</li>
+           <li>Streamlit (graphic interface o)</li>
            <li>cherrypy</li>
            <li>Django</li>
-           <li>Streamlit</li>
+           <li>...</li>
          </td>
        </tr>
    </table>
