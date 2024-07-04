@@ -38,7 +38,7 @@ tag: Multimodal
     </style>
    </head>
    <body>
-     <table style="border-collapse:collapse">
+     <table style="border-collapse:collapse" align=center>
        <tr>
          <th class="line4" bgcolor="#F8F7F9"> </th>
          <th class="line4" bgcolor="#F8F7F9">Internet-Accessible</th><th class="line2" bgcolor="#F8F7F9">Private / Local </th>
@@ -84,7 +84,7 @@ tag: Multimodal
        </tr>
        <tr>
          <td class="line3"><strong>vector DB</strong></td>
-         <td class="line" colspan="2">
+         <td class="line" colspan="2" align=center>
            <li>Wevieate</li>
            <li>Faiss</li>
            <li>...</li>
