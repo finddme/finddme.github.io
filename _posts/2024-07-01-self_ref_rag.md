@@ -40,8 +40,8 @@ tag: Multimodal
    <body>
      <table style="border-collapse:collapse" align=center>
        <tr>
-         <th class="line4" bgcolor="#F8F7F9"> </th>
-         <th class="line4" bgcolor="#F8F7F9">Internet-Accessible</th><th class="line2" bgcolor="#F8F7F9">Private / Local </th>
+         <th class="line2" bgcolor="#F8F7F9"> </th>
+         <th class="line4" bgcolor="#F8F7F9">Internet-Accessible</th><th class="line4" bgcolor="#F8F7F9">Private / Local </th>
        </tr>
        <tr>
          <td class="line3"><strong>RAG Framework</strong></td>
