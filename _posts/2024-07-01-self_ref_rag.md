@@ -108,6 +108,7 @@ tag: Multimodal
          </td>
          <td class="line">
            <li>llama_index -> FlagEmbeddingReranker(?)</li>
+           <li>huggingface rerank model</li>
          </td>
        </tr>
        <tr>
