@@ -24,6 +24,8 @@ tag: Multimodal
 
 
 
+# 개발 환경별 사용 가능 기술
+
 <html>
   <head>
     <style type="text/css">
@@ -108,9 +110,24 @@ tag: Multimodal
            <li>llama_index -> FlagEmbeddingReranker(?)</li>
          </td>
        </tr>
+       <tr>
+         <td class="line3"><strong>Application Interface</strong></td>
+         <td class="line" colspan="2" valign=middle>
+           <li>FastAPI</li>
+           <li>Flask</li>
+           <li>Gradio</li>
+           <li>Streamlit</li>
+           <li>cherrypy</li>
+           <li>Django</li>
+           <li>Streamlit</li>
+         </td>
+       </tr>
    </table>
  </body>
 </html>
+
+# 인터넷 접속 가능 환경
+## 기능별 구성
 
 - RAG Framework : LangGraph
 - LLM : Mixtral-8x7b
