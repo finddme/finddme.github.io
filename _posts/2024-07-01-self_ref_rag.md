@@ -110,6 +110,7 @@ tag: Multimodal
            <li>llama_index -> FlagEmbeddingReranker(?)</li>
            <li>huggingface rerank model</li>
            <li>langchain_community -> JinaRerank</li>
+           <li>langchain_cohere -> CohereRerank</li>
          </td>
        </tr>
        <tr>
