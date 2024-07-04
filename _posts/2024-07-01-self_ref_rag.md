@@ -135,3 +135,4 @@ tag: Multimodal
 - text embedding : Openai
 - vector DB : Wevieate
 - web search : Tavily
+- Application Interface : Streamlit
