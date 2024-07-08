@@ -567,3 +567,66 @@ def grade_generation_v_documents_and_question(state):
         return "not supported"
 
 ```
+
+## Set RAG Graph : langGraph
+
+```python
+from langgraph.graph import END, StateGraph
+
+workflow = StateGraph(GraphState)
+
+# Define the nodes
+workflow.add_node("websearch", web_search) # web search # key: action to do
+workflow.add_node("retrieve", retrieve) # retrieve
+workflow.add_node("grade_documents", grade_documents) # grade documents
+workflow.add_node("generate", generate) # generatae
+
+workflow.add_edge("websearch", "generate") #start -> end of node
+workflow.add_edge("retrieve", "grade_documents")
+
+# Build graph
+workflow.set_conditional_entry_point(
+    route_question,
+    {
+        "websearch": "websearch",
+        "vectorstore": "retrieve",
+    },
+)
+ 
+workflow.add_conditional_edges(
+    "grade_documents", # start: node
+    decide_to_generate, # defined function
+    {
+        "websearch": "websearch", #returns of the function
+        "generate": "generate",   #returns of the function
+    },
+)
+workflow.add_conditional_edges(
+    "generate", # start: node
+    grade_generation_v_documents_and_question, # defined function
+    {
+        "not supported": "generate", #returns of the function
+        "useful": END,               #returns of the function
+        "not useful": "websearch",   #returns of the function
+    },
+)
+
+# Compile
+app = workflow.compile()
+```
+
+## Run Graph
+
+```python
+from pprint import pprint
+inputs = {"question": "LLaMa3 구조에 대해 알려줘"}
+for output in app.stream(inputs):
+    for key, value in output.items():
+        pprint(f"Finished running: {key}:")
+pprint(value["generation"])
+```
+
+```
+output:
+LLaMa 3은 Meta에서 개발한 Open Source LLM(Large Language Model) 모델로, LLaMa 2를 이어 발표된 모델입니다. 이 모델은 Instruct Model과 Pre-trained Model로 8B, 70B 두 사이즈가 공개되었으며, 이는 2024년 4월 18일 기준 해당 파라미터 스케일 모델 중 가장 좋은 성능을 보이고 있습니다. LLaMa 3는 코드 생성, instruction 수행 능력이 크게 향상되어 모델을 보다 다양하게 활용할 수 있습니다. 이 모델은 standard decoder-only transformer architecture를 기반으로 하고, 128K token 수를 가진 vocab을 사용하여 언어를 보다 효과적으로 encoding합니다. LLaMa 3는 15T 개의 token으로 학습되었으며, 이는 LLaMa 2보다 약 7배 더 큰 학습 데이터를 사용하였습니다.
+```
