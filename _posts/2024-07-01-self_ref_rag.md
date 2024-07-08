@@ -149,7 +149,7 @@ tag: Multimodal
 
 ## Vector DB 준비 : Weaviate
 
-<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/888744e8-2bac-4e06-a875-d594142e9cef"></center>
+<center><img width="300" src="https://github.com/finddme/finddme.github.io/assets/53667002/888744e8-2bac-4e06-a875-d594142e9cef"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 
@@ -283,7 +283,7 @@ def route_question(state):
 
 ## Retrieve : Weaviate
 
-<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/7f2966e5-3cd3-4d6b-b6e9-2c91e38fabae"></center>
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/7f2966e5-3cd3-4d6b-b6e9-2c91e38fabae"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ```json
@@ -303,7 +303,7 @@ def retrieve(state):
 
 ## Relevant Grader : langchain
 
-<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/c09ef5b1-d706-4157-b0d8-c85af9c282e3"></center>
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/c09ef5b1-d706-4157-b0d8-c85af9c282e3"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ```json
@@ -371,7 +371,7 @@ def grade_documents(state):
 
 ## Web search : Tavily
 
-<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/55a7f63f-87e0-4bd2-9027-73953ec9ea2d"></center>
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/55a7f63f-87e0-4bd2-9027-73953ec9ea2d"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ```python
@@ -418,7 +418,7 @@ def decide_to_generate(state):
 
 ## Generate : Groq
 
-<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/21d6fa1a-3ad6-428b-8d72-9be1cd9e9f15"></center>
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/21d6fa1a-3ad6-428b-8d72-9be1cd9e9f15"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ```json
@@ -465,7 +465,7 @@ def generate(state):
 
 ## Hallucination Grader : Groq
 
-<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/384de248-b1f4-4480-9dc4-a457d98cac04"></center>
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/384de248-b1f4-4480-9dc4-a457d98cac04"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ```json
@@ -498,7 +498,7 @@ hallucination_grader = hallucination_prompt | structured_llm_grader_hallucinatio
 
 ## Answer Grader : Groq
 
-<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/9edee9ca-0ed8-4c54-ac94-5dd8bec64e36"></center>
+<center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/9edee9ca-0ed8-4c54-ac94-5dd8bec64e36"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ```json
