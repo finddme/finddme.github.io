@@ -1,5 +1,5 @@
 ---
-title: "Self-Reflective RAG : Langchain | LangGraph | GROQ | Wevieate | Tavily | Chainlit (작성 중)"
+title: "Self-Reflective RAG (세 가지 Grader) : Langchain | LangGraph | GROQ | Wevieate | Tavily | Chainlit"
 category: LLM / Multimodal
 tag: Multimodal
 ---
