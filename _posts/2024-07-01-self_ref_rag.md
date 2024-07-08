@@ -213,7 +213,7 @@ for i in doc_splits:
 
 2. chunks save
 
-```
+```python
 client = weaviate.Client("weaviate client url")
 
 client.batch.configure(batch_size=100)
@@ -225,7 +225,162 @@ with client.batch as batch:
 
 ```
 
+## Query Router : Groq
+
+```json
+{'input': query, 'output':"websearch/vectorstore"}
+```
+
+```python
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.pydantic_v1 import BaseModel, Field
+"""
+pydantic_v1
+- https://python.langchain.com/v0.1/docs/modules/model_io/output_parsers/types/pydantic/
+- 특정 schema에 맞게 output을 구성하도록 LLM에 quary할 수 있게하는 parser.
+"""
+
+class RouteQuery(BaseModel):
+    """Route a user query to the most relevant datasource."""
+
+    datasource: Literal["vectorstore", "websearch"] = Field(
+        ...,
+        description="Given a user question choose to route it to web search or a vectorstore.",
+    )
+
+"""
+ref.
+https://python.langchain.com/v0.2/docs/integrations/chat/groq/
+Supported Models: https://console.groq.com/docs/models
+"""
+llm = ChatGroq(temperature=0, groq_api_key=GROQ_API_KEY)
+structured_llm_router = llm.with_structured_output(RouteQuery)
+
+system = """You are an expert at routing a user question to a vectorstore or web search.
+The vectorstore contains documents related to language processing, and artificial intelligence.
+Use the vectorstore for questions on these topics. For all else, use web-search."""
+route_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", system),
+        ("human", "{question}"),
+    ]
+)
+
+question_router = route_prompt | structured_llm_router
+
+def route_question(state):
+    print("---ROUTE QUESTION---")
+    question = state["question"]
+    source = question_router.invoke({"question": question}) # output: datasource='websearch/vectorstore'
+    if source.datasource == 'websearch':
+        print("---ROUTE QUESTION TO WEB SEARCH---")
+        return "websearch"
+    elif source.datasource == 'vectorstore':
+        print("---ROUTE QUESTION TO RAG---")
+        return "vectorstore"
+
+```
+
 ## Retrieve : Weaviate
 
 <center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/7f2966e5-3cd3-4d6b-b6e9-2c91e38fabae"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+```json
+{'input': query, 'output':{"documents": documents, "question": query}}
+```
+
+```python
+def retrieve(state):
+    print("---RETRIEVE from Vector Store DB---")
+    question = state["question"]
+
+    # Retrieval
+    query_vector = get_embedding(question)
+    documents = client.query.get("Test", ["text","title"]).with_hybrid(question, vector=query_vector).with_limit(6).do()
+    return {"documents": documents, "question": question}
+```
+
+## Relevant Grader : langchain
+
+<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/c09ef5b1-d706-4157-b0d8-c85af9c282e3"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+```json
+{'input': {"documents": documents, "question": query}, 'output':"yes/no"}
+```
+
+```python
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.pydantic_v1 import BaseModel, Field
+"""
+pydantic_v1
+- https://python.langchain.com/v0.1/docs/modules/model_io/output_parsers/types/pydantic/
+- 특정 schema에 맞게 output을 구성하도록 LLM에 quary할 수 있게하는 parser.
+"""
+```
+
+```python
+class GradeDocuments(BaseModel):
+    """Binary score for relevance check on retrieved documents."""
+
+    binary_score: str = Field(description="Documents are relevant to the question, 'yes' or 'no'")
+
+# LLM with function call 
+structured_llm_grader_docs = llm.with_structured_output(GradeDocuments)
+
+# Prompt 
+system = """You are a grader assessing relevance of a retrieved document to a user question. \n 
+    If the document contains keyword(s) or semantic meaning related to the question, grade it as relevant. \n
+    Give a binary score 'yes' or 'no' score to indicate whether the document is relevant to the question."""
+
+grade_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", system),
+        ("human", "Retrieved document: \n\n {document} \n\n User question: {question}"),
+    ]
+)
+
+retrieval_grader_relevance = grade_prompt | structured_llm_grader_docs
+
+def grade_documents(state):
+    print("---CHECK DOCUMENT RELEVANCE TO QUESTION---")
+    question = state["question"]
+    documents = state["documents"]
+    
+    # Score each doc
+    filtered_docs = []
+    web_search = "No"
+    for d in documents["data"]["Get"]["Test"]:
+        score = retrieval_grader_relevance.invoke({"question": question, "document": d["text"]}) # output: GradeDocuments(binary_score='yes/no')
+        grade = score.binary_score
+        # Document relevant
+        if grade.lower() == "yes":
+            print("---GRADE: DOCUMENT RELEVANT---")
+            filtered_docs.append(d)
+        # Document not relevant
+        else:
+            print("---GRADE: DOCUMENT NOT RELEVANT---")
+            # We do not include the document in filtered_docs
+            # We set a flag to indicate that we want to run web search
+            web_search = "Yes"
+            continue
+    return {"documents": filtered_docs, "question": question, "web_search": web_search}
+```
+
+
+## Generate : GROQ
+
+<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/c09ef5b1-d706-4157-b0d8-c85af9c282e3"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+
+
+
+
+
+
+
+
+
+
