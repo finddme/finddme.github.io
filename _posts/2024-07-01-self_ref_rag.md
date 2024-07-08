@@ -143,7 +143,7 @@ tag: Multimodal
 - text embedding : Openai
 - vector DB : Wevieate
 - web search : Tavily
-- Application Interface : Streamlit
+- Application Interface : Chainlit
 
 ## 단계별 설명 및 코드
 
