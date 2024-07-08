@@ -1,5 +1,5 @@
 ---
-title: "Self-Reflective RAG (작성 중)"
+title: "Self-Reflective RAG : three Grader (작성 중)"
 category: LLM / Multimodal
 tag: Multimodal
 ---
@@ -133,7 +133,11 @@ tag: Multimodal
 # 인터넷 접속 가능 환경
 ## 기능별 구성
 
-- RAG Framework : LangGraph
+<center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/8488df8b-14b3-4ecc-8ece-be2e140a8221"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+- RAG Framework : Langchain
+- Workflow control : LangGraph
 - LLM : Mixtral-8x7b
 - Inference accelerate : GROQ
 - text embedding : Openai
