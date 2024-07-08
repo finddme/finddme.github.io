@@ -369,18 +369,201 @@ def grade_documents(state):
 ```
 
 
-## Generate : GROQ
+## Web search : Tavily
 
-<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/c09ef5b1-d706-4157-b0d8-c85af9c282e3"></center>
+<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/55a7f63f-87e0-4bd2-9027-73953ec9ea2d"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
+```python
+from tavily import TavilyClient
+tavily = TavilyClient(api_key=TAVILY_API_KEY)
+```
+
+```python
+from langchain.schema import Document
+def web_search(state):
+    print("---WEB SEARCH. Append to vector store db---")
+    question = state["question"]
+    documents = state["documents"]
+
+    # Web search
+    tavily_response = tavily.search(query=question)
+    web_results = "\n".join([d["content"] for d in tavily_response["results"]])
+    web_results = Document(page_content=web_results)
+    if documents is not None:
+        documents.append(web_results)
+    else:
+        documents = [web_results]
+    return {"documents": documents, "question": question}
+
+```
+
+```python
+def decide_to_generate(state):
+    print("---ASSESS GRADED DOCUMENTS---")
+    question = state["question"]
+    web_search = state["web_search"]
+    filtered_documents = state["documents"]
+
+    if web_search == "Yes":
+        # All documents have been filtered check_relevance
+        # We will re-generate a new query
+        print("---DECISION: ALL DOCUMENTS ARE NOT RELEVANT TO QUESTION, INCLUDE WEB SEARCH---")
+        return "websearch"
+    else:
+        # We have relevant documents, so generate answer
+        print("---DECISION: GENERATE---")
+        return "generate"
+```
+
+## Generate : Groq
+
+<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/21d6fa1a-3ad6-428b-8d72-9be1cd9e9f15"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+```json
+{'input': {"documents": documents, "question": query} + prompt, 'output':"llm result"}
+```
+
+```python
+from langchain_core.output_parsers import StrOutputParser # 출력물을 기본 str 형태로 받는 라이브러리
+
+prompt = ChatPromptTemplate.from_template(
+    """You are a Korean-speaking assistant specializing in question-answering tasks. 
+    Use the provided context informations and relevant documents to answer the following question as accurately as possible. 
+    If the answer is not clear from the context or if you do not know the answer, explicitly state "모르겠습니다." (I don't know). 
+    Use three sentences maximum and keep the answer concise.
+    All responses must be given in Korean.
+    Based on the given information, return a very detailed response.
+Question: {question}
+Context: {context}
+Answer:"""
+)
+
+# Chain
+rag_chain = prompt | llm | StrOutputParser()
+
+def generate(state):
+    """
+    Generate answer using RAG on retrieved documents
+
+    Args:
+        state (dict): The current graph state
+
+    Returns:
+        state (dict): New key added to state, generation, that contains LLM generation
+    """
+    print("---GENERATE Answer---")
+    question = state["question"]
+    documents = state["documents"]
+    
+    # RAG generation
+    generation = rag_chain.invoke({"context": documents, "question": question})
+    return {"documents": documents, "question": question, "generation": generation}
+```
 
 
+## Hallucination Grader : Groq
 
+<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/384de248-b1f4-4480-9dc4-a457d98cac04"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
+```json
+{'input': {"documents": documents, "question": query}, 'output':"yes/no"}
+```
 
+```python
+class GradeHallucinations(BaseModel):
+    """Binary score for hallucination present in generation answer."""
 
+    binary_score: str = Field(description="Don't consider calling external APIs for additional information. Answer is supported by the facts, 'yes' or 'no'.")
+ 
+# LLM with function call 
+structured_llm_grader_hallucination = llm.with_structured_output(GradeHallucinations)
+ 
+# Prompt 
+system = """You are a grader assessing whether an LLM generation is supported by a set of retrieved facts. \n 
+     Restrict yourself to give a binary score, either 'yes' or 'no'. If the answer is supported or partially supported by the set of facts, consider it a yes. \n
+    Don't consider calling external APIs for additional information as consistent with the facts."""
 
+hallucination_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", system),
+        ("human", "Set of facts: \n\n {documents} \n\n LLM generation: {generation}"),
+]
+)
+  
+hallucination_grader = hallucination_prompt | structured_llm_grader_hallucination
+```
 
+## Answer Grader : Groq
 
+<center><img width="500" src="https://github.com/finddme/finddme.github.io/assets/53667002/9edee9ca-0ed8-4c54-ac94-5dd8bec64e36"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
+```json
+{'input': {"documents": documents, "question": query}, 'output':"yes/no"}
+```
+
+```python
+class GradeAnswer(BaseModel):
+    """Binary score to assess answer addresses question."""
+
+    binary_score: str = Field(description="Answer addresses the question, 'yes' or 'no'")
+
+# LLM with function call 
+structured_llm_grader_answer = llm.with_structured_output(GradeAnswer)
+
+# Prompt 
+system = """You are a grader assessing whether an answer addresses / resolves a question \n 
+     Give a binary score 'yes' or 'no'. Yes' means that the answer resolves the question."""
+answer_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", system),
+        ("human", "User question: \n\n {question} \n\n LLM generation: {generation}"),
+    ]
+)
+
+answer_grader = answer_prompt | structured_llm_grader_answer
+```
+
+## Hallucination + Answer grader pipeline
+
+```python
+def grade_generation_v_documents_and_question(state):
+    """
+    Determines whether the generation is grounded in the document and answers question
+
+    Args:
+        state (dict): The current graph state
+
+    Returns:
+        str: Decision for next node to call
+    """
+
+    print("---CHECK HALLUCINATIONS---")
+    question = state["question"]
+    documents = state["documents"]
+    generation = state["generation"]
+
+    score = hallucination_grader.invoke({"documents": documents, "generation": generation}) # output : GradeHallucinations(binary_score='yes')
+    grade = score.binary_score
+
+    # Check hallucination
+    if grade == "yes":
+        print("---DECISION: GENERATION IS GROUNDED IN DOCUMENTS---")
+        # Check question-answering
+        print("---GRADE GENERATION vs QUESTION---")
+        score = answer_grader.invoke({"question": question,"generation": generation}) # output : GradeAnswer(binary_score='yes')
+        grade = score.binary_score
+        if grade == "yes":
+            print("---DECISION: GENERATION ADDRESSES QUESTION---")
+            return "useful"
+        else:
+            print("---DECISION: GENERATION DOES NOT ADDRESS QUESTION---")
+            return "not useful"
+    else:
+        pprint("---DECISION: GENERATION IS NOT GROUNDED IN DOCUMENTS, RE-TRY---")
+        return "not supported"
+
+```
