@@ -181,15 +181,27 @@ client.schema.create_class(class_obj)
 
 ### prepare Documents for Retrieval
 
-1. split / chunking
+1. crawling
 
 ```python
-urls = [
-    "https://finddme.github.io/llm%20/%20multimodal/2023/10/01/llm_architecture/",
-    "https://finddme.github.io/llm%20/%20multimodal/2024/02/21/RAG/",
-    "https://finddme.github.io/llm%20/%20multimodal/2024/05/01/llama3/",
-]
+import requests
+from bs4 import BeautifulSoup
+soup1 = BeautifulSoup(html1, 'html.parser')
+request1 = requests.get("https://finddme.github.io/")
+html1 = request1.text
+links1 = soup1.select('h4 > a')
+urls=[]
+tags=["llm","dev","natural"]
+for link in links1:
+    if link.has_attr('href'):
+        href=link.get('href')
+        for t in tags:
+            if t in href.split("/")[1]:
+                urls.append("https://finddme.github.io"+href)
+```
+2. split / chunking
 
+```python
 docs = [WebBaseLoader(url).load() for url in urls]
 docs_list = [item for sublist in docs for item in sublist]
 
@@ -211,7 +223,7 @@ for i in doc_splits:
         chunks.append(save_c)
 ```
 
-2. chunks save
+3. chunks save
 
 ```python
 client = weaviate.Client("weaviate client url")
