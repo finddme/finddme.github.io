@@ -142,7 +142,7 @@ tag: Multimodal
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/8488df8b-14b3-4ecc-8ece-be2e140a8221"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
-<center><img width="250" src="https://github.com/user-attachments/assets/c7f3c802-4edf-4189-8585-b57f0b6275cc"></center>
+<center><img width="250" src="https://github.com/user-attachments/assets/39467eb1-0c1e-46d0-b16c-6e305c8ade48"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 - RAG Framework : Langchain
@@ -151,6 +151,7 @@ tag: Multimodal
 - Inference accelerate : GROQ
 - text embedding : sentence-transformers/all-MiniLM-L6-v2
 - vector DB : Wevieate
+- reranker : BAAI/bge-reranker-v2-m3
 - chunk method : RecursiveCharacterTextSplitter
 - web search : DuckDuckGoSearch
 - Application Interface : Chainlit
@@ -341,6 +342,27 @@ def retrieve(state):
     # Retrieval
     query_vector = get_embedding(question)
     documents = client.query.get("Test", ["text","title"]).with_hybrid(question, vector=query_vector).with_limit(6).do()
+    return {"documents": documents, "question": question}
+```
+
+# Reranker
+
+```python
+from FlagEmbedding import FlagReranker
+reranker_model = FlagReranker('BAAI/bge-reranker-v2-m3', use_fp16=True, device="cpu")
+
+def reranker_fr(state):
+    print("---Reranking---")
+    question = state["question"]
+    documents = state["documents"]
+    
+    # Rerank
+    sentence_pairs = [[question, rr["text"]] for rr in documents["data"]["Get"]["B_ST"]]
+    similarity_scores = reranker_model.compute_score(sentence_pairs)
+    paired_list = list(zip(similarity_scores, documents["data"]["Get"]["B_ST"]))
+    paired_list.sort(key=lambda x: x[0],reverse=True)
+    sorted_b = [item[1] for item in paired_list]
+    documents["data"]["Get"]["B_ST"]=sorted_b
     return {"documents": documents, "question": question}
 ```
 
