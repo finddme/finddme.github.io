@@ -26,7 +26,7 @@ tag: Multimodal
 
 # 개발 환경별 사용 가능 기술
 
-Internet-accessible env / Closed network env에 속한 기술들은 각각 유료 / 무료
+Internet-accessible env / Closed network env에 포함된 기술과 유료 / 무료 기술에 포함된 기술을 각각 
 
 <html>
   <head>
@@ -134,7 +134,8 @@ Internet-accessible env / Closed network env에 속한 기술들은 각각 유�
 
 # 기능별 구성 요약 
 
-본 포스트에서는 최대한 다양한 Grader가 포함된 pipeline을 다루지만 실용적인 방법이라고는 할 수 없다. pipeline상 단계 별로 LLM을 1~N번 통과해야 하기 때문에 속도가 많이 느려진다. 또한 경우에 따라 Retrieval 결과가 충분하지 않으면 search 단계에서 계속 webserch를 진행할 가능성도 있고, 답변이 충분하지 않은 경우에는 답변 생성을 여러번 할 가능성이 있기 때문에 각 단계별로 최대 진행 횟수를 제한하는 것도 좋은 방법 중 하나이다.  
+- 본 포스트에서는 최대한 다양한 Grader가 포함된 pipeline을 다루지만 실용적인 방법이라고는 할 수 없다. pipeline상 단계 별로 LLM을 1~N번 통과해야 하기 때문에 속도가 많이 느려진다.
+- 또한 경우에 따라 Retrieval 결과가 충분하지 않으면 search 단계에서 계속 webserch를 진행할 가능성도 있고, 답변이 충분하지 않은 경우에는 답변 생성을 여러번 할 가능성이 있기 때문에 각 단계별로 최대 진행 횟수를 제한하는 것도 좋은 방법 중 하나이다.  
 
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/8488df8b-14b3-4ecc-8ece-be2e140a8221"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
@@ -146,11 +147,24 @@ Internet-accessible env / Closed network env에 속한 기술들은 각각 유�
 - Workflow control : LangGraph
 - LLM : Mixtral-8x7b
 - Inference accelerate : GROQ
-- text embedding : Openai
+- text embedding : sentence-transformers/all-MiniLM-L6-v2
 - vector DB : Wevieate
 - chunk method : RecursiveCharacterTextSplitter
-- web search : Tavily
+- web search : DuckDuckGoSearch
 - Application Interface : Chainlit
+
+# Embedding model 준비
+
+```
+from sentence_transformers import SentenceTransformer
+import numpy as np
+embedd_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+
+def get_embedding_st(text) : 
+    res = embedd_model.encode(text)
+    res = list(map(float, res))
+    return res
+```
 
 # Vector DB 준비 : Weaviate
 
@@ -237,8 +251,18 @@ client.batch.configure(batch_size=100)
 
 with client.batch as batch:
     for i, chunk in enumerate(chunks):
-        vector = get_embedding(chunk["text"])
-        batch.add_data_object(data_object=chunk, class_name="Test", vector=vector)
+        try:
+            vector = get_embedding_st(chunk["text"])
+            # print(type(vector[0]))
+            batch.add_data_object(data_object=chunk, class_name="B_ST", vector=vector)
+        except Exception as e:
+            # print(i, type(vector[0]), chunk)
+            print("except",i)
+            vector = get_embedding_st(chunk["text"])
+            vector=list(map(float, vector))
+            batch.add_data_object(data_object=chunk, class_name="B_ST", vector=vector)
+            # print("sucsess")
+        print("save",i)
 
 ```
 
