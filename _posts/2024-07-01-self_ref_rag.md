@@ -108,7 +108,7 @@ tag: Multimodal
        <tr>
          <td class="line3"><strong>Reranker</strong></td>
          <td class="line">
-           <li>cohere</li>
+           <li>🔵cohere</li>
          </td>
          <td class="line">
            <li>🔵llama_index -> FlagEmbeddingReranker(?)</li>
