@@ -142,7 +142,7 @@ tag: Multimodal
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/8488df8b-14b3-4ecc-8ece-be2e140a8221"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
-<center><img width="500" src="https://github.com/user-attachments/assets/c7f3c802-4edf-4189-8585-b57f0b6275cc"></center>
+<center><img width="250" src="https://github.com/user-attachments/assets/c7f3c802-4edf-4189-8585-b57f0b6275cc"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 - RAG Framework : Langchain
