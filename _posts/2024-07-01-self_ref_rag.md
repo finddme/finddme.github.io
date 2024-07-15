@@ -1,5 +1,5 @@
 ---
-title: "Self-Reflective RAG (세 가지 Grader) : Langchain | LangGraph | GROQ | Wevieate | Tavily | Chainlit"
+title: "Self-Reflective RAG : Query Router | Relevant Grader | Hallucination Grader | Answer Grader"
 category: LLM / Multimodal
 tag: Multimodal
 ---
@@ -181,7 +181,7 @@ client.schema.create_class(class_obj)
 
 ### prepare Documents for Retrieval
 
-1. crawling
+1\. crawling
 
 ```python
 import requests
@@ -199,7 +199,7 @@ for link in links1:
             if t in href.split("/")[1]:
                 urls.append("https://finddme.github.io"+href)
 ```
-2. split / chunking
+2\. split / chunking
 
 ```python
 docs = [WebBaseLoader(url).load() for url in urls]
