@@ -26,7 +26,9 @@ tag: Multimodal
 
 # 개발 환경별 사용 가능 기술
 
-Internet-accessible env / Closed network env에 포함된 기술과 유료 / 무료 기술에 포함된 기술을 각각 
+- Internet-accessible env/Closed network env와 유료/무료에 포함되는 기술들은 각각 상호 중첩되는 경우가 많다.
+- 아래는 서버 폐쇄 여부를 기준으로 각 기술들을 분류한 표이다.
+  - 유료🟡/무료🔵
 
 <html>
   <head>
@@ -50,57 +52,57 @@ Internet-accessible env / Closed network env에 포함된 기술과 유료 / 무
        <tr>
          <td class="line3"><strong>RAG Framework</strong></td>
          <td class="line" colspan="2" valign=middle>
-           <li>langchain</li>
-           <li>langGraph</li>
+           <li>🔵langchain</li>
+           <li>🔵langGraph</li>
          </td>
        </tr>
        <tr>
          <td class="line3"><strong>LLM</strong></td>
          <td class="line">
-           <li>openai</li>
-           <li>claude</li>
+           <li>🟡openai</li>
+           <li>🟡claude</li>
            <li>...</li>
          </td>
          <td class="line">
-           <li>huggingface model</li>
-           <li>local model</li>
+           <li>🔵huggingface model</li>
+           <li>🔵local model</li>
          </td>
        </tr>
        <tr>
          <td class="line3"><strong>Inference accelerate</strong></td>
          <td class="line">
-           <li>GROQ</li>
+           <li>🔵GROQ</li>
          </td>
          <td class="line">
-           <li>vllm</li>
+           <li>🔵vllm</li>
          </td>
        </tr>
        <tr>
          <td class="line3"><strong>text embedding</strong></td>
          <td class="line">
-           <li>openai</li>
+           <li>🟡openai</li>
          </td>
          <td class="line">
-           <li>Sentencetransformers</li>
-           <li>Google Vertex embedding</li>
+           <li>🔵Sentencetransformers</li>
+           <li>🟡Google Vertex embedding</li>
            <li>...</li>
          </td>
        </tr>
        <tr>
          <td class="line3"><strong>vector DB</strong></td>
          <td class="line" colspan="2" valign=middle>
-           <li>Wevieate</li>
-           <li>Faiss</li>
+           <li>🔵Wevieate</li>
+           <li>🔵Faiss</li>
            <li>...</li>
          </td>
        </tr>
        <tr>
          <td class="line3"><strong>web search</strong></td>
          <td class="line">
-           <li>Tavily</li>
+           <li>🔵Tavily</li>
          </td>
          <td class="line">
-           <li>langchain_community.utilities .oooWrapper</li>
+           <li>🔵langchain_community.utilities .oooWrapper</li>
          </td>
        </tr>
        <tr>
@@ -109,10 +111,10 @@ Internet-accessible env / Closed network env에 포함된 기술과 유료 / 무
            <li>cohere</li>
          </td>
          <td class="line">
-           <li>llama_index -> FlagEmbeddingReranker(?)</li>
-           <li>huggingface rerank model</li>
-           <li>langchain_community -> JinaRerank</li>
-           <li>langchain_cohere -> CohereRerank</li>
+           <li>🔵llama_index -> FlagEmbeddingReranker(?)</li>
+           <li>🔵huggingface rerank model</li>
+           <li>🔵langchain_community -> JinaRerank</li>
+           <li>🔵langchain_cohere -> CohereRerank</li>
          </td>
        </tr>
        <tr>
