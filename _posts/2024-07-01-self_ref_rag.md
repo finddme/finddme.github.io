@@ -155,7 +155,7 @@ tag: Multimodal
 - web search : DuckDuckGoSearch
 - Application Interface : Chainlit
 
-# Embedding model 준비
+# Embedding model : sentence-transformers/all-MiniLM-L6-v2
 
 ```
 from sentence_transformers import SentenceTransformer
@@ -268,7 +268,7 @@ with client.batch as batch:
 
 ```
 
-## Query Router : Groq
+# Query Router : Groq
 
 ```json
 {'input': query, 'output':"websearch/vectorstore"}
@@ -324,7 +324,7 @@ def route_question(state):
 
 ```
 
-## Retrieve : Weaviate
+# Retrieve : Weaviate
 
 <center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/7f2966e5-3cd3-4d6b-b6e9-2c91e38fabae"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
@@ -344,7 +344,7 @@ def retrieve(state):
     return {"documents": documents, "question": question}
 ```
 
-## Relevant Grader : langchain
+# Relevant Grader : langchain
 
 <center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/c09ef5b1-d706-4157-b0d8-c85af9c282e3"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
@@ -412,7 +412,7 @@ def grade_documents(state):
 ```
 
 
-## Web search : DuckDuckGoSearch
+# Web search : DuckDuckGoSearch
 
 <center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/55a7f63f-87e0-4bd2-9027-73953ec9ea2d"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
@@ -458,7 +458,7 @@ def decide_to_generate(state):
         return "generate"
 ```
 
-## Generate : Groq
+# Generate : Groq
 
 <center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/21d6fa1a-3ad6-428b-8d72-9be1cd9e9f15"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
@@ -505,7 +505,7 @@ def generate(state):
 ```
 
 
-## Hallucination Grader : Groq
+# Hallucination Grader : Groq
 
 <center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/384de248-b1f4-4480-9dc4-a457d98cac04"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
@@ -538,7 +538,7 @@ hallucination_prompt = ChatPromptTemplate.from_messages(
 hallucination_grader = hallucination_prompt | structured_llm_grader_hallucination
 ```
 
-## Answer Grader : Groq
+# Answer Grader : Groq
 
 <center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/9edee9ca-0ed8-4c54-ac94-5dd8bec64e36"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
@@ -569,7 +569,7 @@ answer_prompt = ChatPromptTemplate.from_messages(
 answer_grader = answer_prompt | structured_llm_grader_answer
 ```
 
-## Hallucination + Answer grader pipeline
+# Hallucination + Answer grader pipeline
 
 ```python
 def grade_generation_v_documents_and_question(state):
@@ -610,7 +610,7 @@ def grade_generation_v_documents_and_question(state):
 
 ```
 
-## Set RAG Graph : langGraph
+# Set RAG Graph : langGraph
 
 ```python
 from langgraph.graph import END, StateGraph
@@ -657,7 +657,7 @@ workflow.add_conditional_edges(
 app = workflow.compile()
 ```
 
-## Run Graph
+# Run Graph
 
 ```python
 from pprint import pprint
@@ -673,7 +673,7 @@ output:
 LLaMa 3은 Meta에서 개발한 Open Source LLM(Large Language Model) 모델로, LLaMa 2를 이어 발표된 모델입니다. 이 모델은 Instruct Model과 Pre-trained Model로 8B, 70B 두 사이즈가 공개되었으며, 이는 2024년 4월 18일 기준 해당 파라미터 스케일 모델 중 가장 좋은 성능을 보이고 있습니다. LLaMa 3는 코드 생성, instruction 수행 능력이 크게 향상되어 모델을 보다 다양하게 활용할 수 있습니다. 이 모델은 standard decoder-only transformer architecture를 기반으로 하고, 128K token 수를 가진 vocab을 사용하여 언어를 보다 효과적으로 encoding합니다. LLaMa 3는 15T 개의 token으로 학습되었으며, 이는 LLaMa 2보다 약 7배 더 큰 학습 데이터를 사용하였습니다.
 ```
 
-## Graph visualization
+# Graph visualization
 
 ```
 ref.
@@ -696,7 +696,7 @@ display(
 )
 ```
 
-## Chainlit
+# Chainlit
 
 <center><img width="1000" src="https://github.com/user-attachments/assets/85ef7e08-fba3-45b2-b213-7e20796a23f1"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
