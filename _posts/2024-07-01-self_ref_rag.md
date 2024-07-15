@@ -1,5 +1,5 @@
 ---
-title: "Self-Reflective RAG : Query Router | Relevant Grader | Hallucination Grader | Answer Grader"
+title: "Self-Reflective RAG : Query Router | Reranker | Relevant Grader | Hallucination Grader | Answer Grader"
 category: LLM / Multimodal
 tag: Multimodal
 ---
