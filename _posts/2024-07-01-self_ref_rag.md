@@ -26,6 +26,8 @@ tag: Multimodal
 
 # 개발 환경별 사용 가능 기술
 
+Internet-accessible env / Closed network env에 속한 기술들은 각각 유료 / 무료
+
 <html>
   <head>
     <style type="text/css">
@@ -43,7 +45,7 @@ tag: Multimodal
      <table style="border-collapse:collapse" align=center>
        <tr>
          <th class="line2" bgcolor="#F8F7F9"> </th>
-         <th class="line4" bgcolor="#F8F7F9">Internet-Accessible</th><th class="line4" bgcolor="#F8F7F9">Private / Local </th>
+         <th class="line4" bgcolor="#F8F7F9">Internet-accessible env</th><th class="line4" bgcolor="#F8F7F9">Closed network env</th>
        </tr>
        <tr>
          <td class="line3"><strong>RAG Framework</strong></td>
@@ -130,10 +132,14 @@ tag: Multimodal
  </body>
 </html>
 
-# RAG 개발 예시 (인터넷 접속 가능 환경)
-## 기능별 구성 요약 
+# 기능별 구성 요약 
+
+본 포스트에서는 최대한 다양한 Grader가 포함된 pipeline을 다루지만 실용적인 방법이라고는 할 수 없다. pipeline상 단계 별로 LLM을 1~N번 통과해야 하기 때문에 속도가 많이 느려진다. 또한 경우에 따라 Retrieval 결과가 충분하지 않으면 search 단계에서 계속 webserch를 진행할 가능성도 있고, 답변이 충분하지 않은 경우에는 답변 생성을 여러번 할 가능성이 있기 때문에 각 단계별로 최대 진행 횟수를 제한하는 것도 좋은 방법 중 하나이다.  
 
 <center><img width="1000" src="https://github.com/finddme/finddme.github.io/assets/53667002/8488df8b-14b3-4ecc-8ece-be2e140a8221"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+<center><img width="500" src="https://github.com/user-attachments/assets/c7f3c802-4edf-4189-8585-b57f0b6275cc"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 - RAG Framework : Langchain
@@ -142,20 +148,19 @@ tag: Multimodal
 - Inference accelerate : GROQ
 - text embedding : Openai
 - vector DB : Wevieate
+- chunk method : RecursiveCharacterTextSplitter
 - web search : Tavily
 - Application Interface : Chainlit
 
-## 단계별 설명 및 코드
-
-## Vector DB 준비 : Weaviate
+# Vector DB 준비 : Weaviate
 
 <center><img width="300" src="https://github.com/finddme/finddme.github.io/assets/53667002/888744e8-2bac-4e06-a875-d594142e9cef"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 
-### Weaviate setting
+## Weaviate setting
 
-1. weaviate docker setting
+1\. weaviate docker setting
 
 weaviate docker-compose file: (https://weaviate.io/developers/academy/py/starter_multimodal_data/setup_weaviate/create_docker)[https://weaviate.io/developers/academy/py/starter_multimodal_data/setup_weaviate/create_docker]
 
@@ -165,7 +170,7 @@ docker-compose -f wevieate.yml up -d
 
 -> weaviate client url 생성
 
-2. create weaviate class
+2\. create weaviate class
 
 ```python
 
@@ -179,7 +184,7 @@ class_obj = {
 client.schema.create_class(class_obj)
 ```
 
-### prepare Documents for Retrieval
+## prepare Documents for Retrieval
 
 1\. crawling
 
@@ -381,26 +386,25 @@ def grade_documents(state):
 ```
 
 
-## Web search : Tavily
+## Web search : DuckDuckGoSearch
 
 <center><img width="200" src="https://github.com/finddme/finddme.github.io/assets/53667002/55a7f63f-87e0-4bd2-9027-73953ec9ea2d"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ```python
-from tavily import TavilyClient
-tavily = TavilyClient(api_key=TAVILY_API_KEY)
-```
-
-```python
+from langchain_community.utilities import DuckDuckGoSearchAPIWrapper
 from langchain.schema import Document
-def web_search(state):
+def web_search_ddg(state):
     print("---WEB SEARCH. Append to vector store db---")
     question = state["question"]
     documents = state["documents"]
 
     # Web search
-    tavily_response = tavily.search(query=question)
-    web_results = "\n".join([d["content"] for d in tavily_response["results"]])
+    search_res=search.run(question)
+    search_res1=[]
+    for s in search_res.split(", title:"):
+        search_res1.append(s.replace("[snippet: ","").replace("]",""))
+    web_results="\n".join(search_res1)
     web_results = Document(page_content=web_results)
     if documents is not None:
         documents.append(web_results)
@@ -664,4 +668,37 @@ display(
         )
     )
 )
+```
+
+## Chainlit
+
+<center><img width="1000" src="https://github.com/user-attachments/assets/85ef7e08-fba3-45b2-b213-7e20796a23f1"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+```
+# python script로 실행
+# command:
+# chainlit run rag_chainlit.py -w --port 8000 --host 0.0.0.0
+
+from langchain_core.messages import HumanMessage
+from langchain_core.runnables import RunnableConfig
+import chainlit as cl
+
+@cl.on_message
+async def run_convo(message: cl.Message):
+    #"what is the weather in sf"
+    inputs = {"question": message.content}
+    cb = cl.AsyncLangchainCallbackHandler(stream_final_answer=True)
+    config = RunnableConfig(callbacks=[cb])
+    
+    # res = app.invoke(inputs, config=RunnableConfig(callbacks=[
+    #     cl.LangchainCallbackHandler(
+    #         # to_ignore=["ChannelRead", "RunnableLambda", "ChannelWrite", "__start__", "_execute"]
+    #         # can add more into the to_ignore: "agent:edges", "call_model"
+    #         # to_keep=
+
+    #     )]))
+    res = await app.ainvoke(inputs,config=config)
+    # await cl.Message(content=res["question"][-1].content).send()
+    await cl.Message(content=res["generation"]).send()
 ```
