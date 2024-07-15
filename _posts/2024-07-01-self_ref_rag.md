@@ -257,13 +257,13 @@ with client.batch as batch:
         try:
             vector = get_embedding_st(chunk["text"])
             # print(type(vector[0]))
-            batch.add_data_object(data_object=chunk, class_name="B_ST", vector=vector)
+            batch.add_data_object(data_object=chunk, class_name="Test", vector=vector)
         except Exception as e:
             # print(i, type(vector[0]), chunk)
             print("except",i)
             vector = get_embedding_st(chunk["text"])
             vector=list(map(float, vector))
-            batch.add_data_object(data_object=chunk, class_name="B_ST", vector=vector)
+            batch.add_data_object(data_object=chunk, class_name="Test", vector=vector)
             # print("sucsess")
         print("save",i)
 
@@ -357,12 +357,12 @@ def reranker_fr(state):
     documents = state["documents"]
     
     # Rerank
-    sentence_pairs = [[question, rr["text"]] for rr in documents["data"]["Get"]["B_ST"]]
+    sentence_pairs = [[question, rr["text"]] for rr in documents["data"]["Get"]["Test"]]
     similarity_scores = reranker_model.compute_score(sentence_pairs)
-    paired_list = list(zip(similarity_scores, documents["data"]["Get"]["B_ST"]))
+    paired_list = list(zip(similarity_scores, documents["data"]["Get"]["Test"]))
     paired_list.sort(key=lambda x: x[0],reverse=True)
     sorted_b = [item[1] for item in paired_list]
-    documents["data"]["Get"]["B_ST"]=sorted_b
+    documents["data"]["Get"]["Test"]=sorted_b
     return {"documents": documents, "question": question}
 ```
 
