@@ -1,22 +1,23 @@
 /* before adding the photo to the div with the "card-photo" class, in the css clear the styles for .card-photo and remove .card-photo::before and .card-photo::after, then set the desired styles for .card- photo. */
 .chat-expo {
-    .chat {
+  .chat {
     float: center; 
-      width: 70%; 
-      height: 325px; 
-      margin-left: 10px; 
-      border: 2px solid #ccc; 
-      border-radius: 10px; 
-      padding: none;
+    width: 70%; 
+    height: 325px; 
+    margin-left: 10px; 
+    border: 2px solid #ccc; 
+    border-radius: 10px; 
+    padding: none;
   }
   @media screen and (max-width:1024px) {
-      .chat {
-    float: center; 
+    .chat {
+      float: center; 
       width: 100%; 
       height: 325px; 
       margin-left: 10px; 
       border: 2px solid #ccc; 
       border-radius: 10px; 
       padding: none;
+    }
   }
 }
