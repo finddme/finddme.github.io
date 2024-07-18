@@ -273,4 +273,13 @@
         -ms-transform: scale(0.4) translate(160px, 150px);
             transform: scale(0.4) translate(160px, 150px);
   }
+ @media screen and (max-width:1024px) {
+  .card-photo:hover {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-transform: scale(0.4) translate(165px, 180px);
+        -ms-transform: scale(0.4) translate(165px, 180px);
+            transform: scale(0.4) translate(165px, 180px);
+    }
+  }
 }
