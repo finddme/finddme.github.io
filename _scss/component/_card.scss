@@ -277,6 +277,7 @@
   .card-photo:hover {
     -webkit-transition: 0.3s;
     transition: 0.3s;
+    margin-bottom: -0.4px;
     -webkit-transform: scale(0.4) translate(165px, 180px);
         -ms-transform: scale(0.4) translate(165px, 180px);
             transform: scale(0.4) translate(165px, 180px);
