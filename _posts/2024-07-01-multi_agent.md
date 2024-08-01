@@ -57,7 +57,15 @@ tag: Multimodal
          <td class="line3"><strong>RAG Framework</strong></td>
          <td class="line" colspan="2" valign=middle>
            <li>🔵langchain</li>
+           <li>🔵llamaindex</li>
+         </td>
+       </tr>
+       <tr>
+         <td class="line3"><strong>RAG Framework</strong></td>
+         <td class="line" colspan="2" valign=middle>
            <li>🔵langGraph</li>
+           <li>🔵AutoGen</li>
+           <li>🔵Crew AI</li>
          </td>
        </tr>
        <tr>
