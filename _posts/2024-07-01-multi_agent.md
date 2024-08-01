@@ -61,7 +61,7 @@ tag: Multimodal
          </td>
        </tr>
        <tr>
-         <td class="line3"><strong>RAG Framework</strong></td>
+         <td class="line3"><strong>Multi-Agent Framework</strong></td>
          <td class="line" colspan="2" valign=middle>
            <li>🔵langGraph</li>
            <li>🔵AutoGen</li>
