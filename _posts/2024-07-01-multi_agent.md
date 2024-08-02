@@ -87,10 +87,12 @@ tag: Multimodal
          </td>
          <td class="line">
            <li>🔵vllm</li>
-           <li>🔵unsloth</li>
-           <li>🔵Greedy(Speculative) Decoding with assisted generation </li>
+           <li>🔵LMDeploy</li>
+           <li>🔵<a href="https://github.com/unslothai/unsloth">unsloth</a></li>
+           <li>🔵<a href="https://huggingface.co/blog/assisted-generation">Greedy(Speculative) Decoding with assisted generation</a></li>
            <li>🔵AirLLM</li>
            <li>🔵<a href="https://github.com/pytorch-labs/gpt-fast">gpt-fast</a></li>
+           <li>🔵<a href="https://huggingface.co/docs/optimum/en/intel/openvino/inference">OpenVINO</a></li>
          </td>
        </tr>
        <tr>
