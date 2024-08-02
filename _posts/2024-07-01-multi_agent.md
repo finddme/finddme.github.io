@@ -87,6 +87,7 @@ tag: Multimodal
          </td>
          <td class="line">
            <li>🔵vllm</li>
+           <li>🔵Streamer+Threading</li>
            <li>🔵LMDeploy</li>
            <li>🔵<a href="https://github.com/unslothai/unsloth">unsloth</a></li>
            <li>🔵<a href="https://huggingface.co/blog/assisted-generation">Greedy(Speculative) Decoding with assisted generation</a></li>
