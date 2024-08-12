@@ -1,7 +1,7 @@
 ---
 title: "Multi Agent Chat : Query Router | Reranker | Relevant Grader | Hallucination Grader | Answer Grader"
-category: LLM / Multimodal
-tag: Multimodal
+category: Dev Log
+tag: Development
 ---
 
 
