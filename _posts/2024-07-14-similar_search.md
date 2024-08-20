@@ -26,7 +26,7 @@ tag: Development
 
 # Keyword Search
 BM25는 TF-IDF 알고리즘을 기반으로 한 키워드 검색 알고리즘이다. 매우 오래된 알고리즘이고, 이를 기반으로 한 여러 variation들이 제안되었지만 keyword search에 있어서 아직까지는 클래식이 베스트이다.
-langchain에서 제공하는 keyword search 라이브러리도 BM25를 사용하고 [langchain_community.retrievers.bm25], ElasticSearch 5.0 이상부터도 기본 유사도 알고리즘으로 BM25을 사용하고 있다.(https://api.python.langchain.com/en/latest/_modules/langchain_community/retrievers/bm25.html)
+langchain에서 제공하는 keyword search 라이브러리도 BM25를 사용하고 [langchain_community.retrievers.bm25](https://api.python.langchain.com/en/latest/_modules/langchain_community/retrievers/bm25.html), ElasticSearch 5.0 이상부터도 기본 유사도 알고리즘으로 BM25을 사용하고 있다.
 
 ```python
 from rank_bm25 import BM25Okapi
