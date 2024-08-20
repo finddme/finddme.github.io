@@ -1,7 +1,7 @@
 ---
-title: "Similarity search method: Keyword Search, Semantic Search, Hybrid Search"
-category: Dev Log
-tag: Development
+title: "RAG : Similarity search method(Keyword Search, Semantic Search, Hybrid Search)"
+category: LLM / Multimodal
+tag: Multimodal
 ---
 
 
