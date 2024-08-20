@@ -71,6 +71,8 @@ output:
 
 # Semantic Search
 
+Semantic Search는 text를 모델을 통해 embedding시킨 후 embedding vector들의 거리를 통해 유사도를 검색하는 방법이다. 
+
 # Hybrid Search
 
 Hybrid Search는 keyword search와 semantic search를 결합한 방법이다.
