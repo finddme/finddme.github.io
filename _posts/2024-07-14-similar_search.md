@@ -122,6 +122,24 @@ output:
   'sentence': '사용자의 질문이 명확하지 않은 경우, similarity search 과정에서 오류가 발생할 수 있다.'}]
 ```
 
-# Hybrid Search
+# Keyword Search vs Semantic Search
 
-Hybrid Search는 keyword search와 semantic search를 결합한 방법이다.
+Keyword Search와 Semantic Search는 각각 강점이 다르다.
+
+|                 | advantage                                                                                                          |
+| --------------- | --------------------------------------------- |
+| Keyword Search  | exact matches of the query term searching  |
+| Semantic Search | semantically similar content searching |
+
+Keyword Search는 query 용어의 정확한 일치에 강점이 있다. 이는 특수한 용어가 사용되는 분야에서 유용하게 사용될 수 있다. 또한 프로그래밍 언어 검색에도 유용하게 사용될 수 있다. 예를 들어 코드 내 특정 함수 혹은 코드 부분을 검색할 때 정확한 검색이 가능하다.
+
+Semantic Search는 의미 유사성 검색에 강하다. 따라서 text의 모양이 달라도, 예를 들어 동의어나 대소문자의 혼합이 있어도 의미를 공유할 경우에 검색이 가능하다.
+
+# Hybrid Search
+ 
+Hybrid Search는 keyword search와 semantic search를 결합한 방법으로, 두 방법을 통해 결과를 도출한 후 RRF(Reciprocal Rank Fusion)를 통해 최종 결과를 산출하는 방법이다.
+
+> RRF(Reciprocal Rank Fusion)는 서로 다른 함수를 통해 산출된 점수 및 순위를 결합하는 알고리즘이다.
+
+
+(Hybrid Search의 단점은 하나의 알고리즘만 실행하는 것보다 더 많은 컴퓨팅 자원이 필요하다는 것이다.)
