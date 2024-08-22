@@ -1,5 +1,5 @@
 ---
-title: "# ReACT # HITL # Multi-Agent"
+title: "#ReACT #HITL #Multi-Agent"
 category: Dev Log
 tag: Development
 ---
@@ -21,4 +21,10 @@ tag: Development
 
 
 
+
+# ReACT 
+ReACT는 Reasoning + Acting이다.
+
+- Reasoning: 인간이 문제 해결에 접근 단계를 추론하도록 한다.
+- Acting: LLM이 가상으로 행동을 시뮬레이션 하도록 한다
 
