@@ -22,6 +22,12 @@ tag: Development
 
 
 
+
+# Pipeline 
+
+<center><img width="600" src="https://github.com/user-attachments/assets/19a4fe70-6769-4d1c-a576-e776e39f74a0"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
 # ReACT 
 
 <center><img width="600" src="https://github.com/user-attachments/assets/3d8d145b-b4e2-4397-81cd-fc67eee3b086"></center>
