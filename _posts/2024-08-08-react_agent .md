@@ -1,5 +1,5 @@
 ---
-title: "#ReACT #HITL #Multi-Agent 개발 및 작성 중"
+title: "#ReACT #HITL #Multi-Agent (현재 블로그 검색창 시스템)"
 category: Dev Log
 tag: Development
 ---
