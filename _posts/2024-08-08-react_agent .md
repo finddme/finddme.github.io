@@ -29,7 +29,7 @@ tag: Development
 
 # Pipeline 
 
-<center><img width="1000" src="https://github.com/user-attachments/assets/c8fa0885-cf34-401e-85f0-4540b18b757e"></center>
+<center><img width="1000" src="https://github.com/user-attachments/assets/e6becc32-d802-4cde-ba28-e704edbb8ec4"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 - 본 개발물은 law, ai(blog post), realtime, websearch, image generation 분야에 대한 답변 생성 기능을 가진다.
