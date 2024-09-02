@@ -32,6 +32,9 @@ tag: Development
 <center><img width="1000" src="https://github.com/user-attachments/assets/c8fa0885-cf34-401e-85f0-4540b18b757e"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
+- 본 개발물은 law, ai(blog post), realtime, websearch, image generation 분야에 대한 답변 생성 기능을 가진다.
+- law와 realtime의 경우 retrieval 결과에 따라 답변 품질의 격차가 심해 개선 중이다. 
+
 # ReACT 
 
 <center><img width="600" src="https://github.com/user-attachments/assets/3d8d145b-b4e2-4397-81cd-fc67eee3b086"></center>
