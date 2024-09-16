@@ -34,12 +34,31 @@ tag: Development
 
 - 본 개발물은 law, ai(blog post), realtime, websearch, image generation 분야에 대한 답변 생성 기능을 가진다.
 
+# Demo
+
+- Law
+<center><img width="600" src="https://github.com/user-attachments/assets/93d27378-4d07-4239-952f-ea8a25796bd9"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
+- AI
+<center><img width="600" src="https://github.com/user-attachments/assets/fbfd454f-9ccc-47b8-9247-e456029b79f0"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
+- Conversation
+<center><img width="600" src="https://github.com/user-attachments/assets/e9da716d-d537-48c9-bd44-2ca9072da7b8"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
+- Real time / Web search
+<center><img width="600" src="https://github.com/user-attachments/assets/fee619ca-e121-421c-a8c0-7d18c9365f9f"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
 # 문제점
+- ~~속도가 많이 느리다~~ -> function calling 도입으로 해결 ([Function calling based ReAct Agents](https://finddme.github.io/dev%20log/2024/09/09/func_react/))
 - ~~realtime의 경우, 현재 naver news(지면 기사, 관련도순) 기준 3개의 기사를 참조하여 답변을 하는데, retrieval 결과에 따라 답변 품질의 격차가 심해 개선 중이다.~~ <br>
   -> prompting으로 해결
 - law의 경우, 대한민국 현행 법률을 수집하여 검색된 법률이 해당하는 '조'를 참조하여 답변을 하는데, 일반인이 법률 상담을 위해 구사하는 단어와 법률에 기재된 단어 간의 격차가 커 검색이 제대로 되지 않아 원하는 상담 결과가 나오지 않는다는 문제점이 있다. 해결 중.
 
-# ReACT 
+# + ReACT 
 
 <center><img width="600" src="https://github.com/user-attachments/assets/3d8d145b-b4e2-4397-81cd-fc67eee3b086"></center>
 <center><em style="color:gray;">https://react-lm.github.io/</em></center><br>
