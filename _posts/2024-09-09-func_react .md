@@ -39,7 +39,7 @@ tag: Development
 
 # Improvements
 
-<center><img width="1000" src="https://github.com/user-attachments/assets/e548f6c0-b349-4fd7-a368-d54dcd9e2dc0"></center>
+<center><img width="1000" src="https://github.com/user-attachments/assets/3afc2bd6-b264-47f7-a556-85b9135d8a15"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 - Function calling을 도입함으로써 query routing, qeury transform/rewrite 단계를 fuction calling 한 단계로 치환 -> 속도 개선
