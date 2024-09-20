@@ -22,10 +22,10 @@ tag: Multimodal
 
 
 
-# Detecting hallucinations in large language models using semantic entropy
+# [First Paper] Detecting hallucinations in large language models using semantic entropy
 
 
-# + Sampling Parameters
+# [Additional Information] Sampling Parameters
 
 Sampling Parameter로는 대표적으로 Temperature가, Top-K, Top-P가가 있는데 이들은 LLM의 출력을 제어하는 parameter이다. 해당 parameter를 통해 모델 출력의 일관성<->다양상 정도를 조절할 수 있다.
 
@@ -97,7 +97,7 @@ Temperature=0.8, Top-K=40, Top-P=0.8
 5. 위 scaling 과정을 모두 거친 후 남은 tokend 20개라고 가정한다면, 20개의 token들에 대한 log probability를 renormalize하여 확률이 1이 되도록 만든다.
 6. 이 확률분포에서 next token을 sampling한다.
 
-# Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs
+# [Second Paper] Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs
 
 본 논문에서는 모델의 불확실성을 통해 hallucination을 detect하는 방법을 제안한다. 하지만 서로 다른 token sequence도 동일한 의미를 갖는 경우가 있기 때문에 출력된 token 수준에서 불확실성을 계산하는 것은 정확한 불확실설 계산에 적합하지 않다. 예를 들어 "Paris", "It's Paris", "The capital of France is Paris"라는 답변은 모두 동일한 의미를 내포하는데 이를 고려하지 않는다면 이 세 문장을 출력한 모델의 불확실성은 높게 측정될 것이기 때문이다. 따라서 Farquhar et al.에서는 generation들을 의미적으로 clustering한 이후 의미적 공간에서 불확실성을 추정하는 semantic entropy (SE)를 제안했다.
 
@@ -219,7 +219,7 @@ context가 model의 semantic entropy에 영향을 미치는가?
 
 위와 같은 결과는 모델에게 답변 시 도움이 되는 문맥을 추가해주면 의미적 불확실성이 줄어든다는 것을 의미한다. (RAG이 hallucination 감소에 영향을 준다는 증거가 될 수 있겠다.)
 
-<center><img width="600" src="https://github.com/user-attachments/assets/7a2af6b1-7334-4d11-82e4-0fcda6202444"></center>
+<center><img width="200" src="https://github.com/user-attachments/assets/7a2af6b1-7334-4d11-82e4-0fcda6202444"></center>
 <center><em style="color:gray;">paper</em></center><br>
 
 
