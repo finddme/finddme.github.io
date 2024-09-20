@@ -136,7 +136,17 @@ long form generation task에 대해서 semantic entropy를 얼마나 잘 포착�
 
 ## 5.4 Counterfactual Context Addition Experiment
 
+context가 model의 semantic entropy에 영향을 미치는가?
 
+-> 결론: 미친다. 
+
+- context 추가 전: 문맥 없이 입력에 대한 output을 생성할 때 SEP의 semantic entropy가 매우 높아지는 것을 확인했다. semantic entropy가 높다는 것은 답을 생성할 때 의미적 불확실성이 높다는 의미이다.
+- context 추가 후: 문맥 추가 후에는 model의 accuracy도 추가 전인 26%보다 현저히 높은 78%로 측정되었고 그와 동시에 SEP가 예측한 semantic entropy도 감소하였다.
+
+위와 같은 결과는 모델에게 답변 시 도움이 되는 문맥을 추가해주면 의미적 불확실성이 줄어든다는 것을 의미한다. (RAG이 hallucination 감소에 영향을 준다는 증거가 될 수 있겠다.)
+
+<center><img width="600" src="https://github.com/user-attachments/assets/7a2af6b1-7334-4d11-82e4-0fcda6202444"></center>
+<center><em style="color:gray;">paper</em></center><br>
 
 # + Sampling Parameters
 
