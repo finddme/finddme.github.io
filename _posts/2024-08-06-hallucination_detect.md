@@ -24,7 +24,35 @@ tag: Multimodal
 
 # [First Paper] Detecting hallucinations in large language models using semantic entropy
 
+본 논문에서는 entropy-based uncertainty estimators을 통해 hallucination을 얼마나 반환하는지 감지하는 방법을 제안한다. 
 
+이때 불확실성은 의미 수준에서 계산되어야 한다. 서로 다른 token sequence도 동일한 의미를 갖는 경우가 있기 때문에 출력된 token 수준에서 불확실성을 계산하는 것은 정확한 불확실설 계산에 적합하지 않다. 예를 들어 "Paris", "It's Paris", "The capital of France is Paris"라는 답변은 모두 동일한 의미를 내포하는데 이를 고려하지 않는다면 이 세 문장을 출력한 모델의 불확실성은 높게 측정될 것이기 때문이다. 따라서 본 논문문에서는 generation들을 의미적으로 clustering한 이후 의미적 공간에서 불확실성을 추정하는 semantic entropy (SE)를 제안했다.
+
+## 1. Semantic Entropy
+
+모델의 generation에는 아래와 같은 두 가지 불확실성이 있다:
+
+- Lexical and Syntactic Uncertainty: 어휘 및 구문적 불확실성이다. 이는 문장을 어떤 단어로 어떻게 구성할지와 관련된 불확실성이다.
+- Semantic Uncertainty: 의미적 불확실성이다. 이는 생성된 문장이 내포하는 의미와 관련된 불확실성이다.
+
+Farquhar et al.는 두 불확실성을 정확히 구분해야한다고 강조하며 Semantic Entropy를 제안하였다. Semantic Entropy는 LLM이 생성하는 텍스트에서 발생하는 의미적 불확실성을 정량적으로 측정하는 방법이다.
+
+Semantic Entropy계산은 크게 2 step으로 진행된다.
+
+1. Semantic Clustering
+   - 이 단계에서는 비슷한 의미를 가진 문장들을 clustering한다. Farquhar et al. 논문에서는 DeBERTa를 사용하여 두 문장 사이의 entailment([함의](https://finddme.github.io/linguistik%20%7C%20germanistik/2020/12/13/Pragmatik/#--implikationen%ED%95%A8%EC%9D%98))를 예측한다.
+
+   - $s_a$와 $s_b$라는 문장이 있을 때 두 문장이 양방향으로 서로 함의한다면 두 문장은 동일한 의미를 전달한다고 가정한다. 이러한 가정 하에 서로 함의 관계에 놓은 문장들을 하나의 cluster로 묶는다.
+   - 우선 여러개의 문장을 LLM으로부터 생성하고 이들을 의미적으로 clustering한 후 각 cluster들의 발생 확률을 계산한다. (실험 시에는 Monte Carlo 방식으로 N개의 문장을 sampling하고 이에 대한 cluster를 생성하여 진행한다.)
+   - cluster 확률은 해당 cluster에 속한 모든 generation $s$의 확률을 합한 값이다. generation $s$의 확률은 input $x$가 주어졌을 때 생성된 token들($t_1$,...$t_n$)이 지닌 확률 값의 곱이된다.
+
+2. Semantic Entropy
+   > entropy는 정보 이론에서 주어진 확률 분포의 불확실성을 측정하는 지표이다.
+   
+   - 이 단계에서는 의미적 불확실성을 계산한다. input $x$에 대한 LLM의 generation들의 의미가 얼마나 불확실한지 정량화한다.
+   - 우선 여러개의 문장을 LLM으로부터 생성하고 이들을 의미적으로 clustering한 후 각 cluster들의 발생 확률을 계산한다.
+   - semantic cluster $C$의 발생 확률 기반으로 각 cluster의 불확실성을 측정하는데 이때 사용되는 것이 entropy이다. cluster들이이 얼마나 골고룰 분포되는지에 따라 entropy의 값이 달라진다.
+     
 # [Additional Information] Sampling Parameters
 
 Sampling Parameter로는 대표적으로 Temperature가, Top-K, Top-P가가 있는데 이들은 LLM의 출력을 제어하는 parameter이다. 해당 parameter를 통해 모델 출력의 일관성<->다양상 정도를 조절할 수 있다.
@@ -99,9 +127,7 @@ Temperature=0.8, Top-K=40, Top-P=0.8
 
 # [Second Paper] Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs
 
-본 논문에서는 모델의 불확실성을 통해 hallucination을 detect하는 방법을 제안한다. 하지만 서로 다른 token sequence도 동일한 의미를 갖는 경우가 있기 때문에 출력된 token 수준에서 불확실성을 계산하는 것은 정확한 불확실설 계산에 적합하지 않다. 예를 들어 "Paris", "It's Paris", "The capital of France is Paris"라는 답변은 모두 동일한 의미를 내포하는데 이를 고려하지 않는다면 이 세 문장을 출력한 모델의 불확실성은 높게 측정될 것이기 때문이다. 따라서 Farquhar et al.에서는 generation들을 의미적으로 clustering한 이후 의미적 공간에서 불확실성을 추정하는 semantic entropy (SE)를 제안했다.
-
-하지만 Farquhar et al.이 제안한 방법은 input query에 대해 여러번의 model generation 결과를 요구하는데 일반적으로 5-10번 사이의 generation 결과가 필요하다. 이는 5-10배의 계산 비용이 추가로 발생함을 의미하기 때문에 실용적이지 않다. 따라서 본 논문에서는 보다 실용적인 LLM hallucination detection 방식을 제안한다.
+Farquhar et al.의 논문과 동일하게 token 수준이 아닌 의미 수준에서의 불확실성을 측정하지만 Farquhar et al.이 제안한 방법은 input query에 대해 여러번의 model generation 결과를 요구하는데 일반적으로 5-10번 사이의 generation 결과가 필요하다. 이는 5-10배의 계산 비용이 추가로 발생함을 의미하기 때문에 실용적이지 않다. 따라서 본 논문에서는 보다 실용적인 LLM hallucination detection 방식을 제안한다.
 
 본 논문에서 제안하는 방법론의 핵심은 다음과 같다:
 
@@ -110,34 +136,9 @@ Temperature=0.8, Top-K=40, Top-P=0.8
 - ablation study를 통해 다양한 model, task, layer, token position에 대해 SEP 선능을 실험한다. 결과적으로, 모델 내부 state들이 token을 생성하기 전에도 의미적 불확실성을 암묵적으로 포착하는 것을 확인하였다고 한다.
 - SEP가 hallucination을 예측하는데 사용될 수 있으며, 이전 연구(Farquhar et al.)에서 제안된 probe보다 더 정확하고 실용적인 방법이다.
 
-## 1. Semantic Entropy
+## 1.  Semantic Entropy Probes
 
-모델의 generation에는 아래와 같은 두 가지 불확실성이 있다:
-
-- Lexical and Syntactic Uncertainty: 어휘 및 구문적 불확실성이다. 이는 문장을 어떤 단어로 어떻게 구성할지와 관련된 불확실성이다.
-- Semantic Uncertainty: 의미적 불확실성이다. 이는 생성된 문장이 내포하는 의미와 관련된 불확실성이다.
-
-Farquhar et al.는 두 불확실성을 정확히 구분해야한다고 강조하며 Semantic Entropy를 제안하였다. Semantic Entropy는 LLM이 생성하는 텍스트에서 발생하는 의미적 불확실성을 정량적으로 측정하는 방법이다.
-
-Semantic Entropy계산은 크게 2 step으로 진행된다.
-
-1. Semantic Clustering
-   - 이 단계에서는 비슷한 의미를 가진 문장들을 clustering한다. Farquhar et al. 논문에서는 DeBERTa를 사용하여 두 문장 사이의 entailment([함의](https://finddme.github.io/linguistik%20%7C%20germanistik/2020/12/13/Pragmatik/#--implikationen%ED%95%A8%EC%9D%98))를 예측한다.
-
-   - $s_a$와 $s_b$라는 문장이 있을 때 두 문장이 양방향으로 서로 함의한다면 두 문장은 동일한 의미를 전달한다고 가정한다. 이러한 가정 하에 서로 함의 관계에 놓은 문장들을 하나의 cluster로 묶는다.
-   - 우선 여러개의 문장을 LLM으로부터 생성하고 이들을 의미적으로 clustering한 후 각 cluster들의 발생 확률을 계산한다. (실험 시에는 Monte Carlo 방식으로 N개의 문장을 sampling하고 이에 대한 cluster를 생성하여 진행한다.)
-   - cluster 확률은 해당 cluster에 속한 모든 generation $s$의 확률을 합한 값이다. generation $s$의 확률은 input $x$가 주어졌을 때 생성된 token들($t_1$,...$t_n$)이 지닌 확률 값의 곱이된다.
-
-2. Semantic Entropy
-   > entropy는 정보 이론에서 주어진 확률 분포의 불확실성을 측정하는 지표이다.
-   
-   - 이 단계에서는 의미적 불확실성을 계산한다. input $x$에 대한 LLM의 generation들의 의미가 얼마나 불확실한지 정량화한다.
-   - 우선 여러개의 문장을 LLM으로부터 생성하고 이들을 의미적으로 clustering한 후 각 cluster들의 발생 확률을 계산한다.
-   - semantic cluster $C$의 발생 확률 기반으로 각 cluster의 불확실성을 측정하는데 이때 사용되는 것이 entropy이다. cluster들이이 얼마나 골고룰 분포되는지에 따라 entropy의 값이 달라진다.
-
-## 2.  Semantic Entropy Probes
-
-앞서 설명한 Semantic Entropy는 computational cost가 높다는 단점이 있다. 이를 해결하기 위해 본 논문에서는 선형 회귀 모델(Linear Probes)을 사용하여 hidden state를 분석하여 의미적 Entropy를 예측한다. 이는 hidden state단에서 해결되기 때문에 multiple response sampling이 요구되지 않아 계산 비용이 줄어든다.
+앞서 설명한 Semantic Entropy(Farquhar et al.)는 computational cost가 높다는 단점이 있다. 이를 해결하기 위해 본 논문에서는 선형 회귀 모델(Linear Probes)을 사용하여 hidden state를 분석하여 의미적 Entropy를 예측한다. 이는 hidden state단에서 해결되기 때문에 multiple response sampling이 요구되지 않아 계산 비용이 줄어든다.
 
 ### 2.1 Training SEPs
 
