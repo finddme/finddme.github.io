@@ -62,6 +62,15 @@ Semantic Entropy계산은 크게 2 step으로 진행된다.
    - semantic cluster $C$의 발생 확률 기반으로 각 cluster의 불확실성을 측정하는데 이때 사용되는 것이 entropy이다. cluster들이이 얼마나 골고룰 분포되는지에 따라 entropy의 값이 달라진다.
 
 # 3.  Semantic Entropy Probes
+
+앞서 설명한 Semantic Entropy는 computational cost가 높다는 단점이 있다. 이를 해결하기 위해 본 논문에서는 선형 회귀 모델(Linear Probes)을 사용하여 hidden state를 분석하여 의미적 Entropy를 예측한다. 이는 hidden state단에서 해결되기 때문에 multiple response sampling이 요구되지 않아 계산 비용이 줄어든다.
+
+## 3.1 Training SEPs
+
+SE probs를 학습시키기 위해 model generation의 hidden state와 semantic entropy 쌍의 dataset $(h_p^l(x), H_SE(x))$를 수집한다. 이때 $x$는 input이고, $h_p^l(x) \in \mathbb{R}^d$은 input $x$에 대한 출력을 생성할 때의 token들의 위치 $p$와 layer $l$이고($d$는 hidden state dimension), $H_SE(x)\in \mathbb{R}$은 semantic entropy이다. dataset 수집 시, input $x$에 대한 high-likelihood model response들을 greedy sampling하고 각 layer와 token position에 해당하는 hidden state들을 저장한다. high temperature (T = 1)인 상태에서 sample(N=10)을 model로부터 생성하여 $H_SE(x)$를 산출한다. 
+
+위와 같이 수집된 dataset은 logistic regression classifier를 학습하는데 사용된다.
+
      
 # + Sampling Parameters
 
