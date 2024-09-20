@@ -110,7 +110,7 @@ Temperature=0.8, Top-K=40, Top-P=0.8
 - ablation study를 통해 다양한 model, task, layer, token position에 대해 SEP 선능을 실험한다. 결과적으로, 모델 내부 state들이 token을 생성하기 전에도 의미적 불확실성을 암묵적으로 포착하는 것을 확인하였다고 한다.
 - SEP가 hallucination을 예측하는데 사용될 수 있으며, 이전 연구(Farquhar et al.)에서 제안된 probe보다 더 정확하고 실용적인 방법이다.
 
-# 2. Semantic Entropy
+## 1. Semantic Entropy
 
 모델의 generation에는 아래와 같은 두 가지 불확실성이 있다:
 
@@ -135,17 +135,17 @@ Semantic Entropy계산은 크게 2 step으로 진행된다.
    - 우선 여러개의 문장을 LLM으로부터 생성하고 이들을 의미적으로 clustering한 후 각 cluster들의 발생 확률을 계산한다.
    - semantic cluster $C$의 발생 확률 기반으로 각 cluster의 불확실성을 측정하는데 이때 사용되는 것이 entropy이다. cluster들이이 얼마나 골고룰 분포되는지에 따라 entropy의 값이 달라진다.
 
-# 3.  Semantic Entropy Probes
+## 2.  Semantic Entropy Probes
 
 앞서 설명한 Semantic Entropy는 computational cost가 높다는 단점이 있다. 이를 해결하기 위해 본 논문에서는 선형 회귀 모델(Linear Probes)을 사용하여 hidden state를 분석하여 의미적 Entropy를 예측한다. 이는 hidden state단에서 해결되기 때문에 multiple response sampling이 요구되지 않아 계산 비용이 줄어든다.
 
-## 3.1 Training SEPs
+### 2.1 Training SEPs
 
 SE probs를 학습시키기 위해 model generation의 hidden state와 semantic entropy 쌍의 dataset $(h_p^l(x), H_SE(x))$를 수집한다. 이때 $x$는 input이고, $h_p^l(x) \in \mathbb{R}^d$은 input $x$에 대한 출력을 생성할 때의 token들의 위치 $p$와 layer $l$이고($d$는 hidden state dimension), $H_SE(x)\in \mathbb{R}$은 semantic entropy이다. dataset 수집 시, input $x$에 대한 high-likelihood model response들을 greedy sampling하고 각 layer와 token position에 해당하는 hidden state들을 저장한다. high temperature (T = 1)인 상태에서 sample(N=10)을 model로부터 생성하여 $H_SE(x)$를 산출한다. 
 
 위와 같이 수집된 dataset은 logistic regression classifier를 학습하는데 사용된다. Semantic entropy score는 real number인데 어떻게 classifier 학습에 사용될까? binary 과정을 거친 후에 학습에 사용된다. real number인 entropy score를 이진화하기 위해 threshold $\gamma$를 기준으로 높은 entropy, 낮은 entropy로 분류하였다. 
 
-## 3.2 Probing Locations
+### 2.2 Probing Locations
 
 본 논문에서는 LLM의 어느 layer($l$)에서 어느 token position $p$의 hidden state가 semantics entropy를 가장 잘 나타내는지 연구했다. 이때 두 가지 위치가 주요하게 사용된다.
 
@@ -154,9 +154,9 @@ SE probs를 학습시키기 위해 model generation의 hidden state와 semantic 
 
 (TBG는 모델이 generation을 만들기 전에 불확실성을 측정할 수 있기 때문에 계산비용을 더 절감할 수 있다고 한다.)
 
-# 4. Experiment
+## 3. Experiment
 
-## 4.1 Task
+### 3.1 Task
 
 - short-form task:
   - 모델에게 가능한 한 짧게 답변하도록 요청한다.
@@ -167,13 +167,13 @@ SE probs를 학습시키기 위해 model generation의 hidden state와 semantic 
 
 short-form setting의 경우 SQuAD F1 스코어로 모델 정확도를 평가하고, long-form setting의 경우 GPT-4를 사용해 entailment(함의)를 예측한다.
 
-## 4.2 Linear Probe
+### 3.2 Linear Probe
 
 - scikit-learn의  logistic regression model을 사용.
   - regularization: default hyperparameters for L2
   - optimizer: LBFGS
 
-## 4.3 Evaluation
+### 3.3 Evaluation
 
 평가에는 두 가지 기준이 적용된다.
 
@@ -182,9 +182,9 @@ short-form setting의 경우 SQuAD F1 스코어로 모델 정확도를 평가하
 
 두 기준 모두 area under the receiver operating characteristic curve (AUROC)값으로 평가하며, AUROC가 높을수록 의미적 불확실성을 잘 파악한다는 것이다.
 
-# 5.  LLM Hidden States Implicitly Capture Semantic Entropy
+## 4.  LLM Hidden States Implicitly Capture Semantic Entropy
 
-## 5.1 Hidden States Capture Semantic Entropy
+### 4.1 Hidden States Capture Semantic Entropy
 
 model의 hidden state가 semantic entropy를 잘 포착하는가? 
 
@@ -193,7 +193,7 @@ model의 hidden state가 semantic entropy를 잘 포착하는가?
 <center><img width="600" src="https://github.com/user-attachments/assets/38dbc1ab-af8e-43a2-aa47-4835d448e76d"></center>
 <center><em style="color:gray;">paper</em></center><br>
 
-## 5.2 Semantic Entropy Can Be Predicted Before Generating
+### 4.2 Semantic Entropy Can Be Predicted Before Generating
 
 output을 생성하기 전에 semantic entropy를 예측할 수 있는가?
 
@@ -202,13 +202,13 @@ output을 생성하기 전에 semantic entropy를 예측할 수 있는가?
 <center><img width="600" src="https://github.com/user-attachments/assets/7a0b7620-c672-40bc-bdf0-6a5183cdaace"></center>
 <center><em style="color:gray;">paper</em></center><br>
 
-## 5.3 Long-Form Generations and Layer Dynamics
+### 4.3 Long-Form Generations and Layer Dynamics
 
 long form generation task에 대해서 semantic entropy를 얼마나 잘 포착하는가?
 
 -> long form generation task를 처리할 때 model의 중간 layer에서 AUROC score가 높아지는 경향이 나타났다. 논문의 저자는 마지막 layer에 가까워질수록 model이 의미적인 것보다 문법적, 어휘적 요소에 더 고려하여 다음 token을 예측하기 때문이라고 기술하였다.
 
-## 5.4 Counterfactual Context Addition Experiment
+### 4.4 Counterfactual Context Addition Experiment
 
 context가 model의 semantic entropy에 영향을 미치는가?
 
