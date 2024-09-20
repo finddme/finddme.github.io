@@ -39,6 +39,9 @@ Farquhar et al.는 두 불확실성을 정확히 구분해야한다고 강조하
 
 Semantic Entropy계산은 크게 2 step으로 진행된다.
 
+1. Generation
+   - 이 단계에서는 input에 대해 different random seed(sampling parameter)로 여러 output을 생성한다.
+     
 1. Semantic Clustering
    - 이 단계에서는 비슷한 의미를 가진 문장들을 clustering한다. Farquhar et al. 논문에서는 DeBERTa를 사용하여 두 문장 사이의 entailment([함의](https://finddme.github.io/linguistik%20%7C%20germanistik/2020/12/13/Pragmatik/#--implikationen%ED%95%A8%EC%9D%98))를 예측한다.
 
