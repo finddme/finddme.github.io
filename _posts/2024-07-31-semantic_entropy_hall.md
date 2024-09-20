@@ -45,11 +45,25 @@ tag: Multimodal
 
 Farquhar et al.는 두 불확실성을 정확히 구분해야한다고 강조하며 Semantic Entropy를 제안하였다. Semantic Entropy는 LLM이 생성하는 텍스트에서 발생하는 의미적 불확실성을 정량적으로 측정하는 방법이다.
 
-Semantic Entropy계산은 크게 3 step으로 진행된다.
+Semantic Entropy계산은 크게 2 step으로 진행된다.
 
-1. 
+1. Semantic Clustering
+   - 이 단계에서는 비슷한 의미를 가진 문장들을 clustering한다. Farquhar et al. 논문에서는 DeBERTa를 사용하여 두 문장 사이의 entailment([함의](https://finddme.github.io/linguistik%20%7C%20germanistik/2020/12/13/Pragmatik/#--implikationen%ED%95%A8%EC%9D%98))를 예측한다.
 
-# Sampling Parameters
+   - $s_a$와 $s_b$라는 문장이 있을 때 두 문장이 양방향으로 서로 함의한다면 두 문장은 동일한 의미를 전달한다고 가정한다. 이러한 가정 하에 서로 함의 관계에 놓은 문장들을 하나의 cluster로 묶는다.
+   - 우선 여러개의 문장을 LLM으로부터 생성하고 이들을 의미적으로 clustering한 후 각 cluster들의 발생 확률을 계산한다. (실험 시에는 Monte Carlo 방식으로 N개의 문장을 sampling하고 이에 대한 cluster를 생성하여 진행한다.)
+   - cluster 확률은 해당 cluster에 속한 모든 generation $s$의 확률을 합한 값이다. generation $s$의 확률은 input $x$가 주어졌을 때 생성된 token들($t_1$,...$t_n$)이 지닌 확률 값의 곱이된다.
+
+2. Semantic Entropy
+   > entropy는 정보 이론에서 주어진 확률 분포의 불확실성을 측정하는 지표이다.
+   
+   - 이 단계에서는 의미적 불확실성을 계산한다. input $x$에 대한 LLM의 generation들의 의미가 얼마나 불확실한지 정량화한다.
+   - 우선 여러개의 문장을 LLM으로부터 생성하고 이들을 의미적으로 clustering한 후 각 cluster들의 발생 확률을 계산한다.
+   - semantic cluster $C$의 발생 확률 기반으로 각 cluster의 불확실성을 측정하는데 이때 사용되는 것이 entropy이다. cluster들이이 얼마나 골고룰 분포되는지에 따라 entropy의 값이 달라진다.
+
+# 3.  Semantic Entropy Probes
+     
+# + Sampling Parameters
 
 Sampling Parameter로는 대표적으로 Temperature가, Top-K, Top-P가가 있는데 이들은 LLM의 출력을 제어하는 parameter이다. 해당 parameter를 통해 모델 출력의 일관성<->다양상 정도를 조절할 수 있다.
 
