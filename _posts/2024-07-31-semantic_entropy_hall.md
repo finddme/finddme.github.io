@@ -80,6 +80,62 @@ SE probs를 학습시키기 위해 model generation의 hidden state와 semantic 
 
 (TBG는 모델이 generation을 만들기 전에 불확실성을 측정할 수 있기 때문에 계산비용을 더 절감할 수 있다고 한다.)
 
+# 4. Experiment
+
+## 4.1 Task
+
+- short-form task:
+  - 모델에게 가능한 한 짧게 답변하도록 요청한다.
+  - 생성 모델로는 Llama-2 7B, 70B, Mistral 7B, Phi-3 Mini를 사용하고 DeBERTaLarge로 entailment(함의)를 예측한다.
+- long-form task:
+  - 완전한 문장을 생성하도록 요청하여 긴 답변을 반환하도록 요청한다.
+  - 생성 모델로는 Llama-2-70B, Llama-3-70B를 사용하고 GPT-3.5를 통해 의미론적 불확실성을 예측한다.
+
+short-form setting의 경우 SQuAD F1 스코어로 모델 정확도를 평가하고, long-form setting의 경우 GPT-4를 사용해 entailment(함의)를 예측한다.
+
+## 4.2 Linear Probe
+
+- scikit-learn의  logistic regression model을 사용.
+  - regularization: default hyperparameters for L2
+  - optimizer: LBFGS
+
+## 4.3 Evaluation
+
+평가에는 두 가지 기준이 적용된다.
+
+1. Semantic Entropy를 잘 예측하는지
+2. model hallucination을 잘 예측하는지
+
+두 기준 모두 area under the receiver operating characteristic curve (AUROC)값으로 평가하며, AUROC가 높을수록 의미적 불확실성을 잘 파악한다는 것이다.
+
+# 5.  LLM Hidden States Implicitly Capture Semantic Entropy
+
+## 5.1 Hidden States Capture Semantic Entropy
+
+model의 hidden state가 semantic entropy를 잘 포착하는가? 
+
+-> 일반적으로, 모델의 후반부 레이어에서 AUROC 값이 증가하는 것으로 확인된다. 이는 **모델 후반부 layer가 semantic entropy를 잘 파악**한다는것을 의미한다.
+
+<center><img width="600" src="https://github.com/user-attachments/assets/38dbc1ab-af8e-43a2-aa47-4835d448e76d"></center>
+<center><em style="color:gray;">paper</em></center><br>
+
+## 5.2 Semantic Entropy Can Be Predicted Before Generating
+
+output을 생성하기 전에 semantic entropy를 예측할 수 있는가?
+
+-> 결론: 예측할 수 있다. 아래 표는 TBG location, 즉 output을 생성하기 직전 입력 문장의 마지막 token을 처리할 때의 AUROC score이다. 보면 전반적으로 높은 점수가 나와 해당 시점에서도 semantic entropy를 예측할 수 있을 것으로 확인된다.
+
+<center><img width="600" src="https://github.com/user-attachments/assets/7a0b7620-c672-40bc-bdf0-6a5183cdaace"></center>
+<center><em style="color:gray;">paper</em></center><br>
+
+## 5.3 Long-Form Generations and Layer Dynamics
+
+long form generation task에 대해서 semantic entropy를 얼마나 잘 포착하는가?
+
+-> long form generation task를 처리할 때 model의 중간 layer에서 AUROC score가 높아지는 경향이 나타났다. 논문의 저자는 마지막 layer에 가까워질수록 model이 의미적인 것보다 문법적, 어휘적 요소에 더 고려하여 다음 token을 예측하기 때문이라고 기술하였다.
+
+## 5.4 Counterfactual Context Addition Experiment
+
 
 
 # + Sampling Parameters
