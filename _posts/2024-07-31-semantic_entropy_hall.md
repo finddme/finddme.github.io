@@ -38,11 +38,16 @@ tag: Multimodal
 
 # 2. Semantic Entropy
 
-본 논문에서는 Semantic Entropy를 활용하여 LLM이 생성하는 텍스트에서 발생하는 의미적 불확실성을 측정한다.
+모델의 generation에는 아래와 같은 두 가지 불확실성이 있다:
 
+- Lexical and Syntactic Uncertainty: 어휘 및 구문적 불확실성이다. 이는 문장을 어떤 단어로 어떻게 구성할지와 관련된 불확실성이다.
+- Semantic Uncertainty: 의미적 불확실성이다. 이는 생성된 문장이 내포하는 의미와 관련된 불확실성이다.
 
+Farquhar et al.는 두 불확실성을 정확히 구분해야한다고 강조하며 Semantic Entropy를 제안하였다. Semantic Entropy는 LLM이 생성하는 텍스트에서 발생하는 의미적 불확실성을 정량적으로 측정하는 방법이다.
 
-SEPs가 환각을 예측하는 데 사용될 수 있으며, 이전 연구에서 제안된 정확도 예측을 위한 프로브보다 더 잘 일반화된다는 것을 보여주며, 비용 효율적인 환각 감지에서 새로운 최첨단 성능을 설정합니다(7절, Fig. 1).
+Semantic Entropy계산은 크게 3 step으로 진행된다.
+
+1. 
 
 # Sampling Parameters
 
