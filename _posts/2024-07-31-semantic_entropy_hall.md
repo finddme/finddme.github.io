@@ -69,9 +69,19 @@ Semantic Entropy계산은 크게 2 step으로 진행된다.
 
 SE probs를 학습시키기 위해 model generation의 hidden state와 semantic entropy 쌍의 dataset $(h_p^l(x), H_SE(x))$를 수집한다. 이때 $x$는 input이고, $h_p^l(x) \in \mathbb{R}^d$은 input $x$에 대한 출력을 생성할 때의 token들의 위치 $p$와 layer $l$이고($d$는 hidden state dimension), $H_SE(x)\in \mathbb{R}$은 semantic entropy이다. dataset 수집 시, input $x$에 대한 high-likelihood model response들을 greedy sampling하고 각 layer와 token position에 해당하는 hidden state들을 저장한다. high temperature (T = 1)인 상태에서 sample(N=10)을 model로부터 생성하여 $H_SE(x)$를 산출한다. 
 
-위와 같이 수집된 dataset은 logistic regression classifier를 학습하는데 사용된다.
+위와 같이 수집된 dataset은 logistic regression classifier를 학습하는데 사용된다. Semantic entropy score는 real number인데 어떻게 classifier 학습에 사용될까? binary 과정을 거친 후에 학습에 사용된다. real number인 entropy score를 이진화하기 위해 threshold $\gamma$를 기준으로 높은 entropy, 낮은 entropy로 분류하였다. 
 
-     
+## 3.2 Probing Locations
+
+본 논문에서는 LLM의 어느 layer($l$)에서 어느 token position $p$의 hidden state가 semantics entropy를 가장 잘 나타내는지 연구했다. 이때 두 가지 위치가 주요하게 사용된다.
+
+- TBG (Token Before Generating): 입력 문장의 마지막 token
+- SLT (Second Last Token): 모델이 생성하는 응답에서 마지막 token의 직전 token
+
+(TBG는 모델이 generation을 만들기 전에 불확실성을 측정할 수 있기 때문에 계산비용을 더 절감할 수 있다고 한다.)
+
+
+
 # + Sampling Parameters
 
 Sampling Parameter로는 대표적으로 Temperature가, Top-K, Top-P가가 있는데 이들은 LLM의 출력을 제어하는 parameter이다. 해당 parameter를 통해 모델 출력의 일관성<->다양상 정도를 조절할 수 있다.
