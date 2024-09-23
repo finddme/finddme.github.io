@@ -37,7 +37,9 @@ tag: Multimodal
 - Lexical and Syntactic Uncertainty: 어휘 및 구문적 불확실성이다. 이는 문장을 어떤 단어로 어떻게 구성할지와 관련된 불확실성이다.
 - Semantic Uncertainty: 의미적 불확실성이다. 이는 생성된 문장이 내포하는 의미와 관련된 불확실성이다.
 
-Farquhar et al.는 두 불확실성을 정확히 구분해야한다고 강조하며 Semantic Entropy를 제안하였다. Semantic Entropy는 LLM이 생성하는 텍스트에서 발생하는 의미적 불확실성을 정량적으로 측정하는 방법이다.
+본 논문에서는 두 불확실성을 정확히 구분해야한다고 강조하며 Semantic Entropy를 제안하였다. Semantic Entropy는 LLM이 생성하는 텍스트에서 발생하는 의미적 불확실성을 정량적으로 측정하는 방법이다.
+
+구현 코드는 [https://github.com/jlko/semantic_uncertainty/blob/master/semantic_uncertainty/uncertainty/uncertainty_measures/semantic_entropy.py](https://github.com/jlko/semantic_uncertainty/blob/master/semantic_uncertainty/uncertainty/uncertainty_measures/semantic_entropy.py)에 깔끔하게 정리되어 있다.
 
 Semantic Entropy계산은 크게 3 step으로 진행된다.
 
