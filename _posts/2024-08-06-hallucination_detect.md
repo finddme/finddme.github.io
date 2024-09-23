@@ -26,7 +26,7 @@ tag: Multimodal
 
 본 논문에서는 entropy-based uncertainty estimators를 통해 model이 hallucination을 얼마나 반환하는 model인지 감지하는 방법을 제안한다. 
 
-이때 불확실성은 의미 수준에서 계산되어야 한다. 서로 다른 token sequence도 동일한 의미를 갖는 경우가 있기 때문에 출력된 token 수준에서 불확실성을 계산하는 것은 정확한 불확실설 계산에 적합하지 않다. 예를 들어 "Paris", "It's Paris", "The capital of France is Paris"라는 답변은 모두 동일한 의미를 내포하는데 이를 고려하지 않는다면 이 세 문장을 출력한 모델의 불확실성은 높게 측정될 것이기 때문이다. 따라서 본 논문문에서는 generation들을 의미적으로 clustering한 이후 의미적 공간에서 불확실성을 추정하는 semantic entropy (SE)를 제안했다.
+이때 불확실성은 의미 수준에서 계산되어야 한다. 서로 다른 token sequence도 동일한 의미를 갖는 경우가 있기 때문에 출력된 token 수준에서 불확실성을 계산하는 것은 적합하지 않다. 예를 들어 "Paris", "It's Paris", "The capital of France is Paris"라는 답변은 모두 동일한 의미를 내포하는데 이를 고려하지 않는다면 이 세 문장을 출력한 모델의 불확실성은 높게 측정될 것이기 때문이다. 따라서 본 논문문에서는 generation들을 의미적으로 clustering한 이후 의미적 공간에서 불확실성을 추정하는 semantic entropy (SE)를 제안했다.
 
 즉, 모델이 자신 있게 대답하지만 표현은 다양하게 할 수 있는 부분에서는 불확실성을 낮게 보고, 답변의 의미 자체가 여러 가지로 해석될 수 있는 부분에서는 불확실성을 높게 평가하는 방식이다.
 
