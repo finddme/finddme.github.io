@@ -41,18 +41,18 @@ Farquhar et al.는 두 불확실성을 정확히 구분해야한다고 강조하
 
 Semantic Entropy계산은 크게 3 step으로 진행된다.
 
-1. Generation
+### 1.1 Generation
    - 이 단계에서는 input에 대해 [different random seed(sampling parameter)](https://finddme.github.io/llm%20/%20multimodal/2024/08/06/hallucination_detect/#additional-information-sampling-parameters)로 여러 output을 생성한다. 주로 temperature, top-K sampling을 사용했다.
    - 생성된 각 output에 대한 확률도 함께 기록한다.
      
-2. Semantic Clustering
+### 1.2 Semantic Clustering
    - 이 단계에서는 비슷한 의미를 가진 문장들을 clustering한다.  
 
    - $s_a$와 $s_b$라는 문장이 있을 때 두 문장이 양방향으로 서로 함의한다면 두 문장은 동일한 의미를 전달한다고 가정한다. 이러한 가정 하에 서로 함의 관계에 놓은 문장들을 하나의 cluster로 묶는다.
    - 우선 여러개의 문장을 LLM으로부터 생성하고 이들을 의미적으로 clustering한 후 각 cluster들의 발생 확률을 계산한다. (실험 시에는 Monte Carlo 방식으로 N개의 문장을 sampling하고 이에 대한 cluster를 생성하여 진행한다.)
    - cluster 확률은 해당 cluster에 속한 모든 generation $s$의 확률을 합한 값이다. generation $s$의 확률은 input $x$가 주어졌을 때 생성된 token들($t_1$,...$t_n$)이 지닌 확률 값의 곱이된다.
 
-3. Semantic Entropy Estimation
+### 1.3 Semantic Entropy Estimation
    > entropy는 정보 이론에서 주어진 확률 분포의 불확실성을 측정하는 지표이다.
    
    - 이 단계에서는 의미적 불확실성을 계산한다.
@@ -67,7 +67,7 @@ Entailment estimator는 앞서 기술한 Semantic Entropy계산 과정 중 Seman
 
 함의 감지 방법은 두 가지이다.:
 
-1. Instruction-tuned LLM 사용
+### 2.1 Instruction-tuned LLM 사용
   LLaMA 2, GPT-3.5 (Turbo 1106), GPT-4와 같은 언어 모델을 사용하여 두 답변 사이의 함의를 예측한다. 사용된 promot는 아래와 같다. 질무에 대한 두 답변을 제시하고 두 답변의 관계를 묻는다. 두 답변의 관계는 entailment(함의), contradiction(모순), neutral(중립) 중 하나로 선택하도 요청한다.
 
   ```
@@ -79,16 +79,16 @@ Entailment estimator는 앞서 기술한 Semantic Entropy계산 과정 중 Seman
   Respond with entailment, contradiction, or neutral.
   ```
 
-2.  embedding similarity 측정 방식 사용
+### 2.2  embedding similarity 측정 방식 사용
 
 embedding similarity를 기반으로 두 문장이 얼마나 비슷한지 판단하는 task를 활용하는 방법니다. 본 논문에서는 MNLI dataset을 학습한 DeBERTa-large model을 통해 Q-A1, Q-A2 사이에 함의가 있는지 확인한다. 해당 방법은 LLM을 사용한 벙법보다 성능이 낮다.
 
 
-## 2. Experiment
+## 3. Experiment
 
 본 논문에서는 두 가지 task에 대해 실험을 진행했다.
 
-- QA and math task
+### 3.1 QA and math task
   - dataset:
     - BioASQ: 생명과학 분야의 QA dataset
     - SQuAD: 위키피디아에서 문맥을 기반으로 질문에 답하는 dataset
@@ -102,7 +102,7 @@ embedding similarity를 기반으로 두 문장이 얼마나 비슷한지 판단
     <center><img width="600" src="https://github.com/user-attachments/assets/cdf6f747-c52b-4b8f-bfdd-23b9c9583040"></center>
     <center><em style="color:gray;">paper</em></center><br>
 
-- biography-generation task
+### 3.2 biography-generation task
   - dataset: FactualBio(실존 인물들의 전기를 담은 dataset)
   - Entailment estimator: DeBERTa
   - method:
