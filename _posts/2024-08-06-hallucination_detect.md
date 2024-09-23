@@ -84,8 +84,6 @@ Entailment estimator는 앞서 기술한 Semantic Entropy계산 과정 중 Seman
 embedding similarity를 기반으로 두 문장이 얼마나 비슷한지 판단하는 task를 활용하는 방법니다. 본 논문에서는 MNLI dataset을 학습한 DeBERTa-large model을 통해 Q-A1, Q-A2 사이에 함의가 있는지 확인한다. 해당 방법은 LLM을 사용한 벙법보다 성능이 낮다.
 
 
-DeBERTa가 GPT-3.5나 GPT-4보다 recall 점수 낮지만, 짧은 문장에서 매우 높은 성능을 보여주기 때문에 DeBERTa
-
 ## 2. Experiment
 
 본 논문에서는 두 가지 task에 대해 실험을 진행했다.
@@ -98,11 +96,30 @@ DeBERTa가 GPT-3.5나 GPT-4보다 recall 점수 낮지만, 짧은 문장에서 �
     - SVAMP: 수학적 추론이 필요한 초등학교 수준의 단어 문제 dataset
     - NQ-Open: 구글 검색에서 추출된 실제 질문들을 다룬 dataset
   - model: FalconInstruct (7B/40B), LLaMA 2 Chat(7B/13B/70B), Mistral Instruct (7B)
+  - Entailment estimator: LLM
   - method: model에게 context 없이 답변하도록 요청하여 hallucination을 한 후 불확실성 예측 실험 진행.
-
+  - result:
+    <center><img width="600" src="https://github.com/user-attachments/assets/cdf6f747-c52b-4b8f-bfdd-23b9c9583040"></center>
+    <center><em style="color:gray;">paper</em></center><br>
 
 - biography-generation task
   - dataset: FactualBio(실존 인물들의 전기를 담은 dataset)
+  - Entailment estimator: DeBERTa
+  - method:
+    1. specific factual claim을 기준으로 dataset을 분해. 이때 사용된 prompt는 아래와 같다:
+      ```
+      "Please list the specific factual propositions included in the answer above. Be complete and do not leave any factual claims out. Provide each claim as a separate sentence in a separate bullet point."
+      ```
+    2. 분해된 사실적 주장에 대해 해당 문장들이 생성될 수 있는 질문 6개를 생성
+    3. 모델에 질문을 입력하고 답변을 3번 생성
+      ```    
+      "You see the sentence: {proposition}. Generate a list of three questions, that might have generated the sentence in the context of the preceding original text."
+      ```
+    4. semantic entropy 계산-> 답변 3개 + original factual claim에 대해 semantic entropy를 계산
+  - result:
+    <center><img width="600" src="https://github.com/user-attachments/assets/a0cdb4cb-e6f2-416f-9cbb-f8d926cd8391"></center>
+    <center><em style="color:gray;">paper</em></center><br>
+    
 
 # [Additional Information] Sampling Parameters
 
