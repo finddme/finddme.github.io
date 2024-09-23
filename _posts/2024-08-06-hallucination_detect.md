@@ -298,6 +298,8 @@ context가 model의 semantic entropy에 영향을 미치는가?
 
 > Detecting hallucinations in large language models using semantic entropy <br>
 > [https://www.nature.com/articles/s41586-024-07421-0](https://www.nature.com/articles/s41586-024-07421-0)<br>
+> [https://github.com/jlko/semantic_uncertainty](https://github.com/jlko/semantic_uncertainty)<br>
+> [https://github.com/jlko/long_hallucinations](https://github.com/jlko/long_hallucinations)<br>
 > Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs
 
 
