@@ -63,7 +63,8 @@ Speculative Decoding 적용 시, 유의해야 할 점이 몇 가지 있다.
    따라서 수용률이 높은 main model을 선택하는 것이 중요하다.
 
    LLaMa 3.1의 경우 8B에 대해 70B의 acceptance rate가 70%라고 한다.
-   
+
+**main model과 assistant model의 선정이 적절히 잘 이루어졌을 경우에만 spec-dec이 효과적으로 작용한다. 따라서 해당 방법론을 사요할 시에는 size가 두드러지게 차이나면서 유사한 architecture와 tokenizer를 사용하는 모델을 잘 조합해야 한다.**
 
 # 3. Speculative Decoding code
 최근 다양한 LLM Inference Engine들이 나온는데 대부분 Speculative Decoding을 지원한다.
