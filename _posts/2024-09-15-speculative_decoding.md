@@ -208,4 +208,5 @@ await stream_tokens()
 
 # Reference 
 
-> Fast Inference from Transformers via Speculative Decoding
+> Fast Inference from Transformers via Speculative Decoding<br>
+> https://huggingface.co/blog/assisted-generation
