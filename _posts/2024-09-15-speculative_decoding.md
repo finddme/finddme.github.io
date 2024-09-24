@@ -77,11 +77,14 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, set_seed, BitsAndB
 from pynvml import *
 import time
 
+# === gpu usage check ================================================
 def print_gpu_utilization():
     nvmlInit()
     handle = nvmlDeviceGetHandleByIndex(0)
     info = nvmlDeviceGetMemoryInfo(handle)
     print(f"GPU memory occupied: {info.used//1024**2} MB.")
+
+# === model prepare ================================================
 
 set_seed(42)  # For reproducibility
 
@@ -98,24 +101,21 @@ bnb_config = BitsAndBytesConfig(
 )
 
 model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map="cuda", quantization_config=bnb_config)
+assistant_model = AutoModelForCausalLM.from_pretrained(assistant_checkpoint, device_map="cuda", quantization_config=bnb_config)
 
 
+# === inference basic ================================================
 prompt = []
-prompt.append("Tell me about gravity.")
-prompt.append("What is AI?")
-prompt.append("Write an essay about intelligence.")
-prompt.append("Cite 20 famous people.")
-prompt.append("Give me the recipe for the best chicken curry.")
+prompt.append("바다가 파란색인 이유")
 
 duration = 0.0
 total_length = 0
-
-assistant_model = AutoModelForCausalLM.from_pretrained(assistant_checkpoint, device_map="cuda", quantization_config=bnb_config)
 
 for i in range(len(prompt)):
   model_inputs = tokenizer(prompt[i], return_tensors="pt").to("cuda:0")
   start_time = time.time()
   output = model.generate(**model_inputs, assistant_model=assistant_model, max_length=500)[0] # assistant model 지정해준다.
+
   duration += float(time.time() - start_time)
   total_length += len(output)
   tok_sec_prompt = round(len(output)/float(time.time() - start_time),3)
@@ -124,6 +124,7 @@ for i in range(len(prompt)):
 
 tok_sec = round(total_length/duration,3)
 print("Average --- %s tokens/second ---" % (tok_sec))
+
 ```
 
 ## 3.2 vllm
@@ -136,6 +137,16 @@ from vllm.engine.arg_utils import AsyncEngineArgs
 from vllm.engine.async_llm_engine import AsyncLLMEngine
 import uuid
 import asyncio
+
+from pynvml import *
+import time
+
+# === gpu usage check ================================================
+def print_gpu_utilization():
+    nvmlInit()
+    handle = nvmlDeviceGetHandleByIndex(0)
+    info = nvmlDeviceGetMemoryInfo(handle)
+    print(f"GPU memory occupied: {info.used//1024**2} MB.")
 
 # === model prepare ================================================
 model_args = AsyncEngineArgs(
@@ -161,7 +172,20 @@ model_input = {"max_tokens": max_tokens}
 sampling_params = SamplingParams(**model_input)
 
 idx = str(uuid.uuid4().hex)
+
+start_time = time.time()
+
 vllm_generator = llm_engine.generate(prompt, sampling_params, idx)
+output=vllm_generator[0].outputs[0].text
+
+duration += float(time.time() - start_time)
+total_length += len(output)
+tok_sec_prompt = round(len(output)/float(time.time() - start_time),3)
+print("Prompt --- %s tokens/second ---" % (tok_sec_prompt))
+print(print_gpu_utilization())
+
+tok_sec = round(total_length/duration,3)
+print("Average --- %s tokens/second ---" % (tok_sec))
 
 # === inference stream ================================================
 
