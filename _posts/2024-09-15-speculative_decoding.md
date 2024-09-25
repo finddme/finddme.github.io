@@ -1,5 +1,5 @@
 ---
-title: "Speculative Decoding🚀 (작성 중)"
+title: "Speculative Decoding"
 category: LLM / Multimodal
 tag: Multimodal
 ---
