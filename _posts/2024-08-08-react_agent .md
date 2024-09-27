@@ -53,10 +53,11 @@ tag: Development
 <center><em style="color:gray;">Create by author</em></center><br>
 
 # 문제점
-- ~~속도가 많이 느리다~~ -> function calling 도입으로 해결 ([Function calling based ReAct Agents](https://finddme.github.io/dev%20log/2024/09/09/func_react/))
+- ~~속도가 많이 느리다~~ **-> function calling 도입으로 해결 ([Function calling based ReAct Agents](https://finddme.github.io/dev%20log/2024/09/09/func_react/))**
 - ~~realtime의 경우, 현재 naver news(지면 기사, 관련도순) 기준 3개의 기사를 참조하여 답변을 하는데, retrieval 결과에 따라 답변 품질의 격차가 심해 개선 중이다.~~ <br>
-  -> prompting으로 해결
-- law의 경우, 대한민국 현행 법률을 수집하여 검색된 법률이 해당하는 '조'를 참조하여 답변을 하는데, 일반인이 법률 상담을 위해 구사하는 단어와 법률에 기재된 단어 간의 격차가 커 검색이 제대로 되지 않아 원하는 상담 결과가 나오지 않는다는 문제점이 있다. 해결 중.
+  **-> prompting으로 해결**
+- ~~law의 경우, 대한민국 현행 법률을 수집하여 검색된 법률이 해당하는 '조'를 참조하여 답변을 하는데, 일반인이 법률 상담을 위해 구사하는 단어와 법률에 기재된 단어 간의 격차가 커 검색이 제대로 되지 않아 원하는 상담 결과가 나오지 않는다는 문제점이 있다. 해결 중.~~ <br>
+  **-> legal 상담 데이터 추가로 해결**
 
 # + ReACT 
 
