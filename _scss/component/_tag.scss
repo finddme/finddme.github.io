@@ -19,7 +19,7 @@
   }
   @include transition(all .1s ease-in-out);
 }
-
+ 
 .tags-expo {
   :target:before {
     content:"";
