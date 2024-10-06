@@ -150,10 +150,13 @@ title:   #Categories Home
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily AI Report Link</title>
+    <title>Daily AI Report Links</title>
 </head>
 <body>
-    <p id="reportLink"></p>
+    <div class="post">
+        <p id="paperLink" class="report-link"></p>
+        <p id="newsLink" class="report-link"></p>
+    </div>
 
     <script>
         function formatDate(date) {
@@ -163,16 +166,21 @@ title:   #Categories Home
             return `${year}-${month}-${day}`;
         }
 
-        function updateReportLink() {
+        function updateReportLinks() {
             const today = new Date();
             const formattedDate = formatDate(today);
-            const url = `https://github.com/finddme/Daily_AI_report/blob/main/reports/${formattedDate}/Papers_${formattedDate}_report.md`;
             
-            const linkElement = document.getElementById('reportLink');
-            linkElement.innerHTML = `<a href="${url}" target="_blank">Daily AI report : Papers</a>`;
+            const paperUrl = `https://github.com/finddme/Daily_AI_report/blob/main/reports/${formattedDate}/Papers_${formattedDate}_report.md`;
+            const newsUrl = `https://github.com/finddme/Daily_AI_report/blob/main/reports/${formattedDate}/News_${formattedDate}_report.md`;
+            
+            const paperLinkElement = document.getElementById('paperLink');
+            const newsLinkElement = document.getElementById('newsLink');
+            
+            paperLinkElement.innerHTML = `<a href="${paperUrl}" target="_blank">Daily AI report : Papers</a>`;
+            newsLinkElement.innerHTML = `<a href="${newsUrl}" target="_blank">Daily AI report : News</a>`;
         }
 
-        updateReportLink();
+        updateReportLinks();
     </script>
 </body>
 
