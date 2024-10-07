@@ -190,7 +190,7 @@ title:   #Categories Home
             const koreaTimeDiff = 9 * 60 * 60 * 1000; // 9 hours in milliseconds
             const koreaTime = new Date(now.getTime() + koreaTimeDiff);
             
-            if (koreaTime.getUTCHours() < 9) {
+            if (koreaTime.getUTCHours() < 10) {
                 // If it's before 9 AM in Korea, use yesterday's date
                 koreaTime.setUTCDate(koreaTime.getUTCDate() - 1);
             }
