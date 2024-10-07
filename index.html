@@ -160,7 +160,7 @@ title:   #Categories Home
         <h3 id="newsLink" class="post-title" style="color:#656668; font-family: $font-sans;"></p>
     </div>
 
-    <script>
+<!--     <script>
         function formatDate(date) {
             const year = date.getFullYear();
             const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -183,6 +183,49 @@ title:   #Categories Home
         }
 
         updateReportLinks();
+    </script> -->
+    <script>
+        function getKoreanDate() {
+            const now = new Date();
+            const koreaTimeDiff = 9 * 60 * 60 * 1000; // 9 hours in milliseconds
+            const koreaTime = new Date(now.getTime() + koreaTimeDiff);
+            
+            if (koreaTime.getUTCHours() < 9) {
+                // If it's before 9 AM in Korea, use yesterday's date
+                koreaTime.setUTCDate(koreaTime.getUTCDate() - 1);
+            }
+            
+            return koreaTime;
+        }
+
+        function formatDate(date) {
+            const year = date.getUTCFullYear();
+            const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+            const day = String(date.getUTCDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        function updateReportLinks() {
+            const koreaDate = getKoreanDate();
+            const formattedDate = formatDate(koreaDate);
+            
+            const paperUrl = `https://github.com/finddme/Daily_AI_report/blob/main/reports/${formattedDate}/Papers_${formattedDate}_report.md`;
+            const newsUrl = `https://github.com/finddme/Daily_AI_report/blob/main/reports/${formattedDate}/News_${formattedDate}_report.md`;
+            
+            const paperLinkElement = document.getElementById('paperLink');
+            const newsLinkElement = document.getElementById('newsLink');
+            
+            paperLinkElement.innerHTML = `<a href="${paperUrl}" target="_blank">Daily AI report : Papers</a>`;
+            newsLinkElement.innerHTML = `<a href="${newsUrl}" target="_blank">Daily AI report : News</a>`;
+
+            // Display current time for debugging
+            const currentTimeElement = document.getElementById('currentTime');
+            currentTimeElement.textContent = `현재 시간 (한국): ${koreaDate.toUTCString()}`;
+        }
+
+        updateReportLinks();
+        // Update links every minute
+        setInterval(updateReportLinks, 60000);
     </script>
 </body>
 
