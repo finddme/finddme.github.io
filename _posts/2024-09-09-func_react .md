@@ -40,10 +40,11 @@ tag: Development
 # Improvements
 
 ## 1. Function calling 도입
-<center><img width="800" src="https://github.com/user-attachments/assets/3afc2bd6-b264-47f7-a556-85b9135d8a15"></center>
-<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 - Function calling을 도입함으로써 query routing, qeury transform/rewrite 단계를 fuction calling 한 단계로 치환 -> 속도 개선
+
+<center><img width="800" src="https://github.com/user-attachments/assets/3afc2bd6-b264-47f7-a556-85b9135d8a15"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 ## 2. Token streaming 도입
 
