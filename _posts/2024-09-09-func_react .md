@@ -1,5 +1,5 @@
 ---
-title: "Function calling based ReAct Agents"
+title: "Function calling based ReAct Agents : Streaming search system"
 category: Dev Log
 tag: Development
 ---
