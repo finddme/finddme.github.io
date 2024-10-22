@@ -57,6 +57,9 @@ tag: Development
 
 ## 1. streaming version
 
+<center><img width="400" src="https://github.com/user-attachments/assets/23070050-0c09-4b5f-88b0-2422ee52a3b9"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
 ## 2. no streaming / img generation agent Demo
 
 ### - Image generation
