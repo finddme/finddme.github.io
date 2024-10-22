@@ -61,27 +61,27 @@ tag: Development
 
 ### Image generation
 
-<center><img width="600" src="https://github.com/user-attachments/assets/4b4c5822-d9b2-4a18-ae20-37e4e5b12f1f"></center>
+<center><img width="400" src="https://github.com/user-attachments/assets/4b4c5822-d9b2-4a18-ae20-37e4e5b12f1f"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
 ### Finance
 
-<center><img width="600" src="https://github.com/user-attachments/assets/f278c10a-3c2b-4df9-b97e-6225800714b5"></center>
+<center><img width="400" src="https://github.com/user-attachments/assets/6c6286ff-d644-4602-9170-d4c037b49ae9"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
 ### Legal
 
-<center><img width="600" src="https://github.com/user-attachments/assets/eed21a39-c1e2-4641-ba1c-df33de585e38"></center>
+<center><img width="400" src="https://github.com/user-attachments/assets/f7e6540e-3ffa-4d1f-a36f-aaacda0881c7"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
 ### AI
 
-<center><img width="600" src="https://github.com/user-attachments/assets/97bb5a13-13c8-44e8-9b7d-9bb5f5eb5494"></center>
+<center><img width="400" src="https://github.com/user-attachments/assets/e15b5d79-8715-4816-873c-049e29536ba0"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
 ### Web search
 
-<center><img width="600" src="https://github.com/user-attachments/assets/5f72ca96-ab0d-4574-8d95-7295f2781f7b"></center>
+<center><img width="400" src="https://github.com/user-attachments/assets/5f72ca96-ab0d-4574-8d95-7295f2781f7b"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
 
