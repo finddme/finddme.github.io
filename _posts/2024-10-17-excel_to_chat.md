@@ -114,7 +114,7 @@ tag: Development
 
 ## 2. 저장된 DB에 query하는 version
 
-<center><img width="500" src="https://github.com/user-attachments/assets/109aec78-6a36-4411-a973-2d661fe20d48"></center>
+<center><img width="600" src="https://github.com/user-attachments/assets/109aec78-6a36-4411-a973-2d661fe20d48"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 
