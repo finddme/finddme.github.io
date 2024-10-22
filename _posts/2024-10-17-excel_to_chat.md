@@ -70,6 +70,47 @@ tag: Development
 
 # Demo
 
+## 1. custom 파일 입력 version
+
+-입력:
+<center><img width="500" src="https://github.com/user-attachments/assets/11f1d275-ea3a-46e2-ad4d-80096b91ac81"></center>
+<center><em style="color:gray;">Illustrated by the author</em></center><br>
+
+- 결과:
+  
+```json
+{
+  "user_input": "직업과 재산 상태를 재산 금액이 높은 순서로 정렬해줘. 상위 10개만 줘.",
+  "response": "제공된 데이터를 기준으로, 직업과 재산 상태를 재산 금액이 높은 순서로 정렬한 결과는 다음과 같습니다.\n\n1. 컴퓨터 시스템 분석가 II - 999919\n2. 조교수 - 997848\n3. 직업 치료사 - 996734\n4. 시니어 개발자 - 996271\n5. 치과위생사 - 994016\n6. 구조 엔지니어 - 993575\n7. 보험계리사 - 993144\n8. 엔지니어 1 - 992183\n9. 직원 회계사 III - 991683\n10. 환경 기술자 - 991648\n\n이 결과는 제공된 데이터를 기준으로 하며, 상위 10개만 보여주고 있습니다.",
+  "sql_query": "SELECT \n    job_title, \n    property_value\nFROM \n    mock\nWHERE \n    property_value IS NOT NULL\nORDER BY \n    property_value DESC\nLIMIT 10;",
+  "sql_dataframe": {
+    "job_title": {
+      "0": "Computer Systems Analyst II",
+      "1": "Associate Professor",
+      "2": "Occupational Therapist",
+      "3": "Senior Developer",
+      "4": "Dental Hygienist",
+      "5": "Structural Engineer",
+      "6": "Actuary",
+      "7": "Engineer I",
+      "8": "Staff Accountant III",
+      "9": "Environmental Tech"
+    },
+    "property_value": {
+      "0": "999919.21",
+      "1": "997848.44",
+      "2": "996734.37",
+      "3": "996270.87",
+      "4": "994016.32",
+      "5": "993574.72",
+      "6": "993143.81",
+      "7": "992182.75",
+      "8": "991682.51",
+      "9": "991647.64"
+    }
+  }
+}
+```
 
 
 
