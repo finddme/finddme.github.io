@@ -55,31 +55,31 @@ tag: Development
 
 # Demo
 
-## streaming version
+## 1. streaming version
 
-## no streaming / img generation agent Demo
+## 2. no streaming / img generation agent Demo
 
-### Image generation
+### - Image generation
 
 <center><img width="400" src="https://github.com/user-attachments/assets/4b4c5822-d9b2-4a18-ae20-37e4e5b12f1f"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
-### Finance
+### - Finance
 
 <center><img width="400" src="https://github.com/user-attachments/assets/6c6286ff-d644-4602-9170-d4c037b49ae9"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
-### Legal
+### - Legal
 
 <center><img width="400" src="https://github.com/user-attachments/assets/f7e6540e-3ffa-4d1f-a36f-aaacda0881c7"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
-### AI
+### - AI
 
 <center><img width="400" src="https://github.com/user-attachments/assets/e15b5d79-8715-4816-873c-049e29536ba0"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
 
-### Web search
+### - Web search
 
 <center><img width="400" src="https://github.com/user-attachments/assets/5f72ca96-ab0d-4574-8d95-7295f2781f7b"></center>
 <center><em style="color:gray;">Create by author</em></center><br>
