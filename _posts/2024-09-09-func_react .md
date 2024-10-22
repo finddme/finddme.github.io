@@ -54,3 +54,34 @@ tag: Development
 - 한국인은 빨리빨리👍
 
 # Demo
+
+## streaming version
+
+## no streaming / img generation agent Demo
+
+### Image generation
+
+<center><img width="600" src="https://github.com/user-attachments/assets/4b4c5822-d9b2-4a18-ae20-37e4e5b12f1f"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
+### Finance
+
+<center><img width="600" src="https://github.com/user-attachments/assets/f278c10a-3c2b-4df9-b97e-6225800714b5"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
+### Legal
+
+<center><img width="600" src="https://github.com/user-attachments/assets/eed21a39-c1e2-4641-ba1c-df33de585e38"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
+### AI
+
+<center><img width="600" src="https://github.com/user-attachments/assets/97bb5a13-13c8-44e8-9b7d-9bb5f5eb5494"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
+### Web search
+
+<center><img width="600" src="https://github.com/user-attachments/assets/5f72ca96-ab0d-4574-8d95-7295f2781f7b"></center>
+<center><em style="color:gray;">Create by author</em></center><br>
+
+
