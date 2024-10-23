@@ -51,10 +51,17 @@ Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다.
       - Encoder의 출력(input에 대한 representation)을 받아서 input sequnece와 decoder의 input으로 입력 받은 target sequnece 간의 관계를 매핑하며 학습하도록 돕는다.
   - output
     - token별로 softmax 함수를 거쳐 (현재 시점을 기준으로 다음 token으로) 예측된 단어의 확률 분포를 산출하고 가장 높은 확률의 token을 출력한다.
- 
+     > 마지막 layer에서 출력된 logits 값을 softmax에 통과시키는 것이다. logits은 모델이 어휘 내 각 토큰에 대해 출력하는 정규화되지 않은 값이다. 
 ## Attention
 
 Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 수 있도록 하여 sequence 내부에서의 token 간의 거리와는 무관하게 token 간의 관련성을 파악하도록 하는 알고리즘이다.
+
+## layer별 역할 요약
+
+1. Embedding Layer: input token을 vector로 변환한다.<br>
+2. Self-Attention Layers: 모델이 input의 중요한 부분들에 대한 중요도를 가중할 수 있게 한다.<br>
+3. Feed-Forward Layers: attention output을 처리한다.<br>
+4. Layer Normalization: 학습 과정을 안정화한다.<br>
 
 # Transformers 기반 Model 요약
 
@@ -70,7 +77,11 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
 - 대표 모델: GPT
 - Pretraining Approach/Task: Next Token Prediction. Original Language Modeling이라고도 많이 불린다.
 - Use Case: 일반적으로 Generative task에 많이 사용된다. (e.g. generating text, completing sentences, answering questions based on context, etc. )
-   
+
+```
+GPT 계열의 모델들은 모두 Transformers의 Decoder 구조를 기반으로 하지남 layer normalization 수행 시점이 Decoder 구조와는 다르게 attention block 앞에 위치해 있다. 이는 GPT3부터 변경된 구조로 GPT3 이후에 나온 대부분의 decoder base 모델들이 이 구조를 따르고 있다.
+```
+
 ## Encoder-Decoder Models
 
 - 대표 모델: T5, BART, Gemini
