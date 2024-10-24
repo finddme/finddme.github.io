@@ -160,7 +160,7 @@ K=5인 경우:
 - 5개의 token에 대해 확률을 re-normalize하여 각 token에 대한 확률값의 합이 1이 되도록 한다.
 - 재정규화된 분포에서 다음 단어를 sampling한다.
 
-## Top-P
+## Top-P (Nucleus sampling)
 
 간단하기 말하자면 sampling된 token들이 지닌 확률값의 합에 대해 threshold를 거는 것이다. 예를 들어 아래와 같은 token이 있을 때 Top-P가 0.8이면 (갈비찜, 통태전, 잡채) 중에 다음 단어를 sampling하는 것이다. 
 
