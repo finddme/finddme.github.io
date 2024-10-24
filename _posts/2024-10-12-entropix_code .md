@@ -24,13 +24,19 @@ tag: Multimodal
 
 # Attention Entropy
 
-Attention Entropy는 Entropix에서 attentino이 다양한 token에 걸쳐 얼마나 분산되어 있는지, 즉 얼마나 불확실한지 정량화하는 지표이다. 이는 attention probability를 활용하 계산된다.
+Attention Entropy는 Entropix에서 attentino이 다양한 token에 걸쳐 얼마나 분산되어 있는지, 즉 얼마나 불확실한지 정량화하는 지표이다. 이는 attention probability를 활용하 계산된다. 
+
+Attention Entropy가 높으면 불확실성이 높은 거. (모델의 attention이 많은 token들에 걸쳐 분산되어 있다는 거니까.)
+
+Attention Entropy가 낮으면 불확실성이 낮은 거. (모델이 특정 token들이 집중적으로 attention하고 있다는 거니까.)
 
 ```python
 attention_probs = jax.nn.softmax(attention_scores, axis=-1)
 attn_entropy = -jnp.sum(attention_probs * jnp.log2(jnp.clip(attention_probs, 1e-10, 1.0)), axis=-1)
 
 ```
+
+
 
 > **Attention**은 transformer model에서 일반적으로 multi-head attention으로 구현된다. multi-head의 의미는 attention mechanism이 병력적으로 적용된다는 것이다. 이와 같이 attnetion을 병렬적으로 수행함으로써 모델이 입력을 다양한 측면으로 분석할 수 있게 한다.<br>
 > Multi-head Attention을 구성하는 Attention head는 self-attention을 수행하는 유닛으로, 입력된 token과 다른 token들 간의 연관성을 계산하고 그 연관성을 기반으로 중요한 정보를 추출하는 역할을 한다. <br>
