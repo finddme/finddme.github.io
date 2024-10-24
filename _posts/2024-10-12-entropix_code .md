@@ -49,8 +49,25 @@ attn_entropy = -jnp.sum(attention_probs * jnp.log2(jnp.clip(attention_probs, 1e-
 > > >  - masking X: 현재 time step에서 아직 생성되지 않은 이후의 token들은 없기 때문에 masking할 것이 없다. 따라서 매 단계마다 masking할 것은 따로 없고 그냥 이전 token들을 참조하여 self-attention만 수행하면 된다.
 > > >
 
+## Sampling
+
+Attention Entropy가 높으면 sampling 탐색 범위를 넓혀야 한다.
 
 # Attention Agreement
 
-Attention Agreement는 서로 다른 attention head
+Attention Agreement는 서로 다른 attention head 간의 attention pattern이 얼마나 일관성있는지 측정한 것이다. 각 head의 attention distribution을 평균 attention distribution과 비교하여 계산된다.
 
+낮은 agreement는 각 head들이 각각 다른 측면에 집중하고 있음을 나타낸다. 이것은 모델이 context를 모호하게 받아들이고 있음을 의미한다.
+
+```python
+mean_attention = jnp.mean(attention_probs, axis=1)
+agreement = jnp.mean(jnp.abs(attention_probs - mean_attention[:, None, :]), axis=(1, 2))
+```
+
+## Sampling
+
+Attention Agreement가 낮으면 temperature나 top-k paramerter를 조정해야 한다. 
+
+# Interaction Strength
+
+Interaction Strengthsms 
