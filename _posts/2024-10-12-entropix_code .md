@@ -70,4 +70,29 @@ Attention Agreement가 낮으면 temperature나 top-k paramerter를 조정해야
 
 # Interaction Strength
 
-Interaction Strengthsms 
+Interaction Strength는 token 간의 결속력/token 관계의 강도 등을 나타낸다. Interaction Strength은 transformer model의 layer, head, position에서 attention score의 절대값 평균이다. 산출 방법은 아래와 같다:
+
+1. Attention Score 추출
+
+   transformer model의 모든 layer와 head에서 raw attention score롤 추출한다.
+
+2. 절대값 적용
+
+   attention score 값 자체에 집중하기 위해 score의 절대값을 구한다.
+
+3. 평균 계산
+
+   이 절대값들의 평균을 모든 dimension(layers, heads, positions)에 대해서 계산한다.
+
+```python
+interaction_strength = jnp.mean(jnp.abs(attention_scores), axis=(1, 2, 3))
+```
+
+## Sampling
+
+- Temperature 조정: Interaction Strength가 높다는 것은 token들 간의 관계가, context가 강하게 연결되어 있음을 의미한다. 따라서 더 다양한 출력을 유도하기 위해 temperature가 증가시킬 수 있다.
+
+- Top-k: token 관계의 강도에 따라 후모 token 수를 조정하여
+
+
+
