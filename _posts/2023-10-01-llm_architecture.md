@@ -52,6 +52,7 @@ Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다.
   - output
     - token별로 softmax 함수를 거쳐 (현재 시점을 기준으로 다음 token으로) 예측된 단어의 확률 분포를 산출하고 가장 높은 확률의 token을 출력한다.
      > 마지막 layer에서 출력된 logits 값을 softmax에 통과시키는 것이다. logits은 모델이 어휘 내 각 토큰에 대해 출력하는 정규화되지 않은 값이다. 
+
 ## Attention
 
 Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 수 있도록 하여 sequence 내부에서의 token 간의 거리와는 무관하게 token 간의 관련성을 파악하도록 하는 알고리즘이다.
