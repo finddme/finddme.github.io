@@ -22,6 +22,56 @@ tag: Multimodal
 
 
 
+# Sampling Strategies
+
+Entropix에서 적용되는 sampling 전략은 기본적으로 아래와 같은 규칙을 따른다.
+
+<html>
+  <table border="0" cellpadding="0" cellspacing="0" width="714" style="">
+    <thead>
+      <tr height="23" style="height:17.4pt">
+        <th>　</th>
+        <th>　</th>
+        <th>varentropy</th>
+        <th>　</th>
+      </tr>
+    </thead>
+   <colgroup><col width="70" span="2" style="width:53pt">
+   <col width="302" style="mso-width-source:userset;mso-width-alt:9651;width:226pt">
+   <col width="272" style="mso-width-source:userset;mso-width-alt:8704;width:204pt">
+   </colgroup>
+    <tbody>
+      <tr height="23" style="height:17.4pt">
+        <td height="23" class="xl70" style="height:17.4pt">　</td>
+        <td class="xl71">　</td>
+        <td class="xl67" style="border-top:none;border-left:none">low</td>
+        <td class="xl67" style="border-top:none;border-left:none">high</td>
+      </tr>
+      <tr height="74" style="mso-height-source:userset;height:55.2pt">
+        <td rowspan="2" height="144" class="xl65" style="height:107.4pt;border-top:none">entropy</td>
+        <td class="xl67" style="border-top:none;border-left:none">low</td>
+        <td class="xl66" width="302" style="border-top:none;border-left:none;width:226pt">확신이
+    높은 상태. <br>
+      일관성 있는 확신.<br>
+      greedy sampling 사용</td>
+        <td class="xl66" width="272" style="border-top:none;border-left:none;width:204pt">예측
+    token의 다양성이 높은 상태.<br>
+      탐색적 sampling을 통해 다양한 가능성을 조사한다.</td>
+      </tr>
+      <tr height="70" style="height:52.2pt">
+        <td height="70" class="xl67" style="height:52.2pt;border-top:none;border-left:
+    none">high</td>
+        <td class="xl66" width="302" style="border-top:none;border-left:none;width:226pt">일관적으로
+    불확실한 상태<br>
+      설명 삽입이나 탐색 범위를 늘려야 한다.</td>
+        <td class="xl66" width="272" style="border-top:none;border-left:none;width:204pt">높은
+    불확실성, 일관성 매우 부족<br>
+      parameter를 조정하여 높은 불확실성 sampling을 유도한다.</td>
+      </tr>
+    </tbody>
+  </table>
+</html>
+
 # Attention Entropy
 
 Attention Entropy는 Entropix에서 attentino이 다양한 token에 걸쳐 얼마나 분산되어 있는지, 즉 얼마나 불확실한지 정량화하는 지표이다. 이는 attention probability를 활용하 계산된다. 
