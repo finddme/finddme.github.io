@@ -144,10 +144,17 @@ Adaptive Sampling은 위 그림에서도 확인할 수 있듯이 entropy와 vare
 
   위 metric들을 기반으로 sampling parameter를 동적으로 조정
   
-  - Temperature
+  - Temperature(무작위성):
+    - 불확실성과 agreement에 따라 조정
+      ```python
+      temperature = base_temp * (1 + 0.3 * logits_uncertainty + 0.2 * attn_uncertainty - 0.2 * metrics["agreement"])
+      ```
   - Top-p (nucleus sampling threshold)
+    - Attention Varentropy에 따라 조정
   - Top-k
+    - interaction strength과 agreement에 따라 조정 
   - Minimum probability threshold (min_p)
+    - logit의 불확실성에 따라 조정 
 
 - Step 3: Generate Multiple Samples
 
@@ -163,6 +170,8 @@ Adaptive Sampling은 위 그림에서도 확인할 수 있듯이 entropy와 vare
 - Step 5: Select Best Sample
 
   가장 높은 최종 점수를 가진 token이 최종적으로 선택됨.
+
+### Specialized Sampling
 
 
 # Attention Entropy
