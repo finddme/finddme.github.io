@@ -22,9 +22,14 @@ tag: Multimodal
 
 
 
-# Sampling Strategies
+# Varentropy
 
-Entropix에서 적용되는 sampling 전략은 기본적으로 아래와 같은 규칙을 따른다.
+- entropy의 변동성을 측정한 것. 즉, entropy의 분산이다.
+- 이는 모델이 주어진 context에서 모델의 불확실성과 예측의 다양성을 갖는지 나타내며, 모델이 token을 예측하는 과정이 얼마나 안정적인지 보여주는 지표이다.
+- varentropy가 낮을수록 불확실성이 고르게 분포하는 것이고, 높을수록 불확실성의 변동 폭이 크다는 것이다.
+- 예를 들어 어떤 구간에서는 매우 확신을 갖는데 어떤 구간에서는 매우 불확실하게 token을 예측하면 varentropy가 높게 측정된다.
+
+## Sampling
 
 <html>
   <table border="0" cellpadding="0" cellspacing="0" width="714" style="">
