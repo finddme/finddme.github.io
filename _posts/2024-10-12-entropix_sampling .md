@@ -64,15 +64,22 @@ Entropix의 sampling 조정 전략은 LLM 추론에 아래와 같은 영향을 �
 - **Flexible generation**
 
   현재 context에 따라 다양한 sampling 전략을 유연하게 전환하여 더 세밀하고 적절한 text 생성을 가능하게 한다.
-  
-# Varentropy
 
-- entropy의 변동성을 측정한 것. 즉, entropy의 분산이다.
-- 이는 모델이 주어진 context에서 모델의 불확실성과 예측의 다양성을 갖는지 나타내며, 모델이 token을 예측하는 과정이 얼마나 안정적인지 보여주는 지표이다.
-- varentropy가 낮을수록 불확실성이 고르게 분포하는 것이고, 높을수록 불확실성의 변동 폭이 크다는 것이다.
-- 예를 들어 어떤 구간에서는 매우 확신을 갖는데 어떤 구간에서는 매우 불확실하게 token을 예측하면 varentropy가 높게 측정된다.
+# Entropy, Varentropy
+- Entropy
+  - LLM을 통해 다음 token을 예측할 때 불확실성(uncertainty) 혹은 무작위성(randomness)을 측정하여 다음 token에 대한 확률분포가 얼마나 넒게 퍼져있는지 정량화한 것으로, 모델이 다음 token을 예측할 때 얼마나 불확실한지 측정하는 지표가 된다.
+  - entropy가 높을수록 모델이 불확실한 상태이다.
+
+- Varentropy
+  - entropy의 변동성을 측정한 것. 즉, entropy의 분산이다.
+  - 이는 모델이 주어진 context에서 모델의 불확실성과 예측의 다양성을 갖는지 나타내며, 모델이 token을 예측하는 과정이 얼마나 안정적인지 보여주는 지표이다.
+  - varentropy가 낮을수록 불확실성이 고르게 분포하는 것이고, 높을수록 불확실성의 변동 폭이 크다는 것이다.
+  - 예를 들어 어떤 구간에서는 매우 확신을 갖는데 어떤 구간에서는 매우 불확실하게 token을 예측하면 varentropy가 높게 측정된다.
 
 ## Sampling
+
+<center><img width="600" src="https://github.com/user-attachments/assets/88b5f84d-0f33-482d-8676-bfb3090c1de2"></center>
+<center><em style="color:gray;">https://southbridge-research.notion.site/</em></center><br>
 
 <html>
   <table border="0" cellpadding="0" cellspacing="0" width="714" style="">
@@ -119,6 +126,44 @@ Entropix의 sampling 조정 전략은 LLM 추론에 아래와 같은 영향을 �
     </tbody>
   </table>
 </html>
+
+### Adaptive Sampling
+
+Adaptive Sampling은 위 그림에서도 확인할 수 있듯이 entropy와 varentropy가 극단적이지 않을 때 적용된다.
+
+- Step 1: Calculate Metrics
+
+  logit과 attention score로부터 아래 metric들을 계산
+  
+  - Logit의 entropy와 varentropy
+  - Attention의 entropy와 varentropy
+  - Attention agreement
+  - Interaction strength
+
+- Step 2: Adjust Sampling Parameters
+
+  위 metric들을 기반으로 sampling parameter를 동적으로 조정
+  
+  - Temperature
+  - Top-p (nucleus sampling threshold)
+  - Top-k
+  - Minimum probability threshold (min_p)
+
+- Step 3: Generate Multiple Samples
+
+  조정된 parameter를 사용하여 여러 후보 token들을 생성. (본 연구에서는 기본 값으로 12개의 후보 token이 생성됨.)
+
+- Step 4: Score Samples
+
+  각 후보들은 다음 두 가지 요인을 기반으로 점수가 매겨진다.:
+  
+  1. model의 logit에서 나온 Log probability 
+  2. 계산된 metric에서 파생된 신뢰도 점수
+
+- Step 5: Select Best Sample
+
+  가장 높은 최종 점수를 가진 token이 최종적으로 선택됨.
+
 
 # Attention Entropy
 
