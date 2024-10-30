@@ -22,6 +22,49 @@ tag: Multimodal
 
 
 
+# Sampling strategy
+## main keyword
+
+- **Entropy-based decision making**
+
+  logits의 entropy와 varentropy로 모델의 불확실성을 평가하고 이에 따라 sampling 전략을 조정한다. 
+
+  > logits은 모델이 vocab 내 각 token에 대해 출력하는 정규화되지 않은 값이다. 이는 sequence에서 다음 token이 될 각 token에 대한 모델의 "신뢰도"를 나타낸다.
+
+- **Attention-aware sampling**
+
+  attention pattern에서 도출된 entropy나 일치율(agreement) 등의 지표들을 활용해 sampling parameter 전략을 세운다.
+
+  > Entropix에서는 attention score를 활용하여 attention entropy와 agreement와 같은 지표를 계산하며, 이는 sampling 전략에 중요한 정보를 제공한다.
+
+- **Dynamic parameter adjustment**
+
+  temperature, top-k, top-p와 같은 sampling parameter가 현재의 contet와 모델 상태에 따라 동적으로 조정된다.
+
+- **Adaptive multi-sample approach**
+
+  중간 정도의 불확실성을 가질 때에는 여러 샘플을 생성하고 이를 평가하여 가장 적합한 토큰을 선택한다.
+  
+##  Impact on LLM Inference
+
+Entropix의 sampling 조정 전략은 LLM 추론에 아래와 같은 영향을 미친다.
+
+- **Improved coherence**
+
+  모델 추론 과정에 불확실성 측정 결과를 반영함으로써 일관성을 유지하는 데 도움을 준다.
+
+- **Enhanced context sensitivity**
+
+  attention-aware sampling을 통해 생성 과정 전반에 걸쳐 context를 더 잘 보존하는 데에 도움을 준다.
+
+- **Reduced hallucinations**
+
+  동적으로 sampling parameter를 조정하여 불확실성이 높은 상황에서 hallucination을 줄이는 데 도움을 준다.
+
+- **Flexible generation**
+
+  현재 context에 따라 다양한 sampling 전략을 유연하게 전환하여 더 세밀하고 적절한 text 생성을 가능하게 한다.
+  
 # Varentropy
 
 - entropy의 변동성을 측정한 것. 즉, entropy의 분산이다.
