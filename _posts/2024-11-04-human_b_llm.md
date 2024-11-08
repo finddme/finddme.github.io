@@ -81,12 +81,19 @@ agent의 경험은 memory stream에 의해 종합적으로 기록되고 유지/�
 연구진들은 reflection이라는 새로운 기억 유형을 도입했다. reflection은 agent가 보다 추상적이고 높은 수준으로 생각할 수 있도록 한다. memory retrieval을 하는 도중에 일어난 "observations"가 함께 반영된다.
 agent가 인지한 가장 최신의 event에 대한 중요도 점수가 특정 threshold를 넘기면 reflection이 발현되도록 시스템을 구현하여 주기적으로 reflection이 발현도되록 했다. 이런 구현 방식에서 agent들은 하루에 평균 2번의 reflection을 수행했다.
 
-reflection 단계:
+reflection을 통해 질문을 생성하는 단계:
 
-1) agnet의 최신 경험을 바탕으로 질문을 파악. 이를 위해 agent들의 memory stream에 있는 가장 최근 기록 100개를 LLM에 query하고, prompt로는 "위 정보만 주어진다면 진술의 주제에 대해 가장 두드러진 상위 질문 3개는 무엇일지?"를 입력하여 질문 3개를 생성한다. 이렇게 생성된 질문 3개를 retreival을 위한 query로 사용하여 각 질문에 대한 관련 기억을 수집한다. 이후 LLM에 "근거가 되는 특정 기록"을 추출하라는 prompt를 입력하여 insight를 추출한다. 
+1) agent들의 memory stream에 있는 가장 최근 기록 100개를 LLM에 query하고, prompt로는 "위 정보만 주어진다면 진술의 주제에 대해 가장 두드러진 상위 질문 3개는 무엇일지?"를 입력하여 질문 3개를 생성한다.
+2) 이렇게 생성된 질문 3개를 retreival을 위한 query로 사용하여 각 질문에 대한 관련 기억을 수집한다.
+3) 이후 LLM에 "근거가 되는 특정 기록"을 추출하라는 prompt를 입력하여 insight를 추출한다. 
 
 ### 3. planning
-현재 환경을 현재의 행동 계획으로 변경하고, 이를 다음 행동 및 반응을 위한 것으로 재귀적으로 변홚시킨다. 이와 같은 계획은 다시 memory stream으로 fed back되어 agent의 향후 행동에 영향을 미친다.
+
+시간이 지나도 agent가 일관되게 유지도도록 하기 위한 처리이다. planning은 향후 일련의 작업을 설명하는 데 사용되며, 위치-시작시간-기간으로 구성된다.
+
+예를 들어 연구실에서 연구에 몰두 중인 agnet Klaus Mueller가 하루종일 책상에서 연구 논문 초안을 작성하고 있는 상황에서 planning은 다음과 같이 기록될 수 있다: 오크힐 대학 기숙사 Klaus Mueller의 책상에서 - 2023년 2월 12일 오전 9시 - 180분 동안 
+
+planning은 reflection과 함께 memory stream에 저장되며, retrieval processe에 포함된다. 이에 따라 행동 방식이 결정 될 때 이 세 가지가 모두 고려된다. 즉, 현재 환경을 현재의 행동 계획으로 변경하고, 이를 다음 행동 및 반응을 위한 것으로 재귀적으로 변환시킨다. 이와 같은 계획은 다시 memory stream으로 fed back되어 agent의 향후 행동에 영향을 미친다.
 
 
 
