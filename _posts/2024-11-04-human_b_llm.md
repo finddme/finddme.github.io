@@ -96,6 +96,8 @@ reflection을 통해 질문을 생성하는 단계:
 planning은 reflection과 함께 memory stream에 저장되며, retrieval processe에 포함된다. 이에 따라 행동 방식이 결정 될 때 이 세 가지가 모두 고려된다. 즉, 현재 환경을 현재의 행동 계획으로 변경하고, 이를 다음 행동 및 반응을 위한 것으로 재귀적으로 변환시킨다. 이와 같은 계획은 다시 memory stream으로 fed back되어 agent의 향후 행동에 영향을 미친다.
 
 
+# Reference
 
+> [Generative Agents: Interactive Simulacra of Human Behavior](https://arxiv.org/pdf/2304.03442)
 
 
