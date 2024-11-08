@@ -61,6 +61,9 @@ agent들이 LLM을 사용하여 신뢰성 있게 잘 작동하려면 관련 memo
 
 GPT-4o와 같이 현재 가장 성능이 뛰어난 LLM을 사용하더라도 장기적인 계획과 일관성을 유지하는 데에 어려움이 있었다. generative agent는 유지해야 할 이벤트와 메모리를 대량으로 생성하기 때문에 이 architecture의 핵심 과제 중 하나는 agent의 메모리에서 가장 관련성 높은 부분을 필요할 때에만 검색하고 합성하는 것이다. 이를 위한 architecture는 아래와 같은 세 가지 구성요소로 이루어져 있다.
 
+<center><img width="800" src="https://github.com/user-attachments/assets/1b1f23de-d7b8-48f4-893f-755506b86dc7"></center>
+<center><em style="color:gray;">https://arxiv.org/pdf/2304.03442</em></center><br>
+
 ### 1. memory stream
 agent의 포괄적인 경험 목록을 자연어로 기록하는 long-term memory module 이다. retrieval model은 관련성, 최근성, 중요성을 통해 현재 행동 생성에 필요한 기록을 찾는다.
 
@@ -74,13 +77,17 @@ agent의 경험은 memory stream에 의해 종합적으로 기록되고 유지/�
 <center><em style="color:gray;">https://arxiv.org/pdf/2304.03442</em></center><br>
 
 ### 2. reflection 
-기억을 higher-level inference을 통해 종합하여 agent가 자신과 타인에 대한 결론을 도출함으로써 행동을 수행하도록 하는 것이다.
+
+연구진들은 reflection이라는 새로운 기억 유형을 도입했다. reflection은 agent가 보다 추상적이고 높은 수준으로 생각할 수 있도록 한다. memory retrieval을 하는 도중에 일어난 "observations"가 함께 반영된다.
+agent가 인지한 가장 최신의 event에 대한 중요도 점수가 특정 threshold를 넘기면 reflection이 발현되도록 시스템을 구현하여 주기적으로 reflection이 발현도되록 했다. 이런 구현 방식에서 agent들은 하루에 평균 2번의 reflection을 수행했다.
+
+reflection 단계:
+
+1) agnet의 최신 경험을 바탕으로 질문을 파악. 이를 위해 agent들의 memory stream에 있는 가장 최근 기록 100개를 LLM에 query하고, prompt로는 "위 정보만 주어진다면 진술의 주제에 대해 가장 두드러진 상위 질문 3개는 무엇일지?"를 입력하여 질문 3개를 생성한다. 이렇게 생성된 질문 3개를 retreival을 위한 query로 사용하여 각 질문에 대한 관련 기억을 수집한다. 이후 LLM에 "근거가 되는 특정 기록"을 추출하라는 prompt를 입력하여 insight를 추출한다. 
 
 ### 3. planning
 현재 환경을 현재의 행동 계획으로 변경하고, 이를 다음 행동 및 반응을 위한 것으로 재귀적으로 변홚시킨다. 이와 같은 계획은 다시 memory stream으로 fed back되어 agent의 향후 행동에 영향을 미친다.
 
-<center><img width="800" src="https://github.com/user-attachments/assets/1b1f23de-d7b8-48f4-893f-755506b86dc7"></center>
-<center><em style="color:gray;">https://arxiv.org/pdf/2304.03442</em></center><br>
 
 
 
