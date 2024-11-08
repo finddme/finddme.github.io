@@ -1,5 +1,5 @@
 ---
-title: " 언젠가 만들어 보고 싶은 귀여운 세상 🚶‍➡️ Generative Agents: Interactive Simulacra of Human Behavior"
+title: " 언젠가 만들어 보고 싶은 귀여운 세상🚶‍➡Generative Agents: Interactive Simulacra of Human Behavior"
 category: LLM / Multimodal
 tag: Multimodal
 ---
