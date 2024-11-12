@@ -47,10 +47,13 @@ tag: Development
 
 - Retrieval pipeline (video_scene_search)
 
-  1. query routing :
-     - 내용에 관한 query -> stt결과, 요약 DB에서 검색
-     - 등장 객체에 대한 query -> caption DB에서 검색
+  1. retrieval :
+     - query 내 내용에 관한 요소 -> stt결과, 요약 DB에서 검색
+     - query 내 등장 객체에 대한 요소 -> caption DB에서 검색
     
   2. 검색 결과 기반 간단한 답변 생성 + 검색된 구간 반환
 
 - Summary pipeline (video_summary)
+  - Visual Summary
+  - Audio Summary
+  - Visual + Audio Summary
