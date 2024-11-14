@@ -29,7 +29,12 @@ tag: Development
 [https://github.com/finddme/Video_Retrieval](https://github.com/finddme/Video_Retrieval)
 
 
-# 개발 계획
+# 개발 목적
+
+- Video, Audio 데이터 다뤄보기
+- 추후 Multi Modal RAG 개발을 위한 준비
+
+# 개발물 요약
 
 - **기능**
   - DB에 저장된 다수의 비디오로부터 장면 검색 (video_scene_search)
@@ -57,14 +62,7 @@ tag: Development
   - Visual Caption Summary
   - STT Summary
   - Caption + STT Summary
-
-
-# 개발 목적
-
-- Video, Audio 데이터 다뤄보기
-
-# 개발물 요약
-
+  - 
 ## Model
 
 Video scene captioning model: Qwen/Qwen2-VL-7B-Instruct
