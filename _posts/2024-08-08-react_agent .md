@@ -37,6 +37,7 @@ tag: Development
 # Model
 
 Text Generation model: claude-3-5-sonnet-20240620
+
 Image Generation model: Flux schnell
 
 # 문제점
