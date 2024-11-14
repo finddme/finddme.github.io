@@ -37,6 +37,11 @@ tag: Development
 <center><img width="800" src="https://github.com/user-attachments/assets/336fe90a-a8d4-4244-a213-7f74558f5100"></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
+# Model
+
+Text Generation model: LLaMA 3.1 70B instruct
+Image Generation model: Flux schnell
+
 # Improvements
 
 ## 1. Function calling 도입
