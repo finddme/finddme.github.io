@@ -68,7 +68,10 @@ tag: Development
 ## Model
 
 Video scene captioning model: Qwen/Qwen2-VL-7B-Instruct
+
 Speech to Text model: Whisper(turbo)
+
+Text Generation model: claude-3-5-sonnet-20240620
 
 ## pipeline 
 
