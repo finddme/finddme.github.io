@@ -40,6 +40,7 @@ tag: Development
 # Model
 
 Text Generation model: LLaMA 3.1 70B instruct 
+
 Image Generation model: Flux schnell
 
 # Improvements
