@@ -31,7 +31,8 @@ tag: Development
 
 # 개발 목적
 
-- Video, Audio 데이터 다뤄보기
+- Video 데이터 다뤄보기
+- Audio 및 Image captioning 모델 다뤄보기
 - 추후 Multi Modal RAG 개발을 위한 준비
 
 # 개발물 요약
@@ -70,6 +71,17 @@ Video scene captioning model: Qwen/Qwen2-VL-7B-Instruct
 Speech to Text model: Whisper(turbo)
 
 Text Generation model: claude-3-5-sonnet-20240620
+
+
+# 문제점 및 해결:
+
+1. video_scene_search에서 STT와 caption 정보에 등장 인물의 이름이 없는 경우 검색이 되지 않는 문제.<br>
+  예를 들어, ooo이 좋아하는 노래 알려줘 -> 1분 단위로 chunking된 정보들에서 "ooo"이 등장하지 않아 검색되지 않음<br>
+  -> youtube subtitle/caption에서 "#ooo" 형식으로 기재된 정보를 모든 chunk에 추가. (한국 영상들의 경우 #태그를 이용해 등장 인물들에 대한 정보와 영상에 대한 키워드를 노출시키는 것으로 파악되어 이를 활용하여 문제를 해결함.)<br>
+
+2. video_scene_search에 대한 초기 계획은 stt결과와 caption결과에 대한 retreival 결과에 대해 각각 답변을 생성하도록 설계하였다.<br>
+   이 설계대로 구현한 결과, 동일한 시간에 대한 stt와 caption 검색 결과에 대한 답변이 각각 나가 조금 지저분해 보이고, 하나의 시간대에 대한 답변이 두 개 반환되는 것이 비효율적임. <br>
+   동일한 시간대가 존재할 때 이를 merge하여 진행함으로써 동일 시간에 대한 stt와 caption에 대한 정보를 온전히 정리하여 높은 품질의 답변이 생성될 수 있도록 수정.<br>
 
 ## pipeline 
 
