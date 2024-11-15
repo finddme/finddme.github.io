@@ -41,7 +41,6 @@ tag: Development
   - DB에 저장된 다수의 비디오로부터 장면 검색 (video_scene_search)
   - 비디오 하나에 대한 요약 (video_summary)
 
-
 - **데이터 처리**
   
   1. 영상 로드 -> 특정 구간 단위 영상 이미지 캡쳐 -> VLM을 통해 이미지 caption 생성 (중요 요소 prompting)
@@ -63,7 +62,7 @@ tag: Development
   - Visual Caption Summary
   - STT Summary
   - Caption + STT Summary
-  - 
+    
 ## Model
 
 - Video scene captioning model: Qwen/Qwen2-VL-7B-Instruct
