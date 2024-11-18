@@ -1,5 +1,5 @@
 ---
-title: "Model Quentization"
+title: "Quentization(양자화) 기본 개념"
 category: LLM / Multimodal
 tag: Multimodal
 ---
