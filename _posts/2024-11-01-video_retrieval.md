@@ -107,8 +107,23 @@ chunking 방식 개선. 지금은 단순히 특정 시간 단위로 chunk를 나
 
 ## scene search
 
+### 단순 질문
 <center><img width="500" src="https://github.com/user-attachments/assets/a6bf63db-66e0-4b29-963d-3e9b0203eb9d"></center>
 <center><em style="color:gray;">demo</em></center><br>
+
+### 여러 영상에 답변이 존재하는 경우
+<center><img width="500" src="https://github.com/user-attachments/assets/e262376a-bf9f-4a96-8de4-d4841dd0f444"></center>
+<center><em style="color:gray;">demo</em></center><br>
+
+### 시각적 장면 질문
+
+<center><img width="500" src="https://github.com/user-attachments/assets/c50022f3-5095-4217-88c0-a964e1f47a0f"></center>
+<center><em style="color:gray;">demo</em></center><br>
+
+위 결과를 보면 영상 내 10분 -12분 사이에 공유가 낚시한 물고기를 들고 있는 사진이 등장한다.
+
+<center><img width="500" src="https://github.com/user-attachments/assets/f1a0ab19-91ba-4852-bb40-5ddb9f703c4f"></center>
+<center><em style="color:gray;">https://youtu.be/rvf2yzcfhXE?si=6knPxfPxr1aWJPwJ</em></center><br>
 
 ## summary
 
