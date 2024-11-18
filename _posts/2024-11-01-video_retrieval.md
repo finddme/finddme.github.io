@@ -96,6 +96,7 @@ chunking 방식 개선. 지금은 단순히 특정 시간 단위로 chunk를 나
 4. [TEO 테오 - \[SUB\] 그날부터 보고 싶었어요 | EP.1 공유 | 살롱드립☕](https://youtu.be/rvf2yzcfhXE?si=qHOViNrdNkPr3s87) 22:27
 5. [백종원 PAIK JONG WON - 숟가락을 놓을 수 없는 악마 레시피! 에그 인 헬](https://youtu.be/1F4soB3rlMI?si=7ZKlNAEoe6JQTxad) 7:05
 6. [KBS 다큐 -'일론 머스크' '젠슨 황' AI 리더들, 그들의 성공 비결은 바로 이것! | 2024 미래기획 대전환 - 1부. 누가 부자가 되는가 | KBS 20241109 방송](https://youtu.be/lJ2OALHh6pM?si=q2wZX2P8jqYtDQ_D) 47:47
+7. [윤꾼의  북킹부킹 - 『다동력:여러 가지 일을 동시에 해내는 힘』호리에 다카후미(1)~(2)편까지 한번에 듣기](https://youtu.be/9CMYxO-b8RU?si=fwEo7Zos64oOS2Uq) 1:07:05
 
   
 ## 기능 선택 (sidebar)
