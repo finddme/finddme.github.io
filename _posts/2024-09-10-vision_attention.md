@@ -111,3 +111,11 @@ multimodal model에 주로 사용됨.
 
 ### 주요 활용 분야
 
+1. Multi modal model
+   - text to image model
+     - 입력된 text를 image feature과 매칭
+     - 상이한 modal 간의 의미적 유사도 확보
+2. Image to Image model
+   - Image 합성 모델
+   - Image style transformation
+3. Video Generation
