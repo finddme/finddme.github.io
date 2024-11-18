@@ -86,6 +86,27 @@ tag: Development
 
 chunking 방식 개선. 지금은 단순히 특정 시간 단위로 chunk를 나누었는데, stt의 경우, 의미 단위가 고려된 chunking이 필요해 보임. 
 
-# Demo
+# Demo (streamlit)
 
+- 데모 DB에 들어간 youtube 영상 리스트
+
+1. [요정 재형 - 아 기빨려 애들아 난 잘테니 너네 떠들다 가...!](https://youtu.be/exUnQqXJFPU?si=UG96CMiV15k3Yq2b) 51:57
+2. [슈카월드 - 금 투자하는 가장 좋은 방법](https://youtu.be/lr_4t8leaVA?si=BlUOg3CnMCBuBLwS) 19:06
+3. [셜록현준 - 한국 멀찍이 vs 유럽 빈틈없이, 유럽이 건물을 딱 붙여서 짓는 이유는?](https://youtu.be/GB6kiB0Skzs?si=lzReKM-vST7L3sWS) 16:07
+4. [TEO 테오 - \[SUB\] 그날부터 보고 싶었어요 | EP.1 공유 | 살롱드립☕](https://youtu.be/rvf2yzcfhXE?si=qHOViNrdNkPr3s87) 22:27
+5. [백종원 PAIK JONG WON - 숟가락을 놓을 수 없는 악마 레시피! 에그 인 헬](https://youtu.be/1F4soB3rlMI?si=7ZKlNAEoe6JQTxad) 7:05
+6. [KBS 다큐 -'일론 머스크' '젠슨 황' AI 리더들, 그들의 성공 비결은 바로 이것! | 2024 미래기획 대전환 - 1부. 누가 부자가 되는가 | KBS 20241109 방송](https://youtu.be/lJ2OALHh6pM?si=q2wZX2P8jqYtDQ_D) 47:47
+
+  
+## 기능 선택 (sidebar)
+
+<center><img width="500" src="https://github.com/user-attachments/assets/162fc340-4cef-461c-9eba-e2cca84046df"></center>
+<center><em style="color:gray;">demo</em></center><br>
+
+## scene search
+
+<center><img width="500" src="https://github.com/user-attachments/assets/a6bf63db-66e0-4b29-963d-3e9b0203eb9d"></center>
+<center><em style="color:gray;">demo</em></center><br>
+
+## summary
 
