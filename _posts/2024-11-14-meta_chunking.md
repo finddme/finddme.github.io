@@ -24,3 +24,7 @@ tag: Multimodal
 
 
 
+# Reference
+
+> https://github.com/IAAR-Shanghai/Meta-Chunking <br>
+> [META-CHUNKING: LEARNING EFFICIENT TEXT SEGMENTATION VIA LOGICAL PERCEPTION](https://arxiv.org/pdf/2410.12788)
