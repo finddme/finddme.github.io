@@ -102,7 +102,7 @@ chunking 방식 개선. 지금은 단순히 특정 시간 단위로 chunk를 나
   
 ## 기능 선택 (sidebar)
 
-<center><img width="500" src="https://github.com/user-attachments/assets/162fc340-4cef-461c-9eba-e2cca84046df"></center>
+<center><img width="300" src="https://github.com/user-attachments/assets/162fc340-4cef-461c-9eba-e2cca84046df"></center>
 <center><em style="color:gray;">demo</em></center><br>
 
 ## scene search
