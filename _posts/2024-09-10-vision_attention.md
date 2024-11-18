@@ -86,10 +86,28 @@ ViT는 이미지를 patch 단위로 나누어 하나의 sequence로 취급하여
   - 의미적 세그멘테이션 수행
 
 
+# Cross-Attention
 
+multimodal model에 주로 사용됨. 
 
+두 가지 데이터를 동시에 입력 받아 두 데이터 간의 관계를 파악.
 
+1. 두 입력 데이터로부터 Q,K,V 생성
+   - Query:
+     - target data의 현재 time step에서부터 생성됨. 찾고자 하는 정보(일반적으로 다음 time step에 올 token/pixel)를 표현함. 
+   - Key:
+     - source 데이터로부터 생성됨. 즉, encoder의 출력 부분에서 생성됨.
+     - source token/pixel들의 feature vector들
+  - Value:
+    -  source 데이터로부터 생성됨. 즉, encoder의 출력 부분에서 생성됨.
+    -  source token/pixel들의 실제 정보 vectore들
+    - 
+2. Q와 K의 내적 -> 현재 원하는 게 Key에서 어떤 거와 가장 유사한지 점수 계산
+3. Softmax 적용 (attention score들의 합이 1로 되도록 정규화)
+4. Value vectore와 위 점수와 곱하여 Value에 가중치 적용 
 
+<center><img width="500" src="https://github.com/user-attachments/assets/64b17909-b624-4f1c-951d-6fb80cae3f96"></center>
+<center><em style="color:gray;">https://arxiv.org/pdf/2404.12457</em></center><br>
 
-
+### 주요 활용 분야
 
