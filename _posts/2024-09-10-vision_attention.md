@@ -45,6 +45,9 @@ attention mechanism은 모델이 시각적 정보를 처리하는 방식을 크�
 3. 이 점수를 softmax에 통과시켜 0-1사이의 가중치로 만듦
 4. 이 가중치랑 Value를 곱해서 최종 출력을 만듦 
 
+<center><img width="500" src="https://github.com/user-attachments/assets/a056c951-1beb-4ac8-adb8-1e474499ec11"></center>
+<center><em style="color:gray;">https://arxiv.org/pdf/2404.12457</em></center><br>
+
 - **장점**
   - 입력 데이터의 중요 부분에 선택적으로 집중할 수 있다.
   - token/pixel 간의 장거리 의존성을 효과적으로 포착할 수 있다. -> 전체 문맥/이미지 전역적 구조를 고려한 feature 추출이 가능하다
@@ -53,7 +56,7 @@ attention mechanism은 모델이 시각적 정보를 처리하는 방식을 크�
 
 ViT 등장 전에는 주로 CNN기반 모델들을 활용하여 이미지를 처리했다. CNN 방식 모델들은 convolution 필터를 사용하여 이미지를 처리한다.
 
-ViT는 이미지를 patch 단위로 나누어 하나의 sequence로 취급하여 처리하고, self-attention 기반으로 작동한다.
+ViT는 이미지를 patch 단위로 나누어 하나의 sequence로 취급하여 처리하고, self-attention 기반으로 작동한다. transformer의 encoder 부분의 구조와 유사한 구조르 가짐. 
 
 - patch
   - 입력 이미지를 동일한 크기의 patch로 나눈다. 일반적으로 16x16 또는 32x32 픽셀 크기의 패치 사용한다.
@@ -61,8 +64,26 @@ ViT는 이미지를 patch 단위로 나누어 하나의 sequence로 취급하여
   - 각 patch를 1차원 vector로 변환
   - 위치 정보를 포함하는 positional embedding 추가
 - self-attention 사용으로 인한 장점:
-  - 
+  - Long-range dependency 포착 : 이미지 내 멀리 떨어진 영역들 간의 관계 파악 용이, 이로 인해 전역적 문맥 이해에 효과적
+  - Short-range dependency 포착: 인접한 patch들 간의 관계 파악 용이. 세부적 feature 추출 가능
 
+### 주요 활용 분야
+
+1. 이미지 분류(Image Classification)
+
+  - 전체 이미지의 특징을 고려한 효과적인 분류
+
+2. 객체 탐지(Object Detection)
+
+  - 이미지 내 다양한 객체의 위치 파악
+  - 객체 간의 관계성 이해
+  - 정확한 경계 상자(bounding box) 예측
+
+3. 세그멘테이션(Segmentation)
+
+  - 픽셀 수준의 정확한 분할
+  - 객체의 경계 정밀 파악
+  - 의미적 세그멘테이션 수행
 
 
 
