@@ -34,5 +34,42 @@ Quentization의 기본 개념은 넓은 범위의 숫자를 더 작은 범위로
 - 단잠
   - 성능 저하 가능성
  
+# Scaling Number Range
 
-- 
+앞서 말했듯이 양자화의 기본 개념은 넓은 범위의 숫자를 작은 범위로 mapping시키는 것이다. 이를 위해 scaling 과정을 거친다. 
+
+- scaling 목적:
+  - -1000에서 +1000 범위의 data
+  - -10에서 +10 범위의 data로 변환
+- scaling factore 계산
+  ```python
+  def scale_number(x, original_range=2000, target_range=20):
+      scaling_factor = target_range / original_range
+      return round(x * scaling_factor)
+  
+  # 예시
+  print(scale_number(500))   # 출력: 5
+  print(scale_number(510))   # 출력: 5
+  print(scale_number(550))   # 출력: 6
+  ```
+  ```
+  스케일링 팩터 = (목표 범위의 크기) / (원본 범위의 크기)
+                 = (10 - (-10)) / (1000 - (-1000))
+                 = 20 / 2000
+                 = 1/100
+  ```
+  - 숫자 500을 변환 예시
+    ```
+    500 * (1/100) = 5
+    ```
+  - 숫자 510을 변환 예시
+    ```
+    510 * (1/100) = 5.1
+    반올림(5.1) = 5
+    ```
+  - 500에서 550 사이의 값들이 5로 mapping됨. (반올림하니까)
+  - 이런식으로 scaling하면 아래와 같은 계단 형식의 그래프가 만들어짐.
+  - 여러 값들이 하나의 값으로 mapping되니까 정보 손실이 발생함
+  - 반올림하는 것 때문에 오차가 발생함 
+
+<center><img width="500" src="https://github.com/user-attachments/assets/e776e778-9e0a-4b97-996b-f5d85f72108e"></center>
