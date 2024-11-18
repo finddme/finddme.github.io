@@ -127,9 +127,9 @@ chunking 방식 개선. 지금은 단순히 특정 시간 단위로 chunk를 나
 
 ## summary
 
-<center><img width="500" src="https://github.com/user-attachments/assets/0f6e2101-a38d-4621-a180-e81d242fcaad"></center>
-<center><em style="color:gray;">demo</em></center><br>
+### 1시간 분량의 영상 요약
 
+"윤꾼의  북킹부킹 - 『다동력:여러 가지 일을 동시에 해내는 힘』호리에 다카후미(1)~(2)편까지 한번에 듣기" 영상 요약
 <center><img width="500" src="https://github.com/user-attachments/assets/c2cdc3a9-fe05-4563-ad5d-44f53a4827ba"></center>
 <center><em style="color:gray;">demo</em></center><br>
 
