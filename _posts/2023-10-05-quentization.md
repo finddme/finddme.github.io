@@ -283,12 +283,62 @@ Scaling Factor에 따른 Scaling 방법에는 여러 종류가 있다.
 
 ### 1. MinMax Quantization
 
+``` python
+def minmax_quantize(weights, num_bits):
+    w_min = np.min(weights)
+    w_max = np.max(weights)
+    scale = (2**num_bits - 1) / (w_max - w_min)
+    return np.round((weights - w_min) * scale)
+```
+
+- 전체 범위를 균등하게 사용
+- 이상치에 민감
+- 가장 일반적인 방법
+- 장점:
+  - 전체 범위 활용
+  - 구현 간단
+- 단점:
+  - 이상치에 민감
+  - 분포 왜곡 가능
+
 ### 2. AbsMax Quantization
+
+```python
+def absmax_quantize(weights, num_bits):
+    abs_max = np.max(np.abs(weights))
+    scale = (2**(num_bits-1) - 1) / abs_max
+    return np.round(weights * scale)
+```
+
+- 절대값 기준 스케일링
+- BitNet 등에서 사용
+- 대칭적 분포에 효과적
+- 장점:
+  - 대칭적 처리
+  - 이상치 처리 개선
+- 단점:
+  - 작은 값 정밀도 감소
+  - 비대칭 분포에 취약
+
 
 ### 3. AbsMean Quantization
 
+```python
+def absmean_quantize(weights, num_bits):
+    abs_mean = np.mean(np.abs(weights))
+    scale = (2**(num_bits-1) - 1) / abs_mean
+    return np.round(weights * scale)
+```
 
-
+- 평균 절대값 기준
+- 이상치에 덜 민감
+- 1.58-bit 모델에서 사용
+- 장점:
+  - 이상치에 강함
+  - 평균적 특성 보존
+- 단점:
+  - 극단값 표현력 감소
+  - 구현 복잡도 증가
 
 
 
