@@ -184,7 +184,7 @@ Original:  2.50 -> Quantized:  127
 
 # De-quantization
 
-양자화된 정수값을 다시 원래의 부동소수점 값으로 변환하는 것이다. 이건 양자화된 결과로 다시 원본 데이터의 근사값을 구할 때 사용된다. 근데 역양자화를 해보면 손실된 값들이 보인다.
+양자화된 정수값을 다시 원래의 부동소수점 값으로 변환하는 것이다. 이건 양자화된 가중치를 사용하여 연산을 수행한 후, 필요한 경우 결과를 다시 원래의 범위로 변환하는 데 사용된다. 근데 역양자화를 해보면 손실된 값들이 보인다.
 
 ```python
 class QuantizationDemo:
@@ -237,3 +237,12 @@ Original:   1.5000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization er
 Original:   2.0000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization error:  -1.5137]
 Original:   2.5000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization error:  -2.0137]
 ```
+
+- 정보 손실의 원인:
+
+  - 반올림 연산으로 인한 손실
+  - 정수로의 변환 과정에서 발생하는 정밀도(Precision) 손실
+  - 유한한 비트 수로 인한 표현 범위 제한
+
+
+
