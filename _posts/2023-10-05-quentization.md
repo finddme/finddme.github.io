@@ -72,7 +72,7 @@ Quentization의 기본 개념은 넓은 범위의 숫자를 더 작은 범위로
   - 여러 값들이 하나의 값으로 mapping되니까 정보 손실이 발생함
   - 반올림하는 것 때문에 오차가 발생함 
 
-<center><img width="500" src="https://github.com/user-attachments/assets/e776e778-9e0a-4b97-996b-f5d85f72108e"></center>
+<center><img width="700" src="https://github.com/user-attachments/assets/e776e778-9e0a-4b97-996b-f5d85f72108e"></center>
 
 # Simple Integer Quantization (정수 양자화)
 
@@ -106,7 +106,7 @@ Original:  1.00 -> Quantized:   64
 Original:  1.50 -> Quantized:   96
 Original:  2.00 -> Quantized:  128
 ```
-<center><img width="500" src="https://github.com/user-attachments/assets/a8d6ed6c-57f2-48c6-91fb-477fdb92fde7"></center>
+<center><img width="700" src="https://github.com/user-attachments/assets/a8d6ed6c-57f2-48c6-91fb-477fdb92fde7"></center>
 
 이 양자화 방식의 특징:
 
@@ -123,15 +123,117 @@ Original:  2.00 -> Quantized:  128
   - 범위를 벗어나는 값들은 클리핑(clipping)될 수 있음
 
 
+# Zero Point Quantization
 
+$-2^(N-1)$에서 $+2^(N-1)-1$ 사이 값으로 정수 변환. 예를 들어 8-bit의 경우, -128 ~ +127. 이 범위는 0을 중심으로 비대칭적이다. 따라서 zero point offset을 사용하여 효과적으로 대칭 만듦.
 
+여기서 zero point는 부동소수점 0이 매핑되는 정수값이다. 
 
+```python
+class ZeroPointQuantizer:
+    def __init__(self, num_bits, w_min, w_max):
+        self.num_bits = num_bits
+        self.w_min = w_min # 원본 범위의 최소값
+        self.w_max = w_max # 원본 범위의 최대값
+        
+        # scaling factor 계산
+        self.qmin = -2**(num_bits-1)
+        self.qmax = 2**(num_bits-1) - 1
+        self.scale = (self.qmax - self.qmin) / (w_max - w_min)
+        
+        # Zero Point Offset 계산
+        self.zero_point = round(-w_min * self.scale)
+        
+    def quantize(self, x):
+        # input 양자화 (zero point 양자화 공식)
+        q = np.round(x * self.scale + self.zero_point)
+        # valid range clip
+        q = np.clip(q, self.qmin, self.qmax)
+        return q
 
+test_values = [-1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5]
+for val in test_values:
+    q_val = quantizer.quantize(val)
+    print(f"Original: {val:5.2f} -> Quantized: {q_val:4.0f}")
+```
 
+```
+output:
 
+Original: -1.50 -> Quantized:    0 
+Original: -1.00 -> Quantized:   32 
+Original: -0.50 -> Quantized:   64 
+Original:  0.00 -> Quantized:   96 
+Original:  0.50 -> Quantized:  127 
+Original:  1.00 -> Quantized:  127
+Original:  1.50 -> Quantized:  127 
+Original:  2.00 -> Quantized:  127 
+Original:  2.50 -> Quantized:  127 
+```
 
+이 양자화 방식의 특징:
 
+- 장점:
+  - 비대칭적인 가중치 분포 처리 가능
+  - 더 정확한 양자화 가능
+  - 0값의 정확한 표현 가능
+- 주의사항:
+  - 스케일과 zero point를 모두 저장해야 함
+  - 연산 복잡도가 약간 증가
+  - 메모리 사용량이 소폭 증가
 
+# De-quantization
 
+양자화된 정수값을 다시 원래의 부동소수점 값으로 변환하는 것이다. 이건 양자화된 결과로 다시 원본 데이터의 근사값을 구할 때 사용된다. 근데 역양자화를 해보면 손실된 값들이 보인다.
 
+```python
+class QuantizationDemo:
+    def __init__(self, num_bits=8, value_range=(-1, 1)):
+        self.num_bits = num_bits
+        self.value_min, self.value_max = value_range
+        
+        # scaling factor 계산
+        self.qmin = -2**(num_bits-1)
+        self.qmax = 2**(num_bits-1) - 1
+        self.scale = (self.qmax - self.qmin) / (self.value_max - self.value_min)
 
+        # Zero Point Offset 계산
+        self.zero_point = round(-self.value_min * self.scale)
+        
+    def quantize(self, x):
+        # zero point 양자화
+        return np.clip(round(x * self.scale + self.zero_point),
+                      self.qmin, self.qmax)
+    
+    def dequantize(self, q):
+        # 역양자화
+        return (q - self.zero_point) / self.scale
+    
+    def demonstrate(self, value):
+        # 손실 확인인
+        quantized = self.quantize(value)
+        dequantized = self.dequantize(quantized)
+        error = dequantized - value
+        
+        print(f"Original: {value:8.4f} -> Quantized: {quantized:4d} -> Dequantized: {dequantized:8.4f}  [Quantization error: {error:8.4f}]")
+
+demo = QuantizationDemo(num_bits=8, value_range=(-1.5, 2.5))
+
+test_values = [-1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0, 2.5]
+for value in test_values:
+    demo.demonstrate(value)
+```
+
+```
+output:
+
+Original:  -1.5000 -> Quantized:    0 -> Dequantized:  -1.5059  [Quantization error:  -0.0059]
+Original:  -1.0000 -> Quantized:   32 -> Dequantized:  -1.0039  [Quantization error:  -0.0039]
+Original:  -0.5000 -> Quantized:   64 -> Dequantized:  -0.5020  [Quantization error:  -0.0020]
+Original:   0.0000 -> Quantized:   96 -> Dequantized:   0.0000  [Quantization error:   0.0000]
+Original:   0.5000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization error:  -0.0137]
+Original:   1.0000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization error:  -0.5137]
+Original:   1.5000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization error:  -1.0137]
+Original:   2.0000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization error:  -1.5137]
+Original:   2.5000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization error:  -2.0137]
+```
