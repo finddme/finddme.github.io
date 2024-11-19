@@ -73,3 +73,65 @@ Quentization의 기본 개념은 넓은 범위의 숫자를 더 작은 범위로
   - 반올림하는 것 때문에 오차가 발생함 
 
 <center><img width="500" src="https://github.com/user-attachments/assets/e776e778-9e0a-4b97-996b-f5d85f72108e"></center>
+
+# Simple Integer Quantization (정수 양자화)
+
+$-W$에서 $+W$ 사이의 floating point number(부동 소수점)을 입력 받아 -> -$2^(N-1)$ 에서 $+2^(N-1)$ 사이의 정수로 변환. 즉, 부동소수점(floating point) 숫자를 N-bit 정수로 변환하는 양자화 방법.
+
+scaling factor $s$ 계산 방법:
+``` python
+def quantize(x, W, N):
+    s = 2**(N-1) / W
+    return round(x * s)
+```
+
+예를 들어 floating point range($W$)가 2이고, integer representation을 위한 bits가 8일 때
+
+``` python
+test_values = [-2.0, -1.5, -1.0, -0.5, 0, 0.5, 1.0, 1.5, 2.0]
+for val in test_values:
+    q_val = quantize(val,W=2.0, N=8)
+    print(f"Original: {val:5.2f} -> Quantized: {q_val:4d}")
+```
+```
+output:
+
+Original: -2.00 -> Quantized: -128
+Original: -1.50 -> Quantized:  -96
+Original: -1.00 -> Quantized:  -64
+Original: -0.50 -> Quantized:  -32
+Original:  0.00 -> Quantized:    0
+Original:  0.50 -> Quantized:   32
+Original:  1.00 -> Quantized:   64
+Original:  1.50 -> Quantized:   96
+Original:  2.00 -> Quantized:  128
+```
+<center><img width="500" src="https://github.com/user-attachments/assets/a8d6ed6c-57f2-48c6-91fb-477fdb92fde7"></center>
+
+이 양자화 방식의 특징:
+
+- 대칭적 범위 매핑(Symmetric Range Mapping)
+  - 0을 중심으로 대칭적인 값들이 동일한 스케일로 매핑됨
+  - 입력값의 부호가 보존됨
+
+- 정밀도 손실
+  - 연속적인 부동소수점 값들이 이산적인 정수값으로 매핑됨
+  - 근사치로 인한 오차 발생
+
+- 주의 사항
+  - 실제 구현에서는 zero-point offset을 고려해야 함
+  - 범위를 벗어나는 값들은 클리핑(clipping)될 수 있음
+
+
+
+
+
+
+
+
+
+
+
+
+
+
