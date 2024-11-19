@@ -264,8 +264,28 @@ Original:   2.5000 -> Quantized:  127 -> Dequantized:   0.4863  [Quantization er
   - 극단값 정보 손실
   - 지나친 클리핑시 모델 정확도 저하
 
+### Clipping Parameter 결정
+
+Clipping Parameter 결정은 모델 가중치를 통계적으로 분석하여 결정하는 것이 좋다. 양자화 후에도 통계적 특성을 보존해야 하기 때문에 통계적 방법으로 최적의 Clipping 범위를 결정해야 한다.
+
+1. 다양한 clipping 범위를 시도한다
+2. 각 범위에 대해 양자화를 수행한다
+3. Kullback-Leibler Divergence (KL Divergence)로 원본 가중치의 분포와 양자화 후 가중치의 분포의 차이를 계산한다
+4. Mean Square Error (MSE)로 원본과 양자화 결과의 오차를 계산한다.
+5. 분포 차이, 오차, 모델 성능, 메모리 사용량 등을 고려하여 최적의 범위를 결정한다.
 
 
+## Scaling Factor 
+
+Scaling Factor는 부동소수점을 정수로 변환하는 비율로, scaling 과정에 사용된다. Scaling Factor 선정 시 중요한 것은 가중치의 통계적 특성을 보존하는 것이다.
+
+Scaling Factor에 따른 Scaling 방법에는 여러 종류가 있다. 
+
+### 1. MinMax Quantization
+
+### 2. AbsMax Quantization
+
+### 3. AbsMean Quantization
 
 
 
