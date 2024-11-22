@@ -39,7 +39,7 @@ tag: Multimodal
 
 본 논문은 기존의 chunking 방식들보다 RAG의 성능을 크게 향상시키고, 실제 적용 가능한 실용적은 방법을 제시한다.
 
-# 2. METHODOLOGY
+# 1. METHODOLOGY
 Meta-Chunking의 핵심 목표는 아래와 같다:
 
 - chunk 크기의 가변성을 허용하여 chunk 내용의 논리적 완전성을 효과적으로 유지한다.
@@ -48,24 +48,24 @@ Meta-Chunking의 핵심 목표는 아래와 같다:
 
 위와 같은 목표를 달성하기 위해 두 가지 전략을 적용했다.
 
-## 2.1 Margin Sampling Chunking
+## 1.1 Margin Sampling Chunking
 
 1. 문서 내 문장들을 $(x_1, x_2, ..., x_n)$으로 분할한다.
 2. 연속된 문장들이 분할되어야 하는지 이진 분류한다.(LLM으로)
-3. 분류 결과의 확률차이를 구한다. $Margin_M(x_i) = P_M(y = k_1|Prompt(x_i, X')) - P_M(y = k_2|Prompt(x_i, X'))$
+3. 분류 결과의 확률차이를 구한다.<br>
+   $Margin_M(x_i) = P_M(y = k_1\|Prompt(x_i, X')) - P_M(y = k_2\|Prompt(x_i, X'))$<br>
+-> $k_1$과 $k_2$의 분리 여부가 결정된다.<br>
 
--> $k_1$과 $k_2$의 분리 여부가 결정된다.
-
-## 2.2 Margin Sampling Chunking
+## 1.2 Margin Sampling Chunking
 
 1. 문서를 문장 단위로 분리한다.
 2. 각 문장 $x_i$의 PPL을 이전 문장들을 기반으로 계산한다.<br>
-  <img width="200" src="https://github.com/user-attachments/assets/03008fdb-3dae-4d7a-b6f3-016cc887640e"><br>
+  <img width="300" src="https://github.com/user-attachments/assets/03008fdb-3dae-4d7a-b6f3-016cc887640e"><br>
   ($K$는 $x_i$의 총 token 수, $t_i^k$는 $x_i$의 $k$번째 토큰, $t<i$는 $x_i$ 이전의 모든 토큰)<br>
 3. PPL 분포를 분석하여 chunk 경계를 결정한다.
    
-# 3. EXPERIMENT
-## 3.1 DATASETS AND METRICS
+# 2. EXPERIMENT
+## 2.1 DATASETS AND METRICS
 4 개의 benchmark에서 11개의 QAset을 사용하여 평가. 데이터셋들은 모두 중국어와 영어 포함한다.
 
 
