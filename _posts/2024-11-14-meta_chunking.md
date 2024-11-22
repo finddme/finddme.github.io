@@ -39,6 +39,10 @@ tag: Multimodal
 
 본 논문은 기존의 chunking 방식들보다 RAG의 성능을 크게 향상시키고, 실제 적용 가능한 실용적은 방법을 제시한다.
 
+<center><img width="500" src="https://github.com/user-attachments/assets/a0a7f2ee-8f86-4582-a495-0f615707aff7"></center>
+<center><em style="color:gray;">https://arxiv.org/pdf/2404.12457</em></center><br>
+
+
 # 1. METHODOLOGY
 Meta-Chunking의 핵심 목표는 아래와 같다:
 
