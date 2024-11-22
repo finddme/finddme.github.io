@@ -63,8 +63,7 @@ Meta-Chunking의 핵심 목표는 아래와 같다:
 
 ```python
 def get_prob_subtract(model, tokenizer, sentence1, sentence2):
-    # 영어 프롬프트 구성
-    # 동일한 로직을 영어로 구현
+    # 실제 공개된 코드에는 중국어 버전 있음. 중국어 몰라서 뺌  
     query = '''This is a text chunking task. You are a text analysis expert. Please choose one of the following two options based on the logical structure and semantic content of the provided sentence:
     1. Split "{}" into "{}" and "{}" two parts;
     2. Keep "{}" unsplit in its original form;
