@@ -40,7 +40,7 @@ tag: Multimodal
 본 논문은 기존의 chunking 방식들보다 RAG의 성능을 크게 향상시키고, 실제 적용 가능한 실용적은 방법을 제시한다.
 
 <center><img width="500" src="https://github.com/user-attachments/assets/a0a7f2ee-8f86-4582-a495-0f615707aff7"></center>
-<center><em style="color:gray;">https://arxiv.org/pdf/2404.12457</em></center><br>
+<center><em style="color:gray;">https://arxiv.org/pdf/2410.12788</em></center><br>
 
 
 # 1. METHODOLOGY
@@ -50,7 +50,10 @@ Meta-Chunking의 핵심 목표는 아래와 같다:
 - 각 chunk가 완전하고 독립적인 내용을 포함하도록 한다.
 - 단순한 의미적 유사성을 넘어 인과관계, 문맥 진행 등 언어의 논리적 연결을 포함한다. 
 
-위와 같은 목표를 달성하기 위해 두 가지 전략을 적용했다.
+위와 같은 목표를 달성하기 위해 Margin Sampling Chunking, Perplexity Chunking 이렇게 두 가지 전략을 구현했다. 
+
+<center><img width="500" src="https://github.com/user-attachments/assets/9931e486-ecec-4782-9b4d-d8daf4b86d8d"></center>
+<center><em style="color:gray;">https://arxiv.org/pdf/2404.12457</em></center><br>
 
 ## 1.1 Margin Sampling Chunking
 
@@ -231,7 +234,7 @@ def extract_by_html2text_db_nolist(sub_text, model, tokenizer, threshold, langua
 
 chunk의 경계는 PPL 값의 local minima 지점이다. Minima는 아래와 같은 수식으로 계산된다:
 
-<img width="300" src="https://github.com/user-attachments/assets/123d31ba-51a8-4c90-91e8-7704818b6535"><br>
+<img width="500" src="https://github.com/user-attachments/assets/123d31ba-51a8-4c90-91e8-7704818b6535"><br>
 
 위 수식은 두 가지 경우를 고려한다:
 
