@@ -82,7 +82,7 @@ def get_prob_subtract(model, tokenizer, sentence1, sentence2):
     # 출력 토큰 ('1'과 '2') 인코딩
     output_ids = tokenizer.encode(['1', '2'], return_tensors='pt').to(model.device)
     
-    # 모델 추론 (그래디언트 계산 없이)
+    # # 모델 추론 버전으로 실행 (gradient 계산 없이 모델 예측 수행)
     with torch.no_grad():
         outputs = model(input_ids)
         # 마지막 토큰의 로짓 추출
