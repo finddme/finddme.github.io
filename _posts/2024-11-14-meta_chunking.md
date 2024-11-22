@@ -42,8 +42,6 @@ tag: Multimodal
 <center><img width="500" src="https://github.com/user-attachments/assets/a0a7f2ee-8f86-4582-a495-0f615707aff7"></center>
 <center><em style="color:gray;">https://arxiv.org/pdf/2410.12788</em></center><br>
 
-
-# 1. METHODOLOGY
 Meta-Chunking의 핵심 목표는 아래와 같다:
 
 - chunk 크기의 가변성을 허용하여 chunk 내용의 논리적 완전성을 효과적으로 유지한다.
@@ -55,7 +53,7 @@ Meta-Chunking의 핵심 목표는 아래와 같다:
 <center><img width="500" src="https://github.com/user-attachments/assets/9931e486-ecec-4782-9b4d-d8daf4b86d8d"></center>
 <center><em style="color:gray;">https://arxiv.org/pdf/2404.12457</em></center><br>
 
-## 1.1 Margin Sampling Chunking
+# 1. Margin Sampling Chunking
 
 1. 문서 내 문장들을 $(x_1, x_2, ..., x_n)$으로 분할한다.
 2. 연속된 문장들이 분할되어야 하는지 이진 분류한다.(LLM으로)
@@ -107,11 +105,12 @@ def get_prob_subtract(model, tokenizer, sentence1, sentence2):
     return prob_subtract
 ```
 
-## 1.2 Perplexity Chunking
+# 2. Perplexity Chunking
 
 1. 문서를 문장 단위로 분리한다.
 2. 각 문장 $x_i$의 PPL을 이전 문장들을 기반으로 계산한다.<br>
-  <img width="300" src="https://github.com/user-attachments/assets/03008fdb-3dae-4d7a-b6f3-016cc887640e"><br>
+  <img width="300" src="https://github.com/user-attachments/assets/03008fdb-3dae-4d7a-b6f3-016cc887640e">
+   
    - $K$는 $x_i$의 총 token 수
    - $t_i^k$는 $x_i$의 $k$번째 토큰
    - $t<i$는 $x_i$ 이전의 모든 토큰)<br>
@@ -234,7 +233,7 @@ def extract_by_html2text_db_nolist(sub_text, model, tokenizer, threshold, langua
 
 chunk의 경계는 PPL 값의 local minima 지점이다. Minima는 아래와 같은 수식으로 계산된다:
 
-<img width="500" src="https://github.com/user-attachments/assets/123d31ba-51a8-4c90-91e8-7704818b6535"><br>
+<img width="700" src="https://github.com/user-attachments/assets/123d31ba-51a8-4c90-91e8-7704818b6535">
 
 위 수식은 두 가지 경우를 고려한다:
 
@@ -256,18 +255,8 @@ def find_minima(values, threshold):
     return minima_indices
 
 # https://github.com/IAAR-Shanghai/Meta-Chunking/blob/main/example/chunk_rag.py
-# 위 링크에 dynamic minima 찾는 코드도 있
+# 위 링크에 dynamic minima 찾는 코드도 있음 
 ```
-
-
-
-# 2. RESULT
-## 2.1 DATASETS AND METRICS
-4 개의 benchmark에서 11개의 QAset을 사용하여 평가. 데이터셋들은 모두 중국어와 영어 포함한다.
-
-
-
-
 
 
 
