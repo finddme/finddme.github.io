@@ -29,6 +29,7 @@ tag: Multimodal
 1) Margin Sampling Chunking
    - LLM이 연속된 문장들을 분리할지 말지 binary classification을 수행
    - 작은 규모의 LLM으로도 충분히 수행 가능
+   - LLM을 쓰니까 데이터 처리 시간이 많이 걸림. 자원도 많이 들어감.
      
 2) Perplexity Chunking
    - 텍스트의 복잡도(perplexity) 분포를 분석하여 문서가 나뉠 적절한 경계를 찾아내는 것이다.
