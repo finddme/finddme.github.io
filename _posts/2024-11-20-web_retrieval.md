@@ -45,3 +45,9 @@ tag: Development
 
 + blog search box를 serverless 형식으로 바꾸는 작업에도 적용 예정[https://github.com/finddme/Function_calling_ReAct/blob/main/func_react_stream_serverless/README.md](https://github.com/finddme/Function_calling_ReAct/blob/main/func_react_stream_serverless/README.md)
 + blog search box를 serverless 형식으로 바꾸는 이유: 컴퓨터를 항상 켜 두는 것이 부담스럽다. gcp, aws는 돈이 많이 나간다.............
+
+# Auto Crawling
+
+<center><img width="800" src="https://github.com/user-attachments/assets/bb9eb0ed-035f-407e-9dc4-3e9f0d5a4e27"></center>
+<center><em style="color:gray;">https://mermaid.live/</em></center><br>
+
