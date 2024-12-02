@@ -48,6 +48,6 @@ tag: Development
 
 # Auto Crawling
 
-<center><img width="800" src="https://github.com/user-attachments/assets/bb9eb0ed-035f-407e-9dc4-3e9f0d5a4e27"></center>
+<center><img width="600" src="https://github.com/user-attachments/assets/bb9eb0ed-035f-407e-9dc4-3e9f0d5a4e27"></center>
 <center><em style="color:gray;">https://mermaid.live/</em></center><br>
 
