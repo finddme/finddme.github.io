@@ -65,7 +65,7 @@ async def crawl(main_url, max_pages=None,crawling_verbose=False):
     while to_crawl and (max_pages is None or len(visited_urls) < max_pages):
         async with AsyncWebCrawler(verbose=crawling_verbose) as crawler: 
             async with aiohttp.ClientSession() as session:
-                current_batch = list(to_crawl)[:min(5, len(to_crawl))]  # 처리할 URL들을 최대 5개까지 배치로 구성
+                current_batch = list(to_crawl)[:min(5, len(to_crawl))]  # 처리할 URL들 batch로 묶음
                 domain = urlparse(current_batch[0]).netloc
                 print(f"Crawling batch of {len(current_batch)} URLs from domain: {domain}")
 
