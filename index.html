@@ -161,7 +161,7 @@ title:   #Categories Home
     </div>
           
         <script>
-        function getKoreanNextWednesday() {
+        function getKoreanWednesday() {
             // 현재 시간을 한국 시간으로 변환
             const now = new Date();
             const koreaTimeDiff = 9 * 60 * 60 * 1000; // 9시간을 밀리초로 변환
@@ -170,16 +170,12 @@ title:   #Categories Home
             // 현재 요일 구하기 (0: 일요일, 1: 월요일, ..., 6: 토요일)
             const currentDay = koreaTime.getUTCDay();
             
-            // 다음 수요일까지의 날짜 차이 계산 (3은 수요일을 의미)
+            // 이번 주 수요일까지의 날짜 차이 계산 (3은 수요일을 의미)
             let daysUntilWednesday = 3 - currentDay;
             
-            // 현재 수요일이거나 수요일 이후라면, 다음 주 수요일로 설정
-            if (daysUntilWednesday <= 0) {
-                daysUntilWednesday += 7;
-            }
-            // 수요일 이전이라도 다음 주 수요일로 설정
-            else {
-                daysUntilWednesday += 7;
+            // 만약 현재가 수요일 이전이면 지난 주 수요일로 설정
+            if (daysUntilWednesday > 0) {
+                daysUntilWednesday -= 7;
             }
             
             // 해당하는 수요일 날짜 계산
@@ -196,7 +192,7 @@ title:   #Categories Home
         }
         
         function updateReportLinks() {
-            const wednesdayDate = getKoreanNextWednesday();
+            const wednesdayDate = getKoreanWednesday();
             const formattedDate = formatDate(wednesdayDate);
             
             const paperUrl = `https://github.com/finddme/Daily_AI_report/blob/main/reports/${formattedDate}/Papers_${formattedDate}_report.md`;
