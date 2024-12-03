@@ -1,5 +1,5 @@
 ---
-title: "Video Retrieval system 📽️ 1"
+title: "Video Retrieval system 📽️"
 category: Dev Log
 tag: Development
 ---
@@ -85,7 +85,8 @@ tag: Development
 # 추후 개선해야 할 점
 
 - chunking 방식 개선. 지금은 단순히 특정 시간 단위로 chunk를 나누었는데, stt의 경우, 의미 단위가 고려된 chunking이 필요해 보임.
-- youtube 추가 데이터로 yt.keywords 추가 여부 고민 중 
+- youtube 추가 데이터로 yt.keywords 추가 여부 고민 중
+- 캡쳐된 프레임에 대한 장면 변화를 감지하여 변화가 없는 경우는 넘어가는 기능 고려 중 (인터뷰 유형의 비디오에서 성능 저하를 야기할 것 같아 고려만 하는 중)
 
 # Demo (streamlit)
 
