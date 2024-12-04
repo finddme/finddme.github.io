@@ -1,5 +1,5 @@
 ---
-title: "Quentization(양자화) 기본 개념"
+title: "Quentization basic"
 category: LLM / Multimodal
 tag: Multimodal
 ---
