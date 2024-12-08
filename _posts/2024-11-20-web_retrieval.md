@@ -1,5 +1,5 @@
 ---
-title: "Page Auto crawling + Retrieval 🌐♾️ (개발 중)"
+title: "Web Auto crawling + Retrieval 🌐♾️ (개발 중)"
 category: Dev Log
 tag: Development
 ---
