@@ -43,7 +43,7 @@ tag: Development
     - excel: [https://github.com/finddme/Excel_to_Chat](https://github.com/finddme/Excel_to_Chat)의 데이터 처리 방식 적용
 - output: 답변 출처 url + 사용자 질문에 대한 답변(LLM 생성)
 
-+ ~~blog search box를 serverless 형식으로 바꾸는 작업에도 적용 예정 [func_react_stream_light](https://github.com/finddme/Function_calling_ReAct/tree/main/func_react_stream_light)~~ **개발 완료**
++ ~~blog search box를 serverless 형식으로 바꾸는 작업에도 적용 예정 [func_react_stream_light](https://github.com/finddme/func_react_stream_light)~~ **개발 완료**
 + ~~blog search box를 serverless 형식으로 바꾸는 이유: 컴퓨터를 항상 켜 두는 것이 부담스럽다. gcp, aws는 돈이 많이 나간다.............~~
 
 # Auto Crawling
