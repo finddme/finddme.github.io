@@ -162,23 +162,18 @@ title:   #Categories Home
           
         <script>
         function getKoreanWednesday() {
-            // 현재 시간을 한국 시간으로 변환
             const now = new Date();
-            const koreaTimeDiff = 9 * 60 * 60 * 1000; // 9시간을 밀리초로 변환
+            const koreaTimeDiff = 9 * 60 * 60 * 1000; 
             const koreaTime = new Date(now.getTime() + koreaTimeDiff);
             
-            // 현재 요일 구하기 (0: 일요일, 1: 월요일, ..., 6: 토요일)
             const currentDay = koreaTime.getUTCDay();
             
-            // 이번 주 수요일까지의 날짜 차이 계산 (3은 수요일을 의미)
             let daysUntilWednesday = 3 - currentDay;
             
-            // 만약 현재가 수요일 이전이면 지난 주 수요일로 설정
             if (daysUntilWednesday > 0) {
                 daysUntilWednesday -= 7;
             }
             
-            // 해당하는 수요일 날짜 계산
             const targetDate = new Date(koreaTime.getTime() + (daysUntilWednesday * 24 * 60 * 60 * 1000));
             
             return targetDate;
@@ -204,17 +199,14 @@ title:   #Categories Home
             paperLinkElement.innerHTML = `<a href="${paperUrl}" target="_blank">🐣 Wednesday AI report : Papers 🐣</a>`;
             newsLinkElement.innerHTML = `<a href="${newsUrl}" target="_blank">🐣 Wednesday AI report : News 🐣</a>`;
             
-            // 디버깅을 위한 현재 시간 표시 (선택사항)
             const currentTimeElement = document.getElementById('currentTime');
             if (currentTimeElement) {
                 currentTimeElement.textContent = `현재 시간 (한국): ${wednesdayDate.toUTCString()}`;
             }
         }
         
-        // 초기 실행
         updateReportLinks();
         
-        // 1분마다 업데이트
         setInterval(updateReportLinks, 60000);
         </script>
 <!--     <script>
@@ -264,12 +256,6 @@ title:   #Categories Home
 
 
 <hr/>
-
-<!-- <div class="post" style="margin:0; padding: 0;">
-    <h1 class="post-title">
-    공부 노트💙🌞
-  </h1>
-</div> -->
 
 <div class="tags-expo">
   <div class="tags-expo-section">
