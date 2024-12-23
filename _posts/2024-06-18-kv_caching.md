@@ -1,5 +1,5 @@
 ---
-title: "key-value caching (작성 중)"
+title: "Key-Value caching"
 category: LLM / Multimodal
 tag: Multimodal
 ---
@@ -62,6 +62,29 @@ Key-Value(KV) Caching을 간략이 설명하면 transformers모델이 attention�
   ```
 <center><img width="800" src="https://github.com/user-attachments/assets/683916a7-f7eb-41f4-bbf5-e97b88c27f8b"></center>
 
-문제점: 이미 계산했던 것들 계속 다시 계산. 불필요한 연산들. 문장이 길어질수록 재연산의 양이 엄청 많아짐.
+!!! 문제점: 이미 계산했던 것들 계속 다시 계산. 불필요한 연산들. 문장이 길어질수록 재연산의 양이 엄청 많아짐.
 
 - **caching 없는 처리 과정**
+  - 이전에 계산한 key와 value tensor를 cache에 저장
+  - 새 token에 대해 연산할 때
+    - 이전 token에서 계산한 cache들 가져옴
+    - 새로운 token에 대해서만 계산
+```
+첫 번째 단계:
+입력: "She"
+- q1k1 계산
+- k1, v1을 캐시에 저장
+
+두 번째 단계:
+입력: "She poured"
+- k1, v1은 캐시에서 가져옴
+- 새로운 계산: q2k2만 계산
+- k2, v2를 캐시에 저장
+
+세 번째 단계:
+입력: "She poured coffee"
+- k1, v1, k2, v2는 캐시에서 가져옴
+- 새로운 계산: q3k3만 계산
+- k3, v3를 캐시에 저장
+```
+
