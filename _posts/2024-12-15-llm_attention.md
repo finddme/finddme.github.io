@@ -142,16 +142,14 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
     ]
   """
   ```
-  <br>
-  병렬처리를 위한 Linear 변환<br>
+  병렬처리를 위한 Linear 변환
     - 장점:
       - 각 GPU가 더 작은 가중치 행렬을 저장
       - 행렬 곱셈을 병렬로 처리
       - GPU 간 통신 비용 감소 (gather_output=False)
     - 단점:
       - 입력은 모든 GPU에 복제 필요
-      - GPU 수에 따라 모델 구조 조정 필요<br>
-      
+      - GPU 수에 따라 모델 구조 조정 필요
   ```python
     self.wq = ColumnParallelLinear(
         args.dim, # 입력 차원. 4096
@@ -200,7 +198,6 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
       -> GPU2: (2, 1024, 256)
     """
   ```
-
   - **view로 입력을 여러 헤드로 분할**
   ```python
   xq = xq.view(bsz, seqlen, self.n_local_heads, self.head_dim)
