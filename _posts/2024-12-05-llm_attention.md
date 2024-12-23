@@ -248,3 +248,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
 ### 3. Sliding-window Attention
 
 현재 token 주변의 일정 범위만 참조 
+
+### 4. Flash Attention
+
+Tiling 기법을 사용하여 GPU의 고속 SRAM을 효율적으로 활용하여 메모리 효율성과 attention 연산 속도를 크게 개선한 방법론 
