@@ -120,7 +120,8 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
    ```
 
 2. Multi-head
-
+  - 여러 세트의 가중치 행렬(Wk, Wq, Wv) 사용
+  - 각 헤드가 서로 다른 관점에서 입력을 분석할 수 있음음
   - **헤드 수 설정**
   ```python
   self.n_kv_heads = args.n_heads if args.n_kv_heads is None else args.n_kv_heads # 4. (key, value attention 헤드 수 -> GQA를 위해 query보다 적은 헤드 수 사용)
@@ -232,8 +233,18 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
 
   ```
 
-
-
 ## Modified self-attention
 
-최근 LLM들은 위와 같은 기본 attention을 변형시킨 attention을 주로 사용한다.
+최근 LLM들은 처리 속도 향상, 메모리 효율성 개선, 더 나은 문맥 이해, 긴 문서 처리 능력 향상 등을 위해 기본 attention을 변형시킨 attention을 주로 사용한다.
+
+### 1. Grouped Query Attention
+
+관련 토큰들을 그룹으로 처리하는 attention.
+
+### 2. Paged Attention
+
+긴 sequence를 page 단위로 나누어 처리. (예를 들어 1000 token을 100 token씩 10page로 나누어 처리)
+
+### 3. Sliding-window Attention
+
+현재 token 주변의 일정 범위만 참조 
