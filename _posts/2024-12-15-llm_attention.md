@@ -128,7 +128,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
       - 입력은 모든 GPU에 복제 필요
       - GPU 수에 따라 모델 구조 조정 필요
         
-  - **헤드 수 설정**
+  1. **헤드 수 설정**
     
   ```python
   self.n_kv_heads = args.n_heads if args.n_kv_heads is None else args.n_kv_heads # 4. (key, value attention 헤드 수 -> GQA를 위해 query보다 적은 헤드 수 사용)
@@ -138,7 +138,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
   self.head_dim = args.dim // args.n_heads # 128. 전체 모델 차원을 헤드 수로 나눈 값
   ```
 
-  - **입력 tensor Linear 변환**
+  2. **입력 tensor Linear 변환**
     
   ```python
   # 입력 tensor 예시
@@ -201,7 +201,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
   """
   ```
 
-  - **view로 입력을 여러 헤드로 분할**
+  3. **view로 입력을 여러 헤드로 분할**
     
   ```python
   xq = xq.view(bsz, seqlen, self.n_local_heads, self.head_dim)
