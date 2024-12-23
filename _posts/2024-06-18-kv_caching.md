@@ -36,6 +36,7 @@ Key-Value(KV) Caching을 간략이 설명하면 transformers모델이 attention�
 ※v1 = $token 1 embedding$ * $W_v$<br>
 
 - **caching 없는 처리 과정**
+  
   ```
   첫 번째 단계:
   입력: "She"
@@ -69,6 +70,7 @@ Key-Value(KV) Caching을 간략이 설명하면 transformers모델이 attention�
   - 새 token에 대해 연산할 때
     - 이전 token에서 계산한 cache들 가져옴
     - 새로운 token에 대해서만 계산
+      
 ```
 첫 번째 단계:
 입력: "She"
