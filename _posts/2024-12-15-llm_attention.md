@@ -128,6 +128,14 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
   self.head_dim = args.dim // args.n_heads # 128. 전체 모델 차원을 헤드 수로 나눈 값
   ```
   - **입력 tensor Linear 변환**
+    병렬처리를 위한 Linear 변환
+      - 장점:
+        - 각 GPU가 더 작은 가중치 행렬을 저장
+        - 행렬 곱셈을 병렬로 처리
+        - GPU 간 통신 비용 감소 (gather_output=False)
+      - 단점:
+        - 입력은 모든 GPU에 복제 필요
+        - GPU 수에 따라 모델 구조 조정 필요
   ```python
 `  # 입력 tensor 예시
   x shape: (batch_size=2, seq_len=1024, dim=4096)
@@ -141,62 +149,52 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
       [다음 배치...]
     ]
   """
-  ```
-  병렬처리를 위한 Linear 변환
-    - 장점:
-      - 각 GPU가 더 작은 가중치 행렬을 저장
-      - 행렬 곱셈을 병렬로 처리
-      - GPU 간 통신 비용 감소 (gather_output=False)
-    - 단점:
-      - 입력은 모든 GPU에 복제 필요
-      - GPU 수에 따라 모델 구조 조정 필요
-  ```python
-    self.wq = ColumnParallelLinear(
-        args.dim, # 입력 차원. 4096
-        args.n_heads * self.head_dim, # 출력 차원 (32 * 128 = 4096)
-        bias=False, # 편향 사용하지 않음
-        gather_output=False, # 출력 모으지 않음
-        init_method=lambda x: x,
-    )
-    self.wk = ColumnParallelLinear(
-        args.dim,
-        self.n_kv_heads * self.head_dim, # 출력 차원 (4 * 128 = 512)
-        bias=False,
-        gather_output=False,
-        init_method=lambda x: x,
-    )
-    self.wv = ColumnParallelLinear(
-        args.dim,
-        self.n_kv_heads * self.head_dim, # 출력 차원 (4 * 128 = 512)
-        bias=False,
-        gather_output=False,
-        init_method=lambda x: x,
-    )
+  self.wq = ColumnParallelLinear(
+      args.dim, # 입력 차원. 4096
+      args.n_heads * self.head_dim, # 출력 차원 (32 * 128 = 4096)
+      bias=False, # 편향 사용하지 않음
+      gather_output=False, # 출력 모으지 않음
+      init_method=lambda x: x,
+  )
+  self.wk = ColumnParallelLinear(
+      args.dim,
+      self.n_kv_heads * self.head_dim, # 출력 차원 (4 * 128 = 512)
+      bias=False,
+      gather_output=False,
+      init_method=lambda x: x,
+  )
+  self.wv = ColumnParallelLinear(
+      args.dim,
+      self.n_kv_heads * self.head_dim, # 출력 차원 (4 * 128 = 512)
+      bias=False,
+      gather_output=False,
+      init_method=lambda x: x,
+  )
+
+  xq = self.wq(x)  # (2, 1024, 4096) -> (2, 1024, 32*128)
+  xk = self.wk(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
+  xv = self.wv(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
+
+  """
+  [(wk/wv) 일반적인 Linear와 ColumnParallelLinear 비교. 입력 크기가 (2, 1024, 4096)일 때]
+  일반 Linear 결과: (2, 1024, 4096) -> (2, 1024, 512)
+  ColumnParallelLinear: GPU별로 출력 차원을 분할
   
-    xq = self.wq(x)  # (2, 1024, 4096) -> (2, 1024, 32*128)
-    xk = self.wk(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
-    xv = self.wv(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
+  GPU 2개 사용 시
+  - GPU 1: (2, 1024, 4096) -> (2, 1024, 256)
+  - GPU 2: (2, 1024, 4096) -> (2, 1024, 256)
+
+  -------------------------------------------------------------------------------------
   
-    """
-    [(wk/wv) 일반적인 Linear와 ColumnParallelLinear 비교. 입력 크기가 (2, 1024, 4096)일 때]
-    일반 Linear 결과: (2, 1024, 4096) -> (2, 1024, 512)
-    ColumnParallelLinear: GPU별로 출력 차원을 분할
-    
-    GPU 2개 사용 시
-    - GPU 1: (2, 1024, 4096) -> (2, 1024, 256)
-    - GPU 2: (2, 1024, 4096) -> (2, 1024, 256)
+  - gather_output=True일 경우:
+    -> 각 GPU의 결과를 모아서 전체 출력 생성
+    -> (2, 1024, 512)
   
-    -------------------------------------------------------------------------------------
-    
-    - gather_output=True일 경우:
-      -> 각 GPU의 결과를 모아서 전체 출력 생성
-      -> (2, 1024, 512)
-    
-    - gather_output=False일 경우 (GPU 간 통신 비용 감소):
-      -> 각 GPU가 자신의 결과만 유지
-      -> GPU1: (2, 1024, 256)
-      -> GPU2: (2, 1024, 256)
-    """
+  - gather_output=False일 경우 (GPU 간 통신 비용 감소):
+    -> 각 GPU가 자신의 결과만 유지
+    -> GPU1: (2, 1024, 256)
+    -> GPU2: (2, 1024, 256)
+  """
   ```
   - **view로 입력을 여러 헤드로 분할**
   ```python
