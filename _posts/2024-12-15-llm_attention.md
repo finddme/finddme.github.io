@@ -149,7 +149,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
       - GPU 간 통신 비용 감소 (gather_output=False)
     - 단점:
       - 입력은 모든 GPU에 복제 필요
-      - GPU 수에 따라 모델 구조 조정 필요
+      - GPU 수에 따라 모델 구조 조정 필요<br>
   ```python
   self.wq = ColumnParallelLinear(
       args.dim, # 입력 차원. 4096
