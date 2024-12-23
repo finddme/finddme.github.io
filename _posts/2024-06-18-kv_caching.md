@@ -61,7 +61,7 @@ Key-Value(KV) Caching을 간략이 설명하면 transformers모델이 attention�
   - q3k2 계산
   - q3k3 계산
   ```
-<center><img width="800" src="https://github.com/user-attachments/assets/683916a7-f7eb-41f4-bbf5-e97b88c27f8b"></center>
+<center><img width="500" src="https://github.com/user-attachments/assets/683916a7-f7eb-41f4-bbf5-e97b88c27f8b"></center>
 
 !!! 문제점: 이미 계산했던 것들 계속 다시 계산. 불필요한 연산들. 문장이 길어질수록 재연산의 양이 엄청 많아짐.
 
