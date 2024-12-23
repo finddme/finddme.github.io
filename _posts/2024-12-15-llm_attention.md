@@ -119,7 +119,6 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
 2. Multi-head
   - 여러 세트의 가중치 행렬(Wk, Wq, Wv) 사용
   - 각 헤드가 서로 다른 관점에서 입력을 분석할 수 있음음
-    
   - 병렬처리를 위한 Linear 변환
     - 장점:
       - 각 GPU가 더 작은 가중치 행렬을 저장
