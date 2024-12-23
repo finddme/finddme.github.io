@@ -146,7 +146,6 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
       - 각 GPU가 더 작은 가중치 행렬을 저장
       - 행렬 곱셈을 병렬로 처리
       - GPU 간 통신 비용 감소 (gather_output=False)
-    
     - 단점:
       - 입력은 모든 GPU에 복제 필요
       - GPU 수에 따라 모델 구조 조정 필요
