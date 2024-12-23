@@ -1,5 +1,5 @@
 ---
-title: "LLM architecture"
+title: "LLM Architecture"
 category: LLM / Multimodal
 tag: NLP
 ---
