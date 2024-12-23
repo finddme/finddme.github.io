@@ -1,5 +1,5 @@
 ---
-title: "2024 LLM Attention"
+title: "LLM Attention"
 category: LLM / Multimodal
 tag: Multimodal
 ---
