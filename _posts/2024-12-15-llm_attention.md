@@ -93,7 +93,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
 
 아래 나오는 코드들의 출처는 모두 [https://github.com/meta-llama/llama3/blob/main/llama/model.py](https://github.com/meta-llama/llama3/blob/main/llama/model.py)이다.
 
-1. Causal Masking
+### 1. Causal Masking
    미래 token들을 못 보게 막는 
 
    ```python
@@ -116,7 +116,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
     scores = F.softmax(scores.float(), dim=-1).type_as(xq)
    ```
 
-2. Multi-head
+### 2. Multi-head
   - 여러 세트의 가중치 행렬(Wk, Wq, Wv) 사용
   - 각 헤드가 서로 다른 관점에서 입력을 분석할 수 있음음
   - 병렬처리를 위한 Linear 변환
