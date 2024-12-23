@@ -178,6 +178,10 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
       init_method=lambda x: x,
   )
 
+  xq = self.wq(x)  # (2, 1024, 4096) -> (2, 1024, 32*128)
+  xk = self.wk(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
+  xv = self.wv(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
+
   """
   [(wk/wv) 일반적인 Linear와 ColumnParallelLinear 비교. 입력 크기가 (2, 1024, 4096)일 때]
   일반 Linear 결과: (2, 1024, 4096) -> (2, 1024, 512)
@@ -200,13 +204,6 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
 
   """
   ```
-
-  ```python
-  xq = self.wq(x)  # (2, 1024, 4096) -> (2, 1024, 32*128)
-  xk = self.wk(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
-  xv = self.wv(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
-  ```
-
   - **view로 입력을 여러 헤드로 분할**
   ```python
   xq = xq.view(bsz, seqlen, self.n_local_heads, self.head_dim)
