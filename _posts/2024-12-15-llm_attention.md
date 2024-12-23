@@ -91,11 +91,12 @@ class Basic_SelfAttention(torch.nn.Module):
 
 Decoder based 모델에 사용되는 self-attention은 masked self-attention으로, 위와 같은 기본 self-attention에 몇 가지 기법/기술을 추가하여 사용하는 것이 일반적이다.
 
+아래 나오는 코드들의 출처는 모두 [https://github.com/meta-llama/llama3/blob/main/llama/model.py](https://github.com/meta-llama/llama3/blob/main/llama/model.py)이다.
+
 1. Causal Masking
    미래 token들을 못 보게 막는 
 
    ```python
-   # 출처: https://github.com/meta-llama/llama3/blob/main/llama/model.py
    # mask 생성
    # -inf나 매우 큰 음수값을 더해서 softmax 후에 해당 위치의 attention 가중치가 0이 되도록 함
     mask = torch.full((seq_len, seq_len), float("-inf"))
