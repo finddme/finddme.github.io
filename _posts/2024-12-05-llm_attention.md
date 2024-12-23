@@ -129,9 +129,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
   self.n_local_kv_heads = self.n_kv_heads // model_parallel_size # 2. local key,value 헤드 수. 각 gpu에서 처리하는 key,value 헤드 수
   self.head_dim = args.dim // args.n_heads # 128. 전체 모델 차원을 헤드 수로 나눈 값
   ```
-
   - **입력 tensor Linear 변환**
-    
   ```python
 `  # 입력 tensor 예시
   x shape: (batch_size=2, seq_len=1024, dim=4096)
@@ -156,7 +154,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
   - 단점:
     - 입력은 모든 GPU에 복제 필요
     - GPU 수에 따라 모델 구조 조정 필요
-    - 
+      
   ```python
   self.wq = ColumnParallelLinear(
       args.dim, # 입력 차원. 4096
