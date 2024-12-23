@@ -119,6 +119,16 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
 2. Multi-head
   - 여러 세트의 가중치 행렬(Wk, Wq, Wv) 사용
   - 각 헤드가 서로 다른 관점에서 입력을 분석할 수 있음음
+    
+  - 병렬처리를 위한 Linear 변환
+    - 장점:
+      - 각 GPU가 더 작은 가중치 행렬을 저장
+      - 행렬 곱셈을 병렬로 처리
+      - GPU 간 통신 비용 감소 (gather_output=False)
+    - 단점:
+      - 입력은 모든 GPU에 복제 필요
+      - GPU 수에 따라 모델 구조 조정 필요
+        
   - **헤드 수 설정**
   ```python
   self.n_kv_heads = args.n_heads if args.n_kv_heads is None else args.n_kv_heads # 4. (key, value attention 헤드 수 -> GQA를 위해 query보다 적은 헤드 수 사용)
@@ -128,14 +138,6 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
   self.head_dim = args.dim // args.n_heads # 128. 전체 모델 차원을 헤드 수로 나눈 값
   ```
   - **입력 tensor Linear 변환**
-    - 병렬처리를 위한 Linear 변환
-      - 장점:
-        - 각 GPU가 더 작은 가중치 행렬을 저장
-        - 행렬 곱셈을 병렬로 처리
-        - GPU 간 통신 비용 감소 (gather_output=False)
-      - 단점:
-        - 입력은 모든 GPU에 복제 필요
-        - GPU 수에 따라 모델 구조 조정 필요
   ```python
   # 입력 tensor 예시
   # x shape: (batch_size=2, seq_len=1024, dim=4096)
