@@ -199,6 +199,7 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
   ```
 
   - **view로 입력을 여러 헤드로 분할**
+    
   ```python
   xq = xq.view(bsz, seqlen, self.n_local_heads, self.head_dim)
   xk = xk.view(bsz, seqlen, self.n_local_kv_heads, self.head_dim)
