@@ -25,6 +25,8 @@ tag: Multimodal
 
 
 
+느슨해진 attention에 긴장감을 주는 attention 복습 포스트입니다. 
+
 Transformer는 2017년 발표된 "Attention Is All You Need" 논문에서 발표되었다. 최근 GPT 계열의 LLM들은 대부분 Transformer의 decoder 구조를 기반으로 하고 있다. 
 
 # Transformer and Self-Attention
