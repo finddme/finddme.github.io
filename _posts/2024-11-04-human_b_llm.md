@@ -1,5 +1,5 @@
 ---
-title: " 언젠가 만들어 보고 싶은 귀여운 세상🚶‍➡Generative Agents: Interactive Simulacra of Human Behavior"
+title: "🚶‍➡Generative Agents: Interactive Simulacra of Human Behavior"
 category: LLM / Multimodal
 tag: Multimodal
 ---
@@ -26,6 +26,8 @@ tag: Multimodal
 <center><img width="800" src="https://github.com/user-attachments/assets/4123131e-1800-43c4-8165-85a87b662378"></center>
 <center><em style="color:gray;">https://arxiv.org/pdf/2304.03442</em></center><br>
 
+ 언젠가 만들어 보고 싶은 귀여운 세상🚶‍➡
+ 
 # Generative Agent
 최근 LLM을 통한 generative AI의 발전으로 single point에서의 인간 행동 시뮬레이션에는 많은 진전이 있었지만, 장기간에 걸친 복잡한 상호작용을 시뮬레이션하는 연구는 많이 진행되지 않았다. 본 논문은 Google과 Stanford University가 공동 연구한 논문으로, 복잡한 task에서 인간의 행동을 시뮬레이션할 수 있는 generative agent를 주제로 한다.
 
