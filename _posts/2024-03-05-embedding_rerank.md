@@ -25,7 +25,7 @@ tag: Multimodal
 
 # Embedding Model
 
-Embedding Model은 bi-encoder model이다. 
+Embedding Model은 Bi-encoder model이다. 
 
 - Bi-encoder model은 두 개의 독립적인 encoder로 구성됨. 그래서 "bi" encoder.
   - encoder 1은 입력 query를 encoding
@@ -51,12 +51,45 @@ Embedding Model은 bi-encoder model이다.
     ]
     ```
 - 유사도 점수 산정 방식(추론)
-  - query와 각 문장 간의 유사도를 독립적으로 계산. 
+  - query와 각 문장 간의 유사도를 독립적으로 계산.
+-  응용 분야
+  - 일반적으로 검색 엔진이나 추천 시스템과 같이 문서 검색이나 순위 지정이 주요 목표인 작업에서 사용
+  - 대규모 데이터셋과 컴퓨팅 리소스가 있을 때 bi-encoder를 사용한다. 유사도 점수를 독립적으로 계산할 수 있어 추론 시 더 빠른 경우가 많음.
+  - 쿼리와 문서 간의 복잡한 상호작용을 포착하는 것이 덜 중요한 작업에 적합하다.
+
+# Rerank Model
+
+Rerank Model은 Cross-encoder model이다. 
+
+- Cross-encoder model은 query와 문장이 단일 encoder에서 함께 처리된다. 즉, 두 문장에 대한 결합된 representation을 생성한다.
+- 학습
+  - bi-encoder와 비슷하게 관련된 query-문장 쌍 간의 유사도를 최대화하도록 학습된다. 하지만 쿼리와 문서를 함께 처리하기 때문에 둘 사이의 상호작용을 포착한다.
+  - 데이터 예시
+    - 두 문장에 대한 label에 따라 유사도 측정 모델이 되기도하고, 분류 모델이 되기도 한다. 유사도 측정 모델도 사실 label이 매우 많은 분류 과제이기도 하다.
+    - (유사도 측정 모델 데이터 예시: 두 문장쌍 + 유사도 점수 (예: 0-1 사이의 연속적인 값))
+      ```python
+      train_samples = [
+          InputExample(texts=["sentence1", "sentence2"], label=0.3),
+          InputExample(texts=["Another", "pair"], label=0.8)
+      ]
+      ```
+    - (분류 과제 모델 데이터 예시: 두 문장쌍 + 각 문장 관계를 지시하는 라벨(일반적으로 int 형식의 class index))
+      ```python
+      train_samples = [
+          InputExample(texts=["A man is eating pizza", "A man eats something"], label=1),
+          InputExample(texts=["A black race car starts up in front of a crowd of people.", "A man is driving down a lonely road."], label=0)
+      ]
+      ```
+- 유사도 점수 산정 방식(추론)
+  - query와 각 문장 쌍에 대해 두 문장 embeding 간의 상호작용을 고려하여 단일 유사도 점수 생성
+-  응용 분야
+  - 일반적으로 query와 문장 사이의 맥락이나 관계를 이해하는 것이 중요한 작업에 사용
+  - query와 문장 간의 상호작용을 포착하는 것이 중요할 때 유용
 
 
 # Summary
 
-대규모 검색에서는 Bi-encoder로 후보군을 추린 후 Cross-encoder로 재순위화하는 방식을 사용하는 것이 일반적이다.이를 통해 속도와 정확도의 균형을 맞출 수 있다.
+대규모 검색에서는 Bi-encoder로 후보군을 추린 후 Cross-encoder로 재순위화하는 방식을 사용하는 것이 일반적이다.이를 통해 속도와 정확도의 균형을 맞출 수 있다. 따라서 Embedding Model로는 Bi-encoder를 사용하고, Rerank Model로는 Cross-encoder를 사용한다.
 
 |             | Bi-encoder                                                             | Cross-encoder                                                 |
 | ----------- | ---------------------------------------------------------------------- | ------------------------------------------------------------- |
