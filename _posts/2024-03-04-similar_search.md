@@ -1,5 +1,5 @@
 ---
-title: "RAG : Similarity search (Keyword Search, Semantic Search, Hybrid Search)"
+title: "`RAG` : Similarity search (Keyword Search, Semantic Search, Hybrid Search)"
 category: LLM / Multimodal
 tag: Multimodal
 ---
