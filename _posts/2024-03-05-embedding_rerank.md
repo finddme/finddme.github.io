@@ -27,9 +27,7 @@ tag: Multimodal
 
 Embedding Model은 bi-encoder model이다. 
 
-## bi-encoder model architecture
-
-- 두 개의 독립적인 encoder로 구성됨. 그래서 "bi" encoder인 것이다.
+- Bi-encoder model은 두 개의 독립적인 encoder로 구성됨. 그래서 "bi" encoder.
   - encoder 1은 입력 query를 encoding
   - encoder 2는 관련/무관 문장을 encoding
   - 두 encoder는 각각 독립적으로 embedding을 생성
