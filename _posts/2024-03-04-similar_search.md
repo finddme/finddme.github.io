@@ -1,5 +1,5 @@
 ---
-title: "`RAG` : Similarity search (Keyword Search, Semantic Search, Hybrid Search)"
+title: "<span style='font-weight: bold; font-family: Computer Modern;'>RAG</span> : Similarity search (Keyword Search, Semantic Search, Hybrid Search)"
 category: LLM / Multimodal
 tag: Multimodal
 ---
