@@ -1,5 +1,5 @@
 ---
-title: "`Multimodal` Learning with Transformers : A Survey"
+title: "`M\\ul\\timodal` Learning with Transformers : A Survey"
 category: "LLM / Multimodal"
 tag: Multimodal
 ---
