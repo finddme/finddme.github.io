@@ -1,5 +1,5 @@
 ---
-title: "RAG : Embedding Model, Reranking Model"
+title: "`RAG` : Embedding Model, Reranking Model"
 category: LLM / Multimodal
 tag: Multimodal
 ---
