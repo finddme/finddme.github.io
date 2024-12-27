@@ -1,5 +1,5 @@
 ---
-title: '<span style="font-weight: bold; font-style: italic; font-family: Times New Roman;">Multimodal</span> Learning with Transformers : A Survey'
+title: '<span style="font-weight: bold; font-style: italic; font-family: Computer Modern;">Multimodal</span> Learning with Transformers : A Survey'
 category: "LLM / Multimodal"
 tag: Multimodal
 ---
