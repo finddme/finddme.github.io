@@ -71,18 +71,62 @@ Tranformers 계열의 모델은 label이 없는 데이터에 대해서도 superv
 
 ## 2.2 Hyperparameter
 
-- Learning Rate : 학습 시 weight update 속도를 결정하는 값으로, 매 iteration마다 weight가 얼마나 크게 조정될지를 결정하는 요소이다. 예를 들어 Learning Rate가 0.01이라면, 매 iteration마다 weight가 변화하는 양은 0.01배로 조정다.
+- **Learning Rate** : 학습 시 weight update 속도를 결정하는 값으로, 매 iteration마다 weight가 얼마나 크게 조정될지를 결정하는 요소이다. 예를 들어 Learning Rate가 0.01이라면, 매 iteration마다 weight가 변화하는 양은 0.01배로 조정다.
   - Learning Rate 값이 작을 때는 모델이 천천히 학습한다. 수렴하는 데 시간이 오래 걸리지만, 최적의 값을 찾을 가능성이 높다.
   - Learning Rate 값이 클 때는 모델이 빠르게 학습한다. 하지만 너무 크면 최적의 값을 지나쳐 버리거나 학습이 불안정해질 수 있다.
-
-- Batch Size : 모델이 학습할 때 한 번에 처리하는 데이터 샘플의 개수이다.
+  - 관련 기법 
+    - **Warm-up Steps** :
+      - 훈련 초기에 Learning Rate 점진적으로 증가시켜 안정성을 높이는 요소이다.
+      - 보통 100-1000 스텝 또는 전체 학습의 10% 정도를 warm up에 할당
+      - 초기 과적합(early overfitting) 방지
+    - **Learning rate decay**
+      - 학습이 진행됨에 따라 학습률을 점진적으로 감소시키는 기법
+      - 후반부에 미세한 조정을 통해 정확도 향상
+    - warm up과 Learning rate decay는 상호 보완적으로 사용될 수 있다. warm up은 학습 초기의 안정성을 확보하고, Learning rate decay는 학습 후반부의 미세 조정을 가능하게 한다. 이 두 기법을 적절히 조합하여 사용하면 모델의 학습 성능과 안정성을 크게 향상시킬 수 있다.
+    - 초기 단계: Warm up을 통해 학습률을 낮은 값에서 시작하여 점진적으로 증가시킴 / 중간 단계: 목표 학습률에 도달한 후 일정 기간 동안 유지 / 후기 단계: Learning rate decay를 적용하여 학습률을 점진적으로 감소시킴
+    
+- **Batch Size** : 모델이 학습할 때 한 번에 처리하는 데이터 샘플의 개수이다.
   - Batch Size가 작으면 한 번에 적은 양의 데이터를 처리한다. 메모리 사용량은 적지만 느리게 학습될 가능성이 높다.
   - Batch Size가 크면 한 번에 많은 데이터를 처리한다. 학습이 빠를 수 있지만 메모리 사용이 많다는 문제가 있다.
 
-- Epochs : 모델이 전체 데이터셋을 보는 횟수이다.
+- **Epochs** : 모델이 전체 데이터셋을 보는 횟수이다.
   
-- Warm-up Steps : 훈련 초기에 Learning Rate 점진적으로 증가시켜 안정성을 높이는 요소이다.
+- **Gradient Checkpointing** : 메모리 사용량 감소를 목적으로 사용되는 학습 기법
+  - 순전파 과정에서 모든 중간 activation 값을 저장하는 대신 일부만 저장.
+  - 역전파 시 필요한 중간 activation 값들을 다시 계산
+  - GPU memory 사용량을 줄일 수 있다. 하지만 계산 시간이 20%정도 증가할 수 있다는 단점이 있다. 
 
+- **Gradient Clipping** : gradient exploding 문제를 방지하여 학습의 안정성을 높이는 목적으로 사용되는 학습 기법
+  - gradient의 L2 norm이 지정된 임계값을 초과할 경우 그래디언트를 조정한다.
+  - gradient의 방향은 유지하면서 크기만 제한한다.
+  - 학습의 안정성을 높일 수 있지만 임계값 설정에 주의가 필요하다. 너무 작게 설정하면 학습 속도가 느려질 수 있다.
+ 
+- **Gradient Accumulation** : 모델 학습 시 메모리 제약을 극복하고 더 큰 배치 크기의 효과를 얻기 위해 사용하는 기술
+  - 실제 batch 크기를 가상으로 늘리는 것.
+  - 작은 mini batch로 여러번 순전파와 역전파를 수행.
+  - 각 mini batch에서 계산된 gradient를 누적.
+  - 지정된 accumulation steps에 도달하면 누적된 gradient로 모델 가중치를 업데이트.
+  - 예시:
+    ```
+    training_args = TrainingArguments(
+    per_device_train_batch_size=32,
+    gradient_accumulation_steps=2
+    )
+    ```
+    위 경우 실제 배치 크기 효과는 32 * 2 = 64가 됨.
+  - 제한된 GPU 메모리로 큰 배치 크기 효과를 얻을 수 있어 대규모 모델 학습 시 유용하지만 학습 속도가 느려질 수 있다.
+  > ※ Batch Normalization layer와 함께 사용될 경우 주의해야 할 점이 있다. (하지만 LLM 모델들은 주로 layer normalization layer를 두기 때문에 크게 걱정할 거 없다. )
+    > 1. 배치 통계의 불일치: Batch Normalization은 각 mini batch의 통계(평균과 분산)를 사용하여 정규화를 수행한다. Gradient Accumulation을 사용하면 여러 작은 미니배치에 대해 그래디언트를 누적하지만, 배치 정규화 레이어는 각 작은 미니배치에 대해 독립적으로 작동한다. 이로 인해 실제 큰 배치 크기를 사용할 때와 통계가 일치하지 않게 된다. <br>
+  > 2. 배치 불변성 위반: Batch Normalization은 batch 차원에서 계산을 수행하는데, 이는 mini batch의 구조가 무작위여야 한다는 가정을 위반한다. Gradient Accumulation을 사용하면 이 가정이 더욱 복잡해져 모델의 성능에 영향을 줄 수 있다.<br>
+  > 3. 러닝 통계 업데이트 문제:  Batch Normalization layer의 러닝 통계(running statistics)는 각 작은 mini batch에 대해 업데이트되며, 이 통계들은 누적되지 않는다. 이는 Gradient Accumulation의 목적인 큰 배치 효과를 얻는 것과 상충된다.<br>
+  > 4. 성능 저하 가능성: Batch Normalization Gradient Accumulation을 함께 사용하면 모델의 성능이 저하될 수 있다.<br>
+  > 5. 스케일링 문제: Batch Normalization은 데이터 병렬화와 잘 맞지 않아 스케일링 시 문제가 발생할 수 있다. Gradient Accumulation을 사용할 때 이 문제가 더욱 복잡해질 수 있다.<br>
+  >  -- 이러한 문제를 해결하기 위해 몇 가지 방법이 제안되었습니다 --
+  > 1) Batch Normalization 대신 Instance Normalization이나 Group Normalization과 같은 다른 정규화 기법을 사용
+  > 2) Batch Normalization layer의 모멘텀을 조정하여 업데이트를 부드럽게 만듦
+  > 3) batch 크기가 너무 작지 않도록 주의
+  > 4) 학습률을 낮추거나 Adam 옵티마이저의 epsilon 값을 조정
+  
 ## 2.3 Regularization Techniques
 
 모델 학습 시 overfitting(과적합) 방지를 위해 몇 가지 정규화 기법이 사용된다.
