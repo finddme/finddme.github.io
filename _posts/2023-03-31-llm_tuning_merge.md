@@ -1,5 +1,5 @@
 ---
-title: LLM Tuning / Merge
+title: "<span style='font-weight: bold; font-family: Computer Modern;'>LLM Tuning / Merge</span>"
 category: Dev Log
 tag: Development
 ---
