@@ -1,5 +1,5 @@
 ---
-title: "Streaming search system : Function calling based ReAct Agents"
+title: "Streaming search system : <span style='font-weight: bold; font-family: Computer Modern;'>Function calling</span> based ReAct Agents"
 category: Dev Log
 tag: Development
 ---
