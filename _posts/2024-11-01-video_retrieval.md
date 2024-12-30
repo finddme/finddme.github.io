@@ -1,5 +1,5 @@
 ---
-title: "Video Retrieval system 📽️"
+title: "<span style='font-weight: bold; font-family: Computer Modern;'>Video</span> Retrieval system 📽️"
 category: Dev Log
 tag: Development
 ---
