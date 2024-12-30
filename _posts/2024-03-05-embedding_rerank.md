@@ -1,5 +1,5 @@
 ---
-title: "<span style='font-weight: bold; font-family: Computer Modern;'>RAG</span> : Embedding Model, Reranking Model"
+title: "RAG : Embedding Model, Reranking Model"
 category: LLM / Multimodal
 tag: Multimodal
 ---
