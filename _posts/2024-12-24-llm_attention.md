@@ -1,5 +1,5 @@
 ---
-title: "LLM Attention (with Code)"
+title: "LLM <span style='font-weight:bold; font-family:CMU Serif Roman;'>Attention</span> (with Code)"
 category: LLM / Multimodal
 tag: Multimodal
 ---
