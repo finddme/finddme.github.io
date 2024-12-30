@@ -1,5 +1,5 @@
 ---
-title: "Web Auto crawling + Retrieval 🌐♾️"
+title: "Web <span style='font-weight: bold; font-family: Computer Modern;'>Auto crawling</span> + Retrieval 🌐♾️"
 category: Dev Log
 tag: Development
 ---
