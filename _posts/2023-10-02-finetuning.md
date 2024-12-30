@@ -1,5 +1,5 @@
 ---
-title: "About Fine-tuning"
+title: "About <span style='font-weight:bold; font-family:CMU Serif Roman;'>Fine-tuning</span>"
 category: LLM / Multimodal
 tag: NLP
 ---
