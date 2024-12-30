@@ -1,5 +1,5 @@
 ---
-title: "Search system : #ReACT #HITL #Multi-Agent"
+title: "Search system : #ReACT #HITL #<span style='font-weight: bold; font-family: Computer Modern;'>Multi-Agent</span>"
 category: Dev Log
 tag: Development
 ---
