@@ -1,5 +1,5 @@
 ---
-title: "Semantic Entropy: Summary of Two Papers on LLM Hallucination Detection 😱"
+title: "Semantic Entropy: Summary of Two Papers on LLM <span style='font-weight: bold; font-family: Computer Modern;'>Hallucination Detection</span> 😱"
 category: LLM / Multimodal
 tag: Multimodal
 ---
