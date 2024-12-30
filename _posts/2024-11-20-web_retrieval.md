@@ -30,9 +30,6 @@ tag: Development
 
 [https://github.com/finddme/func_react_stream_light](https://github.com/finddme/func_react_stream_light)
 
-- web auto crawling 모듈 개발 완료
-- db 저장, RAG 적용 개발 전
-
 # 개발 계획 / 개요
 
 - input: 메인 page url
