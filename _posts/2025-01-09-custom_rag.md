@@ -24,7 +24,7 @@ tag: Development
 
 
 # 프로젝트 목표
+- vllm으로 model serving [https://github.com/finddme/Model-serving_Django_VLLM](https://github.com/finddme/Model-serving_Django_VLLM)
+- embedding model부터 system prompt까지 사용자 선택 가능한 rag pipeline 구축
 - Django를 사용하여 api 생성
-- vllm으로 model serving
-- embedding model부터 system prompt까지 사용자 선택 가능한 rag pipeling 구축
 - 프로그램 전체 비동기 처리
