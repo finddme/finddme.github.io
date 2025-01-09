@@ -1,5 +1,5 @@
 ---
-title: "Quentization basic"
+title: "<span style='font-weight:bold; font-family:CMU Serif Roman;'>Quentization</span> basic"
 category: LLM / Multimodal
 tag: Multimodal
 ---
