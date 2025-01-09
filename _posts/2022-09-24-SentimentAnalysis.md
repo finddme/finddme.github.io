@@ -1,5 +1,5 @@
 ---
-title: Sentiment Analysis
+title: "<span style='font-weight:bold; font-family:CMU Serif Roman;'>Sentiment Analysis</span>"
 category: Dev Log
 tag: Development
 ---
