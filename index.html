@@ -138,14 +138,14 @@ title:   #Categories Home
     </div>
 </div>
 
-<div class="chat-expo">
-<!--   <div class="chat"> -->
-<!--     <iframe src="https://7ubeaf4wtedcd9bglgdea7.streamlit.app/?embed=true&embed_options=light_theme" style="float: center; width: 70%; height: 325px; margin-left: 10px; border: 2px solid #ccc; border-radius: 10px; padding: none;"></iframe> -->
-  <iframe class="chat" src="https://apppy-esmsebvosdvyys6gd7fsgw.streamlit.app/?embed=true&embed_options=light_theme" ></iframe>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-<!--   </div>  -->
-</div> 
-
+<!-- chat embedding  -->
+<!-- <div class="chat-expo"> -->
+<!--   <iframe class="chat" src="https://apppy-esmsebvosdvyys6gd7fsgw.streamlit.app/?embed=true&embed_options=light_theme" ></iframe>
+  <meta name="viewport" content="width=device-width,initial-scale=1"> -->
+<!-- </div>  -->
+<div>
+  <h2> Migration 중 -> https://dasarchiv.tistory.com/ </h2>
+</div>
 <hr/>
 
 
@@ -209,49 +209,6 @@ title:   #Categories Home
         
         setInterval(updateReportLinks, 60000);
         </script>
-<!--     <script>
-        function getKoreanDate() {
-            const now = new Date();
-            const koreaTimeDiff = 9 * 60 * 60 * 1000; // 9 hours in milliseconds
-            const koreaTime = new Date(now.getTime() + koreaTimeDiff);
-            
-            if (koreaTime.getUTCHours() < 10) {
-                // If it's before 9 AM in Korea, use yesterday's date
-                koreaTime.setUTCDate(koreaTime.getUTCDate() - 1);
-            }
-            
-            return koreaTime;
-        }
-
-        function formatDate(date) {
-            const year = date.getUTCFullYear();
-            const month = String(date.getUTCMonth() + 1).padStart(2, '0');
-            const day = String(date.getUTCDate()).padStart(2, '0');
-            return `${year}-${month}-${day}`;
-        }
-
-        function updateReportLinks() {
-            const koreaDate = getKoreanDate();
-            const formattedDate = formatDate(koreaDate);
-            
-            const paperUrl = `https://github.com/finddme/Daily_AI_report/blob/main/reports/${formattedDate}/Papers_${formattedDate}_report.md`;
-            const newsUrl = `https://github.com/finddme/Daily_AI_report/blob/main/reports/${formattedDate}/News_${formattedDate}_report.md`;
-            
-            const paperLinkElement = document.getElementById('paperLink');
-            const newsLinkElement = document.getElementById('newsLink');
-            
-            paperLinkElement.innerHTML = `<a href="${paperUrl}" target="_blank">🐣 Daily AI report : Papers 🐣</a>`;
-            newsLinkElement.innerHTML = `<a href="${newsUrl}" target="_blank">🐣 Daily AI report : News 🐣</a>`;
-
-            // Display current time for debugging
-            const currentTimeElement = document.getElementById('currentTime');
-            currentTimeElement.textContent = `현재 시간 (한국): ${koreaDate.toUTCString()}`;
-        }
-
-        updateReportLinks();
-        // Update links every minute
-        setInterval(updateReportLinks, 60000);
-    </script> -->
 </body>
 
 
