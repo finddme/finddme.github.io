@@ -159,5 +159,6 @@ Leiden 알고리즘은 graph를 내의 community 구조를 발견하는 데 특�
 
 >> 4. 유사한 쌍들을 그룹화하고, 가중치를 합산하며, 관계를 연결한다. 이제 구별되는 concept 쌍 사이에는 하나의 edge만 존재하게 된다.<br>
    이 edge는 특정 가중치와 관계 목록을 이름으로 가진다.<br>
-
-[https://medium.com/data-science/how-to-convert-any-text-into-a-graph-of-concepts-110844f22a1a](https://medium.com/data-science/how-to-convert-any-text-into-a-graph-of-concepts-110844f22a1a)
+   
+>> [https://medium.com/data-science/text-to-knowledge-graph-made-easy-with-graph-maker-f3f890c0dbe8](https://medium.com/data-science/text-to-knowledge-graph-made-easy-with-graph-maker-f3f890c0dbe8)<br>
+>> [https://medium.com/data-science/how-to-convert-any-text-into-a-graph-of-concepts-110844f22a1a](https://medium.com/data-science/how-to-convert-any-text-into-a-graph-of-concepts-110844f22a1a)
