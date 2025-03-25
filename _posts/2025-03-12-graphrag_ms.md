@@ -1,5 +1,5 @@
 ---
-title: "Graph RAG"
+title: "GraphRAG (Microsoft)"
 category: LLM / Multimodal
 tag: LLM
 ---
