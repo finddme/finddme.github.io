@@ -162,14 +162,11 @@ K=5인 경우:
 
 ## Top-P (Nucleus sampling)
 
-간단하기 말하자면 sampling된 token들이 지닌 확률값의 합에 대해 threshold를 거는 것이다. 예를 들어 아래와 같은 token이 있을 때 Top-P가 0.8이면 (갈비찜, 통태전, 잡채) 중에 다음 단어를 sampling하는 것이다. 
+간단하기 말하자면 sampling된 token들이 지닌 확률값의 합에 대해 threshold를 거는 것이다. 
 
-```
-갈비찜: 0.4
-잡채: 0.1
-통태전: 0.3
-떡갈비: 0.05
-```
+Top-P가 0.9면 toeken들의 확률이 높은 순으로 정렬한 후 누적 확률이 90이 될는 token 까지만 고려한다는 것이다.
+
+예를 들어 Top-K가 10이고, Top-P가 0.8일 때, 확률이 높은 상위 10개의 token 중 누적 확률이 80이 되는 token까지만 고려한다는 것이다.
 
 ## Sampling Parameter 작동 방식
 
