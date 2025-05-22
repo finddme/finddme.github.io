@@ -41,7 +41,7 @@ LLM은 입력된 token sequence에서 다음 token의 확률 분포를 계산하
 
 ## Delimiters
 
-LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위치에 올 token을 예측한다. 이때 attention mechanism을 통해 입력 sequence 내의 모든 token들 간의 관계를 파악하는데 text의 구조적 경계를 명확히 인식하는데 한계가 있다. 따라서 Prompt 작성 시 Delimiter들을 통해 명확히 context를 분리해 주는 것이 좋다. 
+LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위치에 올 token을 예측한다. 이때 attention mechanism을 통해 입력 sequence 내의 모든 token들 간의 관계를 파악하는데 LLM에게 입력된 전체 sequence가 모두 하나의 context-window에 속해 있기 때문에 text의 구조적 경계를 명확히 인식하는데 한계가 있다. 따라서 Prompt 작성 시 Delimiter들을 통해 명확히 context를 분리해 주는 것이 좋다. 
 
 모델마다 효과적인 delimiter가 다르다. 그 이유는 모델별 학습 데이터에 차이가 있기 때문이다. 사용하고자 하는 모델들의 docs을 보면 일반적으로 prompt 예시가 있다. 그걸 참고하고 작성하는 게 좋다. 라면도 봉지에 적힌 설명대로 끓인 게 제일 맛있듯 모델도 배포한 곳에서 작성한 설명을 따르는 게 좋다. 
 
@@ -101,15 +101,15 @@ LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위�
 
   이 방식은 반환 받고 싶은 응답의 형식이나 스타일을 지정할 수 있다.
 
-  예시 제공 시, delimiter를 제공하는 게 좋다. 앞서 말한 것과 같이 LLM에게 입력된 전체 sequence가 모두 하나의 context-window에 속해 있기 때문에ㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔㅔ
-
 ## Chain-of-XX
 
 ### Chain-of-Thought
-LLM이 단계별로 사고 과정을 설명하도록 유도하여 LLM 스스로 생성한 token들까지도 다음 token 예측에 활용하여 추론 능력을 부스팅하는 방법이다. 
+인간이 특정 문제를 단계별로 분해하여 해결하는 방식을 LLM 프롬프팅에 적용한 것으로, LLM이 단계별로 사고 과정을 설명하도록 유도하여 LLM 스스로 생성한 token들까지도 다음 token 예측에 활용하여 추론 능력을 부스팅하는 방법이다. 
 
-이 방법은 논리적 추론이 필요한 작업에 적합하다. 
+이 방법은 복잡한 작업이나 논리적 추론이 필요한 작업에 적합하다. 
 
+- Self-Consistency
+  모델 temperature를 다르게 설정하여 CoT를 여러번 수행하고 가장 빈번하게 반환된 응답을 선택하는 방식도 있다.
 
 ## ReAct
 
