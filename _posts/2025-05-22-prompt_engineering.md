@@ -113,8 +113,25 @@ LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위�
 ### [Interleaving Retrieval with Chain-of-Thought](https://arxiv.org/pdf/2212.10509) (IRCoT)
 - 이 기법은 RAG을 수행할 때 활용 가능하다.
 - 추론과 검색을을 교차적으로 수행하면서 llm 응답 품질을 향상시키는 방법이다.
-- 일반적은 RAG은 관련 정보에 대한 검색을 1회만 진행한다. 하지만 복잡한 다단계 추론 과제에서는 1회 검색으로는 한계가 있을 수 있다. 따라서 IRCoT는 부분적 지식을 검색하고 부분적 추론을 수행하는 과정르 반복하는 방법을 제안한다.
-- 
+- 일반적인 RAG은 관련 정보에 대한 검색을 1회만 진행한다. 하지만 복잡한 다단계 추론 과제에서는 1회 검색으로는 한계가 있을 수 있다. 따라서 IRCoT는 부분적 지식을 검색하고 부분적 추론을 수행하는 과정을 반복하는 방법을 제안한다.
+- 예시:
+  - 질문: "Lost Gravity는 어느 나라에서 제조되었나요?"
+  - 1차 검색: "Lost Gravity" 관련 문서 → "Mack Rides에서 제조되었다"는 정보 획득
+  - 1차 추론: "Lost Gravity는 Mack Rides에서 제조되었다"
+  - 2차 검색: "Mack Rides" 관련 문서 → "독일 회사"라는 정보 획득
+  - 2차 추론: "Mack Rides는 독일 회사이다"
+  - 최종 답변: "따라서 답은 독일이다"
+- IRCoT pipeline은 크게 4가지 요소로 구성된다.
+  1. Base Retrieve
+     - 초기 검색
+  2. Interleaving
+     1) CoT based Reason Step
+        - 현재 단계까지 수집된 문서들과 생성된 CoT 문장들을 기반으로 다음 추론 문장을 생성한다.
+        - 논문에서는 이 단계에 Few-shot prompting을 사용했다.
+     2) 
+       
+     
+  4. 
 
 ### [Chain-of-Verification](https://arxiv.org/pdf/2309.11495) (CoVe)
 - 모델이 자신의 응답을 스스로 검증하고 수정하도록 하는 prompting 방법이다.
