@@ -50,32 +50,32 @@ LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위�
 - `---` (Triple Hyphen)
 - Markdown format
 ```
-### Task:
-... 내용 작성
-### Context:
-... 내용 작성
-
-**강조**
+  ### Task:
+  ... 내용 작성
+  ### Context:
+  ... 내용 작성
+  
+  **강조**
 ```
 - XML tag format
 ```
-<context>
-... 내용 작성
-</context>
-
-<task>
-... 내용 작성
-</task>
-
-<output_format>
-... 내용 작성
-</output_format>
+  <context>
+  ... 내용 작성
+  </context>
+  
+  <task>
+  ... 내용 작성
+  </task>
+  
+  <output_format>
+  ... 내용 작성
+  </output_format>
 ```
 - 대괄호
 ```
-[INST]
-... 내용 작성 
-[/INST]
+  [INST]
+  ... 내용 작성 
+  [/INST]
 ```
 
 
