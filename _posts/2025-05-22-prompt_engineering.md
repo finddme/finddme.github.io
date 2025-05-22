@@ -122,17 +122,35 @@ LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위�
   - 2차 추론: "Mack Rides는 독일 회사이다"
   - 최종 답변: "따라서 답은 독일이다"
 - IRCoT pipeline은 크게 4가지 요소로 구성된다.
-  1. Base Retrieve
-     - 초기 검색
+  1. Base Retriever
+     - 역할: query를 받아 관련 문서를 검색하는 요소
+     - 사용 시점:
+       - 초기 검색 단계 (query: 사용자 질문)
+       - 매 검색 단계 (query: CoT 문장)
+  2. CoT
+     - 역할: 문서들과 예시들을 참조하여 다음 추론 문장을 생성
+     - 사용 시점: 매 추론 단계
+  3. Few-Shot Demonstrations
+     - 모델에게 추론 방법을 안내하는 예시 모음집
+  4. Knwoledge Source
+     - Retrieve 할 소스. DB일 수도 있고.. Web에서 외부 정보를 가져올 수도 있고... 구현하기 나름
+- 위 요소들을 기반으로 크게 아래 3단계를 거쳐 응답을 생성한다.
+  1. Initial Retrieve
   2. Interleaving
      1) CoT based Reason Step
         - 현재 단계까지 수집된 문서들과 생성된 CoT 문장들을 기반으로 다음 추론 문장을 생성한다.
         - 논문에서는 이 단계에 Few-shot prompting을 사용했다.
-     2) 
-       
-     
-  4. 
-
+     2) Retrieve Step
+        - 마지막으로 생성된 CoT 문장을 새로운 쿼리로 사용하여 추가 문서 검색 수행 + 기존 문서에 추가
+        - 논문에서는 모델 context window size를 고려해서 retrieve 문서를 15개로 제한했다.
+      3) End
+         - 아래 두 조건 중 하나가 만족되면 교차 진행(2단계)을 종료한다.
+           - 생성된 CoT 문장에 "answer is:"가 포함된 경우
+           - 최대 추론 단계 수(논문에서는 max=8)에 도달한 경우
+  3. Final Answer Generate
+     - 수집된 모든 문서를 참조 context로 사용
+     - CoT propmting으로 최종 답변 생성
+    
 ### [Chain-of-Verification](https://arxiv.org/pdf/2309.11495) (CoVe)
 - 모델이 자신의 응답을 스스로 검증하고 수정하도록 하는 prompting 방법이다.
 - 이 방법은 4 단계에 걸쳐 진행된다.
