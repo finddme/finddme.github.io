@@ -49,49 +49,47 @@ LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위�
 ```
 Context:
 ---
-User is a beginner programmer
+... 내용 작성
 ---
 
 Task:
 """
-Write a fibonacci function
+... 내용 작성
 """
 ```
 - Claude: XML 스타일의 tag
 ```
 <context>
-사용자는 초보 프로그래머입니다
+... 내용 작성
 </context>
 
 <task>
-피보나치 수열 함수 작성
+... 내용 작성
 </task>
 
 <output_format>
-- 코드
-- 설명
-- 예시 실행
+... 내용 작성
 </output_format>
 ```
 
 - Gemini: 마크다운 형식
 ```
 ### Task:
-...
+... 내용 작성
 ### Context:
-...
+... 내용 작성
 
 **강조**
 ```
 - LLaMA/Mistral: 마크다운 형식 혹은 대괄호
 ```
 ### Task:
-...
+... 내용 작성
 ### Context:
-...
+... 내용 작성
 
 [INST]
-instruction 
+... 내용 작성 
 [/INST]
 ```
 - 
