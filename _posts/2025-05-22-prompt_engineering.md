@@ -43,21 +43,21 @@ LLM은 입력된 token sequence에서 다음 token의 확률 분포를 계산하
 
 LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위치에 올 token을 예측한다. 이때 attention mechanism을 통해 입력 sequence 내의 모든 token들 간의 관계를 파악하는데 text의 구조적 경계를 명확히 인식하는데 한계가 있다. 따라서 Prompt 작성 시 Delimiter들을 통해 명확히 context를 분리해 주는 것이 좋다. 
 
-모델마다 효과적인 delimiter가 다르다. 그 이유는 모델별 학습 데이터에 차이가 있기 때문이다.
+모델마다 효과적인 delimiter가 다르다. 그 이유는 모델별 학습 데이터에 차이가 있기 때문이다. 사용하고자 하는 모델들의 docs을 보면 일반적으로 prompt 예시가 있다. 그걸 참고하고 작성하는 게 좋다. 라면도 봉지에 적힌 설명대로 끓인 게 제일 맛있듯 모델도 배포한 곳에서 작성한 설명을 따르는 게 좋다. 
 
-- Openai Model: \```, """, --- 사용
+- `\```\`(Backticks)
+- `"""` (Triple Quotation Marks)
+- `---` (Triple Hyphen)
+- Markdown format
 ```
-Context:
----
+### Task:
 ... 내용 작성
----
+### Context:
+... 내용 작성
 
-Task:
-"""
-... 내용 작성
-"""
+**강조**
 ```
-- Claude: XML 스타일의 tag
+- XML tag format
 ```
 <context>
 ... 내용 작성
@@ -71,28 +71,13 @@ Task:
 ... 내용 작성
 </output_format>
 ```
-
-- Gemini: 마크다운 형식
+- 대괄호
 ```
-### Task:
-... 내용 작성
-### Context:
-... 내용 작성
-
-**강조**
-```
-- LLaMA/Mistral: 마크다운 형식 혹은 대괄호
-```
-### Task:
-... 내용 작성
-### Context:
-... 내용 작성
-
 [INST]
 ... 내용 작성 
 [/INST]
 ```
-- 
+
 
 ## Basic 
 
@@ -138,4 +123,8 @@ LLM이 단계별로 사고 과정을 설명하도록 유도하여 LLM 스스로 
 
 
 
-(작성 중...)
+# Reference
+
+> https://kirenz.github.io/generative-ai/prompting/prompting-delimiters.html?utm_source=chatgpt.com
+
+> https://jonbishop.com/an-entire-post-about-delimiters-in-ai-prompts/?utm_source=chatgpt.com
