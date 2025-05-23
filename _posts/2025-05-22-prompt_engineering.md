@@ -241,7 +241,7 @@ def loop_agent(agent, user_question, max_iter=8):
               ]
 
     for _ in range(max_iter):
-        result = agent(history)              # ① LLM 호출 (Thought/Action/Observation 예상)
+        result = agent(history) # ① LLM 호출 (Thought/Action/Observation 예상)
         print(result)
 
         # ② 종료 검사
