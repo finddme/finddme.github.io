@@ -182,14 +182,91 @@ LLM은 순차적으로 toekn들을 처리하면서 각 위치에서 다음 위�
 
 ## ReAct
 
+- ReAct는 Reasoning(Thought) + Acting(Action + Observation)이다.
+- LLM이 Thought 과정을 통해 추론을 하고, 추론한 결과를 기반으로 Action을 실행하여 Observation결과를 얻고 이를 또 다음 추론에 반영하는 것이다.
+
+| 단계          | 역할                                                                                                            |
+| ----------- | ------------------------------------------------------------------------------------------------------------- |
+| Thought     | 입력된 질문을 분석하여 어떤 Action을 어떻게 선택해야 문제를 해결할 수 있을 지 계획하는 역할                                                       |
+| Action      | 외부 검색, API 호출, 함수 등 문제 해결에 도움이 될 도구들.<br>(2025.05 시점에서 보면 MCP의 Tool이나 Function calling의 Function이라고 생각하면 된다.) |
+| Observation | 도구 호출 결과                                                                                                      |
+
+### 예시
+
+ReAct는 Propmt와 loop를 적절히 잘 작성하고 개발하는 것이 중요하다. 즉, Prompt를 통해 반환된 결과를 code로 작성된 loop가 처리할 수 있도록 두 가지를 맞춰야 한다.
+
+```
+You run in a loop of Thought, Action, Observation, Answer. The Answer should be conducted in Korean.
+At the end of the loop you output an Answer
+Use Thought to describe your thoughts about the question you have been asked.
+Use Action to run one of the actions available to you.
+Observation will be the result of running those actions.
+Answer will be the result of analysing the Observation. 
+Refer only to the observation information relevant to the question when you Answer. (question: {query})
+
+Your available actions are:
+
+{tools}
+
+Always look things up on web search if you have the opportunity to do so.
+
+<Example session>
+Question: What is the capital of France?
+Thought: I should look up France on Web
+Action: web: France
+
+You should then call the appropriate action and determine the answer from the result
+
+You then output:
+
+Answer: The capital of France is Paris
+</Example session>
+```
+
+| 단계 | 코드 | 매칭되는 ReAct 태그 |
+|------|------|---------------------|
+| ① | `result = agent(next_prompt)` | 프롬프트 실행 | Thought / Action / Observation / Answer |
+| ② | `if "Answer:" in result:` | 종료 감지 | Answer |
+| ③ | `re.findall(r"Action: (.*)", result)` | 액션 추출 | Action |
+| ④ | `tool_output = agent.function_call(action)` | 도구 실행 | (외부 Tool) |
+| ⑤ | `next_prompt = f"Observation: {tool_output}"` | 관찰 전달 | Observation |
+
+```python
+import re, openai
+
+def loop_agent(agent, user_question, max_iter=8):
+    history = [
+              {"role": "system", "content": agent.system_prompt},
+              {"role": "user", "content": user_question}
+              ]
+
+    for _ in range(max_iter):
+        result = agent(history)              # ① LLM 호출 (Thought/Action/Observation 예상)
+        print(result)
+
+        # ② 종료 검사
+        if re.search(r"^Answer:", result, re.M):
+            return result.strip()
+
+        # ③ Action 추출
+        m = re.search(r"Action:\s*(.+)", result, re.S)
+        if not m:
+            history.append({"role": "assistant", "content": "Observation: tool not found"})
+            continue
+
+        action_call = m.group(1).strip()
+        tool_output = agent.function_call(action_call)  # ④ 외부 도구
+        # ⑤ Observation을 assistant 역할로 추가
+        history.append({"role": "assistant", "content": f"Observation: {tool_output}"})
+
+    # 루프 초과 시 fallback
+    return "Answer: (failed to converge within iterations)"
+```
 
 ## Etc.
 
 - Step-Back Prompting
   복잡한 문제를 해결하기 전에 먼저 관련된 일반적인 질문으로 시작하는 방법. 이를 통해 관련 분야 혹은 필드에 대한 지식을 활성화하고 이후 구체적인 작업을 수행한다.
-
-- 
-
 
 
 # Reference
