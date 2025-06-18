@@ -125,7 +125,15 @@ tag: Multimodal
        ```
     2. Quality Loss (품질 학습): BCO (Binary Classification Optimization) 사용 -> 각 답변에 품질 점수 부여
     3. Generation Loss (생성 학습): 기존 Language Model Loss
-       
+  - 학습 과정
+    ```
+    1단계: 기본 SFT로 모델 학
+    2단계: MMPR 데이터로 MPO 적용
+       - Preference Loss: 좋은 답변 vs 나쁜 답변 학습
+       - Quality Loss: 답변 품질 점수 학습  
+       - Generation Loss: 기본 언어 능력 유지
+    3단계: 모든 loss를 가중합으로 동시 최적화
+    ```
 # Flamingo
 - 2022년 DeepMind에서 발표한 80B VLM 모델.
 - 70B 파라미터 Chinchilla 언어 모델을 기반으로 구축됨.
