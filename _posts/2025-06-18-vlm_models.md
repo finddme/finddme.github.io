@@ -87,7 +87,7 @@ tag: Multimodal
   3) 비디오-텍스트 쌍 (15%)
   4) 멀티이미지-텍스트 (10%)
 
-- 이미지-텍스트 학습 예시
+- 학습 예시 (이미지-텍스트)
   ```
   - Input: 
      - 이미지: [강아지가 공원에서 뛰노는 사진]
@@ -100,7 +100,32 @@ tag: Multimodal
   - 학습 과정:
      모델이 예측한 답과 정답을 비교하여 오차 계산 → 가중치 업데이트
   ```
-
+- Mixed Preference Optimization (MPO)
+  - 3가지 Loss 함수의 조합 결과를 최소화 하는 방향으로 학습 진행
+    ```
+    MPO Loss = wp × Preference Loss + wq × Quality Loss + wg × Generation Loss
+    ```
+    1. Preference Loss (선호도 학습): DPO (Direct Preference Optimization) 사용
+       ```
+        - 예시 상황:
+        질문: [수학 문제 이미지] "이 방정식을 풀어주세요"
+        
+        좋은 답변 (Chosen): 
+        "단계별로 풀어보겠습니다.
+        1) 먼저 양변에서 3을 빼면: 2x + 3 - 3 = 9 - 3
+        2) 2x = 6이 됩니다
+        3) 양변을 2로 나누면: x = 3
+        따라서 답은 x = 3입니다."
+        
+        나쁜 답변 (Rejected):
+        "x = 3이다"
+        
+        - 학습 목표: 
+        모델이 좋은 답변을 나쁜 답변보다 선호하도록 학습
+       ```
+    2. Quality Loss (품질 학습): BCO (Binary Classification Optimization) 사용 -> 각 답변에 품질 점수 부여
+    3. Generation Loss (생성 학습): 기존 Language Model Loss
+       
 # Flamingo
 - 2022년 DeepMind에서 발표한 80B VLM 모델.
 - 70B 파라미터 Chinchilla 언어 모델을 기반으로 구축됨.
