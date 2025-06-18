@@ -60,10 +60,72 @@ BLIP에서는 lightweight Querying Transformer(Q-Former)로 vision과 language m
 
 BLIP-2는 기존의 모델들보다 적은 trainable parameter로 다양한 vision-language task에 대해 좋은 성능을 보인다는 점에서 주목 받았다.
 
-# CLIP
+# Flamingo
+- 2022년 DeepMind에서 발표한 80B VLM 모델.
+- 70B 파라미터 Chinchilla 언어 모델을 기반으로 구축됨.
 
+## 모델 구조
+- Frozen Backbones: 사전학습된 ViT-G/Perceiver IO와 Chinchilla-LM을 고정(frozen) 상태로 사용하여, 99% 이상의 파라미터를 동결하고 새로운 아키텍처 컴포넌트만 학습
+- Gated Cross-Attention Layers (GCA): 언어 모델의 self-attention 레이어 사이에 삽입되어 모델이 필요할 때마다 시각적 피처에 선택적으로 주의를 기울일 수 있도록 함 (Falmingo 핵심)
+- Perceiver Resampler: 가변 개수의 이미지나 비디오 프레임을 고정된 개수의 시각적 토큰으로 변환하여 모델의 확장성을 향상
+- Interleaved 토큰 스트림: 텍스트 중간에 <image> 토큰으로 위치를 표시하고 비전 피처 시퀀스를 동일한 시점에 주입하여 임의로 섞인 시각-텍스트 데이터 처리
+
+## 학습 
+- 웹에서 수집한 interleaved image-text 데이터
+- 예시:
+  ```
+  [이미지1] <image> 이것은 고양이 사진입니다. 고양이가 소파에 앉아 있어요. <EOC>
+  ```
+- 특수 토큰: <image> (이미지 위치 표시), <EOC> (텍스트 청크 끝)
+- 입력 이미지는 별도의 비전 파이프라인을 통해 visual tokens로 변환된다.
+- 텍스트와 이미지는 Gated Cross-Attention이 텍스트의 <image> 위치에서 해당 visual tokens에 attention을 함으로써 연결된다.
+- 주어진 이미지와 텍스트를 보고 다음에 올 텍스트 토큰을 예측하기 위해 위와 같은 데이터에 대해 NLL(Negative Log-Likelihood) 합을 최소화하는 방향으로 학습 진행
+
+## 추론 
+- Few-shot prompting input 예시:
+  ```
+  <image>고양이가 소파에 앉아있는 사진<|endofchunk|>
+  질문: 이 사진에 몇 마리의 고양이가 있나요?
+  답변: 한 마리입니다.<|endofchunk|>
+  
+  <image>개 두 마리가 공원에서 뛰어노는 사진<|endofchunk|>
+  질문: 이 사진에 몇 마리의 개가 있나요?
+  답변: 두 마리입니다.<|endofchunk|>
+  
+  <image>새로운 이미지<|endofchunk|>
+  질문: 이 사진에서 무엇을 볼 수 있나요?
+  답변:
+  ```
+- 이미지는 이미지 그대로 들어간다.
+  - 처리 과정:
+    - 이미지 처리: Vision Encoder (ViT 등)가 실제 이미지 픽셀을 visual features로 변환
+    - Perceiver Resampler: 가변 개수의 이미지 특징을 고정된 64개의 visual tokens로 변환
+    - 텍스트 토큰화: <image> 토큰은 단순히 "여기에 이미지가 있다"는 위치 표시자
+    - Cross-Attention: 언어 모델이 특정 <image> 토큰 위치에서 해당하는 visual tokens에 attention
+- 데이터 흐름 예시:
+  ```
+  실제 입력:
+  텍스트: "<image> 질문: 이 사진에 몇 마리의 고양이가 있나요?"
+  이미지: [실제 고양이 사진의 픽셀 데이터]
+  
+  처리 후:
+  텍스트 토큰: [<image>, 질문, :, 이, 사진, 에, ...]
+  비전 토큰: [v1, v2, v3, ..., v64] (64개의 visual features)
+  ```
+  
+# CLIP
 Contrastive Language-Image Pre-training(CLIP)
 
+## 모델 구조
+- Dual Encoder<br>
+  Vision Transformer(ViT)나 ResNet과 같은 이미지 인코더 + Transformer 언어 인코더로 구성 
+  두 스트림이 완전히 분리되어 동시에 임베딩을 만듦
+  
+두 modality encoder 간의 연결이 dot product로만 되어 있어 복잡한 task 수행에는 최근 나오는 모델들에 비해 추론 품질이 좋지는 않다고 한다. 
+
+## 학습 
 웹 페이지에서 크롤링한 약 4억 개의 image-text pair dataset을 학습한 모델. 
 
-두 modality encoder 간의 연결이 dot product로만 되어 있어 복잡한 task 수행에는 최근 나오는 모델들에 비해 추론 품질이 좋지는 않다고 한다. 
+## 추론
+- input: 이미지/텍스트/ 이미지+텍스트
+- output: embedding vector / 텍스트-이미지 유사도
