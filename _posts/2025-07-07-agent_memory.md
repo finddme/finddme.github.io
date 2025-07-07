@@ -50,7 +50,7 @@ Lost in the Middle:
   - 중앙은 이도 저도 아니어서 상대적으로 attention이 약해서 정보 손실이 발생하는 것이다.
 ```
 
-본 게시물에서는 최근 주목 받고 있는 새로운 meomry 유지 방법 두 가지를 소개하고자 한다.
+본 게시물에서는 최근 주목 받고 있는 meomry 유지 방법인 **Knowledge Graph 기반 memory 관리** 그리고 **계층적 memory 관리** 방법 두 가지를 소개하고자 한다.
 
 # Knowledge Graph Memory MCP Server
 Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대화 내용에 대해 Entities-Relations-Observations 구조의 Knowledge Graph를 구축하여 로컬에 저장해 history를 유지하는 방법이다.
