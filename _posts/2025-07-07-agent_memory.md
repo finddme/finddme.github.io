@@ -38,7 +38,7 @@ ai agent 기반 서비스에서는 사용자와의 대화 내용을 agent가 기
     Transformer는 기본적으로 순서를 모르는 구조라 positional encoding을 해주는데, 초기 positional encoding 방법에서는 sequence가 길면 주기가 반복되어 서로 다른 위치가 같은 encoding 값을 가지게 되는 것도 문제이고, sin/cos 값들이 매우 유사해진다는 문제도 있었다.
     그리고 최근 많이 사용되는 RoPE와 같이 상대적 위치 인코딩을 하더라도, 여전히 한계가 있다. 가까운 거리용 고주파수와 먼 거리용 저주파수를 동시에 써야하는데 긴 sequence에서는 모든 거리를 완벽하게 구별하기 어렵다.
 
-  + Lost in the Middle: 너무 긴 sequence를 입력하면 Lost in the Middle 현상이 발생한다고 알려져 있다. 이는 LLM이 입력 sequence 내 중간 부분을 잊어버리는 현상으로, LLM이 입력의 시작(primacy effect)과 끝(recency effect)에 상대적으로 더 많은 attention을 할당하고 중간 부분의 정보에 대한 attention이 줄어들어 U-shape를 형성하는 구조적 bias에서 비롯 것이다.
+  + [게시물과는 관련 없지만 틈새 알쓸신잡] **Lost in the Middle**: 너무 긴 sequence를 입력하면 Lost in the Middle 현상이 발생한다고 알려져 있다. 이는 LLM이 입력 sequence 내 중간 부분을 잊어버리는 현상으로, LLM이 입력의 시작(primacy effect)과 끝(recency effect)에 상대적으로 더 많은 attention을 할당하고 중간 부분의 정보에 대한 attention이 줄어들어 U-shape를 형성하는 구조적 bias에서 비롯 것이다.
   앞쪽은 llm이 causal mask를 사용하기 때문에 Softmax 정규화로 인한 Attention Sink가 발생. 결과적으로 1-번 토큰(혹은 BOS)과 그 근처는 layer가 누적될수록 앞쪽 toakne에 대한 attention이 눈덩이처럼 불어나 더 높은 attention이 할당되어 앞쪽의 logit과 gradiant가 커져서 attention이 집중된다.
   뒷쪽은 llm이 next-token prediction을 하는 모델이기 때문에 recency prior를 강하게 받아들이는 특성이 있기 때문에 attention이 집중된다.
   중앙은 이도 저도 아니어서 상대적으로 attention이 약해서 정보 손실이 발생하는 것이다.
