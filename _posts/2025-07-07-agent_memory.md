@@ -51,5 +51,20 @@ ai agent 기반 서비스에서는 사용자와의 대화 내용을 agent가 기
 본 게시물에서는 최근 주목 받고 있는 새로운 meomry 유지 방법 두 가지를 소개하고자 한다.
 
 # Knowledge Graph Memory MCP Server
-Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대화 내용에 대해 Entities-Relations-Observations 구조의 Knowledge Graph를 구축하여 로컬에 저장해 history를 유지하는 것이다. 
+Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대화 내용에 대해 Entities-Relations-Observations 구조의 Knowledge Graph를 구축하여 로컬에 저장해 history를 유지하는 방법이다.
+
+- Knowledge Graph Memory 구성 요소 
+| 개념              | 설명                    | 예시                                                                                       |
+| --------------- | --------------------- | --------------------------------------------------------------------------------------------- |
+| **Entity**      | 그래프의 노드 | `{ "name": "John_Smith", "entityType": "person", "observations": ["Speaks fluent Spanish"] }` |
+| **Relation**    | 방향성을 가진 엣지. from → to 방향과 relationType을 갖는 엣지, 능동태로 기재.         | `{ "from": "John_Smith", "to": "Anthropic", "relationType": "works_at" }`                     |
+| **Observation** | 엔티티에 붙는 원자적 사실(한 문장짜리 원자적 사실을 엔티티에 부착)        | `{ "entityName": "John_Smith", "observations": ["Graduated in 2019"] }`                       |
+
+
+- memory 저장 방식
+  - 로컬 저장을 지원한다.
+  - 기본은 memory.jsonl (JSON Lines) 파일이다. (실행 시 --memory-path 플래그나 MEMORY_FILE_PATH 환경 변수로 저장 위치를 변경할 수 있다.)
+    
+- 상세 사용 방법
+  - https://github.com/shaneholloman/mcp-knowledge-graph 여기에서 확인 가능
 
