@@ -55,7 +55,7 @@ ai agent 기반 서비스에서는 사용자와의 대화 내용을 agent가 기
 # Knowledge Graph Memory MCP Server
 Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대화 내용에 대해 Entities-Relations-Observations 구조의 Knowledge Graph를 구축하여 로컬에 저장해 history를 유지하는 방법이다.
 
-## Knowledge Graph Memory 구성 요소
+## Knowledge Graph Memory 구성 요소 개요
   
 | 개념              | 설명                    | 예시                                                                                       |
 | --------------- | --------------------- | --------------------------------------------------------------------------------------------- |
