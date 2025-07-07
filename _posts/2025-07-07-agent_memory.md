@@ -93,7 +93,24 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
 | layer         | 설명                                          |
 | ---------- | ---------------------------------------------- |
 | Short-Term Memory    | - 실시간 대화 데이터를 대화 페이지 단위로 저장<br>- 각 페이지 구조: page_i = {Q_i, R_i, T_i} (쿼리, 응답, 타임스탬프)<br>- 대화 체인 구성: page_chain_i = {Q_i, R_i, T_i, meta_chain_i}<br>- 메타 정보는 LLM이 두 단계로 생성:<br>   1) 새 페이지의 이전 페이지들과의 문맥적 관련성 평가<br>2) 모든 체인 페이지들을 meta_chain_i로 요약   <br>| 
-| Mid-Term Memory   | - OS의 세그먼트 페이징 저장 아키텍처 채택<br>- 같은 주제의 대화 페이지들을 세그먼트로 그룹화<br>- 세그먼트 정의: `segment_i = {page_i \| F_score(page_i, segment_i) > θ}` <br>- 유사도 점수 계산:<br>`F_score = cos(e_s, e_p) + F_Jacard(K_s, K_p)`<br>`e_s`, `e_p`: 세그먼트와 페이지의 임베딩 벡터<br>`K_s`, `K_p`: LLM이 요약한 키워드 세트<br>`F_Jacard = \|K_s ∩ K_p\| / \|K_s ∪ K_p\|`<br>| 
+| Mid-Term Memory   | - OS의 세그먼트 페이징 저장 아키텍처 채택<br>- 같은 주제의 대화 page들을 Segment–Page 구조로 묶어 두는 “중간 저장소”<br>- 세그먼트 정의: `segment_i = {page_i \| F_score(page_i, segment_i) > θ}` <br>- 유사도 점수 계산:<br>`F_score = cos(e_s, e_p) + F_Jacard(K_s, K_p)`<br>`e_s`, `e_p`: 세그먼트와 페이지의 임베딩 벡터<br>`K_s`, `K_p`: LLM이 요약한 키워드 세트<br>`F_Jacard = \|K_s ∩ K_p\| / \|K_s ∪ K_p\|`<br>| 
 | Long-term Personal Memory  |- User Persona:<br>  User Profile (성별, 이름, 출생년도 등 고정 속성)<br>  User Knowledge Base (동적으로 저장되는 사실 정보)<br>  User Traits (진화하는 관심사, 습관, 선호도)<br>- Agent Persona:<br>  Agent Profile (AI 에이전트의 역할, 성격 특성 등 고정 설정)<br>  Agent Traits (사용자와의 상호작용을 통해 발전하는 동적 속성)| 
 
 ### Memory Update Module
+- **STM-MTM 업데이트**
+  - STM 저장 방식:
+    - 새 대화 page 생성
+    - 사용자의 Q, 모델의 R, 타임스탬프 T, 그리고 meta-chain 요약으로 구성.
+    - `STM.append(new_page)` — 큐 뒤쪽에 삽입.
+  - STM이 꽉 차면 가장 먼저 들어온 page를 MTM으로 올린다 (FIFO 전략).
+    - `if len(STM) > STM_MAX`: (논문 기본값 7)
+    - true일 경우 `oldest = STM.popleft()`로 가장 앞쪽 page 제거.
+  - MTM 삽입 로직
+    1) Segment 찾기
+       - 각 세그먼트 요약 임베딩과 Fscore(page, segment)(내용 유사도 + 키워드 자카드)를 계산.
+       - θ(=0.6) 이상이면 해당 segment에 편입, 없으면 새 segment 생성. 
+    2) Segment 메타 정보 업데이트
+     - 페이지 리스트에 추가 후, segment 요약 문장 & Heat 점수(방문 수, 길이, 시간 감쇠) 재계산.
+- **MTM-LPM 업데이트**
+    3) House-keeping
+       - Heat가 낮은 오래된 segment는 삭제, 높은 segment는 LPM으로 승격(다음 단계)
