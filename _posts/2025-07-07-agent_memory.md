@@ -54,7 +54,8 @@ llm의 context가 길수록 instruction/prompt를 잘 잊는 이유?
 # Knowledge Graph Memory MCP Server
 Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대화 내용에 대해 Entities-Relations-Observations 구조의 Knowledge Graph를 구축하여 로컬에 저장해 history를 유지하는 방법이다.
 
-- Knowledge Graph Memory 구성 요소 
+- Knowledge Graph Memory 구성 요소
+  
 | 개념              | 설명                    | 예시                                                                                       |
 | --------------- | --------------------- | --------------------------------------------------------------------------------------------- |
 | **Entity**      | 그래프의 노드 | `{ "name": "John_Smith", "entityType": "person", "observations": ["Speaks fluent Spanish"] }` |
