@@ -94,7 +94,7 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
 | ---------- | ---------------------------------------------- |
 | Short-Term Memory    | - 실시간 대화 데이터를 대화 페이지 단위로 저장<br>- 각 페이지 구조: page_i = {Q_i, R_i, T_i} (쿼리, 응답, 타임스탬프)<br>- 대화 체인 구성: page_chain_i = {Q_i, R_i, T_i, meta_chain_i}<br>- 메타 정보는 LLM이 두 단계로 생성:<br>   1) 새 페이지의 이전 페이지들과의 문맥적 관련성 평가<br>2) 모든 체인 페이지들을 meta_chain_i로 요약   <br>| 
 | Mid-Term Memory   | - OS의 세그먼트 페이징 저장 아키텍처 채택<br>- 같은 주제의 대화 page들을 Segment–Page 구조로 묶어 두는 “중간 저장소”<br>- 세그먼트 정의: `segment_i = {page_i \| F_score(page_i, segment_i) > θ}` <br>- 유사도 점수 계산:<br>`F_score = cos(e_s, e_p) + F_Jacard(K_s, K_p)`<br>`e_s`, `e_p`: 세그먼트와 페이지의 임베딩 벡터<br>`K_s`, `K_p`: LLM이 요약한 키워드 세트<br>`F_Jacard = \|K_s ∩ K_p\| / \|K_s ∪ K_p\|`<br>| 
-| Long-term Personal Memory  |- User Persona:<br>  User Profile (성별, 이름, 출생년도 등 고정 속성)<br>  User Knowledge Base (동적으로 저장되는 사실 정보)<br>  User Traits (진화하는 관심사, 습관, 선호도)<br>- Agent Persona:<br>  Agent Profile (AI 에이전트의 역할, 성격 특성 등 고정 설정)<br>  Agent Traits (사용자와의 상호작용을 통해 발전하는 동적 속성)| 
+| Long-term Personal Memory  |- User·Agent의 프로필·Knowledge Base·성향(traits)을 저장하는 장기 기억<br>- User Persona:<br>  User Profile (성별, 이름, 출생년도 등 고정 속성)<br>  User Knowledge Base (동적으로 저장되는 사실 정보)<br>  User Traits (진화하는 관심사, 습관, 선호도)<br>- Agent Persona:<br>  Agent Profile (AI 에이전트의 역할, 성격 특성 등 고정 설정)<br>  Agent Traits (사용자와의 상호작용을 통해 발전하는 동적 속성)| 
 
 ### Memory Update Module
 - **STM-MTM 업데이트**
@@ -102,7 +102,7 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
     - 새 대화 page 생성
     - 사용자의 Q, 모델의 R, 타임스탬프 T, 그리고 meta-chain 요약으로 구성.
     - `STM.append(new_page)` — 큐 뒤쪽에 삽입.
-  - STM이 꽉 차면 가장 먼저 들어온 page를 MTM으로 올린다 (FIFO 전략).
+  - STM이 꽉 차면 가장 먼저 들어온 page를 MTM으로 올린다 (FIFO 전략(큐의 맨 앞에서부터 제거하는 선입선출 교체 정책)).
     - `if len(STM) > STM_MAX`: (논문 기본값 7)
     - true일 경우 `oldest = STM.popleft()`로 가장 앞쪽 page 제거.
   - MTM 삽입 로직
@@ -112,5 +112,19 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
     2) Segment 메타 정보 업데이트
      - 페이지 리스트에 추가 후, segment 요약 문장 & Heat 점수(방문 수, 길이, 시간 감쇠) 재계산.
 - **MTM-LPM 업데이트**
-    3) House-keeping
-       - Heat가 낮은 오래된 segment는 삭제, 높은 segment는 LPM으로 승격(다음 단계)
+  - Heat 계산:
+    - MTM의 모든 세그먼트에 대해 Heat Score 계산
+    - Heat Score: 세그먼트의 중요도를 다음 공식으로 계산
+      `Heat = α·N_visit + β·L_interaction + γ·R_recency`
+      `N_visit`: 세그먼트가 검색된 횟수
+      `L_interaction`: 세그먼트 내 총 대화 페이지 수
+      `R_recency = exp(-Δt/μ)`: 시간 감쇠 계수 (Δt: 마지막 접근 이후 경과 시간)
+  - 최대 용량 초과 시 가장 낮은 Heat 점수 세그먼트 제거
+  - Heat 점수가 임계값 τ(=5) 초과 시 LPM으로 올
+  - LPM 반영
+    - User KB: 새 facts 추출·저장
+    - User/Agent Traits (90-dim): 90차원의 개인화된 특성 (기본 욕구, 성격, AI 정렬 차원, 콘텐츠 플랫폼 관심 태그)
+    - 큐 길이 100, FIFO로 오래된 Traits는 제거
+    - 메모리 전환 후 L_interaction을 0으로 리셋하여 Heat 점수 감소
+
+### Memory Retrieval Module
