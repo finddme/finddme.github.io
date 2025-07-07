@@ -128,3 +128,37 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
     - 메모리 전환 후 L_interaction을 0으로 리셋하여 Heat 점수 감소
 
 ### Memory Retrieval Module
+3단계 검색 전략 사용
+  `F_Retrieval(STM, MTM, LPM|Q)`
+  
+1) STM 검색: 가장 최근 문맥 메모리로 모든 대화 페이지 검색
+2) MTM 검색: 심리학적 메모리 회상 메커니즘에서 영감받은 2단계 과정<br>
+    1단계: 매칭 점수를 통해 상위 m개 후보 세그먼트 선택 (논문에서 m=5)<br>
+    2단계: 선택된 세그먼트 내에서 의미적 유사도 기반으로 상위 k개 대화 페이지 선택 (논문에서 k=5-10)<br>
+   검색 후 세그먼트의 N_visit와 R_recency 업데이트
+3) LPM 검색:
+  User KB와 Assistant Traits에서 각각 상위 10개 최고 의미적 관련성 항목 검색<br>
+  User Profile, Agent Profile, User Traits의 모든 정보 활용<br>
+
+### Response Generation Module
+
+- 통합 프롬프트 구성
+  - STM, MTM, LPM 세 계층 결과 + 사용자 질의를 하나의 프롬프트로 결합해 LLM 호출 
+  - 이렇게 하면 맥락적 일관성과 개인화를 동시에 충족시킬 수 있음
+
+- 각 메모리의 역할:
+  - STM: 현재 상호작용과의 문맥적 일관성 보장
+  - MTM: 역사적 대화 세부사항과 요약으로 깊이 제공
+  - LPM: 사용자와 어시스턴트 정체성과 일치하는 개인화
+
+
+
+
+
+
+
+
+
+
+
+
