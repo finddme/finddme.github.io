@@ -55,7 +55,7 @@ ai agent 기반 서비스에서는 사용자와의 대화 내용을 agent가 기
 # Knowledge Graph Memory MCP Server
 Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대화 내용에 대해 Entities-Relations-Observations 구조의 Knowledge Graph를 구축하여 로컬에 저장해 history를 유지하는 방법이다.
 
-- Knowledge Graph Memory 구성 요소
+## Knowledge Graph Memory 구성 요소
   
 | 개념              | 설명                    | 예시                                                                                       |
 | --------------- | --------------------- | --------------------------------------------------------------------------------------------- |
@@ -64,10 +64,11 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
 | **Observation** | 엔티티에 붙는 원자적 사실(한 문장짜리 원자적 사실을 엔티티에 부착)        | `{ "entityName": "John_Smith", "observations": ["Graduated in 2019"] }`                       |
 
 
-- memory 저장 방식
+## memory 저장 방식
   - 로컬 저장을 지원한다.
   - 기본은 memory.jsonl (JSON Lines) 파일이다. (실행 시 --memory-path 플래그나 MEMORY_FILE_PATH 환경 변수로 저장 위치를 변경할 수 있다.)
-    
+
+## 기타
 - 상세 사용 방법
   - https://github.com/shaneholloman/mcp-knowledge-graph 에서 확인 가능
 
@@ -76,7 +77,7 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
 # Memory OS of AI Agent
 "Memory OS of AI Agent" 논문 저자들은 운영체제의 메모리 관리 원칙에서 영감을 받아 AI 에이전트를 위한 4-module, 3-layer로 구성된 memory 운영 시스템 개발하였다. 
 
-- 4-module
+## 4-module
 
 | module         | 주요 기능                                          | 핵심 아이디어             |
 | ---------- | ---------------------------------------------- | ------------------- | 
@@ -85,11 +86,14 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
 | Retrieval  | ① STM 전체, ② MTM 2단계(세그먼트→페이지), ③ LPM 지식 · 트레이트 | 심리학적 기억 회상을 모사      |
 | Generation | 세 계층에서 꺼낸 정보로 최종 프롬프트 구성                       | 일관성·개인화를 동시에 확보     |
 
-- 3-layer
+### Memory Storage Module
 4-module 중 Memory Storage Module에 3 memory layer가 존재한다.
+#### 3-layer
 
 | layer         | 설명                                          |
 | ---------- | ---------------------------------------------- |
 | Short-Term Memory    | - 실시간 대화 데이터를 대화 페이지 단위로 저장<br>- 각 페이지 구조: page_i = {Q_i, R_i, T_i} (쿼리, 응답, 타임스탬프)<br>- 대화 체인 구성: page_chain_i = {Q_i, R_i, T_i, meta_chain_i}<br>- 메타 정보는 LLM이 두 단계로 생성:<br>   1) 새 페이지의 이전 페이지들과의 문맥적 관련성 평가<br>2) 모든 체인 페이지들을 meta_chain_i로 요약   <br>| 
 | Mid-Term Memory   | - OS의 세그먼트 페이징 저장 아키텍처 채택<br>- 같은 주제의 대화 페이지들을 세그먼트로 그룹화<br>- 세그먼트 정의: `segment_i = {page_i \| F_score(page_i, segment_i) > θ}` <br>- 유사도 점수 계산:<br>`F_score = cos(e_s, e_p) + F_Jacard(K_s, K_p)`<br>`e_s`, `e_p`: 세그먼트와 페이지의 임베딩 벡터<br>`K_s`, `K_p`: LLM이 요약한 키워드 세트<br>`F_Jacard = \|K_s ∩ K_p\| / \|K_s ∪ K_p\|`<br>| 
 | Long-term Personal Memory  |- User Persona:<br>  User Profile (성별, 이름, 출생년도 등 고정 속성)<br>  User Knowledge Base (동적으로 저장되는 사실 정보)<br>  User Traits (진화하는 관심사, 습관, 선호도)<br>- Agent Persona:<br>  Agent Profile (AI 에이전트의 역할, 성격 특성 등 고정 설정)<br>  Agent Traits (사용자와의 상호작용을 통해 발전하는 동적 속성)| 
+
+### Memory Update Module
