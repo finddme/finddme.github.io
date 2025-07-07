@@ -1,5 +1,5 @@
 ---
-title: "Knowledge Graph Memory MCP Server, Memory OS of AI Agent"
+title: "Agent's Memory: Knowledge Graph Memory MCP Server, Memory OS of AI Agent"
 category: LLM / Multimodal
 tag: Multimodal
 ---
