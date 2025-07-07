@@ -32,7 +32,8 @@ ai agent 기반 서비스에서는 사용자와의 대화 내용을 agent가 기
 2. vector memory
   대화 내용을 vector embedding으로 변환하여 db에 저장, 새로운 질문이 들어오면 db에서 유사한 기록을 검색하여 현재 time step의 context에 포함시켜 답변 생성
 3. summary based memory
-   LLM으로 prompt-completion 쌍에 대한 요약을 생성하고 이를 NoSQL DB에 저장 (user_id, summary_type, json_body, created_at, ttl_days 등 자유롭게 부가 데이터 추가)
+   LLM으로 prompt-completion 쌍에 대한 요약을 생성하고 이를 NoSQL DB에 저장 (user_id, summary_type, json_body, created_at, ttl_days 등 자유롭게 부가 데이터 추가)<br>
+   대표 사례: Anthropic Hierarchical Summarization
 
 ```
 llm의 context가 길수록 instruction/prompt를 잘 잊는 이유?
@@ -69,5 +70,11 @@ Knowledge Graph Memory MCP Server는 Anthropic이 공개한 MCP server로, 대�
   - 기본은 memory.jsonl (JSON Lines) 파일이다. (실행 시 --memory-path 플래그나 MEMORY_FILE_PATH 환경 변수로 저장 위치를 변경할 수 있다.)
     
 - 상세 사용 방법
-  - https://github.com/shaneholloman/mcp-knowledge-graph 여기에서 확인 가능
+  - https://github.com/shaneholloman/mcp-knowledge-graph 에서 확인 가능
+
+> 개인적인 의견: Knowledge Graph의 고질적인 문제에서 벗어나지 못한다는 점이 아쉽다. 복잡한 그래프 구조로 인한 오류 누적, 상업적으로 사용하기에 db 구축 시 llm 호출이 많아 효율성 및 실용성 부족. 이걸 해결할 수 있으면 대화형 chat에는 적합할 것 같다.  
+ 
+# Memory OS of AI Agent
+
+
 
