@@ -34,20 +34,20 @@ Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다.
 ## Encoder and Decoder
 
 - Encoder
-  - input를 representation을 변환하는 부분. 자연어의 의미를 vector space의 representation으로 변환하는 부분이다. 즉, contextualized embedding으로 input을 변환시킨다. 
-  - input으로 들어온 token은 self-attention layer를 통과하는데 이는 input token encoding 시 token들의 관계를 파악하도록 돕는다.
+  - input를 Context Vector/Encoded Representation로 변환하는 부분. 자연어의 의미를 vector space의 representation으로 변환하는 부분이다. 즉, contextualized embedding으로 input을 변환시킨다. 
+  - input으로 들어온 token은 Multi-Head Self-Attention layer를 통과하는데 이는 input token encoding 시 token들의 관계를 파악하도록 돕는다.
   - Attention
     - 모델이 입력 sequence의 모든 token들이 서로의 관계를 학습할 수 있도록 Multi-Head Self-Attention을 사용한다. 이는 모델이 각 token의 context를 이해하는데 도움을 준다.
 
 - Decoder
-  - encoding 된 representation을을 받아 모델의 출력을 생성하는 부분.
+  - encoding 된 representation을 받아 모델의 출력을 생성하는 부분.
   - input
     - 학습 시에는 정답 sequence(shifted right)가 입력되고, 추론 시에는 이전에 예측된 token이 입력된다.
   - Attention
     - Masked Multi-Head Self-Attention
       - 현재 시점 이후의 token들에 대해 masking 처리를 하여 Masked Multi-Head Self-Attention을 사용한다.
       - 이와 같은 처리는 현재 시점 이전 정보만을 가지고 현재 시점의 token을 예측하도록 한다.
-    - Multi-Head Attention with Encoder Output
+    - Multi-Head Attention with Encoder Output (encoder-decoder attention)
       - Encoder의 출력(input에 대한 representation)을 받아서 input sequnece와 decoder의 input으로 입력 받은 target sequnece 간의 관계를 매핑하며 학습하도록 돕는다.
   - output
     - token별로 softmax 함수를 거쳐 (현재 시점을 기준으로 다음 token으로) 예측된 단어의 확률 분포를 산출하고 가장 높은 확률의 token을 출력한다.
@@ -69,19 +69,85 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
 ## Encoder-Only Models
 
 - 대표 모델: BERT
+- encoder 기반 모델은 트랜스포머의 인코더 부분만 사용한다. 주로 입력 시퀀스의 이해와 표현 Representation Learning에 중점을 둔다. 
 - Pretraining Approach/Task: 기본적으로 Masked Language Modelling (MLM)을 통해 학습하며, 모델에 따라 이외에 추가적인 task를 함께 수행한다. BERT는 MLM 외에 NSP를 학습한다.
 - Use Case: 일반적으로 classification task에 많이 활용된다.
+
+### 구조
+- 여러 개의 인코더 레이어가 쌓여 있는 형태로 구성
+- 양방향 attention: 모든 토큰이 시퀀스의 모든 다른 토큰과 상호작용 가능
+- 병렬 처리: 모든 토큰을 동시에 처리 가능
+- flow:
+  1. tokenization: 입력 텍스트를 토큰으로 분할
+  2. embedding: 입력 시퀀스의 각 토큰은 embedding되고 positional encoding이 더해진다. (BERT와 같은 모델에서는 Segment Embedding과 class 토큰([CLS]), seperate 토큰([SEP]) 같은 special 토큰이 추가되어 여러 문장 간의 관계를 학습하거나 분류 작업을 수행할 수 있다.
+  3. Self-Attention: 각 토큰이 문맥 내 모든 토큰과 attention 계산
+  4. normalization 및 ffnn: Layer normalization과 FFN 통과
+  5. 스택 반복: N개의 encoder layer 반복
+  6. 마지막 encoder layer: 각 토큰의 문맥화된 표현 생성
+  7. 마지막 encoder layer의 output은 특정 태스크를 위한 헤드(Head)로 전달되어 최종 예측을 수행 (분류 등)
   
+<center><img width="1000" src="https://github.com/user-attachments/assets/9a7806af-ef6c-4c8e-b941-ee5b40699949"></center>
+<center><em style="color:gray;">illustrated by author</em></center><br>
+
+### 학습
+1. Pre-training
+- Input: 대규모의 레이블이 없는 텍스트 데이터 (예: 위키피디아).
+- Output: 사전 학습 태스크의 결과.
+- Training: BERT의 경우 두 가지 주요 사전 학습 태스크를 사용
+  - Masked Language Model(MLM): 입력 시퀀스의 일부 토큰(예: 15%)을 [MASK] 토큰으로 가리고, 모델이 가려진 토큰을 예측하도록 학습
+    - Input: "나는 [MASK]을(를) [MASK]한다."
+    - Output: 각 마스크 토큰에 대한 실제 단어 예측 확률 분포.
+  - Next Sentence Prediction(NSP): 두 개의 문장이 주어졌을 때, 두 번째 문장이 첫 번째 문장 다음에 실제로 이어지는 문장인지 아닌지를 예측하도록 학습
+    - Input: "[CLS] 첫 번째 문장 [SEP] 두 번째 문장 [SEP]"
+    - Output: 이진 분류 결과 (IsNext 또는 NotNext).
+
+2. Fine-tuning
+- Input: 특정 다운스트림 태스크에 맞는 레이블이 있는 데이터 (예: 감성 분석을 위한 문장과 감성 레이블).
+- Output: 특정 태스크의 예측 결과.
+- Training:
+  - 텍스트 분류: [CLS] 토큰의 최종 임베딩을 사용하여 분류를 수행
+    - Input: "[CLS] 이 영화 정말 재밌어요! [SEP]"
+    - Output: 긍정/부정 등 클래스 확률.
+- 개체명 인식 (Named Entity Recognition, NER): 각 토큰의 임베딩을 사용하여 해당 토큰이 특정 개체명에 속하는지 예측
+  - Input: "스티브 [SEP] 잡스"
+  - Output: 각 토큰에 대한 개체명 (예: 스티브: PER, 잡스: PER).
+
+
 ## Decoder-Only Models
 이전 time step의 출력이 다음 time step의 입력으로 들어가는 점이 자기 회기적이기 때문에 Auto-regressive model이라고도 불린다. 최근 LLM은 대부분 Decoder-Only 구조를 가진다.
 
 - 대표 모델: GPT
+- decoder 기반 모델은 transformer의 decoder 부분만 사용합니다. 주로 Text Generation에 특화되어 있다.
 - Pretraining Approach/Task: Next Token Prediction. Original Language Modeling이라고도 많이 불린다.
 - Use Case: 일반적으로 Generative task에 많이 사용된다. (e.g. generating text, completing sentences, answering questions based on context, etc. )
 
 ```
 GPT 계열의 모델들은 모두 Transformers의 Decoder 구조를 기반으로 하지남 layer normalization 수행 시점이 Decoder 구조와는 다르게 attention block 앞에 위치해 있다. 이는 GPT3부터 변경된 구조로 GPT3 이후에 나온 대부분의 decoder base 모델들이 이 구조를 따르고 있다.
 ```
+
+### 구조
+- 여러개의 decoder layer가 쌓여 있는 형태로 구성
+- 단방향 attention이다. masking 되어 있으니까. 
+- transforemer decoder에 있던 encoder-decoder attention layer은 없음. encoder에서 받는 것이 없으니까 필요 없어서 없음.
+- flow:
+  1. tokenization: 입력 시퀀스를 토큰으로 변환 (현재까지 생성된 시퀀스)
+  2. embedding: 토큰 + 위치 임베딩
+  3. Masked Self-Attention: 현재 위치 이전 토큰들만 참조
+  4. normalization 및 ffnn: Layer norm + FFNN
+  5. 스택 반복: N개의 decoder layer 통과
+  6. language modeling head: 다음 토큰 확률 분포 계산
+  7. sampling: 확률 분포에서 다음 토큰 선택
+
+<center><img width="1000" src="https://github.com/user-attachments/assets/8747ef06-ebb4-49eb-a955-af7c23a87aca"></center>
+<center><em style="color:gray;">illustrated by author</em></center><br>
+
+### 학습
+디코더 기반 모델은 주로 자기 회귀적 언어 모델링(Autoregressive Language Modeling) 방식으로 사전 학습된다.
+
+- Input: 대규모의 레이블이 없는 텍스트 데이터. 모델은 주어진 시퀀스의 다음 토큰을 예측하도록 학습된다.
+- Output: 입력 시퀀스의 각 토큰에 대한 다음 토큰 예측 확률 분포.
+
+
 
 ## Encoder-Decoder Models
 
