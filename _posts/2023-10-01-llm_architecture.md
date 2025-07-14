@@ -86,7 +86,7 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
   6. 마지막 encoder layer: 각 토큰의 문맥화된 표현 생성
   7. 마지막 encoder layer의 output은 특정 태스크를 위한 헤드(Head)로 전달되어 최종 예측을 수행 (분류 등)
   
-<center><img width="600" src="https://github.com/user-attachments/assets/9a7806af-ef6c-4c8e-b941-ee5b40699949"></center>
+<center><img width="300" src="https://github.com/user-attachments/assets/9a7806af-ef6c-4c8e-b941-ee5b40699949"></center>
 <center><em style="color:gray;">illustrated by author</em></center><br>
 
 ### 학습
@@ -102,6 +102,7 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
     - Output: 이진 분류 결과 (IsNext 또는 NotNext).
 
 2. Fine-tuning
+- pre-trained 모델에 classification layer를 추가하여 fine-tuning을 통해 특정 task를 수행한다. 이렇게 학습된 BERT의 parameter는 똑같이 사용고 task에 맞는 output layer만 추가하면 다양한 task를 하나의 모델을 통해 수행할 수 있다.
 - Input: 특정 다운스트림 태스크에 맞는 레이블이 있는 데이터 (예: 감성 분석을 위한 문장과 감성 레이블).
 - Output: 특정 태스크의 예측 결과.
 - Training:
@@ -138,7 +139,7 @@ GPT 계열의 모델들은 모두 Transformers의 Decoder 구조를 기반으로
   6. language modeling head: 다음 토큰 확률 분포 계산
   7. sampling: 확률 분포에서 다음 토큰 선택
 
-<center><img width="600" src="https://github.com/user-attachments/assets/8747ef06-ebb4-49eb-a955-af7c23a87aca"></center>
+<center><img width="300" src="https://github.com/user-attachments/assets/8747ef06-ebb4-49eb-a955-af7c23a87aca"></center>
 <center><em style="color:gray;">illustrated by author</em></center><br>
 
 ### 학습
