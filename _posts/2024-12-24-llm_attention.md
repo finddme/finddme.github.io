@@ -66,27 +66,27 @@ The cat sat on the mat
 
 
 ```python
-class Basic_SelfAttention(torch.nn.Module):
-
-    def __init__(self, d_in, d_out, qkv_bias=False):
-        super().__init__()
-        self.W_query = torch.nn.Linear(d_in, d_out, bias=qkv_bias) # 현재 time step의 toeken이 다른 token들과 얼마나 관련 있는지 나타내는 가중치 행렬
-        self.W_key   = torch.nn.Linear(d_in, d_out, bias=qkv_bias) # 입력 시퀀스 내 모든 token들을 나타내는 가중치 행렬 
-        self.W_value = torch.nn.Linear(d_in, d_out, bias=qkv_bias) # 입력 시퀀스 내 각 단어의 실제 의미가 담긴 가중치 행렬
-
-    def forward(self, x):
-        # 현재 처리 중인 token x에 대한 가중치 행렬 계산
-        keys = self.W_key(x)
-        queries = self.W_query(x)
-        values = self.W_value(x)
-        
-        attn_scores = torch.matmul(queries, keys.T) # 현재 time step token과 다른 token들 간의 관련성 scoring 
-        attn_weights = torch.softmax(
-          attn_scores / keys.shape[-1]**0.5, dim=-1
-        ) # attention 가중치 정규화
-
-        context_vec = torch.matmul(attn_weights, values)  # context vector 생
-        return context_vec
+  class Basic_SelfAttention(torch.nn.Module):
+  
+      def __init__(self, d_in, d_out, qkv_bias=False):
+          super().__init__()
+          self.W_query = torch.nn.Linear(d_in, d_out, bias=qkv_bias) # 현재 time step의 toeken이 다른 token들과 얼마나 관련 있는지 나타내는 가중치 행렬
+          self.W_key   = torch.nn.Linear(d_in, d_out, bias=qkv_bias) # 입력 시퀀스 내 모든 token들을 나타내는 가중치 행렬 
+          self.W_value = torch.nn.Linear(d_in, d_out, bias=qkv_bias) # 입력 시퀀스 내 각 단어의 실제 의미가 담긴 가중치 행렬
+  
+      def forward(self, x):
+          # 현재 처리 중인 token x에 대한 가중치 행렬 계산
+          keys = self.W_key(x)
+          queries = self.W_query(x)
+          values = self.W_value(x)
+          
+          attn_scores = torch.matmul(queries, keys.T) # 현재 time step token과 다른 token들 간의 관련성 scoring 
+          attn_weights = torch.softmax(
+            attn_scores / keys.shape[-1]**0.5, dim=-1
+          ) # attention 가중치 정규화
+  
+          context_vec = torch.matmul(attn_weights, values)  # context vector 생
+          return context_vec
 ```
 
 ## Basic self-attention + Advanced modules
@@ -99,23 +99,23 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
    미래 token들을 못 보게 막는 
 
    ```python
-   # mask 생성
-   # -inf나 매우 큰 음수값을 더해서 softmax 후에 해당 위치의 attention 가중치가 0이 되도록 함
-    mask = torch.full((seq_len, seq_len), float("-inf"))
-    mask = torch.triu(mask, diagonal=1)  # 상삼각 행렬만 -inf로 채움
-   """
-   저렇게 하면 아래와 같은 모양이 됨. 0 부분은 나중에 score랑 합해지고 softmax를 거쳐도 살아남고, -inf 부분은 0이됨. 
-   [[0, -inf, -inf, -inf],
-   [0,    0, -inf, -inf],
-   [0,    0,    0, -inf],
-   [0,    0,    0,    0]]
-    """
-   
-    # attention 계산 부분에서
-    scores = torch.matmul(xq, keys.transpose(2, 3)) / math.sqrt(self.head_dim)
-    if mask is not None:
-        scores = scores + mask  # mask 적용
-    scores = F.softmax(scores.float(), dim=-1).type_as(xq)
+     # mask 생성
+     # -inf나 매우 큰 음수값을 더해서 softmax 후에 해당 위치의 attention 가중치가 0이 되도록 함
+      mask = torch.full((seq_len, seq_len), float("-inf"))
+      mask = torch.triu(mask, diagonal=1)  # 상삼각 행렬만 -inf로 채움
+     """
+     저렇게 하면 아래와 같은 모양이 됨. 0 부분은 나중에 score랑 합해지고 softmax를 거쳐도 살아남고, -inf 부분은 0이됨. 
+     [[0, -inf, -inf, -inf],
+     [0,    0, -inf, -inf],
+     [0,    0,    0, -inf],
+     [0,    0,    0,    0]]
+      """
+     
+      # attention 계산 부분에서
+      scores = torch.matmul(xq, keys.transpose(2, 3)) / math.sqrt(self.head_dim)
+      if mask is not None:
+          scores = scores + mask  # mask 적용
+      scores = F.softmax(scores.float(), dim=-1).type_as(xq)
    ```
 
 ### 2. Multi-head
@@ -133,104 +133,114 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
   - **헤드 수 설정**
     
   ```python
-  self.n_kv_heads = args.n_heads if args.n_kv_heads is None else args.n_kv_heads # 4. (key, value attention 헤드 수 -> GQA를 위해 query보다 적은 헤드 수 사용)
-# model_parallel_size=2, n_kv_heads=32
-  self.n_local_heads = args.n_heads // model_parallel_size # 16. local query 헤드 수. 각 gpu에서 처리하는 query 헤드 수 (model_parallel_size는 병렬처리 할 gpu 수.)
-  self.n_local_kv_heads = self.n_kv_heads // model_parallel_size # 2. local key,value 헤드 수. 각 gpu에서 처리하는 key,value 헤드 수
-  self.head_dim = args.dim // args.n_heads # 128. 전체 모델 차원을 헤드 수로 나눈 값
+  # args.n_heads = 32
+    self.n_kv_heads = args.n_heads if args.n_kv_heads is None else args.n_kv_heads # 8. (key, value attention 헤드 수 -> GQA를 위해 query보다 적은 헤드 수 사용)
+  # model_parallel_size=2, n_kv_heads=32
+    self.n_local_heads = args.n_heads // model_parallel_size # 16. local query 헤드 수. 각 gpu에서 처리하는 query 헤드 수 (model_parallel_size는 병렬처리 할 gpu 수.)
+    self.n_local_kv_heads = self.n_kv_heads // model_parallel_size # 4. local key,value 헤드 수. 각 gpu에서 처리하는 key,value 헤드 수
+    self.head_dim = args.dim // args.n_heads # 128. 전체 모델 차원을 헤드 수로 나눈 값 args.dim = 4096 
   ```
 
+  ```
+    전체 모델 차원: 4096
+    Query 헤드: 32개 (각 128차원)
+    K,V 헤드: 8개 (각 128차원)  ← GQA로 메모리 절약
+    
+    GPU 분산:
+    - GPU 1: Q헤드 16개, K,V헤드 4개
+    - GPU 2: Q헤드 16개, K,V헤드 4개
+  ```
   - **입력 tensor Linear 변환**
     
   ```python
-  # 입력 tensor 예시
-  # x shape: (batch_size=2, seq_len=1024, dim=4096)
-  """
-    예시 데이터:
-    [
-      [token1: [4096개의 값], 
-       token2: [4096개의 값],
-       ...
-       token1024: [4096개의 값]],
-      [다음 배치...]
-    ]
-  """
-  self.wq = ColumnParallelLinear(
-      args.dim, # 입력 차원. 4096
-      args.n_heads * self.head_dim, # 출력 차원 (32 * 128 = 4096)
-      bias=False, # 편향 사용하지 않음
-      gather_output=False, # 출력 모으지 않음
-      init_method=lambda x: x,
-  )
-  self.wk = ColumnParallelLinear(
-      args.dim,
-      self.n_kv_heads * self.head_dim, # 출력 차원 (4 * 128 = 512)
-      bias=False,
-      gather_output=False,
-      init_method=lambda x: x,
-  )
-  self.wv = ColumnParallelLinear(
-      args.dim,
-      self.n_kv_heads * self.head_dim, # 출력 차원 (4 * 128 = 512)
-      bias=False,
-      gather_output=False,
-      init_method=lambda x: x,
-  )
-
-  xq = self.wq(x)  # (2, 1024, 4096) -> (2, 1024, 32*128)
-  xk = self.wk(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
-  xv = self.wv(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
-
-  """
-  [(wk/wv) 일반적인 Linear와 ColumnParallelLinear 비교. 입력 크기가 (2, 1024, 4096)일 때]
-  일반 Linear 결과: (2, 1024, 4096) -> (2, 1024, 512)
-  ColumnParallelLinear: GPU별로 출력 차원을 분할
+    # 입력 tensor 예시
+    # x shape: (batch_size=2, seq_len=1024, dim=4096)
+    """
+      예시 데이터:
+      [
+        [token1: [4096개의 값], 
+         token2: [4096개의 값],
+         ...
+         token1024: [4096개의 값]],
+        [다음 배치...]
+      ]
+    """
+    self.wq = ColumnParallelLinear(
+        args.dim, # 입력 차원. 4096
+        args.n_heads * self.head_dim, # 출력 차원 (32 * 128 = 4096)
+        bias=False, # 편향 사용하지 않음
+        gather_output=False, # 출력 모으지 않음
+        init_method=lambda x: x,
+    )
+    self.wk = ColumnParallelLinear(
+        args.dim,
+        self.n_kv_heads * self.head_dim, # 출력 차원 (4 * 128 = 512)
+        bias=False,
+        gather_output=False,
+        init_method=lambda x: x,
+    )
+    self.wv = ColumnParallelLinear(
+        args.dim,
+        self.n_kv_heads * self.head_dim, # 출력 차원 (4 * 128 = 512)
+        bias=False,
+        gather_output=False,
+        init_method=lambda x: x,
+    )
   
-  GPU 2개 사용 시
-  - GPU 1: (2, 1024, 4096) -> (2, 1024, 256)
-  - GPU 2: (2, 1024, 4096) -> (2, 1024, 256)
-
-  -------------------------------------------------------------------------------------
+    xq = self.wq(x)  # (2, 1024, 4096) -> (2, 1024, 32*128)
+    xk = self.wk(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
+    xv = self.wv(x)  # (2, 1024, 4096) -> (2, 1024, 4*128)
   
-  - gather_output=True일 경우:
-    -> 각 GPU의 결과를 모아서 전체 출력 생성
-    -> (2, 1024, 512)
+    """
+    [(wk/wv) 일반적인 Linear와 ColumnParallelLinear 비교. 입력 크기가 (2, 1024, 4096)일 때]
+    일반 Linear 결과: (2, 1024, 4096) -> (2, 1024, 512)
+    ColumnParallelLinear: GPU별로 출력 차원을 분할
+    
+    GPU 2개 사용 시
+    - GPU 1: (2, 1024, 4096) -> (2, 1024, 256)
+    - GPU 2: (2, 1024, 4096) -> (2, 1024, 256)
   
-  - gather_output=False일 경우 (GPU 간 통신 비용 감소):
-    -> 각 GPU가 자신의 결과만 유지
-    -> GPU1: (2, 1024, 256)
-    -> GPU2: (2, 1024, 256)
-  """
+    -------------------------------------------------------------------------------------
+    
+    - gather_output=True일 경우:
+      -> 각 GPU의 결과를 모아서 전체 출력 생성
+      -> (2, 1024, 512)
+    
+    - gather_output=False일 경우 (GPU 간 통신 비용 감소):
+      -> 각 GPU가 자신의 결과만 유지
+      -> GPU1: (2, 1024, 256)
+      -> GPU2: (2, 1024, 256)
+    """
   ```
 
   - **view로 입력을 여러 헤드로 분할**
     
   ```python
-  xq = xq.view(bsz, seqlen, self.n_local_heads, self.head_dim)
-  xk = xk.view(bsz, seqlen, self.n_local_kv_heads, self.head_dim)
-  xv = xv.view(bsz, seqlen, self.n_local_kv_heads, self.head_dim)
-
-  """
-  - Query: (2, 1024, 4096) -> (2, 1024, 32, 128)
-  xq = xq.view(bsz, seqlen, self.n_local_heads, self.head_dim)
-  예시:
-  [
-    [token1: [[head1: 128값], [head2: 128값], ..., [head32: 128값]],
-     token2: [32개의 헤드],
-     ...
-     token1024: [32개의 헤드]],
-    [다음 배치...]
-  ]
+    xq = xq.view(bsz, seqlen, self.n_local_heads, self.head_dim)
+    xk = xk.view(bsz, seqlen, self.n_local_kv_heads, self.head_dim)
+    xv = xv.view(bsz, seqlen, self.n_local_kv_heads, self.head_dim)
   
-  - Key/Value: (2, 1024, 512) -> (2, 1024, 4, 128)
-  xk = xk.view(bsz, seqlen, self.n_local_kv_heads, self.head_dim)
-  예시:
-  [
-    [token1: [[head1: 128값], [head2: 128값], [head3: 128값], [head4: 128값]],
-     ...],
-    [다음 배치...]
-  ]
-  """
+    """
+    - Query: (2, 1024, 4096) -> (2, 1024, 32, 128)
+    xq = xq.view(bsz, seqlen, self.n_local_heads, self.head_dim)
+    예시:
+    [
+      [token1: [[head1: 128값], [head2: 128값], ..., [head32: 128값]],
+       token2: [32개의 헤드],
+       ...
+       token1024: [32개의 헤드]],
+      [다음 배치...]
+    ]
+    
+    - Key/Value: (2, 1024, 512) -> (2, 1024, 4, 128)
+    xk = xk.view(bsz, seqlen, self.n_local_kv_heads, self.head_dim)
+    예시:
+    [
+      [token1: [[head1: 128값], [head2: 128값], [head3: 128값], [head4: 128값]],
+       ...],
+      [다음 배치...]
+    ]
+    """
 
   ```
 
