@@ -251,5 +251,15 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
 현재 token 주변의 일정 범위만 참조 
 
 ### 4. Flash Attention
+FlashAttention(FA)은 “연산이 아니라 IO 를 최적화하면 정확도를 유지한 채 속도·메모리를 동시에 줄일 수 있다”는 아이디어로 나온 방법론이다. 
+Tiling 기법을 사용하여 GPU의 고속 SRAM을 효율적으로 활용하여 메모리 효율성과 attention 연산 속도를 크게 개선한 것이다.
+Attention 연산에서는 Query(Q), Key(K), Value(V) 행렬들 간의 곱셈이 일어나는데, 시퀀스 길이가 길어질수록 메모리 사용량이 급격히 증가한다. 예를 들어 길이 4096인 시퀀스의 경우, attention 행렬만으로도 엄청난 메모리가 필요하다. Tiling은 전체 attention 행렬을 작은 타일(블록)들로 나누어 하나씩 처리하는 것이다. Tiling을 통해 얻는 이점은 아래와 같다:
 
-Tiling 기법을 사용하여 GPU의 고속 SRAM을 효율적으로 활용하여 메모리 효율성과 attention 연산 속도를 크게 개선한 방법론 
+1. 메모리 효율성: GPU의 고속 메모리(SRAM)에 한 번에 하나의 타일만 올려서 처리
+2. 메모리 접근 최적화: 데이터를 여러 번 불러오지 않고 한 번에 필요한 연산을 모두 수행
+3. 확장성: 시퀀스 길이가 아무리 길어져도 타일 크기는 일정하게 유지
+
+나누어서 처리해도 전체 결과는 동일하게 나오기 때문에 효율적이고 빠른 연산을 가능하게 한다.
+
+<center><img width="300" src="https://github.com/user-attachments/assets/b628c117-fc8c-4449-a29b-4ae3d02eb42d"></center>
+<center><em style="color:gray;">illustrated by author</em></center><br>
