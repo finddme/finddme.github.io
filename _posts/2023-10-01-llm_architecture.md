@@ -201,7 +201,7 @@ GPT 계열의 모델들은 모두 Transformers의 Decoder 구조를 기반으로
 4.  Feed-Forward Network Weights & Biases: transformers 블록 내의 ffnn(MLP)은 각 token의 representation을 독립적으로 정제하는 역할을 한다. 이 신경망의 모든 가중치와 편향 또한 학습 단계에서 최적화된다.
 5.  Layer Normalization 및 기타 구성 요소의 파라미터: 모델의 안정성과 성능 향상을 위한 Layer Normalization 등 다른 모든 구성 요소의 내부 파라미터들도 학습 단계에서 함께 최적화다.
 
-요약하자면, 학습 단계에서 트랜스포머는 **입력 텍스트를 문맥화된 표현으로 변환하고, 이 표현을 바탕으로 특정 작업을 수행하는 데 필요한 모든 내부 파라미터(가중치와 편향)**를 학습합니다. 이는 단어의 의미를 이해하고, 단어 간의 복잡한 관계를 파악하며, 궁극적으로 주어진 작업(예: 다음 단어 예측, 번역)을 가장 잘 수행하는 방법을 배우는 과정입니다.
+요약하자면, 학습 단계에서는 입력 텍스트를 Contextual representation으로 변환하고, 이 representation을 바탕으로 특정 task를 수행하는 데 필요한 모든 내부 파라미터(weight와 bias)를 학습한다. 이는 단어의 의미를 이해하고, 단어 간의 복잡한 관계를 파악하며, 궁극적으로 주어진 task를 잘 수행하는 방법을 배우는 과정이다.
 
 ### Inference Phase
 
