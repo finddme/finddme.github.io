@@ -52,17 +52,24 @@ She poured the coffee into the cup
 
 이를 위해 self-attnetion은 각 embedding token을 context vector라는 것으로 변환시킨다. 이는 주어진 text의 모든 input으로부터 정보를 결합하는 방식으로 계산된다.
 
-### Context Vector 생성 과정 예시
+### Context Vector 생성 과정 
 
 ```
 The cat sat on the mat
 ```
 
 1. 각 단어마다 하나의 context vector가 생성된다. (위 예문의 경우 3개)
-2. "cat"이라는 단어의 컨텍스트 벡터를 만들 때 아래와 같은 가중치 행렬들이 필요하
-3. Query: "cat"이 다른 단어들과 얼마나 관련있는지 계산
-4. Key: 입력 시퀀스 내 모든 token들 특징
-5. Value: 입력 시퀀스 내 각 단어의 실제 의미
+2. "cat"이라는 단어의 컨텍스트 벡터를 만들 때 아래와 같은 가중치 행렬들이 필요하다.
+   ```
+    - Query: 현재 time step에서 처리하고 있는 token. (현재 time step의 token이 다른 어떤 token들과 관련이 있을까?)
+    - Key: 입력 시퀀스 내 모든 token들 feature.  
+      - Query와 Key의 행렬곱을 통해 attention score가 산출된다. (Query와 Key를 통해 현재 time step의 token이 다른 단어들과 얼마나 관련있는지 계산한다.)
+       - Query(현재 time step의 token)와 Key(모든 token들)을 비교해서 얼마나 관련 있는지 점수를 매김
+    - Value: 입력 시퀀스 내 모든 token들 feature.
+       - attention score에 따라 가중합될 때 사용된다.
+       - 이렇게 하면 관련도(attention score)가 높은 token에서 더 많은 정보를 가져오게 된다.
+    - 정리하자면 Query가 Key와 얼마나 잘 일치하는지에 따라 Value로부터 어떤 정보를 얻을지 결정한다.
+  ```
 
 
 ```python
@@ -119,9 +126,15 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
    ```
 
 ### 2. Multi-head
-  - 여러 세트의 가중치 행렬(Wk, Wq, Wv) 사용
-  - 각 헤드가 서로 다른 관점에서 입력을 분석할 수 있음음
-  - 병렬처리를 위한 Linear 변환
+  - 여러 개의 attention head를 병렬로 사용하여 데이터를 더 풍부하게 이해하도록 한다. (각 헤드가 서로 다른 관점에서 입력을 분석할 수 있음)
+  - 모델이 (representation subspaces에서 여러 위치의 정보에 동시에 attention을 기울일 수 있도록한다.
+  - 작동 방식
+    1. Linear Projections: 입력 시퀀스는 각 헤드에 대해 독립적인 쿼리(Q), 키(K), 값(V) 행렬로 선형 투영된다. (-> 여러 세트의 가중치 행렬(Wk, Wq, Wv) 사용하게 된다.)
+    2. 병렬 어텐션 계산: 각 헤드는 투영된 Q, K, V에 대해 독립적으로 자기 주의 메커니즘을 수행합니다. 즉, 각 헤드는 `softmax(QK^T / sqrt(d_k)) V` 공식을 사용하여 자체적인 어텐션 가중치와 가중합을 계산한다.   
+    3. Concatenation: 모든 어텐션 헤드의 출력은 서로 concatenated된다.  
+    4. Final Linear Transformation: 연결된 출력은 최종 출력을 생성하기 위해 다시 선형 변환된다.
+
+  - 병렬처리를 위한 Linear 변환 장/단점
     - 장점:
       - 각 GPU가 더 작은 가중치 행렬을 저장
       - 행렬 곱셈을 병렬로 처리
