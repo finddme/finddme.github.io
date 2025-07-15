@@ -262,6 +262,9 @@ Decoder based 모델에 사용되는 self-attention은 masked self-attention으�
 
   ```
 
+> llm에는 빠져있지만 encoder-decoder 모델 구조에는 여전히 있는 encoder-decoder attention(cross-attention)은 decoder가 encoder의 최종 key와 value를 가져와서 decoder의 query와 encoder의 key의 행렬곱을 하여 이를 또 encoder의 value에 곱해서 attention weight를 만든다.
+> cross-attention은 decoder가 출력 sequence를 생성하는 동안 입력 sequence의 가장 중요한 부분에 집중할 수 있도록 돕는다. 예를 들어, 기계 번역에서 cross-attention는 decoder가 source 언어의 단어와 target 언어의 가장 관련성 높은 단어를 정렬하여 정확하고 자연스러운 번역을 생성하도록 돕는다. 
+
 ## Modified self-attention
 
 최근 LLM들은 처리 속도 향상, 메모리 효율성 개선, 더 나은 문맥 이해, 긴 문서 처리 능력 향상 등을 위해 기본 attention을 변형시킨 attention을 주로 사용한다.
