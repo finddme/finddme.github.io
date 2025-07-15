@@ -5,6 +5,7 @@ tag: Multimodal
 ---
 
 느슨해진 attention에 긴장감을 주는 attention 복습 포스트입니다. 
+관련 포스트: [https://finddme.github.io/llm%20/%20multimodal/2023/10/01/llm_architecture/](https://finddme.github.io/llm%20/%20multimodal/2023/10/01/llm_architecture/)
 
  
 
@@ -58,17 +59,22 @@ She poured the coffee into the cup
 The cat sat on the mat
 ```
 
-1. 각 단어마다 하나의 context vector가 생성된다. (위 예문의 경우 3개)
+1. 각 token마다 하나의 context vector가 생성된다. (위 예문의 경우 3개)
+    ```
+      context vector: attneion mechanism의 최종 출력으로, attention weight를 해당 value vector에 곱해 계산한 결과
+    ```
 2. "cat"이라는 단어의 컨텍스트 벡터를 만들 때 아래와 같은 가중치 행렬들이 필요하다.
    ```
-    - Query: 현재 time step에서 처리하고 있는 token. (현재 time step의 token이 다른 어떤 token들과 관련이 있을까?)
-    - Key: 입력 시퀀스 내 모든 token들 feature.  
+    - Query: 현재 time step에서 처리하고 있는 token의 feature*. (현재 time step의 token이 다른 어떤 token들과 관련이 있을까?)
+    - Key: 입력 시퀀스 내 모든 token들의 feature.  
       - Query와 Key의 행렬곱을 통해 attention score가 산출된다. (Query와 Key를 통해 현재 time step의 token이 다른 단어들과 얼마나 관련있는지 계산한다.)
        - Query(현재 time step의 token)와 Key(모든 token들)을 비교해서 얼마나 관련 있는지 점수를 매김
-    - Value: 입력 시퀀스 내 모든 token들 feature.
-       - attention score에 따라 가중합될 때 사용된다.
+    - Value: 입력 시퀀스 내 모든 token들의 feature.
+       - attention weight(attention score에 softmax를 먹여 백분율로 변환한 것)에 따라 가중합될 때 사용된다.
        - 이렇게 하면 관련도(attention score)가 높은 token에서 더 많은 정보를 가져오게 된다.
+       - attention weight를 해당 value vector에 곱해 계산한 결과가 context vector이다.
     - 정리하자면 Query가 Key와 얼마나 잘 일치하는지에 따라 Value로부터 어떤 정보를 얻을지 결정한다.
+   * feature == embedding
   ```
 
 
