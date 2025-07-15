@@ -36,6 +36,7 @@ Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다.
 - Encoder
   - input를 Context Vector/Encoded Representation로 변환하는 부분. 자연어의 의미를 vector space의 representation으로 변환하는 부분이다. 즉, contextualized embedding으로 input을 변환시킨다. 
   - input으로 들어온 token은 Multi-Head Self-Attention layer를 통과하는데 이는 input token encoding 시 token들의 관계를 파악하도록 돕는다.
+  - 요약: 문맥을 이해하고 단어 관계를 파악하도록 한다.
   - Attention
     - 모델이 입력 sequence의 모든 token들이 서로의 관계를 학습할 수 있도록 Multi-Head Self-Attention을 사용한다. 이는 모델이 각 token의 context를 이해하는데 도움을 준다.
 
@@ -49,6 +50,7 @@ Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다.
       - 이와 같은 처리는 현재 시점 이전 정보만을 가지고 현재 시점의 token을 예측하도록 한다.
     - Multi-Head Attention with Encoder Output (encoder-decoder attention)
       - Encoder의 출력(input에 대한 representation)을 받아서 input sequnece와 decoder의 input으로 입력 받은 target sequnece 간의 관계를 매핑하며 학습하도록 돕는다.
+      - 즉, Encoder의의 출력(key-value)과 Decoder의 현재 상태(query)를 통해 현재 time step의 token과 전체 sequnece와의 관계에 집중할 수 있도록 한다.
   - output
     - token별로 softmax 함수를 거쳐 (현재 시점을 기준으로 다음 token으로) 예측된 단어의 확률 분포를 산출하고 가장 높은 확률의 token을 출력한다.
      > 마지막 layer에서 출력된 logits 값을 softmax에 통과시키는 것이다. logits은 모델이 어휘 내 각 토큰에 대해 출력하는 정규화되지 않은 값이다. 
@@ -56,6 +58,8 @@ Transformers모델은 크게 Encoder와 Decoder로 구성되어 있다.
 ## Attention
 
 Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 수 있도록 하여 sequence 내부에서의 token 간의 거리와는 무관하게 token 간의 관련성을 파악하도록 하는 알고리즘이다.
+
+상세 내용: [https://finddme.github.io/llm%20/%20multimodal/2024/12/24/llm_attention/](https://finddme.github.io/llm%20/%20multimodal/2024/12/24/llm_attention/)
 
 ## layer별 역할 요약
 
@@ -149,11 +153,69 @@ GPT 계열의 모델들은 모두 Transformers의 Decoder 구조를 기반으로
 - Output: 입력 시퀀스의 각 토큰에 대한 다음 토큰 예측 확률 분포.
 
 
-
 ## Encoder-Decoder Models
 
-- 대표 모델: T5, BART, Gemini
+- 대표 모델: T5, BART
 - Pretraining Approach/Task: Task에 따라 다르다.
+- encoder-decoder 기반 모델은 주로 언어 번역과 같이 한 언어로 된 문장을 입력받아 다른 언어로 된 문장을 출력해야 하는 작업에 사용된다.
+- encoder는 입력 문장을 받아 고정된 크기의 벡터 표현을 생성하고, 이 벡터는 decoder로 전달되어 출력 문장을 생성한다.
+
+### 학습
+1. Pre-training
+- Input: 대규모의 레이블이 없는 텍스트 데이터 (예: Colossal Clean Crawled Corpus (C4) ).
+- Output: 사전 학습 태스크의 결과.
+- Training:
+  - T5의 Pre-training task는 span corruption이다. 이는 입력 텍스트의 무작위 스팬을 마스킹하고 모델이 마스킹된 스팬을 예측하도록 학습하는 방식이다.
+  - 일반적으로 supervised learning을 통해 대규모 일반 데이터셋에서 사전 학습됩니다.   
+
+2. Fine-tuning
+- Input: 특정 downstream task에 맞는 레이블이 있는 데이터 (예: 기계 번역을 위한 원문-번역문 쌍, 질문 응답을 위한 질문-답변 쌍).   
+- Output: 특정 태스크의 예측 결과.
+- Training:
+  - 사전 학습된 모델에 특정 태스크를 위한 레이어를 추가하여 fine-tuning
+  - T5와 같은 모델은 모든 NLP 작업을 텍스트-투-텍스트(text-to-text) 문제로 재구성하여, 특별한 head나 아키텍처 변경 없이 동일한 모델로 다양한 태스크를 수행할 수 있다. 
+
+## common concept of training and inference
+
+### Training Phase
+
+학습 단계는 트랜스포머 모델이 대규모 데이터셋(예: 방대한 텍스트 코퍼스)을 통해 지식과 패턴을 습득하는 과정이다. 이 단계에서 모델은 다음을 학습한다:
+
+1.  Base Token Embeddings: 모델은 vocabulary에 있는 모든 단어(또는 하위 단어)에 대한 고유한 숫자 벡터 표현, 즉 '기본 임베딩'을 학습한다. 이 임베딩은 단어의 일반적인 의미를 포착하며, 학습이 완료되면 그 값은 고정된다. 
+  - 기본 개념: 텍스트는 모델이 처리할 수 있는 'token'(단어 또는 하위 단어)으로 분할됩니다. 'Base Token Embedding'은 모델의 vocabulary에 있는 각 고유 token에 할당된 고정된 숫자 vector이다. 이 벡터는 단어의 일반적인 의미론적(semantic) 의미를 포착한다.
+  - 학습 과정:
+      - transformer 모델은 훈련을 시작할 때, vocabulary에 있는 모든 token에 대해 임의의 값으로 초기화된 거대한 Embedding Matrix를 가지게 되는데. 이게 모델이 학습하는 파라미터 중 하나다.
+      - 모델이 pre-training될 때 이 Embedding Matrix 값들이 점차 조정된다.
+      - 학습 목표(ex. masked language modeling, next token prediction )를 달성하기 위해 모델은 단어의 의미를 가장 잘 표현하는 vector를 학습한다. 예를 들어, '왕'과 '여왕'처럼 의미적으로 유사한 단어들은 벡터 공간에서 서로 가까운 위치에 놓이도록 학습됩니다.
+      - 이 과정은 수많은 반복(epoch)과 역전파(backpropagation)를 통해 이루어지며, 모델은 손실(loss)을 최소화하는 방향으로 임베딩 행렬의 각 차원(dimension) 값을 업데이트한다.
+
+
+2.  Positional Encodings: 트랜스포머는 순환 구조가 없기 때문에 단어의 순서 정보를 직접적으로 처리하지 못한다. 그래서 모델은 각 단어의 상대적 또는 절대적 위치 정보를 나타내는 Positional Encoding을 학습하거나 미리 정의된 방식을 사용한다. Positional Encoding은 Base Token Embedding에 더해져 최종 입력 임베딩을 형성한다.
+  - 개념: 트랜스포머 모델은 RNN이나 lstm과는 달리 순차적으로 단어를 처리하지 않고 모든 단어를 동시에 처리한다. 그래서 문장 내에서 단어의 순서나 위치 정보를 직접적으로 파악할 수 없다. Positional Encoding은 이러한 순서 정보를 모델에 제공하기 위해 토큰 임베딩에 더해지는 숫자 벡터다.
+  - 학습 과정:
+    - 학습 가능한 위치 인코딩: 일부 모델(예: GPT-2)은 Base Token Embedding과 유사하게 Positional Encoding Matrix를 처음부터 학습한다. 이 Matrix는 각 가능한 위치(예: 문장 내 첫 번째 단어, 두 번째 단어 등)에 대한 고유한 벡터를 포함하며, 학습 과정에서 최적화된다.
+    - 고정된 위치 인코딩: 일반적으로 sine, cosine 함수와 같이 미리 정의된 수학적 함수를 사용하여 위치 인코딩을 생성하기도 한다. 이 경우, 위치 인코딩은 학습되는 것이 아니라 고정된 패턴을 따르게 된다. 
+
+3.  Query, Key, Value Matrix(W_Q, W_K, W_V): Self-Attention mechanism의 핵심은 입력 embedding을 Query, Key, Value로 변환하는 것이다. 이 변환에 사용되는 가중치 Matrix(W_Q, W_K, W_V)들은 학습 단계에서 최적화된다. 이 Matrix들이 학습됨으로써 모델은 어떤 단어가 다른 단어에 얼마나 주의를 기울여야 하는지, 그리고 어떤 정보를 추출해야 하는지를 결정하는 방법을 배우게 된다.
+
+4.  Feed-Forward Network Weights & Biases: transformers 블록 내의 ffnn(MLP)은 각 token의 representation을 독립적으로 정제하는 역할을 한다. 이 신경망의 모든 가중치와 편향 또한 학습 단계에서 최적화된다.
+5.  Layer Normalization 및 기타 구성 요소의 파라미터: 모델의 안정성과 성능 향상을 위한 Layer Normalization 등 다른 모든 구성 요소의 내부 파라미터들도 학습 단계에서 함께 최적화다.
+
+요약하자면, 학습 단계에서 트랜스포머는 **입력 텍스트를 문맥화된 표현으로 변환하고, 이 표현을 바탕으로 특정 작업을 수행하는 데 필요한 모든 내부 파라미터(가중치와 편향)**를 학습합니다. 이는 단어의 의미를 이해하고, 단어 간의 복잡한 관계를 파악하며, 궁극적으로 주어진 작업(예: 다음 단어 예측, 번역)을 가장 잘 수행하는 방법을 배우는 과정입니다.
+
+### Inference Phase
+
+추론 단계에서는 학습 단계에서 얻은 모든 학습된 파라미터(가중치와 편향)를 활용한다.
+
+1.  Base Token Embeddings: 
+ - 학습이 완료되면 이 Base Token Embeddings Matrix의 값은 고정됨. 추론 시 새로운 문장이 입력되면, 모델은 이 학습된 행렬에서 해당 토큰에 해당하는 임베딩 벡터를 lookup(조회)해서 가져옴
+ - Base Token Embedding과 Positional Encoding는 합쳐진다.  이렇게 합쳐진 벡터가 트랜스포머 블록의 첫 번째 입력으로 사용되어, 모델이 단어의 의미와 함께 그 위치 정보까지 고려할 수 있게 된다.
+2.  Contextualized Embedding 생성: 초기 Embedding은 학습된 W_Q, W_K, W_V 행렬을 사용하여 Query, Key, Value vector로 변환된다. 이후 self-attention mechanism이 작동하여 입력 sequence 내의 다른 모든 단어들과의 관계를 고려하여 각 단어의 '문맥화된 Embedding'을 동적으로 생성한다. 이 과정에서 attention score와 attention weight가 실시간으로 계산된다.
+3.  FFNN: 생성된 Contextualized Embedding은 학습된 ffnn 신경망을 통과하며 추가적으로 정제된다.
+4.  최종 예측: 여러 트랜스포머 레이어를 거치면서 각 토큰의 표현은 점점 더 풍부하고 문맥에 맞는 형태로 발전한다. 최종 layer의 출력은 선형 레이어와 소프트맥스 레이어를 통해 다음 토큰에 대한 확률 분포로 변환되거나, 특정 작업(ex. classification)에 맞는 최종 결과로 변환된다.
+
+모델은 특정 단어의 의미를 미리 저장해두는 것이 아니라 추론 단계에서 학습된 self-attention mechanism을 통해 주어진 문맥 속에서 단어의 의미를 실시간으로 파악하고 적절한 representation을 생성하는 능력을 활용한다.
+
 
 # Reasons Why Causal Decoders Are Often Used for Generative Tasks
 
