@@ -119,6 +119,9 @@ Attention은 입력 sequence의 중요한 부분에 대해 모델이 집중할 �
 
 
 ## Decoder-Only Models
+
+최근 많이 사용되는 GPT계열 모델들(decoder 기반 모델)은 autoregressive 모델이라고도 불린다. autoregressive 모델이라고 불리는 이유는 이전 time step의 출력이 다음 time step의 입력으로 들어가는 점이 자기 회기적이기 때문이다. 해당 모델은 이런 방식으로 이전 time step의 결과를 다음 time step의 입력으로 받아 다음 token을 예측하는 task를 수행한다. 
+
 이전 time step의 출력이 다음 time step의 입력으로 들어가는 점이 자기 회기적이기 때문에 Auto-regressive model이라고도 불린다. 최근 LLM은 대부분 Decoder-Only 구조를 가진다.
 
 - 대표 모델: GPT
