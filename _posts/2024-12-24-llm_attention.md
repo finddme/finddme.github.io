@@ -32,8 +32,6 @@ Transformer는 2017년 발표된 "Attention Is All You Need" 논문에서 발표
 
 # Transformer and Self-Attention
 
-최근 많이 사용되는 GPT계열 모델들(decoder 기반 모델)은 autoregressive 모델이라고도 불린다. autoregressive 모델이라고 불리는 이유는 이전 time step의 출력이 다음 time step의 입력으로 들어가는 점이 자기 회기적이기 때문이다. 해당 모델은 이런 방식으로 이전 time step의 결과를 다음 time step의 입력으로 받아 다음 token을 예측하는 task를 수행한다. 
-
 ## Transformer 기본 구성 요소
 
 - Tokenizer: 입력 text를 token 단위로 나눔
