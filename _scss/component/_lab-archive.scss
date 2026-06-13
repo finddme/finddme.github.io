@@ -104,7 +104,10 @@
 }
 
 @media (min-width: 821px) {
-  .lab-callout--project {
+  // .lab-home prefix raises specificity above the base `.lab-callout`
+  // display rule (which is declared later in the file). Project Archive
+  // is a mobile-only card.
+  .lab-home .lab-callout--project {
     display: none;
   }
 }
