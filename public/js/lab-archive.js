@@ -12,8 +12,8 @@
   var desktopMode = window.matchMedia("(min-width: 821px)");
   var connectorKeys = ["nlp", "all", "multi", "ling"];
 
-  var STAGE_W = 1500;
-  var STAGE_H = 1257;
+  var STAGE_W = 1550;
+  var STAGE_H = 1299;
 
   function updateStageScale() {
     if (!stage || !hero) {
