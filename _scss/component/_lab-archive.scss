@@ -405,6 +405,12 @@
   vector-effect: non-scaling-stroke;
   width: 100%;
   height: 100%;
+  transition: stroke 160ms ease;
+}
+
+.lab-callout--card:hover .lab-card__frame,
+.lab-callout--card:focus .lab-card__frame {
+  stroke: #d06f19;
 }
 
 .lab-home a.lab-callout--card,
