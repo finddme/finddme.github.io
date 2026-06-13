@@ -59,11 +59,12 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 1358px;
-    height: 1138px;
+    width: 1500px;
+    height: 1257px;
     min-height: 0;
     transform: translate(-50%, -50%);
     transform-origin: 50% 50%;
+    z-index: 1;
   }
 }
 
@@ -812,11 +813,11 @@
   }
 
   .lab-title h1 {
-    font-size: 102px;
+    font-size: 113px;
   }
 
   .lab-title h1 img {
-    width: 470px;
+    width: 510px;
   }
 
   .lab-map {
@@ -825,7 +826,7 @@
   }
 
   .lab-object {
-    width: 516px;
+    width: 570px;
     height: 680px;
     left: 50%;
     top: 54%;
@@ -855,7 +856,7 @@
   }
 
   .lab-callout {
-    --lab-callout-title-size: 60px;
+    --lab-callout-title-size: 66px;
   }
 
   .lab-callout--nlp {
