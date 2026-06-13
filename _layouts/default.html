@@ -7,7 +7,7 @@
   {% endif %}
   <style>blockquote {font-size: 1em; line-height: 1.4}</style>
   </head>
-  <body{% if page.homepage_style %} class="homepage-{{ page.homepage_style }}"{% endif %}>
+  <body{% if page.homepage_style or page.body_class %} class="{% if page.homepage_style %}homepage-{{ page.homepage_style }}{% endif %}{% if page.homepage_style and page.body_class %} {% endif %}{% if page.body_class %}{{ page.body_class }}{% endif %}"{% endif %}>
 
     {% include sidebar.html %}
 
@@ -22,6 +22,7 @@
               <img src="http://finddme.github.io/public/dcategory.png" width="64">
             </a>
           </div>
+      {% unless page.hide_masthead %}
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title" align="center">
@@ -33,6 +34,7 @@
           </h3>
         </div>
       </div>
+      {% endunless %}
 
       <div class="container content">
         {{ content }}

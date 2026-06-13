@@ -1,0 +1,71 @@
+<section class="archive-sheet" aria-label="{{ page.title }} post archive">
+  <header class="archive-sheet__header">
+    <div class="archive-sheet__header-cell archive-sheet__header-cell--left">
+      <span>Archive</span>
+      <span>Language</span>
+      <span>AI Systems</span>
+      <span>Research Notes</span>
+      <span>Seoul / Web</span>
+    </div>
+
+    <a class="archive-sheet__brand" href="{{ site.baseurl }}/" aria-label="FindDMe home">
+      <img
+        class="archive-sheet__logo"
+        src="{{ site.baseurl }}/public/finddme_text_transparent_same_size.png"
+        alt="FindDMe"
+      >
+    </a>
+
+    <div class="archive-sheet__header-cell archive-sheet__header-cell--right">
+      <span>github.com/finddme</span>
+      <span>finddme.github.io</span>
+      <span>{{ page.title }}</span>
+    </div>
+  </header>
+
+  <p class="archive-sheet__statement">{{ page.title }}</p>
+
+  <nav class="archive-sheet__tabs" aria-label="{{ page.title }} categories">
+    {% for tag in site.categories %}
+      {% if page.archive_all or page.archive_categories contains tag[0] %}
+        <a href="#archive-{{ tag[0] | slugify }}">{{ tag[0] }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  <div class="archive-sheet__sections">
+    {% for tag in site.categories %}
+      {% if page.archive_all or page.archive_categories contains tag[0] %}
+        <section class="archive-sheet__section" aria-labelledby="archive-{{ tag[0] | slugify }}">
+          <h2 class="archive-sheet__section-title" id="archive-{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+
+          <div class="archive-sheet__table">
+            {% for post in tag[1] %}
+              <a
+                class="archive-sheet__row{% if post.thumbnail %} archive-sheet__row--has-image{% else %} archive-sheet__row--no-image{% endif %}"
+                href="{{ site.baseurl }}{{ post.url }}"
+              >
+                <span class="archive-sheet__index">{{ forloop.index }}</span>
+                <span class="archive-sheet__thumb" aria-hidden="true">
+                  {% if post.thumbnail %}
+                    <img
+                      src="{% if post.thumbnail contains '://' %}{{ post.thumbnail }}{% else %}{{ site.baseurl }}{{ post.thumbnail }}{% endif %}"
+                      alt=""
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <span class="archive-sheet__marker"></span>
+                  {% endif %}
+                </span>
+                <span class="archive-sheet__title">{{ post.title }}</span>
+                <time class="archive-sheet__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<script src="{{ site.baseurl }}/public/js/archive-sheet.js"></script>
