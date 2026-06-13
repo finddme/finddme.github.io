@@ -59,8 +59,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 1600px;
-    height: 900px;
+    width: 2560px;
+    height: 1440px;
     min-height: 0;
     transform: translate(-50%, -50%);
     transform-origin: 50% 50%;
@@ -806,7 +806,7 @@
 @media (min-width: 821px) {
   .lab-title {
     left: 62px;
-    top: 234px;
+    top: 260px;
     transform: translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
     transition: transform 160ms ease-out;
   }
@@ -816,7 +816,7 @@
   }
 
   .lab-title h1 img {
-    width: 544px;
+    width: 710px;
   }
 
   .lab-map {
@@ -825,7 +825,7 @@
   }
 
   .lab-object {
-    width: 608px;
+    width: 620px;
     height: 680px;
     left: 50%;
     top: 54%;
@@ -855,7 +855,7 @@
   }
 
   .lab-callout {
-    --lab-callout-title-size: 70px;
+    --lab-callout-title-size: 72px;
   }
 
   .lab-callout--nlp {
