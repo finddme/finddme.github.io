@@ -1,0 +1,401 @@
+.page-archive-sheet {
+  margin-bottom: 5rem;
+}
+
+.archive-sheet-page .content {
+  padding-top: 1rem;
+}
+
+.archive-sheet-page .sidebar-toggle {
+  display: none;
+}
+
+.archive-sheet {
+  --archive-accent: #0EEF0F;
+  --archive-border: #0e0e0e;
+  --archive-muted: #6f6f69;
+  --archive-paper: #fbfbf8;
+  --archive-grid: #d7d7d1;
+
+  background: transparent;
+  border: 0;
+  color: #050505;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 50%;
+  padding: 0;
+  transform: translateX(-50%);
+  max-width: 112rem;
+  width: 96vw;
+}
+
+.archive-sheet a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.archive-sheet__header {
+  align-items: stretch;
+  border: 1px solid var(--archive-border);
+  display: grid;
+  grid-template-columns: minmax(13rem, 1fr) minmax(22rem, 2fr) minmax(13rem, 1fr);
+  min-height: 8.2rem;
+}
+
+.archive-sheet__header-cell,
+.archive-sheet__brand {
+  align-items: center;
+  display: flex;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.archive-sheet__brand {
+  border-right: 1px solid var(--archive-border);
+  flex-direction: column;
+  gap: 0.65rem;
+  justify-content: center;
+}
+
+.archive-sheet__logo {
+  display: block;
+  height: auto;
+  max-height: 4.6rem;
+  max-width: 31rem;
+  object-fit: contain;
+  width: 100%;
+}
+
+.archive-sheet__header-cell {
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 0.66rem;
+  font-weight: 700;
+  gap: 0.45rem;
+  justify-content: center;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.archive-sheet__header-cell--left {
+  border-right: 1px solid var(--archive-border);
+}
+
+.archive-sheet__header-cell--left span:first-child {
+  margin-right: 1rem;
+}
+
+.archive-sheet__header-cell--right {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.archive-sheet__statement {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.2;
+  margin: 2rem 0 2.15rem;
+  padding: 1.3rem 1rem 1.35rem;
+  text-align: center;
+}
+
+.archive-sheet__tabs {
+  border: 1px solid var(--archive-border);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  margin-bottom: 1.5rem;
+}
+
+.archive-sheet__tabs a {
+  border-right: 1px solid var(--archive-border);
+  font-size: 0.72rem;
+  line-height: 1.1;
+  min-height: 1.75rem;
+  padding: 0.45rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.archive-sheet__tabs a:last-child {
+  border-right: 0;
+}
+
+.archive-sheet__tabs a:hover,
+.archive-sheet__tabs a:focus {
+  background: var(--archive-accent);
+  color: #000;
+  outline: 0;
+}
+
+.archive-sheet__sections {
+  background: var(--archive-paper);
+  border: 1px solid var(--archive-border);
+  display: grid;
+}
+
+.archive-sheet__section {
+  border-bottom: 1px solid var(--archive-border);
+}
+
+.archive-sheet__section:last-child {
+  border-bottom: 0;
+}
+
+.archive-sheet__section-title {
+  border-bottom: 1px solid var(--archive-border);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  min-height: 2rem;
+  padding: 0.42rem 0.75rem 0.38rem;
+}
+
+.archive-sheet__table {
+  display: grid;
+  position: relative;
+}
+
+.archive-sheet__row {
+  --as-thumb-h: 13rem;
+  --as-thumb-w: 18rem;
+
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.64);
+  border-bottom: 1px solid var(--archive-border);
+  display: grid;
+  grid-template-columns: 3.25rem 4.75rem minmax(0, 1fr) minmax(8.5rem, 13rem);
+  min-height: 2.18rem;
+  overflow: visible;
+  position: relative;
+  transition:
+    background-color 160ms ease,
+    min-height 450ms ease-out;
+}
+
+.archive-sheet__row:last-child {
+  border-bottom: 0;
+}
+
+.archive-sheet__row::after {
+  border: 2px solid transparent;
+  content: "";
+  inset: -1px;
+  pointer-events: none;
+  position: absolute;
+  transition: border-color 140ms ease;
+  z-index: 6;
+}
+
+.archive-sheet__row:hover,
+.archive-sheet__row:focus-visible {
+  background: rgba(255, 255, 255, 0.92);
+  outline: 0;
+}
+
+.archive-sheet__row:hover::after,
+.archive-sheet__row:focus-visible::after {
+  border-color: var(--archive-accent);
+}
+
+.archive-sheet__row--has-image:hover,
+.archive-sheet__row--has-image:focus-visible {
+  min-height: var(--as-thumb-h);
+}
+
+.archive-sheet__index,
+.archive-sheet__thumb,
+.archive-sheet__title,
+.archive-sheet__date {
+  border-right: 1px solid var(--archive-border);
+  min-width: 0;
+}
+
+.archive-sheet__date {
+  border-right: 0;
+}
+
+.archive-sheet__index {
+  align-items: center;
+  display: flex;
+  font-size: 0.85rem;
+  justify-content: center;
+  line-height: 1;
+}
+
+.archive-sheet__thumb {
+  align-items: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  min-height: 2.18rem;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.archive-sheet__thumb::after {
+  background: var(--archive-border);
+  bottom: 0;
+  content: "";
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  right: -1px;
+  top: 0;
+  transition: opacity 60ms ease;
+  width: 1px;
+  z-index: 6;
+}
+
+.archive-sheet__row--has-image:hover .archive-sheet__thumb::after,
+.archive-sheet__row--has-image:focus-visible .archive-sheet__thumb::after {
+  opacity: 0;
+}
+
+// Reference (Beckmans) motion: the real in-cell image grows in place.
+// Height expands first, then width expands (delayed), so the thumbnail
+// unfolds downward into a tall strip and then reveals its full width.
+.archive-sheet__thumb img {
+  display: block;
+  height: 2.18rem;
+  left: 0;
+  max-width: none;
+  object-fit: fill;
+  object-position: left top;
+  position: absolute;
+  top: 0;
+  transform-origin: left top;
+  transition:
+    height 450ms ease-out,
+    width 450ms ease-out 450ms;
+  width: 4.75rem;
+  z-index: 1;
+}
+
+.archive-sheet__row--has-image:hover .archive-sheet__thumb img,
+.archive-sheet__row--has-image:focus-visible .archive-sheet__thumb img {
+  height: var(--as-thumb-h);
+  // Expanded width keeps the image's natural aspect ratio (set per-image via JS).
+  width: var(--as-thumb-w);
+  z-index: 4;
+}
+
+.archive-sheet__row--has-image:hover .archive-sheet__index,
+.archive-sheet__row--has-image:hover .archive-sheet__title,
+.archive-sheet__row--has-image:hover .archive-sheet__date,
+.archive-sheet__row--has-image:focus-visible .archive-sheet__index,
+.archive-sheet__row--has-image:focus-visible .archive-sheet__title,
+.archive-sheet__row--has-image:focus-visible .archive-sheet__date {
+  align-items: flex-start;
+}
+
+.archive-sheet__row--has-image:hover .archive-sheet__index,
+.archive-sheet__row--has-image:focus-visible .archive-sheet__index {
+  padding-top: 0.62rem;
+}
+
+.archive-sheet__marker {
+  background:
+    linear-gradient(135deg, transparent 45%, #1a1a1a 45%, #1a1a1a 55%, transparent 55%),
+    #efefeb;
+  border: 1px solid #111;
+  display: block;
+  height: 0.85rem;
+  margin-left: 1rem;
+  width: 0.85rem;
+}
+
+.archive-sheet__row--no-image:hover .archive-sheet__marker,
+.archive-sheet__row--no-image:focus-visible .archive-sheet__marker {
+  background: var(--archive-accent);
+}
+
+.archive-sheet__title {
+  align-items: center;
+  display: flex;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  padding: 0.45rem 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.archive-sheet__title span {
+  line-height: inherit;
+}
+
+.archive-sheet__date {
+  align-items: center;
+  color: #111;
+  display: flex;
+  font-size: 0.78rem;
+  line-height: 1.2;
+  padding: 0.45rem 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 48em) {
+  .archive-sheet {
+    background-size: 34px 22px;
+    width: calc(100vw - 1.25rem);
+  }
+
+  .archive-sheet__header {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-sheet__header-cell--left,
+  .archive-sheet__brand {
+    border-bottom: 1px solid var(--archive-border);
+    border-right: 0;
+  }
+
+  .archive-sheet__statement {
+    font-size: 1rem;
+    margin: 1.25rem 0;
+    padding: 1.25rem 0.75rem;
+  }
+
+  .archive-sheet__tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-sheet__tabs a {
+    border-right: 0;
+  }
+
+  .archive-sheet__row {
+    --as-thumb-h: 5rem;
+
+    grid-template-columns: 2.4rem 5rem minmax(0, 1fr);
+  }
+
+  .archive-sheet__date {
+    border-left: 1px solid var(--archive-border);
+    grid-column: 3;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .archive-sheet__row--has-image:hover,
+  .archive-sheet__row--has-image:focus-visible {
+    grid-template-columns: 2.4rem 5rem minmax(0, 1fr);
+  }
+
+  .archive-sheet__thumb img {
+    width: 5rem;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archive-sheet__row,
+  .archive-sheet__row::after,
+  .archive-sheet__thumb img {
+    transition: none;
+  }
+}

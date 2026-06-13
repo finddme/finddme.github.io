@@ -8,7 +8,28 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var timeNode = document.querySelector("[data-lab-time]");
   var hero = root.querySelector(".lab-hero");
+  var stage = root.querySelector("[data-lab-stage]");
+  var desktopMode = window.matchMedia("(min-width: 821px)");
   var connectorKeys = ["nlp", "all", "multi", "ling"];
+
+  var STAGE_W = 2000;
+  var STAGE_H = 1125;
+
+  function updateStageScale() {
+    if (!stage || !hero) {
+      return;
+    }
+    if (!desktopMode.matches) {
+      // 모바일: 무대 스케일을 끄고 흐름 레이아웃에 맡긴다.
+      stage.style.transform = "";
+      return;
+    }
+    var scale = Math.min(
+      hero.clientWidth / STAGE_W,
+      hero.clientHeight / STAGE_H
+    );
+    stage.style.transform = "translate(-50%, -50%) scale(" + scale.toFixed(4) + ")";
+  }
 
   function connectorPath(from, near, far, underlineY) {
     // stepped diagonal lead: short horizontal off the node, a slanted segment
@@ -25,11 +46,11 @@
   }
 
   function updateConnectors() {
-    if (!hero) {
+    if (!stage || !desktopMode.matches) {
       return false;
     }
 
-    var bounds = hero.getBoundingClientRect();
+    var bounds = stage.getBoundingClientRect();
     var updated = false;
 
     function toX(value) {
@@ -114,10 +135,24 @@
 
   updateTime();
   window.setInterval(updateTime, 30000);
+  updateStageScale();
   updateConnectors();
-  window.addEventListener("resize", updateConnectors);
-  window.addEventListener("load", updateConnectors);
-  window.setTimeout(updateConnectors, 250);
+  window.addEventListener("resize", function () {
+    updateStageScale();
+    updateConnectors();
+  });
+  window.addEventListener("load", function () {
+    updateStageScale();
+    updateConnectors();
+  });
+  desktopMode.addEventListener("change", function () {
+    updateStageScale();
+    updateConnectors();
+  });
+  window.setTimeout(function () {
+    updateStageScale();
+    updateConnectors();
+  }, 250);
 
   if (reduceMotion) {
     return;
@@ -156,15 +191,19 @@
   }
 
   function trackMovingNodes() {
-    updateConnectors();
+    if (desktopMode.matches) {
+      updateConnectors();
+    }
     connectorFrame = window.requestAnimationFrame(trackMovingNodes);
   }
 
   root.addEventListener("pointermove", function (event) {
+    if (!desktopMode.matches) {
+      return;
+    }
     var bounds = root.getBoundingClientRect();
     targetX = (event.clientX - bounds.left) / bounds.width - 0.5;
     targetY = (event.clientY - bounds.top) / bounds.height - 0.5;
-
     requestPointerRender();
   });
 
