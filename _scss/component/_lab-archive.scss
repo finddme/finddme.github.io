@@ -43,6 +43,75 @@
   position: relative;
 }
 
+.lab-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+// ============================================================
+// DESKTOP = 고정 무대 + 통째 스케일 (lab-stage)
+//
+// 무대 전체를 한 덩어리로 scale 하므로 줌/해상도가 바뀌어도
+// 요소 겹침·연결선 각도가 절대 변하지 않는다 (이게 이 방식의 핵심).
+// 대신 화면 비율이 무대 비율과 다르면 가장자리에 여백이 생긴다
+// (여백은 무대 밖 .lab-grid 전체배경으로 덮어 의도된 여백처럼 보이게 함).
+//
+// 튜닝 lever 2개:
+//   1) 무대 "비율"  = 가로로 퍼지는 정도.
+//        16:9(2000x1125) 같은 와이드 → 와이드 화면에서 시원하게 퍼짐.
+//        1.19:1(예: 1358x1138) 정사각 → 와이드 화면에서 가운데로 모임.
+//   2) 무대 "폭"     = 같은 비율 안에서 전체 크기.
+//        키우면 더 작게 렌더(여백↑), 줄이면 더 크게 렌더(여백↓).
+//
+// 값을 바꿀 때 반드시 같이 고칠 곳:
+//   - 아래 .lab-stage width/height
+//   - public/js/lab-archive.js 의 STAGE_W / STAGE_H (동일 값)
+//   - 아래 @media(min-width:821px) 안의 vw/clamp 환산값들 (아래 표 참고)
+//
+// vw/clamp 환산: 1vw = width/100 px, 1vh = height/100 px 로 계산 후
+// 원본 clamp 범위로 클램프한다. 현재 기준 2000x1125 (20px/vw, 11.25px/vh):
+//   .lab-title top        clamp(225, 26vh, 260)     -> 260
+//   .lab-title h1 font     clamp(52, 7.5vw, 118)     -> 118
+//   .lab-title h1 img w    clamp(470, 34vw, 710)     -> 680
+//   .lab-object width      38vw (max-width 620)      -> 620
+//   .lab-object height     62vw (max-height 680)     -> 680
+//   .lab-callout title     clamp(30, 4.4vw, 72)      -> 72
+//   .lab-thread-panel w    39vw (max 500)            -> 500
+//   .lab-profile-panel w   36vw (max 480)            -> 480
+//   * 노드/캡션의 left/top % 값은 비율 무관하게 그대로 둔다.
+//
+// 현재 시도 이력: 1600x900(너무 큼/넘침) → 2560x1440(너무 작음/허전)
+//   → 1358x1138 정사각(너무 모임) → 2000x1125(채택).
+// ============================================================
+@media (min-width: 821px) {
+  .lab-hero {
+    height: 100vh;
+  }
+
+  .lab-stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2000px;
+    height: 1125px;
+    min-height: 0;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 821px) {
+  // .lab-home prefix raises specificity above the base `.lab-callout`
+  // display rule (which is declared later in the file). Project Archive
+  // is a mobile-only card.
+  .lab-home .lab-callout--project {
+    display: none;
+  }
+}
+
 .lab-grid {
   inset: 0;
   pointer-events: none;
@@ -128,11 +197,7 @@
 }
 
 .lab-title {
-  left: 62px;
   position: absolute;
-  top: clamp(225px, 26vh, 260px);
-  transform: translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
-  transition: transform 160ms ease-out;
   z-index: 3;
 }
 
@@ -145,7 +210,6 @@
 .lab-title h1 {
   color: var(--lab-ink);
   font-family: "PT Sans", Arial, sans-serif;
-  font-size: clamp(52px, 7.5vw, 118px);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 0.9;
@@ -161,31 +225,21 @@
 .lab-title h1 img {
   display: block;
   height: auto;
-  width: clamp(470px, 34vw, 710px);
 }
 
 .lab-map {
   inset: 0;
   pointer-events: none;
   position: absolute;
-  transform: translate3d(calc(var(--lab-x) * -14px), calc(var(--lab-y) * -10px), 0);
-  transition: transform 180ms ease-out;
   z-index: 2;
 }
 
 .lab-object {
   align-items: center;
   display: flex;
-  height: 62vw;
   justify-content: center;
-  left: 50%;
-  max-height: 680px;
-  max-width: 620px;
   perspective: 900px;
   position: absolute;
-  top: 54%;
-  transform: translate(-50%, -50%);
-  width: 38vw;
   z-index: 2;
 }
 
@@ -312,30 +366,21 @@
 
 .lab-node--nlp {
   animation-delay: -1.2s;
-  left: 57%;
-  top: 66%;
 }
 
 .lab-node--all {
   animation-delay: -3.4s;
-  left: 46.5%;
-  top: 28.8%;
 }
 
 .lab-node--ling {
   animation-delay: -5.1s;
-  left: 38%;
-  top: 53%;
 }
 
 .lab-node--multi {
   animation-delay: -2.6s;
-  left: 59.5%;
-  top: 53%;
 }
 
 .lab-callout {
-  --lab-callout-title-size: clamp(30px, 4.4vw, 72px);
   color: var(--lab-ink);
   display: block;
   position: absolute;
@@ -368,26 +413,9 @@
   color: #d06f19;
 }
 
-.lab-callout--nlp {
-  left: 70%;
-  top: 66%;
-}
-
-.lab-callout--all {
-  left: 60.5%;
-  top: 8.7%;
-}
-
-.lab-callout--multi {
-  left: 72%;
-  top: 25.5%;
-}
-
 .lab-callout--card {
   color: var(--lab-ink);
-  height: 250px;
   padding: 18px 0 0;
-  width: 660px;
   z-index: 6;
 }
 
@@ -460,11 +488,6 @@
   text-transform: uppercase;
 }
 
-.lab-callout--ling {
-  left: 7%;
-  top: 58%;
-}
-
 .lab-thread-panel,
 .lab-profile-panel {
   position: absolute;
@@ -474,11 +497,6 @@
 
 .lab-thread-panel {
   animation: lab-panel-drift 6.5s ease-in-out infinite;
-  bottom: 58px;
-  left: 28px;
-  transform: translate3d(calc(var(--lab-x) * 18px), calc(var(--lab-y) * 12px), 0);
-  max-width: 500px;
-  width: 39vw;
 }
 
 .lab-thread-panel__note {
@@ -600,15 +618,10 @@
 .lab-profile-panel {
   animation: lab-panel-drift 8s ease-in-out -2s infinite;
   background: var(--lab-ink);
-  bottom: 58px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 24px 100%, 0 calc(100% - 24px));
   font-size: 12px;
   line-height: 1.2;
-  max-width: 480px;
   padding: 1px;
-  right: 28px;
-  transform: translate3d(calc(var(--lab-x) * -20px), calc(var(--lab-y) * -14px), 0);
-  width: 36vw;
 }
 
 .lab-profile-panel__body {
@@ -835,81 +848,241 @@
   }
 }
 
-@media (max-width: 900px) {
-  .lab-hero {
-    min-height: 1120px;
+@media (min-width: 821px) {
+  .lab-title {
+    left: 62px;
+    top: 260px;
+    transform: translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
+    transition: transform 160ms ease-out;
   }
 
+  .lab-title h1 {
+    font-size: 118px;
+  }
+
+  .lab-title h1 img {
+    width: 680px;
+  }
+
+  .lab-map {
+    transform: translate3d(calc(var(--lab-x) * -14px), calc(var(--lab-y) * -10px), 0);
+    transition: transform 180ms ease-out;
+  }
+
+  .lab-object {
+    width: 620px;
+    height: 680px;
+    left: 50%;
+    top: 54%;
+    max-width: 620px;
+    max-height: 680px;
+    transform: translate(-50%, -50%);
+  }
+
+  .lab-node--nlp {
+    left: 57%;
+    top: 66%;
+  }
+
+  .lab-node--all {
+    left: 46.5%;
+    top: 28.8%;
+  }
+
+  .lab-node--ling {
+    left: 38%;
+    top: 53%;
+  }
+
+  .lab-node--multi {
+    left: 59.5%;
+    top: 53%;
+  }
+
+  .lab-callout {
+    --lab-callout-title-size: 72px;
+  }
+
+  .lab-callout--nlp {
+    left: 70%;
+    top: 66%;
+  }
+
+  .lab-callout--all {
+    left: 60.5%;
+    top: 8.7%;
+  }
+
+  .lab-callout--multi {
+    left: 72%;
+    top: 25.5%;
+  }
+
+  .lab-callout--ling {
+    left: 7%;
+    top: 58%;
+  }
+
+  .lab-callout--card {
+    width: 660px;
+    height: 250px;
+  }
+
+  .lab-thread-panel {
+    bottom: 58px;
+    left: 28px;
+    width: 500px;
+    transform: translate3d(calc(var(--lab-x) * 18px), calc(var(--lab-y) * 12px), 0);
+  }
+
+  .lab-profile-panel {
+    bottom: 58px;
+    right: 28px;
+    width: 480px;
+    transform: translate3d(calc(var(--lab-x) * -20px), calc(var(--lab-y) * -14px), 0);
+  }
+}
+
+@media (max-width: 820px) {
+  .lab-hero {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding-bottom: 32px;
+  }
+
+  // 그리드는 hero 직속 전체 배경으로 유지
+  .lab-grid {
+    z-index: 0;
+  }
+
+  // 무대를 세로 흐름 컨테이너로
+  .lab-stage {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 26px;
+    padding: 0 20px 24px;
+    width: auto;
+    height: auto;
+    min-height: 0;
+  }
+
+  // 상단바: 시간 숨김
   .lab-hero__topbar {
+    position: relative;
     grid-template-columns: 1fr auto;
+    padding: 18px 0 0;
   }
 
   .lab-time {
     display: none;
   }
 
+  // 타이틀
   .lab-title {
-    left: 38px;
-    top: 210px;
-  }
-
-  .lab-title h1 {
-    font-size: clamp(46px, 15vw, 86px);
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-top: 6px;
   }
 
   .lab-title h1 img {
-    width: min(86vw, 500px);
+    width: min(82vw, 460px);
+  }
+
+  // 오브젝트: 흐름 내 히어로 비주얼 (부유/회전·글래스 애니메이션 유지)
+  .lab-map {
+    position: relative;
+    transform: none;
+    display: flex;
+    justify-content: center;
   }
 
   .lab-object {
-    height: 430px;
-    top: 500px;
-    width: 76vw;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: min(78vw, 360px);
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 4px auto 0;
   }
 
-  .lab-map {
-    transform: translate3d(calc(var(--lab-x) * -8px), calc(var(--lab-y) * -6px), 0);
-  }
-
-  .lab-callout--nlp {
-    left: 9%;
-    top: 305px;
-  }
-
-  .lab-callout--all {
-    left: 47%;
-    top: 235px;
-  }
-
-  .lab-callout--multi {
-    left: 46%;
-    top: 655px;
-  }
-
-  .lab-callout--card {
-    width: min(660px, calc(100vw - 56px));
-  }
-
-  .lab-callout--ling {
-    left: 9%;
-    top: 765px;
-  }
-
+  // 데스크톱 전용 요소 숨김
   .lab-connectors,
-  .lab-node {
+  .lab-nodes-float,
+  .lab-node,
+  .lab-thread-panel {
     display: none;
   }
 
-  .lab-thread-panel {
-    bottom: 190px;
-    width: calc(100% - 56px);
+  // 카테고리 캡션 → 세로 카드
+  .lab-callout {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: block;
+    border: 1px solid var(--lab-line);
+    background: rgba(255, 255, 255, 0.72);
+    padding: 16px 16px 18px;
   }
 
+  .lab-callout span {
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .lab-callout small {
+    margin-top: 10px;
+    max-width: none;
+  }
+
+  // 녹색 LLM 카드: 데스크톱용 SVG 프레임 대신 카드 테두리 사용
+  .lab-callout--card {
+    height: auto;
+    width: auto;
+    padding: 0;
+    border: 1px solid var(--lab-line);
+  }
+
+  .lab-callout--card .lab-card__frame {
+    display: none;
+  }
+
+  .lab-callout--card .lab-card__inner {
+    margin: 0;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .lab-callout--card .lab-card__bar {
+    font-size: 30px;
+    white-space: normal;
+    padding: 8px 10px;
+  }
+
+  .lab-callout--card .lab-card__lines {
+    font-size: 12px;
+    line-height: 1.8;
+    padding: 14px 2px 0;
+  }
+
+  // 프로필 패널: 풀폭 카드 (어두운 배경/clip-path 유지)
   .lab-profile-panel {
-    bottom: 28px;
-    left: 28px;
+    position: relative;
+    left: auto;
     right: auto;
-    width: calc(100% - 56px);
+    bottom: auto;
+    width: auto;
+    max-width: none;
+    transform: none;
+    animation: none;
   }
 }
 
