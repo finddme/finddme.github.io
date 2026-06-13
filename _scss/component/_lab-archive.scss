@@ -103,6 +103,12 @@
   }
 }
 
+@media (min-width: 821px) {
+  .lab-callout--project {
+    display: none;
+  }
+}
+
 .lab-grid {
   inset: 0;
   pointer-events: none;
@@ -934,81 +940,146 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 820px) {
   .lab-hero {
-    min-height: 1120px;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding-bottom: 32px;
   }
 
+  // 그리드는 hero 직속 전체 배경으로 유지
+  .lab-grid {
+    z-index: 0;
+  }
+
+  // 무대를 세로 흐름 컨테이너로
+  .lab-stage {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 26px;
+    padding: 0 20px 24px;
+    width: auto;
+    height: auto;
+    min-height: 0;
+  }
+
+  // 상단바: 시간 숨김
   .lab-hero__topbar {
+    position: relative;
     grid-template-columns: 1fr auto;
+    padding: 18px 0 0;
   }
 
   .lab-time {
     display: none;
   }
 
+  // 타이틀
   .lab-title {
-    left: 38px;
-    top: 210px;
-  }
-
-  .lab-title h1 {
-    font-size: clamp(46px, 15vw, 86px);
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-top: 6px;
   }
 
   .lab-title h1 img {
-    width: min(86vw, 500px);
+    width: min(82vw, 460px);
+  }
+
+  // 오브젝트: 흐름 내 히어로 비주얼 (부유/회전·글래스 애니메이션 유지)
+  .lab-map {
+    position: relative;
+    transform: none;
+    display: flex;
+    justify-content: center;
   }
 
   .lab-object {
-    height: 430px;
-    top: 500px;
-    width: 76vw;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: min(78vw, 360px);
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 4px auto 0;
   }
 
-  .lab-map {
-    transform: translate3d(calc(var(--lab-x) * -8px), calc(var(--lab-y) * -6px), 0);
-  }
-
-  .lab-callout--nlp {
-    left: 9%;
-    top: 305px;
-  }
-
-  .lab-callout--all {
-    left: 47%;
-    top: 235px;
-  }
-
-  .lab-callout--multi {
-    left: 46%;
-    top: 655px;
-  }
-
-  .lab-callout--card {
-    width: min(660px, calc(100vw - 56px));
-  }
-
-  .lab-callout--ling {
-    left: 9%;
-    top: 765px;
-  }
-
+  // 데스크톱 전용 요소 숨김
   .lab-connectors,
-  .lab-node {
+  .lab-nodes-float,
+  .lab-node,
+  .lab-thread-panel {
     display: none;
   }
 
-  .lab-thread-panel {
-    bottom: 190px;
-    width: calc(100% - 56px);
+  // 카테고리 캡션 → 세로 카드
+  .lab-callout {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: block;
+    border: 1px solid var(--lab-line);
+    background: rgba(255, 255, 255, 0.72);
+    padding: 16px 16px 18px;
   }
 
+  .lab-callout span {
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .lab-callout small {
+    margin-top: 10px;
+    max-width: none;
+  }
+
+  // 녹색 LLM 카드: 데스크톱용 SVG 프레임 대신 카드 테두리 사용
+  .lab-callout--card {
+    height: auto;
+    width: auto;
+    padding: 0;
+    border: 1px solid var(--lab-line);
+  }
+
+  .lab-callout--card .lab-card__frame {
+    display: none;
+  }
+
+  .lab-callout--card .lab-card__inner {
+    margin: 0;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .lab-callout--card .lab-card__bar {
+    font-size: 30px;
+    white-space: normal;
+    padding: 8px 10px;
+  }
+
+  .lab-callout--card .lab-card__lines {
+    font-size: 12px;
+    line-height: 1.8;
+    padding: 14px 2px 0;
+  }
+
+  // 프로필 패널: 풀폭 카드 (어두운 배경/clip-path 유지)
   .lab-profile-panel {
-    bottom: 28px;
-    left: 28px;
+    position: relative;
+    left: auto;
     right: auto;
-    width: calc(100% - 56px);
+    bottom: auto;
+    width: auto;
+    max-width: none;
+    transform: none;
+    animation: none;
   }
 }
 
