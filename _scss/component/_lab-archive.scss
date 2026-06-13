@@ -43,6 +43,30 @@
   position: relative;
 }
 
+.lab-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+@media (min-width: 821px) {
+  .lab-hero {
+    height: 100vh;
+  }
+
+  .lab-stage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1600px;
+    height: 900px;
+    min-height: 0;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+  }
+}
+
 .lab-grid {
   inset: 0;
   pointer-events: none;
@@ -128,11 +152,7 @@
 }
 
 .lab-title {
-  left: 62px;
   position: absolute;
-  top: clamp(225px, 26vh, 260px);
-  transform: translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
-  transition: transform 160ms ease-out;
   z-index: 3;
 }
 
@@ -145,7 +165,6 @@
 .lab-title h1 {
   color: var(--lab-ink);
   font-family: "PT Sans", Arial, sans-serif;
-  font-size: clamp(52px, 7.5vw, 118px);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 0.9;
@@ -161,31 +180,21 @@
 .lab-title h1 img {
   display: block;
   height: auto;
-  width: clamp(470px, 34vw, 710px);
 }
 
 .lab-map {
   inset: 0;
   pointer-events: none;
   position: absolute;
-  transform: translate3d(calc(var(--lab-x) * -14px), calc(var(--lab-y) * -10px), 0);
-  transition: transform 180ms ease-out;
   z-index: 2;
 }
 
 .lab-object {
   align-items: center;
   display: flex;
-  height: 62vw;
   justify-content: center;
-  left: 50%;
-  max-height: 680px;
-  max-width: 620px;
   perspective: 900px;
   position: absolute;
-  top: 54%;
-  transform: translate(-50%, -50%);
-  width: 38vw;
   z-index: 2;
 }
 
@@ -312,30 +321,21 @@
 
 .lab-node--nlp {
   animation-delay: -1.2s;
-  left: 57%;
-  top: 66%;
 }
 
 .lab-node--all {
   animation-delay: -3.4s;
-  left: 46.5%;
-  top: 28.8%;
 }
 
 .lab-node--ling {
   animation-delay: -5.1s;
-  left: 38%;
-  top: 53%;
 }
 
 .lab-node--multi {
   animation-delay: -2.6s;
-  left: 59.5%;
-  top: 53%;
 }
 
 .lab-callout {
-  --lab-callout-title-size: clamp(30px, 4.4vw, 72px);
   color: var(--lab-ink);
   display: block;
   position: absolute;
@@ -368,26 +368,9 @@
   color: #d06f19;
 }
 
-.lab-callout--nlp {
-  left: 70%;
-  top: 66%;
-}
-
-.lab-callout--all {
-  left: 60.5%;
-  top: 8.7%;
-}
-
-.lab-callout--multi {
-  left: 72%;
-  top: 25.5%;
-}
-
 .lab-callout--card {
   color: var(--lab-ink);
-  height: 250px;
   padding: 18px 0 0;
-  width: 660px;
   z-index: 6;
 }
 
@@ -460,11 +443,6 @@
   text-transform: uppercase;
 }
 
-.lab-callout--ling {
-  left: 7%;
-  top: 58%;
-}
-
 .lab-thread-panel,
 .lab-profile-panel {
   position: absolute;
@@ -474,11 +452,6 @@
 
 .lab-thread-panel {
   animation: lab-panel-drift 6.5s ease-in-out infinite;
-  bottom: 58px;
-  left: 28px;
-  transform: translate3d(calc(var(--lab-x) * 18px), calc(var(--lab-y) * 12px), 0);
-  max-width: 500px;
-  width: 39vw;
 }
 
 .lab-thread-panel__note {
@@ -600,15 +573,10 @@
 .lab-profile-panel {
   animation: lab-panel-drift 8s ease-in-out -2s infinite;
   background: var(--lab-ink);
-  bottom: 58px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 24px 100%, 0 calc(100% - 24px));
   font-size: 12px;
   line-height: 1.2;
-  max-width: 480px;
   padding: 1px;
-  right: 28px;
-  transform: translate3d(calc(var(--lab-x) * -20px), calc(var(--lab-y) * -14px), 0);
-  width: 36vw;
 }
 
 .lab-profile-panel__body {
@@ -832,6 +800,101 @@
   }
   to {
     transform: translateY(18%);
+  }
+}
+
+@media (min-width: 821px) {
+  .lab-title {
+    left: 62px;
+    top: 234px;
+    transform: translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
+    transition: transform 160ms ease-out;
+  }
+
+  .lab-title h1 {
+    font-size: 118px;
+  }
+
+  .lab-title h1 img {
+    width: 544px;
+  }
+
+  .lab-map {
+    transform: translate3d(calc(var(--lab-x) * -14px), calc(var(--lab-y) * -10px), 0);
+    transition: transform 180ms ease-out;
+  }
+
+  .lab-object {
+    width: 608px;
+    height: 680px;
+    left: 50%;
+    top: 54%;
+    max-width: 620px;
+    max-height: 680px;
+    transform: translate(-50%, -50%);
+  }
+
+  .lab-node--nlp {
+    left: 57%;
+    top: 66%;
+  }
+
+  .lab-node--all {
+    left: 46.5%;
+    top: 28.8%;
+  }
+
+  .lab-node--ling {
+    left: 38%;
+    top: 53%;
+  }
+
+  .lab-node--multi {
+    left: 59.5%;
+    top: 53%;
+  }
+
+  .lab-callout {
+    --lab-callout-title-size: 70px;
+  }
+
+  .lab-callout--nlp {
+    left: 70%;
+    top: 66%;
+  }
+
+  .lab-callout--all {
+    left: 60.5%;
+    top: 8.7%;
+  }
+
+  .lab-callout--multi {
+    left: 72%;
+    top: 25.5%;
+  }
+
+  .lab-callout--ling {
+    left: 7%;
+    top: 58%;
+  }
+
+  .lab-callout--card {
+    width: 660px;
+    height: 250px;
+  }
+
+  .lab-thread-panel {
+    bottom: 58px;
+    left: 28px;
+    width: 500px;
+    transform: translate3d(calc(var(--lab-x) * 18px), calc(var(--lab-y) * 12px), 0);
+  }
+
+  .lab-profile-panel {
+    bottom: 58px;
+    right: 28px;
+    width: 480px;
+    transform: translate3d(calc(var(--lab-x) * -20px), calc(var(--lab-y) * -14px), 0);
   }
 }
 
