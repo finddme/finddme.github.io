@@ -26,9 +26,183 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400,700">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap">
+  <link rel="preload" href="{{ site.baseurl }}/public/fonts/arno-pro-serena.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="{{ site.baseurl }}/public/fonts/bookk-myungjo-bd.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ site.baseurl }}/public/fonts/anton-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="{{ site.baseurl }}/public/fonts/inter-carl-barenbrug.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ site.baseurl }}/public/css/main.css?v={{ site.time | date: '%s' }}">
+  <style>
+    @font-face {
+      font-display: swap;
+      font-family: "Ndot Archive";
+      font-style: normal;
+      font-weight: 400;
+      src: url("{{ site.baseurl }}/public/fonts/ndot-55.woff2") format("woff2");
+    }
 
+    @font-face {
+      font-display: swap;
+      font-family: "Archive Post Serif";
+      font-style: normal;
+      font-weight: 300;
+      src: url("{{ site.baseurl }}/public/fonts/arno-pro-serena.otf") format("opentype");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "Bookk Archive Brand";
+      font-style: normal;
+      font-weight: 400;
+      src: url("{{ site.baseurl }}/public/fonts/bookk-myungjo-lt.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "Bookk Archive Brand";
+      font-style: normal;
+      font-weight: 700;
+      src: url("{{ site.baseurl }}/public/fonts/bookk-myungjo-bd.woff2") format("woff2");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "Anton Archive Tabs";
+      font-style: normal;
+      font-weight: 400;
+      src: url("{{ site.baseurl }}/public/fonts/anton-regular.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-display: swap;
+      font-family: "Archive Section Inter";
+      font-style: normal;
+      font-weight: 100 900;
+      src: url("{{ site.baseurl }}/public/fonts/inter-carl-barenbrug.woff2") format("woff2");
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__wordmark,
+    body.archive-sheet-page .archive-sheet .archive-sheet__brand-separator,
+    body.archive-sheet-page .archive-sheet .archive-sheet__brand-title {
+      background: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      color: #0b0b0b !important;
+      -webkit-text-fill-color: #0b0b0b !important;
+      filter: none !important;
+      font-family: "Bookk Archive Brand", "PT Serif", Georgia, "Times New Roman", serif !important;
+      font-size: 2.9rem !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.045em !important;
+      line-height: 0.96 !important;
+      text-shadow: none !important;
+      transform: scaleX(1.12) !important;
+      transform-origin: center !important;
+      animation: none !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__brand-separator {
+      color: #6f6f69 !important;
+      -webkit-text-fill-color: #6f6f69 !important;
+      letter-spacing: 0 !important;
+      margin: 0 1rem 0 0.6rem !important;
+      transform: none !important;
+    }
+
+    @media (max-width: 48em) {
+      body.archive-sheet-page .archive-sheet .archive-sheet__wordmark,
+      body.archive-sheet-page .archive-sheet .archive-sheet__brand-separator,
+      body.archive-sheet-page .archive-sheet .archive-sheet__brand-title {
+        font-size: 2rem !important;
+      }
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__brand-link,
+    body.archive-sheet-page .archive-sheet .archive-sheet__brand-link:hover,
+    body.archive-sheet-page .archive-sheet .archive-sheet__brand-link:focus,
+    body.archive-sheet-page .archive-sheet .archive-sheet__brand-link:focus-visible,
+    body.archive-sheet-page .archive-sheet .archive-sheet__brand-link:active {
+      border: 0 !important;
+      box-shadow: none !important;
+      outline: 0 !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__tabs a {
+      align-items: center !important;
+      display: flex !important;
+      font-family: "Anton Archive Tabs", Impact, "Arial Narrow", sans-serif !important;
+      font-size: 2.05rem !important;
+      font-weight: 400 !important;
+      justify-content: center !important;
+      letter-spacing: 0.01em !important;
+      line-height: 1 !important;
+      min-height: 3rem !important;
+      padding-bottom: 0.28rem !important;
+      padding-top: 0.28rem !important;
+      overflow: hidden !important;
+      text-align: center !important;
+      text-shadow: none !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__tabs a span {
+      display: inline-block !important;
+      transform: scaleX(0.68) !important;
+      transform-origin: center !important;
+      transition:
+        transform 360ms ease-out,
+        letter-spacing 360ms ease-out !important;
+      white-space: nowrap !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__tabs a:hover span,
+    body.archive-sheet-page .archive-sheet .archive-sheet__tabs a:focus span,
+    body.archive-sheet-page .archive-sheet .archive-sheet__tabs a:focus-visible span {
+      letter-spacing: -0.02em !important;
+      transform: scaleX(1.22) !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__section-title {
+      /* layer 1: dot pattern clipped to the text glyphs (the "perforated" effect)
+         layer 2: solid gray bar clipped to the box. */
+      background-color: transparent !important;
+      background-image:
+        radial-gradient(circle, #ffffff 46%, transparent 50%),
+        linear-gradient(#CCCCCC, #CCCCCC) !important;
+      background-size: 3px 3px, auto !important;
+      background-repeat: repeat, no-repeat !important;
+      background-position: 0 0, 0 0 !important;
+      -webkit-background-clip: text, border-box !important;
+      background-clip: text, border-box !important;
+      -webkit-text-fill-color: transparent !important;
+      color: transparent !important;
+      font-family: "Archive Section Inter", Arial, Helvetica, sans-serif !important;
+      font-size: 1.02rem !important;
+      font-variation-settings: "wght" 760 !important;
+      font-weight: 760 !important;
+      letter-spacing: -0.025em !important;
+      text-shadow: none !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__marker {
+      display: none !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__table,
+    body.archive-sheet-page .archive-sheet .archive-sheet__index,
+    body.archive-sheet-page .archive-sheet .archive-sheet__title,
+    body.archive-sheet-page .archive-sheet .archive-sheet__date {
+      font-family: "Archive Post Serif", Arial, Helvetica, sans-serif !important;
+      font-weight: 300 !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__title span {
+      font-family: inherit !important;
+      font-size: 1.08em !important;
+    }
+  </style>
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed_yein1.png">
   <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon_yein1.ico">
@@ -81,5 +255,3 @@
   </script>
   
 </head>
-
-
