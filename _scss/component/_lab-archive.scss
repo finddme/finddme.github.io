@@ -1,3 +1,19 @@
+@font-face {
+  font-display: swap;
+  font-family: "Mona12 Lab";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/mona12-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Mona12 Lab Emoji";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/mona12-color-emoji.woff2") format("woff2");
+}
+
 .homepage-lab-archive {
   background: #f8f7f3;
 
@@ -177,8 +193,12 @@
 }
 
 .lab-pill {
-  border: 1px solid var(--lab-ink);
+  border: 0;
   border-radius: 2px;
+  font-family: "Mona12 Lab", "Mona12 Lab Emoji", var(--lab-mono);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
   padding: 5px 8px 4px;
   text-decoration: none;
 }
@@ -625,7 +645,7 @@
 }
 
 .lab-profile-panel__body {
-  background: rgba(255, 255, 255, 0.94);
+  background: #cccccc;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 23px 100%, 0 calc(100% - 23px));
   overflow: hidden;
   padding: 32px 14px 14px;

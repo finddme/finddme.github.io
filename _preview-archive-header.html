@@ -1,0 +1,62 @@
+<!doctype html>
+<!-- TEMP PREVIEW — safe to delete. Open directly in a browser. -->
+<!-- Compares the REAL Kunstverein "Siegen" font (hotlinked, preview-only) against
+     the free Source Serif 4 analog we actually ship. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Archive header — Siegen vs Source Serif 4</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,700">
+<style>
+  /* Real Kunstverein brand font — PREVIEW COMPARISON ONLY, not shipped */
+  @font-face {
+    font-family: "KvSiegen Real";
+    src: url("https://kunstverein-siegen.de/assets/fonts/kv.woff") format("woff");
+    font-display: swap;
+  }
+
+  body {
+    background: #f8f7f3;
+    margin: 0;
+    padding: 4rem 2rem;
+    background-image:
+      linear-gradient(#dfdbd1 1px, transparent 1px),
+      linear-gradient(90deg, #dfdbd1 1px, transparent 1px);
+    background-size: 33.33% 8rem, 33.33% 8rem;
+  }
+
+  .row { margin: 0 auto 3.2rem; max-width: 50rem; }
+  .tag {
+    font: 700 0.7rem/1 Arial, sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9a988f;
+    margin-bottom: 0.6rem;
+  }
+
+  .brandline { align-items: baseline; display: flex; gap: 0.55rem; }
+  .brandline span { color: #0b0b0b; font-size: 2.25rem; font-weight: 600; line-height: 1; letter-spacing: -0.005em; }
+  .brandline .sep { color: #6f6f69; margin: 0 0.06rem 0 0.12rem; }
+
+  .ship .brandline span { font-family: "Source Serif 4", "PT Serif", Georgia, serif; }
+  .target .brandline span { font-family: "KvSiegen Real", serif; }
+  .alt .brandline span { font-family: "PT Serif", Georgia, serif; }
+</style>
+</head>
+<body>
+  <div class="row target">
+    <div class="tag">Target — real KvSiegen font (preview only)</div>
+    <div class="brandline"><span>FINDDME</span><span class="sep">:</span><span>NLP</span></div>
+  </div>
+  <div class="row ship">
+    <div class="tag">Shipping — Source Serif 4 600 (free)</div>
+    <div class="brandline"><span>FINDDME</span><span class="sep">:</span><span>NLP</span></div>
+  </div>
+  <div class="row alt">
+    <div class="tag">Alt — PT Serif (already loaded)</div>
+    <div class="brandline"><span>FINDDME</span><span class="sep">:</span><span>NLP</span></div>
+  </div>
+</body>
+</html>
