@@ -99,16 +99,17 @@ body.post-page .container.content {
 }
 
 body.post-page .post {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 96rem;
-  width: calc(100vw - 3rem);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: none;
+  width: calc(100vw - 2rem);
 }
 
 body.post-page .post-lab-sheet {
-  align-items: start;
+  align-items: stretch;
   display: grid;
-  grid-template-columns: minmax(18rem, 33vw) minmax(0, 1fr);
+  grid-template-columns: minmax(20rem, 32vw) minmax(0, 1fr);
+  min-height: calc(100vh - 5rem);
 }
 
 body.post-page .post .post-title {
@@ -122,24 +123,22 @@ body.post-page .post .post-title {
 
 body.post-page .post-rail {
   border-right: 1px solid #e4e4e4;
+  min-height: 100%;
   min-width: 0;
   padding: 0 1.5rem 0 0;
 }
 
 body.post-page .post-rail__sticky {
-  max-height: calc(100vh - 1.5rem);
-  overflow: auto;
   padding-bottom: 1.5rem;
   position: sticky;
-  scrollbar-width: thin;
-  top: 1rem;
+  top: 0;
 }
 
 body.post-page .post-meta,
 body.post-page .post-meta .post-date,
+body.post-page .post-meta .post-tags,
 body.post-page .post-meta .post-tag {
   color: $post-date-color;
-  display: inline;
   font-family: "Anton Archive Tabs", Impact, "Arial Narrow", sans-serif;
   font-size: 0.92rem;
   font-weight: 400;
@@ -153,15 +152,27 @@ body.post-page .post-meta {
   margin-bottom: 2.25rem;
 }
 
+body.post-page .post-meta .post-date,
+body.post-page .post-meta .post-tags {
+  display: block;
+}
+
+body.post-page .post-meta .post-date {
+  margin-bottom: 0.35rem;
+}
+
 body.post-page .post-meta .post-tag {
   color: $dblue;
+  display: inline-block;
+  margin-bottom: 0.2rem;
 }
 
 body.post-page .post-content {
   font-weight: 400;
   line-height: 1.8;
   min-width: 0;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
 }
 
 body.post-page .post-content article > :first-child {
@@ -232,6 +243,8 @@ body.post-page #markdown-toc a:focus {
   }
 
   body.post-page .post {
+    margin-left: 0;
+    margin-right: 0;
     width: 100%;
   }
 
@@ -240,6 +253,7 @@ body.post-page #markdown-toc a:focus {
   }
 
   body.post-page .post-rail {
+    min-height: 0;
     border-right: 0;
     padding-right: 0;
   }
@@ -252,6 +266,7 @@ body.post-page #markdown-toc a:focus {
 
   body.post-page .post-content {
     padding-left: 0;
+    padding-right: 0;
   }
 
   body.post-page .post .post-title {
