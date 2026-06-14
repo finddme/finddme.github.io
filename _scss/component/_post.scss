@@ -91,16 +91,24 @@ body.post-page .masthead-wordmark {
 }
 
 body.post-page .container.content {
-  max-width: 58rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
   padding-top: 1.85rem;
+  width: 100%;
 }
 
 body.post-page .post {
   margin-left: auto;
   margin-right: auto;
-  max-width: 58rem;
+  max-width: 96rem;
+  width: calc(100vw - 3rem);
+}
+
+body.post-page .post-lab-sheet {
+  align-items: start;
+  display: grid;
+  grid-template-columns: minmax(18rem, 33vw) minmax(0, 1fr);
 }
 
 body.post-page .post .post-title {
@@ -110,6 +118,21 @@ body.post-page .post .post-title {
   font-weight: 700;
   line-height: 1.08;
   margin-bottom: 0.62rem;
+}
+
+body.post-page .post-rail {
+  border-right: 1px solid #e4e4e4;
+  min-width: 0;
+  padding: 0 1.5rem 0 0;
+}
+
+body.post-page .post-rail__sticky {
+  max-height: calc(100vh - 1.5rem);
+  overflow: auto;
+  padding-bottom: 1.5rem;
+  position: sticky;
+  scrollbar-width: thin;
+  top: 1rem;
 }
 
 body.post-page .post-meta,
@@ -137,6 +160,53 @@ body.post-page .post-meta .post-tag {
 body.post-page .post-content {
   font-weight: 400;
   line-height: 1.8;
+  min-width: 0;
+  padding-left: 1.5rem;
+}
+
+body.post-page .post-content article > :first-child {
+  margin-top: 0;
+}
+
+body.post-page .post-toc {
+  border-top: 1px solid #e4e4e4;
+  padding-top: 1rem;
+}
+
+body.post-page .post-toc[hidden] {
+  display: none;
+}
+
+body.post-page #markdown-toc {
+  font-family: "Anton Archive Tabs", Impact, "Arial Narrow", sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.25;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  text-transform: uppercase;
+}
+
+body.post-page #markdown-toc ul {
+  list-style: none;
+  margin: 0.32rem 0 0.54rem;
+  padding-left: 0.85rem;
+}
+
+body.post-page #markdown-toc li {
+  margin: 0 0 0.42rem;
+}
+
+body.post-page #markdown-toc a {
+  color: #003876;
+  display: inline-block;
+  text-decoration: none;
+}
+
+body.post-page #markdown-toc a:hover,
+body.post-page #markdown-toc a:focus {
+  color: #0b0b0b;
+  text-decoration: none;
 }
 
 @media (min-width: 38rem) {
@@ -159,6 +229,29 @@ body.post-page .post-content {
     padding-left: 1rem;
     padding-right: 1rem;
     padding-top: 2rem;
+  }
+
+  body.post-page .post {
+    width: 100%;
+  }
+
+  body.post-page .post-lab-sheet {
+    display: block;
+  }
+
+  body.post-page .post-rail {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  body.post-page .post-rail__sticky {
+    max-height: none;
+    overflow: visible;
+    position: static;
+  }
+
+  body.post-page .post-content {
+    padding-left: 0;
   }
 
   body.post-page .post .post-title {
