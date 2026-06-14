@@ -2,16 +2,21 @@
 layout: default
 ---
 
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <div class="post-meta"><span class="post-date">{{ page.date | date_to_string }}</span>
-  {% if page.tags %} | 
-  {% for tag in page.tags %}
-    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
-  {% endfor %}
-  {% endif %}
+<div class="post post-lab-sheet">
+  <aside class="post-rail">
+    <div class="post-rail__sticky">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-meta"><span class="post-date">{{ page.date | date_to_string }}</span>
+      {% if page.tags %} |
+      {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+      {% endfor %}
+      {% endif %}
 
-  </div>
+      </div>
+      <nav class="post-toc" aria-label="Post table of contents"></nav>
+    </div>
+  </aside>
   <div class="post-content"><article>
     {{ content }}
   </article></div>
@@ -23,6 +28,21 @@ layout: default
     </picture>
   </a>-->
 </div>
+
+<script>
+  (function() {
+    var toc = document.getElementById('markdown-toc');
+    var tocTarget = document.querySelector('.post-toc');
+
+    if (!tocTarget) return;
+
+    if (toc) {
+      tocTarget.appendChild(toc);
+    } else {
+      tocTarget.setAttribute('hidden', 'hidden');
+    }
+  })();
+</script>
 
 
 
@@ -75,5 +95,4 @@ var disqus_config = function () {
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </div>
 {% endif %}-->
-
 
