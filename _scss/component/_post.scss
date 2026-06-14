@@ -55,10 +55,13 @@ body.post-page .sidebar-toggle {
 }
 
 body.post-page .masthead {
-  border-bottom: 1px solid #eee;
+  background: transparent;
+  border-bottom: 0;
   margin-bottom: 0;
-  padding-bottom: 0.72rem;
-  padding-top: 0.72rem;
+  padding-bottom: 0;
+  padding-top: 1.05rem;
+  position: static;
+  width: 100%;
 }
 
 body.post-page .masthead .container {
@@ -75,14 +78,14 @@ body.post-page .masthead-title a:focus {
 }
 
 body.post-page .masthead-wordmark {
-  color: #9d9da1;
+  color: #0b0b0b;
   display: inline-block;
   font-family: "Bookk Archive Brand", "PT Serif", Georgia, "Times New Roman", serif;
-  font-size: 1.55rem;
+  font-size: 2.9rem;
   font-style: normal;
   font-weight: 700;
   letter-spacing: -0.045em;
-  line-height: 1;
+  line-height: 0.96;
   transform: scaleX(1.12);
   transform-origin: center;
 }
@@ -91,7 +94,7 @@ body.post-page .container.content {
   max-width: 58rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-top: 2.65rem;
+  padding-top: 1.85rem;
 }
 
 body.post-page .post {
@@ -148,7 +151,7 @@ body.post-page .post-content {
 
 @media (max-width: 48em) {
   body.post-page .masthead-wordmark {
-    font-size: 1.35rem;
+    font-size: 2rem;
   }
 
   body.post-page .container.content {
