@@ -66,6 +66,12 @@ body.post-page .masthead {
 
 body.post-page .masthead .container {
   max-width: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+body.post-page .masthead-title {
+  text-align: left;
 }
 
 body.post-page .masthead-title a,
@@ -78,7 +84,7 @@ body.post-page .masthead-title a:focus {
 }
 
 body.post-page .masthead-wordmark {
-  color: #0b0b0b;
+  color: $post-title-color;
   display: inline-block;
   font-family: "Bookk Archive Brand", "PT Serif", Georgia, "Times New Roman", serif;
   font-size: 2.9rem;
@@ -113,7 +119,7 @@ body.post-page .post-lab-sheet {
 }
 
 body.post-page .post .post-title {
-  color: $post-title-color;
+  color: #0b0b0b;
   font-family: "Archive Post Serif", "PT Serif", Georgia, "Times New Roman", serif;
   font-size: clamp(2.15rem, 4vw, 3.1rem);
   font-weight: 700;
@@ -125,19 +131,25 @@ body.post-page .post-rail {
   border-right: 1px solid #e4e4e4;
   min-height: 100%;
   min-width: 0;
+  overflow: visible;
   padding: 0 1.5rem 0 0;
 }
 
-body.post-page .post-rail__sticky {
-  padding-bottom: 1.5rem;
-  position: sticky;
-  top: 0;
+body.post-page .post-rail__header {
+  margin-bottom: 2rem;
 }
 
-body.post-page .post-meta,
-body.post-page .post-meta .post-date,
-body.post-page .post-meta .post-tags,
-body.post-page .post-meta .post-tag {
+body.post-page .post-meta-grid {
+  display: grid;
+  grid-template-columns: 4.6rem minmax(0, 1fr);
+  margin: 0;
+  row-gap: 0.72rem;
+}
+
+body.post-page .post-meta-grid dt,
+body.post-page .post-meta-grid dd,
+body.post-page .post-date,
+body.post-page .post-tag {
   color: $post-date-color;
   font-family: "Anton Archive Tabs", Impact, "Arial Narrow", sans-serif;
   font-size: 0.92rem;
@@ -147,24 +159,32 @@ body.post-page .post-meta .post-tag {
   text-transform: uppercase;
 }
 
-body.post-page .post-meta {
-  display: block;
-  margin-bottom: 2.25rem;
+body.post-page .post-meta-grid dt {
+  color: #0b0b0b;
+  margin: 0;
 }
 
-body.post-page .post-meta .post-date,
-body.post-page .post-meta .post-tags {
-  display: block;
+body.post-page .post-meta-grid dd {
+  margin: 0;
+  min-width: 0;
 }
 
-body.post-page .post-meta .post-date {
-  margin-bottom: 0.35rem;
+body.post-page .post-meta-grid .post-title {
+  margin: 0;
 }
 
-body.post-page .post-meta .post-tag {
+body.post-page .post-tag {
   color: $dblue;
   display: inline-block;
   margin-bottom: 0.2rem;
+  margin-right: 0.35rem;
+}
+
+body.post-page .post-rail__sticky {
+  padding-bottom: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 body.post-page .post-content {
@@ -255,6 +275,7 @@ body.post-page #markdown-toc a:focus {
   body.post-page .post-rail {
     min-height: 0;
     border-right: 0;
+    overflow: visible;
     padding-right: 0;
   }
 
@@ -271,6 +292,10 @@ body.post-page #markdown-toc a:focus {
 
   body.post-page .post .post-title {
     font-size: 2rem;
+  }
+
+  body.post-page .post-meta-grid {
+    grid-template-columns: 3.8rem minmax(0, 1fr);
   }
 }
 
