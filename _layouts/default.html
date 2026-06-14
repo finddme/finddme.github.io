@@ -7,7 +7,7 @@
   {% endif %}
   <style>blockquote {font-size: 1em; line-height: 1.4}</style>
   </head>
-  <body{% if page.homepage_style or page.body_class %} class="{% if page.homepage_style %}homepage-{{ page.homepage_style }}{% endif %}{% if page.homepage_style and page.body_class %} {% endif %}{% if page.body_class %}{{ page.body_class }}{% endif %}"{% endif %}>
+  <body{% if page.homepage_style or page.body_class or page.layout == "post" %} class="{% if page.homepage_style %}homepage-{{ page.homepage_style }}{% endif %}{% if page.homepage_style and page.body_class %} {% endif %}{% if page.body_class %}{{ page.body_class }}{% endif %}{% if page.layout == "post" %}{% if page.homepage_style or page.body_class %} {% endif %}post-page{% endif %}"{% endif %}>
 
     {% include sidebar.html %}
 
@@ -27,10 +27,16 @@
         <div class="container">
           <h3 class="masthead-title" align="center">
             <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}">
+              {% if page.layout == "post" %}
+              <span class="archive-sheet__wordmark masthead-wordmark">FindDMe</span>
+              {% else %}
               <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/> 
+              {% endif %}
             </a>
+            {% unless page.layout == "post" %}
             <small>{{ site.tagline }}</small>
             <img src="http://finddme.github.io/public/search_yein.png" width="20" height="20" style="position:absolute; top:1.3rem; right:1.5rem" data-toggle="modal" data-target="#myModal">
+            {% endunless %}
           </h3>
         </div>
       </div>
