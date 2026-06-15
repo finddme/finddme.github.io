@@ -56,8 +56,12 @@ $desktop-accent: #F9FB97;
   border: 2px solid $desktop-accent;
   padding: 1.25rem;
   width: min(340px, 26vw);
+  aspect-ratio: 340 / 467;       /* keep box size stable while the image shrinks */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.desktop__art img { display: block; width: 100%; height: auto; }
+.desktop__art img { display: block; width: 82%; height: auto; margin: auto; }
 
 /* ===== Mac window ===== */
 .desktop__windows { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
