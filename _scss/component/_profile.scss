@@ -5,12 +5,24 @@ $desktop-accent: #F9FB97;
   margin: 0;
   background: #ffffff;
 }
+.profile-desktop-page:has(.desktop--dark) {
+  background: #1c1c1e;
+}
 
 .desktop {
   position: relative;
   min-height: 100vh;
   padding: 3rem;
   overflow: hidden;
+  background: #fff;
+  color: #111;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.desktop--dark {
+  background: #1c1c1e;
+  color: #f5f5f5;
 }
 
 /* Left column */
@@ -45,9 +57,18 @@ $desktop-accent: #F9FB97;
 }
 .desktop__menu-item:hover { background: rgba(249,251,151,0.45); }
 .desktop__menu-item:active { transform: translateY(1px); }
+.desktop--dark .desktop__menu-item {
+  border-width: 1px;
+  color: #f5f5f7;
+}
+.desktop--dark .desktop__menu-item:hover {
+  background: rgba(249,251,151,0.16);
+}
 
 /* Center art (horizontally + vertically centered on the viewport) */
 .desktop__art {
+  appearance: none;
+  background: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,8 +81,23 @@ $desktop-accent: #F9FB97;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+.desktop__art:focus-visible {
+  outline: 2px solid $desktop-accent;
+  outline-offset: 4px;
 }
 .desktop__art img { display: block; width: 82%; height: auto; margin: auto; }
+.desktop--dark .desktop__art {
+  border-width: 1px;
+}
+.desktop--dark .desktop__art img {
+  max-height: 92%;
+  object-fit: contain;
+  object-position: center;
+  width: min(92%, 320px);
+  transform: translateX(13%);   /* nudge TTORI right to sit centered in the box */
+}
 
 /* ===== Mac window ===== */
 .desktop__windows { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
@@ -114,7 +150,16 @@ $desktop-accent: #F9FB97;
 .mac-window__light {
   width: 12px; height: 12px; border-radius: 50%; border: 0; padding: 0;
 }
-.mac-window__light--red    { background: #ff5f57; cursor: pointer; }
+.mac-window__light--red    { background: #ff5f57; cursor: pointer; position: relative; z-index: 3; }
+/* enlarge the close hit-area to span the red AND yellow dots (red is small/fiddly) */
+.mac-window__light--red::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -4px;
+  right: -20px;
+}
 .mac-window__light--yellow { background: #febc2e; }
 .mac-window__light--green  { background: #28c840; }
 .mac-window__title {
@@ -122,6 +167,69 @@ $desktop-accent: #F9FB97;
   font-size: 0.8rem; color: #4a4a4a; pointer-events: none;
 }
 .mac-window__body { flex: 1 1 auto; overflow: auto; padding: 1.5rem; }
+
+.desktop--dark .mac-window {
+  background: #1f1f21;
+  border-color: #4a4a4d;
+  box-shadow: 0 20px 56px rgba(0,0,0,0.68);
+  color: #f5f5f7;
+}
+.desktop--dark .mac-window__bar {
+  background: linear-gradient(#3a3a3c, #2c2c2e);
+  border-bottom-color: #505054;
+}
+.desktop--dark .mac-window__title {
+  color: #f1f1f3;
+}
+.desktop--dark .mac-window__body {
+  background: #1f1f21;
+  color: #f5f5f7;
+}
+.desktop--dark .mac-window a {
+  color: #9bbcff;
+}
+.desktop--dark .mac-window a:visited {
+  color: #c2a7ff;
+}
+.desktop--dark .mac-bloglinks__item a {
+  color: #b8a7ff;
+}
+.desktop--dark .mac-bloglinks__item a:hover {
+  color: #d8ceff;
+}
+.desktop--dark .mac-skills__chip {
+  background: #2c2c2e;
+  color: #f5f5f7;
+}
+.desktop--dark .mac-projects--profile-project .archive-sheet__row,
+.desktop--dark .mac-projects .archive-sheet__row {
+  background: rgba(31,31,33,0.92);
+  border-bottom-color: #3a3a3c;
+}
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:hover,
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-visible,
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-within {
+  background: rgba(44,44,46,0.96);
+}
+.desktop--dark .mac-projects .archive-sheet__index,
+.desktop--dark .mac-projects .archive-sheet__thumb,
+.desktop--dark .mac-projects .archive-sheet__title,
+.desktop--dark .mac-projects .archive-sheet__date {
+  border-right-color: #3a3a3c;
+}
+.desktop--dark .mac-projects .archive-sheet__date,
+.desktop--dark .mac-projects--profile-project .archive-sheet__title .mac-projects__preview {
+  color: #c7c7cc;
+}
+.desktop--dark .mac-projects .archive-sheet__row::after {
+  border-color: transparent;
+}
+/* keep project/dev-log title links the same blue as light mode (not visited purple) */
+.desktop--dark .mac-projects a,
+.desktop--dark .mac-projects a:visited,
+.desktop--dark .mac-projects a:hover {
+  color: #268bd2;
+}
 
 /* Resize handles (edges + corners). Sit just inside the window border. */
 .mac-window__resize { position: absolute; z-index: 5; touch-action: none; }
@@ -141,6 +249,7 @@ $desktop-accent: #F9FB97;
   min-width: 0;
   background: #1c1c1e; color: #fff;
   border-radius: 10px; padding: 0.52rem 0.68rem;
+  font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 0.74rem; font-weight: 600;
   line-height: 1.25;
 }
@@ -168,6 +277,15 @@ $desktop-accent: #F9FB97;
 .mac-bloglinks__item a:hover { color: #34258f; }
 
 .mac-projects__empty { color: #888; font-size: 0.9rem; }
+
+/* Projects / Dev Log windows reuse the Blog window's serif typeface */
+.mac-projects .archive-sheet__index,
+.mac-projects .archive-sheet__title,
+.mac-projects .archive-sheet__date {
+  font-family: "Times New Roman", Times, serif;
+}
+/* slightly smaller title text in project/dev-log tables */
+.mac-projects .archive-sheet__title { font-size: 0.82rem; }
 
 /* Profile-only project previews. Keeps shared archive-sheet pages unchanged. */
 .mac-projects--profile-project {

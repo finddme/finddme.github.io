@@ -3,6 +3,8 @@
 
   var layer = document.querySelector('[data-mac-layer]');
   if (!layer) return;
+  var desktop = document.querySelector('[data-desktop]');
+  var artToggle = document.querySelector('[data-profile-art-toggle]');
 
   var zTop = 10;          // running z-index counter
   var openCount = 0;      // for cascade offset
@@ -41,6 +43,18 @@
   function closeWindow(id) {
     var win = document.getElementById(id);
     if (win) win.hidden = true;
+  }
+
+  if (desktop && artToggle) {
+    artToggle.addEventListener('click', function () {
+      var isDark = desktop.classList.toggle('desktop--dark');
+      var img = artToggle.querySelector('img');
+      artToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      if (img) {
+        img.src = isDark ? artToggle.dataset.darkSrc : artToggle.dataset.lightSrc;
+        img.alt = isDark ? 'TTORI' : 'YEIN';
+      }
+    });
   }
 
   // --- open (menu buttons) ---
