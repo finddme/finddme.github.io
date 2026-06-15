@@ -1,3 +1,11 @@
+@font-face {
+  font-display: swap;
+  font-family: "Geist Post Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("../fonts/geist-mono-vf.woff2") format("woff2");
+}
+
 .post {
   margin-bottom: 4em;
 
@@ -44,6 +52,8 @@
 
 body.post-page {
   background: #fff;
+  overflow-x: clip;
+  --page-gutter: clamp(1.25rem, 6vw, 8rem);
 }
 
 body.post-page .wrap {
@@ -58,6 +68,8 @@ body.post-page .masthead {
   background: transparent;
   border-bottom: 0;
   margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 0;
   padding-top: 1.05rem;
   position: static;
@@ -65,13 +77,16 @@ body.post-page .masthead {
 }
 
 body.post-page .masthead .container {
+  margin-left: 0;
+  margin-right: 0;
   max-width: none;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+  width: 100%;
 }
 
 body.post-page .masthead-title {
-  text-align: left;
+  text-align: left !important;
 }
 
 body.post-page .masthead-title a,
@@ -92,98 +107,114 @@ body.post-page .masthead-wordmark {
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 0.96;
+  margin-left: 2rem;
   transform: scaleX(1.12);
-  transform-origin: center;
+  transform-origin: left center;
 }
 
 body.post-page .container.content {
   max-width: none;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
   padding-top: 1.85rem;
   width: 100%;
 }
 
 body.post-page .post {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0;
+  margin-right: 0;
   max-width: none;
-  width: calc(100vw - 2rem);
+  width: 100%;
 }
 
 body.post-page .post-lab-sheet {
   align-items: stretch;
+  border-top: 1px solid #e4e4e4;
   display: grid;
-  grid-template-columns: minmax(20rem, 32vw) minmax(0, 1fr);
+  grid-template-columns: minmax(7rem, 14vw) minmax(0, 1fr);
   min-height: calc(100vh - 5rem);
+}
+
+body.post-page .post-cell {
+  border-bottom: 1px solid #e4e4e4;
+  min-width: 0;
+  padding: 0.85rem 0;
+}
+
+body.post-page .post-cell--label {
+  background: #fff;
+  border-right: 1px solid #e4e4e4;
+  color: #C4C4C4;
+  font-family: "Anton Archive Tabs", Impact, "Arial Narrow", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  padding-left: 2.25rem;
+  padding-right: 1.5rem;
+  text-transform: uppercase;
+}
+
+body.post-page .post-cell--label:not(.post-cell--toc) {
+  align-items: center;
+  display: flex;
+}
+
+body.post-page .post-cell--value {
+  padding-left: 3.25rem;
+  padding-right: 2rem;
+}
+
+body.post-page .post-cell--toc,
+body.post-page .post-cell--value.post-content {
+  border-bottom: 0;
 }
 
 body.post-page .post .post-title {
   color: #0b0b0b;
   font-family: "Archive Post Serif", "PT Serif", Georgia, "Times New Roman", serif;
-  font-size: clamp(2.15rem, 4vw, 3.1rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
   font-weight: 700;
-  line-height: 1.08;
-  margin-bottom: 0.62rem;
-}
-
-body.post-page .post-rail {
-  border-right: 1px solid #e4e4e4;
-  min-height: 100%;
-  min-width: 0;
-  overflow: visible;
-  padding: 0 1.5rem 0 0;
-}
-
-body.post-page .post-rail__header {
-  margin-bottom: 2rem;
-}
-
-body.post-page .post-meta-grid {
-  display: grid;
-  grid-template-columns: 4.6rem minmax(0, 1fr);
+  line-height: 1.12;
   margin: 0;
-  row-gap: 0.72rem;
+  text-transform: none;
 }
 
-body.post-page .post-meta-grid dt,
-body.post-page .post-meta-grid dd,
-body.post-page .post-date,
-body.post-page .post-tag {
-  color: $post-date-color;
-  font-family: "Anton Archive Tabs", Impact, "Arial Narrow", sans-serif;
+body.post-page .post-date {
+  color: #E1E708;
+  display: inline-block;
+  font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 0.92rem;
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: 0.01em;
-  line-height: 1.2;
+  margin: 0;
   text-transform: uppercase;
 }
 
-body.post-page .post-meta-grid dt {
-  color: #0b0b0b;
-  margin: 0;
-}
-
-body.post-page .post-meta-grid dd {
-  margin: 0;
-  min-width: 0;
-}
-
-body.post-page .post-meta-grid .post-title {
-  margin: 0;
-}
-
 body.post-page .post-tag {
-  color: $dblue;
+  background: transparent;
+  border-radius: 0;
+  color: #E1E708;
   display: inline-block;
-  margin-bottom: 0.2rem;
+  font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-left: 0;
   margin-right: 0.35rem;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+body.post-page .post-tag:before {
+  content: none;
+  padding-right: 0;
 }
 
 body.post-page .post-rail__sticky {
   padding-bottom: 1.5rem;
   position: sticky;
-  top: 0;
+  top: 1.5rem;
   z-index: 1;
 }
 
@@ -191,8 +222,6 @@ body.post-page .post-content {
   font-weight: 400;
   line-height: 1.8;
   min-width: 0;
-  padding-left: 2rem;
-  padding-right: 1rem;
 }
 
 body.post-page .post-content article > :first-child {
@@ -200,8 +229,7 @@ body.post-page .post-content article > :first-child {
 }
 
 body.post-page .post-toc {
-  border-top: 1px solid #e4e4e4;
-  padding-top: 1rem;
+  padding-top: 0;
 }
 
 body.post-page .post-toc[hidden] {
@@ -209,13 +237,14 @@ body.post-page .post-toc[hidden] {
 }
 
 body.post-page #markdown-toc {
-  font-family: "Anton Archive Tabs", Impact, "Arial Narrow", sans-serif;
+  font-family: "Archive Post Serif", "PT Serif", Georgia, "Times New Roman", serif;
   font-size: 0.86rem;
+  font-weight: 700;
   line-height: 1.25;
   list-style: none;
   margin: 0;
   padding-left: 0;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 body.post-page #markdown-toc ul {
@@ -229,7 +258,7 @@ body.post-page #markdown-toc li {
 }
 
 body.post-page #markdown-toc a {
-  color: #003876;
+  color: #E1E708;
   display: inline-block;
   text-decoration: none;
 }
@@ -269,13 +298,24 @@ body.post-page #markdown-toc a:focus {
   }
 
   body.post-page .post-lab-sheet {
+    border-top: 0;
     display: block;
   }
 
-  body.post-page .post-rail {
-    min-height: 0;
+  body.post-page .post-cell {
+    border-bottom: 0;
+    padding: 0.3rem 0;
+  }
+
+  body.post-page .post-cell--label {
     border-right: 0;
-    overflow: visible;
+    margin-top: 0.9rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.post-page .post-cell--value {
+    padding-left: 0;
     padding-right: 0;
   }
 
@@ -285,17 +325,8 @@ body.post-page #markdown-toc a:focus {
     position: static;
   }
 
-  body.post-page .post-content {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   body.post-page .post .post-title {
     font-size: 2rem;
-  }
-
-  body.post-page .post-meta-grid {
-    grid-template-columns: 3.8rem minmax(0, 1fr);
   }
 }
 

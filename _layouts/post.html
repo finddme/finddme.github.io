@@ -3,28 +3,31 @@ layout: default
 ---
 
 <div class="post post-lab-sheet">
-  <aside class="post-rail">
-    <header class="post-rail__header">
-      <dl class="post-meta-grid">
-        <dt>Title</dt>
-        <dd><h1 class="post-title">{{ page.title | strip_html }}</h1></dd>
-        {% if page.tags %}
-        <dt>Tag</dt>
-        <dd>
-          {% for tag in page.tags %}
-            <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
-          {% endfor %}
-        </dd>
-        {% endif %}
-        <dt>Date</dt>
-        <dd><time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time></dd>
-      </dl>
-    </header>
+  <div class="post-cell post-cell--label">Title</div>
+  <div class="post-cell post-cell--value">
+    <h1 class="post-title">{{ page.title | strip_html }}</h1>
+  </div>
+
+  {% if page.tags %}
+  <div class="post-cell post-cell--label">Tag</div>
+  <div class="post-cell post-cell--value">
+    {% for tag in page.tags %}
+      <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="post-cell post-cell--label">Date</div>
+  <div class="post-cell post-cell--value">
+    <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+  </div>
+
+  <div class="post-cell post-cell--label post-cell--toc">
     <div class="post-rail__sticky">
       <nav class="post-toc" aria-label="Post table of contents"></nav>
     </div>
-  </aside>
-  <div class="post-content"><article>
+  </div>
+  <div class="post-cell post-cell--value post-content"><article>
     {{ content }}
   </article></div>
   <!-- <br><br>
