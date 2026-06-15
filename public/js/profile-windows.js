@@ -20,7 +20,7 @@
     if (firstOpen && !win.dataset.placed) {
       // cascade new windows so they don't fully overlap
       var offset = (openCount % 6) * 28;
-      win.style.top = 'calc(12% + ' + offset + 'px)';
+      win.style.top = 'calc(5% + ' + offset + 'px)';
       win.style.left = 'calc(12% + ' + offset + 'px)';
       win.dataset.placed = '1';
       openCount += 1;
