@@ -88,15 +88,13 @@
 //
 // vw/clamp 환산: 1vw = width/100 px, 1vh = height/100 px 로 계산 후
 // 원본 clamp 범위로 클램프한다. 현재 기준 2000x1125 (20px/vw, 11.25px/vh):
-//   .lab-title top        clamp(225, 26vh, 260)     -> 260
+//   .lab-title top        (좌측 상단 배치)            -> 18
 //   .lab-title h1 font     clamp(52, 7.5vw, 118)     -> 118
-//   .lab-title h1 img w    clamp(470, 34vw, 710)     -> 680
-//   .lab-object width      38vw (max-width 620)      -> 620
-//   .lab-object height     62vw (max-height 680)     -> 680
+//   .lab-title h1 img w    reduced desktop logo      -> 560
+//   .lab-object width      38vw (max-width 620)      -> 496
+//   .lab-object height     62vw (max-height 680)     -> 544
 //   .lab-callout title     clamp(30, 4.4vw, 72)      -> 72
-//   .lab-thread-panel w    39vw (max 500)            -> 500
-//   .lab-profile-panel w   36vw (max 480)            -> 480
-//   * 노드/캡션의 left/top % 값은 비율 무관하게 그대로 둔다.
+//   * 캡션의 left/top % 값은 비율 무관하게 그대로 둔다.
 //
 // 현재 시도 이력: 1600x900(너무 큼/넘침) → 2560x1440(너무 작음/허전)
 //   → 1358x1138 정사각(너무 모임) → 2000x1125(채택).
@@ -222,8 +220,7 @@
 }
 
 .lab-callout small,
-.lab-thread-panel,
-.lab-profile-panel {
+.lab-profile-links {
   font-family: var(--lab-mono);
 }
 
@@ -245,6 +242,70 @@
 .lab-title h1 img {
   display: block;
   height: auto;
+}
+
+// 이모지 알약을 FINDDME 이미지 위에 겹쳐 D-D 사이를 가로지르게 둔다.
+// .lab-title 은 이미지 크기에 맞춰 줄어드는 absolute 블록이므로
+// left/top % 는 "이미지 기준" 위치가 된다.
+//   left: 가로 위치 (이미지 가로 중앙 ≈ FINDDME 의 D-D 교차점)
+//   top : 세로 위치 (글자 세로 중앙)
+.lab-title .lab-pill {
+  font-size: 20px;
+  left: 53%;
+  pointer-events: auto;
+  position: absolute;
+  top: 47%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+// 로고(FINDDME) 위에 떠오르는 frosted square. 위치/타이밍/투명도는
+// JS(lab-archive.js, initTitleGlass)가 매 등장마다 난수로 다시 뽑는다
+// → 실제 무작위. 여기서는 모양(크기)과 페이드 트랜지션만 정의한다.
+// 레이어 순서: 로고 이미지(뒤) > 이모지(z-index:4) > 유리상자(z-index:5, 가장 앞).
+.lab-title__glass {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.11);
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 0.5s ease;
+  z-index: 5;
+}
+
+// 세로로 긴 박스 3종 (크기만 지정; 등장 동작은 JS가 담당).
+.lab-title__glass--a {
+  height: 84px;
+  width: 63px;
+}
+
+.lab-title__glass--b {
+  height: 78px;
+  width: 57px;
+}
+
+.lab-title__glass--c {
+  height: 72px;
+  width: 51px;
+}
+
+// 가로로 긴 박스 3종. 세로 박스와 같은 레이어에서 동시에 겹쳐 무작위로 뜬다.
+.lab-title__glass--wide-a {
+  height: 37px;
+  width: 122px;
+}
+
+.lab-title__glass--wide-b {
+  height: 34px;
+  width: 110px;
+}
+
+.lab-title__glass--wide-c {
+  height: 31px;
+  width: 98px;
 }
 
 .lab-map {
@@ -278,128 +339,6 @@
   display: none;
 }
 
-.lab-object__glass {
-  animation: lab-glass-main 9s steps(1, end) infinite;
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.26);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  position: absolute;
-}
-
-.lab-object__glass--main {
-  bottom: 18%;
-  height: 30%;
-  left: 24%;
-  position: absolute;
-  width: 34%;
-}
-
-.lab-object__glass--ghost-a,
-.lab-object__glass--ghost-b {
-  opacity: 0;
-}
-
-.lab-object__glass--ghost-a {
-  animation: lab-glass-a 9s steps(1, end) infinite;
-  height: 27%;
-  left: 50%;
-  top: 18%;
-  width: 32%;
-}
-
-.lab-object__glass--ghost-b {
-  animation: lab-glass-b 9s steps(1, end) infinite;
-  height: 25%;
-  left: 8%;
-  top: 48%;
-  width: 34%;
-}
-
-.lab-connectors {
-  height: 100%;
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  z-index: 5;
-}
-
-.lab-line {
-  fill: none;
-  shape-rendering: crispEdges;
-  stroke: #161616;
-  stroke-opacity: 1;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-width: 1.45;
-  vector-effect: non-scaling-stroke;
-}
-
-.lab-line--b {
-  animation-delay: -1.5s;
-}
-
-.lab-line--c {
-  animation-delay: -3s;
-}
-
-.lab-line--d {
-  animation-delay: -4.5s;
-}
-
-.lab-nodes-float {
-  animation: lab-node-float 16s ease-in-out infinite;
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-  z-index: 4;
-}
-
-.lab-node {
-  align-items: center;
-  animation: lab-node-idle 7s ease-in-out infinite;
-  background: #fff;
-  border: 1px solid var(--lab-ink);
-  display: flex;
-  height: 22px;
-  justify-content: center;
-  pointer-events: auto;
-  position: absolute;
-  text-decoration: none;
-  transform: translate(-50%, -50%);
-  transition: transform 160ms ease, background 160ms ease;
-  width: 22px;
-}
-
-.lab-node span {
-  background: var(--lab-ink);
-  display: block;
-  height: 7px;
-  width: 7px;
-}
-
-.lab-node:hover {
-  background: #f0d9be;
-  transform: translate(-50%, -50%) scale(1.15);
-}
-
-.lab-node--nlp {
-  animation-delay: -1.2s;
-}
-
-.lab-node--all {
-  animation-delay: -3.4s;
-}
-
-.lab-node--ling {
-  animation-delay: -5.1s;
-}
-
-.lab-node--multi {
-  animation-delay: -2.6s;
-}
-
 .lab-callout {
   color: var(--lab-ink);
   display: block;
@@ -429,36 +368,36 @@
   text-transform: uppercase;
 }
 
+.lab-callout--all small,
+.lab-callout--nlp small,
+.lab-callout--ling small {
+  color: #831010;
+}
+
+.lab-callout--nlp > span,
+.lab-callout--ling > span {
+  font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
 .lab-callout:hover {
   color: #d06f19;
 }
 
 .lab-callout--card {
+  border: 1px solid var(--lab-ink);
   color: var(--lab-ink);
+  outline: 0 solid transparent;
   padding: 18px 0 0;
   z-index: 6;
+  transition: border-color 160ms ease, outline-color 160ms ease, outline-width 160ms ease;
 }
 
-.lab-callout--card .lab-card__frame {
-  fill: none;
-  inset: 0;
-  overflow: visible;
-  pointer-events: none;
-  position: absolute;
-  stroke: var(--lab-ink);
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-miterlimit: 2;
-  stroke-width: 2;
-  vector-effect: non-scaling-stroke;
-  width: 100%;
-  height: 100%;
-  transition: stroke 160ms ease;
-}
-
-.lab-callout--card:hover .lab-card__frame,
-.lab-callout--card:focus .lab-card__frame {
-  stroke: #d06f19;
+.lab-callout--card:hover,
+.lab-callout--card:focus {
+  border-color: #E1E708;
+  outline: 2px solid #E1E708;
 }
 
 .lab-home a.lab-callout--card,
@@ -477,9 +416,9 @@
 .lab-callout--card .lab-card__inner {
   background: transparent;
   display: block;
-  margin: 0 28px 0 24px;
-  min-height: 188px;
-  padding: 0 0 16px;
+  margin: 0 22px 0 24px;
+  min-height: 0;
+  padding: 0 0 14px;
   position: relative;
 }
 
@@ -488,8 +427,8 @@
   color: #0EEF0F;
   display: block;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: var(--lab-callout-title-size);
-  font-weight: 500;
+  font-size: min(var(--lab-callout-title-size), 64px);
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 0.9;
   padding: 9px 10px 11px 6px;
@@ -498,219 +437,55 @@
 }
 
 .lab-callout--card .lab-card__lines {
+  border-top: 1px solid var(--lab-ink);
   color: var(--lab-ink);
   display: block;
   font-family: var(--lab-mono);
   font-size: 13.5px;
   letter-spacing: 0.02em;
   line-height: 2.1;
-  padding: 18px 8px 0;
+  margin-top: 4px;
+  padding: 5px 8px 0;
   text-transform: uppercase;
 }
 
-.lab-thread-panel,
-.lab-profile-panel {
-  position: absolute;
-  text-transform: uppercase;
-  z-index: 3;
-}
-
-.lab-thread-panel {
-  animation: lab-panel-drift 6.5s ease-in-out infinite;
-}
-
-.lab-thread-panel__note {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--lab-ink);
-  font-size: 10px;
-  font-weight: 700;
-  left: 46%;
-  line-height: 1.08;
-  max-width: 220px;
-  opacity: 0;
-  padding: 8px;
-  pointer-events: none;
-  position: absolute;
-  text-transform: none;
-  top: 18px;
-  transform: translate3d(-8px, 5px, 0);
-  transition: opacity 120ms ease, transform 120ms ease;
-  z-index: 4;
-}
-
-.lab-thread-panel:hover .lab-thread-panel__note,
-.lab-thread-panel:focus-within .lab-thread-panel__note {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-}
-
-.lab-thread-panel h2 {
-  color: var(--lab-ink);
-  font-family: "PT Sans", Arial, sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: 0;
-  margin: 0 0 14px;
-}
-
-.lab-thread-panel__row {
-  align-items: stretch;
-  display: flex;
-}
-
-.lab-thread-panel__viz {
-  border: 1px solid var(--lab-ink);
-  display: flex;
-  flex: none;
-  flex-direction: column;
-  position: relative;
-  width: 104px;
-}
-
-.lab-viz-icon {
-  border-bottom: 1px solid var(--lab-ink);
-  color: var(--lab-ink);
+.lab-callout--about .lab-callout__title-link {
+  color: #0EEF0F;
   display: block;
-  flex: none;
-  height: 42px;
-  padding: 10px 0;
-  width: 100%;
-}
-
-.lab-viz-map {
-  align-items: center;
-  background: rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  min-height: 84px;
-}
-
-.lab-viz-smile {
-  display: block;
-  height: auto;
-  width: 58px;
-}
-
-.lab-viz-cross {
-  align-items: center;
-  background: #fff;
-  border: 1px solid var(--lab-ink);
-  bottom: -7px;
-  color: var(--lab-ink);
-  display: flex;
-  font-size: 11px;
-  height: 15px;
-  justify-content: center;
-  line-height: 1;
-  position: absolute;
-  right: -7px;
-  width: 15px;
-}
-
-.lab-thread-panel ol {
-  border-left: 1px solid var(--lab-ink);
-  flex: 1;
-  list-style: none;
-  margin: 0 0 0 22px;
-  padding: 0 0 0 22px;
-}
-
-.lab-thread-panel li {
-  border-bottom: 1px solid var(--lab-ink);
-  font-size: 15px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: var(--lab-callout-title-size);
   font-weight: 700;
-  line-height: 1.05;
-  margin: 0;
-  padding: 10px 0 9px;
-}
-
-.lab-thread-panel a {
-  display: block;
+  line-height: 0.9;
   text-decoration: none;
+  text-transform: none;
 }
 
-.lab-thread-panel li span {
-  display: inline-block;
-  margin-right: 10px;
+.lab-callout--about .lab-callout__title-link:hover,
+.lab-callout--about .lab-callout__title-link:focus {
+  color: #E1E708;
 }
 
-.lab-profile-panel {
-  animation: lab-panel-drift 8s ease-in-out -2s infinite;
-  background: var(--lab-ink);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 24px 100%, 0 calc(100% - 24px));
-  font-size: 12px;
-  line-height: 1.2;
-  padding: 1px;
-}
-
-.lab-profile-panel__body {
-  background: #cccccc;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 23px 100%, 0 calc(100% - 23px));
-  overflow: hidden;
-  padding: 32px 14px 14px;
-  position: relative;
-}
-
-.lab-profile-panel__bar {
-  align-items: center;
-  background: var(--lab-ink);
-  color: #fff;
-  display: inline-flex;
-  font-size: 11px;
-  font-weight: 700;
-  left: 1px;
-  letter-spacing: 0.04em;
-  padding: 5px 10px 4px;
-  position: absolute;
-  top: 1px;
-  white-space: nowrap;
-  z-index: 4;
-}
-
-.lab-profile-panel__close {
-  align-items: center;
-  background: #fff;
-  border: 1px solid var(--lab-ink);
-  color: var(--lab-ink);
-  display: flex;
-  font-size: 12px;
-  height: 16px;
-  justify-content: center;
-  line-height: 1;
-  position: absolute;
-  right: 7px;
-  top: 8px;
-  width: 16px;
-  z-index: 4;
-}
-
-.lab-profile-panel__hint {
-  display: none;
-}
-
-.lab-profile-panel p {
-  font-size: 13px;
-  margin: 0 0 12px;
-}
-
-.lab-profile-panel nav {
+.lab-profile-links {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-left: -10px;
+  margin-top: 10px;
 }
 
-.lab-profile-panel a {
+.lab-profile-links a {
   border: 1px solid var(--lab-ink);
   border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--lab-ink);
   font-size: 12px;
   line-height: 1;
   padding: 4px 9px;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
-.lab-profile-panel a:hover,
-.lab-thread-panel a:hover {
+.lab-profile-links a:hover {
   color: #d06f19;
 }
 
@@ -724,19 +499,6 @@
   }
 }
 
-@keyframes lab-node-idle {
-  0%,
-  100% {
-    transform: translate(-50%, -50%);
-  }
-  33% {
-    transform: translate(calc(-50% + 3px), calc(-50% - 2px));
-  }
-  66% {
-    transform: translate(calc(-50% - 2px), calc(-50% + 2px));
-  }
-}
-
 @keyframes lab-orbit {
   from {
     transform: rotate(-9deg);
@@ -746,132 +508,10 @@
   }
 }
 
-@keyframes lab-node-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
-}
-
-@keyframes lab-glass-main {
-  0%,
-  18% {
-    opacity: 0.88;
-    transform: translate3d(0, 0, 0);
-  }
-  19%,
-  36% {
-    opacity: 0.68;
-    transform: translate3d(22%, -52%, 0);
-  }
-  37%,
-  58% {
-    opacity: 0.82;
-    transform: translate3d(-48%, 10%, 0);
-  }
-  59%,
-  78% {
-    opacity: 0.62;
-    transform: translate3d(38%, -16%, 0);
-  }
-  79%,
-  100% {
-    opacity: 0.78;
-    transform: translate3d(-14%, 20%, 0);
-  }
-}
-
-@keyframes lab-glass-a {
-  0%,
-  20%,
-  47%,
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 0, 0);
-  }
-  21%,
-  33% {
-    opacity: 0.72;
-    transform: translate3d(8%, 4%, 0);
-  }
-  62%,
-  75% {
-    opacity: 0.65;
-    transform: translate3d(-38%, 16%, 0);
-  }
-}
-
-@keyframes lab-glass-b {
-  0%,
-  38%,
-  66%,
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 0, 0);
-  }
-  39%,
-  50% {
-    opacity: 0.62;
-    transform: translate3d(16%, 12%, 0);
-  }
-  67%,
-  82% {
-    opacity: 0.7;
-    transform: translate3d(-4%, -16%, 0);
-  }
-}
-
-@keyframes lab-line-drift {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0.35px, -0.25px);
-  }
-}
-
-@keyframes lab-panel-drift {
-  0%,
-  100% {
-    margin-top: 0;
-  }
-  50% {
-    margin-top: -10px;
-  }
-}
-
-@keyframes lab-profile-hint {
-  0%,
-  49%,
-  67%,
-  100% {
-    opacity: 0;
-    transform: translate3d(3px, 3px, 0);
-  }
-  50%,
-  66% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes lab-profile-scan {
-  from {
-    transform: translateY(-18%);
-  }
-  to {
-    transform: translateY(18%);
-  }
-}
-
 @media (min-width: 821px) {
   .lab-title {
     left: -68px;
-    top: 260px;
+    top: 4px;
     transform: translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
     transition: transform 160ms ease-out;
   }
@@ -881,7 +521,7 @@
   }
 
   .lab-title h1 img {
-    width: 680px;
+    width: 560px;
   }
 
   .lab-map {
@@ -890,33 +530,13 @@
   }
 
   .lab-object {
-    width: 620px;
-    height: 680px;
+    width: 496px;
+    height: 544px;
     left: 50%;
     top: 54%;
-    max-width: 620px;
-    max-height: 680px;
+    max-width: 496px;
+    max-height: 544px;
     transform: translate(-50%, -50%);
-  }
-
-  .lab-node--nlp {
-    left: 57%;
-    top: 66%;
-  }
-
-  .lab-node--all {
-    left: 46.5%;
-    top: 28.8%;
-  }
-
-  .lab-node--ling {
-    left: 38%;
-    top: 53%;
-  }
-
-  .lab-node--multi {
-    left: 59.5%;
-    top: 53%;
   }
 
   .lab-callout {
@@ -934,32 +554,23 @@
   }
 
   .lab-callout--multi {
-    left: 72%;
+    left: 70%;
     top: 24%;
   }
 
   .lab-callout--ling {
-    left: 2.6%;
-    top: 56.5%;
+    left: 5.2%;
+    top: 66.5%;
+  }
+
+  .lab-callout--about {
+    left: 17%;
+    top: 33.5%;
   }
 
   .lab-callout--card {
-    width: 660px;
-    height: 250px;
-  }
-
-  .lab-thread-panel {
-    bottom: 58px;
-    left: -96px;
-    width: 500px;
-    transform: translate3d(calc(var(--lab-x) * 18px), calc(var(--lab-y) * 12px), 0);
-  }
-
-  .lab-profile-panel {
-    bottom: 58px;
-    right: -126px;
-    width: 480px;
-    transform: translate3d(calc(var(--lab-x) * -20px), calc(var(--lab-y) * -14px), 0);
+    width: 664px;
+    height: 150px;
   }
 }
 
@@ -1011,7 +622,7 @@
   }
 
   .lab-title h1 img {
-    width: min(82vw, 460px);
+    width: min(76vw, 380px);
   }
 
   // 오브젝트: 흐름 내 히어로 비주얼 (부유/회전·글래스 애니메이션 유지)
@@ -1032,14 +643,6 @@
     max-width: none;
     max-height: none;
     margin: 4px auto 0;
-  }
-
-  // 데스크톱 전용 요소 숨김
-  .lab-connectors,
-  .lab-nodes-float,
-  .lab-node,
-  .lab-thread-panel {
-    display: none;
   }
 
   // 카테고리 캡션 → 세로 카드
@@ -1071,10 +674,6 @@
     border: 1px solid var(--lab-line);
   }
 
-  .lab-callout--card .lab-card__frame {
-    display: none;
-  }
-
   .lab-callout--card .lab-card__inner {
     margin: 0;
     min-height: 0;
@@ -1090,39 +689,25 @@
   .lab-callout--card .lab-card__lines {
     font-size: 12px;
     line-height: 1.8;
-    padding: 14px 2px 0;
+    margin-top: 10px;
+    padding: 10px 2px 0;
   }
 
-  // 프로필 패널: 풀폭 카드 (어두운 배경/clip-path 유지)
-  .lab-profile-panel {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    width: auto;
-    max-width: none;
-    transform: none;
-    animation: none;
+  .lab-profile-links {
+    margin-left: 0;
+    margin-top: 8px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .lab-object img,
-  .lab-object__glass,
-  .lab-nodes-float,
-  .lab-node,
-  .lab-thread-panel__note,
-  .lab-line,
-  .lab-thread-panel,
-  .lab-profile-panel {
+  .lab-title__glass {
     animation: none;
   }
 
   .lab-map,
   .lab-title,
-  .lab-callout,
-  .lab-thread-panel,
-  .lab-profile-panel {
+  .lab-callout {
     transform: none;
     transition: none;
   }
