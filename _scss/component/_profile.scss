@@ -121,7 +121,8 @@ $desktop-accent: #F9FB97;
 
 /* Skills window opens just tall enough for the compact skill rows */
 #win-skills {
-  height: min(430px, 82vh);
+  width: min(720px, 84vw);
+  height: min(480px, 84vh);
   max-height: 92vh;
 }
 
