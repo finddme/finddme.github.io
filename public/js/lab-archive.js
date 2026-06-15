@@ -10,7 +10,6 @@
   var hero = root.querySelector(".lab-hero");
   var stage = root.querySelector("[data-lab-stage]");
   var desktopMode = window.matchMedia("(min-width: 821px)");
-  var connectorKeys = ["nlp", "all", "multi", "ling"];
 
   var STAGE_W = 2000;
   var STAGE_H = 1125;
@@ -31,93 +30,6 @@
     stage.style.transform = "translate(-50%, -50%) scale(" + scale.toFixed(4) + ")";
   }
 
-  function connectorPath(from, near, far, underlineY) {
-    // stepped diagonal lead: short horizontal off the node, a slanted segment
-    // down to the caption's node-side edge, then a horizontal underline.
-    // No right angles.
-    var bendX = from.x + (near - from.x) * 0.4;
-
-    return [
-      "M", from.x.toFixed(2), from.y.toFixed(2),
-      "H", bendX.toFixed(2),
-      "L", near.toFixed(2), underlineY.toFixed(2),
-      "H", far.toFixed(2)
-    ].join(" ");
-  }
-
-  function updateConnectors() {
-    if (!stage || !desktopMode.matches) {
-      return false;
-    }
-
-    var bounds = stage.getBoundingClientRect();
-    var updated = false;
-
-    function toX(value) {
-      return (value - bounds.left) / bounds.width * 100;
-    }
-
-    function toY(value) {
-      return (value - bounds.top) / bounds.height * 100;
-    }
-
-    connectorKeys.forEach(function (key) {
-      var node = root.querySelector("[data-lab-node=\"" + key + "\"]");
-      var callout = root.querySelector("[data-lab-callout=\"" + key + "\"]");
-      var line = root.querySelector("[data-lab-connector=\"" + key + "\"]");
-
-      if (!node || !callout || !line) {
-        return;
-      }
-
-      var nodeRect = node.getBoundingClientRect();
-      var calloutRect = callout.getBoundingClientRect();
-
-      if (callout.classList.contains("lab-callout--card")) {
-        // Connector meets the exposed bottom line of the SVG card frame.
-        var cardFrom = {
-          x: toX(nodeRect.right),
-          y: toY(nodeRect.top + nodeRect.height / 2)
-        };
-        var cornerX = toX(calloutRect.left + calloutRect.width * (56 / 660));
-        var cornerY = toY(calloutRect.bottom);
-        var cardBend = cardFrom.x + (cornerX - cardFrom.x) * 0.58;
-
-        line.setAttribute("d", [
-          "M", cardFrom.x.toFixed(2), cardFrom.y.toFixed(2),
-          "H", cardBend.toFixed(2),
-          "L", cornerX.toFixed(2), cornerY.toFixed(2)
-        ].join(" "));
-        updated = true;
-        return;
-      }
-
-      var small = callout.querySelector("small") || callout;
-      var smallRect = small.getBoundingClientRect();
-
-      var nodeCenterX = nodeRect.left + nodeRect.width / 2;
-      var calloutCenterX = calloutRect.left + calloutRect.width / 2;
-      // caption sits to the left of the node -> line approaches from the right
-      var captionOnLeft = calloutCenterX < nodeCenterX;
-
-      var from = {
-        x: toX(captionOnLeft ? nodeRect.left : nodeRect.right),
-        y: toY(nodeRect.top + nodeRect.height / 2)
-      };
-      // the diagonal meets the full label's node-side edge (so it clears the
-      // big text), and the underline runs along the bottom of the small
-      // caption out to its far edge
-      var nearX = toX(captionOnLeft ? calloutRect.right : calloutRect.left);
-      var farX = toX(captionOnLeft ? smallRect.left : smallRect.right);
-      var underlineY = toY(smallRect.bottom + 1);
-
-      line.setAttribute("d", connectorPath(from, nearX, farX, underlineY));
-      updated = true;
-    });
-
-    return updated;
-  }
-
   function updateTime() {
     if (!timeNode) {
       return;
@@ -133,26 +45,68 @@
     timeNode.textContent = "SEL " + formatter.format(new Date());
   }
 
+  function initTitleGlass() {
+    if (reduceMotion) {
+      return;
+    }
+
+    var title = root.querySelector(".lab-title");
+    var glassBoxes = root.querySelectorAll(".lab-title__glass");
+
+    if (!title || !glassBoxes.length) {
+      return;
+    }
+
+    function rand(min, max) {
+      return min + Math.random() * (max - min);
+    }
+
+    // 박스가 로고 영역 안에 머물도록 좌상단 좌표를 박스 크기에 맞춰 클램프한 뒤
+    // 매번 무작위 위치를 뽑는다 (단위: .lab-title = 로고 이미지 기준 %).
+    function reposition(box) {
+      var wPct = (box.offsetWidth / title.offsetWidth) * 100;
+      var hPct = (box.offsetHeight / title.offsetHeight) * 100;
+      var sideInset = 2;
+      var maxLeft = Math.max(sideInset, 100 - sideInset - wPct);
+      // 로고 축소에 맞춰 glass가 더 조밀한 중앙 띠 안에서 움직이도록 한다.
+      var topMin = 14;
+      var topMax = Math.max(topMin, 66 - hPct);
+
+      box.style.left = rand(sideInset, maxLeft).toFixed(1) + "%";
+      box.style.top = rand(topMin, topMax).toFixed(1) + "%";
+    }
+
+    // 한 번 등장: 무작위 위치 + 무작위 투명도로 fade-in → 잠깐 머무름 →
+    // fade-out → 무작위 간격 후 다시 반복. 위치/타이밍/투명도가 매번 달라진다.
+    function cycle(box) {
+      reposition(box);
+      box.style.opacity = rand(0.6, 0.85).toFixed(2);
+
+      window.setTimeout(function () {
+        box.style.opacity = "0";
+        window.setTimeout(function () {
+          cycle(box);
+        }, rand(250, 1000));
+      }, rand(1400, 3000));
+    }
+
+    Array.prototype.forEach.call(glassBoxes, function (box) {
+      // 시작 시점을 흩뜨려 서로 동기화되지 않게 한다.
+      window.setTimeout(function () {
+        cycle(box);
+      }, rand(0, 2400));
+    });
+  }
+
   updateTime();
   window.setInterval(updateTime, 30000);
   updateStageScale();
-  updateConnectors();
-  window.addEventListener("resize", function () {
-    updateStageScale();
-    updateConnectors();
-  });
-  window.addEventListener("load", function () {
-    updateStageScale();
-    updateConnectors();
-  });
-  desktopMode.addEventListener("change", function () {
-    updateStageScale();
-    updateConnectors();
-  });
-  window.setTimeout(function () {
-    updateStageScale();
-    updateConnectors();
-  }, 250);
+  window.addEventListener("resize", updateStageScale);
+  window.addEventListener("load", updateStageScale);
+  desktopMode.addEventListener("change", updateStageScale);
+  window.setTimeout(updateStageScale, 250);
+
+  initTitleGlass();
 
   if (reduceMotion) {
     return;
@@ -163,7 +117,6 @@
   var currentX = 0;
   var currentY = 0;
   var frameRequested = false;
-  var connectorFrame = 0;
 
   function renderPointer() {
     currentX += (targetX - currentX) * 0.12;
@@ -171,7 +124,6 @@
 
     root.style.setProperty("--lab-x", currentX.toFixed(3));
     root.style.setProperty("--lab-y", currentY.toFixed(3));
-    updateConnectors();
 
     if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
       window.requestAnimationFrame(renderPointer);
@@ -190,13 +142,6 @@
     window.requestAnimationFrame(renderPointer);
   }
 
-  function trackMovingNodes() {
-    if (desktopMode.matches) {
-      updateConnectors();
-    }
-    connectorFrame = window.requestAnimationFrame(trackMovingNodes);
-  }
-
   root.addEventListener("pointermove", function (event) {
     if (!desktopMode.matches) {
       return;
@@ -212,7 +157,5 @@
     targetY = 0;
     requestPointerRender();
   });
-
-  connectorFrame = window.requestAnimationFrame(trackMovingNodes);
 
 })();
