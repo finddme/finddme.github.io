@@ -23,6 +23,29 @@ paginate_path: '/blog/page:num'
 permalink: /:year/:month/:day/:title/
 version: 1.0.0
 
+# Profile project collections (authored like _posts)
+collections:
+  official_projects:
+    output: true
+    permalink: /official-projects/:name/
+  personal_projects:
+    output: true
+    permalink: /personal-projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: official_projects
+    values:
+      layout: post
+      project_kind: official
+  - scope:
+      path: ""
+      type: personal_projects
+    values:
+      layout: post
+      project_kind: personal
+
 
 authoricon: heart
 
