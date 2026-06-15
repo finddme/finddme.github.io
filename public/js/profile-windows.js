@@ -7,6 +7,11 @@
   var zTop = 10;          // running z-index counter
   var openCount = 0;      // for cascade offset
 
+  document.querySelectorAll('.mac-window').forEach(function (win) {
+    var z = parseInt(window.getComputedStyle(win).zIndex, 10);
+    if (!isNaN(z)) zTop = Math.max(zTop, z);
+  });
+
   function bringToFront(win) {
     zTop += 1;
     win.style.zIndex = String(zTop);
@@ -18,12 +23,17 @@
     var firstOpen = win.hidden;
     win.hidden = false;
     if (firstOpen && !win.dataset.placed) {
-      // cascade new windows so they don't fully overlap
-      var offset = (openCount % 6) * 28;
-      win.style.top = 'calc(5% + ' + offset + 'px)';
-      win.style.left = 'calc(12% + ' + offset + 'px)';
+      if (win.dataset.defaultTop || win.dataset.defaultLeft) {
+        if (win.dataset.defaultTop) win.style.top = win.dataset.defaultTop;
+        if (win.dataset.defaultLeft) win.style.left = win.dataset.defaultLeft;
+      } else {
+        // cascade new windows so they don't fully overlap
+        var offset = (openCount % 6) * 28;
+        win.style.top = 'calc(5% + ' + offset + 'px)';
+        win.style.left = 'calc(12% + ' + offset + 'px)';
+        openCount += 1;
+      }
       win.dataset.placed = '1';
-      openCount += 1;
     }
     bringToFront(win);
   }

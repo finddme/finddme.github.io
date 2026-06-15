@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<div class="post post-lab-sheet">
+<div class="post post-lab-sheet{% if page.project_kind %} post-lab-sheet--project{% endif %}">
   <div class="post-cell post-cell--label">Title</div>
   <div class="post-cell post-cell--value">
     <h1 class="post-title">{{ page.title | strip_html }}</h1>
   </div>
 
-  {% if page.tags %}
+  {% if page.tags and page.project_kind == nil %}
   <div class="post-cell post-cell--label">Tag</div>
   <div class="post-cell post-cell--value">
     {% for tag in page.tags %}

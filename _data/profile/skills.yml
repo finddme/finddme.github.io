@@ -14,3 +14,5 @@
 - { name: "Git",                             icon: "fa fa-git" }
 - { name: "Data Processing / Analysis",      icon: "fa fa-list" }
 - { name: "MySQL(python)",                   icon: "fa fa-table" }
+- { name: "HTML",                   icon: "fa fa-map-o" }
+- { name: "CSS",                   icon: "fa fa-mouse-pointer" }
