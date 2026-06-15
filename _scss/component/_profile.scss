@@ -1,0 +1,138 @@
+/* ===== Profile "desktop" page ===== */
+$desktop-accent: #E1E708;
+
+.profile-desktop-page {
+  margin: 0;
+  background: #ffffff;
+}
+
+.desktop {
+  position: relative;
+  min-height: 100vh;
+  padding: 3rem;
+  overflow: hidden;
+}
+
+/* Left column */
+.desktop__left {
+  position: relative;
+  z-index: 2;
+  max-width: 320px;
+}
+
+.desktop__intro {
+  background: #e9e9eb;
+  border-radius: 18px;
+  padding: 1rem 1.15rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #111;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.desktop__intro-heading { margin: 0 0 0.4rem; font-size: 0.85rem; font-weight: 700; }
+.desktop__intro-body p { margin: 0 0 0.5rem; }
+.desktop__intro-body strong { font-weight: 700; }
+
+.desktop__menu {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.desktop__menu-item {
+  appearance: none;
+  background: transparent;
+  border: 2px solid $desktop-accent;
+  border-radius: 4px;
+  padding: 0.35rem 1.1rem;
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.desktop__menu-item:hover { background: rgba(225,231,8,0.18); }
+.desktop__menu-item:active { transform: translateY(1px); }
+
+/* Center/right art */
+.desktop__art {
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  transform: translateY(-50%);
+  z-index: 1;
+  border: 2px solid $desktop-accent;
+  padding: 1.5rem;
+  max-width: 30vw;
+}
+.desktop__art img { display: block; width: 100%; height: auto; }
+
+/* ===== Mac window ===== */
+.desktop__windows { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
+
+.mac-window {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  width: min(640px, 80vw);
+  max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #b7b7b7;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+  overflow: hidden;
+  pointer-events: auto;
+}
+.mac-window[hidden] { display: none; }
+
+.mac-window__bar {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 0.75rem;
+  background: linear-gradient(#f6f6f6, #e7e7e7);
+  border-bottom: 1px solid #cfcfcf;
+  cursor: grab;
+  user-select: none;
+}
+.mac-window__bar:active { cursor: grabbing; }
+.mac-window__lights { display: inline-flex; gap: 0.45rem; }
+.mac-window__light {
+  width: 12px; height: 12px; border-radius: 50%; border: 0; padding: 0;
+}
+.mac-window__light--red    { background: #ff5f57; cursor: pointer; }
+.mac-window__light--yellow { background: #febc2e; }
+.mac-window__light--green  { background: #28c840; }
+.mac-window__title {
+  position: absolute; left: 0; right: 0; text-align: center;
+  font-size: 0.8rem; color: #4a4a4a; pointer-events: none;
+}
+.mac-window__body { flex: 1 1 auto; overflow: auto; padding: 1.5rem; }
+
+/* Skills grid */
+.mac-skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.mac-skills__chip {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: #1c1c1e; color: #fff;
+  border-radius: 12px; padding: 0.7rem 0.9rem;
+  font-size: 0.85rem; font-weight: 600;
+}
+.mac-skills__icon { width: 1.1em; text-align: center; opacity: 0.9; }
+
+/* Blog links */
+.mac-bloglinks { list-style: none; margin: 0; padding: 0; }
+.mac-bloglinks__item { margin: 0 0 0.6rem; font-size: 1rem; }
+
+.mac-projects__empty { color: #888; font-size: 0.9rem; }
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .desktop { padding: 1.25rem; }
+  .desktop__left { max-width: none; }
+  .desktop__art { position: static; transform: none; max-width: 100%; margin-top: 2rem; }
+  .mac-window { width: 92vw; left: 4vw; top: 6%; }
+  .mac-skills { grid-template-columns: 1fr 1fr; }
+}
