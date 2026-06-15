@@ -71,16 +71,27 @@
     });
   });
 
-  // --- close (red light) + focus (click anywhere on window) ---
+  // --- focus (press anywhere on a window) ---
   layer.addEventListener('pointerdown', function (e) {
-    var closer = e.target.closest('[data-mac-close]');
-    if (closer) {
+    // don't focus/drag when pressing the close button
+    if (e.target.closest('[data-mac-close]')) {
       e.stopPropagation();
-      closeWindow(closer.getAttribute('data-mac-close'));
       return;
     }
     var win = e.target.closest('.mac-window');
     if (win) bringToFront(win);
+  });
+
+  // --- close (red light) ---
+  // Handle on `click`, not `pointerdown`: hiding the window on pointerdown lets
+  // the subsequent click fall through to whatever is underneath (on a mobile
+  // full-screen sheet that's the dark-mode toggle), which wrongly flips dark mode.
+  layer.addEventListener('click', function (e) {
+    var closer = e.target.closest('[data-mac-close]');
+    if (closer) {
+      e.stopPropagation();
+      closeWindow(closer.getAttribute('data-mac-close'));
+    }
   });
 
   // --- drag (title bar) ---
