@@ -614,15 +614,63 @@
 
   // 타이틀
   .lab-title {
+    align-self: flex-start;
     position: relative;
     left: auto;
     top: auto;
     transform: none;
     margin-top: 6px;
+    width: fit-content;
   }
 
   .lab-title h1 img {
-    width: min(76vw, 380px);
+    width: min(62vw, 300px);
+  }
+
+  .lab-title .lab-pill {
+    font-size: 10px;
+    left: 53%;
+    top: 44%;
+  }
+
+  .lab-title__glass {
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+  }
+
+  .lab-title__glass:nth-of-type(n+6) {
+    display: none;
+  }
+
+  .lab-title__glass--a {
+    height: 46px;
+    width: 34px;
+  }
+
+  .lab-title__glass--b {
+    height: 42px;
+    width: 31px;
+  }
+
+  .lab-title__glass--c {
+    height: 39px;
+    width: 28px;
+  }
+
+  .lab-title__glass--wide-a {
+    height: 22px;
+    width: 72px;
+  }
+
+  .lab-title__glass--wide-b {
+    height: 20px;
+    width: 64px;
+  }
+
+  .lab-title__glass--wide-c {
+    height: 18px;
+    width: 58px;
   }
 
   // 오브젝트: 흐름 내 히어로 비주얼 (부유/회전·글래스 애니메이션 유지)
@@ -638,7 +686,7 @@
     left: auto;
     top: auto;
     transform: none;
-    width: min(78vw, 360px);
+    width: min(58vw, 250px);
     height: auto;
     max-width: none;
     max-height: none;
@@ -659,6 +707,15 @@
   .lab-callout span {
     font-size: 30px;
     line-height: 1;
+  }
+
+  .lab-callout--about .lab-callout__title-link {
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  .lab-home .lab-callout--project {
+    display: none;
   }
 
   .lab-callout small {

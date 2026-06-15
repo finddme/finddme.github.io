@@ -10,6 +10,7 @@
   var hero = root.querySelector(".lab-hero");
   var stage = root.querySelector("[data-lab-stage]");
   var desktopMode = window.matchMedia("(min-width: 821px)");
+  var mobileMode = window.matchMedia("(max-width: 820px)");
 
   var STAGE_W = 2000;
   var STAGE_H = 1125;
@@ -66,11 +67,12 @@
     function reposition(box) {
       var wPct = (box.offsetWidth / title.offsetWidth) * 100;
       var hPct = (box.offsetHeight / title.offsetHeight) * 100;
-      var sideInset = 2;
+      var isMobile = mobileMode.matches;
+      var sideInset = isMobile ? -3 : 2;
       var maxLeft = Math.max(sideInset, 100 - sideInset - wPct);
       // 로고 축소에 맞춰 glass가 더 조밀한 중앙 띠 안에서 움직이도록 한다.
-      var topMin = 14;
-      var topMax = Math.max(topMin, 66 - hPct);
+      var topMin = isMobile ? 18 : 14;
+      var topMax = Math.max(topMin, (isMobile ? 62 : 66) - hPct);
 
       box.style.left = rand(sideInset, maxLeft).toFixed(1) + "%";
       box.style.top = rand(topMin, topMax).toFixed(1) + "%";
@@ -80,21 +82,21 @@
     // fade-out → 무작위 간격 후 다시 반복. 위치/타이밍/투명도가 매번 달라진다.
     function cycle(box) {
       reposition(box);
-      box.style.opacity = rand(0.6, 0.85).toFixed(2);
+      box.style.opacity = rand(0.45, mobileMode.matches ? 0.62 : 0.85).toFixed(2);
 
       window.setTimeout(function () {
         box.style.opacity = "0";
         window.setTimeout(function () {
           cycle(box);
-        }, rand(250, 1000));
-      }, rand(1400, 3000));
+        }, rand(mobileMode.matches ? 700 : 250, mobileMode.matches ? 1600 : 1000));
+      }, rand(mobileMode.matches ? 900 : 1400, mobileMode.matches ? 1800 : 3000));
     }
 
     Array.prototype.forEach.call(glassBoxes, function (box) {
       // 시작 시점을 흩뜨려 서로 동기화되지 않게 한다.
       window.setTimeout(function () {
         cycle(box);
-      }, rand(0, 2400));
+      }, rand(0, mobileMode.matches ? 4200 : 2400));
     });
   }
 
