@@ -1,5 +1,7 @@
-# Top-left intro card. Edit this prose freely; **bold** is rendered.
+# Top-left intro card. The card now shows `image`; swap the path to change it.
+# (heading is reused as the image's alt text. body/prose kept for reference.)
 heading: "Hi, I'm Yein Hwang."
+image: /public/profile-intro.png
 body: |
   I first encountered language-analysis techniques based on **NLP** during my
   master's studies, and that experience naturally led me to become an AI engineer

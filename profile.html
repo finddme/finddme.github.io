@@ -7,12 +7,9 @@ permalink: /profile/
 <main class="desktop" data-desktop>
   <!-- Left column: intro card + menu boxes -->
   <div class="desktop__left">
-    <article class="desktop__intro">
-      <h2 class="desktop__intro-heading">{{ site.data.profile.intro.heading }}</h2>
-      <div class="desktop__intro-body">
-        {{ site.data.profile.intro.body | markdownify }}
-      </div>
-    </article>
+    <div class="desktop__intro">
+      <img class="desktop__intro-img" src="{{ site.baseurl }}{{ site.data.profile.intro.image }}" alt="{{ site.data.profile.intro.heading }}" loading="lazy">
+    </div>
 
     <nav class="desktop__menu" aria-label="Profile sections">
       {% for item in site.data.profile.menu %}

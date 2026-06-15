@@ -1,5 +1,5 @@
 /* ===== Profile "desktop" page ===== */
-$desktop-accent: #E1E708;
+$desktop-accent: #F9FB97;
 
 .profile-desktop-page {
   margin: 0;
@@ -20,49 +20,42 @@ $desktop-accent: #E1E708;
   max-width: 320px;
 }
 
-.desktop__intro {
-  background: #e9e9eb;
-  border-radius: 18px;
-  padding: 1rem 1.15rem;
-  font-size: 0.8rem;
-  line-height: 1.45;
-  color: #111;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
-}
-.desktop__intro-heading { margin: 0 0 0.4rem; font-size: 0.85rem; font-weight: 700; }
-.desktop__intro-body p { margin: 0 0 0.5rem; }
-.desktop__intro-body strong { font-weight: 700; }
+.desktop__intro { margin: 0; }
+.desktop__intro-img { display: block; width: 100%; height: auto; }
 
 .desktop__menu {
   margin-top: 1.5rem;
+  width: 210px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 0.75rem;
 }
 .desktop__menu-item {
   appearance: none;
+  width: 100%;
+  text-align: left;
   background: transparent;
   border: 2px solid $desktop-accent;
   border-radius: 4px;
-  padding: 0.35rem 1.1rem;
+  padding: 0.45rem 1.1rem;
   font: inherit;
   cursor: pointer;
   transition: background 0.15s ease, transform 0.1s ease;
 }
-.desktop__menu-item:hover { background: rgba(225,231,8,0.18); }
+.desktop__menu-item:hover { background: rgba(249,251,151,0.45); }
 .desktop__menu-item:active { transform: translateY(1px); }
 
-/* Center/right art */
+/* Center art (horizontally + vertically centered on the viewport) */
 .desktop__art {
   position: absolute;
   top: 50%;
-  left: 58%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
   border: 2px solid $desktop-accent;
-  padding: 1.5rem;
-  max-width: 30vw;
+  padding: 1.25rem;
+  width: min(340px, 26vw);
 }
 .desktop__art img { display: block; width: 100%; height: auto; }
 
@@ -132,7 +125,7 @@ $desktop-accent: #E1E708;
 @media (max-width: 768px) {
   .desktop { padding: 1.25rem; }
   .desktop__left { max-width: none; }
-  .desktop__art { position: static; transform: none; max-width: 100%; margin-top: 2rem; }
+  .desktop__art { position: static; transform: none; width: 70vw; max-width: 320px; margin: 2rem auto 0; }
   .mac-window { width: 92vw; left: 4vw; top: 6%; }
   .mac-skills { grid-template-columns: 1fr 1fr; }
 }
