@@ -1,5 +1,13 @@
 {% comment %} include params: item (a _data/profile/menu.yml entry) {% endcomment %}
-<section class="mac-window" id="{{ item.id }}" data-mac-window="{{ item.id }}" hidden>
+<section
+  class="mac-window"
+  id="{{ item.id }}"
+  data-mac-window="{{ item.id }}"
+  {% if item.default_left %}data-default-left="{{ item.default_left }}"{% endif %}
+  {% if item.default_top %}data-default-top="{{ item.default_top }}"{% endif %}
+  {% if item.default_left or item.default_top or item.default_z %}style="{% if item.default_left %}left: {{ item.default_left }}; {% endif %}{% if item.default_top %}top: {{ item.default_top }}; {% endif %}{% if item.default_z %}z-index: {{ item.default_z }};{% endif %}"{% endif %}
+  {% unless item.default_open %}hidden{% endunless %}
+>
   <header class="mac-window__bar" data-mac-drag-handle>
     <span class="mac-window__lights" aria-hidden="true">
       <button type="button" class="mac-window__light mac-window__light--red"    data-mac-close="{{ item.id }}" aria-label="Close {{ item.label }}"></button>

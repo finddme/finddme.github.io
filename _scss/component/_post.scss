@@ -269,6 +269,33 @@ body.post-page #markdown-toc a:focus {
   text-decoration: none;
 }
 
+body.post-page .post-lab-sheet--project {
+  align-content: start;
+  min-height: 0;
+}
+
+body.post-page .post-lab-sheet--project .post-cell {
+  padding-bottom: 0.58rem;
+  padding-top: 0.58rem;
+}
+
+body.post-page .post-lab-sheet--project .post-cell--label,
+body.post-page .post-lab-sheet--project .post-cell--value {
+  align-items: center;
+  display: flex;
+}
+
+body.post-page .post-lab-sheet--project .post-content {
+  align-items: flex-start;
+  display: block;
+  padding-top: 1rem;
+}
+
+body.post-page .post-lab-sheet--project .post-title {
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.18;
+}
+
 @media (min-width: 38rem) {
   body.post-page .post {
     font-size: .8rem;
@@ -276,6 +303,10 @@ body.post-page #markdown-toc a:focus {
 
   body.post-page .post .post-title {
     font-size: clamp(2.15rem, 4vw, 3.1rem);
+  }
+
+  body.post-page .post-lab-sheet--project .post-title {
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
   }
 }
 
@@ -327,6 +358,10 @@ body.post-page #markdown-toc a:focus {
 
   body.post-page .post .post-title {
     font-size: 2rem;
+  }
+
+  body.post-page .post-lab-sheet--project .post-title {
+    font-size: 1.45rem;
   }
 }
 

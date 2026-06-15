@@ -1,26 +1,44 @@
 # Left-column menu boxes (#E1E708 border). Order here = display order.
 # type: skills | blog | projects
 # source (projects only): collection:<name> | category:<Category Name>
+# Optional per-window first-open position: default_left/default_top, e.g. "208px" or "12vw".
+# Optional default_z sets the initial stacking order. default_open: true shows a window on page load.
 - label: "Skills"
   id: "win-skills"
   filename: "skills.txt"
   type: "skills"
+  default_left: "195.729px"
+  default_top: "140.729px"
+  default_z: 14
 - label: "Blog"
   id: "win-blog"
   filename: "blog.txt"
   type: "blog"
+  default_left: "340.396px"
+  default_top: "37.3958px"
+  default_z: 12
+  default_open: true
 - label: "Official-Projects"
   id: "win-official"
   filename: "official_projects.rtf"
   type: "projects"
   source: "collection:official_projects"
+  default_left: "812.385px"
+  default_top: "53.3958px"
+  default_z: 23
 - label: "Personal-Projects"
   id: "win-personal"
   filename: "personal_projects.rtf"
   type: "projects"
   source: "collection:personal_projects"
-- label: "Dev Log"
+  default_left: "247.052px"
+  default_top: "305.385px"
+  default_z: 28
+- label: "Dev-Logs"
   id: "win-devlog"
-  filename: "dev_log.rtf"
+  filename: "dev_logs.rtf"
   type: "projects"
   source: "category:Dev Log"
+  default_left: "883.062px"
+  default_top: "322.062px"
+  default_z: 26

@@ -83,8 +83,19 @@ $desktop-accent: #F9FB97;
 }
 .mac-window[hidden] { display: none; }
 
-/* Skills window opens taller so all skill rows fit without clipping */
-#win-skills { max-height: 92vh; }
+/* Skills window opens just tall enough for the compact skill rows */
+#win-skills {
+  height: min(430px, 82vh);
+  max-height: 92vh;
+}
+
+#win-official,
+#win-personal,
+#win-devlog {
+  width: min(980px, 88vw);
+  height: min(620px, 82vh);
+  max-height: 90vh;
+}
 
 .mac-window__bar {
   position: relative;
@@ -124,20 +135,91 @@ $desktop-accent: #F9FB97;
 .mac-window__resize--sw { bottom: 0; left: 0; width: 14px; height: 14px; cursor: nesw-resize; z-index: 6; }
 
 /* Skills grid */
-.mac-skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.mac-skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.45rem; }
 .mac-skills__chip {
-  display: flex; align-items: center; gap: 0.5rem;
+  display: flex; align-items: center; gap: 0.4rem;
+  min-width: 0;
   background: #1c1c1e; color: #fff;
-  border-radius: 12px; padding: 0.7rem 0.9rem;
-  font-size: 0.85rem; font-weight: 600;
+  border-radius: 10px; padding: 0.52rem 0.68rem;
+  font-size: 0.74rem; font-weight: 600;
+  line-height: 1.25;
 }
-.mac-skills__icon { width: 1.1em; text-align: center; opacity: 0.9; }
+.mac-skills__icon { flex: 0 0 1.05em; width: 1.05em; text-align: center; opacity: 0.9; }
+.mac-skills__name { min-width: 0; overflow-wrap: anywhere; }
 
 /* Blog links */
-.mac-bloglinks { list-style: none; margin: 0; padding: 0; }
-.mac-bloglinks__item { margin: 0 0 0.6rem; font-size: 1rem; }
+.mac-bloglinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+}
+.mac-bloglinks__item {
+  margin: 0 0 0.28rem;
+  font-size: 0.82rem;
+  line-height: 1.15;
+}
+.mac-bloglinks__item a {
+  color: #5a4bb2;
+  text-decoration: underline;
+}
+.mac-bloglinks__item a:visited { color: #6d42a8; }
+.mac-bloglinks__item a:hover { color: #34258f; }
 
 .mac-projects__empty { color: #888; font-size: 0.9rem; }
+
+/* Profile-only project previews. Keeps shared archive-sheet pages unchanged. */
+.mac-projects--profile-project {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+.mac-projects--profile-project .archive-sheet__row {
+  transition:
+    background-color 160ms ease;
+}
+.mac-projects--profile-project .archive-sheet__title {
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif !important;
+  justify-content: center;
+  text-align: left;
+}
+.mac-projects--profile-project .mac-projects__row--has-summary:hover .archive-sheet__title,
+.mac-projects--profile-project .mac-projects__row--has-summary:focus-visible .archive-sheet__title,
+.mac-projects--profile-project .mac-projects__row--has-summary:focus-within .archive-sheet__title {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mac-projects--profile-project .archive-sheet__title .mac-projects__title-text {
+  display: block;
+  font-size: inherit;
+  font-weight: 650 !important;
+  line-height: inherit;
+}
+.mac-projects__title-link {
+  display: block;
+  text-decoration: underline;
+}
+.mac-projects--profile-project .archive-sheet__title .mac-projects__preview {
+  color: #4d4d4d;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  margin-top: 0.3rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 220ms ease-out,
+    opacity 160ms ease;
+}
+.mac-projects--profile-project .archive-sheet__row:hover .mac-projects__preview,
+.mac-projects--profile-project .archive-sheet__row:focus-visible .mac-projects__preview,
+.mac-projects--profile-project .archive-sheet__row:focus-within .mac-projects__preview {
+  max-height: 2.8em;
+  opacity: 1;
+}
 
 /* Responsive: stack on small screens */
 @media (max-width: 768px) {
@@ -145,5 +227,9 @@ $desktop-accent: #F9FB97;
   .desktop__left { max-width: none; }
   .desktop__art { position: static; transform: none; width: 70vw; max-width: 320px; margin: 2rem auto 0; }
   .mac-window { width: 92vw; left: 4vw; top: 6%; }
+  #win-official,
+  #win-personal,
+  #win-devlog { width: 92vw; height: min(640px, 86vh); }
+  #win-skills { height: min(640px, 86vh); }
   .mac-skills { grid-template-columns: 1fr 1fr; }
 }

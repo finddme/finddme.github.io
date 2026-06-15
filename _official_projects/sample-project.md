@@ -1,9 +1,9 @@
 ---
-title: "Sample Official Project"
+title: "보훈재가 AI 돌봄 보고서"
 date: 2025-01-01
-thumbnail: /public/portfolio.png
-link: https://github.com/finddme
-summary: "Replace this file with one .md per official project."
+thumbnail: 
+link:
+summary: 
 ---
 
 Optional longer description (only shown if a detail page is enabled later).
