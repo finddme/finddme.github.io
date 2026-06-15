@@ -1,0 +1,7 @@
+<ul class="mac-bloglinks">
+  {% for item in site.data.profile.blog %}
+    <li class="mac-bloglinks__item">
+      <a href="{{ site.baseurl }}{{ item.url }}">{{ item.label }}</a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,34 @@
+{% comment %} Resolve the post/project list from include.source {% endcomment %}
+{% assign src = include.source | split: ":" %}
+{% assign src_type = src[0] %}
+{% assign src_name = src[1] %}
+
+{% if src_type == "collection" %}
+  {% assign rows = site.collections | where: "label", src_name | first %}
+  {% assign items = rows.docs | sort: "date" | reverse %}
+{% elsif src_type == "category" %}
+  {% assign items = site.categories[src_name] %}
+{% endif %}
+
+<div class="archive-sheet__table mac-projects">
+  {% if items == nil or items.size == 0 %}
+    <p class="mac-projects__empty">No entries yet.</p>
+  {% else %}
+    {% for item in items %}
+      {% assign href = item.link | default: item.url %}
+      <a
+        class="archive-sheet__row{% if item.thumbnail %} archive-sheet__row--has-image{% else %} archive-sheet__row--no-image{% endif %}"
+        href="{% if href contains '://' %}{{ href }}{% else %}{{ site.baseurl }}{{ href }}{% endif %}"
+      >
+        <span class="archive-sheet__index">{{ forloop.index }}</span>
+        <span class="archive-sheet__thumb" aria-hidden="true">
+          {% if item.thumbnail %}
+            <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" loading="lazy">
+          {% endif %}
+        </span>
+        <span class="archive-sheet__title">{{ item.title }}</span>
+        <time class="archive-sheet__date" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date_to_string }}</time>
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
