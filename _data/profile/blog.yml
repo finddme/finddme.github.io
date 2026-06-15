@@ -1,0 +1,6 @@
+# Blog links shown verbatim in the Blog window. Add/edit lines freely.
+- { label: "All categories",   url: "/blog/categories/" }
+- { label: "LLM / Multimodal", url: "/blog/llm_multimodal/" }
+- { label: "NLP",              url: "/blog/nlp/" }
+- { label: "NLP & Linguistics", url: "/blog/nlp_linguistics/" }
+- { label: "etc.",             url: "/blog/etc/" }
