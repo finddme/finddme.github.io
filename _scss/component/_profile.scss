@@ -351,7 +351,7 @@ $desktop-accent: #F9FB97;
     overflow: visible;
     min-height: 100vh;
     padding: 1rem;
-    padding-top: calc(210px + 2rem);
+    padding-top: calc(172px + 0.75rem);
   }
   .desktop__left { max-width: none; }
 
@@ -381,10 +381,12 @@ $desktop-accent: #F9FB97;
     right: 1rem !important;
     bottom: auto !important;
     width: auto !important;
-    height: 210px !important;
-    max-height: 210px !important;
+    height: 100px !important;
+    max-height: 100px !important;
     border-radius: 8px;
   }
+  /* compact body so the single link fits the shorter Blog window */
+  #win-blog .mac-window__body { padding: 0.6rem 1.1rem; }
 
   /* every other window opens as a full-screen sheet */
   .mac-window:not(#win-blog) {
