@@ -3,6 +3,11 @@
 
   var layer = document.querySelector('[data-mac-layer]');
   if (!layer) return;
+
+  function isMobile() {
+    return window.matchMedia('(max-width: 768px)').matches;
+  }
+
   var desktop = document.querySelector('[data-desktop]');
   var artToggle = document.querySelector('[data-profile-art-toggle]');
 
@@ -25,15 +30,17 @@
     var firstOpen = win.hidden;
     win.hidden = false;
     if (firstOpen && !win.dataset.placed) {
-      if (win.dataset.defaultTop || win.dataset.defaultLeft) {
-        if (win.dataset.defaultTop) win.style.top = win.dataset.defaultTop;
-        if (win.dataset.defaultLeft) win.style.left = win.dataset.defaultLeft;
-      } else {
-        // cascade new windows so they don't fully overlap
-        var offset = (openCount % 6) * 28;
-        win.style.top = 'calc(5% + ' + offset + 'px)';
-        win.style.left = 'calc(12% + ' + offset + 'px)';
-        openCount += 1;
+      if (!isMobile()) {
+        if (win.dataset.defaultTop || win.dataset.defaultLeft) {
+          if (win.dataset.defaultTop) win.style.top = win.dataset.defaultTop;
+          if (win.dataset.defaultLeft) win.style.left = win.dataset.defaultLeft;
+        } else {
+          // cascade new windows so they don't fully overlap
+          var offset = (openCount % 6) * 28;
+          win.style.top = 'calc(5% + ' + offset + 'px)';
+          win.style.left = 'calc(12% + ' + offset + 'px)';
+          openCount += 1;
+        }
       }
       win.dataset.placed = '1';
     }
@@ -79,6 +86,7 @@
   // --- drag (title bar) ---
   var drag = null;
   layer.addEventListener('pointerdown', function (e) {
+    if (isMobile()) return;
     var handle = e.target.closest('[data-mac-drag-handle]');
     if (!handle || e.target.closest('[data-mac-close]')) return;
     var win = handle.closest('.mac-window');
@@ -118,6 +126,7 @@
 
   var rez = null;
   layer.addEventListener('pointerdown', function (e) {
+    if (isMobile()) return;
     var handle = e.target.closest('[data-mac-resize]');
     if (!handle) return;
     var win = handle.closest('.mac-window');
