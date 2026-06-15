@@ -1,50 +1,37 @@
 ---
-layout: page
+layout: profile
 title: Profile
 permalink: /profile/
 ---
 
-<div class="tags-expo">
-  <div class="tags-expo-list">
-    {% for tag in site.categories %}
-    {% if tag[0]=='Project Log' or tag[0]=='Dev Log' %}
-    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
-    {% endif %}
-    {% endfor %}
-  </div>
-  <hr/>
-  <iframe src="https://v2-embednotion.com/78d4af3dfa8f4d45b498cf24422fe721" style="width: 100%; height: 1028px; border: 2px solid #ccc; border-radius: 10px; padding: none;"></iframe><br>
-<!--   <iframe src="https://artistic-menu-f9f.notion.site/Portfolio-78d4af3dfa8f4d45b498cf24422fe721?pvs=4" style="width: 100%; height: 1028px; border: 2px solid #ccc; border-radius: 10px; padding: none;"></iframe><br> -->
-  <!-- <a href="mailto:info@example.com?subject=subject&cc=cc@example.com">yein4452@yonsei.ac.kr </a> -->
-  <div class="tags-expo-section">
-    {% for tag in site.categories %}
-    {% if tag[0]=='Project Log' or tag[0]=='Dev Log' %}
-      <h2 id="{{ tag[0] }}">{{ tag[0] }}</h2>
+<main class="desktop" data-desktop>
+  <!-- Left column: intro card + menu boxes -->
+  <div class="desktop__left">
+    <article class="desktop__intro">
+      <h2 class="desktop__intro-heading">{{ site.data.profile.intro.heading }}</h2>
+      <div class="desktop__intro-body">
+        {{ site.data.profile.intro.body | markdownify }}
+      </div>
+    </article>
 
-<!--     <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2> -->
-    <ul class="tags-expo-posts">
-      {% for post in tag[1] %}
-        <h4><a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-      <li style="margin-bottom: -0.7rem;">
-        {{ post.title }}
-      <small class="post-date">{{ post.date | date_to_string }}</small>
-      </li>
-      </a></h4>
+    <nav class="desktop__menu" aria-label="Profile sections">
+      {% for item in site.data.profile.menu %}
+        <button type="button" class="desktop__menu-item" data-mac-open="{{ item.id }}">
+          {{ item.label }}
+        </button>
       {% endfor %}
-    </ul><br>
-    {% endif %}
+    </nav>
+  </div>
+
+  <!-- Center/right: stylized image -->
+  <div class="desktop__art">
+    <img src="{{ site.baseurl }}/public/metal-yein-2.png" alt="YEIN" loading="lazy">
+  </div>
+
+  <!-- Window layer (all windows pre-rendered, hidden until opened) -->
+  <div class="desktop__windows" data-mac-layer>
+    {% for item in site.data.profile.menu %}
+      {% include profile/window.html item=item %}
     {% endfor %}
   </div>
-</div>
-
-<br>
-<br>
-<br>
-
-<span style="color:#FFFFFF">  &#128374;</span>
-<span style="color:#FFFFFF">  ## x</span>
-
-<span style="color:#FFFFFF">  안녕하세요. 그냥 학생입니다.  </span>
-<span style="color:#FFFFFF">  공부한 것을 기록하기 위한 블로그입니다.  </span>
-<span style="color:#FFFFFF">  운이 좋아 공부를 계속하고 있습니다.  </span>
-<span style="color:#FFFFFF">  수정해야 할 내용이 있다면 <a style="color:#FFFFFF" href="mailto:info@example.com?subject=subject&cc=cc@example.com">yein4452@yonsei.ac.kr </a>로 메일 부탁드립니다.</span>
+</main>
