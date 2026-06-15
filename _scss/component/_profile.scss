@@ -83,6 +83,9 @@ $desktop-accent: #F9FB97;
 }
 .mac-window[hidden] { display: none; }
 
+/* Skills window opens taller so all skill rows fit without clipping */
+#win-skills { max-height: 92vh; }
+
 .mac-window__bar {
   position: relative;
   flex: 0 0 auto;
