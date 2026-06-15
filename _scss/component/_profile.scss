@@ -340,14 +340,67 @@ $desktop-accent: #F9FB97;
 }
 
 /* Responsive: stack on small screens */
+@keyframes macSheetUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
-  .desktop { padding: 1.25rem; }
+  /* scrollable page; reserve top band for the art + Blog window */
+  .desktop {
+    overflow: visible;
+    min-height: 100vh;
+    padding: 1rem;
+    padding-top: calc(210px + 2rem);
+  }
   .desktop__left { max-width: none; }
-  .desktop__art { position: static; transform: none; width: 70vw; max-width: 320px; margin: 2rem auto 0; }
-  .mac-window { width: 92vw; left: 4vw; top: 6%; }
-  #win-official,
-  #win-personal,
-  #win-devlog { width: 92vw; height: min(640px, 86vh); }
-  #win-skills { height: min(640px, 86vh); }
+
+  /* small YEIN art (dark-mode toggle) pinned top-left */
+  .desktop__art {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transform: none;
+    width: 104px;
+    max-width: 104px;
+    margin: 0;
+    padding: 0.5rem;
+  }
+
+  /* reduced intro bubble */
+  .desktop__intro { max-width: 280px; }
+
+  /* full-width stacked menu */
+  .desktop__menu { width: 100%; }
+
+  /* default-open Blog window: small, pinned top-right beside the art */
+  #win-blog {
+    position: absolute !important;
+    top: 1rem !important;
+    left: calc(104px + 1.5rem) !important;
+    right: 1rem !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: 210px !important;
+    max-height: 210px !important;
+    border-radius: 8px;
+  }
+
+  /* every other window opens as a full-screen sheet */
+  .mac-window:not(#win-blog) {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    border-radius: 0;
+    animation: macSheetUp 260ms ease both;
+  }
+
+  /* no resizing on mobile */
+  .mac-window__resize { display: none; }
+
+  /* skills grid stays 2-up */
   .mac-skills { grid-template-columns: 1fr 1fr; }
 }
