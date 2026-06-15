@@ -21,9 +21,17 @@ permalink: /profile/
   </div>
 
   <!-- Center/right: stylized image -->
-  <div class="desktop__art">
+  <button
+    type="button"
+    class="desktop__art"
+    data-profile-art-toggle
+    data-light-src="{{ site.baseurl }}/public/metal-yein-2.png"
+    data-dark-src="{{ site.baseurl }}/public/ttori.png"
+    aria-pressed="false"
+    aria-label="Toggle profile dark mode"
+  >
     <img src="{{ site.baseurl }}/public/metal-yein-2.png" alt="YEIN" loading="lazy">
-  </div>
+  </button>
 
   <!-- Window layer (all windows pre-rendered, hidden until opened) -->
   <div class="desktop__windows" data-mac-layer>
