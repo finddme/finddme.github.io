@@ -2,6 +2,7 @@
 title: "Streaming search system : <span style='font-weight: bold; font-family: Computer Modern;'>Function calling</span> based ReAct Agents"
 category: Dev Log
 tag: Development
+thumbnail: https://github.com/user-attachments/assets/3afc2bd6-b264-47f7-a556-85b9135d8a15
 ---
 
 
