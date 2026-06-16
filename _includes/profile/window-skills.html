@@ -1,0 +1,8 @@
+<div class="mac-skills">
+  {% for skill in site.data.profile.skills %}
+    <span class="mac-skills__chip">
+      {% if skill.icon %}<i class="mac-skills__icon {{ skill.icon }}" aria-hidden="true"></i>{% endif %}
+      <span class="mac-skills__name">{{ skill.name }}</span>
+    </span>
+  {% endfor %}
+</div>

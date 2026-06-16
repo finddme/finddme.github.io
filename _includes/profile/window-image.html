@@ -1,0 +1,25 @@
+{% comment %} include params: file (a site.static_files entry under public/profile/images) {% endcomment %}
+{% assign wid = include.file.basename | slugify %}
+{% capture label %}{% include profile/image-label.html name=include.file.name %}{% endcapture %}{% assign label = label | strip %}
+{% assign cfg = site.data.profile.images[wid] %}
+<section
+  class="mac-window mac-window--image"
+  id="win-img-{{ wid }}"
+  data-mac-window="win-img-{{ wid }}"
+  {% if cfg.left %}data-default-left="{{ cfg.left }}"{% endif %}
+  {% if cfg.top %}data-default-top="{{ cfg.top }}"{% endif %}
+  {% if cfg.left or cfg.top or cfg.z or cfg.width or cfg.height or cfg.maxheight %}style="{% if cfg.left %}left: {{ cfg.left }}; {% endif %}{% if cfg.top %}top: {{ cfg.top }}; {% endif %}{% if cfg.width %}width: {{ cfg.width }}; {% endif %}{% if cfg.height %}height: {{ cfg.height }}; {% endif %}{% if cfg.maxheight %}max-height: {{ cfg.maxheight }}; {% endif %}{% if cfg.z %}z-index: {{ cfg.z }};{% endif %}"{% endif %}
+  {% unless cfg.open %}hidden{% endunless %}
+>
+  <header class="mac-window__bar" data-mac-drag-handle>
+    <span class="mac-window__lights" aria-hidden="true">
+      <button type="button" class="mac-window__light mac-window__light--red" data-mac-close="win-img-{{ wid }}" aria-label="Close {{ label }}"></button>
+      <span class="mac-window__light mac-window__light--yellow"></span>
+      <span class="mac-window__light mac-window__light--green"></span>
+    </span>
+    <span class="mac-window__title">{{ label }}</span>
+  </header>
+  <div class="mac-window__body">
+    <img class="mac-image" src="{{ site.baseurl }}{{ include.file.path }}" alt="{{ include.file.name }}" loading="lazy">
+  </div>
+</section>

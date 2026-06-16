@@ -1,3 +1,11 @@
+@font-face {
+  font-display: swap;
+  font-family: "Geist Post Mono";
+  font-style: normal;
+  font-weight: 100 900;
+  src: url("../fonts/geist-mono-vf.woff2") format("woff2");
+}
+
 .post {
   margin-bottom: 4em;
 
@@ -42,6 +50,321 @@
 
 }
 
+body.post-page {
+  background: #fff;
+  overflow-x: clip;
+  --page-gutter: clamp(1.25rem, 6vw, 8rem);
+}
+
+body.post-page .wrap {
+  background: #fff;
+}
+
+body.post-page .sidebar-toggle {
+  display: none;
+}
+
+body.post-page .masthead {
+  background: transparent;
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-top: 1.05rem;
+  position: static;
+  width: 100%;
+}
+
+body.post-page .masthead .container {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+  width: 100%;
+}
+
+body.post-page .masthead-title {
+  text-align: left !important;
+}
+
+body.post-page .masthead-title a,
+body.post-page .masthead-title a:hover,
+body.post-page .masthead-title a:focus {
+  border: 0;
+  box-shadow: none;
+  outline: 0;
+  text-decoration: none;
+}
+
+body.post-page .masthead-wordmark {
+  color: $post-title-color;
+  display: inline-block;
+  font-family: "Bookk Archive Brand", "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: 2.9rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+  margin-left: 2rem;
+  transform: scaleX(1.12);
+  transform-origin: left center;
+}
+
+body.post-page .container.content {
+  max-width: none;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+  padding-top: 1.85rem;
+  width: 100%;
+}
+
+body.post-page .post {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+  width: 100%;
+}
+
+body.post-page .post-lab-sheet {
+  align-items: stretch;
+  border-top: 1px solid #e4e4e4;
+  display: grid;
+  grid-template-columns: minmax(7rem, 14vw) minmax(0, 1fr);
+  min-height: calc(100vh - 5rem);
+}
+
+body.post-page .post-cell {
+  border-bottom: 1px solid #e4e4e4;
+  min-width: 0;
+  padding: 0.85rem 0;
+}
+
+body.post-page .post-cell--label {
+  background: #fff;
+  border-right: 1px solid #e4e4e4;
+  color: #C4C4C4;
+  font-family: "Anton Archive Tabs", Impact, "Arial Narrow", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  padding-left: 2.25rem;
+  padding-right: 1.5rem;
+  text-transform: uppercase;
+}
+
+body.post-page .post-cell--label:not(.post-cell--toc) {
+  align-items: center;
+  display: flex;
+}
+
+body.post-page .post-cell--value {
+  padding-left: 3.25rem;
+  padding-right: 2rem;
+}
+
+body.post-page .post-cell--toc,
+body.post-page .post-cell--value.post-content {
+  border-bottom: 0;
+}
+
+body.post-page .post .post-title {
+  color: #0b0b0b;
+  font-family: "Archive Post Serif", "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.12;
+  margin: 0;
+  text-transform: none;
+}
+
+body.post-page .post-date {
+  color: #E1E708;
+  display: inline-block;
+  font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+body.post-page .post-tag {
+  background: transparent;
+  border-radius: 0;
+  color: #E1E708;
+  display: inline-block;
+  font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-left: 0;
+  margin-right: 0.35rem;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+body.post-page .post-tag:before {
+  content: none;
+  padding-right: 0;
+}
+
+body.post-page .post-rail__sticky {
+  padding-bottom: 1.5rem;
+  position: sticky;
+  top: 1.5rem;
+  z-index: 1;
+}
+
+body.post-page .post-content {
+  font-weight: 400;
+  line-height: 1.8;
+  min-width: 0;
+}
+
+body.post-page .post-content article > :first-child {
+  margin-top: 0;
+}
+
+body.post-page .post-toc {
+  padding-top: 0;
+}
+
+body.post-page .post-toc[hidden] {
+  display: none;
+}
+
+body.post-page #markdown-toc {
+  font-family: "Archive Post Serif", "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.25;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  text-transform: none;
+}
+
+body.post-page #markdown-toc ul {
+  list-style: none;
+  margin: 0.32rem 0 0.54rem;
+  padding-left: 0.85rem;
+}
+
+body.post-page #markdown-toc li {
+  margin: 0 0 0.42rem;
+}
+
+body.post-page #markdown-toc a {
+  color: #E1E708;
+  display: inline-block;
+  text-decoration: none;
+}
+
+body.post-page #markdown-toc a:hover,
+body.post-page #markdown-toc a:focus {
+  color: #0b0b0b;
+  text-decoration: none;
+}
+
+body.post-page .post-lab-sheet--project {
+  align-content: start;
+  min-height: 0;
+}
+
+body.post-page .post-lab-sheet--project .post-cell {
+  padding-bottom: 0.58rem;
+  padding-top: 0.58rem;
+}
+
+body.post-page .post-lab-sheet--project .post-cell--label,
+body.post-page .post-lab-sheet--project .post-cell--value {
+  align-items: center;
+  display: flex;
+}
+
+body.post-page .post-lab-sheet--project .post-content {
+  align-items: flex-start;
+  display: block;
+  padding-top: 1rem;
+}
+
+body.post-page .post-lab-sheet--project .post-title {
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.18;
+}
+
+@media (min-width: 38rem) {
+  body.post-page .post {
+    font-size: .8rem;
+  }
+
+  body.post-page .post .post-title {
+    font-size: clamp(2.15rem, 4vw, 3.1rem);
+  }
+
+  body.post-page .post-lab-sheet--project .post-title {
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
+  }
+}
+
+@media (max-width: 48em) {
+  body.post-page .masthead-wordmark {
+    font-size: 2rem;
+  }
+
+  body.post-page .container.content {
+    max-width: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+  }
+
+  body.post-page .post {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  body.post-page .post-lab-sheet {
+    border-top: 0;
+    display: block;
+  }
+
+  body.post-page .post-cell {
+    border-bottom: 0;
+    padding: 0.3rem 0;
+  }
+
+  body.post-page .post-cell--label {
+    border-right: 0;
+    margin-top: 0.9rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.post-page .post-cell--value {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.post-page .post-rail__sticky {
+    max-height: none;
+    overflow: visible;
+    position: static;
+  }
+
+  body.post-page .post .post-title {
+    font-size: 2rem;
+  }
+
+  body.post-page .post-lab-sheet--project .post-title {
+    font-size: 1.45rem;
+  }
+}
+
 /* Related posts */
 .related {
   padding-top: 2rem;
@@ -66,4 +389,3 @@
 .related-posts li a:hover small {
   color: inherit;
 }
-

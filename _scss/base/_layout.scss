@@ -11,6 +11,70 @@
   width: 100%;
 }
 
+.top {
+  bottom: 30px;
+  display: none;
+  position: fixed;
+  right: 3.5%;
+  text-align: center;
+  z-index: 9999;
+}
+
+.scroll-top-button {
+  align-items: center;
+  color: #000;
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: 48px;
+}
+
+.scroll-top-button__icon {
+  display: block;
+  height: 52px;
+  position: relative;
+  width: 48px;
+}
+
+.scroll-top-button__icon::before {
+  border-left: 4px solid currentColor;
+  border-top: 4px solid currentColor;
+  content: "";
+  height: 20px;
+  left: 50%;
+  position: absolute;
+  top: 7px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 20px;
+}
+
+.scroll-top-button__icon::after {
+  background: currentColor;
+  border-radius: 3px;
+  content: "";
+  height: 42px;
+  left: 50%;
+  position: absolute;
+  top: 4px;
+  transform: translateX(-50%);
+  width: 4px;
+}
+
+.scroll-top-button__label {
+  color: currentColor;
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+.scroll-top-button:hover,
+.scroll-top-button:focus {
+  color: #000;
+}
+
 
 /*
  * Container

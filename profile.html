@@ -1,0 +1,57 @@
+---
+layout: profile
+title: Profile
+permalink: /profile/
+---
+
+<main class="desktop" data-desktop>
+  {% comment %} Order = filename. Prefix files with a number to order them, e.g. "1_name.png"
+       (use "01_", "02_" … if you have 10+). The number prefix is stripped for display. {% endcomment %}
+  {% assign profile_images = site.static_files | where_exp: "f", "f.path contains '/public/profile/images/'" | sort: "name" %}
+
+  <!-- Left column: intro card + menu boxes -->
+  <div class="desktop__left">
+    <div class="desktop__intro">
+      <img class="desktop__intro-img" src="{{ site.baseurl }}{{ site.data.profile.intro.image }}" alt="{{ site.data.profile.intro.heading }}" loading="lazy">
+    </div>
+
+    <nav class="desktop__menu" aria-label="Profile sections">
+      {% for item in site.data.profile.menu %}
+        <button type="button" class="desktop__menu-item" data-mac-open="{{ item.id }}">
+          {{ item.label }}
+        </button>
+      {% endfor %}
+    </nav>
+  </div>
+
+  <!-- Center/right: stylized image -->
+  <button
+    type="button"
+    class="desktop__art"
+    data-profile-art-toggle
+    data-light-src="{{ site.baseurl }}/public/metal-yein-2.png"
+    data-dark-src="{{ site.baseurl }}/public/ttori.png"
+    aria-pressed="false"
+    aria-label="Toggle profile dark mode"
+  >
+    <img src="{{ site.baseurl }}/public/metal-yein-2.png" alt="YEIN" loading="lazy">
+  </button>
+
+  <!-- Top-right: image file names (click opens the image in a Mac window) -->
+  <nav class="desktop__files" aria-label="Image files">
+    {% for f in profile_images %}
+      {%- capture flabel %}{% include profile/image-label.html name=f.name %}{% endcapture -%}
+      <button type="button" class="desktop__file" data-mac-open="win-img-{{ f.basename | slugify }}">{{ flabel | strip }}</button>
+    {% endfor %}
+  </nav>
+
+  <!-- Window layer (all windows pre-rendered, hidden until opened) -->
+  <div class="desktop__windows" data-mac-layer>
+    {% for item in site.data.profile.menu %}
+      {% include profile/window.html item=item %}
+    {% endfor %}
+    {% for f in profile_images %}
+      {% include profile/window-image.html file=f %}
+    {% endfor %}
+  </div>
+</main>

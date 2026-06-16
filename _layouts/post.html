@@ -2,19 +2,34 @@
 layout: default
 ---
 
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <h4 style="margin-top:0;"><span class="post-date">{{ page.date | date_to_string }}</span>
-  {% if page.tags %} | 
-  {% for tag in page.tags %}
-    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
-  {% endfor %}
+<div class="post post-lab-sheet{% if page.project_kind %} post-lab-sheet--project{% endif %}">
+  <div class="post-cell post-cell--label">Title</div>
+  <div class="post-cell post-cell--value">
+    <h1 class="post-title">{{ page.title | strip_html }}</h1>
+  </div>
+
+  {% if page.tags and page.project_kind == nil %}
+  <div class="post-cell post-cell--label">Tag</div>
+  <div class="post-cell post-cell--value">
+    {% for tag in page.tags %}
+      <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
   {% endif %}
 
-  </h4>
-  <h4 style="font-weight: 400; line-height: 1.8;"><article>
+  <div class="post-cell post-cell--label">Date</div>
+  <div class="post-cell post-cell--value">
+    <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+  </div>
+
+  <div class="post-cell post-cell--label post-cell--toc">
+    <div class="post-rail__sticky">
+      <nav class="post-toc" aria-label="Post table of contents"></nav>
+    </div>
+  </div>
+  <div class="post-cell post-cell--value post-content"><article>
     {{ content }}
-  </article></h4>
+  </article></div>
   <!-- <br><br>
   <a href="https://ratsgo.github.io/natural%20language%20processing/2019/09/12/embedding/">
     <picture>
@@ -23,6 +38,21 @@ layout: default
     </picture>
   </a>-->
 </div>
+
+<script>
+  (function() {
+    var toc = document.getElementById('markdown-toc');
+    var tocTarget = document.querySelector('.post-toc');
+
+    if (!tocTarget) return;
+
+    if (toc) {
+      tocTarget.appendChild(toc);
+    } else {
+      tocTarget.setAttribute('hidden', 'hidden');
+    }
+  })();
+</script>
 
 
 
@@ -75,6 +105,3 @@ var disqus_config = function () {
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </div>
 {% endif %}-->
-
-
-
