@@ -2,6 +2,7 @@
 title: "Semantic Entropy: Summary of Two Papers on LLM <span style='font-weight: bold; font-family: Computer Modern;'>Hallucination Detection</span> 😱"
 category: LLM / Multimodal
 tag: Multimodal
+thumbnail: https://github.com/user-attachments/assets/a0cdb4cb-e6f2-416f-9cbb-f8d926cd8391
 ---
 
 
