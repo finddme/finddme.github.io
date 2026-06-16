@@ -1,6 +1,6 @@
 ---
 title: "LLMOPS 내 Tool 배포(Text-to-SQL)"
-date: 2025-01-01
+date: 2024-07-01
 thumbnail: 
 link:
 summary: "Deploying LLM Services within LLMOPS (Text-to-SQL + RAG)"
