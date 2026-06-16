@@ -1,5 +1,5 @@
 /* ===== Profile "desktop" page ===== */
-$desktop-accent: #F9FB97;
+$desktop-accent: #E1E708;
 
 .profile-desktop-page {
   margin: 0;
@@ -29,41 +29,74 @@ $desktop-accent: #F9FB97;
 .desktop__left {
   position: relative;
   z-index: 2;
-  max-width: 320px;
+  max-width: 380px;
 }
 
 .desktop__intro { margin: 0; }
 .desktop__intro-img { display: block; width: 100%; height: auto; }
 
 .desktop__menu {
-  margin-top: 1.5rem;
-  width: 210px;
+  margin-top: 1.6rem;
+  width: 230px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.75rem;
+  gap: 0.8rem;
 }
 .desktop__menu-item {
   appearance: none;
   width: 100%;
   text-align: left;
   background: transparent;
-  border: 2px solid $desktop-accent;
+  border: 2.5px solid $desktop-accent;
   border-radius: 4px;
-  padding: 0.45rem 1.1rem;
+  padding: 0.5rem 1.15rem;
   font: inherit;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: background 0.15s ease, transform 0.1s ease;
 }
-.desktop__menu-item:hover { background: rgba(249,251,151,0.45); }
+.desktop__menu-item:hover { background: rgba(225,231,8,0.30); }
 .desktop__menu-item:active { transform: translateY(1px); }
 .desktop--dark .desktop__menu-item {
   border-width: 1px;
+  border-color: #F9FB97;
   color: #f5f5f7;
 }
 .desktop--dark .desktop__menu-item:hover {
   background: rgba(249,251,151,0.16);
 }
+
+/* Top-right image file list (each opens an image window) */
+.desktop__files {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  text-align: right;
+}
+.desktop__file {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.8rem;
+  color: #5a4bb2;
+  text-decoration: underline;
+}
+.desktop__file:hover { color: #E1E708; }
+.desktop--dark .desktop__file { color: #b8a7ff; }
+.desktop--dark .desktop__file:hover { color: #E1E708; }
+
+/* Image windows */
+.mac-window--image .mac-window__body { padding: 0.75rem; }
+.mac-image { display: block; max-width: 100%; height: auto; margin: 0 auto; }
 
 /* Center art (horizontally + vertically centered on the viewport) */
 .desktop__art {
@@ -74,7 +107,7 @@ $desktop-accent: #F9FB97;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  border: 2px solid $desktop-accent;
+  border: 2.5px solid $desktop-accent;
   padding: 1.25rem;
   width: min(340px, 26vw);
   aspect-ratio: 340 / 467;       /* keep box size stable while the image shrinks */
@@ -90,6 +123,7 @@ $desktop-accent: #F9FB97;
 .desktop__art img { display: block; width: 82%; height: auto; margin: auto; }
 .desktop--dark .desktop__art {
   border-width: 1px;
+  border-color: #F9FB97;
 }
 .desktop--dark .desktop__art img {
   max-height: 92%;
@@ -373,6 +407,14 @@ $desktop-accent: #F9FB97;
 
   /* full-width stacked menu */
   .desktop__menu { width: 100%; }
+
+  /* image file list flows below the menu (not pinned top-right) */
+  .desktop__files {
+    position: static;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 1.5rem;
+  }
 
   /* default-open Blog window: small, pinned top-right beside the art */
   #win-blog {

@@ -8,6 +8,24 @@
     return window.matchMedia('(max-width: 768px)').matches;
   }
 
+  // Pull a window fully into the viewport so wide default positions aren't clipped
+  // on narrower screens. Desktop only (mobile windows are full-screen sheets).
+  function clampIntoView(win) {
+    if (isMobile()) return;
+    var rect = win.getBoundingClientRect();
+    if (!rect.width) return; // hidden / not laid out
+    var margin = 8;
+    var maxLeft = Math.max(margin, window.innerWidth - rect.width - margin);
+    var maxTop = Math.max(margin, window.innerHeight - rect.height - margin);
+    var left = Math.min(Math.max(rect.left, margin), maxLeft);
+    var top = Math.min(Math.max(rect.top, margin), maxTop);
+    if (Math.round(left) !== Math.round(rect.left)) win.style.left = left + 'px';
+    if (Math.round(top) !== Math.round(rect.top)) win.style.top = top + 'px';
+  }
+  function clampVisibleWindows() {
+    document.querySelectorAll('.mac-window:not([hidden])').forEach(clampIntoView);
+  }
+
   var desktop = document.querySelector('[data-desktop]');
   var artToggle = document.querySelector('[data-profile-art-toggle]');
 
@@ -18,6 +36,16 @@
     var z = parseInt(window.getComputedStyle(win).zIndex, 10);
     if (!isNaN(z)) zTop = Math.max(zTop, z);
   });
+
+  // On mobile, image windows never auto-open — a full-screen sheet would cover the
+  // home screen on load. Only the small pinned Blog window stays open by default.
+  if (isMobile()) {
+    document.querySelectorAll('.mac-window--image').forEach(function (w) { w.hidden = true; });
+  }
+
+  // Keep default-open windows on-screen now and whenever the viewport changes.
+  clampVisibleWindows();
+  window.addEventListener('resize', clampVisibleWindows);
 
   function bringToFront(win) {
     zTop += 1;
@@ -45,6 +73,7 @@
       win.dataset.placed = '1';
     }
     bringToFront(win);
+    clampIntoView(win);
   }
 
   function closeWindow(id) {
