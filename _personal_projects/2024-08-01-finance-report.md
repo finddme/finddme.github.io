@@ -1,9 +1,9 @@
 ---
 title: "금융 리포트 생성 system 개발"
-date: 2025-01-01
+date: 2024-08-01
 thumbnail: 
 link:
-summary: "Deployment of LLM Service within LLMOPS (Report Generation)"
+summary: 
 ---
 
 - **프로젝트 정의**
