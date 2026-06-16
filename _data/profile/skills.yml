@@ -1,0 +1,18 @@
+# Skills chips. Add/remove freely. icon = Font Awesome class (or leave blank).
+- { name: "Python",                          icon: "fa fa-code" }
+- { name: "Linux",                           icon: "fa fa-keyboard-o" }
+- { name: "Docker",                          icon: "fa fa-ship" }
+- { name: "MCP",                             icon: "fa fa-sitemap" }
+- { name: "NLP",                             icon: "fa fa-th" }
+- { name: "LLM(app dev, tuning etc.)",       icon: "fa fa-comments" }
+- { name: "VLM(VQA,Text-to-Image)",          icon: "fa fa-video-camera" }
+- { name: "Vision (object detection)",       icon: "fa fa-clone" }
+- { name: "vectorDB(Weaviate/Faiss)",        icon: "fa fa-database" }
+- { name: "Flask / FastAPI / Django ninja",  icon: "fa fa-flask" }
+- { name: "Azure, AWS, GCP",                 icon: "fa fa-cloud" }
+- { name: "Airflow",                         icon: "fa fa-asterisk" }
+- { name: "Git",                             icon: "fa fa-git" }
+- { name: "Data Processing / Analysis",      icon: "fa fa-list" }
+- { name: "MySQL(python)",                   icon: "fa fa-table" }
+- { name: "HTML",                   icon: "fa fa-map-o" }
+- { name: "CSS",                   icon: "fa fa-mouse-pointer" }

@@ -7,32 +7,38 @@
   {% endif %}
   <style>blockquote {font-size: 1em; line-height: 1.4}</style>
   </head>
-  <body>
+  <body{% if page.homepage_style or page.body_class or page.layout == "post" %} class="{% if page.homepage_style %}homepage-{{ page.homepage_style }}{% endif %}{% if page.homepage_style and page.body_class %} {% endif %}{% if page.body_class %}{{ page.body_class }}{% endif %}{% if page.layout == "post" %}{% if page.homepage_style or page.body_class %} {% endif %}post-page{% endif %}"{% endif %}>
 
     {% include sidebar.html %}
 
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
     <div class="wrap">
-          <div class="top" style="position:fixed; right:10%; bottom:15px; display:none; z-index:9999;">
-            <a href="#">
-              <img src="http://finddme.github.io/public/dtop.png" width="64">
-            </a>
-            <a href="https://finddme.github.io/blog/categories/">
-              <img src="http://finddme.github.io/public/dcategory.png" width="64">
+          <div class="top">
+            <a class="scroll-top-button" href="#" aria-label="Scroll to top">
+              <span class="scroll-top-button__icon" aria-hidden="true"></span>
+              <span class="scroll-top-button__label">TOP</span>
             </a>
           </div>
+      {% unless page.hide_masthead %}
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title" align="center">
             <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}">
+              {% if page.layout == "post" %}
+              <span class="archive-sheet__wordmark masthead-wordmark">FindDMe</span>
+              {% else %}
               <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/> 
+              {% endif %}
             </a>
+            {% unless page.layout == "post" %}
             <small>{{ site.tagline }}</small>
             <img src="http://finddme.github.io/public/search_yein.png" width="20" height="20" style="position:absolute; top:1.3rem; right:1.5rem" data-toggle="modal" data-target="#myModal">
+            {% endunless %}
           </h3>
         </div>
       </div>
+      {% endunless %}
 
       <div class="container content">
         {{ content }}

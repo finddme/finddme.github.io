@@ -1,0 +1,21 @@
+# Top-left intro card. The card now shows `image`; swap the path to change it.
+# (heading is reused as the image's alt text. body/prose kept for reference.)
+heading: "Hi, I'm Yein Hwang."
+image: /public/profile-intro.png
+body: |
+  I first encountered language-analysis techniques based on **NLP** during my
+  master's studies, and that experience naturally led me to become an AI engineer
+  focused on NLP research and development. My work spans both **model-level** and
+  **solution-level** tasks: I have built **sentiment-analysis** and
+  **named-entity-recognition** models, as well as performed post-training on **LLMs**
+  to create custom generative systems. On the product side, I have designed and
+  deployed AI services such as rule-based and LLM-based **chatbots**, **RAG**
+  pipelines, and **Agents**.
+
+  Recently, I have grown especially interested in **multi-modal** AI and **tool**
+  creation, so I am pursuing personal projects that implement and experiment with
+  these areas.
+
+  Although I did not major in computer science, I turn this non-traditional path
+  into an advantage, combining linguistic expertise with engineering rigor and
+  growing steadily into a versatile, reliable developer.

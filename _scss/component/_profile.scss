@@ -1,0 +1,451 @@
+/* ===== Profile "desktop" page ===== */
+$desktop-accent: #E1E708;
+
+.profile-desktop-page {
+  margin: 0;
+  background: #ffffff;
+}
+.profile-desktop-page:has(.desktop--dark) {
+  background: #1c1c1e;
+}
+
+.desktop {
+  position: relative;
+  min-height: 100vh;
+  padding: 3rem;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+.desktop--dark {
+  background: #1c1c1e;
+  color: #f5f5f5;
+}
+
+/* Left column */
+.desktop__left {
+  position: relative;
+  z-index: 2;
+  max-width: 380px;
+}
+
+.desktop__intro { margin: 0; }
+.desktop__intro-img { display: block; width: 100%; height: auto; }
+
+.desktop__menu {
+  margin-top: 1.6rem;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.8rem;
+}
+.desktop__menu-item {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 2.5px solid $desktop-accent;
+  border-radius: 4px;
+  padding: 0.5rem 1.15rem;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.desktop__menu-item:hover { background: rgba(225,231,8,0.30); }
+.desktop__menu-item:active { transform: translateY(1px); }
+.desktop--dark .desktop__menu-item {
+  border-width: 1px;
+  border-color: #F9FB97;
+  color: #f5f5f7;
+}
+.desktop--dark .desktop__menu-item:hover {
+  background: rgba(249,251,151,0.16);
+}
+
+/* Top-right image file list (each opens an image window) */
+.desktop__files {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  text-align: right;
+}
+.desktop__file {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.8rem;
+  color: #5a4bb2;
+  text-decoration: underline;
+}
+.desktop__file:hover { color: #E1E708; }
+.desktop--dark .desktop__file { color: #b8a7ff; }
+.desktop--dark .desktop__file:hover { color: #E1E708; }
+
+/* Image windows */
+.mac-window--image .mac-window__body { padding: 0.75rem; }
+.mac-image { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+
+/* Center art (horizontally + vertically centered on the viewport) */
+.desktop__art {
+  appearance: none;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 2.5px solid $desktop-accent;
+  padding: 1.25rem;
+  width: min(340px, 26vw);
+  aspect-ratio: 340 / 467;       /* keep box size stable while the image shrinks */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.desktop__art:focus-visible {
+  outline: 2px solid $desktop-accent;
+  outline-offset: 4px;
+}
+.desktop__art img { display: block; width: 82%; height: auto; margin: auto; }
+.desktop--dark .desktop__art {
+  border-width: 1px;
+  border-color: #F9FB97;
+}
+.desktop--dark .desktop__art img {
+  max-height: 92%;
+  object-fit: contain;
+  object-position: center;
+  width: min(92%, 320px);
+  transform: translateX(13%);   /* nudge TTORI right to sit centered in the box */
+}
+
+/* ===== Mac window ===== */
+.desktop__windows { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
+
+.mac-window {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  width: min(640px, 80vw);
+  max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #b7b7b7;
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+  overflow: hidden;
+  pointer-events: auto;
+}
+.mac-window[hidden] { display: none; }
+
+/* Skills window opens just tall enough for the compact skill rows */
+#win-skills {
+  width: min(720px, 84vw);
+  height: min(480px, 84vh);
+  max-height: 92vh;
+}
+
+#win-official,
+#win-personal,
+#win-devlog {
+  width: min(980px, 88vw);
+  height: min(620px, 82vh);
+  max-height: 90vh;
+}
+
+.mac-window__bar {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 0.75rem;
+  background: linear-gradient(#f6f6f6, #e7e7e7);
+  border-bottom: 1px solid #cfcfcf;
+  cursor: grab;
+  user-select: none;
+}
+.mac-window__bar:active { cursor: grabbing; }
+.mac-window__lights { display: inline-flex; gap: 0.45rem; }
+.mac-window__light {
+  width: 12px; height: 12px; border-radius: 50%; border: 0; padding: 0;
+}
+.mac-window__light--red    { background: #ff5f57; cursor: pointer; position: relative; z-index: 3; }
+/* enlarge the close hit-area to span the red AND yellow dots (red is small/fiddly) */
+.mac-window__light--red::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  left: -4px;
+  right: -20px;
+}
+.mac-window__light--yellow { background: #febc2e; }
+.mac-window__light--green  { background: #28c840; }
+.mac-window__title {
+  position: absolute; left: 0; right: 0; text-align: center;
+  font-size: 0.8rem; color: #4a4a4a; pointer-events: none;
+}
+.mac-window__body { flex: 1 1 auto; overflow: auto; padding: 1.5rem; }
+
+.desktop--dark .mac-window {
+  background: #1f1f21;
+  border-color: #4a4a4d;
+  box-shadow: 0 20px 56px rgba(0,0,0,0.68);
+  color: #f5f5f7;
+}
+.desktop--dark .mac-window__bar {
+  background: linear-gradient(#3a3a3c, #2c2c2e);
+  border-bottom-color: #505054;
+}
+.desktop--dark .mac-window__title {
+  color: #f1f1f3;
+}
+.desktop--dark .mac-window__body {
+  background: #1f1f21;
+  color: #f5f5f7;
+}
+.desktop--dark .mac-window a {
+  color: #9bbcff;
+}
+.desktop--dark .mac-window a:visited {
+  color: #c2a7ff;
+}
+.desktop--dark .mac-bloglinks__item a {
+  color: #b8a7ff;
+}
+.desktop--dark .mac-bloglinks__item a:hover {
+  color: #d8ceff;
+}
+.desktop--dark .mac-skills__chip {
+  background: #2c2c2e;
+  color: #f5f5f7;
+}
+.desktop--dark .mac-projects--profile-project .archive-sheet__row,
+.desktop--dark .mac-projects .archive-sheet__row {
+  background: rgba(31,31,33,0.92);
+  border-bottom-color: #3a3a3c;
+}
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:hover,
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-visible,
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-within {
+  background: rgba(44,44,46,0.96);
+}
+.desktop--dark .mac-projects .archive-sheet__index,
+.desktop--dark .mac-projects .archive-sheet__thumb,
+.desktop--dark .mac-projects .archive-sheet__title,
+.desktop--dark .mac-projects .archive-sheet__date {
+  border-right-color: #3a3a3c;
+}
+.desktop--dark .mac-projects .archive-sheet__date,
+.desktop--dark .mac-projects--profile-project .archive-sheet__title .mac-projects__preview {
+  color: #c7c7cc;
+}
+.desktop--dark .mac-projects .archive-sheet__row::after {
+  border-color: transparent;
+}
+/* keep project/dev-log title links the same blue as light mode (not visited purple) */
+.desktop--dark .mac-projects a,
+.desktop--dark .mac-projects a:visited,
+.desktop--dark .mac-projects a:hover {
+  color: #268bd2;
+}
+
+/* Resize handles (edges + corners). Sit just inside the window border. */
+.mac-window__resize { position: absolute; z-index: 5; touch-action: none; }
+.mac-window__resize--n { top: 0; left: 0; right: 0; height: 6px; cursor: ns-resize; }
+.mac-window__resize--s { bottom: 0; left: 0; right: 0; height: 6px; cursor: ns-resize; }
+.mac-window__resize--e { top: 0; bottom: 0; right: 0; width: 6px; cursor: ew-resize; }
+.mac-window__resize--w { top: 0; bottom: 0; left: 0; width: 6px; cursor: ew-resize; }
+.mac-window__resize--ne { top: 0; right: 0; width: 12px; height: 12px; cursor: nesw-resize; z-index: 6; }
+.mac-window__resize--nw { top: 0; left: 0; width: 12px; height: 12px; cursor: nwse-resize; z-index: 6; }
+.mac-window__resize--se { bottom: 0; right: 0; width: 14px; height: 14px; cursor: nwse-resize; z-index: 6; }
+.mac-window__resize--sw { bottom: 0; left: 0; width: 14px; height: 14px; cursor: nesw-resize; z-index: 6; }
+
+/* Skills grid */
+.mac-skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.45rem; }
+.mac-skills__chip {
+  display: flex; align-items: center; gap: 0.4rem;
+  min-width: 0;
+  background: #1c1c1e; color: #fff;
+  border-radius: 10px; padding: 0.52rem 0.68rem;
+  font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.74rem; font-weight: 600;
+  line-height: 1.25;
+}
+.mac-skills__icon { flex: 0 0 1.05em; width: 1.05em; text-align: center; opacity: 0.9; }
+.mac-skills__name { min-width: 0; overflow-wrap: anywhere; }
+
+/* Blog links */
+.mac-bloglinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  text-align: left;
+}
+.mac-bloglinks__item {
+  margin: 0 0 0.28rem;
+  font-size: 0.82rem;
+  line-height: 1.15;
+}
+.mac-bloglinks__item a {
+  color: #5a4bb2;
+  text-decoration: underline;
+}
+.mac-bloglinks__item a:visited { color: #6d42a8; }
+.mac-bloglinks__item a:hover { color: #34258f; }
+
+.mac-projects__empty { color: #888; font-size: 0.9rem; }
+
+/* Projects / Dev Log windows reuse the Blog window's serif typeface */
+.mac-projects .archive-sheet__index,
+.mac-projects .archive-sheet__title,
+.mac-projects .archive-sheet__date {
+  font-family: "Times New Roman", Times, serif;
+}
+/* slightly smaller title text in project/dev-log tables */
+.mac-projects .archive-sheet__title { font-size: 0.82rem; }
+
+/* Profile-only project previews. Keeps shared archive-sheet pages unchanged. */
+.mac-projects--profile-project {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+.mac-projects--profile-project .archive-sheet__row {
+  transition:
+    background-color 160ms ease;
+}
+.mac-projects--profile-project .archive-sheet__title {
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif !important;
+  justify-content: center;
+  text-align: left;
+}
+.mac-projects--profile-project .mac-projects__row--has-summary:hover .archive-sheet__title,
+.mac-projects--profile-project .mac-projects__row--has-summary:focus-visible .archive-sheet__title,
+.mac-projects--profile-project .mac-projects__row--has-summary:focus-within .archive-sheet__title {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mac-projects--profile-project .archive-sheet__title .mac-projects__title-text {
+  display: block;
+  font-size: inherit;
+  font-weight: 650 !important;
+  line-height: inherit;
+}
+.mac-projects__title-link {
+  display: block;
+  text-decoration: underline;
+}
+.mac-projects--profile-project .archive-sheet__title .mac-projects__preview {
+  color: #4d4d4d;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 0.68rem;
+  line-height: 1.25;
+  margin-top: 0.3rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 220ms ease-out,
+    opacity 160ms ease;
+}
+.mac-projects--profile-project .archive-sheet__row:hover .mac-projects__preview,
+.mac-projects--profile-project .archive-sheet__row:focus-visible .mac-projects__preview,
+.mac-projects--profile-project .archive-sheet__row:focus-within .mac-projects__preview {
+  max-height: 2.8em;
+  opacity: 1;
+}
+
+/* Responsive: stack on small screens */
+@keyframes macSheetUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  /* scrollable page; reserve top band for the art + Blog window */
+  .desktop {
+    overflow: visible;
+    min-height: 100vh;
+    padding: 1rem;
+    padding-top: calc(172px + 0.75rem);
+  }
+  .desktop__left { max-width: none; }
+
+  /* small YEIN art (dark-mode toggle) pinned top-left */
+  .desktop__art {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transform: none;
+    width: 104px;
+    max-width: 104px;
+    margin: 0;
+    padding: 0.5rem;
+  }
+
+  /* reduced intro bubble */
+  .desktop__intro { max-width: 280px; }
+
+  /* full-width stacked menu */
+  .desktop__menu { width: 100%; }
+
+  /* image file list flows below the menu (not pinned top-right) */
+  .desktop__files {
+    position: static;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 1.5rem;
+  }
+
+  /* default-open Blog window: small, pinned top-right beside the art */
+  #win-blog {
+    position: absolute !important;
+    top: 1rem !important;
+    left: calc(104px + 1.5rem) !important;
+    right: 1rem !important;
+    bottom: auto !important;
+    width: auto !important;
+    height: 100px !important;
+    max-height: 100px !important;
+    border-radius: 8px;
+  }
+  /* compact body so the single link fits the shorter Blog window */
+  #win-blog .mac-window__body { padding: 0.6rem 1.1rem; }
+
+  /* every other window opens as a full-screen sheet */
+  .mac-window:not(#win-blog) {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    border-radius: 0;
+    animation: macSheetUp 260ms ease both;
+  }
+
+  /* no resizing on mobile */
+  .mac-window__resize { display: none; }
+
+  /* skills grid stays 2-up */
+  .mac-skills { grid-template-columns: 1fr 1fr; }
+}

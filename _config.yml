@@ -20,8 +20,31 @@ sass:
   sass_dir: _scss    
 paginate: 5
 paginate_path: '/blog/page:num'
-permalink: pretty
+permalink: /:year/:month/:day/:title/
 version: 1.0.0
+
+# Profile project collections (authored like _posts)
+collections:
+  official_projects:
+    output: true
+    permalink: /official-projects/:name/
+  personal_projects:
+    output: true
+    permalink: /personal-projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: official_projects
+    values:
+      layout: post
+      project_kind: official
+  - scope:
+      path: ""
+      type: personal_projects
+    values:
+      layout: post
+      project_kind: personal
 
 
 authoricon: heart
@@ -55,10 +78,9 @@ nav:
   # CATEGORIES: 
   #   - '/blog/categories/'
   
-  CATEGORIES: 
+  CATEGORIES:
     - '/blog/categories/'
     - { ⊹  All categories: '/blog/categories/' }
-    - { ⊹  Portfolio: '/blog/portfolio/' }
     - { ⊹  LLM / Multimodal: '/blog/llm_multimodal/' }
     - { ⊹  NLP: '/blog/nlp/' }
     - { ⊹  NLP and Linguistics: '/blog/nlp_linguistics/' }
@@ -69,8 +91,8 @@ nav:
     #- '/blog/'
     #- { Categories: '/blog/categories/' }
     #- { Tags: '/blog/tags/' }
-  ABOUT:          
-    - '/about/'
+  PROFILE:
+    - '/profile/'
 
 newhomenav:
   #Home: 

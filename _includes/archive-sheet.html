@@ -1,0 +1,85 @@
+<section class="archive-sheet" aria-label="{{ page.title }} post archive">
+  <div class="archive-sheet__backdrop" aria-hidden="true">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
+      <g class="archive-sheet__backdrop-lines">
+        <line x1="33.333" y1="0" x2="33.333" y2="100" />
+        <line x1="66.667" y1="0" x2="66.667" y2="100" />
+        <line x1="0" y1="31" x2="100" y2="31" />
+        <line x1="0" y1="50" x2="100" y2="50" />
+        <line x1="0" y1="75" x2="100" y2="75" />
+      </g>
+      <g class="archive-sheet__backdrop-marks">
+        <rect x="32.72" y="29.85" width="1.22" height="2.3" />
+        <line x1="33.333" y1="30.42" x2="33.333" y2="31.58" />
+        <line x1="32.78" y1="31" x2="33.89" y2="31" />
+        <rect x="66.06" y="29.85" width="1.22" height="2.3" />
+        <line x1="66.667" y1="30.42" x2="66.667" y2="31.58" />
+        <line x1="66.11" y1="31" x2="67.22" y2="31" />
+        <rect x="32.72" y="48.85" width="1.22" height="2.3" />
+        <line x1="33.333" y1="49.42" x2="33.333" y2="50.58" />
+        <line x1="32.78" y1="50" x2="33.89" y2="50" />
+        <rect x="66.06" y="48.85" width="1.22" height="2.3" />
+        <line x1="66.667" y1="49.42" x2="66.667" y2="50.58" />
+        <line x1="66.11" y1="50" x2="67.22" y2="50" />
+        <rect x="32.72" y="73.85" width="1.22" height="2.3" />
+        <line x1="33.333" y1="74.42" x2="33.333" y2="75.58" />
+        <line x1="32.78" y1="75" x2="33.89" y2="75" />
+        <rect x="66.06" y="73.85" width="1.22" height="2.3" />
+        <line x1="66.667" y1="74.42" x2="66.667" y2="75.58" />
+        <line x1="66.11" y1="75" x2="67.22" y2="75" />
+      </g>
+    </svg>
+  </div>
+
+  <header class="archive-sheet__header" style="border:0;display:flex;grid-template-columns:none;justify-content:center;">
+    <div class="archive-sheet__brandline" style="align-items:center;display:flex;gap:0.65rem;justify-content:center;margin:0 auto;width:auto;">
+      <a class="archive-sheet__brand-link" href="{{ site.baseurl }}/" aria-label="FindDMe home" style="border:0;box-shadow:none;display:inline-flex;outline:0;">
+        <span class="archive-sheet__wordmark">FindDMe</span>
+      </a>
+      <span class="archive-sheet__brand-separator" aria-hidden="true">:</span>
+      <span class="archive-sheet__brand-title">{{ page.title }}</span>
+    </div>
+  </header>
+
+  <nav class="archive-sheet__tabs" aria-label="{{ page.title }} categories">
+    {% for tag in site.categories %}
+      {% if page.archive_all or page.archive_categories contains tag[0] %}
+        <a href="#archive-{{ tag[0] | slugify }}"><span>{{ tag[0] }}</span></a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+
+  <div class="archive-sheet__sections">
+    {% for tag in site.categories %}
+      {% if page.archive_all or page.archive_categories contains tag[0] %}
+        <section class="archive-sheet__section" aria-labelledby="archive-{{ tag[0] | slugify }}">
+          <h2 class="archive-sheet__section-title" id="archive-{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+
+          <div class="archive-sheet__table">
+            {% for post in tag[1] %}
+              <a
+                class="archive-sheet__row{% if post.thumbnail %} archive-sheet__row--has-image{% else %} archive-sheet__row--no-image{% endif %}"
+                href="{{ site.baseurl }}{{ post.url }}"
+              >
+                <span class="archive-sheet__index">{{ forloop.index }}</span>
+                <span class="archive-sheet__thumb" aria-hidden="true">
+                  {% if post.thumbnail %}
+                    <img
+                      src="{% if post.thumbnail contains '://' %}{{ post.thumbnail }}{% else %}{{ site.baseurl }}{{ post.thumbnail }}{% endif %}"
+                      alt=""
+                      loading="lazy"
+                    >
+                  {% endif %}
+                </span>
+                <span class="archive-sheet__title">{{ post.title }}</span>
+                <time class="archive-sheet__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+              </a>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<script src="{{ site.baseurl }}/public/js/archive-sheet.js"></script>

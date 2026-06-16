@@ -1,0 +1,64 @@
+{% comment %} Resolve the post/project list from include.source {% endcomment %}
+{% assign src = include.source | split: ":" %}
+{% assign src_type = src[0] %}
+{% assign src_name = src[1] %}
+
+{% if src_type == "collection" %}
+  {% assign rows = site.collections | where: "label", src_name | first %}
+  {% assign items = rows.docs | sort: "date" | reverse %}
+{% elsif src_type == "category" %}
+  {% assign items = site.categories[src_name] %}
+{% endif %}
+
+{% assign is_profile_project = false %}
+{% if src_type == "collection" and src_name == "official_projects" %}
+  {% assign is_profile_project = true %}
+{% elsif src_type == "collection" and src_name == "personal_projects" %}
+  {% assign is_profile_project = true %}
+{% elsif src_type == "category" and src_name == "Dev Log" %}
+  {% assign is_profile_project = true %}
+{% endif %}
+
+<div class="archive-sheet__table mac-projects{% if is_profile_project %} mac-projects--profile-project{% endif %}">
+  {% if items == nil or items.size == 0 %}
+    <p class="mac-projects__empty">No entries yet.</p>
+  {% else %}
+    {% for item in items %}
+      {% assign href = item.link | default: item.url %}
+      {% capture href_url %}{% if href contains '://' %}{{ href }}{% else %}{{ site.baseurl }}{{ href }}{% endif %}{% endcapture %}
+      {% if is_profile_project %}
+        <div class="archive-sheet__row{% if item.thumbnail %} archive-sheet__row--has-image{% else %} archive-sheet__row--no-image{% endif %}{% if item.summary %} mac-projects__row--has-summary{% endif %}">
+          <span class="archive-sheet__index">{{ forloop.index }}</span>
+          <span class="archive-sheet__thumb" aria-hidden="true">
+            {% if item.thumbnail %}
+              <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" loading="lazy">
+            {% endif %}
+          </span>
+          <span class="archive-sheet__title">
+            <a class="mac-projects__title-link" href="{{ href_url | strip }}">
+              <span class="mac-projects__title-text">{{ item.title }}</span>
+            </a>
+            {% if item.summary %}
+              <span class="mac-projects__preview">{{ item.summary | escape }}</span>
+            {% endif %}
+          </span>
+          <time class="archive-sheet__date" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date_to_string }}</time>
+        </div>
+      {% else %}
+        <a
+          class="archive-sheet__row{% if item.thumbnail %} archive-sheet__row--has-image{% else %} archive-sheet__row--no-image{% endif %}"
+          href="{{ href_url | strip }}"
+        >
+          <span class="archive-sheet__index">{{ forloop.index }}</span>
+          <span class="archive-sheet__thumb" aria-hidden="true">
+            {% if item.thumbnail %}
+              <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" loading="lazy">
+            {% endif %}
+          </span>
+          <span class="archive-sheet__title">{{ item.title }}</span>
+          <time class="archive-sheet__date" datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date_to_string }}</time>
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
