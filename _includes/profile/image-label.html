@@ -1,0 +1,8 @@
+{%- comment -%}
+  Strips a leading numeric order-prefix ("12_") from an image filename for display.
+  Only the FIRST segment is removed, and only if it's numeric, so underscores in the
+  rest of the name are preserved. include params: name
+{%- endcomment -%}
+{%- assign segs = include.name | split: '_' -%}
+{%- assign n = segs[0] | plus: 0 -%}
+{%- if segs.size > 1 and n > 0 -%}{{- include.name | remove_first: segs[0] | remove_first: '_' -}}{%- else -%}{{- include.name -}}{%- endif -%}

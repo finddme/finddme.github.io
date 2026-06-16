@@ -1,0 +1,33 @@
+# Per-image-window default DESKTOP position / stacking.
+# Key = slugified basename (the part after "win-img-" in the window id).
+# left/top: CSS values (px). z: initial z-index. open: true shows it on page load.
+# (On mobile these windows are full-screen sheets, so position is ignored and
+#  open-by-default is suppressed — only the Blog window stays open on mobile.)
+"01-안녕하세요-황예인입니다":
+  left: "1547.19px"
+  top: "30.0625px"
+  z: 32
+"02-ai-관련-이것저것-하고-있어요":
+  left: "1876.52px"
+  top: "392.729px"
+  z: 34
+"03-원래-ai-모델-개발했었는데요":
+  left: "1552.52px"
+  top: "451.396px"
+  z: 36
+"04-요즘은-agent-만들어요":
+  left: "1628.5px"
+  top: "299.375px"
+  z: 50
+  width: "732px"
+  height: "443.667px"
+  maxheight: "none"
+  open: true
+"05":
+  left: "1475.19px"
+  top: "516.729px"
+  z: 46
+"06-잘-부탁드립니다":
+  left: "1028.52px"
+  top: "76.7292px"
+  z: 48

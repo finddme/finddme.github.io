@@ -14,9 +14,9 @@
   id: "win-blog"
   filename: "blog.txt"
   type: "blog"
-  default_left: "340.396px"
-  default_top: "37.3958px"
-  default_z: 12
+  default_left: "612.354px"
+  default_top: "164.042px"
+  default_z: 54
   default_open: true
 - label: "Official-Projects"
   id: "win-official"
