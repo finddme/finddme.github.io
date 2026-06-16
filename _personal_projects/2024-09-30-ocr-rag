@@ -1,0 +1,47 @@
+---
+title: "OCR+RAG: End-to-End system (Vision Grid Transformer)"
+date: 2025-01-01
+thumbnail: 
+link:
+summary: 
+---
+
+- **프로젝트 정의**
+    
+    한국어 PDF OCR 시스템 + RAG 기반 검색 시스템 결합
+    
+- **개발 목적**
+    - yolo 기반 ocr-rag 문제점 개선
+        - 문제점 1. 일반적인 보고서/논문 형식의 pdf layout에 대한 detection 성능은 좋지만 구성이 일반적인 형식과 다른 경우 layout을 탐지하지 못함
+            - > 해결 방법: 모델 교체
+        - 문제점 2. 속도
+            - > 해결 방법:
+                - 주요 병목 지점 확인 (pdf image 변환 부분, bounding box 그리는 부분)
+                - 참조한 page만 변환.
+                - 해상도 낮춤 DPI 조절
+                - PIL은 이미지 처리 속도가 느림. NumPy와 OpenCV 사용.
+                - ProcessPoolExecutor로 여러 페이지 병렬 처리
+- **개발 단계**
+    1. PDF 입력- parsing - vectorDB 저장 - RAG 전체 pipeline 설계
+    2. vectorDB 구조, PDF parsing 결과 처리 방식, 저장된 pdf 식별 등 DB 구조 전체 설계 및 개발
+    3. RAG pipeline 설계 및 개발
+- **사용 기술**
+    1. VGT(Vision Grid Transformer)
+    2. light GBM
+    3. PyMuPDF (text extraction)
+    4. camelot
+    5. pdfplumber
+    6. Fastapi, Streamlit
+    7. RAG
+    8. vector DB
+- **개발 언어**
+    
+    python
+    
+- **개발 로그**
+    
+    https://finddme.github.io/dev log/2024/09/30/ocr_rag/
+    
+- **Git Repository**
+    
+    https://github.com/finddme/OCR_RAG_vgt_lightGBM
