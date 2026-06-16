@@ -1,0 +1,64 @@
+---
+title: "씨젠 LLM 기반 PCR 제품 기초 조사 서비스 개발"
+date: 2025-05-01
+thumbnail: [https://github.com/user-attachments/assets/f1a0ab19-91ba-4852-bb40-5ddb9f703c4f](https://github.com/user-attachments/assets/f20977cd-a078-4a7b-8ed4-2095bdfd39f5)
+link: 
+summary: "Development of Seegene LLM-based PCR Product Basic Research Service"
+---
+
+- target gene task pipeline
+    
+    <img width="3604" height="2552" alt="archi_250306 (3)" src="https://github.com/user-attachments/assets/f20977cd-a078-4a7b-8ed4-2095bdfd39f5" />
+    
+- 유병률 task pipeline
+    
+    <img width="3748" height="3736" alt="archi_250306 (4)" src="https://github.com/user-attachments/assets/4a11e650-526c-42d9-90a7-6fb911057f6d" />
+
+    
+- **프로젝트 정의**
+    
+    질병 진단 PCR 제품 개발 기초 조사 자동화를 위한 Multi-Agent system을 구축하는 프로젝트
+    
+- **팀 구성**
+    
+    
+    | 구분 | 상세 | 인원 |
+    | --- | --- | --- |
+    | 개발 | **백** | **2명 (본인 포함)** |
+    |  | 프론트 | 1명 |
+    |  | **엔진** | **1명 (본인)** |
+    |  | 데이터 관리 | 1명 |
+    | 기획/디자인 |  | 3명 |
+    | 기타 | bio 도메인 전문가 | 8명 |
+- **담당 업무**
+    
+    질병 진단 PCR 제품 개발 기초 조사 자동화를 위한 Multi-Agent system pipeline 설계, 개발, 배포, DB 구축
+    
+- **사용 기술**
+    
+    1) LLM
+    
+    2) prompt engineering
+    
+    3) API
+    
+- **개발 언어**
+    
+    python
+    
+- **수행 업무 요약**
+    - Multi-Agent pipeline 설계
+        - 도메인, task, 데이터 파악
+        - 필요 기술 사전 조사
+        - Azure 제공 서비스 조사
+        - RAG - Knowledge Graph - Verifier로 구성된 pipeline 설계
+    - DB 구축
+        - 데이터 분석 → Graph 구축에 사용할 데이터, RAG에 사용할 데이터 파악
+        - Knowledge Graph DB, vectorDB 구축
+        - 연구 자료 vector화, vectorDB 구축
+        - 질병 - 병원체 - 유전자 Knowledge Graph 생성
+        - Azure AI Search, Cosmos DB 사용
+    - pipeline 개발
+        - Tool/Agent 개발
+        - 사용 모델: gpt-o3, gpt-4.1
+        - IRCoT 방법론 적용
