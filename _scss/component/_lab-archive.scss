@@ -521,7 +521,7 @@
 
 @media (min-width: 821px) {
   .lab-title {
-    left: -68px;
+    left: -16px;
     top: 4px;
     transform: translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
     transition: transform 160ms ease-out;
@@ -565,7 +565,7 @@
   }
 
   .lab-callout--multi {
-    left: 70%;
+    left: 65%;
     top: 24%;
   }
 
