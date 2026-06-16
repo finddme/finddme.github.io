@@ -12,7 +12,7 @@ summary: "Deploying LLM Services within LLMOPS (Text-to-SQL + RAG)"
     
     RDB 내 정보 취득이 필요한  비개발직군(e.g. 인사 담당자)의 정보 정보 접근을 위한 Text-to-SQL+RAG pipeline 구축
     
-- **팀 구성**
+- **팀 구성** 
     
     
     | 구분 | 상세 | 인원 |
