@@ -2,6 +2,7 @@
 title: "GraphRAG (Microsoft)"
 category: LLM / Multimodal
 tag: LLM
+thumbnail: https://github.com/user-attachments/assets/f5120c6f-6274-4509-a4d9-eb755d8930b6
 ---
 
 
