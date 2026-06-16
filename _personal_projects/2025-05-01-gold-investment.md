@@ -8,4 +8,4 @@ summary: "현물 금투자 수익 계산, 구매가 하락 시 알람"
 
 [https://github.com/finddme/MCP-Gold-Investment](https://github.com/finddme/MCP-Gold-Investment)
 
-2504.16736v1
+2504.16736v1 
