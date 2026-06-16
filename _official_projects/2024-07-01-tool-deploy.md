@@ -1,6 +1,6 @@
 ---
 title: "LLMOPS 내 Tool 배포(Report Generation)"
-date: 2025-01-01
+date: 2024-07-01
 thumbnail: 
 link:
 summary: "Deployment of LLM Service within LLMOPS (Report Generation)"
