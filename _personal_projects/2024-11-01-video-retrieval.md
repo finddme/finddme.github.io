@@ -1,6 +1,6 @@
 ---
 title: "Video Retrieval system"
-date: 2025-01-01
+date: 2024-11-01
 thumbnail: 
 link:
 summary: 
