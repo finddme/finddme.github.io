@@ -31,7 +31,9 @@
           <span class="archive-sheet__index">{{ forloop.index }}</span>
           <span class="archive-sheet__thumb" aria-hidden="true">
             {% if item.thumbnail %}
-              <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" loading="lazy">
+              <a class="mac-projects__thumb-link" href="{{ href_url | strip }}" tabindex="-1" aria-hidden="true">
+                <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" loading="lazy">
+              </a>
             {% endif %}
           </span>
           <span class="archive-sheet__title">
