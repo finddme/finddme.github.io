@@ -58,8 +58,27 @@
       return;
     }
 
+    // 빌드 시점에 index.html이 심어둔 public/main-page/glass/ 이미지 목록.
+    var glassImages = Array.isArray(window.LAB_GLASS_IMAGES) ? window.LAB_GLASS_IMAGES : [];
+    var IMAGE_CHANCE = 0.4; // 등장하는 박스 중 약 40%를 이미지로.
+    var IMAGE_OPACITY = 0.7; // 이미지 박스 투명도(1=완전 불투명). 낮출수록 더 투명.
+
     function rand(min, max) {
       return min + Math.random() * (max - min);
+    }
+
+    // 이번 등장에서 이 박스를 이미지로 보일지(불투명) 그냥 유리로 보일지 결정.
+    // 박스마다 매 등장 독립적으로 정하므로 동시 표시 중 이미지/유리가 섞인다.
+    function dressBox(box) {
+      if (glassImages.length && Math.random() < IMAGE_CHANCE) {
+        var src = glassImages[Math.floor(Math.random() * glassImages.length)];
+        box.style.backgroundImage = 'url("' + src + '")';
+        box.classList.add("is-image");
+        return true;
+      }
+      box.classList.remove("is-image");
+      box.style.backgroundImage = "";
+      return false;
     }
 
     // 박스가 로고 영역 안에 머물도록 좌상단 좌표를 박스 크기에 맞춰 클램프한 뒤
@@ -82,7 +101,9 @@
     // fade-out → 무작위 간격 후 다시 반복. 위치/타이밍/투명도가 매번 달라진다.
     function cycle(box) {
       reposition(box);
-      box.style.opacity = rand(0.45, mobileMode.matches ? 0.62 : 0.85).toFixed(2);
+      // 이미지 박스는 IMAGE_OPACITY 로, 일반 유리는 기존처럼 무작위 반투명으로.
+      var isImage = dressBox(box);
+      box.style.opacity = isImage ? IMAGE_OPACITY.toString() : rand(0.45, mobileMode.matches ? 0.62 : 0.85).toFixed(2);
 
       window.setTimeout(function () {
         box.style.opacity = "0";
