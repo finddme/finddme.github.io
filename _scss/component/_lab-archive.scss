@@ -564,7 +564,8 @@
     box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
   }
 
-  .lab-title__glass:nth-of-type(n+6) {
+  // 모바일 동시 표시 개수: 데스크톱(10)과 기존 모바일(5)의 중간인 8개만 표시.
+  .lab-title__glass:nth-of-type(n+9) {
     display: none;
   }
 

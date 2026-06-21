@@ -109,15 +109,18 @@
         box.style.opacity = "0";
         window.setTimeout(function () {
           cycle(box);
-        }, rand(mobileMode.matches ? 700 : 250, mobileMode.matches ? 1600 : 1000));
-      }, rand(mobileMode.matches ? 900 : 1400, mobileMode.matches ? 1800 : 3000));
+          // 사라짐 간격: 모바일을 데스크톱과의 중간으로(기존 700~1600 → 475~1300).
+        }, rand(mobileMode.matches ? 475 : 250, mobileMode.matches ? 1300 : 1000));
+        // 표시 시간: 모바일을 데스크톱과의 중간으로(기존 900~1800 → 1150~2400).
+      }, rand(mobileMode.matches ? 1150 : 1400, mobileMode.matches ? 2400 : 3000));
     }
 
     Array.prototype.forEach.call(glassBoxes, function (box) {
       // 시작 시점을 흩뜨려 서로 동기화되지 않게 한다.
+      // 모바일 시작 분산도 중간으로(기존 0~4200 → 0~3300).
       window.setTimeout(function () {
         cycle(box);
-      }, rand(0, mobileMode.matches ? 4200 : 2400));
+      }, rand(0, mobileMode.matches ? 3300 : 2400));
     });
   }
 
