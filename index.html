@@ -40,14 +40,7 @@ homepage_style: lab-archive
 
     <div class="lab-stage" data-lab-stage>
       <div class="lab-title" data-lab-layer="0.2">
-        <h1>
-          <img
-            src="{{ site.baseurl }}/public/finddme_text_transparent_same_size.png"
-            alt="FINDDME"
-            width="2048"
-            height="684"
-          >
-        </h1>
+        <h1>FINDDME</h1>
         <div class="lab-title__glass lab-title__glass--a" aria-hidden="true"></div>
         <div class="lab-title__glass lab-title__glass--b" aria-hidden="true"></div>
         <div class="lab-title__glass lab-title__glass--c" aria-hidden="true"></div>
@@ -61,16 +54,20 @@ homepage_style: lab-archive
         <a class="lab-pill" href="{{ site.baseurl }}/profile/" aria-label="finddme profile">👽🤓🙄🤫😺👽</a>
       </div>
 
-      <div class="lab-map">
-        <div class="lab-object" data-lab-layer="0.85">
-          <img
-            src="{{ site.baseurl }}/public/lab-archive/1000025403.png"
-            alt="Floating rock island with botanical forms"
-            width="1318"
-            height="1591"
-          >
-        </div>
-      </div>
+      {%- comment -%}
+        좌상단 상자. public/main-page/box/ 안의 첫 이미지를 상자 중앙에 배치한다.
+        폴더에 이미지를 넣고 재빌드하면 자동 반영(없으면 빈 상자).
+      {%- endcomment -%}
+      {%- assign box_files = site.static_files | where_exp: "f", "f.path contains '/public/main-page/box/'" -%}
+      {%- assign box_src = "" -%}
+      {%- for f in box_files -%}
+        {%- assign box_ext = f.extname | downcase -%}
+        {%- case box_ext -%}
+          {%- when ".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg" -%}
+            {%- if box_src == "" -%}{%- assign box_src = f.path -%}{%- endif -%}
+        {%- endcase -%}
+      {%- endfor -%}
+      <div class="lab-figure" data-lab-figure{% if box_src != "" %} style="background-image: url('{{ box_src | relative_url }}')"{% endif %}></div>
 
       <a class="lab-callout lab-callout--nlp" href="{{ site.baseurl }}/blog/nlp/" data-lab-callout="nlp">
         <span>NLP</span>
@@ -82,21 +79,19 @@ homepage_style: lab-archive
         <small>Where posts branch into a landscape of notes</small>
       </a>
 
-      <a class="lab-callout lab-callout--multi lab-callout--card" href="{{ site.baseurl }}/blog/llm_multimodal/" data-lab-callout="multi">
-        <span class="lab-card__inner">
-          <span class="lab-card__bar">LLM / Multimodal</span>
-          <span class="lab-card__lines">&rarr; MODELS, MEMORY, AGENTS, VISION</span>
-        </span>
+      <a class="lab-callout lab-callout--multi" href="{{ site.baseurl }}/blog/llm_multimodal/" data-lab-callout="multi">
+        <span>LLM / Multimodal</span>
+        <small>Models, memory, agents, vision</small>
       </a>
 
       <a class="lab-callout lab-callout--ling" href="{{ site.baseurl }}/blog/nlp_linguistics/" data-lab-callout="ling">
-        <span>NLP and<br>Linguistics</span>
+        <span>NLP and Linguistics</span>
         <small>Foundation designed for thought</small>
       </a>
 
       <div class="lab-callout lab-callout--about" data-lab-callout="about">
-        <a class="lab-callout__title-link" href="{{ site.baseurl }}/profile/">Profile</a>
         <nav class="lab-profile-links" aria-label="profile links">
+          <a href="{{ site.baseurl }}/profile/">Profile</a>
           <a href="https://github.com/finddme">GitHub</a>
           <a href="mailto:yein4452@yonsei.ac.kr">Email</a>
         </nav>
@@ -110,4 +105,18 @@ homepage_style: lab-archive
   </section>
 </main>
 
-<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=29"></script>
+<script>
+  // 로고 유리창에 무작위로 띄울 이미지 목록. Jekyll 정적 사이트라 런타임에
+  // 폴더를 읽을 수 없으므로, 빌드 시점에 public/main-page/glass/ 안의 이미지들을
+  // 훑어 배열로 심는다. 폴더에 이미지를 넣고 재빌드하면 자동 반영된다.
+  window.LAB_GLASS_IMAGES = [
+    {%- assign glass_files = site.static_files | where_exp: "f", "f.path contains '/public/main-page/glass/'" -%}
+    {%- for f in glass_files -%}
+      {%- assign ext = f.extname | downcase -%}
+      {%- if ext == ".png" or ext == ".jpg" or ext == ".jpeg" or ext == ".gif" or ext == ".webp" or ext == ".svg" %}
+    "{{ f.path | relative_url }}",
+      {%- endif -%}
+    {%- endfor %}
+  ];
+</script>
+<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=32"></script>

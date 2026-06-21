@@ -15,7 +15,7 @@
 }
 
 .homepage-lab-archive {
-  background: #f8f7f3;
+  background: #fff;
 
   .masthead,
   .sidebar-toggle,
@@ -44,7 +44,7 @@
   --lab-ink: #0b0b0b;
   --lab-muted: #6f6f69;
   --lab-line: #dfdbd1;
-  --lab-soft: #f0f0ec;
+  --lab-soft: #fff;
   --lab-paper: rgba(255, 255, 255, 0.78);
   --lab-mono: "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
   color: var(--lab-ink);
@@ -90,9 +90,7 @@
 // 원본 clamp 범위로 클램프한다. 현재 기준 2000x1125 (20px/vw, 11.25px/vh):
 //   .lab-title top        (좌측 상단 배치)            -> 18
 //   .lab-title h1 font     clamp(52, 7.5vw, 118)     -> 118
-//   .lab-title h1 img w    reduced desktop logo      -> 560
-//   .lab-object width      38vw (max-width 620)      -> 496
-//   .lab-object height     62vw (max-height 680)     -> 544
+//   .lab-title h1 font     text logo (Georgia 400)   -> 118
 //   .lab-callout title     clamp(30, 4.4vw, 72)      -> 72
 //   * 캡션의 left/top % 값은 비율 무관하게 그대로 둔다.
 //
@@ -193,6 +191,8 @@
 .lab-pill {
   border: 0;
   border-radius: 2px;
+  // 컬러 이모지를 흑백(무채색)으로.
+  filter: grayscale(100%);
   font-family: "Mona12 Lab", "Mona12 Lab Emoji", var(--lab-mono);
   font-size: 24px;
   font-weight: 400;
@@ -224,24 +224,17 @@
   font-family: var(--lab-mono);
 }
 
+// 로고는 PNG 이미지에서 텍스트로 전환. 글씨체는 "Profile"(.lab-callout--about)
+// 제목과 동일한 Georgia serif (단, 볼드 아님 = weight 400).
+// 색은 로고 정체성 유지를 위해 ink(검정).
 .lab-title h1 {
   color: var(--lab-ink);
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 0.9;
   margin: 0;
-}
-
-.lab-title h1 a {
-  color: inherit;
-  display: inline-block;
-  text-decoration: none;
-}
-
-.lab-title h1 img {
-  display: block;
-  height: auto;
+  white-space: nowrap;
 }
 
 // 이모지 알약을 FINDDME 이미지 위에 겹쳐 D-D 사이를 가로지르게 둔다.
@@ -276,6 +269,18 @@
   z-index: 5;
 }
 
+// JS가 이미지로 채운 박스: 유리(blur/반투명)를 끄고 불투명 이미지를 cover로
+// 꽉 채운다. background-image 와 opacity 는 JS(initTitleGlass)가 지정.
+.lab-title__glass.is-image {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
 // 세로로 긴 박스 3종 (크기만 지정; 등장 동작은 JS가 담당).
 .lab-title__glass--a {
   height: 84px;
@@ -308,35 +313,23 @@
   width: 98px;
 }
 
-.lab-map {
-  inset: 0;
-  pointer-events: none;
+// 좌상단 상자(아주 얇은 선 프레임). 안의 이미지는 배경으로 깔아 가운데 정렬(contain).
+// 데스크톱 위치/크기는 아래 @media(min-width:821px) 블록에서 지정한다.
+// 이미지는 index.html이 public/main-page/box/ 첫 이미지를 인라인 background-image 로 넣어준다(없으면 빈 상자).
+.lab-figure {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  // 배경을 padding 안쪽(content box)에 맞춰 padding 이 사방 여백으로 실제 적용되게 한다.
+  // (기본값 padding-box 면 배경이 padding 영역까지 채워 위·아래 여백이 안 생김)
+  background-origin: content-box;
+  border: 0.5px solid var(--lab-line);
+  box-sizing: border-box;
+  // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
+  // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
+  padding: 30px 30px;
   position: absolute;
   z-index: 2;
-}
-
-.lab-object {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  perspective: 900px;
-  position: absolute;
-  z-index: 2;
-}
-
-.lab-object img {
-  animation: lab-object-turn 16s ease-in-out infinite;
-  display: block;
-  filter: drop-shadow(0 32px 30px rgba(0, 0, 0, 0.2));
-  height: auto;
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  transform-origin: 50% 58%;
-}
-
-.lab-object__orbit {
-  display: none;
 }
 
 .lab-callout {
@@ -370,118 +363,53 @@
 
 .lab-callout--all small,
 .lab-callout--nlp small,
-.lab-callout--ling small {
+.lab-callout--ling small,
+.lab-callout--multi small {
   color: #831010;
 }
 
-.lab-callout--nlp > span,
 .lab-callout--ling > span {
   font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-weight: 400;
   letter-spacing: 0.01em;
 }
 
+.lab-callout--nlp > span,
+.lab-callout--multi > span {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
 .lab-callout:hover {
   color: #E1E708;
 }
 
-.lab-callout--card {
-  border: 1px solid var(--lab-ink);
-  color: var(--lab-ink);
-  outline: 0 solid transparent;
-  padding: 18px 0 0;
-  z-index: 6;
-  transition: border-color 160ms ease, outline-color 160ms ease, outline-width 160ms ease;
+// 각 요소(캡션 제목·Profile 링크) 앞에 붙는 작은 동그라미 마커.
+// 제목보다 작게(0.34em) + 세로 가운데 정렬. 색은 글자색을 따라가므로
+// hover 시 제목과 같은 색으로 함께 바뀐다.
+.lab-callout > span::before {
+  content: "\25CF"; // ● 작은 동그라미 마커
+  display: inline-block;
+  font-size: 0.34em;
+  margin-right: 0.45em;
+  vertical-align: middle;
 }
 
-.lab-callout--card:hover,
-.lab-callout--card:focus {
-  border-color: #E1E708;
-  outline: 2px solid #E1E708;
-}
-
-.lab-home a.lab-callout--card,
-.lab-home a.lab-callout--card:hover,
-.lab-home a.lab-callout--card:focus,
-.lab-home .lab-callout--card .lab-card__lines {
-  color: var(--lab-ink);
-  text-decoration: none;
-}
-
-.lab-home .lab-callout--card .lab-card__bar {
-  color: #0EEF0F;
-  text-decoration: none;
-}
-
-.lab-callout--card .lab-card__inner {
-  background: transparent;
-  display: block;
-  margin: 0 22px 0 24px;
-  min-height: 0;
-  padding: 0 0 14px;
-  position: relative;
-}
-
-.lab-callout--card .lab-card__bar {
-  background: #c4c4c4;
-  color: #0EEF0F;
-  display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: min(var(--lab-callout-title-size), 64px);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 0.9;
-  padding: 9px 10px 11px 6px;
-  text-transform: none;
-  white-space: nowrap;
-}
-
-.lab-callout--card .lab-card__lines {
-  border-top: 1px solid var(--lab-ink);
-  color: var(--lab-ink);
-  display: block;
-  font-family: var(--lab-mono);
-  font-size: 13.5px;
-  letter-spacing: 0.02em;
-  line-height: 2.1;
-  margin-top: 4px;
-  padding: 5px 8px 0;
-  text-transform: uppercase;
-  transition: color 160ms ease, border-top-color 160ms ease, border-top-width 160ms ease;
-}
-
-// hover/focus 시 내부 구분선과 작은 글씨를 카드 테두리 hover 색과 맞춤:
-// 선은 두꺼워지고(2px), 글씨는 같은 색 + 볼드.
-.lab-home .lab-callout--card:hover .lab-card__lines,
-.lab-home .lab-callout--card:focus .lab-card__lines {
-  border-top-color: #E1E708;
-  border-top-width: 2px;
+// LLM / Multimodal: 기본 색을 #E1E708(다른 캡션 hover 색)로.
+.lab-callout--multi > span {
   color: #E1E708;
-  font-weight: 700;
 }
 
-.lab-callout--about .lab-callout__title-link {
-  color: #0EEF0F;
-  display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: var(--lab-callout-title-size);
-  font-weight: 700;
-  line-height: 0.9;
-  text-decoration: none;
-  text-transform: none;
-}
-
-.lab-callout--about .lab-callout__title-link:hover,
-.lab-callout--about .lab-callout__title-link:focus {
-  color: #E1E708;
+// 앞의 ● 마커는 글자색과 무관하게 검정 유지(기본·hover 모두).
+.lab-callout--multi > span::before {
+  color: var(--lab-ink);
 }
 
 .lab-profile-links {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-left: 4px;
-  margin-top: 10px;
+  margin-left: 0;
+  margin-top: 0;
 }
 
 .lab-profile-links a {
@@ -494,36 +422,22 @@
   padding: 4px 9px;
   text-decoration: none;
   text-transform: uppercase;
+  transition: color 160ms ease, border-color 160ms ease;
 }
 
-.lab-profile-links a:hover {
-  color: #d06f19;
-}
-
-@keyframes lab-object-turn {
-  0%,
-  100% {
-    transform: translateY(0) rotateY(-7deg) rotate(-1.2deg) scale(1.02);
-  }
-  50% {
-    transform: translateY(-18px) rotateY(7deg) rotate(1.4deg) scale(1.055);
-  }
-}
-
-@keyframes lab-orbit {
-  from {
-    transform: rotate(-9deg);
-  }
-  to {
-    transform: rotate(351deg);
-  }
+// hover/focus 시 글씨와 테두리를 이전 "Profile" 제목 초록(#0EEF0F)으로.
+.lab-profile-links a:hover,
+.lab-profile-links a:focus {
+  border-color: #0EEF0F;
+  color: #0EEF0F;
 }
 
 @media (min-width: 821px) {
   .lab-title {
-    left: -16px;
-    top: 4px;
-    transform: translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
+    // 중앙(50%/50%)에서 좌측·위로 약 1.5cm(≈60px) 이동.
+    left: calc(50% - 60px);
+    top: calc(50% - 60px);
+    transform: translate(-50%, -50%) translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
     transition: transform 160ms ease-out;
   }
 
@@ -531,57 +445,45 @@
     font-size: 118px;
   }
 
-  .lab-title h1 img {
-    width: 560px;
-  }
-
-  .lab-map {
-    transform: translate3d(calc(var(--lab-x) * -14px), calc(var(--lab-y) * -10px), 0);
-    transition: transform 180ms ease-out;
-  }
-
-  .lab-object {
-    width: 496px;
-    height: 544px;
-    left: 50%;
-    top: 54%;
-    max-width: 496px;
-    max-height: 544px;
-    transform: translate(-50%, -50%);
-  }
-
   .lab-callout {
     --lab-callout-title-size: 72px;
   }
 
   .lab-callout--nlp {
-    left: 70%;
-    top: 63.5%;
+    left: 20%;
+    top: 73.5%;
   }
 
   .lab-callout--all {
-    left: 60.5%;
-    top: 8.7%;
+    left: 70%;
+    top: 7.5%;
   }
 
   .lab-callout--multi {
-    left: 65%;
-    top: 24%;
+    left: 53%;
+    top: 23%;
   }
 
   .lab-callout--ling {
-    left: 5.2%;
-    top: 66.5%;
+    left: 45%;
+    top: 73.2%;
   }
 
+  // 로고(가운데 배치) 바로 아래에 버튼 줄을 가운데 정렬로 둔다.
+  // 로고 중심 x = calc(50% - 60px) ≈ 47% → 같은 x에 맞추고 translateX 로 가운데 정렬.
   .lab-callout--about {
-    left: 17%;
-    top: 33.5%;
+    left: 47%;
+    top: 50%;
+    transform: translateX(-50%);
   }
 
-  .lab-callout--card {
-    width: 664px;
-    height: 150px;
+  // 좌상단 상자. 왼쪽 끝이 "All categories"의 오른쪽 끝(s 끝지점, 무대 92.2%)과
+  // 무대 중앙선 기준 대칭이 되도록 left=7.8%. (innerWidth 1858 측정 기반 환산)
+  .lab-figure {
+    left: 7.8%;
+    top: 9%;
+    width: 390px;
+    height: 370px;
   }
 }
 
@@ -625,7 +527,7 @@
 
   // 타이틀
   .lab-title {
-    align-self: flex-start;
+    align-self: center;
     position: relative;
     left: auto;
     top: auto;
@@ -634,8 +536,20 @@
     width: fit-content;
   }
 
-  .lab-title h1 img {
-    width: min(62vw, 300px);
+  .lab-title h1 {
+    font-size: min(15vw, 64px);
+  }
+
+  // 상자: 흐름 내 가운데 정렬 박스(상자 비율 유지). 로고 바로 아래에 온다.
+  .lab-figure {
+    position: relative;
+    left: auto;
+    top: auto;
+    align-self: center;
+    width: min(80vw, 390px);
+    height: auto;
+    aspect-ratio: 39 / 37;
+    margin: 4px auto 0;
   }
 
   .lab-title .lab-pill {
@@ -684,26 +598,6 @@
     width: 58px;
   }
 
-  // 오브젝트: 흐름 내 히어로 비주얼 (부유/회전·글래스 애니메이션 유지)
-  .lab-map {
-    position: relative;
-    transform: none;
-    display: flex;
-    justify-content: center;
-  }
-
-  .lab-object {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
-    width: min(58vw, 250px);
-    height: auto;
-    max-width: none;
-    max-height: none;
-    margin: 4px auto 0;
-  }
-
   // 카테고리 캡션 → 세로 카드
   .lab-callout {
     position: relative;
@@ -720,11 +614,6 @@
     line-height: 1;
   }
 
-  .lab-callout--about .lab-callout__title-link {
-    font-size: 30px;
-    line-height: 1;
-  }
-
   .lab-home .lab-callout--project {
     display: none;
   }
@@ -734,33 +623,6 @@
     max-width: none;
   }
 
-  // 녹색 LLM 카드: 데스크톱용 SVG 프레임 대신 카드 테두리 사용
-  .lab-callout--card {
-    height: auto;
-    width: auto;
-    padding: 0;
-    border: 1px solid var(--lab-line);
-  }
-
-  .lab-callout--card .lab-card__inner {
-    margin: 0;
-    min-height: 0;
-    padding: 16px;
-  }
-
-  .lab-callout--card .lab-card__bar {
-    font-size: 30px;
-    white-space: normal;
-    padding: 8px 10px;
-  }
-
-  .lab-callout--card .lab-card__lines {
-    font-size: 12px;
-    line-height: 1.8;
-    margin-top: 10px;
-    padding: 10px 2px 0;
-  }
-
   .lab-profile-links {
     margin-left: 0;
     margin-top: 8px;
@@ -768,12 +630,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lab-object img,
   .lab-title__glass {
     animation: none;
   }
 
-  .lab-map,
   .lab-title,
   .lab-callout {
     transform: none;
