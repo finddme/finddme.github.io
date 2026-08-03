@@ -354,14 +354,6 @@
   z-index: 5;
 }
 
-.archive-sheet__row:hover::after,
-.archive-sheet__row:focus-visible::after {
-  border-color: rgba(255, 255, 255, 0.75);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.85),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
-}
-
 .archive-sheet__index,
 .archive-sheet__thumb,
 .archive-sheet__title,
