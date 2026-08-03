@@ -305,9 +305,6 @@
 }
 
 .archive-sheet__row {
-  --as-thumb-h: 13rem;
-  --as-thumb-w: 18rem;
-
   align-items: stretch;
   background: rgba(248, 247, 243, 0.82);
   border-bottom: 1px solid #E4E4E4;
@@ -344,11 +341,6 @@
 .archive-sheet__row:hover::after,
 .archive-sheet__row:focus-visible::after {
   border-color: var(--archive-accent);
-}
-
-.archive-sheet__row--has-image:hover,
-.archive-sheet__row--has-image:focus-visible {
-  min-height: var(--as-thumb-h);
 }
 
 .archive-sheet__index,
@@ -396,11 +388,6 @@
   z-index: 6;
 }
 
-.archive-sheet__row--has-image:hover .archive-sheet__thumb::after,
-.archive-sheet__row--has-image:focus-visible .archive-sheet__thumb::after {
-  opacity: 0;
-}
-
 // Reference (Beckmans) motion: the real in-cell image grows in place.
 // Height expands first, then width expands (delayed), so the thumbnail
 // unfolds downward into a tall strip and then reveals its full width.
@@ -414,33 +401,8 @@
   position: absolute;
   top: 0;
   transform-origin: left top;
-  transition:
-    height 450ms ease-out,
-    width 450ms ease-out 450ms;
   width: 5.45rem;
   z-index: 1;
-}
-
-.archive-sheet__row--has-image:hover .archive-sheet__thumb img,
-.archive-sheet__row--has-image:focus-visible .archive-sheet__thumb img {
-  height: var(--as-thumb-h);
-  // Expanded width keeps the image's natural aspect ratio (set per-image via JS).
-  width: var(--as-thumb-w);
-  z-index: 4;
-}
-
-.archive-sheet__row--has-image:hover .archive-sheet__index,
-.archive-sheet__row--has-image:hover .archive-sheet__title,
-.archive-sheet__row--has-image:hover .archive-sheet__date,
-.archive-sheet__row--has-image:focus-visible .archive-sheet__index,
-.archive-sheet__row--has-image:focus-visible .archive-sheet__title,
-.archive-sheet__row--has-image:focus-visible .archive-sheet__date {
-  align-items: flex-start;
-}
-
-.archive-sheet__row--has-image:hover .archive-sheet__index,
-.archive-sheet__row--has-image:focus-visible .archive-sheet__index {
-  padding-top: 0.62rem;
 }
 
 .archive-sheet__marker {
@@ -503,8 +465,6 @@
   }
 
   .archive-sheet__row {
-    --as-thumb-h: 5rem;
-
     align-content: center;
     grid-template-columns: 2.4rem 5rem minmax(0, 1fr);
     min-height: 4.5rem;
@@ -532,11 +492,6 @@
     grid-column: 3;
     justify-content: flex-start;
     padding: 0 0.7rem 0.5rem;
-  }
-
-  .archive-sheet__row--has-image:hover,
-  .archive-sheet__row--has-image:focus-visible {
-    grid-template-columns: 2.4rem 5rem minmax(0, 1fr);
   }
 
   .archive-sheet__thumb img {
