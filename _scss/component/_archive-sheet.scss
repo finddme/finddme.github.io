@@ -258,8 +258,11 @@
 }
 
 .archive-sheet__sections {
-  background: var(--archive-paper);
+  background: rgba(248, 247, 243, 0.62);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--archive-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
   display: grid;
 }
 
@@ -275,13 +278,16 @@
   background-color: transparent;
   background-image:
     radial-gradient(circle, #ffffff 46%, transparent 50%),
-    linear-gradient(#CCCCCC, #CCCCCC);
+    linear-gradient(rgba(204, 204, 204, 0.55), rgba(204, 204, 204, 0.55));
   background-position: 0 0, 0 0;
   background-repeat: repeat, no-repeat;
   background-size: 3px 3px, auto;
   -webkit-background-clip: text, border-box;
   background-clip: text, border-box;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid #E4E4E4;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
   color: #050505;
   font-family: "Archive Section Inter", Arial, Helvetica, sans-serif;
   font-size: 1.02rem;
@@ -306,7 +312,7 @@
 
 .archive-sheet__row {
   align-items: stretch;
-  background: rgba(248, 247, 243, 0.82);
+  background: rgba(248, 247, 243, 0.55);
   border-bottom: 1px solid #E4E4E4;
   display: grid;
   grid-template-columns: 3.25rem 5.45rem minmax(0, 1fr) minmax(8.5rem, 13rem);
