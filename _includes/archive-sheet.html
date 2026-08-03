@@ -1,4 +1,13 @@
 <section class="archive-sheet" aria-label="{{ page.title }} post archive">
+  <svg class="archive-sheet__glass-defs" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <filter id="archiveGlassDistort" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.011" numOctaves="2" seed="7" result="noise" />
+        <feGaussianBlur in="noise" stdDeviation="2.2" result="smooth" />
+        <feDisplacementMap in="SourceGraphic" in2="smooth" scale="26" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
   <div class="archive-sheet__backdrop" aria-hidden="true">
     <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
       <g class="archive-sheet__backdrop-lines">
