@@ -2,6 +2,7 @@
 title: "🚶‍➡Generative Agents: Interactive Simulacra of Human Behavior"
 category: LLM / Multimodal
 tag: Multimodal
+thumbnail: https://github.com/user-attachments/assets/4123131e-1800-43c4-8165-85a87b662378
 ---
 
 

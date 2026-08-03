@@ -2,6 +2,7 @@
 title: "VLM : Architecture / Fusion Methods"
 category: LLM / Multimodal
 tag: Multimodal
+thumbnail: https://github.com/finddme/finddme.github.io/assets/53667002/35558d2c-d9a0-4efa-9032-16208671d81d
 ---
 
 

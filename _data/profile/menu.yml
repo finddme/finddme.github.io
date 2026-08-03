@@ -1,6 +1,6 @@
 # Left-column menu boxes (#E1E708 border). Order here = display order.
-# type: skills | blog | projects
-# source (projects only): collection:<name> | category:<Category Name>
+# type: skills | blog | links | projects
+# source (links/projects only): github | email | collection:<name> | category:<Category Name>
 # Optional per-window first-open position: default_left/default_top, e.g. "208px" or "12vw".
 # Optional default_z sets the initial stacking order. default_open: true shows a window on page load.
 - label: "Skills"
@@ -42,3 +42,13 @@
   default_left: "883.062px"
   default_top: "322.062px"
   default_z: 26
+- label: "Github"
+  id: "win-github"
+  filename: "github.txt"
+  type: "links"
+  source: "github"
+- label: "Email"
+  id: "win-email"
+  filename: "email.txt"
+  type: "links"
+  source: "email"

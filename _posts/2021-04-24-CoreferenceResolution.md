@@ -2,6 +2,7 @@
 title: Coreference Resolution | Speech and Language Processing(Daniel Jurafsky and James H. Martin, 2019)
 category: Natural Language Processing and Linguistics
 tag: NLP & Linguistics
+thumbnail: https://user-images.githubusercontent.com/53667002/115956461-b8f85980-a537-11eb-82cf-ca86671672bd.png
 ---
 (Coreference Resolution / Zero-Anaphora Resolution)
 

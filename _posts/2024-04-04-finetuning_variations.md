@@ -2,6 +2,7 @@
 title: "Fine-tuning variations : RLHF/PPO, DPO, ORPO"
 category: LLM / Multimodal
 tag: NLP
+thumbnail: https://github.com/finddme/finddme.github.io/assets/53667002/d2319a65-95b8-4bbb-aa52-a3cc99e41a04
 ---
 
 

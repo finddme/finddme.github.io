@@ -1,0 +1,20 @@
+{% case include.source %}
+  {% when "blog" %}{% assign links = site.data.profile.blog %}
+  {% when "github" %}{% assign links = site.data.profile.github %}
+  {% when "email" %}{% assign links = site.data.profile.email %}
+{% endcase %}
+<ul class="mac-bloglinks">
+  {% for item in links %}
+    {% assign href = item.url %}
+    {% if href contains '://' %}
+      {% assign href = href %}
+    {% elsif href contains 'mailto:' %}
+      {% assign href = href %}
+    {% else %}
+      {% assign href = site.baseurl | append: href %}
+    {% endif %}
+    <li class="mac-bloglinks__item">
+      <a href="{{ href }}">{{ item.label }}</a>
+    </li>
+  {% endfor %}
+</ul>

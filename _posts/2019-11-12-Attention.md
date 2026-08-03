@@ -2,6 +2,7 @@
 title: Attention in sequence to sequence
 category: Natural Language Processing
 tag: NLP
+thumbnail: https://user-images.githubusercontent.com/53667002/68604933-e04b9a00-04ee-11ea-8210-09872e86b178.png
 ---
 
 **Attention 실습 코드: [https://finddme.github.io/natural%20language%20processing/2019/11/12/AttentionCode/](https://finddme.github.io/natural%20language%20processing/2019/11/12/AttentionCode/)**
