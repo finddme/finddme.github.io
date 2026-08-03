@@ -88,7 +88,6 @@
 }
 
 .archive-sheet__backdrop {
-  background: #ffffff;
   inset: 0;
   pointer-events: none;
   position: fixed;
@@ -102,7 +101,9 @@
 }
 
 .archive-sheet__backdrop svg {
-  display: none;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .archive-sheet__backdrop-lines line {
