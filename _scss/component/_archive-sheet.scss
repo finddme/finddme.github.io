@@ -373,11 +373,11 @@
 }
 
 .archive-sheet__thumb {
-  align-items: flex-start;
+  align-items: stretch;
   display: flex;
   justify-content: flex-start;
   min-height: 2.18rem;
-  overflow: visible;
+  overflow: hidden;
   padding: 0;
   position: relative;
   z-index: 3;
@@ -390,27 +390,36 @@
   opacity: 1;
   pointer-events: none;
   position: absolute;
-  right: -1px;
+  right: 0;
   top: 0;
   transition: opacity 60ms ease;
   width: 1px;
   z-index: 6;
 }
 
-// Reference (Beckmans) motion: the real in-cell image grows in place.
-// Height expands first, then width expands (delayed), so the thumbnail
-// unfolds downward into a tall strip and then reveals its full width.
+.archive-sheet__thumb::before {
+  background: rgba(248, 247, 243, 0.4);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
 .archive-sheet__thumb img {
   display: block;
-  height: 2.18rem;
-  left: 0;
-  max-width: none;
-  object-fit: fill;
-  object-position: left top;
+  filter: blur(5px);
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.55;
   position: absolute;
-  top: 0;
-  transform-origin: left top;
-  width: 5.45rem;
+  transform: scale(1.2);
+  transform-origin: center;
+  width: 100%;
   z-index: 1;
 }
 
@@ -501,10 +510,6 @@
     grid-column: 3;
     justify-content: flex-start;
     padding: 0 0.7rem 0.5rem;
-  }
-
-  .archive-sheet__thumb img {
-    width: 5rem;
   }
 
 }
