@@ -165,24 +165,18 @@
     }
 
     body.archive-sheet-page .archive-sheet .archive-sheet__section-title {
-      /* layer 1: dot pattern clipped to the text glyphs (the "perforated" effect)
-         layer 2: solid gray bar clipped to the box. */
-      background-color: transparent !important;
-      background-image:
-        radial-gradient(circle, #ffffff 46%, transparent 50%),
-        linear-gradient(#CCCCCC, #CCCCCC) !important;
-      background-size: 3px 3px, auto !important;
-      background-repeat: repeat, no-repeat !important;
-      background-position: 0 0, 0 0 !important;
-      -webkit-background-clip: text, border-box !important;
-      background-clip: text, border-box !important;
-      -webkit-text-fill-color: transparent !important;
-      color: transparent !important;
-      font-family: "Archive Section Inter", Arial, Helvetica, sans-serif !important;
+      /* serif glass header bar (matches post-title typeface, no perforated dots) */
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(236, 235, 230, 0.92)) !important;
+      background-image: none !important;
+      -webkit-background-clip: border-box !important;
+      background-clip: border-box !important;
+      -webkit-text-fill-color: #050505 !important;
+      color: #050505 !important;
+      font-family: "Archive Post Serif", Arial, Helvetica, sans-serif !important;
       font-size: 1.02rem !important;
-      font-variation-settings: "wght" 760 !important;
-      font-weight: 760 !important;
-      letter-spacing: -0.025em !important;
+      font-variation-settings: normal !important;
+      font-weight: 400 !important;
+      letter-spacing: -0.005em !important;
       text-shadow: none !important;
     }
 
