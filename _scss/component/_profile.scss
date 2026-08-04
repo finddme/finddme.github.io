@@ -349,6 +349,20 @@ $desktop-accent: #E1E708;
   transition:
     background-color 160ms ease;
 }
+
+/* Solid white table surface for profile project previews (overrides the shared
+   translucent archive rows). Dark desktop keeps its own darker rows above. */
+.mac-projects--profile-project .archive-sheet__row {
+  background: #ffffff;
+}
+.mac-projects--profile-project .archive-sheet__row:nth-of-type(even) {
+  background: #f6f6f6;
+}
+.mac-projects--profile-project .archive-sheet__row:hover,
+.mac-projects--profile-project .archive-sheet__row:focus-visible,
+.mac-projects--profile-project .archive-sheet__row:focus-within {
+  background: #eef0f2;
+}
 .mac-projects--profile-project .archive-sheet__title {
   align-items: flex-start;
   flex-direction: column;
