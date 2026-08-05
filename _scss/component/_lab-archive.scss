@@ -673,6 +673,12 @@
     padding: 16px 16px 18px;
   }
 
+  // 모바일은 이미 카드 배경이 있으므로 hover 유리 칩 비활성화
+  // (탭 시 칩이 카드 밖으로 삐져나오는 것 방지).
+  .lab-callout::after {
+    display: none;
+  }
+
   .lab-callout span {
     font-size: 30px;
     line-height: 1;
