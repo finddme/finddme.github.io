@@ -256,9 +256,17 @@
 // JS(lab-archive.js, initTitleGlass)가 매 등장마다 난수로 다시 뽑는다
 // → 실제 무작위. 여기서는 모양(크기)과 페이드 트랜지션만 정의한다.
 // 레이어 순서: 로고 이미지(뒤) > 이모지(z-index:4) > 유리상자(z-index:5, 가장 앞).
+.lab-glass-defs {
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
 .lab-title__glass {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  // 뒤 로고 이미지를 굴절(refraction)까지 시켜 리퀴드 글래스 느낌.
+  // Safari는 url()을 무시하고 blur만 적용(우아한 폴백).
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  backdrop-filter: url(#archiveGlassDistort) blur(10px) saturate(160%);
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.11);
@@ -323,7 +331,15 @@
   // 배경을 padding 안쪽(content box)에 맞춰 padding 이 사방 여백으로 실제 적용되게 한다.
   // (기본값 padding-box 면 배경이 padding 영역까지 채워 위·아래 여백이 안 생김)
   background-origin: content-box;
-  border: 0.5px solid var(--lab-line);
+  // 유리 액자: 이미지가 닿지 않는 mat 여백이 뒤 그리드를 frosted 하게 비춘다.
+  background-color: rgba(255, 255, 255, 0.28);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
   box-sizing: border-box;
   // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
   // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
@@ -383,6 +399,31 @@
   color: #E1E708;
 }
 
+// hover 시 캡션 뒤에 반투명 유리 칩 + 살짝 떠오름 (표/탭바 hover 언어와 통일).
+// ::after 를 콘텐츠 뒤(z-index:-1)에 깔아 레이아웃 이동 없이 칩만 페이드 인.
+.lab-callout::after {
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  content: "";
+  inset: -10px -14px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 160ms ease;
+  z-index: -1;
+}
+
+.lab-callout:hover::after,
+.lab-callout:focus-visible::after {
+  opacity: 1;
+}
+
 // 각 요소(캡션 제목·Profile 링크) 앞에 붙는 작은 동그라미 마커.
 // 제목보다 작게(0.34em) + 세로 가운데 정렬. 색은 글자색을 따라가므로
 // hover 시 제목과 같은 색으로 함께 바뀐다.
@@ -413,22 +454,37 @@
 }
 
 .lab-profile-links a {
-  border: 1px solid var(--lab-ink);
+  // iOS 유리 필(pill): 그리드/이미지 위에 떠 있는 반투명 컨트롤.
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.62);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
   color: var(--lab-ink);
   font-size: 12px;
   line-height: 1;
   padding: 4px 9px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 160ms ease, border-color 160ms ease;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
 }
 
-// hover/focus 시 글씨와 테두리를 이전 "Profile" 제목 초록(#0EEF0F)으로.
+// hover/focus 시 글씨와 테두리를 이전 "Profile" 제목 초록(#0EEF0F)으로,
+// 유리 필이 살짝 떠오르고 더 맑아진다.
 .lab-profile-links a:hover,
 .lab-profile-links a:focus {
+  background: rgba(255, 255, 255, 0.55);
   border-color: #0EEF0F;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
   color: #0EEF0F;
 }
 
