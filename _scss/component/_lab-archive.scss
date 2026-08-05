@@ -576,7 +576,7 @@
   // 로고 중심 x = calc(50% - 60px) ≈ 47% → 같은 x에 맞추고 translateX 로 가운데 정렬.
   .lab-callout--about {
     left: 47%;
-    top: calc(50% + 4px);
+    top: calc(50% + 7px);
     transform: translateX(-50%);
   }
 
