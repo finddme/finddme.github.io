@@ -202,6 +202,17 @@
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
   margin-bottom: 1.5rem;
   overflow: hidden;
+  position: relative;
+  transition: box-shadow 180ms ease;
+}
+
+/* hover 시 카테고리바 전체가 살짝 떠오름 (행 hover와 동일한 그림자). */
+.archive-sheet__tabs:has(a:hover),
+.archive-sheet__tabs:has(a:focus-visible) {
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 5;
 }
 
 .archive-sheet__tabs a {
