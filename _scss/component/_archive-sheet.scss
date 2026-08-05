@@ -293,12 +293,14 @@
 }
 
 .archive-sheet__section-title {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(238, 234, 223, 0.5) 100%);
+  background: transparent;
   border-bottom: 0;
   box-shadow:
     inset 0 -1px 0 rgba(0, 0, 0, 0.06),
     0 1px 4px rgba(0, 0, 0, 0.08);
   color: #3a3a3a;
+  isolation: isolate;
+  position: relative;
   font-family: "Archive Post Serif", Arial, Helvetica, sans-serif;
   font-size: 1.02rem;
   font-style: normal;
@@ -309,6 +311,19 @@
   min-height: 2rem;
   padding: 0.42rem 0.75rem 0.38rem;
   text-shadow: none;
+}
+
+/* Glass tint + backdrop blur on a layer BELOW the text so the text renders crisp.
+   (backdrop-filter shows once the page background isn't flat.) */
+.archive-sheet__section-title::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(238, 234, 223, 0.5) 100%);
+  -webkit-backdrop-filter: blur(6px) saturate(180%);
+  backdrop-filter: blur(6px) saturate(180%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
 }
 
 .archive-sheet__table {
