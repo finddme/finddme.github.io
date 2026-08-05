@@ -395,26 +395,30 @@ body.post-page .post-lab-sheet--project .post-title {
 .post-tabs { margin: 0.4rem 0 0.5rem; }
 
 .post-tabs__list {
-  /* inline-flex so the row shrinks to the tabs → the baseline can be sized
-     relative to the tab-row width. Wraps to multiple rows when tabs overflow. */
+  /* Fixed tab height so a baseline can be drawn under EVERY wrapped row via a
+     repeating gradient (period = tab height + row gap). padding-right extends
+     each row's line ~2cm past the tabs. */
+  --tab-h: 2.4rem;
+  --row-gap: 14px;
   display: inline-flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   align-items: flex-end;
-  gap: 14px;                 /* space between tabs (and between wrapped rows) */
+  gap: var(--row-gap);           /* space between tabs and between rows */
   position: relative;
   margin-bottom: 1.1rem;
   max-width: 100%;
-}
-
-/* baseline under the tabs: iOS systemGray, thin, ~2cm longer than the tab row */
-.post-tabs__list::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: calc(100% + 2cm);
-  height: 1px;
-  background: rgba(142, 142, 147, 0.6);   /* iOS systemGray (#8E8E93) */
+  padding-right: 2cm;            /* baseline runs ~2cm past the tabs */
+  /* iOS systemGray baseline under each row */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--tab-h) - 1px),
+    rgba(142, 142, 147, 0.6) calc(var(--tab-h) - 1px),
+    rgba(142, 142, 147, 0.6) var(--tab-h),
+    transparent var(--tab-h),
+    transparent calc(var(--tab-h) + var(--row-gap))
+  );
 }
 
 .post-tabs__tab {
@@ -424,23 +428,33 @@ body.post-page .post-lab-sheet--project .post-title {
   font-size: 0.92rem;
   line-height: 1;
   color: #1c1c1e;
-  padding: 0.62rem 1.2rem;
+  height: var(--tab-h);
+  box-sizing: border-box;
+  padding: 0 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   position: relative;
-  /* rounded-top rectangle sitting on the baseline (square bottom) */
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  /* rounded-top rectangle on the baseline, with a glass/translucent 3D edge:
+     faint rim + soft top sheen (same depth language as the mobile category tabs) */
+  border: 1px solid rgba(0, 0, 0, 0.10);
   border-bottom: 0;
   border-radius: 16px 16px 0 0;
   background: rgba(255, 255, 255, 0.42);
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   backdrop-filter: blur(8px) saturate(150%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.85),
+    inset 0 -6px 10px -6px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.08);
   transition:
     transform 120ms ease,
     box-shadow 160ms ease,
     background-color 160ms ease;
 }
 
-.post-tabs__tab:hover { background: rgba(255, 255, 255, 0.55); }
+.post-tabs__tab:hover { background: rgba(255, 255, 255, 0.58); }
 
 .post-tabs__tab:active { transform: translateY(1px); }
 
@@ -449,13 +463,14 @@ body.post-page .post-lab-sheet--project .post-title {
   outline-offset: 2px;
 }
 
-/* selected tab: popped up above the line, more opaque, soft shadow */
+/* selected tab: popped up above the line, more opaque, stronger edge + shadow */
 .post-tabs__tab[aria-selected="true"] {
   background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(0, 0, 0, 0.14);
   transform: translateY(-3px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    0 6px 14px rgba(0, 0, 0, 0.14);
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    0 8px 16px rgba(0, 0, 0, 0.15);
   font-weight: 600;
   z-index: 1;
 }
