@@ -430,13 +430,30 @@
   opacity: 0;
   pointer-events: none;
   position: absolute;
-  transition: opacity 160ms ease;
+  transition:
+    opacity 140ms ease,
+    transform 140ms ease,
+    box-shadow 140ms ease;
   z-index: -1;
 }
 
+// hover 시 유리 상자가 떠오른다 (위로 올라오며 그림자 커짐).
 .lab-callout:not(.lab-callout--about):hover::after,
 .lab-callout:not(.lab-callout--about):focus-visible::after {
   opacity: 1;
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+// 누르면 유리 상자가 눌린다 (아래로 내려가며 안쪽 그림자 + 살짝 축소).
+.lab-callout:not(.lab-callout--about):active::after {
+  opacity: 1;
+  transform: translateY(1px) scale(0.98);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.16),
+    0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 // 각 요소(캡션 제목·Profile 링크) 앞에 붙는 작은 동그라미 마커.
@@ -712,6 +729,20 @@
     border-radius: 0;
     box-shadow: none;
     padding: 0;
+  }
+
+  // 모바일: 카테고리 유리 카드를 탭하면 눌리는 효과.
+  .lab-callout:not(.lab-callout--about) {
+    transition:
+      transform 120ms ease,
+      box-shadow 120ms ease,
+      color 160ms ease;
+  }
+  .lab-callout:not(.lab-callout--about):active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow:
+      inset 0 1px 3px rgba(0, 0, 0, 0.14),
+      0 2px 6px rgba(0, 0, 0, 0.08);
   }
 
   .lab-callout span {
