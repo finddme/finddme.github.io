@@ -331,17 +331,7 @@
   // 배경을 padding 안쪽(content box)에 맞춰 padding 이 사방 여백으로 실제 적용되게 한다.
   // (기본값 padding-box 면 배경이 padding 영역까지 채워 위·아래 여백이 안 생김)
   background-origin: content-box;
-  // 유리 액자: mat이 뒤 그리드를 굴절(refraction)+frosted 로 비추고,
-  // 가장자리 정반사 림(specular)으로 "유리 상자"임이 분명해진다.
-  background-color: rgba(255, 255, 255, 0.16);
-  -webkit-backdrop-filter: blur(8px) saturate(150%);
-  backdrop-filter: url(#archiveGlassDistort) blur(8px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 16px;
-  box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.9),
-    inset 0 -1px 1px rgba(0, 0, 0, 0.12),
-    0 10px 28px rgba(0, 0, 0, 0.16);
+  border: 0.5px solid var(--lab-line);
   box-sizing: border-box;
   // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
   // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
@@ -397,9 +387,11 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 
-// hover 색을 iOS systemGray(#8E8E93)로 통일.
-.lab-callout:hover {
+// hover 색을 iOS systemGray(#8E8E93)로 통일. 전역 a:hover 밑줄은 제거.
+.lab-callout:hover,
+.lab-callout:focus {
   color: #8E8E93;
+  text-decoration: none;
 }
 
 // hover 시 캡션 뒤에 반투명 유리 칩 + 살짝 떠오름 (표/탭바 hover 언어와 통일).
@@ -416,7 +408,7 @@
     inset 0 -1px 1px rgba(0, 0, 0, 0.10),
     0 6px 16px rgba(0, 0, 0, 0.13);
   content: "";
-  inset: -9px -18px;
+  inset: -16px -30px;
   opacity: 0;
   pointer-events: none;
   position: absolute;
@@ -443,6 +435,12 @@
 // LLM / Multimodal: 기본 색을 #E1E708(다른 캡션 hover 색)로.
 .lab-callout--multi > span {
   color: #E1E708;
+}
+
+// 기본이 연두색이라도 hover 시엔 다른 캡션과 동일하게 iOS systemGray 로.
+.lab-callout--multi:hover > span,
+.lab-callout--multi:focus > span {
+  color: #8E8E93;
 }
 
 // 앞의 ● 마커는 글자색과 무관하게 검정 유지(기본·hover 모두).
