@@ -401,8 +401,11 @@
   color: #8E8E93;
 }
 
-// 탭/포커스 시 브라우저 기본 검정 outline 대신 의도된 systemGray 유리톤 링.
-.lab-callout:focus,
+// 클릭/탭(포인터)에는 outline 없음 — 회색 사각형/테두리 제거.
+// 키보드 탐색(:focus-visible)만 접근성용 링 유지.
+.lab-callout:focus {
+  outline: none;
+}
 .lab-callout:focus-visible {
   outline: 2px solid rgba(142, 142, 147, 0.55);
   outline-offset: 3px;
@@ -726,6 +729,7 @@
   }
 
   .lab-profile-links {
+    justify-content: center;
     margin-left: 0;
     margin-top: 8px;
   }
