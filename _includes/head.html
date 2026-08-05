@@ -165,11 +165,11 @@
     }
 
     body.archive-sheet-page .archive-sheet .archive-sheet__section-title {
-      /* Flat-bg liquid glass: the table cream a touch deeper + bright specular top
-         edge + soft depth shadow (reads as a raised glass bar without backdrop blur). */
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(238, 234, 223, 0.5) 100%) !important;
-      -webkit-background-clip: border-box !important;
-      background-clip: border-box !important;
+      /* Liquid-glass category header bar. The tint + backdrop blur live on ::before
+         (below the text) so the text stays on an unfiltered layer and renders crisp. */
+      background: transparent !important;
+      position: relative !important;
+      isolation: isolate !important;
       box-shadow:
         inset 0 -1px 0 rgba(0, 0, 0, 0.06),
         0 1px 4px rgba(0, 0, 0, 0.08) !important;
@@ -181,6 +181,17 @@
       font-weight: 700 !important;
       letter-spacing: -0.005em !important;
       text-shadow: none !important;
+    }
+
+    body.archive-sheet-page .archive-sheet .archive-sheet__section-title::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: -1 !important;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(238, 234, 223, 0.5) 100%) !important;
+      -webkit-backdrop-filter: blur(6px) saturate(180%) !important;
+      backdrop-filter: blur(6px) saturate(180%) !important;
+      pointer-events: none !important;
     }
 
     body.archive-sheet-page .archive-sheet .archive-sheet__marker {
