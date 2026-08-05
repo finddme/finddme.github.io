@@ -165,11 +165,16 @@
     }
 
     body.archive-sheet-page .archive-sheet .archive-sheet__section-title {
-      /* serif glass header bar (matches post-title typeface, no perforated dots) */
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(236, 235, 230, 0.92)) !important;
+      /* liquid-glass category header bar: translucent + backdrop refraction + specular rim */
+      background: rgba(248, 247, 243, 0.4) !important;
       background-image: none !important;
+      -webkit-backdrop-filter: blur(10px) saturate(160%) !important;
+      backdrop-filter: url(#archiveGlassDistort) blur(10px) saturate(160%) !important;
       -webkit-background-clip: border-box !important;
       background-clip: border-box !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05) !important;
       -webkit-text-fill-color: #3a3a3a !important;
       color: #3a3a3a !important;
       font-family: "Archive Post Serif", Arial, Helvetica, sans-serif !important;
