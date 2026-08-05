@@ -331,15 +331,17 @@
   // 배경을 padding 안쪽(content box)에 맞춰 padding 이 사방 여백으로 실제 적용되게 한다.
   // (기본값 padding-box 면 배경이 padding 영역까지 채워 위·아래 여백이 안 생김)
   background-origin: content-box;
-  // 유리 액자: 이미지가 닿지 않는 mat 여백이 뒤 그리드를 frosted 하게 비춘다.
-  background-color: rgba(255, 255, 255, 0.28);
+  // 유리 액자: mat이 뒤 그리드를 굴절(refraction)+frosted 로 비추고,
+  // 가장자리 정반사 림(specular)으로 "유리 상자"임이 분명해진다.
+  background-color: rgba(255, 255, 255, 0.16);
   -webkit-backdrop-filter: blur(8px) saturate(150%);
-  backdrop-filter: blur(8px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 6px;
+  backdrop-filter: url(#archiveGlassDistort) blur(8px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
   box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.12),
+    0 10px 28px rgba(0, 0, 0, 0.16);
   box-sizing: border-box;
   // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
   // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
@@ -405,13 +407,14 @@
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   backdrop-filter: blur(8px) saturate(150%);
   background: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
   box-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.10),
+    0 6px 16px rgba(0, 0, 0, 0.13);
   content: "";
-  inset: -10px -14px;
+  inset: -9px -18px;
   opacity: 0;
   pointer-events: none;
   position: absolute;
@@ -448,7 +451,8 @@
 .lab-profile-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  // 버튼 사이 간격을 넓혀 각 유리 필이 하나의 띠로 뭉치지 않고 개별로 떠 보이게.
+  gap: 12px;
   margin-left: 0;
   margin-top: 0;
 }
@@ -457,12 +461,14 @@
   // iOS 유리 필(pill): 그리드/이미지 위에 떠 있는 반투명 컨트롤.
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   backdrop-filter: blur(8px) saturate(150%);
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 999px;
+  // 정반사 림(위 밝게/아래 어둡게) + 개별 그림자로 각 버튼이 독립된 유리로 떠 보임.
   box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.10),
+    0 3px 10px rgba(0, 0, 0, 0.14);
   color: var(--lab-ink);
   font-size: 12px;
   line-height: 1;
@@ -483,8 +489,9 @@
   background: rgba(255, 255, 255, 0.55);
   border-color: #0EEF0F;
   box-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.10),
+    0 8px 20px rgba(0, 0, 0, 0.18);
   color: #0EEF0F;
 }
 
