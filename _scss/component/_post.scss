@@ -395,9 +395,7 @@ body.post-page .post-lab-sheet--project .post-title {
 .post-tabs { margin: 0.4rem 0 0.5rem; }
 
 .post-tabs__list {
-  /* Fixed tab height so a baseline can be drawn under EVERY wrapped row via a
-     repeating gradient (period = tab height + row gap). padding-right extends
-     each row's line ~2cm past the tabs. */
+  /* Uniform tab height + nowrap tabs so they wrap cleanly to multiple rows. */
   --tab-h: 2.4rem;
   --row-gap: 14px;
   display: inline-flex;
@@ -408,17 +406,6 @@ body.post-page .post-lab-sheet--project .post-title {
   position: relative;
   margin-bottom: 1.1rem;
   max-width: 100%;
-  padding-right: 2cm;            /* baseline runs ~2cm past the tabs */
-  /* iOS systemGray baseline under each row */
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent calc(var(--tab-h) - 1px),
-    rgba(142, 142, 147, 0.6) calc(var(--tab-h) - 1px),
-    rgba(142, 142, 147, 0.6) var(--tab-h),
-    transparent var(--tab-h),
-    transparent calc(var(--tab-h) + var(--row-gap))
-  );
 }
 
 .post-tabs__tab {
@@ -463,14 +450,17 @@ body.post-page .post-lab-sheet--project .post-title {
   outline-offset: 2px;
 }
 
-/* selected tab: popped up above the line, more opaque, stronger edge + shadow */
+/* selected tab: tinted glass (color fill) — glassy sheen on top fading into the
+   brand accent, popped up with a stronger edge + shadow. */
 .post-tabs__tab[aria-selected="true"] {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(225, 231, 8, 0.42) 100%);
+  border-color: rgba(150, 155, 0, 0.4);
   transform: translateY(-3px);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.95),
     0 8px 16px rgba(0, 0, 0, 0.15);
+  color: #1c1c1e;
   font-weight: 600;
   z-index: 1;
 }
