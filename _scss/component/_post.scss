@@ -454,8 +454,8 @@ body.post-page .post-lab-sheet--project .post-title {
    brand accent, popped up with a stronger edge + shadow. */
 .post-tabs__tab[aria-selected="true"] {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(225, 231, 8, 0.42) 100%);
-  border-color: rgba(150, 155, 0, 0.4);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(225, 231, 8, 0.22) 100%);
+  border-color: rgba(150, 155, 0, 0.28);
   transform: translateY(-3px);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.95),
