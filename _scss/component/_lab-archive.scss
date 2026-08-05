@@ -529,6 +529,12 @@
   color: #0EEF0F;
 }
 
+// Profile 버튼만 기본 상태에서도 초록색(hover 없이).
+.lab-profile-links a[href$="/profile/"] {
+  border-color: #0EEF0F;
+  color: #0EEF0F;
+}
+
 @media (min-width: 821px) {
   .lab-title {
     // 중앙(50%/50%)에서 좌측·위로 약 1.5cm(≈60px) 이동.
@@ -570,7 +576,7 @@
   // 로고 중심 x = calc(50% - 60px) ≈ 47% → 같은 x에 맞추고 translateX 로 가운데 정렬.
   .lab-callout--about {
     left: 47%;
-    top: calc(50% + 8px);
+    top: calc(50% + 4px);
     transform: translateX(-50%);
   }
 
