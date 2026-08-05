@@ -397,13 +397,15 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 
+// hover 색을 iOS systemGray(#8E8E93)로 통일.
 .lab-callout:hover {
-  color: #E1E708;
+  color: #8E8E93;
 }
 
 // hover 시 캡션 뒤에 반투명 유리 칩 + 살짝 떠오름 (표/탭바 hover 언어와 통일).
 // ::after 를 콘텐츠 뒤(z-index:-1)에 깔아 레이아웃 이동 없이 칩만 페이드 인.
-.lab-callout::after {
+// about(프로필 버튼 묶음)은 제외 — 각 버튼이 개별 유리라 큰 칩이 깔리면 "통"으로 보임.
+.lab-callout:not(.lab-callout--about)::after {
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   backdrop-filter: blur(8px) saturate(150%);
   background: rgba(255, 255, 255, 0.4);
@@ -422,8 +424,8 @@
   z-index: -1;
 }
 
-.lab-callout:hover::after,
-.lab-callout:focus-visible::after {
+.lab-callout:not(.lab-callout--about):hover::after,
+.lab-callout:not(.lab-callout--about):focus-visible::after {
   opacity: 1;
 }
 
