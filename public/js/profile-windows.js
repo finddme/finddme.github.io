@@ -1,6 +1,10 @@
 (function () {
   'use strict';
 
+  // iOS Safari only applies :active styles while a touchstart listener exists,
+  // so button/link press effects don't show on iPhone without this (Android is fine).
+  document.addEventListener('touchstart', function () {}, { passive: true });
+
   var layer = document.querySelector('[data-mac-layer]');
   if (!layer) return;
 
