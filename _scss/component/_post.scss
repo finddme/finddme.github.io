@@ -469,7 +469,24 @@ body.post-page .post-lab-sheet--project .post-title {
     background-color 160ms ease;
 }
 
-.post-tabs__tab:hover { background: rgba(255, 255, 255, 0.58); }
+/* hover: 살짝 떠오름 + 밝아짐 + 그림자 강화. hover 가능한 기기에만 적용해
+   터치 탭 시 눌러붙는 hover 잔상을 막는다. (기존 tab transition을 그대로 타 애니됨) */
+@media (hover: hover) and (pointer: fine) {
+  .post-tabs__tab:hover {
+    background: rgba(255, 255, 255, 0.58);
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.9),
+      0 6px 14px rgba(0, 0, 0, 0.12);
+  }
+  /* 선택 탭은 이미 -3px 떠 있으니 hover 시 더 올려서 반응한다. */
+  .post-tabs__tab[aria-selected="true"]:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.95),
+      0 11px 20px rgba(0, 0, 0, 0.17);
+  }
+}
 
 .post-tabs__tab:active { transform: translateY(1px); }
 
