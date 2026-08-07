@@ -552,6 +552,10 @@
 
   .lab-callout {
     --lab-callout-title-size: 72px;
+    // 미세 깊이 패럴랙스(STEP 2): 타이틀(8/5px)보다 작게 움직여 뒤쪽 레이어로
+    // 읽히게 한다. 배치는 그대로 — 포인터에 따라 층별 속도차만 준다 (스킬 §7).
+    // 튜닝 lever: 이 배수(px)를 키우면 앞으로, 줄이면 뒤로 느껴진다.
+    transform: translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0);
   }
 
   .lab-callout--nlp {
@@ -579,7 +583,8 @@
   .lab-callout--about {
     left: 47%;
     top: calc(50% + 7px);
-    transform: translateX(-50%);
+    // 가운데 정렬(translateX -50%)에 callout 레이어의 패럴랙스를 덧붙인다.
+    transform: translateX(-50%) translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0);
   }
 
   // 좌상단 상자. 왼쪽 끝이 "All categories"의 오른쪽 끝(s 끝지점, 무대 92.2%)과
@@ -589,6 +594,8 @@
     top: 9%;
     width: 390px;
     height: 370px;
+    // 중간 깊이 레이어: 타이틀(8/5)과 callout(3/2) 사이.
+    transform: translate3d(calc(var(--lab-x) * 5px), calc(var(--lab-y) * 3px), 0);
   }
 }
 
