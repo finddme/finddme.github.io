@@ -82,6 +82,8 @@
   border: 0;
   color: #050505;
   font-family: Arial, Helvetica, sans-serif;
+  // 가변 폰트가 쓰이면 크기에 맞는 optical sizing 자동 적용(스킬 §15).
+  font-optical-sizing: auto;
   margin-left: 50%;
   padding: 0;
   transform: translateX(-50%);
@@ -434,6 +436,8 @@
   align-items: center;
   display: flex;
   font-size: 0.85rem;
+  // 작은 숫자는 살짝 벌려야 또렷하다(스킬 §15: 작은 텍스트=양수 tracking).
+  letter-spacing: 0.01em;
   justify-content: center;
   line-height: 1;
 }
@@ -529,6 +533,8 @@
   color: #111;
   display: flex;
   font-size: 0.78rem;
+  // 작은 날짜 텍스트는 살짝 벌려야 또렷하다(스킬 §15).
+  letter-spacing: 0.015em;
   line-height: 1.2;
   padding: 0.45rem 0.75rem;
   position: relative;
