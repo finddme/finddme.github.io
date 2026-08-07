@@ -124,6 +124,14 @@
     });
   }
 
+  // iOS Safari는 등록된 touch 리스너가 없는 요소에는 :active를 적용하지 않는다.
+  // 빈 touchstart 리스너를 달아 탭 시 유리 press 효과(:active)가 실제로 나오게 한다.
+  // (profile 페이지에서 검증된 패턴을 홈 callout/pill에도 적용.)
+  var pressTargets = root.querySelectorAll(".lab-callout, .lab-profile-links a");
+  Array.prototype.forEach.call(pressTargets, function (el) {
+    el.addEventListener("touchstart", function () {}, { passive: true });
+  });
+
   updateTime();
   window.setInterval(updateTime, 30000);
   updateStageScale();
