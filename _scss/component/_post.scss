@@ -56,6 +56,17 @@ body.post-page {
   --page-gutter: clamp(1.25rem, 6vw, 8rem);
 }
 
+// P3: TOC/헤딩 앵커 클릭 시 부드럽게 스크롤(포스트 페이지에만 스코프).
+// 문서 스크롤 주체는 html이므로 :has로 포스트일 때만 켠다.
+html:has(body.post-page) {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(body.post-page) {
+    scroll-behavior: auto;
+  }
+}
+
 body.post-page .wrap {
   background: #fff;
 }
@@ -226,6 +237,16 @@ body.post-page .post-content {
 
 body.post-page .post-content article > :first-child {
   margin-top: 0;
+}
+
+// P3: TOC 앵커로 점프 시 헤딩이 뷰포트 최상단에 딱 붙지 않게 여백을 준다.
+body.post-page .post-content h1,
+body.post-page .post-content h2,
+body.post-page .post-content h3,
+body.post-page .post-content h4,
+body.post-page .post-content h5,
+body.post-page .post-content h6 {
+  scroll-margin-top: 1.75rem;
 }
 
 body.post-page .post-toc {
