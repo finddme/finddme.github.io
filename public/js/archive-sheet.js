@@ -54,8 +54,9 @@
     });
   })();
 
-  // 탭 터치 press를 spring으로 구동(A2): 누르면 축소, 떼면 velocity를 이어받아
-  // 살짝 overshoot 후 정착. 터치일 때만 개입하고 마우스는 A1의 CSS를 그대로 쓴다.
+  // 탭 press를 spring으로 구동(A2): 누르면 축소, 떼면 velocity를 이어받아 살짝
+  // overshoot 후 정착. 터치·마우스 모두에 적용한다(데스크톱에서도 press 스프링).
+  // JS가 transform을 소유하므로 A1의 CSS :active(scale)는 JS 미로드 시 폴백 역할.
   // 행은 탭 시 즉시 포스트로 이동해 release 스프링이 안 보이고 넓은 셀이라 scale이
   // 어색하므로, 행은 A1의 iOS 셀 하이라이트만 쓰고 여기선 다루지 않는다.
   (function initTabPressSpring() {
@@ -64,8 +65,12 @@
       return;
     }
     var PRESS_RESPONSE = 0.32;
-    var PRESS_DAMPING = 0.55;
-    var PRESS_SCALE = 0.94;
+    var PRESS_DAMPING = 0.5;
+    var PRESS_SCALE = 0.90;
+    // 넓은 탭("...and Linguistics"처럼 긴 이름)은 균일 scale이 중앙 텍스트 기준
+    // 잘 안 보인다 → 눌린 정도(1-scale)에 비례해 살짝 아래로 내려 세로 이동을 준다.
+    // 세로 이동은 탭 폭과 무관하게 균일하게 보인다. (누른 만큼 px)
+    var PRESS_LIFT = 42;
 
     Array.prototype.forEach.call(tabs, function (el) {
       var spring = new window.LabSpring({
@@ -82,7 +87,10 @@
         var dt = last ? (t - last) / 1000 : 1 / 60;
         last = t;
         spring.step(dt);
-        el.style.transform = 'scale(' + spring.value.toFixed(4) + ')';
+        // 누른 정도(1-value)에 비례한 세로 눌림 + scale. release overshoot(value>1)
+        // 때는 살짝 위로 튀어 자연스럽게 되돌아온다.
+        var ty = (1 - spring.value) * PRESS_LIFT;
+        el.style.transform = 'translateY(' + ty.toFixed(2) + 'px) scale(' + spring.value.toFixed(4) + ')';
         if (!spring.isResting()) {
           raf = window.requestAnimationFrame(tick);
           return;
@@ -102,19 +110,13 @@
         }
       }
 
-      el.addEventListener('pointerdown', function (event) {
-        if (event.pointerType !== 'touch') {
-          return;
-        }
+      el.addEventListener('pointerdown', function () {
         el.style.transition = 'none';  // JS가 transform 소유(이중 스무딩 방지)
         spring.target = PRESS_SCALE;
         start();
       });
 
-      function release(event) {
-        if (event && event.pointerType && event.pointerType !== 'touch') {
-          return;
-        }
+      function release() {
         spring.target = 1;
         start();
       }
