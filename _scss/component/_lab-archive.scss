@@ -52,6 +52,8 @@
   --lab-mono: "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
   color: var(--lab-ink);
   font-family: "PT Sans", Arial, sans-serif;
+  // 가변 폰트가 쓰이면 크기에 맞는 optical sizing을 자동 적용(스킬 §15).
+  font-optical-sizing: auto;
   min-height: 100vh;
 }
 
@@ -234,7 +236,11 @@
   color: var(--lab-ink);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
-  letter-spacing: 0;
+  // 큰 display 텍스트는 커질수록 글자 사이가 벌어져 보인다 → 음수 tracking으로
+  // 조인다 (스킬 §15). em 기반이라 폭에 비례하고, 크기별 값은 아래 미디어쿼리에서
+  // 미세 조정한다(데스크톱 118px는 더 조이고, 모바일 64px는 덜 조임).
+  letter-spacing: -0.022em;
+  font-optical-sizing: auto;
   line-height: 0.9;
   margin: 0;
   white-space: nowrap;
@@ -359,6 +365,9 @@
   font-family: "PT Sans", Arial, sans-serif;
   font-size: var(--lab-callout-title-size);
   font-weight: 400;
+  // 큰 제목이라 살짝 조인다(스킬 §15). em 기반이라 데스크톱 72px/모바일 30px에
+  // 비례. 모노 계열(ling)은 자기 letter-spacing 규칙이 더 구체적이라 영향 없음.
+  letter-spacing: -0.01em;
   line-height: 0.9;
 }
 
@@ -367,7 +376,8 @@
   display: block;
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  // 작은 uppercase 캡션은 살짝 벌려야 읽힌다(스킬 §15: 작은 텍스트=양수 tracking).
+  letter-spacing: 0.05em;
   line-height: 1.1;
   margin-top: 18px;
   max-width: 200px;
@@ -526,6 +536,8 @@
     0 3px 10px rgba(0, 0, 0, 0.14);
   color: var(--lab-ink);
   font-size: 16px;
+  // uppercase 컨트롤 라벨은 살짝 벌려야 또렷하다.
+  letter-spacing: 0.03em;
   line-height: 1;
   padding: 7px 15px;
   text-decoration: none;
@@ -582,6 +594,8 @@
 
   .lab-title h1 {
     font-size: 118px;
+    // 데스크톱은 가장 큰 크기라 살짝 조인다(너무 조이면 갑갑해 보여 -0.02em로 완화).
+    letter-spacing: -0.02em;
   }
 
   .lab-callout {
@@ -684,6 +698,8 @@
 
   .lab-title h1 {
     font-size: min(15vw, 64px);
+    // 모바일은 더 작으니 덜 조인다(작을수록 tracking을 완화).
+    letter-spacing: -0.012em;
   }
 
   // 상자: 흐름 내 가운데 정렬 박스(상자 비율 유지). 로고 바로 아래에 온다.
