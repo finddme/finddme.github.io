@@ -12,6 +12,13 @@
     return window.matchMedia('(max-width: 768px)').matches;
   }
 
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // 데스크톱에서만 scale+페이드 열기/닫기. 모바일은 풀스크린 시트(CSS macSheetUp)를,
+  // reduced-motion은 즉시 표시/숨김을 쓴다.
+  function canAnimateWindow() {
+    return !reduceMotion && !isMobile();
+  }
+
   // Pull a window fully into the viewport so wide default positions aren't clipped
   // on narrower screens. Desktop only (mobile windows are full-screen sheets).
   function clampIntoView(win) {
@@ -59,9 +66,14 @@
   function openWindow(id) {
     var win = document.getElementById(id);
     if (!win) return;
-    var firstOpen = win.hidden;
+    var wasHidden = win.hidden;
+    // 닫히는 중이었다면 취소하고 다시 연다.
+    win.classList.remove('mac-window--collapsed');
+    var animate = wasHidden && canAnimateWindow();
+    // 축소 상태에서 시작 → 표시 → 리플로우 → 해제하면 scale/opacity가 도착하며 재생.
+    if (animate) win.classList.add('mac-window--collapsed');
     win.hidden = false;
-    if (firstOpen && !win.dataset.placed) {
+    if (wasHidden && !win.dataset.placed) {
       if (!isMobile()) {
         if (win.dataset.defaultTop || win.dataset.defaultLeft) {
           if (win.dataset.defaultTop) win.style.top = win.dataset.defaultTop;
@@ -78,11 +90,36 @@
     }
     bringToFront(win);
     clampIntoView(win);
+    if (animate) {
+      void win.offsetWidth;                       // 리플로우로 시작 상태를 확정
+      win.classList.remove('mac-window--collapsed'); // → scale 1 / opacity 1로 전환
+    }
   }
 
   function closeWindow(id) {
     var win = document.getElementById(id);
-    if (win) win.hidden = true;
+    if (!win) return;
+    if (!canAnimateWindow()) {
+      win.hidden = true;
+      return;
+    }
+    // 축소·페이드로 닫힌 뒤 실제로 숨긴다. transitionend(없으면 타이머 폴백) 후 hidden.
+    win.classList.add('mac-window--collapsed');
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      win.hidden = true;
+      win.classList.remove('mac-window--collapsed');
+      win.removeEventListener('transitionend', onEnd);
+    }
+    function onEnd(e) {
+      if (e.target === win && (e.propertyName === 'transform' || e.propertyName === 'opacity')) {
+        finish();
+      }
+    }
+    win.addEventListener('transitionend', onEnd);
+    window.setTimeout(finish, 400);
   }
 
   if (desktop && artToggle) {
