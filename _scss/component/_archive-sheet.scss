@@ -399,27 +399,6 @@
   transition: background-color 90ms var(--arch-ease);
 }
 
-// 스크롤 등장 materialize(A3, 스킬 §12): 행이 뷰포트에 들어오면 blur가 걷히고
-// 살짝 떠오르며(translateY) 페이드인 → "재질로 도착". archive는 데스크톱에서도
-// 스크롤하므로 전 폭에 적용한다. 숨김 초기 상태는 JS가 붙인 [data-arch-anim]일
-// 때만 → JS 꺼지면 정상 표시. 등장은 filter/opacity/translateY만(행엔 base
-// transform이 없어 충돌 없음). stagger는 R3에서 별도 반영.
-.archive-sheet[data-arch-anim] .archive-sheet__row {
-  opacity: 0;
-  transform: translateY(40px);
-  filter: blur(12px);
-  transition:
-    opacity 800ms var(--arch-ease),
-    transform 800ms var(--arch-ease),
-    filter 800ms var(--arch-ease);
-  will-change: opacity, transform, filter;
-}
-.archive-sheet[data-arch-anim] .archive-sheet__row.is-materialized {
-  opacity: 1;
-  transform: translateY(0);
-  filter: blur(0);
-}
-
 .archive-sheet__index,
 .archive-sheet__thumb,
 .archive-sheet__title,
