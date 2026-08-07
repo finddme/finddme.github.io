@@ -138,20 +138,35 @@
     return;
   }
 
-  var targetX = 0;
-  var targetY = 0;
-  var currentX = 0;
-  var currentY = 0;
+  // 포인터 패럴랙스: 고정 lerp 대신 진짜 spring으로 구동한다.
+  // X·Y를 독립 spring으로 분해(Apple 스킬 §3) — 두 축 속도가 달라도 desync 없음.
+  // 살짝 under-damped(dampingRatio<1)라 빠르게 움직이면 관성을 이어받아
+  // 미세하게 overshoot 후 정착하고, 포인터가 벗어나면 target 0으로 복귀한다.
+  // 튜닝 lever: PARALLAX_RESPONSE(낮을수록 스냅), PARALLAX_DAMPING(낮을수록 바운스).
+  var PARALLAX_RESPONSE = 0.45;
+  var PARALLAX_DAMPING = 0.75;
+  var Spring = window.LabSpring;
+  var springX = Spring ? new Spring({ response: PARALLAX_RESPONSE, dampingRatio: PARALLAX_DAMPING }) : null;
+  var springY = Spring ? new Spring({ response: PARALLAX_RESPONSE, dampingRatio: PARALLAX_DAMPING }) : null;
   var frameRequested = false;
+  var lastFrameTime = 0;
 
-  function renderPointer() {
-    currentX += (targetX - currentX) * 0.12;
-    currentY += (targetY - currentY) * 0.12;
+  function renderPointer(now) {
+    if (!springX || !springY) {
+      frameRequested = false;
+      return;
+    }
+    var t = typeof now === "number" ? now : performance.now();
+    var dt = lastFrameTime ? (t - lastFrameTime) / 1000 : 1 / 60;
+    lastFrameTime = t;
 
-    root.style.setProperty("--lab-x", currentX.toFixed(3));
-    root.style.setProperty("--lab-y", currentY.toFixed(3));
+    springX.step(dt);
+    springY.step(dt);
 
-    if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+    root.style.setProperty("--lab-x", springX.value.toFixed(4));
+    root.style.setProperty("--lab-y", springY.value.toFixed(4));
+
+    if (!springX.isResting() || !springY.isResting()) {
       window.requestAnimationFrame(renderPointer);
       return;
     }
@@ -165,22 +180,26 @@
     }
 
     frameRequested = true;
+    lastFrameTime = 0;
     window.requestAnimationFrame(renderPointer);
   }
 
   root.addEventListener("pointermove", function (event) {
-    if (!desktopMode.matches) {
+    if (!desktopMode.matches || !springX || !springY) {
       return;
     }
     var bounds = root.getBoundingClientRect();
-    targetX = (event.clientX - bounds.left) / bounds.width - 0.5;
-    targetY = (event.clientY - bounds.top) / bounds.height - 0.5;
+    springX.target = (event.clientX - bounds.left) / bounds.width - 0.5;
+    springY.target = (event.clientY - bounds.top) / bounds.height - 0.5;
     requestPointerRender();
   });
 
   root.addEventListener("pointerleave", function () {
-    targetX = 0;
-    targetY = 0;
+    if (!springX || !springY) {
+      return;
+    }
+    springX.target = 0;
+    springY.target = 0;
     requestPointerRender();
   });
 
