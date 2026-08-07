@@ -862,3 +862,70 @@
     transition: none;
   }
 }
+
+// 투명도 줄이기 선호(스킬 §14): 유리 표면을 더 서리 끼거나 불투명하게 만들어
+// 뒤가 비쳐 텍스트 가독성이 떨어지지 않게 한다 — backdrop-filter 제거 + 배경 불투명↑.
+@media (prefers-reduced-transparency: reduce) {
+  .lab-title__glass {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .lab-callout:not(.lab-callout--about)::after {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.94);
+  }
+  .lab-callout:not(.lab-callout--about):hover::after,
+  .lab-callout:not(.lab-callout--about):focus-visible::after,
+  .lab-callout:not(.lab-callout--about):active::after {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .lab-profile-links a {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  @media (max-width: 820px) {
+    .lab-callout:not(.lab-callout--about) {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background: rgba(255, 255, 255, 0.92);
+    }
+  }
+}
+
+// 고대비 선호(스킬 §14): 거의 불투명한 배경 + 뚜렷한 대비 테두리로 경계를 확정하고,
+// 흐릿한 muted 텍스트를 진하게 올린다.
+@media (prefers-contrast: more) {
+  .lab-profile-links a {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.55);
+  }
+
+  .lab-callout small {
+    color: #3a3a36;
+  }
+
+  .lab-callout:not(.lab-callout--about)::after {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  @media (max-width: 820px) {
+    .lab-callout:not(.lab-callout--about) {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
+}
