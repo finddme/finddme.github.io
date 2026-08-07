@@ -74,6 +74,9 @@
   --archive-grid: #d7d7d1;
   --archive-lab-line: #dfdbd1;
   --archive-lab-soft: #f0f0ec;
+  // iOS식 critically-damped 스냅 이징(홈 --lab-ease와 동일). hover/press 등
+  // momentum 없는 상호작용용 (스킬 §4).
+  --arch-ease: cubic-bezier(0.32, 0.72, 0, 1);
 
   background: transparent;
   border: 0;
@@ -130,6 +133,8 @@
 .archive-sheet a {
   color: inherit;
   text-decoration: none;
+  // 아이폰 탭 시 각진 회색 하이라이트 대신 우리 press 효과만 보이게.
+  -webkit-tap-highlight-color: transparent;
 }
 
 .archive-sheet__header {
@@ -203,7 +208,7 @@
   margin-bottom: 1.5rem;
   overflow: hidden;
   position: relative;
-  transition: box-shadow 180ms ease;
+  transition: box-shadow 220ms var(--arch-ease);
 }
 
 /* hover 시 카테고리바 전체가 살짝 떠오름 (행 hover와 동일한 그림자). */
@@ -239,8 +244,8 @@
   transform: scaleX(0.68);
   transform-origin: center;
   transition:
-    transform 360ms ease-out,
-    letter-spacing 360ms ease-out;
+    transform 340ms var(--arch-ease),
+    letter-spacing 340ms var(--arch-ease);
   white-space: nowrap;
 }
 
@@ -271,6 +276,14 @@
 .archive-sheet__tabs a:focus-visible span {
   letter-spacing: -0.02em;
   transform: scaleX(1.22);
+}
+
+// 탭을 누르면 즉시 살짝 눌린다(스킬 §1). 짧은 duration으로 손에 붙게.
+// (span의 scaleX 확장과 겹치지 않도록 눌림은 <a> 자체에 준다.)
+.archive-sheet__tabs a:active {
+  background: rgba(248, 247, 243, 0.82);
+  transform: scale(0.97);
+  transition: transform 110ms var(--arch-ease), background-color 110ms var(--arch-ease);
 }
 
 .archive-sheet__sections {
@@ -342,9 +355,9 @@
   overflow: visible;
   position: relative;
   transition:
-    background-color 160ms ease,
-    box-shadow 180ms ease,
-    min-height 180ms ease;
+    background-color 200ms var(--arch-ease),
+    box-shadow 220ms var(--arch-ease),
+    min-height 220ms var(--arch-ease);
 }
 
 .archive-sheet__row:last-child {
@@ -363,8 +376,8 @@
   pointer-events: none;
   position: absolute;
   transition:
-    border-color 140ms ease,
-    box-shadow 140ms ease;
+    border-color 180ms var(--arch-ease),
+    box-shadow 180ms var(--arch-ease);
   z-index: 6;
 }
 
@@ -375,6 +388,13 @@
   min-height: 2.9rem;
   outline: 0;
   z-index: 5;
+}
+
+// 행을 누르면 iOS 리스트 셀처럼 즉시 선택 하이라이트가 뜬다(스킬 §1).
+// 넓은 셀이라 scale 대신 배경 하이라이트로 — 빠르게.
+.archive-sheet__row:active {
+  background: rgba(248, 247, 243, 0.88);
+  transition: background-color 90ms var(--arch-ease);
 }
 
 .archive-sheet__index,
@@ -421,9 +441,9 @@
   pointer-events: none;
   position: absolute;
   transition:
-    background-color 200ms ease,
-    -webkit-backdrop-filter 200ms ease,
-    backdrop-filter 200ms ease;
+    background-color 260ms var(--arch-ease),
+    -webkit-backdrop-filter 260ms var(--arch-ease),
+    backdrop-filter 260ms var(--arch-ease);
   z-index: 2;
 }
 
@@ -438,10 +458,12 @@
   position: absolute;
   transform: scale(1.1);
   transform-origin: center;
+  // defog = materialize(스킬 §12): blur/opacity/scale가 iOS 이징으로 함께 걷히며
+  // 썸네일이 "선명한 재질로 도착"한다.
   transition:
-    filter 200ms ease,
-    opacity 200ms ease,
-    transform 200ms ease;
+    filter 260ms var(--arch-ease),
+    opacity 260ms var(--arch-ease),
+    transform 260ms var(--arch-ease);
   width: 100%;
   z-index: 1;
 }
