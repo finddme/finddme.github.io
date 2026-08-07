@@ -245,9 +245,10 @@
   display: inline-block;
   transform: scaleX(0.68);
   transform-origin: center;
+  // UI 트랜지션은 300ms 미만으로(STANDARDS). 340→280ms로 트림해 더 반응감 있게.
   transition:
-    transform 340ms var(--arch-ease),
-    letter-spacing 340ms var(--arch-ease);
+    transform 280ms var(--arch-ease),
+    letter-spacing 280ms var(--arch-ease);
   white-space: nowrap;
 }
 
