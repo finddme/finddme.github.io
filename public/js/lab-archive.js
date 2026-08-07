@@ -132,8 +132,34 @@
     el.addEventListener("touchstart", function () {}, { passive: true });
   });
 
+  // 모바일: 각 카드가 스크롤로 뷰포트에 들어오면 materialize(등장) 시킨다.
+  // 초기 숨김 상태 CSS는 [data-lab-anim]로 게이트되므로, 이 함수가 돌 때만
+  // (모바일 + 모션 허용 + IO 지원) 숨겼다가 순차로 드러낸다. 그 외엔 정상 표시.
+  function initScrollMaterialize() {
+    if (reduceMotion || !mobileMode.matches || !("IntersectionObserver" in window)) {
+      return;
+    }
+    var cards = root.querySelectorAll(".lab-callout");
+    if (!cards.length) {
+      return;
+    }
+    root.setAttribute("data-lab-anim", "");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-materialized");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+    Array.prototype.forEach.call(cards, function (card) {
+      io.observe(card);
+    });
+  }
+
   updateTime();
   window.setInterval(updateTime, 30000);
+  initScrollMaterialize();
   updateStageScale();
   window.addEventListener("resize", updateStageScale);
   window.addEventListener("load", updateStageScale);
