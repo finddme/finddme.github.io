@@ -16,11 +16,11 @@ $desktop-accent: #E1E708;
   overflow: hidden;
   background: #fff;
   color: #111;
-  // iOS 스냅 이징(다른 화면들과 동일). 창 열기/닫기 등에 사용.
+  // iOS 스냅 이징(다른 화면들과 동일). 창 열기/닫기·다크 전환 등에 사용.
   --mac-ease: cubic-bezier(0.32, 0.72, 0, 1);
   transition:
-    background-color 180ms ease,
-    color 180ms ease;
+    background-color 220ms var(--mac-ease),
+    color 220ms var(--mac-ease);
 }
 .desktop--dark {
   background: #1c1c1e;

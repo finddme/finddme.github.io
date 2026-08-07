@@ -187,13 +187,36 @@
 
   if (desktop && artToggle) {
     artToggle.addEventListener('click', function () {
-      var isDark = desktop.classList.toggle('desktop--dark');
+      var willBeDark = !desktop.classList.contains('desktop--dark');
+      artToggle.setAttribute('aria-pressed', willBeDark ? 'true' : 'false');
       var img = artToggle.querySelector('img');
-      artToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      if (img) {
-        img.src = isDark ? artToggle.dataset.darkSrc : artToggle.dataset.lightSrc;
-        img.alt = isDark ? 'TTORI' : 'YEIN';
+      var src = willBeDark ? artToggle.dataset.darkSrc : artToggle.dataset.lightSrc;
+      var alt = willBeDark ? 'TTORI' : 'YEIN';
+      if (!img || reduceMotion) {
+        desktop.classList.toggle('desktop--dark', willBeDark);
+        if (img) { img.src = src; img.alt = alt; }
+        return;
       }
+      // 아트는 모드별 크기·위치(다크는 translateX(13%) + 다른 width)가 달라, 즉시
+      // 토글하면 페이드 중에 옆으로 툭 튄다. 그래서 페이드아웃으로 완전히 감춘 뒤에야
+      // 다크 토글 + src 교체(=크기/위치 변화)를 하고 다시 페이드인한다.
+      var pre = new Image();
+      pre.src = src;                                   // 미리 로드해 플래시 방지
+      img.style.transition = 'opacity 240ms var(--mac-ease)';
+      var applied = false;
+      function apply() {
+        if (applied) return;
+        applied = true;
+        img.removeEventListener('transitionend', onEnd);
+        desktop.classList.toggle('desktop--dark', willBeDark); // 배경+아트 크기 변화(안 보임)
+        img.src = src;
+        img.alt = alt;
+        window.requestAnimationFrame(function () { img.style.opacity = '1'; }); // 페이드인
+      }
+      function onEnd(e) { if (e.propertyName === 'opacity') apply(); }
+      img.addEventListener('transitionend', onEnd);
+      window.requestAnimationFrame(function () { img.style.opacity = '0'; });   // 페이드아웃 시작
+      window.setTimeout(apply, 360);
     });
   }
 
