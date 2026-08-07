@@ -261,12 +261,19 @@ body.post-page #markdown-toc a {
   color: #E1E708;
   display: inline-block;
   text-decoration: none;
+  transition: color 150ms ease;
 }
 
 body.post-page #markdown-toc a:hover,
 body.post-page #markdown-toc a:focus {
   color: #0b0b0b;
   text-decoration: none;
+}
+
+// scroll-spy(P2): 지금 읽는 섹션의 TOC 링크를 "현재"로 표시한다. 기본 노랑·hover
+// 검정과 구분되도록 iOS systemGray(#8E8E93). .is-active 는 JS(post-toc.js)가 토글.
+body.post-page #markdown-toc a.is-active {
+  color: #8E8E93;
 }
 
 body.post-page .post-lab-sheet--project {
