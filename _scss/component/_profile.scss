@@ -152,16 +152,22 @@ $desktop-accent: #E1E708;
   background: #fff;
   border: 1px solid #b7b7b7;
   border-radius: 8px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+  // 비포커스(inactive) 기본 그림자 — 옅게. 포커스/드래그 시 아래에서 깊어진다(PR2).
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
   overflow: hidden;
   pointer-events: auto;
-  // 열기/닫기 materialize(PR1). drag/resize는 left/top·width/height를 쓰므로
-  // transform은 이 애니 전용이라 충돌 없음.
+  // 열기/닫기 materialize(PR1)와 포커스/드래그 그림자 전환(PR2). drag/resize는
+  // left/top·width/height를 쓰므로 transform은 이 애니 전용이라 충돌 없음.
   transition:
     transform 420ms var(--mac-ease),
-    opacity 380ms var(--mac-ease);
+    opacity 380ms var(--mac-ease),
+    box-shadow 200ms var(--mac-ease);
 }
 .mac-window[hidden] { display: none; }
+
+/* 포커스(앞으로 온) 창은 더 깊은 그림자, 드래그 중엔 가장 깊게 — macOS식 위계(PR2). */
+.mac-window--focused { box-shadow: 0 22px 54px rgba(0,0,0,0.30); }
+.mac-window--dragging { box-shadow: 0 34px 72px rgba(0,0,0,0.40); }
 
 /* 열기 직전/닫기 도중의 축소·투명 상태(JS가 토글). 창이 살짝 작아졌다 도착. */
 /* 이미지(우측 *.jpeg) 창: 중앙에서 살짝 축소 + 아래서 올라옴(기존 유지). */
@@ -238,9 +244,11 @@ $desktop-accent: #E1E708;
 .desktop--dark .mac-window {
   background: #1f1f21;
   border-color: #4a4a4d;
-  box-shadow: 0 20px 56px rgba(0,0,0,0.68);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.5);
   color: #f5f5f7;
 }
+.desktop--dark .mac-window--focused { box-shadow: 0 24px 60px rgba(0,0,0,0.72); }
+.desktop--dark .mac-window--dragging { box-shadow: 0 36px 82px rgba(0,0,0,0.82); }
 .desktop--dark .mac-window__bar {
   background: linear-gradient(#3a3a3c, #2c2c2e);
   border-bottom-color: #505054;

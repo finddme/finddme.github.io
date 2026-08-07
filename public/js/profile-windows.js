@@ -61,7 +61,22 @@
   function bringToFront(win) {
     zTop += 1;
     win.style.zIndex = String(zTop);
+    // 포커스 위계(PR2): 앞으로 온 창만 focused, 나머지는 해제 → 그림자로 위계 표시.
+    document.querySelectorAll('.mac-window--focused').forEach(function (w) {
+      if (w !== win) w.classList.remove('mac-window--focused');
+    });
+    win.classList.add('mac-window--focused');
   }
+
+  // 초기: 화면에 떠 있는 창 중 z가 가장 높은 것을 포커스로.
+  (function focusInitial() {
+    var top = null, topZ = -1;
+    document.querySelectorAll('.mac-window:not([hidden])').forEach(function (w) {
+      var z = parseInt(window.getComputedStyle(w).zIndex, 10) || 0;
+      if (z >= topZ) { topZ = z; top = w; }
+    });
+    if (top) top.classList.add('mac-window--focused');
+  })();
 
   // 이미지 창(win-img-*)은 중앙 축소(collapsed), 나머지 메뉴 창은 버튼에서
   // 자라나는(grow) 효과를 쓴다.
@@ -224,6 +239,7 @@
     drag = { win: win, dx: e.clientX - rect.left, dy: e.clientY - rect.top };
     win.style.top = rect.top + 'px';
     win.style.left = rect.left + 'px';
+    win.classList.add('mac-window--dragging');   // PR2: 드래그 중 lift(깊은 그림자)
     handle.setPointerCapture(e.pointerId);
     e.preventDefault();
   });
@@ -232,7 +248,10 @@
     drag.win.style.left = (e.clientX - drag.dx) + 'px';
     drag.win.style.top = (e.clientY - drag.dy) + 'px';
   });
-  function endDrag() { drag = null; }
+  function endDrag() {
+    if (drag) drag.win.classList.remove('mac-window--dragging');   // PR2: 놓으면 lift 해제
+    drag = null;
+  }
   layer.addEventListener('pointerup', endDrag);
   layer.addEventListener('pointercancel', endDrag);
 
