@@ -540,8 +540,10 @@
     // 중앙(50%/50%)에서 좌측·위로 약 1.5cm(≈60px) 이동.
     left: calc(50% - 60px);
     top: calc(50% - 60px);
+    // 패럴랙스는 JS spring이 --lab-x/--lab-y를 매 프레임 구동한다.
+    // CSS transition을 걸면 spring과 이중 스무딩으로 싸우므로 두지 않는다
+    // (Apple 스킬 §3: presentation 값에서 이어지도록, gesture 모션에 transition 회피).
     transform: translate(-50%, -50%) translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
-    transition: transform 160ms ease-out;
   }
 
   .lab-title h1 {
