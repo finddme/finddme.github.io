@@ -213,8 +213,8 @@
   transition: box-shadow 220ms var(--arch-ease);
 }
 
-/* hover 시 카테고리바 전체가 살짝 떠오름 (행 hover와 동일한 그림자). */
-.archive-sheet__tabs:has(a:hover),
+/* 키보드 focus 시 카테고리바가 살짝 떠오름. hover 판은 R1에서 hover 가능한
+   기기로 게이팅한다(파일 하단 @media (hover: hover)). */
 .archive-sheet__tabs:has(a:focus-visible) {
   box-shadow:
     0 6px 16px rgba(0, 0, 0, 0.12),
@@ -267,13 +267,11 @@
   display: none;
 }
 
-.archive-sheet__tabs a:hover,
 .archive-sheet__tabs a:focus {
   background: rgba(248, 247, 243, 0.72);
   outline: 0;
 }
 
-.archive-sheet__tabs a:hover span,
 .archive-sheet__tabs a:focus span,
 .archive-sheet__tabs a:focus-visible span {
   letter-spacing: -0.02em;
@@ -383,7 +381,6 @@
   z-index: 6;
 }
 
-.archive-sheet__row:hover,
 .archive-sheet__row:focus-visible {
   background: rgba(248, 247, 243, 0.72);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
@@ -472,15 +469,14 @@
   z-index: 1;
 }
 
-// 김서림 걷기(defog): hover 시 유리 오버레이와 블러를 걷어 썸네일을 선명하게.
-.archive-sheet__row:hover .archive-sheet__thumb img,
+// 김서림 걷기(defog): 키보드 focus 시 유리 오버레이와 블러를 걷어 썸네일을 선명하게.
+// hover 판은 R1에서 hover 가능한 기기로 게이팅(파일 하단 @media (hover: hover)).
 .archive-sheet__row:focus-visible .archive-sheet__thumb img {
   filter: blur(0);
   opacity: 1;
   transform: scale(1);
 }
 
-.archive-sheet__row:hover .archive-sheet__thumb::before,
 .archive-sheet__row:focus-visible .archive-sheet__thumb::before {
   background: rgba(248, 247, 243, 0);
   -webkit-backdrop-filter: blur(0);
@@ -578,6 +574,48 @@
     padding: 0 0.7rem 0.5rem;
   }
 
+}
+
+// R1: hover 효과는 hover 가능한(마우스 등) 기기에만 적용한다. 터치에선 tap 시
+// :hover가 눌러붙어(특히 행 defog) 어색하므로 게이팅한다(스킬/STANDARDS 권고).
+// 키보드 focus(:focus-visible)는 위에 게이팅 없이 유지된다.
+@media (hover: hover) and (pointer: fine) {
+  .archive-sheet__tabs:has(a:hover) {
+    box-shadow:
+      0 6px 16px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    z-index: 5;
+  }
+
+  .archive-sheet__tabs a:hover {
+    background: rgba(248, 247, 243, 0.72);
+    outline: 0;
+  }
+
+  .archive-sheet__tabs a:hover span {
+    letter-spacing: -0.02em;
+    transform: scaleX(1.22);
+  }
+
+  .archive-sheet__row:hover {
+    background: rgba(248, 247, 243, 0.72);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    min-height: 2.9rem;
+    outline: 0;
+    z-index: 5;
+  }
+
+  .archive-sheet__row:hover .archive-sheet__thumb img {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .archive-sheet__row:hover .archive-sheet__thumb::before {
+    background: rgba(248, 247, 243, 0);
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
