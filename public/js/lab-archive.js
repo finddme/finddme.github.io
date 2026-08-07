@@ -157,9 +157,82 @@
     });
   }
 
+  // 터치 press를 spring으로 구동(STEP 3b): 누르면 축소, 떼면 velocity를 이어받아
+  // 살짝 overshoot 후 정착(iOS식 물리 press). 터치일 때만 개입하고 마우스는 기존
+  // CSS :active/hover를 그대로 쓴다. JS가 transform을 잡는 동안엔 CSS transition을
+  // 꺼 이중 스무딩을 막고, 정착하면 인라인 스타일을 비워 CSS로 되돌린다.
+  function initPressSpring() {
+    if (reduceMotion || !window.LabSpring || !("PointerEvent" in window)) {
+      return;
+    }
+    var PRESS_RESPONSE = 0.32;   // 낮을수록 스냅
+    var PRESS_DAMPING = 0.55;    // 낮을수록 떼는 순간 더 통통 튐
+    var PRESS_SCALE = 0.94;      // 누른 동안 축소 정도
+    var targets = root.querySelectorAll(".lab-callout:not(.lab-callout--about), .lab-profile-links a");
+
+    Array.prototype.forEach.call(targets, function (el) {
+      var spring = new window.LabSpring({
+        response: PRESS_RESPONSE,
+        dampingRatio: PRESS_DAMPING,
+        value: 1,
+        target: 1
+      });
+      var raf = null;
+      var last = 0;
+
+      function tick(now) {
+        var t = typeof now === "number" ? now : performance.now();
+        var dt = last ? (t - last) / 1000 : 1 / 60;
+        last = t;
+        spring.step(dt);
+        el.style.transform = "scale(" + spring.value.toFixed(4) + ")";
+        if (!spring.isResting()) {
+          raf = window.requestAnimationFrame(tick);
+          return;
+        }
+        raf = null;
+        last = 0;
+        // 손을 뗀 뒤(target 1) 정착했을 때만 CSS로 반환. 누르고 있는 중이면 유지.
+        if (spring.target === 1) {
+          el.style.transform = "";
+          el.style.transition = "";
+        }
+      }
+
+      function start() {
+        if (raf === null) {
+          last = 0;
+          raf = window.requestAnimationFrame(tick);
+        }
+      }
+
+      el.addEventListener("pointerdown", function (event) {
+        if (event.pointerType !== "touch") {
+          return;
+        }
+        el.style.transition = "none";   // JS가 transform 소유
+        spring.target = PRESS_SCALE;
+        start();
+      });
+
+      function release(event) {
+        if (event && event.pointerType && event.pointerType !== "touch") {
+          return;
+        }
+        spring.target = 1;
+        start();
+      }
+
+      el.addEventListener("pointerup", release);
+      el.addEventListener("pointercancel", release);
+      el.addEventListener("pointerleave", release);
+    });
+  }
+
   updateTime();
   window.setInterval(updateTime, 30000);
   initScrollMaterialize();
+  initPressSpring();
   updateStageScale();
   window.addEventListener("resize", updateStageScale);
   window.addEventListener("load", updateStageScale);
