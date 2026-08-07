@@ -794,6 +794,26 @@
       0 2px 6px rgba(0, 0, 0, 0.08);
   }
 
+  // 스크롤 등장 materialize(STEP 3a, 스킬 §12): 카드가 뷰포트에 들어오면
+  // blur가 걷히고 살짝 떠오르며(translateY) 페이드인 → "재질로 도착"하는 등가.
+  // 숨김 초기 상태는 JS가 붙인 [data-lab-anim]일 때만 적용 → JS 꺼지면 정상 표시.
+  // 등장은 filter/opacity/translateY만 쓴다(스케일은 press(STEP 3b) 몫이라 분리).
+  [data-lab-anim] .lab-callout {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(7px);
+    transition:
+      opacity 520ms var(--lab-ease),
+      transform 520ms var(--lab-ease),
+      filter 520ms var(--lab-ease);
+    will-change: opacity, transform, filter;
+  }
+  [data-lab-anim] .lab-callout.is-materialized {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
   .lab-callout span {
     font-size: 30px;
     line-height: 1;
