@@ -122,6 +122,21 @@
     window.setTimeout(finish, 400);
   }
 
+  // 창이 "열려 있음"(표시 중 + 닫히는 중 아님) 판정.
+  function isWindowOpen(win) {
+    return !!win && !win.hidden && !win.classList.contains('mac-window--collapsed');
+  }
+  // 같은 버튼을 다시 누르면 토글: 열려 있으면 닫고, 아니면 연다.
+  function toggleWindow(id) {
+    var win = document.getElementById(id);
+    if (!win) return;
+    if (isWindowOpen(win)) {
+      closeWindow(id);
+    } else {
+      openWindow(id);
+    }
+  }
+
   if (desktop && artToggle) {
     artToggle.addEventListener('click', function () {
       var isDark = desktop.classList.toggle('desktop--dark');
@@ -137,7 +152,7 @@
   // --- open (menu buttons) ---
   document.querySelectorAll('[data-mac-open]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      openWindow(btn.getAttribute('data-mac-open'));
+      toggleWindow(btn.getAttribute('data-mac-open'));
     });
   });
 
