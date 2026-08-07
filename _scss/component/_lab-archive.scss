@@ -41,6 +41,9 @@
 .lab-home {
   --lab-x: 0;
   --lab-y: 0;
+  // iOS식 critically-damped 스냅 이징(바운스 없음, 빠른 시작→부드러운 정착).
+  // hover/press처럼 momentum이 없는 상호작용용 (스킬 §4: overshoot는 momentum 있을 때만).
+  --lab-ease: cubic-bezier(0.32, 0.72, 0, 1);
   --lab-ink: #0b0b0b;
   --lab-muted: #6f6f69;
   --lab-line: #dfdbd1;
@@ -345,7 +348,9 @@
   display: block;
   position: absolute;
   text-decoration: none;
-  transition: color 160ms ease;
+  transition: color 200ms var(--lab-ease);
+  // iOS에서 탭 시 파란 하이라이트 대신 우리 :active 유리 효과만 보이게.
+  -webkit-tap-highlight-color: transparent;
   z-index: 6;
 }
 
@@ -415,8 +420,11 @@
 // ::after 를 콘텐츠 뒤(z-index:-1)에 깔아 레이아웃 이동 없이 칩만 페이드 인.
 // about(프로필 버튼 묶음)은 제외 — 각 버튼이 개별 유리라 큰 칩이 깔리면 "통"으로 보임.
 .lab-callout:not(.lab-callout--about)::after {
-  -webkit-backdrop-filter: blur(8px) saturate(150%);
-  backdrop-filter: blur(8px) saturate(150%);
+  // materialize(스킬 §12): 등장 시 blur+scale을 함께 램프해 "유리가 재질로 도착"하는
+  // 느낌. 쉼 상태는 약한 blur+살짝 축소(scale 0.96) — opacity 0이라 안 보이지만
+  // hover로 전환될 때 blur가 2→8, scale 0.96→1로 올라오며 재질화된다.
+  -webkit-backdrop-filter: blur(2px) saturate(120%);
+  backdrop-filter: blur(2px) saturate(120%);
   background: rgba(255, 255, 255, 0.4);
   // border 없이 inset 정반사 림만으로 단일 엣지 (두 줄 방지).
   border: 0;
@@ -430,30 +438,42 @@
   opacity: 0;
   pointer-events: none;
   position: absolute;
+  transform: scale(0.96);
   transition:
-    opacity 140ms ease,
-    transform 140ms ease,
-    box-shadow 140ms ease;
+    opacity 280ms var(--lab-ease),
+    transform 280ms var(--lab-ease),
+    box-shadow 280ms var(--lab-ease),
+    -webkit-backdrop-filter 280ms var(--lab-ease),
+    backdrop-filter 280ms var(--lab-ease);
   z-index: -1;
 }
 
-// hover 시 유리 상자가 떠오른다 (위로 올라오며 그림자 커짐).
+// hover 시 유리 상자가 떠오르며 재질화된다 (blur 짙어짐 + scale 1로 도착 + 부상).
 .lab-callout:not(.lab-callout--about):hover::after,
 .lab-callout:not(.lab-callout--about):focus-visible::after {
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
   opacity: 1;
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1);
   box-shadow:
     inset 0 1px 1px rgba(255, 255, 255, 0.95),
     0 12px 24px rgba(0, 0, 0, 0.16);
 }
 
-// 누르면 유리 상자가 눌린다 (아래로 내려가며 안쪽 그림자 + 살짝 축소).
+// 누르면 유리 상자가 눌린다 (아래로 내려가며 안쪽 그림자 + 축소). 즉시 반응(스킬 §1):
+// 짧은 duration으로 press가 손에 붙게 한다. 터치엔 hover가 없으므로 blur도 여기서 채운다.
 .lab-callout:not(.lab-callout--about):active::after {
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
   opacity: 1;
-  transform: translateY(1px) scale(0.98);
+  transform: translateY(1px) scale(0.94);
   box-shadow:
     inset 0 1px 3px rgba(0, 0, 0, 0.16),
     0 2px 8px rgba(0, 0, 0, 0.12);
+  transition:
+    opacity 120ms var(--lab-ease),
+    transform 120ms var(--lab-ease),
+    box-shadow 120ms var(--lab-ease);
 }
 
 // 각 요소(캡션 제목·Profile 링크) 앞에 붙는 작은 동그라미 마커.
@@ -510,15 +530,17 @@
   padding: 7px 15px;
   text-decoration: none;
   text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
   transition:
-    color 160ms ease,
-    border-color 160ms ease,
-    box-shadow 180ms ease,
-    background-color 180ms ease;
+    color 260ms var(--lab-ease),
+    border-color 260ms var(--lab-ease),
+    box-shadow 260ms var(--lab-ease),
+    background-color 260ms var(--lab-ease),
+    transform 260ms var(--lab-ease);
 }
 
 // hover/focus 시 글씨와 테두리를 이전 "Profile" 제목 초록(#0EEF0F)으로,
-// 유리 필이 살짝 떠오르고 더 맑아진다.
+// 유리 필이 살짝 떠오르고(translateY) 더 맑아진다.
 .lab-profile-links a:hover,
 .lab-profile-links a:focus {
   background: rgba(255, 255, 255, 0.55);
@@ -527,6 +549,18 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.85),
     0 8px 20px rgba(0, 0, 0, 0.18);
   color: #0EEF0F;
+  transform: translateY(-1px);
+}
+
+// 누르면 즉시 눌린다 (스킬 §1). 짧은 duration으로 손에 붙게.
+.lab-profile-links a:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.14),
+    0 2px 6px rgba(0, 0, 0, 0.10);
+  transition:
+    transform 110ms var(--lab-ease),
+    box-shadow 110ms var(--lab-ease);
 }
 
 // Profile 버튼만 기본 상태에서도 초록색(hover 없이).
@@ -746,15 +780,15 @@
     padding: 0;
   }
 
-  // 모바일: 카테고리 유리 카드를 탭하면 눌리는 효과.
+  // 모바일: 카테고리 유리 카드를 탭하면 즉시 눌리는 효과 (iOS 스냅 이징).
   .lab-callout:not(.lab-callout--about) {
     transition:
-      transform 120ms ease,
-      box-shadow 120ms ease,
-      color 160ms ease;
+      transform 120ms var(--lab-ease),
+      box-shadow 120ms var(--lab-ease),
+      color 200ms var(--lab-ease);
   }
   .lab-callout:not(.lab-callout--about):active {
-    transform: translateY(1px) scale(0.98);
+    transform: translateY(1px) scale(0.97);
     box-shadow:
       inset 0 1px 3px rgba(0, 0, 0, 0.14),
       0 2px 6px rgba(0, 0, 0, 0.08);
