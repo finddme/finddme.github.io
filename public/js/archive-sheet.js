@@ -54,33 +54,6 @@
   markLastTabRow();
   window.addEventListener('resize', markLastTabRow);
 
-  // 스크롤 등장 materialize(A3): 각 행이 뷰포트에 들어오면 blur가 걷히며 떠오른다.
-  // archive는 데스크톱에서도 스크롤하므로 전 폭 적용. 초기 숨김 CSS는
-  // .archive-sheet[data-arch-anim]로 게이트 → 이 함수가 돌 때만 숨겼다 드러낸다.
-  (function initScrollMaterialize() {
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-      return;
-    }
-    var sheet = document.querySelector('.archive-sheet');
-    var rows = document.querySelectorAll('.archive-sheet__row');
-    if (!sheet || !rows.length) {
-      return;
-    }
-    sheet.setAttribute('data-arch-anim', '');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-materialized');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
-    Array.prototype.forEach.call(rows, function (row) {
-      io.observe(row);
-    });
-  })();
-
   // 탭 press를 spring으로 구동(A2): 누르면 축소, 떼면 velocity를 이어받아 살짝
   // overshoot 후 정착. 터치·마우스 모두에 적용한다(데스크톱에서도 press 스프링).
   // JS가 transform을 소유하므로 A1의 CSS :active(scale)는 JS 미로드 시 폴백 역할.
