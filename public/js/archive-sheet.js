@@ -1,6 +1,33 @@
 (function () {
   var tabs = document.querySelectorAll('.archive-sheet__tabs a');
 
+  // 새로고침 시 항상 페이지 최상단(로고 헤더)부터 보이게 한다.
+  // 원인: (1) 브라우저 스크롤 복원, (2) 탭(`#archive-...`) 클릭으로 남은 URL 해시로
+  // 인한 섹션 점프. 새로고침(reload)에만 개입하고, 새로 진입/딥링크는 건드리지 않아
+  // 탭 점프 기능은 그대로 유지한다.
+  (function resetScrollOnReload() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';   // 스크롤 위치 복원 끔
+    }
+    var isReload = false;
+    try {
+      var nav = performance.getEntriesByType('navigation')[0];
+      isReload = nav ? nav.type === 'reload'
+        : (performance.navigation && performance.navigation.type === 1);
+    } catch (e) {}
+    if (!isReload) {
+      return;
+    }
+    // 해시가 남아 있으면 제거해 브라우저의 섹션 점프 자체를 막는다.
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+    var toTop = function () { window.scrollTo(0, 0); };
+    toTop();
+    window.requestAnimationFrame(toTop);       // 해시/복원 점프 이후 프레임에 한 번 더
+    window.addEventListener('load', toTop);
+  })();
+
   // iOS Safari는 touch 리스너가 없는 요소엔 :active를 적용하지 않는다. 빈 touchstart를
   // 달아 탭 시 우리 press 하이라이트(:active)가 실제로 나오게 한다(홈 패턴과 동일).
   var pressTargets = document.querySelectorAll('.archive-sheet__row, .archive-sheet__tabs a');
