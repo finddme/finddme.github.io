@@ -87,7 +87,10 @@
       var wPct = (box.offsetWidth / title.offsetWidth) * 100;
       var hPct = (box.offsetHeight / title.offsetHeight) * 100;
       var isMobile = mobileMode.matches;
-      var sideInset = isMobile ? -3 : 2;
+      // 유리 박스가 좌우로 뻗을 수 있는 한계(%). 음수일수록 타이틀 양끝(F·E)을
+      // 더 넘어 덮는다. 데스크톱은 기존 2%라 F·E 끝을 아슬하게 못 덮어서 살짝
+      // 음수로 내려 미세하게 덮게 한다. (튜닝 lever: 더 덮으려면 값을 더 낮춤)
+      var sideInset = isMobile ? -5 : -4;
       var maxLeft = Math.max(sideInset, 100 - sideInset - wPct);
       // 로고 축소에 맞춰 glass가 더 조밀한 중앙 띠 안에서 움직이도록 한다.
       var topMin = isMobile ? 18 : 14;
