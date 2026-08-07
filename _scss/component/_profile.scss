@@ -164,15 +164,25 @@ $desktop-accent: #E1E708;
 .mac-window[hidden] { display: none; }
 
 /* 열기 직전/닫기 도중의 축소·투명 상태(JS가 토글). 창이 살짝 작아졌다 도착. */
+/* 이미지(우측 *.jpeg) 창: 중앙에서 살짝 축소 + 아래서 올라옴(기존 유지). */
 .mac-window--collapsed {
   opacity: 0;
   transform: scale(0.82) translateY(16px);
   pointer-events: none;
 }
 
+/* 메뉴(좌측 skills~email) 창: 클릭한 버튼에서 자라나듯 — JS가 transform-origin을
+   버튼 위치로 잡고, 여기서 더 작은 scale로 시작해 origin에서 펼쳐진다. */
+.mac-window--grow {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mac-window { transition: none; }
-  .mac-window--collapsed { transform: none; }
+  .mac-window--collapsed,
+  .mac-window--grow { transform: none; }
 }
 
 /* Skills window opens just tall enough for the compact skill rows */

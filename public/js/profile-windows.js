@@ -63,15 +63,42 @@
     win.style.zIndex = String(zTop);
   }
 
-  function openWindow(id) {
+  // 이미지 창(win-img-*)은 중앙 축소(collapsed), 나머지 메뉴 창은 버튼에서
+  // 자라나는(grow) 효과를 쓴다.
+  var GROW_SCALE = 0.5; // .mac-window--grow의 scale과 반드시 일치
+  function collapseClassFor(win) {
+    return win.id.indexOf('win-img-') === 0 ? 'mac-window--collapsed' : 'mac-window--grow';
+  }
+  // 그로우 창을 클릭한 버튼에서 자라나 보이게 transform-origin을 버튼 중심으로.
+  // 창은 지금 center-origin으로 GROW_SCALE 축소된 상태(opacity 0)라, 그 rect에서
+  // 원래(미축소) 박스를 복원해 버튼 중심의 상대 좌표를 구한다. origin 변경 때
+  // 위치가 튀지만 opacity 0이라 안 보인다.
+  function setGrowOrigin(win, btn) {
+    if (!btn) return;
+    var r = win.getBoundingClientRect();
+    if (!r.width) return;
+    var cx = r.left + r.width / 2;
+    var cy = r.top + r.height / 2;
+    var uw = r.width / GROW_SCALE;
+    var uh = r.height / GROW_SCALE;
+    var uLeft = cx - uw / 2;
+    var uTop = cy - uh / 2;
+    var b = btn.getBoundingClientRect();
+    var ox = (b.left + b.width / 2) - uLeft;
+    var oy = (b.top + b.height / 2) - uTop;
+    win.style.transformOrigin = ox.toFixed(1) + 'px ' + oy.toFixed(1) + 'px';
+  }
+
+  function openWindow(id, btn) {
     var win = document.getElementById(id);
     if (!win) return;
     var wasHidden = win.hidden;
     // 닫히는 중이었다면 취소하고 다시 연다.
-    win.classList.remove('mac-window--collapsed');
+    win.classList.remove('mac-window--collapsed', 'mac-window--grow');
+    var cls = collapseClassFor(win);
     var animate = wasHidden && canAnimateWindow();
     // 축소 상태에서 시작 → 표시 → 리플로우 → 해제하면 scale/opacity가 도착하며 재생.
-    if (animate) win.classList.add('mac-window--collapsed');
+    if (animate) win.classList.add(cls);
     win.hidden = false;
     if (wasHidden && !win.dataset.placed) {
       if (!isMobile()) {
@@ -91,8 +118,10 @@
     bringToFront(win);
     clampIntoView(win);
     if (animate) {
+      // 그로우 창은 버튼 위치로 origin을 잡는다(위치 조정은 opacity 0라 안 보임).
+      if (cls === 'mac-window--grow') setGrowOrigin(win, btn);
       void win.offsetWidth;                       // 리플로우로 시작 상태를 확정
-      win.classList.remove('mac-window--collapsed'); // → scale 1 / opacity 1로 전환
+      win.classList.remove(cls);                  // → scale 1 / opacity 1로 전환
     }
   }
 
@@ -103,14 +132,16 @@
       win.hidden = true;
       return;
     }
-    // 축소·페이드로 닫힌 뒤 실제로 숨긴다. transitionend(없으면 타이머 폴백) 후 hidden.
-    win.classList.add('mac-window--collapsed');
+    // 축소·페이드로 닫힌 뒤 실제로 숨긴다. 그로우 창은 저장된 transform-origin을
+    // 그대로 써 열렸던 버튼 쪽으로 되빨려든다. transitionend(폴백 타이머) 후 hidden.
+    var cls = collapseClassFor(win);
+    win.classList.add(cls);
     var done = false;
     function finish() {
       if (done) return;
       done = true;
       win.hidden = true;
-      win.classList.remove('mac-window--collapsed');
+      win.classList.remove('mac-window--collapsed', 'mac-window--grow');
       win.removeEventListener('transitionend', onEnd);
     }
     function onEnd(e) {
@@ -124,16 +155,18 @@
 
   // 창이 "열려 있음"(표시 중 + 닫히는 중 아님) 판정.
   function isWindowOpen(win) {
-    return !!win && !win.hidden && !win.classList.contains('mac-window--collapsed');
+    return !!win && !win.hidden &&
+      !win.classList.contains('mac-window--collapsed') &&
+      !win.classList.contains('mac-window--grow');
   }
   // 같은 버튼을 다시 누르면 토글: 열려 있으면 닫고, 아니면 연다.
-  function toggleWindow(id) {
+  function toggleWindow(id, btn) {
     var win = document.getElementById(id);
     if (!win) return;
     if (isWindowOpen(win)) {
       closeWindow(id);
     } else {
-      openWindow(id);
+      openWindow(id, btn);
     }
   }
 
@@ -152,7 +185,7 @@
   // --- open (menu buttons) ---
   document.querySelectorAll('[data-mac-open]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      toggleWindow(btn.getAttribute('data-mac-open'));
+      toggleWindow(btn.getAttribute('data-mac-open'), btn);
     });
   });
 
