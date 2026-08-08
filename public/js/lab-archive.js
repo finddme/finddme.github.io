@@ -290,19 +290,14 @@
       }
     }
 
+    // 마우스/펜/터치 모두 꾹 누르면 이미지가 눌린다(profile art 와 동일).
     fig.addEventListener("pointerdown", function (event) {
-      if (event.pointerType !== "touch") {
-        return;
-      }
       img.style.transition = "none"; // JS가 transform 소유
       spring.target = PRESS_SCALE;
       start();
     });
 
-    function release(event) {
-      if (event && event.pointerType && event.pointerType !== "touch") {
-        return;
-      }
+    function release() {
       spring.target = 1;
       start();
     }
