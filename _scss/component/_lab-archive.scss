@@ -333,16 +333,25 @@
 // 좌상단 상자(아주 얇은 선 프레임). 안의 이미지는 배경으로 깔아 가운데 정렬(contain).
 // 데스크톱 위치/크기는 아래 @media(min-width:821px) 블록에서 지정한다.
 // 이미지는 index.html이 public/main-page/box/ 첫 이미지를 인라인 background-image 로 넣어준다(없으면 빈 상자).
+// profile 의 art 와 동일하게 <button> 이다. 링크(<a>)면 브라우저가 press 시 상자 전체에
+// 검은 시스템 하이라이트를 깔아서, art 처럼 button + 리셋으로 그 기본 스타일을 없앤다.
 .lab-figure {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
   border: 0.5px solid var(--lab-line);
   box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
   display: block;
+  font: inherit;
   // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
   // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
   padding: 30px 30px;
   position: absolute;
-  // 탭 시 브라우저 기본 검은 하이라이트가 상자 전체에 깔리지 않게 한다(우리 눌림 효과만).
+  // 탭/press 시 브라우저 기본 검은 하이라이트가 상자 전체에 깔리지 않게 한다(우리 눌림 효과만).
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
   z-index: 2;
 }
 
