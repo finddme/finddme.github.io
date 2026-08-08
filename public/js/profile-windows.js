@@ -3,7 +3,11 @@
 
   // iOS Safari only applies :active styles while a touchstart listener exists,
   // so button/link press effects don't show on iPhone without this (Android is fine).
-  document.addEventListener('touchstart', function () {}, { passive: true });
+  // Also mark the document as touch-used so sticky :hover (which lingers after a tap
+  // on touch, esp. S-Pen devices misreporting hover) can be disabled via html.has-touch.
+  document.addEventListener('touchstart', function () {
+    document.documentElement.classList.add('has-touch');
+  }, { passive: true });
 
   var layer = document.querySelector('[data-mac-layer]');
   if (!layer) return;
@@ -129,8 +133,11 @@
     }
   }
 
+  // 모바일: 창을 히스토리와 연동(뒤로가기=창 닫기)하기 위한 열린 창 스택.
+  var mobileWinStack = [];
+
   (function restoreState() {
-    if (isMobile() || !isBackForward()) return;
+    if (!isBackForward()) return;
     var raw;
     try { raw = sessionStorage.getItem(STATE_KEY); } catch (e) { return; }
     if (!raw) return;
@@ -165,7 +172,35 @@
       topWin.classList.add('mac-window--focused');
     }
     clampVisibleWindows();
+    // 모바일: 복원된 열린 창(win-blog 제외)을 z 오름차순으로 스택 재구성
+    // (뒤로가기 히스토리 항목 순서와 맞춘다).
+    if (isMobile()) {
+      Array.prototype.slice.call(document.querySelectorAll('.mac-window:not([hidden])'))
+        .filter(function (w) { return w.id && w.id !== 'win-blog'; })
+        .sort(function (a, b) {
+          return (parseInt(a.style.zIndex, 10) || 0) - (parseInt(b.style.zIndex, 10) || 0);
+        })
+        .forEach(function (w) { mobileWinStack.push(w.id); });
+    }
   })();
+
+  // ── 모바일: 창 열기=히스토리 push, 뒤로가기=맨 위 창 닫기 ──────────────
+  // 창을 열면 히스토리 항목을 하나 쌓는다. 그러면 뒤로가기가 "이전 페이지로 이동"이
+  // 아니라 "그 창 닫기"가 된다(2.2). 닫기 버튼도 history.back()으로 같은 경로를 탄다.
+  function pushMobileWinHistory(id) {
+    mobileWinStack.push(id);
+    try { history.pushState({ macWin: id }, ''); } catch (e) {}
+  }
+  function closeTopMobileWindow() {
+    while (mobileWinStack.length) {
+      var id = mobileWinStack.pop();
+      var w = document.getElementById(id);
+      if (w && !w.hidden) { closeWindow(id); return; }
+    }
+  }
+  window.addEventListener('popstate', function () {
+    if (isMobile()) closeTopMobileWindow();
+  });
 
   // 이미지 창(win-img-*)은 중앙 축소(collapsed), 나머지 메뉴 창은 버튼에서
   // 자라나는(grow) 효과를 쓴다.
@@ -226,6 +261,10 @@
       if (cls === 'mac-window--grow') setGrowOrigin(win, btn);
       void win.offsetWidth;                       // 리플로우로 시작 상태를 확정
       win.classList.remove(cls);                  // → scale 1 / opacity 1로 전환
+    }
+    // 모바일: 풀스크린 창(win-blog 제외)을 열면 히스토리 항목을 쌓아 뒤로가기로 닫히게.
+    if (wasHidden && isMobile() && id !== 'win-blog') {
+      pushMobileWinHistory(id);
     }
   }
 
@@ -339,7 +378,13 @@
     var closer = e.target.closest('[data-mac-close]');
     if (closer) {
       e.stopPropagation();
-      closeWindow(closer.getAttribute('data-mac-close'));
+      var cid = closer.getAttribute('data-mac-close');
+      // 모바일에서 히스토리로 관리되는 창이면 back()으로 닫아 히스토리를 동기화.
+      if (isMobile() && mobileWinStack.indexOf(cid) !== -1) {
+        history.back();   // → popstate → closeTopMobileWindow
+      } else {
+        closeWindow(cid);
+      }
     }
   });
 
