@@ -283,12 +283,21 @@ body.post-page #markdown-toc a {
   display: inline-block;
   text-decoration: none;
   transition: color 150ms ease;
+  // 클릭/탭 시 브라우저 기본 검은 outline·하이라이트가 안 나오게 한다.
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body.post-page #markdown-toc a:hover,
 body.post-page #markdown-toc a:focus {
   color: #0b0b0b;
   text-decoration: none;
+}
+
+// 키보드 탐색(:focus-visible)만 접근성용 은은한 링을 유지한다(마우스 클릭엔 안 보임).
+body.post-page #markdown-toc a:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 2px;
 }
 
 // scroll-spy(P2): 지금 읽는 섹션의 TOC 링크를 "현재"로 표시한다. 기본 노랑·hover
