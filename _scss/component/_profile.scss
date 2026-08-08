@@ -158,14 +158,14 @@ html:not(.has-touch) .desktop--dark .desktop__art:hover img {
   transform: translateX(13%) translateY(-3px);   /* 다크 이미지의 기존 translateX 보존 */
   filter: drop-shadow(0 5px 10px rgba(0,0,0,0.42));
 }
-/* 데스크톱: 누르면 다른 버튼처럼 이미지만 살짝 눌린다(hover 리프트 위에 명시도로 덮음).
-   누르는 순간만 0.3s 로 느긋하게(hover 0.16s 와 분리). */
-html:not(.has-touch) .desktop__art:active img {
+/* 누르면 이미지만 살짝 눌린다(hover 리프트 위에 명시도로 덮음). 누르는 순간만 0.3s.
+   웹·모바일 동일하게 하려고 :not(.has-touch) 게이트 없이 터치에서도 적용한다. */
+.desktop__art:active img {
   transform: translateY(2px);
   filter: none;
   transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
 }
-html:not(.has-touch) .desktop--dark .desktop__art:active img {
+.desktop--dark .desktop__art:active img {
   transform: translateX(13%) translateY(2px);
   filter: none;
   transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
