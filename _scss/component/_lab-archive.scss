@@ -334,19 +334,34 @@
 // 데스크톱 위치/크기는 아래 @media(min-width:821px) 블록에서 지정한다.
 // 이미지는 index.html이 public/main-page/box/ 첫 이미지를 인라인 background-image 로 넣어준다(없으면 빈 상자).
 .lab-figure {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  // 배경을 padding 안쪽(content box)에 맞춰 padding 이 사방 여백으로 실제 적용되게 한다.
-  // (기본값 padding-box 면 배경이 padding 영역까지 채워 위·아래 여백이 안 생김)
-  background-origin: content-box;
   border: 0.5px solid var(--lab-line);
   box-sizing: border-box;
+  display: block;
   // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
   // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
   padding: 30px 30px;
   position: absolute;
   z-index: 2;
+}
+
+// 상자 안의 실제 이미지. 상자(테두리)는 고정하고 이 요소만 눌림/호버 효과를 받는다.
+// (profile 페이지 중앙 art 의 이미지 효과와 동일한 방식)
+.lab-figure__img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 100%;
+  width: 100%;
+  // 데스크톱 호버 리프트. JS 로 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
+  transition: transform 0.16s ease, filter 0.18s ease;
+  will-change: transform;
+}
+
+// 데스크톱: 상자에 마우스를 올리면 이미지만 살짝 뜬다(터치 기기는 제외).
+html:not(.has-touch) .lab-figure:hover .lab-figure__img {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.16));
 }
 
 .lab-callout {

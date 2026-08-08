@@ -5,6 +5,12 @@
     return;
   }
 
+  // 터치 기기 표시. 첫 터치에 has-touch 를 달면 CSS 의 데스크톱 전용 호버 효과
+  // (html:not(.has-touch) …:hover)가 터치 기기에서 고정되지 않는다.
+  document.addEventListener("touchstart", function () {
+    document.documentElement.classList.add("has-touch");
+  }, { passive: true });
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var timeNode = document.querySelector("[data-lab-time]");
   var hero = root.querySelector(".lab-hero");
@@ -232,10 +238,85 @@
     });
   }
 
+  // 좌상단 고양이 상자: 이미지에만(테두리 상자는 고정) 눌림 스프링을 준다.
+  // profile 페이지 중앙 art 를 누를 때와 동일한 효과(축소 + 살짝 떠오름).
+  // 상자 전체를 profile 로 가는 링크로 만들었고, 여기선 이미지의 눌림감만 담당.
+  function initFigurePressSpring() {
+    if (reduceMotion || !window.LabSpring || !("PointerEvent" in window)) {
+      return;
+    }
+    var fig = root.querySelector(".lab-figure");
+    var img = fig && fig.querySelector(".lab-figure__img");
+    if (!img) {
+      return;
+    }
+    var PRESS_RESPONSE = 0.32;
+    var PRESS_DAMPING = 0.5;
+    var PRESS_SCALE = 0.95;
+    var PRESS_LIFT = 26; // px, 누른 동안 이미지가 떠오르는 정도
+    var spring = new window.LabSpring({
+      response: PRESS_RESPONSE,
+      dampingRatio: PRESS_DAMPING,
+      value: 1,
+      target: 1
+    });
+    var raf = null;
+    var last = 0;
+
+    function tick(now) {
+      var t = typeof now === "number" ? now : performance.now();
+      var dt = last ? (t - last) / 1000 : 1 / 60;
+      last = t;
+      spring.step(dt);
+      var progress = (1 - spring.value) / (1 - PRESS_SCALE);
+      var ty = -PRESS_LIFT * progress;
+      img.style.transform = "translateY(" + ty.toFixed(2) + "px) scale(" + spring.value.toFixed(4) + ")";
+      if (!spring.isResting()) {
+        raf = window.requestAnimationFrame(tick);
+        return;
+      }
+      raf = null;
+      last = 0;
+      if (spring.target === 1) {
+        img.style.transform = "";
+        img.style.transition = "";
+      }
+    }
+
+    function start() {
+      if (raf === null) {
+        last = 0;
+        raf = window.requestAnimationFrame(tick);
+      }
+    }
+
+    fig.addEventListener("pointerdown", function (event) {
+      if (event.pointerType !== "touch") {
+        return;
+      }
+      img.style.transition = "none"; // JS가 transform 소유
+      spring.target = PRESS_SCALE;
+      start();
+    });
+
+    function release(event) {
+      if (event && event.pointerType && event.pointerType !== "touch") {
+        return;
+      }
+      spring.target = 1;
+      start();
+    }
+
+    fig.addEventListener("pointerup", release);
+    fig.addEventListener("pointercancel", release);
+    fig.addEventListener("pointerleave", release);
+  }
+
   updateTime();
   window.setInterval(updateTime, 30000);
   initScrollMaterialize();
   initPressSpring();
+  initFigurePressSpring();
   updateStageScale();
   window.addEventListener("resize", updateStageScale);
   window.addEventListener("load", updateStageScale);
