@@ -381,11 +381,12 @@ html:not(.has-touch) .lab-figure:hover .lab-figure__img {
 }
 
 // 데스크톱: 누르면 profile art 처럼 이미지만 살짝 눌린다(축소 없이 아래로).
-// 고양이는 아트(0.3s)보다 조금 더 느긋하게(0.4s). hover 0.16s 와는 분리.
+// 고양이는 클릭 시 곧바로 profile 로 이동하는 링크라, 카테고리 버튼(120ms)처럼
+// press 를 빠르게(0.14s) 해야 이동 전에 눌림이 명확히 보인다. hover 0.16s 와는 분리.
 html:not(.has-touch) .lab-figure:active .lab-figure__img {
   transform: translateY(2px);
   filter: none;
-  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  transition: transform 0.14s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .lab-callout {
@@ -515,7 +516,9 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   backdrop-filter: blur(8px) saturate(150%);
   opacity: 1;
-  transform: translateY(1px) scale(0.94);
+  // 유리칩 독립 축소를 없앤다 — 이제 눌림 스케일은 아래 데스크톱 .lab-callout:active(요소 전체)가
+  // 담당해서 글자와 유리가 "함께" 눌린다(따로 놀지 않게). 유리는 재질화만(scale 1).
+  transform: scale(1);
   box-shadow:
     inset 0 1px 3px rgba(0, 0, 0, 0.16),
     0 2px 8px rgba(0, 0, 0, 0.12);
@@ -643,6 +646,16 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
     // 읽히게 한다. 배치는 그대로 — 포인터에 따라 층별 속도차만 준다 (스킬 §7).
     // 튜닝 lever: 이 배수(px)를 키우면 앞으로, 줄이면 뒤로 느껴진다.
     transform: translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0);
+  }
+
+  // 데스크톱: 누르면 유리칩만이 아니라 카드(글자+::after)가 함께 눌린다(따로 놀지 않게).
+  // 파랄랙스 transform 을 유지한 채 press(아래로 살짝+축소)를 합성한다. ::after:active 는
+  // 독립 축소를 없앤 상태라, 이 부모 스케일을 글자와 함께 그대로 따른다. (모바일은 별도 처리)
+  .lab-callout:not(.lab-callout--about):active {
+    transform:
+      translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0)
+      translateY(1px) scale(0.97);
+    transition: transform 120ms var(--lab-ease);
   }
 
   .lab-callout--nlp {

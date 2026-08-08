@@ -250,7 +250,7 @@
     if (!img) {
       return;
     }
-    var PRESS_RESPONSE = 0.5; // 고양이는 아트(0.4)보다 조금 더 느긋하게(터치 press).
+    var PRESS_RESPONSE = 0.32; // 링크라 탭 즉시 이동 → 카테고리 버튼처럼 스냅감 있게 눌림이 보이도록.
     var PRESS_DAMPING = 0.5;
     var PRESS_SCALE = 0.95;
     var PRESS_LIFT = 26; // px, 누른 동안 이미지가 떠오르는 정도
