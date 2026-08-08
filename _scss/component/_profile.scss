@@ -157,6 +157,15 @@ html:not(.has-touch) .desktop--dark .desktop__art:hover img {
   transform: translateX(13%) translateY(-3px);   /* 다크 이미지의 기존 translateX 보존 */
   filter: drop-shadow(0 5px 10px rgba(0,0,0,0.42));
 }
+/* 데스크톱: 누르면 다른 버튼처럼 이미지만 살짝 눌린다(hover 리프트 위에 명시도로 덮음). */
+html:not(.has-touch) .desktop__art:active img {
+  transform: translateY(2px);
+  filter: none;
+}
+html:not(.has-touch) .desktop--dark .desktop__art:active img {
+  transform: translateX(13%) translateY(2px);
+  filter: none;
+}
 .desktop--dark .desktop__art {
   border-width: 1px;
   border-color: #F9FB97;
