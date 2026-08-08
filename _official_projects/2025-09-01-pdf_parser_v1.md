@@ -1,5 +1,5 @@
 ---
-title: "PDF Parser v1 (LayoutLM)"
+title: "PDF Parser v1 (LayoutLM) × Cloud Storage"
 date: 2025-09-01
 thumbnail: 
 link: 
