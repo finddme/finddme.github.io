@@ -552,8 +552,9 @@
       function baseTransform() {
         return (isArt && desktop && desktop.classList.contains('desktop--dark')) ? 'translateX(13%) ' : '';
       }
+      // 아트는 눌림이 너무 빨라 경박해 보여서 스프링을 아주 조금 느긋하게(0.4).
       var spring = new window.LabSpring({
-        response: PRESS_RESPONSE, dampingRatio: PRESS_DAMPING, value: 1, target: 1
+        response: isArt ? 0.4 : PRESS_RESPONSE, dampingRatio: PRESS_DAMPING, value: 1, target: 1
       });
       var raf = null, last = 0;
       function tick(now) {

@@ -364,8 +364,8 @@
   display: block;
   height: 100%;
   width: 100%;
-  // 데스크톱 호버 리프트/눌림. Apple ease 로 묵직하게. JS 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
-  transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1), filter 0.18s ease;
+  // 데스크톱 호버 리프트/눌림. Apple ease 로 묵직하게(0.3s 로 더 느긋하게). JS 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1), filter 0.18s ease;
   will-change: transform;
 }
 
