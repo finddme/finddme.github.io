@@ -568,16 +568,15 @@
         if (spring.target === 1) { target.style.transform = ''; target.style.transition = ''; }
       }
       function start() { if (raf === null) { last = 0; raf = window.requestAnimationFrame(tick); } }
-      // 아트는 마우스/펜으로 꾹 눌러도 눌림 효과가 나오게 한다. 나머지 버튼(메뉴/파일)은
-      // 데스크톱에선 기존 hover/:active 를 쓰므로 터치일 때만 스프링을 건다.
+      // 터치만 스프링. 데스크톱(마우스/펜)은 다른 버튼처럼 CSS :active(가벼운 눌림)를 쓴다.
       el.addEventListener('pointerdown', function (e) {
-        if (!isArt && e.pointerType !== 'touch') return;
+        if (e.pointerType !== 'touch') return;
         target.style.transition = 'none';
         spring.target = PRESS_SCALE;
         start();
       });
       function release(e) {
-        if (!isArt && e && e.pointerType && e.pointerType !== 'touch') return;
+        if (e && e.pointerType && e.pointerType !== 'touch') return;
         spring.target = 1;
         start();
       }

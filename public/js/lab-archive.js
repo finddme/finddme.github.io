@@ -268,8 +268,8 @@
       var dt = last ? (t - last) / 1000 : 1 / 60;
       last = t;
       spring.step(dt);
-      var progress = (1 - spring.value) / (1 - PRESS_SCALE);
-      var ty = -PRESS_LIFT * progress;
+      // profile art 와 동일: 누를수록 아래로 살짝 눌린다(위가 아니라 아래).
+      var ty = (1 - spring.value) * PRESS_LIFT;
       img.style.transform = "translateY(" + ty.toFixed(2) + "px) scale(" + spring.value.toFixed(4) + ")";
       if (!spring.isResting()) {
         raf = window.requestAnimationFrame(tick);
