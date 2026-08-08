@@ -392,10 +392,10 @@ html:not(.has-touch) .lab-figure:hover .lab-figure__img {
   filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.16));
 }
 
-// 데스크톱: 누르면 profile art 처럼 이미지만 살짝 눌린다(축소 없이 아래로).
-// 고양이는 클릭 시 곧바로 profile 로 이동하는 링크라, 카테고리 버튼(120ms)처럼
-// press 를 빠르게(0.14s) 해야 이동 전에 눌림이 명확히 보인다. hover 0.16s 와는 분리.
-html:not(.has-touch) .lab-figure:active .lab-figure__img {
+// 누르면 profile art 처럼 이미지만 살짝 눌린다(축소 없이 아래로). 클릭 시 곧바로 이동하는
+// 링크라 press 를 빠르게(0.14s) 해야 이동 전에 눌림이 보인다. hover 0.16s 와는 분리.
+// 웹·모바일 동일하게 하려고 :not(.has-touch) 게이트 없이 터치에서도 적용한다.
+.lab-figure:active .lab-figure__img {
   transform: translateY(2px);
   filter: none;
   transition: transform 0.14s cubic-bezier(0.32, 0.72, 0, 1);
