@@ -145,8 +145,8 @@ html:not(.has-touch) .desktop--dark .desktop__file:hover { color: #E1E708; trans
 }
 .desktop__art img {
   display: block; width: 82%; height: auto; margin: auto;
-  /* Apple ease 로 눌림/호버를 묵직하게(0.16s 는 너무 가벼워 경박함 → 0.3s 로 더 느긋하게). */
-  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1), filter 0.18s ease;
+  /* hover 는 기존 0.16s 유지. 누르는 순간(:active)만 아래에서 느긋한 ease 로 덮는다. */
+  transition: transform 0.16s ease, filter 0.18s ease;
 }
 /* hover 시 상자(테두리)는 고정, 안의 이미지만 살짝 떠오른다(+ 드롭섀도로 뜬 느낌).
    모바일에선 has-touch 게이팅으로 미적용. */
@@ -158,14 +158,17 @@ html:not(.has-touch) .desktop--dark .desktop__art:hover img {
   transform: translateX(13%) translateY(-3px);   /* 다크 이미지의 기존 translateX 보존 */
   filter: drop-shadow(0 5px 10px rgba(0,0,0,0.42));
 }
-/* 데스크톱: 누르면 다른 버튼처럼 이미지만 살짝 눌린다(hover 리프트 위에 명시도로 덮음). */
+/* 데스크톱: 누르면 다른 버튼처럼 이미지만 살짝 눌린다(hover 리프트 위에 명시도로 덮음).
+   누르는 순간만 0.3s 로 느긋하게(hover 0.16s 와 분리). */
 html:not(.has-touch) .desktop__art:active img {
   transform: translateY(2px);
   filter: none;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
 }
 html:not(.has-touch) .desktop--dark .desktop__art:active img {
   transform: translateX(13%) translateY(2px);
   filter: none;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
 }
 .desktop--dark .desktop__art {
   border-width: 1px;
