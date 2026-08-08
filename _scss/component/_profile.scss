@@ -145,7 +145,8 @@ html:not(.has-touch) .desktop--dark .desktop__file:hover { color: #E1E708; trans
 }
 .desktop__art img {
   display: block; width: 82%; height: auto; margin: auto;
-  transition: transform 0.16s ease, filter 0.18s ease;
+  /* Apple ease 로 눌림/호버를 묵직하게(0.16s ease 는 너무 가벼워 경박함). */
+  transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1), filter 0.18s ease;
 }
 /* hover 시 상자(테두리)는 고정, 안의 이미지만 살짝 떠오른다(+ 드롭섀도로 뜬 느낌).
    모바일에선 has-touch 게이팅으로 미적용. */

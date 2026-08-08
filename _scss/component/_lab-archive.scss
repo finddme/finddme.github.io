@@ -353,8 +353,8 @@
   display: block;
   height: 100%;
   width: 100%;
-  // 데스크톱 호버 리프트. JS 로 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
-  transition: transform 0.16s ease, filter 0.18s ease;
+  // 데스크톱 호버 리프트/눌림. Apple ease 로 묵직하게. JS 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
+  transition: transform 0.22s cubic-bezier(0.32, 0.72, 0, 1), filter 0.18s ease;
   will-change: transform;
 }
 
@@ -362,6 +362,12 @@
 html:not(.has-touch) .lab-figure:hover .lab-figure__img {
   transform: translateY(-3px);
   filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.16));
+}
+
+// 데스크톱: 누르면 profile art 처럼 이미지만 살짝 눌린다(축소 없이 아래로).
+html:not(.has-touch) .lab-figure:active .lab-figure__img {
+  transform: translateY(2px);
+  filter: none;
 }
 
 .lab-callout {
