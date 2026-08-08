@@ -343,4 +343,20 @@
   function endResize() { rez = null; }
   layer.addEventListener('pointerup', endResize);
   layer.addEventListener('pointercancel', endResize);
+
+  // 터치(hover 없는) 기기: 프로필 프로젝트 행을 탭하면 설명(preview) 펼침/접힘.
+  // title/thumb 링크 탭은 그대로 해당 프로젝트로 이동. hover 기기(마우스)는 CSS
+  // hover가 처리하므로 여기선 제외 → sticky hover 의존을 없앤 안정적 탭 토글.
+  (function initProjectPreviewToggle() {
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var rows = document.querySelectorAll(
+      '.mac-projects--profile-project .archive-sheet__row.mac-projects__row--has-summary'
+    );
+    Array.prototype.forEach.call(rows, function (row) {
+      row.addEventListener('click', function (e) {
+        if (e.target.closest('a')) return;   // 링크는 이동
+        row.classList.toggle('mac-projects__row--open');
+      });
+    });
+  })();
 })();

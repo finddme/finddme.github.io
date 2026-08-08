@@ -283,9 +283,9 @@ $desktop-accent: #E1E708;
   background: rgba(31,31,33,0.92);
   border-bottom-color: #3a3a3c;
 }
-.desktop--dark .mac-projects--profile-project .archive-sheet__row:hover,
 .desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-visible,
-.desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-within {
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-within,
+.desktop--dark .mac-projects--profile-project .archive-sheet__row.mac-projects__row--open {
   background: rgba(44,44,46,0.96);
 }
 .desktop--dark .mac-projects .archive-sheet__index,
@@ -407,9 +407,9 @@ $desktop-accent: #E1E708;
 .mac-projects--profile-project .archive-sheet__row:nth-of-type(even) {
   background: #f6f6f6;
 }
-.mac-projects--profile-project .archive-sheet__row:hover,
 .mac-projects--profile-project .archive-sheet__row:focus-visible,
-.mac-projects--profile-project .archive-sheet__row:focus-within {
+.mac-projects--profile-project .archive-sheet__row:focus-within,
+.mac-projects--profile-project .archive-sheet__row.mac-projects__row--open {
   background: #eef0f2;
 }
 .mac-projects--profile-project .archive-sheet__title {
@@ -419,9 +419,9 @@ $desktop-accent: #E1E708;
   justify-content: center;
   text-align: left;
 }
-.mac-projects--profile-project .mac-projects__row--has-summary:hover .archive-sheet__title,
 .mac-projects--profile-project .mac-projects__row--has-summary:focus-visible .archive-sheet__title,
-.mac-projects--profile-project .mac-projects__row--has-summary:focus-within .archive-sheet__title {
+.mac-projects--profile-project .mac-projects__row--has-summary:focus-within .archive-sheet__title,
+.mac-projects--profile-project .mac-projects__row--has-summary.mac-projects__row--open .archive-sheet__title {
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -449,11 +449,30 @@ $desktop-accent: #E1E708;
     max-height 220ms ease-out,
     opacity 160ms ease;
 }
-.mac-projects--profile-project .archive-sheet__row:hover .mac-projects__preview,
 .mac-projects--profile-project .archive-sheet__row:focus-visible .mac-projects__preview,
-.mac-projects--profile-project .archive-sheet__row:focus-within .mac-projects__preview {
+.mac-projects--profile-project .archive-sheet__row:focus-within .mac-projects__preview,
+.mac-projects--profile-project .archive-sheet__row.mac-projects__row--open .mac-projects__preview {
   max-height: 2.8em;
   opacity: 1;
+}
+
+/* preview 펼침의 hover 트리거는 hover 가능한(마우스) 기기에만. 터치에선 sticky hover
+   대신 JS가 붙이는 .mac-projects__row--open(탭 토글)으로 펼친다(안정적 재현). */
+@media (hover: hover) and (pointer: fine) {
+  .mac-projects--profile-project .archive-sheet__row:hover {
+    background: #eef0f2;
+  }
+  .desktop--dark .mac-projects--profile-project .archive-sheet__row:hover {
+    background: rgba(44,44,46,0.96);
+  }
+  .mac-projects--profile-project .mac-projects__row--has-summary:hover .archive-sheet__title {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .mac-projects--profile-project .archive-sheet__row:hover .mac-projects__preview {
+    max-height: 2.8em;
+    opacity: 1;
+  }
 }
 
 /* Responsive: stack on small screens */
