@@ -73,6 +73,7 @@
       if (w !== win) w.classList.remove('mac-window--focused');
     });
     win.classList.add('mac-window--focused');
+    saveState();
   }
 
   // 초기: 화면에 떠 있는 창 중 z가 가장 높은 것을 포커스로.
@@ -83,6 +84,87 @@
       if (z >= topZ) { topZ = z; top = w; }
     });
     if (top) top.classList.add('mac-window--focused');
+  })();
+
+  // ── 창 상태 저장/복원 (뒤로가기 시 열어둔 창을 유지) ──────────────────
+  // 프로젝트를 눌러 다른 페이지로 갔다가 뒤로 오면 열어둔 창이 초기화되던 문제를
+  // 해결한다. bfcache에 의존하지 않고 sessionStorage에 상태를 저장, "뒤로/앞으로"
+  // 내비게이션일 때만 복원한다(직접 로드/새로고침은 기본 상태 유지). 데스크톱 전용.
+  var STATE_KEY = 'profileDesktopState_v1';
+
+  function saveState() {
+    if (!desktop) return;
+    try {
+      var st = { dark: desktop.classList.contains('desktop--dark'), win: {} };
+      document.querySelectorAll('.mac-window').forEach(function (w) {
+        if (!w.id) return;
+        st.win[w.id] = {
+          o: !w.hidden,
+          l: w.style.left || '', t: w.style.top || '',
+          w: w.style.width || '', h: w.style.height || '',
+          z: w.style.zIndex || ''
+        };
+      });
+      sessionStorage.setItem(STATE_KEY, JSON.stringify(st));
+    } catch (e) {}
+  }
+
+  function isBackForward() {
+    try {
+      var nav = performance.getEntriesByType('navigation')[0];
+      if (nav) return nav.type === 'back_forward';
+      return !!(performance.navigation && performance.navigation.type === 2);
+    } catch (e) { return false; }
+  }
+
+  function applyDark(on) {
+    desktop.classList.toggle('desktop--dark', on);
+    if (artToggle) {
+      artToggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+      var img = artToggle.querySelector('img');
+      if (img) {
+        img.src = on ? artToggle.dataset.darkSrc : artToggle.dataset.lightSrc;
+        img.alt = on ? 'TTORI' : 'YEIN';
+      }
+    }
+  }
+
+  (function restoreState() {
+    if (isMobile() || !isBackForward()) return;
+    var raw;
+    try { raw = sessionStorage.getItem(STATE_KEY); } catch (e) { return; }
+    if (!raw) return;
+    var st;
+    try { st = JSON.parse(raw); } catch (e) { return; }
+    if (!st || !st.win) return;
+    if (st.dark) applyDark(true);
+    var topZ = zTop, topWin = null;
+    Object.keys(st.win).forEach(function (id) {
+      var w = document.getElementById(id);
+      if (!w) return;
+      var s = st.win[id];
+      if (s.l) w.style.left = s.l;
+      if (s.t) w.style.top = s.t;
+      if (s.w) w.style.width = s.w;
+      if (s.h) w.style.height = s.h;
+      if (s.z) w.style.zIndex = s.z;
+      if (s.o) {
+        w.hidden = false;
+        w.dataset.placed = '1';
+        var z = parseInt(s.z, 10) || 0;
+        if (z >= topZ) { topZ = z; topWin = w; }
+      } else {
+        w.hidden = true;   // 저장상태가 닫힘이면 닫는다(기본 열림 창도 포함)
+      }
+    });
+    zTop = Math.max(zTop, topZ);
+    if (topWin) {
+      document.querySelectorAll('.mac-window--focused').forEach(function (x) {
+        x.classList.remove('mac-window--focused');
+      });
+      topWin.classList.add('mac-window--focused');
+    }
+    clampVisibleWindows();
   })();
 
   // 이미지 창(win-img-*)은 중앙 축소(collapsed), 나머지 메뉴 창은 버튼에서
@@ -152,6 +234,7 @@
     if (!win) return;
     if (!canAnimateWindow()) {
       win.hidden = true;
+      saveState();
       return;
     }
     // 축소·페이드로 닫힌 뒤 실제로 숨긴다. 그로우 창은 저장된 transform-origin을
@@ -165,6 +248,7 @@
       win.hidden = true;
       win.classList.remove('mac-window--collapsed', 'mac-window--grow');
       win.removeEventListener('transitionend', onEnd);
+      saveState();
     }
     function onEnd(e) {
       if (e.target === win && (e.propertyName === 'transform' || e.propertyName === 'opacity')) {
@@ -202,6 +286,7 @@
       if (!img || reduceMotion) {
         desktop.classList.toggle('desktop--dark', willBeDark);
         if (img) { img.src = src; img.alt = alt; }
+        saveState();
         return;
       }
       // 아트는 모드별 크기·위치(다크는 translateX(13%) + 다른 width)가 달라, 즉시
@@ -218,6 +303,7 @@
         desktop.classList.toggle('desktop--dark', willBeDark); // 배경+아트 크기 변화(안 보임)
         img.src = src;
         img.alt = alt;
+        saveState();
         window.requestAnimationFrame(function () { img.style.opacity = '1'; }); // 페이드인
       }
       function onEnd(e) { if (e.propertyName === 'opacity') apply(); }
@@ -279,7 +365,7 @@
     drag.win.style.top = (e.clientY - drag.dy) + 'px';
   });
   function endDrag() {
-    if (drag) drag.win.classList.remove('mac-window--dragging');   // PR2: 놓으면 lift 해제
+    if (drag) { drag.win.classList.remove('mac-window--dragging'); saveState(); }   // PR2: 놓으면 lift 해제 + 위치 저장
     drag = null;
   }
   layer.addEventListener('pointerup', endDrag);
@@ -347,7 +433,7 @@
       rez.win.style.top = (rez.top + (rez.h - newH)) + 'px';
     }
   });
-  function endResize() { rez = null; }
+  function endResize() { if (rez) saveState(); rez = null; }
   layer.addEventListener('pointerup', endResize);
   layer.addEventListener('pointercancel', endResize);
 
