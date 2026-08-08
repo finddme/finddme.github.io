@@ -313,11 +313,24 @@
     fig.addEventListener("pointerleave", release);
   }
 
+  // 고양이 상자는 profile art 와 동일하게 <button> 이라, 클릭 시 JS 로 profile 로 이동한다.
+  function initFigureNav() {
+    var fig = root.querySelector(".lab-figure");
+    var href = fig && fig.getAttribute("data-lab-figure-href");
+    if (!fig || !href) {
+      return;
+    }
+    fig.addEventListener("click", function () {
+      window.location.href = href;
+    });
+  }
+
   updateTime();
   window.setInterval(updateTime, 30000);
   initScrollMaterialize();
   initPressSpring();
   initFigurePressSpring();
+  initFigureNav();
   updateStageScale();
   window.addEventListener("resize", updateStageScale);
   window.addEventListener("load", updateStageScale);
