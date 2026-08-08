@@ -250,7 +250,7 @@
     if (!img) {
       return;
     }
-    var PRESS_RESPONSE = 0.4; // 눌림이 너무 빨라 경박해 보여서 아주 조금 느긋하게(profile art 와 동일).
+    var PRESS_RESPONSE = 0.5; // 고양이는 아트(0.4)보다 조금 더 느긋하게(터치 press).
     var PRESS_DAMPING = 0.5;
     var PRESS_SCALE = 0.95;
     var PRESS_LIFT = 26; // px, 누른 동안 이미지가 떠오르는 정도

@@ -364,8 +364,8 @@
   display: block;
   height: 100%;
   width: 100%;
-  // 데스크톱 호버 리프트/눌림. Apple ease 로 묵직하게(0.3s 로 더 느긋하게). JS 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
-  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1), filter 0.18s ease;
+  // hover 는 기존 0.16s 유지. 누르는 순간(:active)만 아래에서 느긋한 ease 로 덮는다. JS 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
+  transition: transform 0.16s ease, filter 0.18s ease;
   will-change: transform;
 }
 
@@ -376,9 +376,11 @@ html:not(.has-touch) .lab-figure:hover .lab-figure__img {
 }
 
 // 데스크톱: 누르면 profile art 처럼 이미지만 살짝 눌린다(축소 없이 아래로).
+// 고양이는 아트(0.3s)보다 조금 더 느긋하게(0.4s). hover 0.16s 와는 분리.
 html:not(.has-touch) .lab-figure:active .lab-figure__img {
   transform: translateY(2px);
   filter: none;
+  transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .lab-callout {
