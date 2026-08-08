@@ -333,7 +333,7 @@
       // 다크 토글 + src 교체(=크기/위치 변화)를 하고 다시 페이드인한다.
       var pre = new Image();
       pre.src = src;                                   // 미리 로드해 플래시 방지
-      img.style.transition = 'opacity 240ms var(--mac-ease)';
+      img.style.transition = 'opacity 240ms var(--mac-ease), transform 0.16s ease, filter 0.18s ease';
       var applied = false;
       function apply() {
         if (applied) return;
@@ -532,6 +532,56 @@
         if (e.target.closest('a')) return;
         row.classList.toggle('mac-projects__row--open');
       });
+    });
+  })();
+
+  // 모바일(터치): 메뉴 버튼에 홈 pill 버튼과 같은 spring press를 준다 — 누르면 축소+
+  // 살짝 눌림, 떼면 velocity 이어받아 미세 overshoot 후 정착(LabSpring 재사용).
+  // 터치일 때만 개입하고 데스크톱은 CSS hover-lift/:active를 그대로 쓴다.
+  (function initMenuPressSpring() {
+    if (reduceMotion || !window.LabSpring || !('PointerEvent' in window)) return;
+    var PRESS_RESPONSE = 0.32, PRESS_DAMPING = 0.5, PRESS_SCALE = 0.95, PRESS_LIFT = 26;
+    // 메뉴 버튼 + 파일명(*.jpeg 링크) + 가운데 아트 이미지 버튼. (아트는 모바일에서
+    // top-left 재배치라 CSS transform이 none → 스프링 인라인 transform과 충돌 없음.)
+    var buttons = document.querySelectorAll('.desktop__menu-item, .desktop__file, .desktop__art');
+    Array.prototype.forEach.call(buttons, function (el) {
+      // 아트는 상자가 아니라 안쪽 이미지에만 효과를 준다. 다른 버튼은 자기 자신.
+      var isArt = el.classList.contains('desktop__art');
+      var target = isArt ? (el.querySelector('img') || el) : el;
+      // 아트 다크 이미지의 기존 translateX(13%)를 press 중에도 보존해 옆으로 안 튀게.
+      function baseTransform() {
+        return (isArt && desktop && desktop.classList.contains('desktop--dark')) ? 'translateX(13%) ' : '';
+      }
+      var spring = new window.LabSpring({
+        response: PRESS_RESPONSE, dampingRatio: PRESS_DAMPING, value: 1, target: 1
+      });
+      var raf = null, last = 0;
+      function tick(now) {
+        var t = typeof now === 'number' ? now : performance.now();
+        var dt = last ? (t - last) / 1000 : 1 / 60;
+        last = t;
+        spring.step(dt);
+        var ty = (1 - spring.value) * PRESS_LIFT;
+        target.style.transform = baseTransform() + 'translateY(' + ty.toFixed(2) + 'px) scale(' + spring.value.toFixed(4) + ')';
+        if (!spring.isResting()) { raf = window.requestAnimationFrame(tick); return; }
+        raf = null; last = 0;
+        if (spring.target === 1) { target.style.transform = ''; target.style.transition = ''; }
+      }
+      function start() { if (raf === null) { last = 0; raf = window.requestAnimationFrame(tick); } }
+      el.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'touch') return;   // 터치만(데스크톱은 hover/:active)
+        target.style.transition = 'none';
+        spring.target = PRESS_SCALE;
+        start();
+      });
+      function release(e) {
+        if (e && e.pointerType && e.pointerType !== 'touch') return;
+        spring.target = 1;
+        start();
+      }
+      el.addEventListener('pointerup', release);
+      el.addEventListener('pointercancel', release);
+      el.addEventListener('pointerleave', release);
     });
   })();
 })();
