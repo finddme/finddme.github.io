@@ -535,7 +535,55 @@
     });
   })();
 
-  // 모바일(터치) 클릭 효과를 데스크톱과 동일하게 맞추려고 JS 스프링 press 를 제거했다.
-  // 이제 메뉴/파일/아트 모두 터치에서도 CSS :active(플랫한 눌림)를 그대로 쓴다.
-  // (:active 는 아래 문서 레벨 touchstart 리스너 덕에 iOS 에서도 발동한다.)
+  // 모바일(터치): 메뉴 버튼에 홈 pill 버튼과 같은 spring press를 준다 — 누르면 축소+
+  // 살짝 눌림, 떼면 velocity 이어받아 미세 overshoot 후 정착(LabSpring 재사용).
+  // 터치일 때만 개입하고 데스크톱은 CSS hover-lift/:active를 그대로 쓴다.
+  (function initMenuPressSpring() {
+    if (reduceMotion || !window.LabSpring || !('PointerEvent' in window)) return;
+    var PRESS_RESPONSE = 0.32, PRESS_DAMPING = 0.5, PRESS_SCALE = 0.95, PRESS_LIFT = 26;
+    // 메뉴 버튼 + 파일명(*.jpeg 링크) + 가운데 아트 이미지 버튼. (아트는 모바일에서
+    // top-left 재배치라 CSS transform이 none → 스프링 인라인 transform과 충돌 없음.)
+    var buttons = document.querySelectorAll('.desktop__menu-item, .desktop__file, .desktop__art');
+    Array.prototype.forEach.call(buttons, function (el) {
+      // 아트는 상자가 아니라 안쪽 이미지에만 효과를 준다. 다른 버튼은 자기 자신.
+      var isArt = el.classList.contains('desktop__art');
+      var target = isArt ? (el.querySelector('img') || el) : el;
+      // 아트 다크 이미지의 기존 translateX(13%)를 press 중에도 보존해 옆으로 안 튀게.
+      function baseTransform() {
+        return (isArt && desktop && desktop.classList.contains('desktop--dark')) ? 'translateX(13%) ' : '';
+      }
+      // 아트는 눌림이 너무 빨라 경박해 보여서 스프링을 아주 조금 느긋하게(0.4).
+      var spring = new window.LabSpring({
+        response: isArt ? 0.4 : PRESS_RESPONSE, dampingRatio: PRESS_DAMPING, value: 1, target: 1
+      });
+      var raf = null, last = 0;
+      function tick(now) {
+        var t = typeof now === 'number' ? now : performance.now();
+        var dt = last ? (t - last) / 1000 : 1 / 60;
+        last = t;
+        spring.step(dt);
+        var ty = (1 - spring.value) * PRESS_LIFT;
+        target.style.transform = baseTransform() + 'translateY(' + ty.toFixed(2) + 'px) scale(' + spring.value.toFixed(4) + ')';
+        if (!spring.isResting()) { raf = window.requestAnimationFrame(tick); return; }
+        raf = null; last = 0;
+        if (spring.target === 1) { target.style.transform = ''; target.style.transition = ''; }
+      }
+      function start() { if (raf === null) { last = 0; raf = window.requestAnimationFrame(tick); } }
+      // 터치만 스프링. 데스크톱(마우스/펜)은 다른 버튼처럼 CSS :active(가벼운 눌림)를 쓴다.
+      el.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'touch') return;
+        target.style.transition = 'none';
+        spring.target = PRESS_SCALE;
+        start();
+      });
+      function release(e) {
+        if (e && e.pointerType && e.pointerType !== 'touch') return;
+        spring.target = 1;
+        start();
+      }
+      el.addEventListener('pointerup', release);
+      el.addEventListener('pointercancel', release);
+      el.addEventListener('pointerleave', release);
+    });
+  })();
 })();
