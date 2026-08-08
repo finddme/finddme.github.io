@@ -290,14 +290,20 @@
       }
     }
 
-    // 마우스/펜/터치 모두 꾹 누르면 이미지가 눌린다(profile art 와 동일).
+    // 터치만 스프링. 데스크톱(마우스/펜)은 profile art 처럼 CSS :active(가벼운 눌림)를 쓴다.
     fig.addEventListener("pointerdown", function (event) {
+      if (event.pointerType !== "touch") {
+        return;
+      }
       img.style.transition = "none"; // JS가 transform 소유
       spring.target = PRESS_SCALE;
       start();
     });
 
-    function release() {
+    function release(event) {
+      if (event && event.pointerType && event.pointerType !== "touch") {
+        return;
+      }
       spring.target = 1;
       start();
     }
