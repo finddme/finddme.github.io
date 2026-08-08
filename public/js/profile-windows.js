@@ -54,6 +54,13 @@
     document.querySelectorAll('.mac-window--image').forEach(function (w) { w.hidden = true; });
   }
 
+  // 로드 시점에 열려 있는(기본 고정) 창 id 기록. 배경 클릭으로는 닫지 않고,
+  // 각자의 닫기 버튼(빨간 신호등)으로만 닫는다.
+  var pinnedIds = [];
+  document.querySelectorAll('.mac-window:not([hidden])').forEach(function (w) {
+    if (w.id) pinnedIds.push(w.id);
+  });
+
   // Keep default-open windows on-screen now and whenever the viewport changes.
   clampVisibleWindows();
   window.addEventListener('resize', clampVisibleWindows);
@@ -343,6 +350,23 @@
   function endResize() { rez = null; }
   layer.addEventListener('pointerup', endResize);
   layer.addEventListener('pointercancel', endResize);
+
+  // 빈 배경(창·메뉴/파일 버튼·아트 토글이 아닌 곳)을 클릭하면 열린 창을 모두 닫는다.
+  // 창 레이어는 pointer-events:none이라 빈 곳 클릭은 desktop으로 떨어진다.
+  function closeAllWindows() {
+    document.querySelectorAll('.mac-window').forEach(function (win) {
+      if (pinnedIds.indexOf(win.id) !== -1) return;   // 기본 고정 창은 제외
+      if (isWindowOpen(win)) closeWindow(win.id);
+    });
+  }
+  if (desktop) {
+    desktop.addEventListener('click', function (e) {
+      if (e.target.closest('.mac-window, [data-mac-open], [data-profile-art-toggle]')) {
+        return;
+      }
+      closeAllWindows();
+    });
+  }
 
   // 터치(hover 없는) 기기: 프로필 프로젝트 행을 탭하면 설명(preview) 펼침/접힘.
   // title/thumb 링크 탭은 그대로 해당 프로젝트로 이동. hover 기기(마우스)는 CSS
