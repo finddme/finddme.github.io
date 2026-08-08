@@ -58,16 +58,21 @@ $desktop-accent: #E1E708;
   cursor: pointer;
   transition: background 0.15s ease, transform 0.1s ease;
 }
-.desktop__menu-item:hover,
+/* Official Projects는 항상 강조(hover 아님). hover 하이라이트는 "터치가 아닌" 기기에만
+   적용 → 터치로 탭했을 때 hover가 눌러붙어 색이 안 빠지는 문제 방지(S펜 기기 포함).
+   실제 터치 발생 시 JS가 html.has-touch를 붙여 아래 hover를 끈다. */
 .desktop__menu-item[data-mac-open="win-official"] { background: rgba(225,231,8,0.30); }
+html:not(.has-touch) .desktop__menu-item:hover { background: rgba(225,231,8,0.30); }
 .desktop__menu-item:active { transform: translateY(2px); }
 .desktop--dark .desktop__menu-item {
   border-width: 1px;
   border-color: #F9FB97;
   color: #f5f5f7;
 }
-.desktop--dark .desktop__menu-item:hover,
 .desktop--dark .desktop__menu-item[data-mac-open="win-official"] {
+  background: rgba(249,251,151,0.16);
+}
+html:not(.has-touch) .desktop--dark .desktop__menu-item:hover {
   background: rgba(249,251,151,0.16);
 }
 
@@ -94,10 +99,10 @@ $desktop-accent: #E1E708;
   color: #5a4bb2;
   text-decoration: underline;
 }
-.desktop__file:hover { color: #E1E708; }
+html:not(.has-touch) .desktop__file:hover { color: #E1E708; }
 .desktop__file:active { transform: translateY(2px); }
 .desktop--dark .desktop__file { color: #b8a7ff; }
-.desktop--dark .desktop__file:hover { color: #E1E708; }
+html:not(.has-touch) .desktop--dark .desktop__file:hover { color: #E1E708; }
 
 /* Image windows */
 .mac-window--image .mac-window__body { padding: 0.75rem; }
@@ -269,7 +274,7 @@ $desktop-accent: #E1E708;
 .desktop--dark .mac-bloglinks__item a {
   color: #b8a7ff;
 }
-.desktop--dark .mac-bloglinks__item a:hover {
+html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
   color: #d8ceff;
 }
 .desktop--dark .mac-skills__chip {
@@ -358,7 +363,7 @@ $desktop-accent: #E1E708;
 .mac-bloglinks__item a:focus-visible { outline: none; }
 .mac-bloglinks__item a:active { transform: translateY(2px); }
 .mac-bloglinks__item a:visited { color: #6d42a8; }
-.mac-bloglinks__item a:hover { color: #34258f; }
+html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
 
 .mac-projects__empty { color: #888; font-size: 0.9rem; }
 
