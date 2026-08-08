@@ -333,26 +333,31 @@
 // 좌상단 상자(아주 얇은 선 프레임). 안의 이미지는 배경으로 깔아 가운데 정렬(contain).
 // 데스크톱 위치/크기는 아래 @media(min-width:821px) 블록에서 지정한다.
 // 이미지는 index.html이 public/main-page/box/ 첫 이미지를 인라인 background-image 로 넣어준다(없으면 빈 상자).
-// profile 의 art 와 동일하게 <button> 이다. 링크(<a>)면 브라우저가 press 시 상자 전체에
-// 검은 시스템 하이라이트를 깔아서, art 처럼 button + 리셋으로 그 기본 스타일을 없앤다.
+// 클릭 시 profile 로 가는 링크(<a>). 검은 상자가 안 뜨게 .lab-callout 과 동일한 3종 리셋을
+// 적용한다: tap-highlight 투명 + :focus outline 제거 + :focus-visible 만 키보드용 링.
 .lab-figure {
-  appearance: none;
-  -webkit-appearance: none;
-  background: transparent;
   border: 0.5px solid var(--lab-line);
   box-sizing: border-box;
-  color: inherit;
-  cursor: pointer;
   display: block;
-  font: inherit;
   // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
   // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
   padding: 30px 30px;
   position: absolute;
+  text-decoration: none;
   // 탭/press 시 브라우저 기본 검은 하이라이트가 상자 전체에 깔리지 않게 한다(우리 눌림 효과만).
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   z-index: 2;
+}
+
+// 클릭/탭(포인터)에는 outline 없음 — 검은 사각형/테두리 제거.
+// 키보드 탐색(:focus-visible)만 접근성용 링 유지.
+.lab-figure:focus {
+  outline: none;
+}
+.lab-figure:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 3px;
 }
 
 // 상자 안의 실제 이미지. 상자(테두리)는 고정하고 이 요소만 눌림/호버 효과를 받는다.

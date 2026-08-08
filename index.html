@@ -76,9 +76,9 @@ homepage_style: lab-archive
             {%- if box_src == "" -%}{%- assign box_src = f.path -%}{%- endif -%}
         {%- endcase -%}
       {%- endfor -%}
-      <button type="button" class="lab-figure" data-lab-figure data-lab-figure-href="{{ site.baseurl }}/profile/" aria-label="finddme profile">
+      <a class="lab-figure" data-lab-figure href="{{ site.baseurl }}/profile/" aria-label="finddme profile">
         <span class="lab-figure__img"{% if box_src != "" %} style="background-image: url('{{ box_src | relative_url }}')"{% endif %}></span>
-      </button>
+      </a>
 
       <a class="lab-callout lab-callout--multi" href="{{ site.baseurl }}/blog/llm_multimodal/" data-lab-callout="multi">
         <span>LLM / Multimodal</span>
@@ -131,4 +131,4 @@ homepage_style: lab-archive
   ];
 </script>
 <script src="{{ site.baseurl }}/public/js/lab-spring.js?v=1"></script>
-<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=45"></script>
+<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=46"></script>
