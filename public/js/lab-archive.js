@@ -136,7 +136,7 @@
   // iOS Safari는 등록된 touch 리스너가 없는 요소에는 :active를 적용하지 않는다.
   // 빈 touchstart 리스너를 달아 탭 시 유리 press 효과(:active)가 실제로 나오게 한다.
   // (profile 페이지에서 검증된 패턴을 홈 callout/pill에도 적용.)
-  var pressTargets = root.querySelectorAll(".lab-callout, .lab-profile-links a, .lab-figure");
+  var pressTargets = root.querySelectorAll(".lab-callout, .lab-profile-links a");
   Array.prototype.forEach.call(pressTargets, function (el) {
     el.addEventListener("touchstart", function () {}, { passive: true });
   });
@@ -238,14 +238,82 @@
     });
   }
 
-  // 좌상단 고양이 상자의 눌림 효과는 CSS(.lab-figure:active .lab-figure__img)가 담당한다.
-  // 웹·모바일 동일한 플랫 press 로 통일하려고 이전의 터치 전용 JS 스프링은 제거했다.
-  // (:active 는 위 문서 레벨 touchstart 리스너 + 아래 pressTargets 덕에 iOS 에서도 발동.)
+  // 좌상단 고양이 상자: 모바일(터치)에서 카테고리 버튼과 "동일한" 통통 튀는 스프링 press.
+  // 단 테두리 상자는 고정하고 안쪽 이미지에만 scale 을 준다(image-only). 데스크톱(마우스)은
+  // CSS :active(이미지 살짝 아래로)를 그대로 쓴다. 파라미터는 카테고리 스프링과 같다.
+  function initFigurePressSpring() {
+    if (reduceMotion || !window.LabSpring || !("PointerEvent" in window)) {
+      return;
+    }
+    var fig = root.querySelector(".lab-figure");
+    var img = fig && fig.querySelector(".lab-figure__img");
+    if (!img) {
+      return;
+    }
+    var PRESS_RESPONSE = 0.32; // 카테고리 press 스프링과 동일(스냅)
+    var PRESS_DAMPING = 0.55;  // 낮을수록 떼는 순간 더 통통 튐 (카테고리와 동일)
+    var PRESS_SCALE = 0.94;    // 누른 동안 축소 정도 (카테고리와 동일)
+    var spring = new window.LabSpring({
+      response: PRESS_RESPONSE,
+      dampingRatio: PRESS_DAMPING,
+      value: 1,
+      target: 1
+    });
+    var raf = null;
+    var last = 0;
+
+    function tick(now) {
+      var t = typeof now === "number" ? now : performance.now();
+      var dt = last ? (t - last) / 1000 : 1 / 60;
+      last = t;
+      spring.step(dt);
+      img.style.transform = "scale(" + spring.value.toFixed(4) + ")";
+      if (!spring.isResting()) {
+        raf = window.requestAnimationFrame(tick);
+        return;
+      }
+      raf = null;
+      last = 0;
+      if (spring.target === 1) {
+        img.style.transform = "";
+        img.style.transition = "";
+      }
+    }
+
+    function start() {
+      if (raf === null) {
+        last = 0;
+        raf = window.requestAnimationFrame(tick);
+      }
+    }
+
+    fig.addEventListener("pointerdown", function (event) {
+      if (event.pointerType !== "touch") {
+        return;
+      }
+      img.style.transition = "none"; // JS가 transform 소유
+      spring.target = PRESS_SCALE;
+      start();
+    });
+
+    function release(event) {
+      if (event && event.pointerType && event.pointerType !== "touch") {
+        return;
+      }
+      spring.target = 1;
+      start();
+    }
+
+    fig.addEventListener("pointerup", release);
+    fig.addEventListener("pointercancel", release);
+    fig.addEventListener("pointerleave", release);
+  }
 
   updateTime();
   window.setInterval(updateTime, 30000);
   initScrollMaterialize();
   initPressSpring();
+  initFigurePressSpring();
   updateStageScale();
   window.addEventListener("resize", updateStageScale);
   window.addEventListener("load", updateStageScale);
