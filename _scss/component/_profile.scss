@@ -285,7 +285,7 @@ $desktop-accent: #E1E708;
 }
 .desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-visible,
 .desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-within,
-.desktop--dark .mac-projects--profile-project .archive-sheet__row.mac-projects__row--open {
+.desktop--dark .mac-projects--profile-project .archive-sheet__row.mac-projects__row--hover {
   background: rgba(44,44,46,0.96);
 }
 .desktop--dark .mac-projects .archive-sheet__index,
@@ -409,8 +409,17 @@ $desktop-accent: #E1E708;
 }
 .mac-projects--profile-project .archive-sheet__row:focus-visible,
 .mac-projects--profile-project .archive-sheet__row:focus-within,
-.mac-projects--profile-project .archive-sheet__row.mac-projects__row--open {
+.mac-projects--profile-project .archive-sheet__row.mac-projects__row--hover {
   background: #eef0f2;
+}
+/* 터치 press 순간 피드백(모든 프로젝트 행). nth-of-type(even)·기본 배경보다 뒤에
+   와서 눌릴 때만 회색이 뜨고 손 떼면 원래색으로 복귀. 열림(--open)은 배경을 안 바꾸고
+   설명만 편다(지속 회색 제거). */
+.mac-projects--profile-project .archive-sheet__row:active {
+  background: #e6e8eb;
+}
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:active {
+  background: rgba(58,58,61,0.96);
 }
 .mac-projects--profile-project .archive-sheet__title {
   align-items: flex-start;
@@ -421,7 +430,8 @@ $desktop-accent: #E1E708;
 }
 .mac-projects--profile-project .mac-projects__row--has-summary:focus-visible .archive-sheet__title,
 .mac-projects--profile-project .mac-projects__row--has-summary:focus-within .archive-sheet__title,
-.mac-projects--profile-project .mac-projects__row--has-summary.mac-projects__row--open .archive-sheet__title {
+.mac-projects--profile-project .mac-projects__row--has-summary.mac-projects__row--open .archive-sheet__title,
+.mac-projects--profile-project .mac-projects__row--has-summary.mac-projects__row--hover .archive-sheet__title {
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -451,29 +461,16 @@ $desktop-accent: #E1E708;
 }
 .mac-projects--profile-project .archive-sheet__row:focus-visible .mac-projects__preview,
 .mac-projects--profile-project .archive-sheet__row:focus-within .mac-projects__preview,
-.mac-projects--profile-project .archive-sheet__row.mac-projects__row--open .mac-projects__preview {
+.mac-projects--profile-project .archive-sheet__row.mac-projects__row--open .mac-projects__preview,
+.mac-projects--profile-project .archive-sheet__row.mac-projects__row--hover .mac-projects__preview {
   max-height: 2.8em;
   opacity: 1;
 }
 
-/* preview 펼침의 hover 트리거는 hover 가능한(마우스) 기기에만. 터치에선 sticky hover
-   대신 JS가 붙이는 .mac-projects__row--open(탭 토글)으로 펼친다(안정적 재현). */
-@media (hover: hover) and (pointer: fine) {
-  .mac-projects--profile-project .archive-sheet__row:hover {
-    background: #eef0f2;
-  }
-  .desktop--dark .mac-projects--profile-project .archive-sheet__row:hover {
-    background: rgba(44,44,46,0.96);
-  }
-  .mac-projects--profile-project .mac-projects__row--has-summary:hover .archive-sheet__title {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .mac-projects--profile-project .archive-sheet__row:hover .mac-projects__preview {
-    max-height: 2.8em;
-    opacity: 1;
-  }
-}
+/* preview 펼침은 CSS :hover에 의존하지 않는다. 일부 기기(갤럭시 S펜 등)가
+   @media (hover: hover)를 오탐해 sticky hover가 붙던 문제를 없애기 위해,
+   JS(포인터 이벤트)가 마우스/펜 hover와 터치 탭을 구분해 .mac-projects__row--open을
+   직접 제어한다. 키보드는 :focus-within(위 규칙)로 유지. */
 
 /* Responsive: stack on small screens */
 @keyframes macSheetUp {

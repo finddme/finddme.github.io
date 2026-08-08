@@ -458,13 +458,33 @@
   // title/thumb 링크 탭은 그대로 해당 프로젝트로 이동. hover 기기(마우스)는 CSS
   // hover가 처리하므로 여기선 제외 → sticky hover 의존을 없앤 안정적 탭 토글.
   (function initProjectPreviewToggle() {
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     var rows = document.querySelectorAll(
       '.mac-projects--profile-project .archive-sheet__row.mac-projects__row--has-summary'
     );
+    if (!rows.length) return;
+
+    // 직전 포인터 종류를 추적(마우스/펜/터치 구분). matchMedia는 S펜 기기에서
+    // 오탐하므로 실제 이벤트로 판단한다.
+    var lastPointerType = 'mouse';
+    document.addEventListener('pointerdown', function (e) {
+      lastPointerType = e.pointerType || 'mouse';
+    }, true);
+
     Array.prototype.forEach.call(rows, function (row) {
+      // 마우스/펜 hover: 들어오면 펼치고 나가면 접는다. pointerleave가 항상 발생하므로
+      // sticky hover가 생기지 않는다(오탐 기기여도).
+      row.addEventListener('pointerenter', function (e) {
+        if (e.pointerType === 'touch') return;
+        row.classList.add('mac-projects__row--hover');   // 데스크톱/펜: 회색+설명
+      });
+      row.addEventListener('pointerleave', function (e) {
+        if (e.pointerType === 'touch') return;
+        row.classList.remove('mac-projects__row--hover');
+      });
+      // 터치 탭: 토글(다시 탭하면 접힘). 링크 탭은 이동. 마우스/펜은 hover가 처리.
       row.addEventListener('click', function (e) {
-        if (e.target.closest('a')) return;   // 링크는 이동
+        if (lastPointerType !== 'touch') return;
+        if (e.target.closest('a')) return;
         row.classList.toggle('mac-projects__row--open');
       });
     });
