@@ -73,6 +73,9 @@
     btn.setAttribute('aria-controls', id);
     btn.textContent = sec.label;
     btn.addEventListener('click', function () { activate(i); });
+    // iOS Safari는 touch 리스너가 없는 요소엔 :active를 적용하지 않는다. 빈 touchstart를 달아
+    // 탭 시 모바일 press(:active) 효과가 실제로 나오게 한다(다른 페이지와 동일 패턴).
+    btn.addEventListener('touchstart', function () {}, { passive: true });
     // basic keyboard nav (left/right)
     btn.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {

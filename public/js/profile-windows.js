@@ -552,8 +552,9 @@
       function baseTransform() {
         return (isArt && desktop && desktop.classList.contains('desktop--dark')) ? 'translateX(13%) ' : '';
       }
+      // 아트는 눌림이 너무 빨라 경박해 보여서 스프링을 아주 조금 느긋하게(0.4).
       var spring = new window.LabSpring({
-        response: PRESS_RESPONSE, dampingRatio: PRESS_DAMPING, value: 1, target: 1
+        response: isArt ? 0.4 : PRESS_RESPONSE, dampingRatio: PRESS_DAMPING, value: 1, target: 1
       });
       var raf = null, last = 0;
       function tick(now) {
@@ -568,8 +569,9 @@
         if (spring.target === 1) { target.style.transform = ''; target.style.transition = ''; }
       }
       function start() { if (raf === null) { last = 0; raf = window.requestAnimationFrame(tick); } }
+      // 터치만 스프링. 데스크톱(마우스/펜)은 다른 버튼처럼 CSS :active(가벼운 눌림)를 쓴다.
       el.addEventListener('pointerdown', function (e) {
-        if (e.pointerType !== 'touch') return;   // 터치만(데스크톱은 hover/:active)
+        if (e.pointerType !== 'touch') return;
         target.style.transition = 'none';
         spring.target = PRESS_SCALE;
         start();

@@ -283,12 +283,21 @@ body.post-page #markdown-toc a {
   display: inline-block;
   text-decoration: none;
   transition: color 150ms ease;
+  // 클릭/탭 시 브라우저 기본 검은 outline·하이라이트가 안 나오게 한다.
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body.post-page #markdown-toc a:hover,
 body.post-page #markdown-toc a:focus {
   color: #0b0b0b;
   text-decoration: none;
+}
+
+// 키보드 탐색(:focus-visible)만 접근성용 은은한 링을 유지한다(마우스 클릭엔 안 보임).
+body.post-page #markdown-toc a:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 2px;
 }
 
 // scroll-spy(P2): 지금 읽는 섹션의 TOC 링크를 "현재"로 표시한다. 기본 노랑·hover
@@ -489,6 +498,15 @@ body.post-page .post-lab-sheet--project .post-title {
 }
 
 .post-tabs__tab:active { transform: translateY(1px); }
+
+/* 모바일(터치): 웹은 hover 리프트로 반응이 보이지만 터치엔 hover 신호가 없어 눌림이 거의 안 보인다.
+   터치 기기에서만 press 를 또렷하게(살짝 내려가며 축소). 웹(hover:hover, pointer:fine)은 기존 그대로. */
+@media (hover: none) and (pointer: coarse) {
+  .post-tabs__tab:active {
+    transform: translateY(2px) scale(0.96);
+    transition: transform 130ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+}
 
 .post-tabs__tab:focus-visible {
   outline: 2px solid rgba(142, 142, 147, 0.55);

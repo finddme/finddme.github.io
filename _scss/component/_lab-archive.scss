@@ -204,6 +204,18 @@
   line-height: 1;
   padding: 5px 8px 4px;
   text-decoration: none;
+  // 탭/클릭 시 브라우저 기본 검은 하이라이트·outline 제거(callout 과 동일).
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+// 클릭/탭(포인터)에는 outline 없음 — 검은 테두리 제거. 키보드(:focus-visible)만 링 유지.
+.lab-pill:focus {
+  outline: none;
+}
+.lab-pill:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 3px;
 }
 
 .lab-time {
@@ -333,20 +345,60 @@
 // 좌상단 상자(아주 얇은 선 프레임). 안의 이미지는 배경으로 깔아 가운데 정렬(contain).
 // 데스크톱 위치/크기는 아래 @media(min-width:821px) 블록에서 지정한다.
 // 이미지는 index.html이 public/main-page/box/ 첫 이미지를 인라인 background-image 로 넣어준다(없으면 빈 상자).
+// 클릭 시 profile 로 가는 링크(<a>). 검은 상자가 안 뜨게 .lab-callout 과 동일한 3종 리셋을
+// 적용한다: tap-highlight 투명 + :focus outline 제거 + :focus-visible 만 키보드용 링.
 .lab-figure {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  // 배경을 padding 안쪽(content box)에 맞춰 padding 이 사방 여백으로 실제 적용되게 한다.
-  // (기본값 padding-box 면 배경이 padding 영역까지 채워 위·아래 여백이 안 생김)
-  background-origin: content-box;
   border: 0.5px solid var(--lab-line);
   box-sizing: border-box;
+  display: block;
   // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
   // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
   padding: 30px 30px;
   position: absolute;
+  text-decoration: none;
+  // 탭/press 시 브라우저 기본 검은 하이라이트가 상자 전체에 깔리지 않게 한다(우리 눌림 효과만).
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
   z-index: 2;
+}
+
+// 클릭/탭(포인터)에는 outline 없음 — 검은 사각형/테두리 제거.
+// 키보드 탐색(:focus-visible)만 접근성용 링 유지.
+.lab-figure:focus {
+  outline: none;
+}
+.lab-figure:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 3px;
+}
+
+// 상자 안의 실제 이미지. 상자(테두리)는 고정하고 이 요소만 눌림/호버 효과를 받는다.
+// (profile 페이지 중앙 art 의 이미지 효과와 동일한 방식)
+.lab-figure__img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 100%;
+  width: 100%;
+  // hover 는 기존 0.16s 유지. 누르는 순간(:active)만 아래에서 느긋한 ease 로 덮는다. JS 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
+  transition: transform 0.16s ease, filter 0.18s ease;
+  will-change: transform;
+}
+
+// 데스크톱: 상자에 마우스를 올리면 이미지만 살짝 뜬다(터치 기기는 제외).
+html:not(.has-touch) .lab-figure:hover .lab-figure__img {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.16));
+}
+
+// 데스크톱: 누르면 이미지만 살짝 눌린다(축소 없이 아래로). 클릭 시 곧바로 이동하는
+// 링크라 press 를 빠르게(0.14s) 해야 이동 전에 눌림이 보인다. hover 0.16s 와는 분리.
+// 터치(모바일)는 카테고리 같은 스프링(JS)이 담당하므로 :not(.has-touch) 로 게이트.
+html:not(.has-touch) .lab-figure:active .lab-figure__img {
+  transform: translateY(2px);
+  filter: none;
+  transition: transform 0.14s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .lab-callout {
@@ -476,7 +528,9 @@
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   backdrop-filter: blur(8px) saturate(150%);
   opacity: 1;
-  transform: translateY(1px) scale(0.94);
+  // 유리칩 독립 축소를 없앤다 — 이제 눌림 스케일은 아래 데스크톱 .lab-callout:active(요소 전체)가
+  // 담당해서 글자와 유리가 "함께" 눌린다(따로 놀지 않게). 유리는 재질화만(scale 1).
+  transform: scale(1);
   box-shadow:
     inset 0 1px 3px rgba(0, 0, 0, 0.16),
     0 2px 8px rgba(0, 0, 0, 0.12);
@@ -575,6 +629,16 @@
     box-shadow 110ms var(--lab-ease);
 }
 
+// 클릭/탭(포인터)에는 outline 없음 — 검은 테두리 제거(초록 border/press 효과만).
+// 키보드(:focus-visible)만 접근성용 링 유지.
+.lab-profile-links a:focus {
+  outline: none;
+}
+.lab-profile-links a:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 3px;
+}
+
 // Profile 버튼만 기본 상태에서도 초록색(hover 없이).
 .lab-profile-links a[href$="/profile/"] {
   border-color: #0EEF0F;
@@ -604,6 +668,16 @@
     // 읽히게 한다. 배치는 그대로 — 포인터에 따라 층별 속도차만 준다 (스킬 §7).
     // 튜닝 lever: 이 배수(px)를 키우면 앞으로, 줄이면 뒤로 느껴진다.
     transform: translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0);
+  }
+
+  // 데스크톱: 누르면 유리칩만이 아니라 카드(글자+::after)가 함께 눌린다(따로 놀지 않게).
+  // 파랄랙스 transform 을 유지한 채 press(아래로 살짝+축소)를 합성한다. ::after:active 는
+  // 독립 축소를 없앤 상태라, 이 부모 스케일을 글자와 함께 그대로 따른다. (모바일은 별도 처리)
+  .lab-callout:not(.lab-callout--about):active {
+    transform:
+      translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0)
+      translateY(1px) scale(0.97);
+    transition: transform 120ms var(--lab-ease);
   }
 
   .lab-callout--nlp {
