@@ -396,6 +396,21 @@
   background: rgba(248, 247, 243, 0.88);
   transition: background-color 90ms var(--arch-ease);
 }
+/* b(웹, 마우스): 배경 위에 아주 미세한 축소로 눌림감을 준다(넓은 셀이라 미세하게). */
+@media (hover: hover) and (pointer: fine) {
+  .archive-sheet__row:active {
+    transform: scale(0.99);
+    transition: transform 90ms var(--arch-ease), background-color 90ms var(--arch-ease);
+  }
+}
+/* a+b(모바일, 터치): 배경 하이라이트를 더 또렷·빠르게(a) + 미세 축소(b). */
+@media (hover: none) and (pointer: coarse) {
+  .archive-sheet__row:active {
+    background: rgba(238, 236, 229, 0.96);
+    transform: scale(0.99);
+    transition: transform 70ms var(--arch-ease), background-color 70ms var(--arch-ease);
+  }
+}
 
 .archive-sheet__index,
 .archive-sheet__thumb,
