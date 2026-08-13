@@ -333,6 +333,10 @@
       // 다크 토글 + src 교체(=크기/위치 변화)를 하고 다시 페이드인한다.
       var pre = new Image();
       pre.src = src;                                   // 미리 로드해 플래시 방지
+      // 모바일 press 스프링(initMenuPressSpring)이 정착할 때 인라인 transition 을 지우는데,
+      // 그게 아래 페이드용 transition 과 같은 슬롯이라 탭으로 전환하면 페이드인이 중간에
+      // 끊겨 툭 나타났다. 전환 중 플래그를 세워 두면 스프링이 인라인 정리를 건너뛴다.
+      desktop.dataset.modeFading = '1';
       img.style.transition = 'opacity 240ms var(--mac-ease), transform 0.16s ease, filter 0.18s ease';
       var applied = false;
       function apply() {
@@ -344,6 +348,12 @@
         img.alt = alt;
         saveState();
         window.requestAnimationFrame(function () { img.style.opacity = '1'; }); // 페이드인
+        // 페이드인이 끝나면 인라인 스타일을 걷어내고 플래그를 내린다(이후엔 CSS 가 담당).
+        window.setTimeout(function () {
+          delete desktop.dataset.modeFading;
+          img.style.transition = '';
+          img.style.opacity = '';
+        }, 280);
       }
       function onEnd(e) { if (e.propertyName === 'opacity') apply(); }
       img.addEventListener('transitionend', onEnd);
@@ -566,7 +576,11 @@
         target.style.transform = baseTransform() + 'translateY(' + ty.toFixed(2) + 'px) scale(' + spring.value.toFixed(4) + ')';
         if (!spring.isResting()) { raf = window.requestAnimationFrame(tick); return; }
         raf = null; last = 0;
-        if (spring.target === 1) { target.style.transform = ''; target.style.transition = ''; }
+        // 다크 전환 페이드가 진행 중이면 인라인 정리를 미룬다. 여기서 transition 을 지우면
+        // 토글이 걸어둔 opacity 240ms 가 같이 날아가 페이드인이 끊긴다(정리는 토글 쪽에서).
+        if (spring.target === 1 && !(desktop && desktop.dataset.modeFading)) {
+          target.style.transform = ''; target.style.transition = '';
+        }
       }
       function start() { if (raf === null) { last = 0; raf = window.requestAnimationFrame(tick); } }
       // 터치만 스프링. 데스크톱(마우스/펜)은 다른 버튼처럼 CSS :active(가벼운 눌림)를 쓴다.
