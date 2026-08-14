@@ -450,7 +450,10 @@
 }
 
 .archive-sheet__thumb::before {
-  background: rgba(248, 247, 243, 0.28);
+  // 베일 색은 변수로 둔다. 다크 데스크톱(profile)이 명시도 싸움 없이 톤만 갈아끼우고,
+  // defog 규칙(아래 :focus-visible / :hover)은 그대로 베일을 걷을 수 있게 하기 위함.
+  // 변수를 정의하지 않는 곳(블로그 archive 등)은 fallback 으로 기존 색 그대로다.
+  background: var(--arch-thumb-veil, rgba(248, 247, 243, 0.28));
   -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
   content: "";

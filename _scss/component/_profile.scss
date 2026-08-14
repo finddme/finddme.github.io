@@ -363,6 +363,18 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
 .desktop--dark .mac-projects .archive-sheet__row::after {
   border-color: transparent;
 }
+/* 썸네일 칸의 김서림 베일(.archive-sheet__thumb::before)은 웜화이트 rgba(248,247,243,0.28)
+   이라 라이트에선 행 위에 얹혀도 #fff→#fdfdfc 로 행 색과 구분이 안 갔다. 다크에선 같은
+   베일이 #1f1f21→#5c5b5c 회색 블록으로 떠서, 썸네일 없는 칸만 밝게 도드라졌다.
+   베일 색을 --arch-thumb-veil 변수로 갈아끼운다. 여기서 background 를 직접 덮으면
+   defog 규칙(:focus-visible/:hover 에서 베일을 걷는, 명시도 (0,2,0))을 이겨버려
+   다크에서 김서림이 안 걷히는 새 버그가 생긴다 — 변수는 명시도 싸움을 만들지 않는다. */
+.desktop--dark .mac-projects {
+  --arch-thumb-veil: rgba(24,24,26,0.28);   /* 이미지 있는 칸: 김서림 유지하되 어두운 톤 */
+}
+.desktop--dark .mac-projects .archive-sheet__row--no-image {
+  --arch-thumb-veil: transparent;           /* 이미지 없는 칸: 행 배경 그대로 (라이트와 같은 인상) */
+}
 /* keep project/dev-log title links the same blue as light mode (not visited purple) */
 .desktop--dark .mac-projects a,
 .desktop--dark .mac-projects a:visited,
