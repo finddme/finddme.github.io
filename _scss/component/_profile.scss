@@ -116,6 +116,11 @@ html:not(.has-touch) .desktop__file:hover { color: #E1E708; transform: translate
 .desktop__file:active { transform: translateY(2px); }
 .desktop--dark .desktop__file { color: #b8a7ff; }
 html:not(.has-touch) .desktop--dark .desktop__file:hover { color: #E1E708; transform: translateY(-1px); }
+/* 데스크톱에선 누를 때도 hover 상태라, 위 hover 규칙이 명시도로 :active(0,2,0)를 이겨
+   눌림이 안 보였다. 메뉴 버튼처럼 hover 와 같은 명시도의 :active 를 뒤에 둬서 덮는다.
+   다크 hover 는 한 단계 더 강하므로(.desktop--dark) 다크용도 따로 필요. */
+html:not(.has-touch) .desktop__file:active { transform: translateY(1px); }
+html:not(.has-touch) .desktop--dark .desktop__file:active { transform: translateY(1px); }
 
 /* Image windows */
 .mac-window--image .mac-window__body { padding: 0.75rem; }
