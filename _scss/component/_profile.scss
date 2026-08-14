@@ -339,6 +339,12 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
   background: rgba(31,31,33,0.92);
   border-bottom-color: #3a3a3c;
 }
+/* 라이트용 얼룩무늬(:nth-of-type(even) → #f6f6f6)는 위 다크 규칙과 명시도가 같은데(0,3,0)
+   소스상 뒤에 있어서 다크에서도 이겼다 → 짝수 행만 흰 배경이 됐다. 다크용 얼룩을 따로
+   준다. 기본(31,31,33)과 hover(44,44,46) 사이 값이라 hover 피드백도 그대로 구분된다. */
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:nth-of-type(even) {
+  background: rgba(38,38,40,0.92);
+}
 .desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-visible,
 .desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-within,
 .desktop--dark .mac-projects--profile-project .archive-sheet__row.mac-projects__row--hover {
