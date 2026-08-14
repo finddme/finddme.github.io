@@ -87,6 +87,13 @@ html:not(.has-touch) .desktop--dark .desktop__menu-item:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.45);
 }
+/* 위 다크 hover 는 .desktop--dark 가 붙어 라이트용 :active 짝(위)보다 명시도가 한 단계
+   높다. 그래서 다크에선 눌러도 hover 리프트가 이겨 눌림이 안 보였다 → 다크용 :active 를
+   따로 둔다. 그림자도 같은 이유로 밀리므로 함께 낮춰야 눌린 느낌이 완성된다. */
+html:not(.has-touch) .desktop--dark .desktop__menu-item:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.35);
+}
 
 /* Top-right image file list (each opens an image window) */
 .desktop__files {
