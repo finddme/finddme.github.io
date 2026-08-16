@@ -1,7 +1,11 @@
 # Top-left intro card. The card now shows `image`; swap the path to change it.
 # (heading is reused as the image's alt text. body/prose kept for reference.)
+# `image` is the desktop (>=769px) art; `image_mobile` is served below that via
+# <picture>. They intentionally differ: the desktop art is a full iMessage
+# conversation (tall), the mobile one the original bubble (compact).
 heading: "Hi, I'm Yein Hwang."
-image: /public/profile-intro.png
+image: /public/profile-intro-chat.png
+image_mobile: /public/profile-intro.png
 body: |
   I first encountered language-analysis techniques based on **NLP** during my
   master's studies, and that experience naturally led me to become an AI engineer

@@ -35,6 +35,8 @@ $desktop-accent: #E1E708;
 }
 
 .desktop__intro { margin: 0; }
+/* <picture> 는 기본 inline 이라 아래 img 의 block 과 어긋나 baseline 여백이 생긴다. */
+.desktop__intro picture { display: block; }
 .desktop__intro-img { display: block; width: 100%; height: auto; }
 
 .desktop__menu {
@@ -44,6 +46,28 @@ $desktop-accent: #E1E708;
   flex-direction: column;
   align-items: stretch;
   gap: 0.8rem;
+}
+
+/* 데스크톱 전용 레이아웃: 인트로가 iMessage 대화 스크린샷(1080x2616, 세로 2.42배)으로
+   바뀌면서 아래로 쌓으면 메뉴가 화면 밖으로 밀린다. 이미지는 좌측 끝에 두고 메뉴를
+   그 오른쪽·상단에 나란히 놓는다. 모바일(<=768px)은 기존 세로 스택 그대로 둔다. */
+@media (min-width: 769px) {
+  .desktop__left {
+    max-width: none;
+    display: flex;
+    align-items: flex-start;   /* 메뉴를 이미지 높이와 무관하게 화면 상단에 붙인다 */
+    gap: 1.5rem;
+  }
+  /* 폭은 기존 말풍선과 동일한 420px 고정. 높이는 .desktop__intro-img 의 height:auto 가
+     원본 비율(1080:2616)대로 잡는다 → 1017px. */
+  .desktop__intro {
+    flex: 0 0 420px;
+    width: 420px;
+  }
+  .desktop__menu {
+    flex: 0 0 259px;
+    margin-top: 0;
+  }
 }
 .desktop__menu-item {
   appearance: none;
