@@ -12,7 +12,12 @@ permalink: /profile/
   <!-- Left column: intro card + menu boxes -->
   <div class="desktop__left">
     <div class="desktop__intro">
-      <img class="desktop__intro-img" src="{{ site.baseurl }}{{ site.data.profile.intro.image }}" alt="{{ site.data.profile.intro.heading }}" loading="lazy">
+      {% comment %} Mobile keeps the original bubble; desktop gets the taller iMessage art.
+           Breakpoint matches the 768px one in _profile.scss. {% endcomment %}
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ site.baseurl }}{{ site.data.profile.intro.image_mobile }}">
+        <img class="desktop__intro-img" src="{{ site.baseurl }}{{ site.data.profile.intro.image }}" alt="{{ site.data.profile.intro.heading }}" loading="lazy">
+      </picture>
     </div>
 
     <nav class="desktop__menu" aria-label="Profile sections">
