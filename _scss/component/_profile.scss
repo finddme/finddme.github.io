@@ -58,11 +58,19 @@ $desktop-accent: #E1E708;
     align-items: flex-start;   /* 메뉴를 이미지 높이와 무관하게 화면 상단에 붙인다 */
     gap: 1.5rem;
   }
-  /* 폭은 기존 말풍선과 동일한 420px 고정. 높이는 .desktop__intro-img 의 height:auto 가
-     원본 비율(1080:2616)대로 잡는다 → 1017px. */
-  .desktop__intro {
-    flex: 0 0 420px;
-    width: 420px;
+  /* 이미지는 뷰포트 안에 통째로 들어가는 크기까지만 커진다: 폭 상한 420px(기존 말풍선과
+     동일), 높이 상한은 화면 높이에서 .desktop 상하 패딩(3rem x2)을 뺀 값. 둘 중 먼저
+     걸리는 쪽에 맞춰 비율을 유지한 채 축소되므로 세로 스크롤이 생기지 않는다. */
+  .desktop__intro { flex: 0 0 auto; }
+  .desktop__intro-img {
+    width: auto;
+    max-width: 420px;
+    max-height: calc(100vh - 6rem);
+    /* 원본 PNG 는 둥근 모서리 바깥 70px 영역이 완전 투명이 아니라 rgba(0,0,0,0.02~0.055)
+       라, 흰 배경 위에서 네 꼭짓점에 옅은 회색 그늘로 보인다. 그 영역을 잘라낸다.
+       퍼센트를 가로/세로 따로 준 건 이미지 비율이 2.42:1 이라 한 값으로는 타원이 되기
+       때문 — 70/1080 = 6.5%, 70/2616 = 2.7% 로 실제 반경(70px)이 양쪽 동일해진다. */
+    border-radius: 6.5% / 2.7%;
   }
   .desktop__menu {
     flex: 0 0 259px;
