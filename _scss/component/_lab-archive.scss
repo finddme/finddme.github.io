@@ -647,8 +647,9 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
 
 @media (min-width: 821px) {
   .lab-title {
-    // 중앙(50%/50%)에서 좌측·위로 약 1.5cm(≈60px) 이동.
-    left: calc(50% - 60px);
+    // 가로는 무대 정중앙. 세로만 중앙에서 위로 약 1.5cm(≈60px) 올린다
+    // (버튼 줄이 중앙 바로 아래에 붙으므로 덩어리 전체가 중앙을 걸친다).
+    left: 50%;
     top: calc(50% - 60px);
     // 패럴랙스는 JS spring이 --lab-x/--lab-y를 매 프레임 구동한다.
     // CSS transition을 걸면 spring과 이중 스무딩으로 싸우므로 두지 않는다
@@ -701,9 +702,9 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
   }
 
   // 로고(가운데 배치) 바로 아래에 버튼 줄을 가운데 정렬로 둔다.
-  // 로고 중심 x = calc(50% - 60px) ≈ 47% → 같은 x에 맞추고 translateX 로 가운데 정렬.
+  // 로고 중심 x 와 반드시 같은 값이어야 둘이 어긋나지 않는다 (지금은 둘 다 무대 정중앙).
   .lab-callout--about {
-    left: 47%;
+    left: 50%;
     top: calc(50% + 7px);
     // 가운데 정렬(translateX -50%)에 callout 레이어의 패럴랙스를 덧붙인다.
     transform: translateX(-50%) translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0);
