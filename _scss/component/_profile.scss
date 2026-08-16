@@ -49,15 +49,10 @@ $desktop-accent: #E1E708;
 }
 
 /* 데스크톱 전용 레이아웃: 인트로가 iMessage 대화 스크린샷(1080x2616, 세로 2.42배)으로
-   바뀌면서 아래로 쌓으면 메뉴가 화면 밖으로 밀린다. 이미지는 좌측 끝에 두고 메뉴를
-   그 오른쪽·상단에 나란히 놓는다. 모바일(<=768px)은 기존 세로 스택 그대로 둔다. */
+   바뀌면서, 좌측 컬럼은 이미지 하나만 두고 메뉴는 우측 파일 목록 아래로 보냈다
+   (.desktop__right). 모바일(<=768px)은 기존 세로 스택 그대로 둔다. */
 @media (min-width: 769px) {
-  .desktop__left {
-    max-width: none;
-    display: flex;
-    align-items: flex-start;   /* 메뉴를 이미지 높이와 무관하게 화면 상단에 붙인다 */
-    gap: 1.5rem;
-  }
+  .desktop__left { max-width: none; }
   /* 이미지는 뷰포트 안에 통째로 들어가는 크기까지만 커진다: 폭 상한 420px(기존 말풍선과
      동일), 높이 상한은 화면 높이에서 .desktop 상하 패딩(3rem x2)을 뺀 값. 둘 중 먼저
      걸리는 쪽에 맞춰 비율을 유지한 채 축소되므로 세로 스크롤이 생기지 않는다. */
@@ -72,10 +67,8 @@ $desktop-accent: #E1E708;
        때문 — 70/1080 = 6.5%, 70/2616 = 2.7% 로 실제 반경(70px)이 양쪽 동일해진다. */
     border-radius: 6.5% / 2.7%;
   }
-  .desktop__menu {
-    flex: 0 0 259px;
-    margin-top: 0;
-  }
+  /* 우측 컬럼 안에서는 .desktop__right 의 gap 이 간격을 잡는다. */
+  .desktop__menu { margin-top: 0; }
 }
 .desktop__menu-item {
   appearance: none;
@@ -127,12 +120,21 @@ html:not(.has-touch) .desktop--dark .desktop__menu-item:active {
   box-shadow: 0 1px 4px rgba(0,0,0,0.35);
 }
 
-/* Top-right image file list (each opens an image window) */
-.desktop__files {
+/* Top-right column: image file list, then the section menu. 화면 상단 우측에 고정하는
+   책임이 .desktop__files 에서 이 래퍼로 옮겨왔다(둘을 한 덩어리로 묶기 위해). */
+.desktop__right {
   position: absolute;
   top: 3rem;
   right: 3rem;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;   /* 파일 목록(우측정렬 텍스트)과 메뉴 박스의 오른쪽 끝을 맞춘다 */
+  gap: 1.5rem;
+}
+
+/* Image file list (each opens an image window) */
+.desktop__files {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -612,12 +614,20 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
   /* reduced intro bubble */
   .desktop__intro { max-width: 280px; }
 
+  /* 우측 컬럼은 모바일에서 고정 해제하고 본문 흐름에 얹는다. 마크업상 파일 목록이
+     메뉴보다 앞서지만, 모바일 순서는 기존대로 인트로 → 메뉴 → 파일이라 order 로
+     메뉴를 앞으로 되돌린다. 간격은 아래 각 블록의 margin-top 이 그대로 잡는다. */
+  .desktop__right {
+    position: static;
+    align-items: stretch;
+    gap: 0;
+  }
+
   /* full-width stacked menu */
-  .desktop__menu { width: 100%; }
+  .desktop__menu { width: 100%; order: -1; }
 
   /* image file list flows below the menu (not pinned top-right) */
   .desktop__files {
-    position: static;
     align-items: flex-start;
     text-align: left;
     margin-top: 1.5rem;
