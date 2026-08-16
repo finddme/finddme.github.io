@@ -58,16 +58,36 @@
     document.querySelectorAll('.mac-window--image').forEach(function (w) { w.hidden = true; });
   }
 
+  // Keep default-open windows on-screen now and whenever the viewport changes.
+  clampVisibleWindows();
+  window.addEventListener('resize', clampVisibleWindows);
+
+  // 기본 고정된 이미지 창이 가운데 아트 상자를 조금이라도 덮으면 열지 않는다. 이미지
+  // 창의 기본 좌표는 넓은 화면 기준이라, 좁은 화면에선 위 clamp 가 창을 안쪽으로
+  // 끌어당기면서 아트 위에 얹히는 경우가 생긴다. 그래서 clamp 가 끝난 뒤의 최종
+  // 위치로 판정한다. 로드 시점 1회만 — 리사이즈 중에 보고 있던 창이 갑자기 닫히면
+  // 더 당황스럽다(그래서 resize 에는 걸지 않는다). blog.txt 처럼 손으로 자리를
+  // 잡아둔 메뉴 창은 대상이 아니고, .mac-window--image 만 본다.
+  (function hideImageWindowsOverArt() {
+    if (isMobile() || !artToggle) return;
+    var art = artToggle.getBoundingClientRect();
+    if (!art.width) return;
+    document.querySelectorAll('.mac-window--image:not([hidden])').forEach(function (win) {
+      var r = win.getBoundingClientRect();
+      if (!r.width) return;
+      var overlaps = r.left < art.right && art.left < r.right &&
+                     r.top < art.bottom && art.top < r.bottom;
+      if (overlaps) win.hidden = true;
+    });
+  })();
+
   // 로드 시점에 열려 있는(기본 고정) 창 id 기록. 배경 클릭으로는 닫지 않고,
-  // 각자의 닫기 버튼(빨간 신호등)으로만 닫는다.
+  // 각자의 닫기 버튼(빨간 신호등)으로만 닫는다. 위에서 아트와 겹쳐 접은 창은
+  // 이미 hidden 이라 여기 담기지 않는다.
   var pinnedIds = [];
   document.querySelectorAll('.mac-window:not([hidden])').forEach(function (w) {
     if (w.id) pinnedIds.push(w.id);
   });
-
-  // Keep default-open windows on-screen now and whenever the viewport changes.
-  clampVisibleWindows();
-  window.addEventListener('resize', clampVisibleWindows);
 
   function bringToFront(win) {
     zTop += 1;
