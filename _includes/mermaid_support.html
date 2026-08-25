@@ -1,0 +1,77 @@
+<!-- Mermaid diagram rendering.
+     Kramdown + Rouge emit ```mermaid fences as .language-mermaid code blocks;
+     we convert those into mermaid containers and render them. The CDN module is
+     only fetched on pages that actually contain a diagram. -->
+<script>
+  (function () {
+    function collect() {
+      var nodes = document.querySelectorAll(
+        'div.language-mermaid, pre.language-mermaid, code.language-mermaid'
+      );
+      var blocks = [];
+      for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i];
+        // Keep only the outermost match so nested code/pre aren't converted twice.
+        if (node.parentNode && node.parentNode.closest &&
+            node.parentNode.closest('div.language-mermaid, pre.language-mermaid')) {
+          continue;
+        }
+        blocks.push(node);
+      }
+      return blocks;
+    }
+
+    // Fences nested in list items keep their list indentation through Kramdown;
+    // strip the shared leading whitespace so mermaid sees a clean definition.
+    function dedent(text) {
+      var lines = text.replace(/\s+$/, '').split('\n');
+      var indent = null;
+      for (var i = 0; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        var lead = lines[i].match(/^[ \t]*/)[0].length;
+        if (indent === null || lead < indent) indent = lead;
+      }
+      if (!indent) return lines.join('\n');
+      return lines.map(function (line) { return line.slice(indent); }).join('\n');
+    }
+
+    var blocks = collect();
+    if (!blocks.length) return;
+
+    var containers = blocks.map(function (block) {
+      var pre = document.createElement('pre');
+      pre.className = 'mermaid';
+      pre.textContent = dedent(block.textContent);
+      block.parentNode.replaceChild(pre, block);
+      return pre;
+    });
+
+    import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs')
+      .then(function (mod) {
+        var mermaid = mod.default;
+        mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: 'strict',
+          fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+          theme: 'base',
+          themeVariables: {
+            background: '#ffffff',
+            primaryColor: '#f6f1ea',
+            primaryTextColor: '#515151',
+            primaryBorderColor: '#cdb59d',
+            secondaryColor: '#f3f3f3',
+            tertiaryColor: '#ffffff',
+            lineColor: '#a89985',
+            textColor: '#515151',
+            fontSize: '14px'
+          }
+        });
+        return mermaid.run({ nodes: containers });
+      })
+      .catch(function (err) {
+        // Leave the diagram source visible as plain text if the CDN is blocked.
+        console.error('mermaid render failed:', err);
+        containers.forEach(function (pre) { pre.classList.add('mermaid--failed'); });
+      });
+  })();
+</script>
