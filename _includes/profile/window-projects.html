@@ -5,7 +5,8 @@
 
 {% if src_type == "collection" %}
   {% assign rows = site.collections | where: "label", src_name | first %}
-  {% assign items = rows.docs | sort: "date" | reverse %}
+  {% comment %} Skip assets that live in the collection but are not entries. {% endcomment %}
+  {% assign items = rows.docs | where_exp: "doc", "doc.hidden != true" | sort: "date" | reverse %}
 {% elsif src_type == "category" %}
   {% assign items = site.categories[src_name] %}
 {% endif %}
