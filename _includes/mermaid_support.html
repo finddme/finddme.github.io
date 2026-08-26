@@ -1,24 +1,24 @@
 <!-- Mermaid diagram rendering.
-     Kramdown + Rouge emit ```mermaid fences as .language-mermaid code blocks;
-     we convert those into mermaid containers and render them. The CDN module is
-     only fetched on pages that actually contain a diagram. -->
+     Kramdown renders a ```mermaid fence as <pre><code class="language-mermaid">
+     (Rouge may additionally wrap it in div.highlighter-rouge). This turns those
+     blocks into rendered diagrams. The CDN module is only fetched on pages that
+     actually contain one. -->
 <script>
   (function () {
+    // Replace the outermost wrapper, not the inner <code>, so no stray <pre>
+    // is left wrapping the diagram.
     function collect() {
-      var nodes = document.querySelectorAll(
+      var marked = document.querySelectorAll(
         'div.language-mermaid, pre.language-mermaid, code.language-mermaid'
       );
-      var blocks = [];
-      for (var i = 0; i < nodes.length; i++) {
-        var node = nodes[i];
-        // Keep only the outermost match so nested code/pre aren't converted twice.
-        if (node.parentNode && node.parentNode.closest &&
-            node.parentNode.closest('div.language-mermaid, pre.language-mermaid')) {
-          continue;
-        }
-        blocks.push(node);
+      var roots = [];
+      for (var i = 0; i < marked.length; i++) {
+        var root = marked[i];
+        var wrapper = root.closest('div.highlighter-rouge') || root.closest('pre');
+        if (wrapper) root = wrapper;
+        if (roots.indexOf(root) === -1) roots.push(root);
       }
-      return blocks;
+      return roots;
     }
 
     // Fences nested in list items keep their list indentation through Kramdown;
@@ -66,11 +66,37 @@
             fontSize: '14px'
           }
         });
-        return mermaid.run({ nodes: containers });
+        // mermaid.run() measures inside the target element. On this layout a
+        // diagram can sit in an inactive .post-tabs__panel (display:none), where
+        // every measurement is 0 and edge routing dies with "Could not find a
+        // suitable point for the given distance". render() measures in a
+        // temporary node on <body> instead, so it works whatever the tab state.
+        return Promise.all(containers.map(function (pre, i) {
+          return mermaid
+            .render('mermaid-diagram-' + i, pre.textContent)
+            .then(function (res) {
+              pre.innerHTML = res.svg;
+              if (res.bindFunctions) res.bindFunctions(pre);
+              // An <svg> sized only by viewBox has no intrinsic width, so CSS
+              // width:auto would collapse it to the 300px default. Publish the
+              // diagram's natural width for the narrow-screen rule to use.
+              var svg = pre.querySelector('svg');
+              var vb = svg && svg.getAttribute('viewBox');
+              if (vb) {
+                var w = parseFloat(vb.split(/[ ,]+/)[2]);
+                if (w > 0) pre.style.setProperty('--mermaid-width', Math.ceil(w) + 'px');
+              }
+              pre.setAttribute('data-processed', 'true');
+            })
+            .catch(function (err) {
+              console.error('mermaid render failed:', err);
+              pre.classList.add('mermaid--failed');
+            });
+        }));
       })
       .catch(function (err) {
         // Leave the diagram source visible as plain text if the CDN is blocked.
-        console.error('mermaid render failed:', err);
+        console.error('mermaid load failed:', err);
         containers.forEach(function (pre) { pre.classList.add('mermaid--failed'); });
       });
   })();
