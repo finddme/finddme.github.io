@@ -41,10 +41,12 @@ pre.mermaid.mermaid--failed {
 }
 
 @media (max-width: 40rem) {
+  /* Narrow screens: a large flowchart scaled to ~300px is unreadable, so let it
+     render at its natural size and scroll sideways instead. mermaid writes an
+     inline max-width on the <svg>, hence !important. */
   pre.mermaid svg {
-    /* Narrow screens: let wide flowcharts scroll instead of shrinking to
-       an unreadable size. */
-    max-width: none;
-    min-width: 100%;
+    max-width: none !important;
+    width: var(--mermaid-width, 100%);
+    margin: 0;
   }
 }
