@@ -16,7 +16,16 @@ summary: ""
 
 ### 1.2 파이프라인 구조
 
-<HTML>
+<div class="diagram-embed">
+  <iframe src="/public/diagrams/agent-v1-structure-v2.html"
+          title="Agent V1 파이프라인 구조도" loading="lazy"
+          onload="(function(f){function h(){try{f.style.height=(f.contentDocument.body.scrollHeight+8)+'px';}catch(e){}}h();setTimeout(h,400);window.addEventListener('resize',h);})(this)"></iframe>
+</div>
+<style>
+.diagram-embed{margin:1.5rem 0;border:1px solid rgba(128,140,160,.35);border-radius:12px;overflow:hidden;background:#fff}
+.diagram-embed iframe{display:block;width:100%;height:820px;border:0}
+@media (max-width:768px){.diagram-embed iframe{height:600px}}
+</style>
 
 ```
 START
@@ -91,7 +100,7 @@ Generator | 작업 유형별 프롬프트로 최종 응답 생성 |
 
 ---
 
-## [3. 흐름 최적화 : Stage별 프롬프트 조합 검증]
+# [3. 흐름 최적화 : Stage별 프롬프트 조합 검증]
 
 각 stage에서 조건별로 어떤 시스템/유저 프롬프트가 조합되는지, 3-tier 로딩(첫 요청 DB → 이후 Redis 캐시)이 정상인지 stage 단위로 검증
 
@@ -104,7 +113,9 @@ Generator | 작업 유형별 프롬프트로 최종 응답 생성 |
 | HistorySelector | • 스킵 조건(no room_id / needs_context=false) |  |
 | • 관련 턴 선택 | 5/5 Pass |  |
 | QueryRewriter | • Path A(base) |  |
+
 - B(search_optimization)
+
 • C(file_filter) 분기 | 18/18 Pass |
 | Planner | • intent별 agent 매핑
 • WEB_SEARCH/CHAT 스킵 | 10/10 Pass |
