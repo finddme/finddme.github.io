@@ -101,19 +101,17 @@ Generator | 작업 유형별 프롬프트로 최종 응답 생성 |
 
 | Stage | 검증 내용 | 결과 |
 | --- | --- | --- |
-| IntentClassifier | • web_search ON/OFF별 프롬프트 조합 |  |
-| • default/web/history intent 분류 | 18건 중 16 Pass (오분류 1건 수정) |  |
-| HistorySelector | • 스킵 조건(no room_id / needs_context=false) |  |
-| • 관련 턴 선택 | 5/5 Pass |  |
-| QueryRewriter | • Path A(base) |  |
-
-- B(search_optimization)
-
-• C(file_filter) 분기 | 18/18 Pass |
-| Planner | • intent별 agent 매핑
-• WEB_SEARCH/CHAT 스킵 | 10/10 Pass |
-| Condenser | • DOC_SUMMARY/COMPARE + 20K자 초과 시 트리거 | 3 Pass, 1 Warning |
-| Generator | • 7개 intent 분기별 프롬프트 조합 | 9/9 Pass |
+| IntentClassifier |   • web_search ON/OFF별 프롬프트 조합
+  • default/web/history intent 분류 | 18건 중 16 Pass (오분류 1건 수정) |
+| HistorySelector |   • 스킵 조건(no room_id / needs_context=false)
+  • 관련 턴 선택 | 5/5 Pass |
+| QueryRewriter |   • Path A(base) 
+  • B(search_optimization) 
+  • C(file_filter) 분기 | 18/18 Pass |
+| Planner |   • intent별 agent 매핑
+  • WEB_SEARCH/CHAT 스킵 | 10/10 Pass |
+| Condenser |   • DOC_SUMMARY/COMPARE + 20K자 초과 시 트리거 | 3 Pass, 1 Warning |
+| Generator |   • 7개 intent 분기별 프롬프트 조합 | 9/9 Pass |
 
 **발견된 이슈:**
 
