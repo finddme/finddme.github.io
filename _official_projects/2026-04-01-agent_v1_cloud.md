@@ -1,6 +1,6 @@
 ---
 title: "Agent v1 × Cloud Storage"
-date: 2025-09-01
+date: 2026-04-01
 thumbnail: 
 link: 
 summary: ""
