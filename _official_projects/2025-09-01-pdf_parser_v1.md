@@ -185,37 +185,37 @@ summary: ""
 ### pymupdf4llm 이슈
 
 1. 개행을 매우 많이 사용 → chunking 단계에서 문제 발생 가능성 높음
-    
-    <img  width="800" alt="Image" src="https://github.com/user-attachments/assets/54b468ab-e9d7-4a34-83bd-514c7eae4f43" />
+
+    <img width="800" alt="fe827270-766f-4755-9e67-afd99f421a28" src="https://github.com/user-attachments/assets/05c39fec-b331-4107-ac8a-6ab2c8974991" />
+
     
     
 2. markdown header를 사용해야 할 부분에 header를 사용하지 않음
     
     → markdown 형식으로 추출하는 이유는 1차적으로 header 기반 chunking을 함으로써 문서 구조를 최대한 보존하기 위함인데 header가 없으면 무의미하다.
-    
-    <img  width="800" alt="Image" src="https://github.com/user-attachments/assets/b3007039-6193-407d-9674-2e35bb0ecc04" />
-    
+
+    <img width="800" alt="a2788143-9913-47f1-b4b1-bfd0fc4912ab" src="https://github.com/user-attachments/assets/15fbc734-eee7-4a81-b5c9-7613300d1762" />
+
     
 3. 정보 누락
-    
-    <img  width="800" alt="Image" src="https://github.com/user-attachments/assets/23c9bdea-4d8a-4019-9edc-5e277eaeba07" />
-    
-    <img  width="570" alt="Image" src="https://github.com/user-attachments/assets/2c93114f-2ae3-4695-b038-23a84593a47a" />
+
+    <img width="800" alt="d0137a15-821e-431e-86cd-48b48c926e83" src="https://github.com/user-attachments/assets/8f7e85a4-89a3-49dd-a7a6-0811deae631b" />
+
+    <img width="570" alt="6bfe8c15-2c85-43cb-9214-d1a9e1a1077f" src="https://github.com/user-attachments/assets/bc5a201f-fa97-476a-acc8-fd52aa124c31" />
+
     
 4. 테이블 추출 성능 낮음
+    <img width="800" alt="d0abb68b-21df-44aa-b9ac-f15c986628fe" src="https://github.com/user-attachments/assets/bb58970c-88b7-45a2-8b49-03b6ece2a88b" />
     
-    <img  width="800" alt="Image" src="https://github.com/user-attachments/assets/374b02da-9e21-4143-8bfa-39a3250d25c9" />
+    <img width="800" alt="4f527f36-4c88-4f1b-947c-9490b4e6a9b6" src="https://github.com/user-attachments/assets/37af1d5c-fb3a-452a-8f35-c01af0d4fba6" />
     
-    <img  width="800" alt="Image" src="https://github.com/user-attachments/assets/f055f017-f278-4fb2-bdf3-74cd8b5cb50c" />
-    
-    <img  width="800" alt="Image" src="https://github.com/user-attachments/assets/85832caf-218d-43ea-aa15-5f187e8f042d" />
+    <img width="800" alt="de8e3d1d-9016-491c-9708-f6c6d8a979f2" src="https://github.com/user-attachments/assets/8d03afde-9580-4abe-ada4-00d8f54a83eb" />
     
 5. 후처리 불가 수준 텍스트 추출 경우 발견
     
     (이미지를 table로 인식)
-    
-    <img  width="800" alt="Image" src="https://github.com/user-attachments/assets/162e2ca9-5345-4b82-9403-d428ea4069ff" />
-    
+   
+    <img width="800" alt="3ed187de-fbde-43ce-899b-d30199939e3c" src="https://github.com/user-attachments/assets/0e5e0723-96a9-47c4-a2d9-2a96144041c5" />
 
 # [chunking rule]
 
