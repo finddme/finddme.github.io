@@ -77,16 +77,12 @@
             .then(function (res) {
               pre.innerHTML = res.svg;
               if (res.bindFunctions) res.bindFunctions(pre);
-              // An <svg> sized only by viewBox has no intrinsic width, so CSS
-              // width:auto would collapse it to the 300px default. Publish the
-              // diagram's natural width for the narrow-screen rule to use.
-              var svg = pre.querySelector('svg');
-              var vb = svg && svg.getAttribute('viewBox');
-              if (vb) {
-                var w = parseFloat(vb.split(/[ ,]+/)[2]);
-                if (w > 0) pre.style.setProperty('--mermaid-width', Math.ceil(w) + 'px');
-              }
               pre.setAttribute('data-processed', 'true');
+              // Hand the finished diagram over to _includes/diagram_viewer.html,
+              // which owns fit-to-column sizing and the fullscreen pan/zoom view.
+              document.dispatchEvent(new CustomEvent('mermaid:rendered', {
+                detail: { el: pre }
+              }));
             })
             .catch(function (err) {
               console.error('mermaid render failed:', err);
