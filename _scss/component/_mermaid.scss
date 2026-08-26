@@ -20,6 +20,9 @@ pre.mermaid[data-processed="true"] {
   visibility: visible;
 }
 
+/* Once rendered the SVG is handed to the diagram viewer, which re-parents it
+   into a scaled .dgm__stage; these rules only cover the brief window before
+   that and the CDN-failure fallback below. */
 pre.mermaid svg {
   display: block;
   max-width: 100%;
@@ -34,19 +37,9 @@ pre.mermaid.mermaid--failed {
   font-size: .8rem;
   line-height: 1.4;
   white-space: pre;
+  overflow-x: auto;
   background-color: #f9f9f9;
   border: 1px solid #e5e5e5;
   border-radius: 5px;
   text-align: left;
-}
-
-@media (max-width: 40rem) {
-  /* Narrow screens: a large flowchart scaled to ~300px is unreadable, so let it
-     render at its natural size and scroll sideways instead. mermaid writes an
-     inline max-width on the <svg>, hence !important. */
-  pre.mermaid svg {
-    max-width: none !important;
-    width: var(--mermaid-width, 100%);
-    margin: 0;
-  }
 }

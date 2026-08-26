@@ -16,16 +16,9 @@ summary: ""
 
 ### 1.2 파이프라인 구조
 
-<div class="diagram-embed">
-  <iframe src="/public/diagrams/agent-v1-structure-v2.html"
-          title="Agent V1 파이프라인 구조도" loading="lazy"
-          onload="(function(f){function h(){try{f.style.height=(f.contentDocument.body.scrollHeight+8)+'px';}catch(e){}}h();setTimeout(h,400);window.addEventListener('resize',h);})(this)"></iframe>
+<div class="diagram-embed" data-diagram-width="1400">
+  <iframe src="/public/diagrams/agent-v1-structure-v2.html" title="Agent V1 파이프라인 구조도"></iframe>
 </div>
-<style>
-.diagram-embed{margin:1.5rem 0;border:1px solid rgba(128,140,160,.35);border-radius:12px;overflow:hidden;background:#fff}
-.diagram-embed iframe{display:block;width:100%;height:820px;border:0}
-@media (max-width:768px){.diagram-embed iframe{height:600px}}
-</style>
 
 ```
 START

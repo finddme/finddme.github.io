@@ -1,0 +1,159 @@
+/* Diagram viewer
+   ------------------------------------------------
+   Built by _includes/diagram_viewer.html. `.dgm__frame` is a window the width
+   of the post column; `.dgm__stage` is a natural-size layer scaled down inside
+   it, so a 1400px diagram fits a phone instead of hiding behind scrollbars.
+   The detail lives in the fullscreen pan/zoom overlay. */
+
+.dgm {
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.dgm__frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #e2e6ec;
+  border-radius: 12px;
+  background: #fff;
+  cursor: zoom-in;
+}
+
+.dgm__stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+.dgm__stage > svg,
+.dgm__stage > iframe {
+  display: block;
+  border: 0;
+}
+
+.dgm__expand {
+  display: block;
+  width: 100%;
+  margin-top: .5rem;
+  padding: .5rem .75rem;
+  font: inherit;
+  font-size: .8rem;
+  color: #5b6472;
+  background: #f6f7f9;
+  border: 1px solid #e2e6ec;
+  border-radius: 8px;
+  cursor: zoom-in;
+}
+
+.dgm__expand:hover { background: #eef0f4; }
+
+/* Scaled far enough down that the labels no longer read as text — make the way
+   out obvious rather than leaving the reader squinting. */
+.dgm.is-tiny .dgm__expand {
+  color: #1f2733;
+  font-weight: 600;
+  background: #eaf1fb;
+  border-color: #c6d9f2;
+}
+
+/* Fullscreen overlay
+   ------------------------------------------------ */
+
+body.dgm-locked { overflow: hidden; }
+
+.dgm-fs {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;              /* over the site's topmost chrome (z-index 9999) */
+  background: #f8f9fb;
+}
+
+.dgm-fs__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+  background: #fff;
+  border-bottom: 1px solid #e2e6ec;
+}
+
+.dgm-fs__hint {
+  font-size: .78rem;
+  color: #5b6472;
+}
+
+.dgm-fs__close {
+  width: 36px;
+  height: 36px;
+  font-size: 1rem;
+  line-height: 1;
+  color: #1f2733;
+  background: #f2f4f7;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dgm-fs__close:hover { background: #e5e8ee; }
+
+.dgm-fs__canvas {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;          /* the pointer handlers own every gesture */
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.dgm-fs__canvas:active { cursor: grabbing; }
+
+.dgm-fs__stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  background: #fff;
+}
+
+.dgm-fs__stage > svg,
+.dgm-fs__stage > iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;        /* gestures belong to the canvas, not the frame */
+}
+
+@media (max-width: 40rem) {
+  .dgm-fs__hint { font-size: .72rem; }
+}
+
+/* Raw embed markup as it appears in a post, before the viewer sizes it and
+   re-parents the iframe. Clipped so the oversized frame the script sets while
+   measuring never pushes the page sideways — and a usable fallback if the
+   script never runs. */
+.diagram-embed {
+  position: relative;
+  height: 320px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border: 1px solid #e2e6ec;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.diagram-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
