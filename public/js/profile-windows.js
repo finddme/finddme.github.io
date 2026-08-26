@@ -389,6 +389,30 @@
     });
   });
 
+  // --- 포스트에서 로고로 돌아왔을 때: ?open=<window-id> 창을 기본 위치로 열어준다 ---
+  // 프로필 창에서 연 포스트의 로고("FindDMe : Profile")가 이 파라미터를 붙여 보낸다.
+  // 파라미터는 먼저 URL에서 지운 뒤 연다(모바일에서 openWindow가 쌓는 히스토리 항목을
+  // replaceState가 덮어쓰지 않도록).
+  (function openFromQuery() {
+    if (!window.location.search) return;
+    var params;
+    try { params = new URLSearchParams(window.location.search); } catch (e) { return; }
+    var id = params.get('open');
+    if (!id) return;
+    var win = document.getElementById(id);
+    if (!win || !win.classList.contains('mac-window')) return;
+
+    params.delete('open');
+    var q = params.toString();
+    try {
+      history.replaceState(history.state, '',
+        window.location.pathname + (q ? '?' + q : '') + window.location.hash);
+    } catch (e) {}
+
+    openWindow(id, null);
+    saveState();
+  })();
+
   // --- focus (press anywhere on a window) ---
   layer.addEventListener('pointerdown', function (e) {
     // don't focus/drag when pressing the close button
