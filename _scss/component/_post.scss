@@ -123,6 +123,15 @@ body.post-page .masthead-wordmark {
   transform-origin: left center;
 }
 
+/* 프로필에서 들어온 포스트의 로고("FindDMe : Profile")는 글자 수가 2배 이상이라
+   한 줄에 들어가도록 조금 줄인다. */
+body.post-page .masthead-wordmark--profile {
+  font-size: 2.3rem;
+  letter-spacing: -0.05em;
+  transform: scaleX(1.04);
+  white-space: nowrap;
+}
+
 body.post-page .container.content {
   max-width: none;
   padding-left: var(--page-gutter);
@@ -350,6 +359,11 @@ body.post-page .post-lab-sheet--project .post-title {
 @media (max-width: 48em) {
   body.post-page .masthead-wordmark {
     font-size: 2rem;
+  }
+
+  body.post-page .masthead-wordmark--profile {
+    font-size: 1.25rem;
+    margin-left: 1rem;
   }
 
   body.post-page .container.content {

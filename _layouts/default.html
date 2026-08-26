@@ -24,9 +24,9 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title" align="center">
-            <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}">
+            <a href="{{ site.baseurl }}/" title="Home" title="{{ site.title }}"{% if page.layout == "post" %} data-masthead-link data-profile-url="{{ site.baseurl }}/profile/"{% endif %}>
               {% if page.layout == "post" %}
-              <span class="archive-sheet__wordmark masthead-wordmark">FindDMe</span>
+              <span class="archive-sheet__wordmark masthead-wordmark" data-masthead-wordmark>FindDMe</span>
               {% else %}
               <img class="masthead-logo" src="{{ site.baseurl }}{{ site.logo }}"/> 
               {% endif %}
@@ -110,6 +110,10 @@
         }, false);
       })(document);
     </script>
+
+    {% if page.layout == "post" %}
+    <script src="{{ site.baseurl }}/public/js/profile-backlink.js?v=1"></script>
+    {% endif %}
 
     {% include diagram_viewer.html %}
     {% include mermaid_support.html %}
