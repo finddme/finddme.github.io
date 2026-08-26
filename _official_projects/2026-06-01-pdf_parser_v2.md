@@ -65,9 +65,9 @@ summary: ""
 
 - 실무 IDP(청구서/송장/양식) 중심 테스트를 진행한 IDP Leaderboard 결과가 우리 서비스에 더 적합하기 때문에 IDP Leaderboard에서 제공사별 상위 모델을 선별해 poc를 진행
     - **Nanonets OCR-3**
-    - GPT-5.4 → [Azure 사용 가능](https://ai.azure.com/explore/models/gpt-5.4/version/2026-03-05/registry/azure-openai?tid=8d409426-da90-48db-a7a5-4e04fcfbd4f3&isFromLeaderboardPage=true)
+    - GPT-5.4 → Azure 사용 가능
     - Gemini-3-Pro
-    - **Claude Sonnet 4.6** → [Azure 사용 가능](https://ai.azure.com/explore/models/claude-sonnet-4-6/version/1/registry/azureml-anthropic?tid=8d409426-da90-48db-a7a5-4e04fcfbd4f3)
+    - **Claude Sonnet 4.6** → Azure 사용 가능
     - ~~Qwen3-VL-Plus → 중국~~
 
 ## **실험 설계**
