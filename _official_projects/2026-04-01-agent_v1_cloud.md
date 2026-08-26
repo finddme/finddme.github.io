@@ -17,7 +17,7 @@ summary: ""
 ### 1.2 파이프라인 구조
 
 <div class="diagram-embed" data-diagram-width="1400">
-  <iframe src="/public/diagrams/agent-v1-structure-v2.html" title="Agent V1 파이프라인 구조도"></iframe>
+  <iframe src="/official-projects/diagrams/agent-v1-structure-v2.html" title="Agent V1 파이프라인 구조도"></iframe>
 </div>
 
 ```
