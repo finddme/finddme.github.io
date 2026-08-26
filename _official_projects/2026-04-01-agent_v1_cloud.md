@@ -1,7 +1,7 @@
 ---
 title: "Agent v1 × Cloud Storage"
 date: 2026-04-01
-thumbnail: 
+thumbnail: https://github.com/user-attachments/assets/331ce99c-c4b6-4a1b-9473-93923304f443
 link: 
 summary: ""
 ---
