@@ -126,6 +126,22 @@
     fig.dataset.dgmSrc = src;
     box.parentNode.replaceChild(fig, box);
 
+    // An overflow-x:auto container inside the document absorbs its own overflow,
+    // so documentElement.scrollWidth stays at the viewport width and reports a
+    // document as fitting when it does not. Ask the scrollers themselves.
+    function shortfall(doc) {
+      var need = doc.documentElement.scrollWidth - doc.documentElement.clientWidth;
+      var els = doc.querySelectorAll('*');
+      for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        var overflow = doc.defaultView.getComputedStyle(el).overflowX;
+        if (overflow !== 'auto' && overflow !== 'scroll') continue;
+        var d = el.scrollWidth - el.clientWidth;
+        if (d > need) need = d;
+      }
+      return Math.max(0, Math.ceil(need));
+    }
+
     var tries = 0;
     function measure() {
       var doc;
@@ -142,13 +158,23 @@
         return;
       }
 
-      var w = Math.max(natural, doc.documentElement.scrollWidth);
-      iframe.style.width = w + 'px';
+      // Widening can uncover more overflow a level down, so settle it in a loop,
+      // then take the height at the width the diagram actually ends up with.
+      var w = natural;
+      for (var pass = 0; pass < 4; pass++) {
+        iframe.style.width = w + 'px';
+        var need = shortfall(doc);
+        if (!need) break;
+        w += need;
+      }
+      h = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+
       iframe.style.height = h + 'px';
       fig.dataset.dgmW = w;
       fig.dataset.dgmH = h;
-      fig.querySelector('.dgm__stage').style.width = w + 'px';
-      fig.querySelector('.dgm__stage').style.height = h + 'px';
+      var stage = fig.querySelector('.dgm__stage');
+      stage.style.width = w + 'px';
+      stage.style.height = h + 'px';
       fig._dgmWidth = null;
       fit(fig);
     }
