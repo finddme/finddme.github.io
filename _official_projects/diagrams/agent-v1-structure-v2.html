@@ -1,0 +1,420 @@
+---
+# A diagram asset, not a project entry. Front matter is what buys it a stable
+# URL: Jekyll flattens front-matter-less files in a collection to the site root,
+# losing the diagrams/ directory. `hidden` keeps it out of the project listings
+# that iterate this collection.
+layout: none
+permalink: /official-projects/diagrams/agent-v1-structure-v2.html
+hidden: true
+---
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DC Agent V1 구조도</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#3b7dd8; --blue-fill:#dbe8f5; --blue-line:#2c5f9e; --blue-soft:#eaf3fb;
+    --navy:#16294f;
+    --gold:#d99a1f; --gold-fill:#fdf7ea; --gold-bar:#e5b53a;
+    --red:#9e2b2b; --red-head:#f6d9d9;
+    --green:#2e8b57; --green-head:#dcf1e3;
+    --orange:#e07b39; --orange-head:#fce4d6;
+    --purple:#8e44ad; --purple-head:#f4e7f8;
+    --ink:#1f2733; --muted:#5b6472; --line:#c9d2de;
+    --wire:#3d4756; --wire-dash:#8a94a3;
+    --sans:'Geist','Noto Sans KR',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --mono:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --serif:'Instrument Serif','Noto Sans KR',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html,body{background:#ffffff}
+  body{margin:0;color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .scroll{overflow-x:auto;padding:24px;background:#fff}
+
+  /* editorial header (diagram-design page layout) */
+  .pagehead{max-width:1620px;margin:0 auto 20px;padding:8px 4px 0}
+  .pagehead .eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  .pagehead h1{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.08;
+    color:var(--ink);margin:0;letter-spacing:.01em}
+  .pagehead .subtitle{font-family:var(--sans);font-size:13px;color:var(--muted);
+    margin:8px 0 0;max-width:960px;line-height:1.55}
+
+  .dc{position:relative;min-width:1400px;max-width:1620px;margin:0 auto;border:3px solid var(--blue);
+    border-radius:24px;background:#fff;padding:24px 28px 32px}
+
+  /* svg wire layer */
+  #wires{position:absolute;left:0;top:0;pointer-events:none;z-index:5;overflow:visible}
+  #wires path{fill:none}
+
+  /* top pipeline row */
+  .toprow{display:flex;align-items:stretch;gap:16px;margin-bottom:24px}
+  .files{border:1.5px solid var(--line);border-radius:12px;padding:12px;min-width:160px;text-align:center}
+  .files .t{font-weight:700;margin-bottom:8px}
+  .filegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+  .chip{border-radius:6px;color:#fff;font-size:11px;font-weight:600;padding:8px 0;text-align:center;
+    font-family:var(--mono);letter-spacing:.04em}
+  .c-docx{background:#2b6cb0}.c-pdf{background:#c0392b}.c-msg{background:#1e7d4f}
+  .c-txt{background:#7a8794}.c-json{background:#e07b1a}.c-etc{background:#d9b23a;color:#5b4a10}
+
+  .box{border-radius:12px;padding:12px}
+  .dataproc{background:var(--blue-fill);border:1.5px solid var(--blue-line);min-width:112px;
+    display:flex;flex-direction:column;justify-content:center;text-align:center;font-weight:700;color:var(--blue-line)}
+  .db{background:var(--navy);color:#fff;border-radius:12px;min-width:84px;display:flex;
+    align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:13px}
+  .dp-outer{flex:1;background:var(--blue-soft);border:1.5px solid var(--blue-line);border-radius:12px;
+    padding:12px;display:flex;flex-direction:column;justify-content:center}
+  .dp-title{text-align:center;font-weight:800;color:var(--blue-line);margin-bottom:8px}
+  .dp-stages{display:flex;align-items:center;gap:8px}
+  .dp-stage{flex:1;background:#fff;border:1.5px solid var(--blue);border-radius:8px;
+    text-align:center;font-weight:700;padding:9px 4px;color:var(--ink)}
+  .arrow{color:var(--blue);font-weight:900}
+  .flowarrow{align-self:center;color:var(--muted);font-weight:900;font-size:18px}
+
+  /* main area */
+  .mainrow{display:flex;gap:28px;align-items:stretch}
+  .leftcol{display:flex;flex-direction:column;min-width:132px}
+  .io{border:1.5px solid var(--line);border-radius:14px;padding:18px 10px;text-align:center;font-weight:700}
+  .io .ic{font-size:26px;display:block;margin-bottom:6px}
+  #userquery{margin-top:96px}
+  #output{margin-top:auto;margin-bottom:40px}
+
+  .agent{flex:1;border:2px solid var(--gold);background:var(--gold-fill);border-radius:16px;padding:16px}
+  .agent-title{display:inline-block;font-weight:800;color:var(--gold);border:2px solid var(--gold);
+    border-radius:10px;padding:6px 16px;margin-bottom:14px;font-size:15px;background:#fff}
+
+  .cols{display:grid;grid-template-columns:1.22fr 0.9fr 0.95fr;gap:30px}
+
+  .panel{border-radius:14px;padding:12px;background:#fff}
+  .panel-head{border-radius:10px;text-align:center;font-weight:800;padding:8px;margin-bottom:10px}
+  .p-orch{border:2px solid var(--red)}
+  .p-orch .panel-head{background:var(--red-head);color:var(--red)}
+  .p-sub{border:2px solid var(--green)}
+  .p-sub .panel-head{background:var(--green-head);color:var(--green)}
+  .p-tools{border:2px solid var(--orange)}
+  .p-tools .panel-head{background:var(--orange-head);color:var(--orange)}
+  .p-prompt{border:2px solid var(--purple);margin-top:16px}
+  .p-prompt .panel-head{background:var(--purple-head);color:var(--purple)}
+  .head-sub{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.02em}
+
+  .stage{background:var(--red);color:#fff;border-radius:10px;padding:10px 12px;margin-bottom:6px}
+  .stage .sn{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;opacity:.85}
+  .stage .st{font-weight:800;font-size:15px;margin-bottom:3px}
+  .stage ul{margin:3px 0 0;padding-left:16px}
+  .stage li{font-size:11px;line-height:1.45;margin:1px 0;opacity:.95}
+  .branch{font-size:11px;line-height:1.4;margin-top:5px;padding-top:5px;
+    border-top:1px dashed rgba(255,255,255,.4);opacity:.95}
+  .chevron{text-align:center;color:var(--red);font-weight:900;margin:0 0 6px;font-size:13px}
+
+  .alt{border:1.6px dashed var(--red);color:var(--red);background:#fff;border-radius:10px;
+    padding:8px 12px;margin-bottom:6px;font-size:11.5px;font-weight:700}
+  .alt b{font-size:12.5px}
+
+  .exec-inner{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+  .mini{border:1px solid rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.14);
+    border-radius:8px;padding:6px 8px;font-size:11px;font-weight:700;text-align:center}
+
+  .subagent{border:1.6px solid var(--green);border-radius:8px;padding:10px;text-align:center;
+    font-weight:800;color:var(--green);margin-bottom:8px;background:#fff}
+  .subagent.web{border-width:2px}
+
+  .tools-list{margin:0;padding-left:16px;color:var(--orange);font-weight:700}
+  .tools-list li{font-size:12.5px;line-height:1.75}
+  .prompt-list{margin:0;padding-left:16px;color:var(--purple);font-weight:700}
+  .prompt-list li{font-size:12.5px;line-height:1.85}
+
+  .a2a-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.5;
+    border-top:1px dashed var(--line);padding-top:8px}
+  .a2a-note .mono{font-family:var(--mono);font-size:10.5px}
+
+  .legend{max-width:1620px;margin:16px auto 0;font-size:12px;color:var(--muted);
+    display:flex;flex-wrap:wrap;gap:16px;padding:0 4px}
+  .legend b{color:var(--ink)}.legend .sw{font-size:14px}
+  .cap{max-width:1620px;margin:12px auto 0;color:var(--muted);font-size:12px;padding:0 4px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="scroll">
+
+  <h1 class="sr-only">DC Agent V1 아키텍처</h1>
+
+  <div class="dc" id="dc" role="img"
+       aria-label="DC Agent V1 아키텍처. 파일 인제스천 파이프라인(파싱·청킹·임베딩)이 OpenSearch로 이어지고, User Query가 7-stage LangGraph 오케스트레이터(Intent Classifier·History Selector·Query Rewriter·Planner·Executor·Condenser·Generator)를 거쳐 Registry 기반 in-process 서브에이전트와 Direct 도구 호출로 응답을 생성한다.">
+
+    <svg id="wires" aria-hidden="true">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7"
+                orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--wire)"/></marker>
+        <marker id="ahd" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7"
+                orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--wire-dash)"/></marker>
+      </defs>
+    </svg>
+
+    <!-- TOP: ingestion pipeline -->
+    <div class="toprow">
+      <div class="files">
+        <div class="t">Files</div>
+        <div class="filegrid">
+          <div class="chip c-docx">DOCX</div><div class="chip c-pdf">PDF</div>
+          <div class="chip c-msg">MSG</div><div class="chip c-txt">TXT</div>
+          <div class="chip c-json">JSON</div><div class="chip c-etc">…</div>
+        </div>
+      </div>
+      <div class="flowarrow">→</div>
+      <div class="box dataproc">DATA<br>Processor</div>
+      <div class="flowarrow">→</div>
+      <div class="db">S3 DB</div>
+      <div class="flowarrow">→</div>
+      <div class="dp-outer">
+        <div class="dp-title">Data Processing</div>
+        <div class="dp-stages">
+          <div class="dp-stage">Parsing</div><span class="arrow">»</span>
+          <div class="dp-stage">Chunking</div><span class="arrow">»</span>
+          <div class="dp-stage">Embedding</div>
+        </div>
+      </div>
+      <div class="flowarrow">→</div>
+      <div class="db" id="opensearch">OpenSearch<br>DB</div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="mainrow">
+      <div class="leftcol">
+        <div class="io" id="userquery"><span class="ic">💬</span>User Query</div>
+        <div class="io" id="output"><span class="ic">🤖</span>Output</div>
+      </div>
+
+      <div class="agent" id="agent">
+        <div class="agent-title">Agent</div>
+
+        <!-- three columns -->
+        <div class="cols">
+
+          <!-- Orchestrator : V1 7-stage 파이프라인 (History Selector 포함) -->
+          <div class="panel p-orch" id="orchestrator">
+            <div class="panel-head">Orchestrator &nbsp;<span class="head-sub">LangGraph · 7-stage + 분기</span></div>
+
+            <div class="stage" id="stage1">
+              <div class="sn">Stage 1.</div><div class="st">Intent Classifier</div>
+              <ul>
+                <li>intent: doc_qa / doc_summary / doc_compare / file_search / web_search / chat</li>
+                <li>mode: file_mode / folder_mode / general_chat</li>
+                <li>confidence · needs_context · web_search_enabled · response_language · selected_files</li>
+              </ul>
+              <div class="branch">↳ <b>chat</b> → Generator 직행 (needs_context+이력 있으면 History Selector 경유)</div>
+            </div>
+            <div class="chevron">▼</div>
+
+            <div class="stage" id="history">
+              <div class="sn">Stage 2.</div><div class="st">History Selector</div>
+              <ul>
+                <li>needs_context=true + chat_history 존재 시에만 실행</li>
+                <li>selected_history · selected_indices · selection_reason (관련 대화 턴 선택)</li>
+              </ul>
+              <div class="branch">↳ 조건 미충족 → skip · chat → Generator / 그 외 → Rewriter</div>
+            </div>
+            <div class="chevron">▼</div>
+
+            <div class="stage">
+              <div class="sn">Stage 3.</div><div class="st">Query Rewriter</div>
+              <ul>
+                <li>optimized_query · resolved_query · keywords</li>
+                <li>search_filter: {author, extension, date_from, date_to}</li>
+                <li>프롬프트 분기: search_optimization(doc_qa·web_search) / file_filter(file_search)</li>
+              </ul>
+              <div class="branch">↳ <b>web_search</b> → Web Search Setup · 그 외 → Planner</div>
+            </div>
+            <div class="chevron">▼</div>
+
+            <div class="stage">
+              <div class="sn">Stage 4.</div><div class="st">Planner</div>
+              <ul>
+                <li>complexity: simple / complex</li>
+                <li>tasks: [{id, agent, query, description, depends_on, parameters}]</li>
+                <li>summary · original_query</li>
+                <li>agent: document_retriever(→file_rag/folder_rag) · file_search · summary · compare · file_resolver</li>
+              </ul>
+            </div>
+            <div class="alt">▷ <b>Web Search Setup</b> — web_search intent 시 Planner 대체 (rewriter→web_search_setup)</div>
+            <div class="chevron">▼</div>
+
+            <div class="stage" id="executor">
+              <div class="sn">Stage 5.</div><div class="st">Executor</div>
+              <ul><li>Registry로 Sub-Agent Executor 선택 → in-process 호출 · 결과 통합</li></ul>
+              <div class="exec-inner">
+                <div class="mini">Registry lookup</div>
+                <div class="mini">completed</div>
+                <div class="mini">Replan (depends_on 재정리)</div>
+                <div class="mini">failed</div>
+                <div class="mini">Wait User Input → END</div>
+                <div class="mini">input required</div>
+              </div>
+            </div>
+            <div class="chevron">▼</div>
+
+            <div class="stage" id="condenser">
+              <div class="sn">Stage 6.</div><div class="st">Condenser</div>
+              <ul>
+                <li>doc_summary / doc_compare &amp; formatted_size &gt; max_context_chars(20,000자) 시 압축</li>
+              </ul>
+              <div class="branch">↳ 그 외 · 소용량 → skip (Generator 직행)</div>
+            </div>
+            <div class="chevron">▼</div>
+
+            <div class="stage" id="generator">
+              <div class="sn">Stage 7.</div><div class="st">Generator</div>
+              <ul><li>intent별 프롬프트 조합으로 최종 응답 생성</li></ul>
+            </div>
+          </div>
+
+          <!-- Sub-Agent -->
+          <div class="panel p-sub" id="subagent">
+            <div class="panel-head">Sub-Agents <span class="head-sub">Registry 기반 in-process</span></div>
+            <div class="subagent">File Rag Agent</div>
+            <div class="subagent">Folder Rag Agent</div>
+            <div class="subagent">File Search Agent</div>
+            <div class="subagent">Summary Agent</div>
+            <div class="subagent">Compare Agent</div>
+            <div class="subagent web">Web Search Agent</div>
+            <div class="subagent">File Resolver Agent</div>
+            <div class="a2a-note">
+              <b>Registry</b> <span class="mono">(sub_agents/registry.py)</span> — AgentCard 탐색 대체<br>
+              agent_id → Executor 클래스 매핑 · <span class="mono">importlib</span> 동적 import<br>
+              <span class="mono">BaseAgentExecutor(ABC)</span> 서브클래스, 각 도구는 Direct 호출
+            </div>
+          </div>
+
+          <!-- Tools + Prompt Manager -->
+          <div>
+            <div class="panel p-tools" id="tools">
+              <div class="panel-head">Tools</div>
+              <ul class="tools-list">
+                <li>Vector Search Tool</li>
+                <li>File Chunk Retriever Tool</li>
+                <li>DB Query Tool</li>
+                <li>DB Filename Search Tool</li>
+                <li>Web Search Tool</li>
+                <li>Web Content Parser Tool</li>
+                <li>Filename Similarity Scorer Tool</li>
+                <li>User Confirmation Tool</li>
+              </ul>
+              <div class="head-sub" style="margin-top:6px">Direct 구현 (use_mcp=False)</div>
+            </div>
+            <div class="panel p-prompt" id="promptmgr">
+              <div class="panel-head">Prompt Manager</div>
+              <ul class="prompt-list">
+                <li>Intent / Stage Prompts</li>
+                <li>Persona Prompts (cs · marketing · admin)</li>
+                <li>Loader · Selector (DB→Redis 3-tier)</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span><b class="sw" style="color:var(--red)">■</b> Orchestrator (7-stage)</span>
+    <span><b class="sw" style="color:var(--green)">■</b> Sub-Agents (in-process)</span>
+    <span><b class="sw" style="color:var(--orange)">■</b> Tools (Direct)</span>
+    <span><b class="sw" style="color:var(--purple)">■</b> Prompt Manager</span>
+    <span>—— 요청/응답 흐름 · - - - 데이터 조회</span>
+  </div>
+</div>
+
+<script>
+(function(){
+  const dc = document.getElementById('dc');
+  const svg = document.getElementById('wires');
+  const NS = 'http://www.w3.org/2000/svg';
+  const $ = id => document.getElementById(id);
+
+  function anchor(el, side){
+    const base = dc.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    const x = r.left - base.left, y = r.top - base.top;
+    switch(side){
+      case 'l': return [x, y + r.height/2];
+      case 'r': return [x + r.width, y + r.height/2];
+      case 't': return [x + r.width/2, y];
+      case 'b': return [x + r.width/2, y + r.height];
+      default:  return [x + r.width/2, y + r.height/2];
+    }
+  }
+
+  const rr = v => Math.round(v*100)/100;
+
+  // rounded orthogonal elbow, horizontal-first (H → V → H). Quarter-arc corners, r=8.
+  function elbowH(a, b, c, r){
+    c = (c==null) ? (a[0]+b[0])/2 : c;
+    const dx1=c-a[0], dy=b[1]-a[1], dx2=b[0]-c;
+    const R = Math.min(r||8, Math.abs(dx1)/2, Math.abs(dy)/2, Math.abs(dx2)/2);
+    if(!(R>0.5) || dy===0)
+      return `M${a[0]},${a[1]} L${c},${a[1]} L${c},${b[1]} L${b[0]},${b[1]}`;
+    const sx1=Math.sign(dx1), sv=Math.sign(dy), sx2=Math.sign(dx2);
+    return `M${a[0]},${a[1]} H${rr(c-sx1*R)} Q${c},${a[1]} ${c},${rr(a[1]+sv*R)} `
+         + `V${rr(b[1]-sv*R)} Q${c},${b[1]} ${rr(c+sx2*R)},${b[1]} H${b[0]}`;
+  }
+
+  // rounded orthogonal elbow, vertical-first (V → H → V). Quarter-arc corners, r=8.
+  function elbowV(a, b, c, r){
+    c = (c==null) ? (a[1]+b[1])/2 : c;
+    const dy1=c-a[1], dx=b[0]-a[0], dy2=b[1]-c;
+    const R = Math.min(r||8, Math.abs(dy1)/2, Math.abs(dx)/2, Math.abs(dy2)/2);
+    if(!(R>0.5) || dx===0)
+      return `M${a[0]},${a[1]} L${a[0]},${c} L${b[0]},${c} L${b[0]},${b[1]}`;
+    const sv1=Math.sign(dy1), sh=Math.sign(dx), sv2=Math.sign(dy2);
+    return `M${a[0]},${a[1]} V${rr(c-sv1*R)} Q${a[0]},${c} ${rr(a[0]+sh*R)},${c} `
+         + `H${rr(b[0]-sh*R)} Q${b[0]},${c} ${b[0]},${rr(c+sv2*R)} V${b[1]}`;
+  }
+
+  function line(d, {dash=false, both=false, end=true}={}){
+    const p = document.createElementNS(NS,'path');
+    p.setAttribute('d', d);
+    p.setAttribute('stroke', dash ? 'var(--wire-dash)' : 'var(--wire)');
+    p.setAttribute('stroke-width', dash ? '1.6' : '2.2');
+    p.setAttribute('stroke-linejoin','round');
+    p.setAttribute('stroke-linecap','round');
+    if(dash) p.setAttribute('stroke-dasharray','6 5');
+    const mk = dash ? 'ahd' : 'ah';
+    if(end) p.setAttribute('marker-end', `url(#${mk})`);
+    if(both) p.setAttribute('marker-start', `url(#${mk})`);
+    svg.appendChild(p);
+  }
+
+  function draw(){
+    svg.setAttribute('width', dc.clientWidth);
+    svg.setAttribute('height', dc.clientHeight);
+    [...svg.querySelectorAll('path')].forEach(n=>n.remove());
+
+    const sub = $('subagent'), exec = $('executor');
+    const topChan = anchor($('agent'),'t')[1] - 10;                  // channel above agent box
+
+    // entry / exit
+    line(elbowH(anchor($('userquery'),'r'), anchor($('stage1'),'l')));           // User Query → Intent
+    line(elbowH(anchor($('generator'),'l'), anchor($('output'),'r')));           // Generator → Output
+    // in-process dispatch + direct tools
+    line(elbowH(anchor(exec,'r'), anchor(sub,'l')), {both:true});                // Executor → Sub-Agent (in-process, Registry)
+    line(elbowH(anchor(sub,'r'), anchor($('tools'),'l')), {both:true});          // Sub-Agent → Tools (direct)
+    line(elbowV(anchor($('tools'),'t'), anchor($('opensearch'),'b'), topChan), {dash:true, both:true}); // Tools ⇢ OpenSearch/DB
+    // prompt supply (along bottom)
+    const pm = anchor($('promptmgr'),'b'), gen = anchor($('generator'),'b');
+    line(elbowV(pm, gen, Math.max(pm[1],gen[1]) + 26), {dash:true});             // Prompt Manager ⇢ Generator
+  }
+
+  const redraw = () => requestAnimationFrame(draw);
+  window.addEventListener('load', redraw);
+  window.addEventListener('resize', redraw);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(redraw);
+  redraw();
+})();
+</script>
+</body>
+</html>
