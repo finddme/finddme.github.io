@@ -1,0 +1,99 @@
+<!-- Mermaid diagram rendering.
+     Kramdown renders a ```mermaid fence as <pre><code class="language-mermaid">
+     (Rouge may additionally wrap it in div.highlighter-rouge). This turns those
+     blocks into rendered diagrams. The CDN module is only fetched on pages that
+     actually contain one. -->
+<script>
+  (function () {
+    // Replace the outermost wrapper, not the inner <code>, so no stray <pre>
+    // is left wrapping the diagram.
+    function collect() {
+      var marked = document.querySelectorAll(
+        'div.language-mermaid, pre.language-mermaid, code.language-mermaid'
+      );
+      var roots = [];
+      for (var i = 0; i < marked.length; i++) {
+        var root = marked[i];
+        var wrapper = root.closest('div.highlighter-rouge') || root.closest('pre');
+        if (wrapper) root = wrapper;
+        if (roots.indexOf(root) === -1) roots.push(root);
+      }
+      return roots;
+    }
+
+    // Fences nested in list items keep their list indentation through Kramdown;
+    // strip the shared leading whitespace so mermaid sees a clean definition.
+    function dedent(text) {
+      var lines = text.replace(/\s+$/, '').split('\n');
+      var indent = null;
+      for (var i = 0; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        var lead = lines[i].match(/^[ \t]*/)[0].length;
+        if (indent === null || lead < indent) indent = lead;
+      }
+      if (!indent) return lines.join('\n');
+      return lines.map(function (line) { return line.slice(indent); }).join('\n');
+    }
+
+    var blocks = collect();
+    if (!blocks.length) return;
+
+    var containers = blocks.map(function (block) {
+      var pre = document.createElement('pre');
+      pre.className = 'mermaid';
+      pre.textContent = dedent(block.textContent);
+      block.parentNode.replaceChild(pre, block);
+      return pre;
+    });
+
+    import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs')
+      .then(function (mod) {
+        var mermaid = mod.default;
+        mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: 'strict',
+          fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+          theme: 'base',
+          themeVariables: {
+            background: '#ffffff',
+            primaryColor: '#f6f1ea',
+            primaryTextColor: '#515151',
+            primaryBorderColor: '#cdb59d',
+            secondaryColor: '#f3f3f3',
+            tertiaryColor: '#ffffff',
+            lineColor: '#a89985',
+            textColor: '#515151',
+            fontSize: '14px'
+          }
+        });
+        // mermaid.run() measures inside the target element. On this layout a
+        // diagram can sit in an inactive .post-tabs__panel (display:none), where
+        // every measurement is 0 and edge routing dies with "Could not find a
+        // suitable point for the given distance". render() measures in a
+        // temporary node on <body> instead, so it works whatever the tab state.
+        return Promise.all(containers.map(function (pre, i) {
+          return mermaid
+            .render('mermaid-diagram-' + i, pre.textContent)
+            .then(function (res) {
+              pre.innerHTML = res.svg;
+              if (res.bindFunctions) res.bindFunctions(pre);
+              pre.setAttribute('data-processed', 'true');
+              // Hand the finished diagram over to _includes/diagram_viewer.html,
+              // which owns fit-to-column sizing and the fullscreen pan/zoom view.
+              document.dispatchEvent(new CustomEvent('mermaid:rendered', {
+                detail: { el: pre }
+              }));
+            })
+            .catch(function (err) {
+              console.error('mermaid render failed:', err);
+              pre.classList.add('mermaid--failed');
+            });
+        }));
+      })
+      .catch(function (err) {
+        // Leave the diagram source visible as plain text if the CDN is blocked.
+        console.error('mermaid load failed:', err);
+        containers.forEach(function (pre) { pre.classList.add('mermaid--failed'); });
+      });
+  })();
+</script>

@@ -21,7 +21,7 @@
       {% when "skills" %}{% include profile/window-skills.html %}
       {% when "blog" %}{% include profile/window-blog.html %}
       {% when "links" %}{% include profile/window-link-list.html source=item.source %}
-      {% when "projects" %}{% include profile/window-projects.html source=item.source %}
+      {% when "projects" %}{% include profile/window-projects.html source=item.source win_id=item.id %}
     {% endcase %}
   </div>
 </section>

@@ -5,6 +5,15 @@ homepage_style: lab-archive
 ---
 
 <main class="lab-home" data-lab-home>
+  <svg class="lab-glass-defs" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <filter id="archiveGlassDistort" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.011" numOctaves="2" seed="7" result="noise" />
+        <feGaussianBlur in="noise" stdDeviation="2.2" result="smooth" />
+        <feDisplacementMap in="SourceGraphic" in2="smooth" scale="34" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
   <section class="lab-hero" aria-label="finddme lab archive homepage">
     <div class="lab-grid" aria-hidden="true">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
@@ -67,11 +76,13 @@ homepage_style: lab-archive
             {%- if box_src == "" -%}{%- assign box_src = f.path -%}{%- endif -%}
         {%- endcase -%}
       {%- endfor -%}
-      <div class="lab-figure" data-lab-figure{% if box_src != "" %} style="background-image: url('{{ box_src | relative_url }}')"{% endif %}></div>
+      <a class="lab-figure" data-lab-figure href="{{ site.baseurl }}/profile/" aria-label="finddme profile">
+        <span class="lab-figure__img"{% if box_src != "" %} style="background-image: url('{{ box_src | relative_url }}')"{% endif %}></span>
+      </a>
 
       <a class="lab-callout lab-callout--multi" href="{{ site.baseurl }}/blog/llm_multimodal/" data-lab-callout="multi">
         <span>LLM / Multimodal</span>
-        <small>Models, memory, agents, vision</small>
+        <small>Agents, language &amp; vision models</small>
       </a>
 
       <a class="lab-callout lab-callout--all" href="{{ site.baseurl }}/blog/categories/" data-lab-callout="all">
@@ -81,7 +92,7 @@ homepage_style: lab-archive
 
       <a class="lab-callout lab-callout--nlp" href="{{ site.baseurl }}/blog/nlp/" data-lab-callout="nlp">
         <span>NLP</span>
-        <small>Language models, ML &amp; deep learning</small>
+        <small>Language, ML &amp; deep learning</small>
       </a>
 
       <a class="lab-callout lab-callout--ling" href="{{ site.baseurl }}/blog/nlp_linguistics/" data-lab-callout="ling">
@@ -119,4 +130,5 @@ homepage_style: lab-archive
     {%- endfor %}
   ];
 </script>
-<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=33"></script>
+<script src="{{ site.baseurl }}/public/js/lab-spring.js?v=1"></script>
+<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=49"></script>

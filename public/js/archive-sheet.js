@@ -1,44 +1,39 @@
 (function () {
-  // Reference (Beckmans) approach: the actual in-cell thumbnail image is what
-  // expands, via pure CSS (height first, then width, delayed). JS only measures
-  // each image's natural aspect ratio and exposes it as a CSS custom property,
-  // so the expanded preview keeps the image's real proportions instead of a
-  // fixed, cropped box.
-
-  var MIN_ASPECT = 0.55; // tall portrait clamp
-  var MAX_ASPECT = 2.2;  // wide landscape clamp (avoid covering the whole row)
-
-  function cssLengthToPx(value, context) {
-    var probe = document.createElement('span');
-    probe.style.cssText = [
-      'display:block',
-      'position:absolute',
-      'visibility:hidden',
-      'height:0',
-      'width:' + value
-    ].join(';');
-    context.appendChild(probe);
-    var px = probe.getBoundingClientRect().width;
-    context.removeChild(probe);
-    return px;
-  }
-
-  function applyAspect(row, img) {
-    var nw = img.naturalWidth;
-    var nh = img.naturalHeight;
-    if (!nw || !nh) return;
-
-    var aspect = nw / nh;
-    if (aspect < MIN_ASPECT) aspect = MIN_ASPECT;
-    if (aspect > MAX_ASPECT) aspect = MAX_ASPECT;
-
-    var thumbHeight = window.getComputedStyle(row).getPropertyValue('--as-thumb-h').trim();
-    var thumbHeightPx = cssLengthToPx(thumbHeight || '13rem', row);
-    row.style.setProperty('--as-thumb-w', (thumbHeightPx * aspect) + 'px');
-  }
-
-  var rows = document.querySelectorAll('.archive-sheet__row--has-image');
   var tabs = document.querySelectorAll('.archive-sheet__tabs a');
+
+  // 새로고침 시 항상 페이지 최상단(로고 헤더)부터 보이게 한다.
+  // 원인: (1) 브라우저 스크롤 복원, (2) 탭(`#archive-...`) 클릭으로 남은 URL 해시로
+  // 인한 섹션 점프. 새로고침(reload)에만 개입하고, 새로 진입/딥링크는 건드리지 않아
+  // 탭 점프 기능은 그대로 유지한다.
+  (function resetScrollOnReload() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';   // 스크롤 위치 복원 끔
+    }
+    var isReload = false;
+    try {
+      var nav = performance.getEntriesByType('navigation')[0];
+      isReload = nav ? nav.type === 'reload'
+        : (performance.navigation && performance.navigation.type === 1);
+    } catch (e) {}
+    if (!isReload) {
+      return;
+    }
+    // 해시가 남아 있으면 제거해 브라우저의 섹션 점프 자체를 막는다.
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+    var toTop = function () { window.scrollTo(0, 0); };
+    toTop();
+    window.requestAnimationFrame(toTop);       // 해시/복원 점프 이후 프레임에 한 번 더
+    window.addEventListener('load', toTop);
+  })();
+
+  // iOS Safari는 touch 리스너가 없는 요소엔 :active를 적용하지 않는다. 빈 touchstart를
+  // 달아 탭 시 우리 press 하이라이트(:active)가 실제로 나오게 한다(홈 패턴과 동일).
+  var pressTargets = document.querySelectorAll('.archive-sheet__row, .archive-sheet__tabs a');
+  Array.prototype.forEach.call(pressTargets, function (el) {
+    el.addEventListener('touchstart', function () {}, { passive: true });
+  });
 
   function markLastTabRow() {
     if (!tabs.length) return;
@@ -56,19 +51,79 @@
     });
   }
 
-  rows.forEach(function (row) {
-    var img = row.querySelector('.archive-sheet__thumb img');
-    if (!img) return;
-
-    if (img.complete && img.naturalWidth) {
-      applyAspect(row, img);
-    } else {
-      img.addEventListener('load', function () {
-        applyAspect(row, img);
-      });
-    }
-  });
-
   markLastTabRow();
   window.addEventListener('resize', markLastTabRow);
+
+  // 탭 press를 spring으로 구동(A2): 누르면 축소, 떼면 velocity를 이어받아 살짝
+  // overshoot 후 정착. 터치·마우스 모두에 적용한다(데스크톱에서도 press 스프링).
+  // JS가 transform을 소유하므로 A1의 CSS :active(scale)는 JS 미로드 시 폴백 역할.
+  // 행은 탭 시 즉시 포스트로 이동해 release 스프링이 안 보이고 넓은 셀이라 scale이
+  // 어색하므로, 행은 A1의 iOS 셀 하이라이트만 쓰고 여기선 다루지 않는다.
+  (function initTabPressSpring() {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !window.LabSpring || !('PointerEvent' in window) || !tabs.length) {
+      return;
+    }
+    var PRESS_RESPONSE = 0.32;
+    var PRESS_DAMPING = 0.5;
+    var PRESS_SCALE = 0.90;
+    // 넓은 탭("...and Linguistics"처럼 긴 이름)은 균일 scale이 중앙 텍스트 기준
+    // 잘 안 보인다 → 눌린 정도(1-scale)에 비례해 살짝 아래로 내려 세로 이동을 준다.
+    // 세로 이동은 탭 폭과 무관하게 균일하게 보인다. (누른 만큼 px)
+    var PRESS_LIFT = 42;
+
+    Array.prototype.forEach.call(tabs, function (el) {
+      var spring = new window.LabSpring({
+        response: PRESS_RESPONSE,
+        dampingRatio: PRESS_DAMPING,
+        value: 1,
+        target: 1
+      });
+      var raf = null;
+      var last = 0;
+
+      function tick(now) {
+        var t = typeof now === 'number' ? now : performance.now();
+        var dt = last ? (t - last) / 1000 : 1 / 60;
+        last = t;
+        spring.step(dt);
+        // 누른 정도(1-value)에 비례한 세로 눌림 + scale. release overshoot(value>1)
+        // 때는 살짝 위로 튀어 자연스럽게 되돌아온다.
+        var ty = (1 - spring.value) * PRESS_LIFT;
+        el.style.transform = 'translateY(' + ty.toFixed(2) + 'px) scale(' + spring.value.toFixed(4) + ')';
+        if (!spring.isResting()) {
+          raf = window.requestAnimationFrame(tick);
+          return;
+        }
+        raf = null;
+        last = 0;
+        if (spring.target === 1) {
+          el.style.transform = '';
+          el.style.transition = '';
+        }
+      }
+
+      function start() {
+        if (raf === null) {
+          last = 0;
+          raf = window.requestAnimationFrame(tick);
+        }
+      }
+
+      el.addEventListener('pointerdown', function () {
+        el.style.transition = 'none';  // JS가 transform 소유(이중 스무딩 방지)
+        spring.target = PRESS_SCALE;
+        start();
+      });
+
+      function release() {
+        spring.target = 1;
+        start();
+      }
+
+      el.addEventListener('pointerup', release);
+      el.addEventListener('pointercancel', release);
+      el.addEventListener('pointerleave', release);
+    });
+  })();
 })();
