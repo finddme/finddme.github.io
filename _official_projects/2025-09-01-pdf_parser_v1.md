@@ -269,26 +269,28 @@ summary: ""
 4. recursive split
 
 4-1. (추가 구현 버전) 토큰 수 검증
-    - md header 기준으로 분할된 chunk들을 돌면서
-        - placeholder로 대체된 것들 위치에 맞게 복원
-        - chunk별 page 정보 추적
-            - chunk를 full text에서 find → 시작 index, 끝 index로 페이지 찾기
-        - chunk type이 테이블(포함)인 경우:
-            - 테이블 크기와 관계없이:
-                - 앞뒤 텍스트에서 context 추출 (최대 150자씩)
-                - remaining 텍스트는 별도 청크로 분리 (800자 초과 시 분할)
-            - 1200자 이상이면 테이블 분할:
-                - 테이블 헤더 추출 (구분선 있는 table은 2행까지, 아니면 1행까지)
-                - row 단위로 분할
-                - 분리된 테이블에 헤더 추가
-                - 앞뒤 맥락(context) 추가
-            - 1200자 미만이면:
-                - 테이블은 분할하지 않고 context와 함께 사용
-        - chunk type이 일반 텍스트일 경우:
-            - chunk size가 800자 초과면 `RecursiveCharacterTextSplitter`로 분할
-    - tiktoken으로 각 청크의 토큰 수 계산
-    - max_tokens(8000) 초과 시 토큰 기준으로 추가 분할
-    - 각 청크 메타데이터에 token_count 추가
+
+  - md header 기준으로 분할된 chunk들을 돌면서
+      - placeholder로 대체된 것들 위치에 맞게 복원
+      - chunk별 page 정보 추적
+          - chunk를 full text에서 find → 시작 index, 끝 index로 페이지 찾기
+      - chunk type이 테이블(포함)인 경우:
+          - 테이블 크기와 관계없이:
+              - 앞뒤 텍스트에서 context 추출 (최대 150자씩)
+              - remaining 텍스트는 별도 청크로 분리 (800자 초과 시 분할)
+          - 1200자 이상이면 테이블 분할:
+              - 테이블 헤더 추출 (구분선 있는 table은 2행까지, 아니면 1행까지)
+              - row 단위로 분할
+              - 분리된 테이블에 헤더 추가
+              - 앞뒤 맥락(context) 추가
+          - 1200자 미만이면:
+              - 테이블은 분할하지 않고 context와 함께 사용
+      - chunk type이 일반 텍스트일 경우:
+          - chunk size가 800자 초과면 `RecursiveCharacterTextSplitter`로 분할
+  - tiktoken으로 각 청크의 토큰 수 계산
+  - max_tokens(8000) 초과 시 토큰 기준으로 추가 분할
+  - 각 청크 메타데이터에 token_count 추가
+    
 5. 짧은 청크 병합
     - 최소 청크 크기(150으로 지정) 이하인 chunk가 있으면 병합
     - chunk가 md header를 포함하면 뒤에 붙이고
