@@ -144,7 +144,7 @@ hidden: true
   <h1 class="sr-only">DC Agent V1 아키텍처</h1>
 
   <div class="dc" id="dc" role="img"
-       aria-label="DC Agent V1 아키텍처. 파일 인제스천 파이프라인(파싱·청킹·임베딩)이 OpenSearch로 이어지고, User Query가 7-stage LangGraph 오케스트레이터(Intent Classifier·History Selector·Query Rewriter·Planner·Executor·Condenser·Generator)를 거쳐 Registry 기반 in-process 서브에이전트와 Direct 도구 호출로 응답을 생성한다.">
+       aria-label="DC Agent V1 아키텍처. 파일 인제스천 파이프라인(파싱·청킹·임베딩)이 Vector DB로 이어지고, User Query가 7-stage LangGraph 오케스트레이터(Intent Classifier·History Selector·Query Rewriter·Planner·Executor·Condenser·Generator)를 거쳐 Registry 기반 in-process 서브에이전트와 Direct 도구 호출로 응답을 생성한다.">
 
     <svg id="wires" aria-hidden="true">
       <defs>
@@ -179,7 +179,7 @@ hidden: true
         </div>
       </div>
       <div class="flowarrow">→</div>
-      <div class="db" id="opensearch">OpenSearch<br>DB</div>
+      <div class="db" id="vectordb">Vector<br>DB</div>
     </div>
 
     <!-- MAIN -->
@@ -403,7 +403,7 @@ hidden: true
     // in-process dispatch + direct tools
     line(elbowH(anchor(exec,'r'), anchor(sub,'l')), {both:true});                // Executor → Sub-Agent (in-process, Registry)
     line(elbowH(anchor(sub,'r'), anchor($('tools'),'l')), {both:true});          // Sub-Agent → Tools (direct)
-    line(elbowV(anchor($('tools'),'t'), anchor($('opensearch'),'b'), topChan), {dash:true, both:true}); // Tools ⇢ OpenSearch/DB
+    line(elbowV(anchor($('tools'),'t'), anchor($('vectordb'),'b'), topChan), {dash:true, both:true}); // Tools ⇢ Vector DB
     // prompt supply (along bottom)
     const pm = anchor($('promptmgr'),'b'), gen = anchor($('generator'),'b');
     line(elbowV(pm, gen, Math.max(pm[1],gen[1]) + 26), {dash:true});             // Prompt Manager ⇢ Generator
