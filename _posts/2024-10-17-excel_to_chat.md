@@ -42,8 +42,7 @@ tag: Development
 - 생성된 sql문으로 검색된 data를 prompt와 함께 LLM에 입력하여 답변 생성
 
 # Process
-
-<center><img width="500" src="https://github.com/user-attachments/assets/0edcbc70-682a-4c05-9a7a-c81f63bc6c8d"></center>
+<center><img width="534" height="294" alt="e1" src="https://github.com/user-attachments/assets/9167c2c0-ede3-452a-a1c8-40761c691b3a" /></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 1. `--- File Processing ---` : xslx/csv 파일을 입력 받아 처리 (다중 파일/폴더 입력 가능)
@@ -73,7 +72,8 @@ tag: Development
 ## 1. custom 파일 입력 version
 
 -입력:
-<center><img width="500" src="https://github.com/user-attachments/assets/11f1d275-ea3a-46e2-ad4d-80096b91ac81"></center>
+
+<center><img width="587" height="149" alt="e2" src="https://github.com/user-attachments/assets/b8252a7e-692e-4d54-a939-3b8c06c32604" /></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 - 결과:
@@ -114,7 +114,7 @@ tag: Development
 
 ## 2. 저장된 DB에 query하는 version
 
-<center><img width="600" src="https://github.com/user-attachments/assets/109aec78-6a36-4411-a973-2d661fe20d48"></center>
+<center><img width="885" height="594" alt="e3" src="https://github.com/user-attachments/assets/e6266160-c561-435c-8854-69dc9827a4af" /></center>
 <center><em style="color:gray;">Illustrated by the author</em></center><br>
 
 

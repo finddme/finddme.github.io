@@ -41,6 +41,9 @@
 .lab-home {
   --lab-x: 0;
   --lab-y: 0;
+  // iOS식 critically-damped 스냅 이징(바운스 없음, 빠른 시작→부드러운 정착).
+  // hover/press처럼 momentum이 없는 상호작용용 (스킬 §4: overshoot는 momentum 있을 때만).
+  --lab-ease: cubic-bezier(0.32, 0.72, 0, 1);
   --lab-ink: #0b0b0b;
   --lab-muted: #6f6f69;
   --lab-line: #dfdbd1;
@@ -49,6 +52,8 @@
   --lab-mono: "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
   color: var(--lab-ink);
   font-family: "PT Sans", Arial, sans-serif;
+  // 가변 폰트가 쓰이면 크기에 맞는 optical sizing을 자동 적용(스킬 §15).
+  font-optical-sizing: auto;
   min-height: 100vh;
 }
 
@@ -199,6 +204,18 @@
   line-height: 1;
   padding: 5px 8px 4px;
   text-decoration: none;
+  // 탭/클릭 시 브라우저 기본 검은 하이라이트·outline 제거(callout 과 동일).
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+// 클릭/탭(포인터)에는 outline 없음 — 검은 테두리 제거. 키보드(:focus-visible)만 링 유지.
+.lab-pill:focus {
+  outline: none;
+}
+.lab-pill:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 3px;
 }
 
 .lab-time {
@@ -231,7 +248,11 @@
   color: var(--lab-ink);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 400;
-  letter-spacing: 0;
+  // 큰 display 텍스트는 커질수록 글자 사이가 벌어져 보인다 → 음수 tracking으로
+  // 조인다 (스킬 §15). em 기반이라 폭에 비례하고, 크기별 값은 아래 미디어쿼리에서
+  // 미세 조정한다(데스크톱 118px는 더 조이고, 모바일 64px는 덜 조임).
+  letter-spacing: -0.022em;
+  font-optical-sizing: auto;
   line-height: 0.9;
   margin: 0;
   white-space: nowrap;
@@ -256,9 +277,17 @@
 // JS(lab-archive.js, initTitleGlass)가 매 등장마다 난수로 다시 뽑는다
 // → 실제 무작위. 여기서는 모양(크기)과 페이드 트랜지션만 정의한다.
 // 레이어 순서: 로고 이미지(뒤) > 이모지(z-index:4) > 유리상자(z-index:5, 가장 앞).
+.lab-glass-defs {
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
 .lab-title__glass {
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  // 뒤 로고 이미지를 굴절(refraction)까지 시켜 리퀴드 글래스 느낌.
+  // Safari는 url()을 무시하고 blur만 적용(우아한 폴백).
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  backdrop-filter: url(#archiveGlassDistort) blur(10px) saturate(160%);
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.65);
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.11);
@@ -316,20 +345,60 @@
 // 좌상단 상자(아주 얇은 선 프레임). 안의 이미지는 배경으로 깔아 가운데 정렬(contain).
 // 데스크톱 위치/크기는 아래 @media(min-width:821px) 블록에서 지정한다.
 // 이미지는 index.html이 public/main-page/box/ 첫 이미지를 인라인 background-image 로 넣어준다(없으면 빈 상자).
+// 클릭 시 profile 로 가는 링크(<a>). 검은 상자가 안 뜨게 .lab-callout 과 동일한 3종 리셋을
+// 적용한다: tap-highlight 투명 + :focus outline 제거 + :focus-visible 만 키보드용 링.
 .lab-figure {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  // 배경을 padding 안쪽(content box)에 맞춰 padding 이 사방 여백으로 실제 적용되게 한다.
-  // (기본값 padding-box 면 배경이 padding 영역까지 채워 위·아래 여백이 안 생김)
-  background-origin: content-box;
   border: 0.5px solid var(--lab-line);
   box-sizing: border-box;
+  display: block;
   // padding = 이미지가 닿지 않는 최소 여백 (첫 값=위·아래, 둘째 값=양옆).
   // contain 이라 이미지 비율과 무관하게 사방으로 최소 이만큼은 항상 비운다.
   padding: 30px 30px;
   position: absolute;
+  text-decoration: none;
+  // 탭/press 시 브라우저 기본 검은 하이라이트가 상자 전체에 깔리지 않게 한다(우리 눌림 효과만).
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
   z-index: 2;
+}
+
+// 클릭/탭(포인터)에는 outline 없음 — 검은 사각형/테두리 제거.
+// 키보드 탐색(:focus-visible)만 접근성용 링 유지.
+.lab-figure:focus {
+  outline: none;
+}
+.lab-figure:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 3px;
+}
+
+// 상자 안의 실제 이미지. 상자(테두리)는 고정하고 이 요소만 눌림/호버 효과를 받는다.
+// (profile 페이지 중앙 art 의 이미지 효과와 동일한 방식)
+.lab-figure__img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 100%;
+  width: 100%;
+  // hover 는 기존 0.16s 유지. 누르는 순간(:active)만 아래에서 느긋한 ease 로 덮는다. JS 눌림(터치) 시엔 transition 을 꺼서 스프링이 담당.
+  transition: transform 0.16s ease, filter 0.18s ease;
+  will-change: transform;
+}
+
+// 데스크톱: 상자에 마우스를 올리면 이미지만 살짝 뜬다(터치 기기는 제외).
+html:not(.has-touch) .lab-figure:hover .lab-figure__img {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.16));
+}
+
+// 데스크톱: 누르면 이미지만 살짝 눌린다(축소 없이 아래로). 클릭 시 곧바로 이동하는
+// 링크라 press 를 빠르게(0.14s) 해야 이동 전에 눌림이 보인다. hover 0.16s 와는 분리.
+// 터치(모바일)는 카테고리 같은 스프링(JS)이 담당하므로 :not(.has-touch) 로 게이트.
+html:not(.has-touch) .lab-figure:active .lab-figure__img {
+  transform: translateY(2px);
+  filter: none;
+  transition: transform 0.14s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .lab-callout {
@@ -337,7 +406,9 @@
   display: block;
   position: absolute;
   text-decoration: none;
-  transition: color 160ms ease;
+  transition: color 200ms var(--lab-ease);
+  // iOS에서 탭 시 파란 하이라이트 대신 우리 :active 유리 효과만 보이게.
+  -webkit-tap-highlight-color: transparent;
   z-index: 6;
 }
 
@@ -346,6 +417,9 @@
   font-family: "PT Sans", Arial, sans-serif;
   font-size: var(--lab-callout-title-size);
   font-weight: 400;
+  // 큰 제목이라 살짝 조인다(스킬 §15). em 기반이라 데스크톱 72px/모바일 30px에
+  // 비례. 모노 계열(ling)은 자기 letter-spacing 규칙이 더 구체적이라 영향 없음.
+  letter-spacing: -0.01em;
   line-height: 0.9;
 }
 
@@ -354,7 +428,8 @@
   display: block;
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  // 작은 uppercase 캡션은 살짝 벌려야 읽힌다(스킬 §15: 작은 텍스트=양수 tracking).
+  letter-spacing: 0.05em;
   line-height: 1.1;
   margin-top: 18px;
   max-width: 200px;
@@ -379,8 +454,90 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 
-.lab-callout:hover {
-  color: #E1E708;
+// hover 색을 iOS systemGray(#8E8E93)로 통일. 전역 a:hover 밑줄은 제거.
+.lab-callout:hover,
+.lab-callout:focus {
+  color: #8E8E93;
+  text-decoration: none;
+}
+
+// 모든 캡션 제목이 hover/focus 시 확실히 회색이 되도록 span 을 직접 지정
+// (기본색이 검정이든 연두든 관계없이 동일하게 systemGray 로).
+.lab-callout:hover > span,
+.lab-callout:focus > span {
+  color: #8E8E93;
+}
+
+// 클릭/탭(포인터)에는 outline 없음 — 회색 사각형/테두리 제거.
+// 키보드 탐색(:focus-visible)만 접근성용 링 유지.
+.lab-callout:focus {
+  outline: none;
+}
+.lab-callout:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 3px;
+}
+
+// hover 시 캡션 뒤에 반투명 유리 칩 + 살짝 떠오름 (표/탭바 hover 언어와 통일).
+// ::after 를 콘텐츠 뒤(z-index:-1)에 깔아 레이아웃 이동 없이 칩만 페이드 인.
+// about(프로필 버튼 묶음)은 제외 — 각 버튼이 개별 유리라 큰 칩이 깔리면 "통"으로 보임.
+.lab-callout:not(.lab-callout--about)::after {
+  // materialize(스킬 §12): 등장 시 blur+scale을 함께 램프해 "유리가 재질로 도착"하는
+  // 느낌. 쉼 상태는 약한 blur+살짝 축소(scale 0.96) — opacity 0이라 안 보이지만
+  // hover로 전환될 때 blur가 2→8, scale 0.96→1로 올라오며 재질화된다.
+  -webkit-backdrop-filter: blur(2px) saturate(120%);
+  backdrop-filter: blur(2px) saturate(120%);
+  background: rgba(255, 255, 255, 0.4);
+  // border 없이 inset 정반사 림만으로 단일 엣지 (두 줄 방지).
+  border: 0;
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.10),
+    0 6px 16px rgba(0, 0, 0, 0.13);
+  content: "";
+  inset: -16px -30px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: scale(0.96);
+  transition:
+    opacity 280ms var(--lab-ease),
+    transform 280ms var(--lab-ease),
+    box-shadow 280ms var(--lab-ease),
+    -webkit-backdrop-filter 280ms var(--lab-ease),
+    backdrop-filter 280ms var(--lab-ease);
+  z-index: -1;
+}
+
+// hover 시 유리 상자가 떠오르며 재질화된다 (blur 짙어짐 + scale 1로 도착 + 부상).
+.lab-callout:not(.lab-callout--about):hover::after,
+.lab-callout:not(.lab-callout--about):focus-visible::after {
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  opacity: 1;
+  transform: translateY(-3px) scale(1);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+// 누르면 유리 상자가 눌린다 (아래로 내려가며 안쪽 그림자 + 축소). 즉시 반응(스킬 §1):
+// 짧은 duration으로 press가 손에 붙게 한다. 터치엔 hover가 없으므로 blur도 여기서 채운다.
+.lab-callout:not(.lab-callout--about):active::after {
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  opacity: 1;
+  // 유리칩 독립 축소를 없앤다 — 이제 눌림 스케일은 아래 데스크톱 .lab-callout:active(요소 전체)가
+  // 담당해서 글자와 유리가 "함께" 눌린다(따로 놀지 않게). 유리는 재질화만(scale 1).
+  transform: scale(1);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.16),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+  transition:
+    opacity 120ms var(--lab-ease),
+    transform 120ms var(--lab-ease),
+    box-shadow 120ms var(--lab-ease);
 }
 
 // 각 요소(캡션 제목·Profile 링크) 앞에 붙는 작은 동그라미 마커.
@@ -399,6 +556,12 @@
   color: #E1E708;
 }
 
+// 기본이 연두색이라도 hover 시엔 다른 캡션과 동일하게 iOS systemGray 로.
+.lab-callout--multi:hover > span,
+.lab-callout--multi:focus > span {
+  color: #8E8E93;
+}
+
 // 앞의 ● 마커는 글자색과 무관하게 검정 유지(기본·hover 모두).
 .lab-callout--multi > span::before {
   color: var(--lab-ink);
@@ -407,50 +570,119 @@
 .lab-profile-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  // 버튼 사이 간격을 넓혀 각 유리 필이 하나의 띠로 뭉치지 않고 개별로 떠 보이게.
+  gap: 12px;
   margin-left: 0;
   margin-top: 0;
 }
 
 .lab-profile-links a {
-  border: 1px solid var(--lab-ink);
+  // iOS 유리 필(pill): 그리드/이미지 위에 떠 있는 반투명 컨트롤.
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  background: rgba(255, 255, 255, 0.4);
+  // 테두리는 평소엔 투명(정반사 림이 단일 엣지 역할) — hover 때만 초록으로 나타남.
+  border: 1px solid transparent;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.62);
+  // 단일 정반사 하이라이트(위 1px) + 그림자만 — 엣지가 한 줄로 깔끔하게.
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 3px 10px rgba(0, 0, 0, 0.14);
   color: var(--lab-ink);
-  font-size: 12px;
+  font-size: 16px;
+  // uppercase 컨트롤 라벨은 살짝 벌려야 또렷하다.
+  letter-spacing: 0.03em;
   line-height: 1;
-  padding: 4px 9px;
+  padding: 7px 15px;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color 160ms ease, border-color 160ms ease;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color 260ms var(--lab-ease),
+    border-color 260ms var(--lab-ease),
+    box-shadow 260ms var(--lab-ease),
+    background-color 260ms var(--lab-ease),
+    transform 260ms var(--lab-ease);
 }
 
-// hover/focus 시 글씨와 테두리를 이전 "Profile" 제목 초록(#0EEF0F)으로.
+// hover/focus 시 글씨와 테두리를 이전 "Profile" 제목 초록(#0EEF0F)으로,
+// 유리 필이 살짝 떠오르고(translateY) 더 맑아진다.
 .lab-profile-links a:hover,
 .lab-profile-links a:focus {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: #0EEF0F;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    0 8px 20px rgba(0, 0, 0, 0.18);
+  color: #0EEF0F;
+  transform: translateY(-1px);
+}
+
+// 누르면 즉시 눌린다 (스킬 §1). 짧은 duration으로 손에 붙게.
+.lab-profile-links a:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.14),
+    0 2px 6px rgba(0, 0, 0, 0.10);
+  transition:
+    transform 110ms var(--lab-ease),
+    box-shadow 110ms var(--lab-ease);
+}
+
+// 클릭/탭(포인터)에는 outline 없음 — 검은 테두리 제거(초록 border/press 효과만).
+// 키보드(:focus-visible)만 접근성용 링 유지.
+.lab-profile-links a:focus {
+  outline: none;
+}
+.lab-profile-links a:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 3px;
+}
+
+// Profile 버튼만 기본 상태에서도 초록색(hover 없이).
+.lab-profile-links a[href$="/profile/"] {
   border-color: #0EEF0F;
   color: #0EEF0F;
 }
 
 @media (min-width: 821px) {
   .lab-title {
-    // 중앙(50%/50%)에서 좌측·위로 약 1.5cm(≈60px) 이동.
-    left: calc(50% - 60px);
+    // 가로는 무대 정중앙. 세로만 중앙에서 위로 약 1.5cm(≈60px) 올린다
+    // (버튼 줄이 중앙 바로 아래에 붙으므로 덩어리 전체가 중앙을 걸친다).
+    left: 50%;
     top: calc(50% - 60px);
+    // 패럴랙스는 JS spring이 --lab-x/--lab-y를 매 프레임 구동한다.
+    // CSS transition을 걸면 spring과 이중 스무딩으로 싸우므로 두지 않는다
+    // (Apple 스킬 §3: presentation 값에서 이어지도록, gesture 모션에 transition 회피).
     transform: translate(-50%, -50%) translate3d(calc(var(--lab-x) * 8px), calc(var(--lab-y) * 5px), 0);
-    transition: transform 160ms ease-out;
   }
 
   .lab-title h1 {
     font-size: 118px;
+    // 데스크톱은 가장 큰 크기라 살짝 조인다(너무 조이면 갑갑해 보여 -0.02em로 완화).
+    letter-spacing: -0.02em;
   }
 
   .lab-callout {
     --lab-callout-title-size: 72px;
+    // 미세 깊이 패럴랙스(STEP 2): 타이틀(8/5px)보다 작게 움직여 뒤쪽 레이어로
+    // 읽히게 한다. 배치는 그대로 — 포인터에 따라 층별 속도차만 준다 (스킬 §7).
+    // 튜닝 lever: 이 배수(px)를 키우면 앞으로, 줄이면 뒤로 느껴진다.
+    transform: translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0);
+  }
+
+  // 데스크톱: 누르면 유리칩만이 아니라 카드(글자+::after)가 함께 눌린다(따로 놀지 않게).
+  // 파랄랙스 transform 을 유지한 채 press(아래로 살짝+축소)를 합성한다. ::after:active 는
+  // 독립 축소를 없앤 상태라, 이 부모 스케일을 글자와 함께 그대로 따른다. (모바일은 별도 처리)
+  .lab-callout:not(.lab-callout--about):active {
+    transform:
+      translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0)
+      translateY(1px) scale(0.97);
+    transition: transform 120ms var(--lab-ease);
   }
 
   .lab-callout--nlp {
-    left: 20%;
+    left: calc(20% - 2px);
     top: 73.5%;
   }
 
@@ -470,11 +702,12 @@
   }
 
   // 로고(가운데 배치) 바로 아래에 버튼 줄을 가운데 정렬로 둔다.
-  // 로고 중심 x = calc(50% - 60px) ≈ 47% → 같은 x에 맞추고 translateX 로 가운데 정렬.
+  // 로고 중심 x 와 반드시 같은 값이어야 둘이 어긋나지 않는다 (지금은 둘 다 무대 정중앙).
   .lab-callout--about {
-    left: 47%;
-    top: 50%;
-    transform: translateX(-50%);
+    left: 50%;
+    top: calc(50% + 7px);
+    // 가운데 정렬(translateX -50%)에 callout 레이어의 패럴랙스를 덧붙인다.
+    transform: translateX(-50%) translate3d(calc(var(--lab-x) * 3px), calc(var(--lab-y) * 2px), 0);
   }
 
   // 좌상단 상자. 왼쪽 끝이 "All categories"의 오른쪽 끝(s 끝지점, 무대 92.2%)과
@@ -484,6 +717,8 @@
     top: 9%;
     width: 390px;
     height: 370px;
+    // 중간 깊이 레이어: 타이틀(8/5)과 callout(3/2) 사이.
+    transform: translate3d(calc(var(--lab-x) * 5px), calc(var(--lab-y) * 3px), 0);
   }
 }
 
@@ -538,6 +773,8 @@
 
   .lab-title h1 {
     font-size: min(15vw, 64px);
+    // 모바일은 더 작으니 덜 조인다(작을수록 tracking을 완화).
+    letter-spacing: -0.012em;
   }
 
   // 상자: 흐름 내 가운데 정렬 박스(상자 비율 유지). 로고 바로 아래에 온다.
@@ -599,15 +836,73 @@
     width: 58px;
   }
 
-  // 카테고리 캡션 → 세로 카드
+  // 카테고리 캡션 → 세로 유리 카드 (뒤 그리드를 frosted 하게 비추고 정반사 rim).
   .lab-callout {
     position: relative;
     left: auto;
     top: auto;
     display: block;
-    border: 1px solid var(--lab-line);
-    background: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(6px) saturate(150%);
+    backdrop-filter: blur(6px) saturate(150%);
+    background: rgba(255, 255, 255, 0.28);
+    // border 없이 inset 정반사 림만으로 단일 엣지 (두 줄 방지).
+    border: 0;
+    border-radius: 16px;
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.9),
+      inset 0 -1px 1px rgba(0, 0, 0, 0.08),
+      0 6px 18px rgba(0, 0, 0, 0.10);
     padding: 16px 16px 18px;
+  }
+
+  // 모바일은 이미 카드 배경이 있으므로 hover 유리 칩 비활성화
+  // (탭 시 칩이 카드 밖으로 삐져나오는 것 방지).
+  .lab-callout::after {
+    display: none;
+  }
+
+  // 프로필 버튼(about)은 카드로 묶지 않는다 — 각 버튼이 독립 유리 필로만 보이게.
+  .lab-callout--about {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  // 모바일: 카테고리 유리 카드를 탭하면 즉시 눌리는 효과 (iOS 스냅 이징).
+  .lab-callout:not(.lab-callout--about) {
+    transition:
+      transform 120ms var(--lab-ease),
+      box-shadow 120ms var(--lab-ease),
+      color 200ms var(--lab-ease);
+  }
+  .lab-callout:not(.lab-callout--about):active {
+    transform: translateY(1px) scale(0.97);
+    box-shadow:
+      inset 0 1px 3px rgba(0, 0, 0, 0.14),
+      0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  // 스크롤 등장 materialize(STEP 3a, 스킬 §12): 카드가 뷰포트에 들어오면
+  // blur가 걷히고 살짝 떠오르며(translateY) 페이드인 → "재질로 도착"하는 등가.
+  // 숨김 초기 상태는 JS가 붙인 [data-lab-anim]일 때만 적용 → JS 꺼지면 정상 표시.
+  // 등장은 filter/opacity/translateY만 쓴다(스케일은 press(STEP 3b) 몫이라 분리).
+  [data-lab-anim] .lab-callout {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(7px);
+    transition:
+      opacity 520ms var(--lab-ease),
+      transform 520ms var(--lab-ease),
+      filter 520ms var(--lab-ease);
+    will-change: opacity, transform, filter;
+  }
+  [data-lab-anim] .lab-callout.is-materialized {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 
   .lab-callout span {
@@ -625,6 +920,7 @@
   }
 
   .lab-profile-links {
+    justify-content: center;
     margin-left: 0;
     margin-top: 8px;
   }
@@ -639,5 +935,72 @@
   .lab-callout {
     transform: none;
     transition: none;
+  }
+}
+
+// 투명도 줄이기 선호(스킬 §14): 유리 표면을 더 서리 끼거나 불투명하게 만들어
+// 뒤가 비쳐 텍스트 가독성이 떨어지지 않게 한다 — backdrop-filter 제거 + 배경 불투명↑.
+@media (prefers-reduced-transparency: reduce) {
+  .lab-title__glass {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  .lab-callout:not(.lab-callout--about)::after {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.94);
+  }
+  .lab-callout:not(.lab-callout--about):hover::after,
+  .lab-callout:not(.lab-callout--about):focus-visible::after,
+  .lab-callout:not(.lab-callout--about):active::after {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .lab-profile-links a {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  @media (max-width: 820px) {
+    .lab-callout:not(.lab-callout--about) {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background: rgba(255, 255, 255, 0.92);
+    }
+  }
+}
+
+// 고대비 선호(스킬 §14): 거의 불투명한 배경 + 뚜렷한 대비 테두리로 경계를 확정하고,
+// 흐릿한 muted 텍스트를 진하게 올린다.
+@media (prefers-contrast: more) {
+  .lab-profile-links a {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.55);
+  }
+
+  .lab-callout small {
+    color: #3a3a36;
+  }
+
+  .lab-callout:not(.lab-callout--about)::after {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  @media (max-width: 820px) {
+    .lab-callout:not(.lab-callout--about) {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+    }
   }
 }

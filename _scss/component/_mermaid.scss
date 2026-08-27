@@ -1,0 +1,45 @@
+/* Mermaid diagrams
+   ------------------------------------------------
+   `pre.mermaid` is created by _includes/mermaid_support.html from the
+   ```mermaid fences that Kramdown renders as .language-mermaid code blocks.
+   Before mermaid.js swaps in the SVG the element still holds the raw diagram
+   source, so it is hidden to avoid a flash of unstyled definition text. */
+
+pre.mermaid {
+  visibility: hidden;
+  margin: 0 0 1rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  text-align: center;
+  white-space: normal;
+  overflow-x: auto;
+}
+
+pre.mermaid[data-processed="true"] {
+  visibility: visible;
+}
+
+/* Once rendered the SVG is handed to the diagram viewer, which re-parents it
+   into a scaled .dgm__stage; these rules only cover the brief window before
+   that and the CDN-failure fallback below. */
+pre.mermaid svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* CDN unreachable: fall back to showing the diagram source as a code block. */
+pre.mermaid.mermaid--failed {
+  visibility: visible;
+  padding: 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  overflow-x: auto;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  text-align: left;
+}

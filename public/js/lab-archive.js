@@ -5,6 +5,12 @@
     return;
   }
 
+  // 터치 기기 표시. 첫 터치에 has-touch 를 달면 CSS 의 데스크톱 전용 호버 효과
+  // (html:not(.has-touch) …:hover)가 터치 기기에서 고정되지 않는다.
+  document.addEventListener("touchstart", function () {
+    document.documentElement.classList.add("has-touch");
+  }, { passive: true });
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var timeNode = document.querySelector("[data-lab-time]");
   var hero = root.querySelector(".lab-hero");
@@ -87,7 +93,10 @@
       var wPct = (box.offsetWidth / title.offsetWidth) * 100;
       var hPct = (box.offsetHeight / title.offsetHeight) * 100;
       var isMobile = mobileMode.matches;
-      var sideInset = isMobile ? -3 : 2;
+      // 유리 박스가 좌우로 뻗을 수 있는 한계(%). 음수일수록 타이틀 양끝(F·E)을
+      // 더 넘어 덮는다. 데스크톱은 기존 2%라 F·E 끝을 아슬하게 못 덮어서 살짝
+      // 음수로 내려 미세하게 덮게 한다. (튜닝 lever: 더 덮으려면 값을 더 낮춤)
+      var sideInset = isMobile ? -5 : -4;
       var maxLeft = Math.max(sideInset, 100 - sideInset - wPct);
       // 로고 축소에 맞춰 glass가 더 조밀한 중앙 띠 안에서 움직이도록 한다.
       var topMin = isMobile ? 18 : 14;
@@ -124,8 +133,187 @@
     });
   }
 
+  // iOS Safari는 등록된 touch 리스너가 없는 요소에는 :active를 적용하지 않는다.
+  // 빈 touchstart 리스너를 달아 탭 시 유리 press 효과(:active)가 실제로 나오게 한다.
+  // (profile 페이지에서 검증된 패턴을 홈 callout/pill에도 적용.)
+  var pressTargets = root.querySelectorAll(".lab-callout, .lab-profile-links a");
+  Array.prototype.forEach.call(pressTargets, function (el) {
+    el.addEventListener("touchstart", function () {}, { passive: true });
+  });
+
+  // 모바일: 각 카드가 스크롤로 뷰포트에 들어오면 materialize(등장) 시킨다.
+  // 초기 숨김 상태 CSS는 [data-lab-anim]로 게이트되므로, 이 함수가 돌 때만
+  // (모바일 + 모션 허용 + IO 지원) 숨겼다가 순차로 드러낸다. 그 외엔 정상 표시.
+  function initScrollMaterialize() {
+    if (reduceMotion || !mobileMode.matches || !("IntersectionObserver" in window)) {
+      return;
+    }
+    var cards = root.querySelectorAll(".lab-callout");
+    if (!cards.length) {
+      return;
+    }
+    root.setAttribute("data-lab-anim", "");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-materialized");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+    Array.prototype.forEach.call(cards, function (card) {
+      io.observe(card);
+    });
+  }
+
+  // 터치 press를 spring으로 구동(STEP 3b): 누르면 축소, 떼면 velocity를 이어받아
+  // 살짝 overshoot 후 정착(iOS식 물리 press). 터치일 때만 개입하고 마우스는 기존
+  // CSS :active/hover를 그대로 쓴다. JS가 transform을 잡는 동안엔 CSS transition을
+  // 꺼 이중 스무딩을 막고, 정착하면 인라인 스타일을 비워 CSS로 되돌린다.
+  function initPressSpring() {
+    if (reduceMotion || !window.LabSpring || !("PointerEvent" in window)) {
+      return;
+    }
+    var PRESS_RESPONSE = 0.32;   // 낮을수록 스냅
+    var PRESS_DAMPING = 0.55;    // 낮을수록 떼는 순간 더 통통 튐
+    var PRESS_SCALE = 0.94;      // 누른 동안 축소 정도
+    var targets = root.querySelectorAll(".lab-callout:not(.lab-callout--about), .lab-profile-links a");
+
+    Array.prototype.forEach.call(targets, function (el) {
+      var spring = new window.LabSpring({
+        response: PRESS_RESPONSE,
+        dampingRatio: PRESS_DAMPING,
+        value: 1,
+        target: 1
+      });
+      var raf = null;
+      var last = 0;
+
+      function tick(now) {
+        var t = typeof now === "number" ? now : performance.now();
+        var dt = last ? (t - last) / 1000 : 1 / 60;
+        last = t;
+        spring.step(dt);
+        el.style.transform = "scale(" + spring.value.toFixed(4) + ")";
+        if (!spring.isResting()) {
+          raf = window.requestAnimationFrame(tick);
+          return;
+        }
+        raf = null;
+        last = 0;
+        // 손을 뗀 뒤(target 1) 정착했을 때만 CSS로 반환. 누르고 있는 중이면 유지.
+        if (spring.target === 1) {
+          el.style.transform = "";
+          el.style.transition = "";
+        }
+      }
+
+      function start() {
+        if (raf === null) {
+          last = 0;
+          raf = window.requestAnimationFrame(tick);
+        }
+      }
+
+      el.addEventListener("pointerdown", function (event) {
+        if (event.pointerType !== "touch") {
+          return;
+        }
+        el.style.transition = "none";   // JS가 transform 소유
+        spring.target = PRESS_SCALE;
+        start();
+      });
+
+      function release(event) {
+        if (event && event.pointerType && event.pointerType !== "touch") {
+          return;
+        }
+        spring.target = 1;
+        start();
+      }
+
+      el.addEventListener("pointerup", release);
+      el.addEventListener("pointercancel", release);
+      el.addEventListener("pointerleave", release);
+    });
+  }
+
+  // 좌상단 고양이 상자: 모바일(터치)에서 카테고리 버튼과 "동일한" 통통 튀는 스프링 press.
+  // 단 테두리 상자는 고정하고 안쪽 이미지에만 scale 을 준다(image-only). 데스크톱(마우스)은
+  // CSS :active(이미지 살짝 아래로)를 그대로 쓴다. 파라미터는 카테고리 스프링과 같다.
+  function initFigurePressSpring() {
+    if (reduceMotion || !window.LabSpring || !("PointerEvent" in window)) {
+      return;
+    }
+    var fig = root.querySelector(".lab-figure");
+    var img = fig && fig.querySelector(".lab-figure__img");
+    if (!img) {
+      return;
+    }
+    var PRESS_RESPONSE = 0.32; // 카테고리 press 스프링과 동일(스냅)
+    var PRESS_DAMPING = 0.55;  // 낮을수록 떼는 순간 더 통통 튐 (카테고리와 동일)
+    var PRESS_SCALE = 0.94;    // 누른 동안 축소 정도 (카테고리와 동일)
+    var spring = new window.LabSpring({
+      response: PRESS_RESPONSE,
+      dampingRatio: PRESS_DAMPING,
+      value: 1,
+      target: 1
+    });
+    var raf = null;
+    var last = 0;
+
+    function tick(now) {
+      var t = typeof now === "number" ? now : performance.now();
+      var dt = last ? (t - last) / 1000 : 1 / 60;
+      last = t;
+      spring.step(dt);
+      img.style.transform = "scale(" + spring.value.toFixed(4) + ")";
+      if (!spring.isResting()) {
+        raf = window.requestAnimationFrame(tick);
+        return;
+      }
+      raf = null;
+      last = 0;
+      if (spring.target === 1) {
+        img.style.transform = "";
+        img.style.transition = "";
+      }
+    }
+
+    function start() {
+      if (raf === null) {
+        last = 0;
+        raf = window.requestAnimationFrame(tick);
+      }
+    }
+
+    fig.addEventListener("pointerdown", function (event) {
+      if (event.pointerType !== "touch") {
+        return;
+      }
+      img.style.transition = "none"; // JS가 transform 소유
+      spring.target = PRESS_SCALE;
+      start();
+    });
+
+    function release(event) {
+      if (event && event.pointerType && event.pointerType !== "touch") {
+        return;
+      }
+      spring.target = 1;
+      start();
+    }
+
+    fig.addEventListener("pointerup", release);
+    fig.addEventListener("pointercancel", release);
+    fig.addEventListener("pointerleave", release);
+  }
+
   updateTime();
   window.setInterval(updateTime, 30000);
+  initScrollMaterialize();
+  initPressSpring();
+  initFigurePressSpring();
   updateStageScale();
   window.addEventListener("resize", updateStageScale);
   window.addEventListener("load", updateStageScale);
@@ -138,20 +326,35 @@
     return;
   }
 
-  var targetX = 0;
-  var targetY = 0;
-  var currentX = 0;
-  var currentY = 0;
+  // 포인터 패럴랙스: 고정 lerp 대신 진짜 spring으로 구동한다.
+  // X·Y를 독립 spring으로 분해(Apple 스킬 §3) — 두 축 속도가 달라도 desync 없음.
+  // 살짝 under-damped(dampingRatio<1)라 빠르게 움직이면 관성을 이어받아
+  // 미세하게 overshoot 후 정착하고, 포인터가 벗어나면 target 0으로 복귀한다.
+  // 튜닝 lever: PARALLAX_RESPONSE(낮을수록 스냅), PARALLAX_DAMPING(낮을수록 바운스).
+  var PARALLAX_RESPONSE = 0.45;
+  var PARALLAX_DAMPING = 0.75;
+  var Spring = window.LabSpring;
+  var springX = Spring ? new Spring({ response: PARALLAX_RESPONSE, dampingRatio: PARALLAX_DAMPING }) : null;
+  var springY = Spring ? new Spring({ response: PARALLAX_RESPONSE, dampingRatio: PARALLAX_DAMPING }) : null;
   var frameRequested = false;
+  var lastFrameTime = 0;
 
-  function renderPointer() {
-    currentX += (targetX - currentX) * 0.12;
-    currentY += (targetY - currentY) * 0.12;
+  function renderPointer(now) {
+    if (!springX || !springY) {
+      frameRequested = false;
+      return;
+    }
+    var t = typeof now === "number" ? now : performance.now();
+    var dt = lastFrameTime ? (t - lastFrameTime) / 1000 : 1 / 60;
+    lastFrameTime = t;
 
-    root.style.setProperty("--lab-x", currentX.toFixed(3));
-    root.style.setProperty("--lab-y", currentY.toFixed(3));
+    springX.step(dt);
+    springY.step(dt);
 
-    if (Math.abs(targetX - currentX) > 0.001 || Math.abs(targetY - currentY) > 0.001) {
+    root.style.setProperty("--lab-x", springX.value.toFixed(4));
+    root.style.setProperty("--lab-y", springY.value.toFixed(4));
+
+    if (!springX.isResting() || !springY.isResting()) {
       window.requestAnimationFrame(renderPointer);
       return;
     }
@@ -165,22 +368,26 @@
     }
 
     frameRequested = true;
+    lastFrameTime = 0;
     window.requestAnimationFrame(renderPointer);
   }
 
   root.addEventListener("pointermove", function (event) {
-    if (!desktopMode.matches) {
+    if (!desktopMode.matches || !springX || !springY) {
       return;
     }
     var bounds = root.getBoundingClientRect();
-    targetX = (event.clientX - bounds.left) / bounds.width - 0.5;
-    targetY = (event.clientY - bounds.top) / bounds.height - 0.5;
+    springX.target = (event.clientX - bounds.left) / bounds.width - 0.5;
+    springY.target = (event.clientY - bounds.top) / bounds.height - 0.5;
     requestPointerRender();
   });
 
   root.addEventListener("pointerleave", function () {
-    targetX = 0;
-    targetY = 0;
+    if (!springX || !springY) {
+      return;
+    }
+    springX.target = 0;
+    springY.target = 0;
     requestPointerRender();
   });
 

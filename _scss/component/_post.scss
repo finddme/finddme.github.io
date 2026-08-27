@@ -56,6 +56,17 @@ body.post-page {
   --page-gutter: clamp(1.25rem, 6vw, 8rem);
 }
 
+// P3: TOC/헤딩 앵커 클릭 시 부드럽게 스크롤(포스트 페이지에만 스코프).
+// 문서 스크롤 주체는 html이므로 :has로 포스트일 때만 켠다.
+html:has(body.post-page) {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(body.post-page) {
+    scroll-behavior: auto;
+  }
+}
+
 body.post-page .wrap {
   background: #fff;
 }
@@ -110,6 +121,15 @@ body.post-page .masthead-wordmark {
   margin-left: 2rem;
   transform: scaleX(1.12);
   transform-origin: left center;
+}
+
+/* 프로필에서 들어온 포스트의 로고("FindDMe : Profile")는 글자 수가 2배 이상이라
+   한 줄에 들어가도록 조금 줄인다. */
+body.post-page .masthead-wordmark--profile {
+  font-size: 2.3rem;
+  letter-spacing: -0.05em;
+  transform: scaleX(1.04);
+  white-space: nowrap;
 }
 
 body.post-page .container.content {
@@ -228,6 +248,16 @@ body.post-page .post-content article > :first-child {
   margin-top: 0;
 }
 
+// P3: TOC 앵커로 점프 시 헤딩이 뷰포트 최상단에 딱 붙지 않게 여백을 준다.
+body.post-page .post-content h1,
+body.post-page .post-content h2,
+body.post-page .post-content h3,
+body.post-page .post-content h4,
+body.post-page .post-content h5,
+body.post-page .post-content h6 {
+  scroll-margin-top: 1.75rem;
+}
+
 body.post-page .post-toc {
   padding-top: 0;
 }
@@ -261,12 +291,28 @@ body.post-page #markdown-toc a {
   color: #E1E708;
   display: inline-block;
   text-decoration: none;
+  transition: color 150ms ease;
+  // 클릭/탭 시 브라우저 기본 검은 outline·하이라이트가 안 나오게 한다.
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body.post-page #markdown-toc a:hover,
 body.post-page #markdown-toc a:focus {
   color: #0b0b0b;
   text-decoration: none;
+}
+
+// 키보드 탐색(:focus-visible)만 접근성용 은은한 링을 유지한다(마우스 클릭엔 안 보임).
+body.post-page #markdown-toc a:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 2px;
+}
+
+// scroll-spy(P2): 지금 읽는 섹션의 TOC 링크를 "현재"로 표시한다. 기본 노랑·hover
+// 검정과 구분되도록 iOS systemGray(#8E8E93). .is-active 는 JS(post-toc.js)가 토글.
+body.post-page #markdown-toc a.is-active {
+  color: #8E8E93;
 }
 
 body.post-page .post-lab-sheet--project {
@@ -313,6 +359,11 @@ body.post-page .post-lab-sheet--project .post-title {
 @media (max-width: 48em) {
   body.post-page .masthead-wordmark {
     font-size: 2rem;
+  }
+
+  body.post-page .masthead-wordmark--profile {
+    font-size: 1.25rem;
+    margin-left: 1rem;
   }
 
   body.post-page .container.content {
@@ -389,3 +440,106 @@ body.post-page .post-lab-sheet--project .post-title {
 .related-posts li a:hover small {
   color: inherit;
 }
+
+/* ===== Post body tabs (built by public/js/post-tabs.js from "# [Label]" headings) =====
+   Folder-tab style: rounded-top glass tabs sitting on a baseline; selected tab pops up. */
+.post-tabs { margin: 0.4rem 0 0.5rem; }
+
+.post-tabs__list {
+  /* Uniform tab height + nowrap tabs so they wrap cleanly to multiple rows. */
+  --tab-h: 2.4rem;
+  --row-gap: 14px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-end;
+  gap: var(--row-gap);           /* space between tabs and between rows */
+  position: relative;
+  margin-bottom: 1.1rem;
+  max-width: 100%;
+}
+
+.post-tabs__tab {
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.92rem;
+  line-height: 1;
+  color: #8E8E93;
+  height: var(--tab-h);
+  box-sizing: border-box;
+  padding: 0 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  position: relative;
+  /* rounded-top rectangle on the baseline, with a glass/translucent 3D edge:
+     faint rim + soft top sheen (same depth language as the mobile category tabs) */
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-bottom: 0;
+  border-radius: 16px 16px 0 0;
+  background: rgba(255, 255, 255, 0.42);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.85),
+    inset 0 -6px 10px -6px rgba(0, 0, 0, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 120ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+/* hover: 살짝 떠오름 + 밝아짐 + 그림자 강화. hover 가능한 기기에만 적용해
+   터치 탭 시 눌러붙는 hover 잔상을 막는다. (기존 tab transition을 그대로 타 애니됨) */
+@media (hover: hover) and (pointer: fine) {
+  .post-tabs__tab:hover {
+    background: rgba(255, 255, 255, 0.58);
+    transform: translateY(-2px);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.9),
+      0 6px 14px rgba(0, 0, 0, 0.12);
+  }
+  /* 선택 탭은 이미 -3px 떠 있으니 hover 시 더 올려서 반응한다. */
+  .post-tabs__tab[aria-selected="true"]:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.95),
+      0 11px 20px rgba(0, 0, 0, 0.17);
+  }
+}
+
+.post-tabs__tab:active { transform: translateY(1px); }
+
+/* 모바일(터치): 웹은 hover 리프트로 반응이 보이지만 터치엔 hover 신호가 없어 눌림이 거의 안 보인다.
+   터치 기기에서만 press 를 또렷하게(살짝 내려가며 축소). 웹(hover:hover, pointer:fine)은 기존 그대로. */
+@media (hover: none) and (pointer: coarse) {
+  .post-tabs__tab:active {
+    transform: translateY(2px) scale(0.96);
+    transition: transform 130ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+}
+
+.post-tabs__tab:focus-visible {
+  outline: 2px solid rgba(142, 142, 147, 0.55);
+  outline-offset: 2px;
+}
+
+/* selected tab: tinted glass (color fill) — glassy sheen on top fading into the
+   brand accent, popped up with a stronger edge + shadow. */
+.post-tabs__tab[aria-selected="true"] {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(225, 231, 8, 0.22) 100%);
+  border-color: rgba(150, 155, 0, 0.28);
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    0 8px 16px rgba(0, 0, 0, 0.15);
+  color: #8E8E93;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.post-tabs__panel[hidden] { display: none; }

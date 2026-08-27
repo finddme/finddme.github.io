@@ -1,0 +1,351 @@
+<!-- Diagram viewer.
+     Large diagrams (mermaid SVGs, embedded architecture iframes) are far wider
+     than the post column. Rendering them at natural size with scrollbars means a
+     phone only ever shows a useless sliver, so instead every diagram is scaled
+     down to fit the column and a fullscreen pan/zoom overlay carries the detail.
+
+     A diagram registers itself either by carrying .diagram-embed markup in the
+     post source (iframe case) or by being announced through the
+     `mermaid:rendered` event that _includes/mermaid_support.html fires. -->
+<script>
+(function () {
+  'use strict';
+
+  var MIN_SCALE = 0.2, MAX_SCALE = 12;
+  var figures = [];
+
+  /* ------------------------------------------------------------------ *
+   * In-flow figures                                                     *
+   * ------------------------------------------------------------------ */
+
+  // Wraps `content` in the frame/stage pair the scaling relies on: the frame is
+  // the column-width window, the stage is a natural-size layer scaled inside it.
+  function build(content, kind, w, h) {
+    var fig = document.createElement('figure');
+    fig.className = 'dgm dgm--' + kind;
+    fig.dataset.dgmKind = kind;
+    fig.dataset.dgmW = w;
+    fig.dataset.dgmH = h;
+
+    var frame = document.createElement('div');
+    frame.className = 'dgm__frame';
+    var stage = document.createElement('div');
+    stage.className = 'dgm__stage';
+    stage.style.width = w + 'px';
+    stage.style.height = h + 'px';
+
+    stage.appendChild(content);
+    frame.appendChild(stage);
+    fig.appendChild(frame);
+
+    var expand = document.createElement('button');
+    expand.type = 'button';
+    expand.className = 'dgm__expand';
+    expand.innerHTML = '<span aria-hidden="true">⤡</span> 확대해서 보기';
+    fig.appendChild(expand);
+
+    frame.addEventListener('click', function () { open(fig); });
+    expand.addEventListener('click', function () { open(fig); });
+
+    figures.push(fig);
+    if (observer) observer.observe(frame);
+    return fig;
+  }
+
+  function fit(fig) {
+    var w = +fig.dataset.dgmW, h = +fig.dataset.dgmH;
+    if (!w || !h) return;
+    var frame = fig.querySelector('.dgm__frame');
+    var avail = frame.clientWidth;
+    // A diagram inside an inactive tab panel measures 0; the observer below will
+    // call back once the panel is shown and the width is real.
+    if (!avail) return;
+    var k = Math.min(1, avail / w);
+    fig.querySelector('.dgm__stage').style.transform = 'scale(' + k + ')';
+    frame.style.height = Math.round(h * k) + 'px';
+    // Below roughly half size the labels are decoration, not text — say so.
+    fig.classList.toggle('is-tiny', k < 0.55);
+  }
+
+  function fitAll() { figures.forEach(fit); }
+
+  // Re-fit on width changes only. fit() writes frame.style.height, which would
+  // otherwise feed straight back into the observer.
+  var observer = window.ResizeObserver ? new ResizeObserver(function (entries) {
+    entries.forEach(function (entry) {
+      var fig = entry.target.closest('.dgm');
+      if (!fig) return;
+      var w = Math.round(entry.contentRect.width);
+      if (fig._dgmWidth === w) return;
+      fig._dgmWidth = w;
+      fit(fig);
+    });
+  }) : null;
+
+  /* ------------------------------------------------------------------ *
+   * Sources                                                             *
+   * ------------------------------------------------------------------ */
+
+  // mermaid_support.html hands over each <pre class="mermaid"> once its SVG is in
+  // place. The SVG is sized only by viewBox, so that is where natural size comes from.
+  function adoptMermaid(pre) {
+    var svg = pre.querySelector('svg');
+    var vb = svg && svg.getAttribute('viewBox');
+    if (!vb) return;
+    var parts = vb.split(/[ ,]+/);
+    var w = Math.ceil(parseFloat(parts[2])), h = Math.ceil(parseFloat(parts[3]));
+    if (!(w > 0 && h > 0)) return;
+
+    svg.removeAttribute('style');
+    svg.setAttribute('width', w);
+    svg.setAttribute('height', h);
+
+    var fig = build(svg, 'mermaid', w, h);
+    fig.dataset.dgmSvg = svg.outerHTML;
+    pre.parentNode.replaceChild(fig, pre);
+    fit(fig);
+  }
+
+  // The iframe content is a fixed-width document, so its natural size has to be
+  // measured from the inside. The iframe is created *inside* the stage rather
+  // than moved into it: re-parenting an iframe reloads it and would throw away
+  // the measurement we just made.
+  function adoptEmbed(box) {
+    var src = box.dataset.diagramSrc ||
+      (box.querySelector('iframe') && box.querySelector('iframe').getAttribute('src'));
+    if (!src) return;
+    var natural = +box.dataset.diagramWidth || 1400;
+    var title = (box.querySelector('iframe') || {}).title || '구조도';
+
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('title', title);
+    iframe.style.width = natural + 'px';
+    iframe.style.height = Math.round(natural * 0.75) + 'px';   // provisional
+
+    var fig = build(iframe, 'embed', natural, Math.round(natural * 0.75));
+    fig.dataset.dgmSrc = src;
+    box.parentNode.replaceChild(fig, box);
+
+    // An overflow-x:auto container inside the document absorbs its own overflow,
+    // so documentElement.scrollWidth stays at the viewport width and reports a
+    // document as fitting when it does not. Ask the scrollers themselves.
+    function shortfall(doc) {
+      var need = doc.documentElement.scrollWidth - doc.documentElement.clientWidth;
+      var els = doc.querySelectorAll('*');
+      for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        var overflow = doc.defaultView.getComputedStyle(el).overflowX;
+        if (overflow !== 'auto' && overflow !== 'scroll') continue;
+        var d = el.scrollWidth - el.clientWidth;
+        if (d > need) need = d;
+      }
+      return Math.max(0, Math.ceil(need));
+    }
+
+    var tries = 0;
+    function measure() {
+      var doc;
+      try { doc = iframe.contentDocument; } catch (e) { doc = null; }
+      // An iframe starts on about:blank, which already reports readyState
+      // "complete"; measuring there yields the viewport height, not the content.
+      var ready = doc && doc.body && doc.location && doc.location.href !== 'about:blank';
+      var h = ready ? Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight) : 0;
+
+      // A body that has not been laid out yet reports exactly the viewport
+      // height. Treat that as "not ready" and come back for it.
+      if (!h || Math.abs(h - iframe.clientHeight) < 2) {
+        if (tries++ < 20) return setTimeout(measure, 150);
+        return;
+      }
+
+      // Widening can uncover more overflow a level down, so settle it in a loop,
+      // then take the height at the width the diagram actually ends up with.
+      var w = natural;
+      for (var pass = 0; pass < 4; pass++) {
+        iframe.style.width = w + 'px';
+        var need = shortfall(doc);
+        if (!need) break;
+        w += need;
+      }
+      h = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+
+      iframe.style.height = h + 'px';
+      fig.dataset.dgmW = w;
+      fig.dataset.dgmH = h;
+      var stage = fig.querySelector('.dgm__stage');
+      stage.style.width = w + 'px';
+      stage.style.height = h + 'px';
+      fig._dgmWidth = null;
+      fit(fig);
+    }
+
+    iframe.addEventListener('load', function () {
+      var doc = iframe.contentDocument;
+      // Wait for webfonts before measuring: the diagram's header reflows when
+      // Instrument Serif lands, which changes the height.
+      if (doc && doc.fonts && doc.fonts.ready) doc.fonts.ready.then(measure, measure);
+      else measure();
+    });
+    iframe.src = src;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Fullscreen pan/zoom overlay                                         *
+   * ------------------------------------------------------------------ */
+
+  var ov = null, ovStage = null, view = null, pointers = new Map(), drag = null;
+
+  function apply() {
+    ovStage.style.transform =
+      'translate(' + view.tx + 'px,' + view.ty + 'px) scale(' + view.s + ')';
+  }
+
+  function reset(w, h) {
+    var vw = ov.clientWidth, vh = ov.clientHeight - 56;
+    // Fitting the whole diagram into the viewport would open a tall diagram
+    // *smaller* than it already was in the post, so fit to width (never past
+    // 1:1) and let the reader pan down instead.
+    var k = Math.max(Math.min(vw / w, vh / h) * 0.94, Math.min(1, vw * 0.96 / w));
+    var sh = h * k;
+    view = {
+      s: k,
+      tx: (vw - w * k) / 2,
+      ty: sh < vh ? 56 + (vh - sh) / 2 : 56 + 8,
+      fit: k
+    };
+    apply();
+  }
+
+  function zoomAt(factor, px, py) {
+    var s = Math.min(MAX_SCALE, Math.max(MIN_SCALE, view.s * factor));
+    factor = s / view.s;
+    view.tx = px - (px - view.tx) * factor;
+    view.ty = py - (py - view.ty) * factor;
+    view.s = s;
+    apply();
+  }
+
+  // The overlay never adopts the in-flow node: reparenting an iframe reloads it,
+  // and a clone keeps the page copy untouched while we pan and zoom this one.
+  function contentFor(fig) {
+    if (fig.dataset.dgmKind === 'embed') {
+      var f = document.createElement('iframe');
+      f.src = fig.dataset.dgmSrc;
+      f.setAttribute('title', '구조도 확대 보기');
+      f.style.width = fig.dataset.dgmW + 'px';
+      f.style.height = fig.dataset.dgmH + 'px';
+      f.style.border = '0';
+      return f;
+    }
+    var holder = document.createElement('div');
+    holder.innerHTML = fig.dataset.dgmSvg;
+    return holder.firstChild;
+  }
+
+  function close() {
+    if (!ov) return;
+    document.removeEventListener('keydown', onKey);
+    ov.remove();
+    ov = null; ovStage = null; view = null;
+    pointers.clear(); drag = null;
+    document.body.classList.remove('dgm-locked');
+  }
+
+  function onKey(e) { if (e.key === 'Escape') close(); }
+
+  function open(fig) {
+    if (ov) return;
+    var w = +fig.dataset.dgmW, h = +fig.dataset.dgmH;
+
+    ov = document.createElement('div');
+    ov.className = 'dgm-fs';
+    ov.innerHTML =
+      '<div class="dgm-fs__bar">' +
+        '<span class="dgm-fs__hint">두 손가락으로 확대 / 드래그로 이동</span>' +
+        '<button type="button" class="dgm-fs__close" aria-label="닫기">✕</button>' +
+      '</div>' +
+      '<div class="dgm-fs__canvas"><div class="dgm-fs__stage"></div></div>';
+
+    ovStage = ov.querySelector('.dgm-fs__stage');
+    ovStage.style.width = w + 'px';
+    ovStage.style.height = h + 'px';
+    ovStage.appendChild(contentFor(fig));
+
+    document.body.appendChild(ov);
+    document.body.classList.add('dgm-locked');
+    reset(w, h);
+
+    ov.querySelector('.dgm-fs__close').addEventListener('click', close);
+    document.addEventListener('keydown', onKey);
+
+    var canvas = ov.querySelector('.dgm-fs__canvas');
+    canvas.addEventListener('click', function (e) { if (e.target === canvas) close(); });
+
+    canvas.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      zoomAt(Math.pow(0.998, e.deltaY), e.clientX, e.clientY);
+    }, { passive: false });
+
+    canvas.addEventListener('dblclick', function (e) {
+      e.preventDefault();
+      if (view.s > view.fit * 1.2) reset(w, h);
+      else zoomAt(2.5 / (view.s / view.fit), e.clientX, e.clientY);
+    });
+
+    canvas.addEventListener('pointerdown', function (e) {
+      canvas.setPointerCapture(e.pointerId);
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      drag = null;
+    });
+
+    canvas.addEventListener('pointermove', function (e) {
+      if (!pointers.has(e.pointerId)) return;
+      e.preventDefault();
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      var pts = Array.from(pointers.values());
+
+      if (pts.length >= 2) {
+        // Pinch: the midpoint stays put while the spread drives the scale.
+        var dx = pts[0].x - pts[1].x, dy = pts[0].y - pts[1].y;
+        var dist = Math.hypot(dx, dy);
+        var mid = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 };
+        if (drag && drag.dist) {
+          zoomAt(dist / drag.dist, mid.x, mid.y);
+          view.tx += mid.x - drag.mid.x;
+          view.ty += mid.y - drag.mid.y;
+          apply();
+        }
+        drag = { dist: dist, mid: mid };
+        return;
+      }
+
+      if (drag && drag.single) {
+        view.tx += pts[0].x - drag.single.x;
+        view.ty += pts[0].y - drag.single.y;
+        apply();
+      }
+      drag = { single: { x: pts[0].x, y: pts[0].y } };
+    });
+
+    function release(e) { pointers.delete(e.pointerId); drag = null; }
+    canvas.addEventListener('pointerup', release);
+    canvas.addEventListener('pointercancel', release);
+  }
+
+  /* ------------------------------------------------------------------ */
+
+  document.addEventListener('mermaid:rendered', function (e) { adoptMermaid(e.detail.el); });
+
+  function start() {
+    Array.prototype.forEach.call(document.querySelectorAll('.diagram-embed'), adoptEmbed);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
+
+  var t;
+  window.addEventListener('resize', function () {
+    clearTimeout(t);
+    t = setTimeout(fitAll, 120);
+  });
+})();
+</script>

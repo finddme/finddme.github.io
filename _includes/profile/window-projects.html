@@ -5,7 +5,8 @@
 
 {% if src_type == "collection" %}
   {% assign rows = site.collections | where: "label", src_name | first %}
-  {% assign items = rows.docs | sort: "date" | reverse %}
+  {% comment %} Skip assets that live in the collection but are not entries. {% endcomment %}
+  {% assign items = rows.docs | where_exp: "doc", "doc.hidden != true" | sort: "date" | reverse %}
 {% elsif src_type == "category" %}
   {% assign items = site.categories[src_name] %}
 {% endif %}
@@ -26,18 +27,24 @@
     {% for item in items %}
       {% assign href = item.link | default: item.url %}
       {% capture href_url %}{% if href contains '://' %}{{ href }}{% else %}{{ site.baseurl }}{{ href }}{% endif %}{% endcapture %}
+      {% comment %} Internal links carry where they came from, so the post's masthead can
+           link back to this profile window instead of the blog home. {% endcomment %}
+      {% assign href_out = href_url | strip %}
+      {% if href contains '://' or href contains 'mailto:' %}{% else %}
+        {% assign href_out = href_out | append: '?from=profile&amp;win=' | append: include.win_id %}
+      {% endif %}
       {% if is_profile_project %}
         <div class="archive-sheet__row{% if item.thumbnail %} archive-sheet__row--has-image{% else %} archive-sheet__row--no-image{% endif %}{% if item.summary %} mac-projects__row--has-summary{% endif %}">
           <span class="archive-sheet__index">{{ forloop.index }}</span>
           <span class="archive-sheet__thumb" aria-hidden="true">
             {% if item.thumbnail %}
-              <a class="mac-projects__thumb-link" href="{{ href_url | strip }}" tabindex="-1" aria-hidden="true">
+              <a class="mac-projects__thumb-link" href="{{ href_out }}" tabindex="-1" aria-hidden="true">
                 <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" loading="lazy">
               </a>
             {% endif %}
           </span>
           <span class="archive-sheet__title">
-            <a class="mac-projects__title-link" href="{{ href_url | strip }}">
+            <a class="mac-projects__title-link" href="{{ href_out }}">
               <span class="mac-projects__title-text">{{ item.title }}</span>
             </a>
             {% if item.summary %}
@@ -49,7 +56,7 @@
       {% else %}
         <a
           class="archive-sheet__row{% if item.thumbnail %} archive-sheet__row--has-image{% else %} archive-sheet__row--no-image{% endif %}"
-          href="{{ href_url | strip }}"
+          href="{{ href_out }}"
         >
           <span class="archive-sheet__index">{{ forloop.index }}</span>
           <span class="archive-sheet__thumb" aria-hidden="true">

@@ -16,9 +16,11 @@ $desktop-accent: #E1E708;
   overflow: hidden;
   background: #fff;
   color: #111;
+  // iOS 스냅 이징(다른 화면들과 동일). 창 열기/닫기·다크 전환 등에 사용.
+  --mac-ease: cubic-bezier(0.32, 0.72, 0, 1);
   transition:
-    background-color 180ms ease,
-    color 180ms ease;
+    background-color 220ms var(--mac-ease),
+    color 220ms var(--mac-ease);
 }
 .desktop--dark {
   background: #1c1c1e;
@@ -29,7 +31,7 @@ $desktop-accent: #E1E708;
 .desktop__left {
   position: relative;
   z-index: 2;
-  max-width: 380px;
+  max-width: 420px;
 }
 
 .desktop__intro { margin: 0; }
@@ -37,7 +39,7 @@ $desktop-accent: #E1E708;
 
 .desktop__menu {
   margin-top: 1.6rem;
-  width: 230px;
+  width: 259px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -50,21 +52,47 @@ $desktop-accent: #E1E708;
   background: transparent;
   border: 2.5px solid $desktop-accent;
   border-radius: 4px;
-  padding: 0.5rem 1.15rem;
+  padding: 0.56rem 1.29rem;
   font: inherit;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease;
+  transition: background 0.15s ease, transform 0.14s ease, box-shadow 0.16s ease;
 }
-.desktop__menu-item:hover { background: rgba(225,231,8,0.30); }
-.desktop__menu-item:active { transform: translateY(1px); }
+/* Official Projects는 항상 강조(hover 아님). hover 하이라이트는 "터치가 아닌" 기기에만
+   적용 → 터치로 탭했을 때 hover가 눌러붙어 색이 안 빠지는 문제 방지(S펜 기기 포함).
+   실제 터치 발생 시 JS가 html.has-touch를 붙여 아래 hover를 끈다. */
+.desktop__menu-item[data-mac-open="win-official"] { background: rgba(225,231,8,0.30); }
+/* hover 시 살짝 떠오름(홈의 Profile/GitHub/Email 필 버튼과 동일 언어) */
+html:not(.has-touch) .desktop__menu-item:hover {
+  background: rgba(225,231,8,0.30);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.12);
+}
+.desktop__menu-item:active { transform: translateY(2px); }
+/* 데스크톱: hover 떠오름 상태에서 누르면 눌리도록(명시도로 hover 리프트 위에) */
+html:not(.has-touch) .desktop__menu-item:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
 .desktop--dark .desktop__menu-item {
   border-width: 1px;
   border-color: #F9FB97;
   color: #f5f5f7;
 }
-.desktop--dark .desktop__menu-item:hover {
+.desktop--dark .desktop__menu-item[data-mac-open="win-official"] {
   background: rgba(249,251,151,0.16);
+}
+html:not(.has-touch) .desktop--dark .desktop__menu-item:hover {
+  background: rgba(249,251,151,0.16);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+}
+/* 위 다크 hover 는 .desktop--dark 가 붙어 라이트용 :active 짝(위)보다 명시도가 한 단계
+   높다. 그래서 다크에선 눌러도 hover 리프트가 이겨 눌림이 안 보였다 → 다크용 :active 를
+   따로 둔다. 그림자도 같은 이유로 밀리므로 함께 낮춰야 눌린 느낌이 완성된다. */
+html:not(.has-touch) .desktop--dark .desktop__menu-item:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.35);
 }
 
 /* Top-right image file list (each opens an image window) */
@@ -86,13 +114,20 @@ $desktop-accent: #E1E708;
   padding: 0;
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #5a4bb2;
   text-decoration: underline;
+  transition: color 0.15s ease, transform 0.14s ease;
 }
-.desktop__file:hover { color: #E1E708; }
+html:not(.has-touch) .desktop__file:hover { color: #E1E708; transform: translateY(-1px); }
+.desktop__file:active { transform: translateY(2px); }
 .desktop--dark .desktop__file { color: #b8a7ff; }
-.desktop--dark .desktop__file:hover { color: #E1E708; }
+html:not(.has-touch) .desktop--dark .desktop__file:hover { color: #E1E708; transform: translateY(-1px); }
+/* 데스크톱에선 누를 때도 hover 상태라, 위 hover 규칙이 명시도로 :active(0,2,0)를 이겨
+   눌림이 안 보였다. 메뉴 버튼처럼 hover 와 같은 명시도의 :active 를 뒤에 둬서 덮는다.
+   다크 hover 는 한 단계 더 강하므로(.desktop--dark) 다크용도 따로 필요. */
+html:not(.has-touch) .desktop__file:active { transform: translateY(1px); }
+html:not(.has-touch) .desktop--dark .desktop__file:active { transform: translateY(1px); }
 
 /* Image windows */
 .mac-window--image .mac-window__body { padding: 0.75rem; }
@@ -120,7 +155,33 @@ $desktop-accent: #E1E708;
   outline: 2px solid $desktop-accent;
   outline-offset: 4px;
 }
-.desktop__art img { display: block; width: 82%; height: auto; margin: auto; }
+.desktop__art img {
+  display: block; width: 82%; height: auto; margin: auto;
+  /* hover 는 기존 0.16s 유지. 누르는 순간(:active)만 아래에서 느긋한 ease 로 덮는다. */
+  transition: transform 0.16s ease, filter 0.18s ease;
+}
+/* hover 시 상자(테두리)는 고정, 안의 이미지만 살짝 떠오른다(+ 드롭섀도로 뜬 느낌).
+   모바일에선 has-touch 게이팅으로 미적용. */
+html:not(.has-touch) .desktop__art:hover img {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 5px 9px rgba(0,0,0,0.16));
+}
+html:not(.has-touch) .desktop--dark .desktop__art:hover img {
+  transform: translateX(13%) translateY(-3px);   /* 다크 이미지의 기존 translateX 보존 */
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.42));
+}
+/* 데스크톱: 누르면 다른 버튼처럼 이미지만 살짝 눌린다(hover 리프트 위에 명시도로 덮음).
+   누르는 순간만 0.3s 로 느긋하게(hover 0.16s 와 분리). 터치는 JS 스프링이 담당. */
+html:not(.has-touch) .desktop__art:active img {
+  transform: translateY(2px);
+  filter: none;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+html:not(.has-touch) .desktop--dark .desktop__art:active img {
+  transform: translateX(13%) translateY(2px);
+  filter: none;
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
 .desktop--dark .desktop__art {
   border-width: 1px;
   border-color: #F9FB97;
@@ -147,11 +208,44 @@ $desktop-accent: #E1E708;
   background: #fff;
   border: 1px solid #b7b7b7;
   border-radius: 8px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+  // 비포커스(inactive) 기본 그림자 — 옅게. 포커스/드래그 시 아래에서 깊어진다(PR2).
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
   overflow: hidden;
   pointer-events: auto;
+  // 열기/닫기 materialize(PR1)와 포커스/드래그 그림자 전환(PR2). drag/resize는
+  // left/top·width/height를 쓰므로 transform은 이 애니 전용이라 충돌 없음.
+  transition:
+    transform 420ms var(--mac-ease),
+    opacity 380ms var(--mac-ease),
+    box-shadow 200ms var(--mac-ease);
 }
 .mac-window[hidden] { display: none; }
+
+/* 포커스(앞으로 온) 창은 더 깊은 그림자, 드래그 중엔 가장 깊게 — macOS식 위계(PR2). */
+.mac-window--focused { box-shadow: 0 22px 54px rgba(0,0,0,0.30); }
+.mac-window--dragging { box-shadow: 0 34px 72px rgba(0,0,0,0.40); }
+
+/* 열기 직전/닫기 도중의 축소·투명 상태(JS가 토글). 창이 살짝 작아졌다 도착. */
+/* 이미지(우측 *.jpeg) 창: 중앙에서 살짝 축소 + 아래서 올라옴(기존 유지). */
+.mac-window--collapsed {
+  opacity: 0;
+  transform: scale(0.82) translateY(16px);
+  pointer-events: none;
+}
+
+/* 메뉴(좌측 skills~email) 창: 클릭한 버튼에서 자라나듯 — JS가 transform-origin을
+   버튼 위치로 잡고, 여기서 더 작은 scale로 시작해 origin에서 펼쳐진다. */
+.mac-window--grow {
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mac-window { transition: none; }
+  .mac-window--collapsed,
+  .mac-window--grow { transform: none; }
+}
 
 /* Skills window opens just tall enough for the compact skill rows */
 #win-skills {
@@ -206,9 +300,11 @@ $desktop-accent: #E1E708;
 .desktop--dark .mac-window {
   background: #1f1f21;
   border-color: #4a4a4d;
-  box-shadow: 0 20px 56px rgba(0,0,0,0.68);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.5);
   color: #f5f5f7;
 }
+.desktop--dark .mac-window--focused { box-shadow: 0 24px 60px rgba(0,0,0,0.72); }
+.desktop--dark .mac-window--dragging { box-shadow: 0 36px 82px rgba(0,0,0,0.82); }
 .desktop--dark .mac-window__bar {
   background: linear-gradient(#3a3a3c, #2c2c2e);
   border-bottom-color: #505054;
@@ -229,11 +325,13 @@ $desktop-accent: #E1E708;
 .desktop--dark .mac-bloglinks__item a {
   color: #b8a7ff;
 }
-.desktop--dark .mac-bloglinks__item a:hover {
+html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
   color: #d8ceff;
 }
 .desktop--dark .mac-skills__chip {
-  background: #2c2c2e;
+  // 다크 데스크톱: 어두운 창에 투명하게 — 밝은 윤곽선 + 밝은 글씨.
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.16);
   color: #f5f5f7;
 }
 .desktop--dark .mac-projects--profile-project .archive-sheet__row,
@@ -241,9 +339,15 @@ $desktop-accent: #E1E708;
   background: rgba(31,31,33,0.92);
   border-bottom-color: #3a3a3c;
 }
-.desktop--dark .mac-projects--profile-project .archive-sheet__row:hover,
+/* 라이트용 얼룩무늬(:nth-of-type(even) → #f6f6f6)는 위 다크 규칙과 명시도가 같은데(0,3,0)
+   소스상 뒤에 있어서 다크에서도 이겼다 → 짝수 행만 흰 배경이 됐다. 다크용 얼룩을 따로
+   준다. 기본(31,31,33)과 hover(44,44,46) 사이 값이라 hover 피드백도 그대로 구분된다. */
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:nth-of-type(even) {
+  background: rgba(38,38,40,0.92);
+}
 .desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-visible,
-.desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-within {
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:focus-within,
+.desktop--dark .mac-projects--profile-project .archive-sheet__row.mac-projects__row--hover {
   background: rgba(44,44,46,0.96);
 }
 .desktop--dark .mac-projects .archive-sheet__index,
@@ -258,6 +362,18 @@ $desktop-accent: #E1E708;
 }
 .desktop--dark .mac-projects .archive-sheet__row::after {
   border-color: transparent;
+}
+/* 썸네일 칸의 김서림 베일(.archive-sheet__thumb::before)은 웜화이트 rgba(248,247,243,0.28)
+   이라 라이트에선 행 위에 얹혀도 #fff→#fdfdfc 로 행 색과 구분이 안 갔다. 다크에선 같은
+   베일이 #1f1f21→#5c5b5c 회색 블록으로 떠서, 썸네일 없는 칸만 밝게 도드라졌다.
+   베일 색을 --arch-thumb-veil 변수로 갈아끼운다. 여기서 background 를 직접 덮으면
+   defog 규칙(:focus-visible/:hover 에서 베일을 걷는, 명시도 (0,2,0))을 이겨버려
+   다크에서 김서림이 안 걷히는 새 버그가 생긴다 — 변수는 명시도 싸움을 만들지 않는다. */
+.desktop--dark .mac-projects {
+  --arch-thumb-veil: rgba(24,24,26,0.28);   /* 이미지 있는 칸: 김서림 유지하되 어두운 톤 */
+}
+.desktop--dark .mac-projects .archive-sheet__row--no-image {
+  --arch-thumb-veil: transparent;           /* 이미지 없는 칸: 행 배경 그대로 (라이트와 같은 인상) */
 }
 /* keep project/dev-log title links the same blue as light mode (not visited purple) */
 .desktop--dark .mac-projects a,
@@ -282,7 +398,9 @@ $desktop-accent: #E1E708;
 .mac-skills__chip {
   display: flex; align-items: center; gap: 0.4rem;
   min-width: 0;
-  background: #1c1c1e; color: #fff;
+  // 고스트 칩: 흰 창에 거의 투명하게 녹아들고 윤곽선 + 어두운 글씨만.
+  background: rgba(0, 0, 0, 0.045); color: #1c1c1e;
+  border: 1px solid rgba(0, 0, 0, 0.14);
   border-radius: 10px; padding: 0.52rem 0.68rem;
   font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 0.74rem; font-weight: 600;
@@ -307,9 +425,14 @@ $desktop-accent: #E1E708;
 .mac-bloglinks__item a {
   color: #5a4bb2;
   text-decoration: underline;
+  display: inline-block;
+  outline: none;
 }
+.mac-bloglinks__item a:focus,
+.mac-bloglinks__item a:focus-visible { outline: none; }
+.mac-bloglinks__item a:active { transform: translateY(2px); }
 .mac-bloglinks__item a:visited { color: #6d42a8; }
-.mac-bloglinks__item a:hover { color: #34258f; }
+html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
 
 .mac-projects__empty { color: #888; font-size: 0.9rem; }
 
@@ -325,10 +448,55 @@ $desktop-accent: #E1E708;
 /* Profile-only project previews. Keeps shared archive-sheet pages unchanged. */
 .mac-projects--profile-project {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+
+  /* Subtly-visible glass/translucent frame; corner rounding matches the
+     _posts table (.archive-sheet__sections uses 0.5rem). _posts untouched. */
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  border: 1px solid rgba(20, 20, 20, 0.16);
+  border-radius: 0.5rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+}
+
+/* Dark desktop: flip the glass rim to a light translucent hairline. */
+.desktop--dark .mac-projects--profile-project {
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 .mac-projects--profile-project .archive-sheet__row {
   transition:
     background-color 160ms ease;
+}
+
+/* Solid white table surface for profile project previews (overrides the shared
+   translucent archive rows). Dark desktop keeps its own darker rows above. */
+.mac-projects--profile-project .archive-sheet__row {
+  background: #ffffff;
+}
+.mac-projects--profile-project .archive-sheet__row:nth-of-type(even) {
+  background: #f6f6f6;
+}
+.mac-projects--profile-project .archive-sheet__row:focus-visible,
+.mac-projects--profile-project .archive-sheet__row:focus-within,
+.mac-projects--profile-project .archive-sheet__row.mac-projects__row--hover {
+  background: #eef0f2;
+}
+/* 터치 press 순간 피드백(모든 프로젝트 행). nth-of-type(even)·기본 배경보다 뒤에
+   와서 눌릴 때만 회색이 뜨고 손 떼면 원래색으로 복귀. 열림(--open)은 배경을 안 바꾸고
+   설명만 편다(지속 회색 제거). */
+.mac-projects--profile-project .archive-sheet__row:active {
+  background: #e6e8eb;
+  /* 색 변경에 더해 iOS 리스트 셀처럼 살짝 눌리는 모션(웹·모바일 공통). 넓은 행이라 축소는 미세하게. */
+  transform: scale(0.985);
+  transition: transform 110ms var(--mac-ease), background-color 110ms var(--mac-ease);
+}
+.desktop--dark .mac-projects--profile-project .archive-sheet__row:active {
+  background: rgba(58,58,61,0.96);
 }
 .mac-projects--profile-project .archive-sheet__title {
   align-items: flex-start;
@@ -337,9 +505,10 @@ $desktop-accent: #E1E708;
   justify-content: center;
   text-align: left;
 }
-.mac-projects--profile-project .mac-projects__row--has-summary:hover .archive-sheet__title,
 .mac-projects--profile-project .mac-projects__row--has-summary:focus-visible .archive-sheet__title,
-.mac-projects--profile-project .mac-projects__row--has-summary:focus-within .archive-sheet__title {
+.mac-projects--profile-project .mac-projects__row--has-summary:focus-within .archive-sheet__title,
+.mac-projects--profile-project .mac-projects__row--has-summary.mac-projects__row--open .archive-sheet__title,
+.mac-projects--profile-project .mac-projects__row--has-summary.mac-projects__row--hover .archive-sheet__title {
   align-items: flex-start;
   justify-content: flex-start;
 }
@@ -367,12 +536,18 @@ $desktop-accent: #E1E708;
     max-height 220ms ease-out,
     opacity 160ms ease;
 }
-.mac-projects--profile-project .archive-sheet__row:hover .mac-projects__preview,
 .mac-projects--profile-project .archive-sheet__row:focus-visible .mac-projects__preview,
-.mac-projects--profile-project .archive-sheet__row:focus-within .mac-projects__preview {
+.mac-projects--profile-project .archive-sheet__row:focus-within .mac-projects__preview,
+.mac-projects--profile-project .archive-sheet__row.mac-projects__row--open .mac-projects__preview,
+.mac-projects--profile-project .archive-sheet__row.mac-projects__row--hover .mac-projects__preview {
   max-height: 2.8em;
   opacity: 1;
 }
+
+/* preview 펼침은 CSS :hover에 의존하지 않는다. 일부 기기(갤럭시 S펜 등)가
+   @media (hover: hover)를 오탐해 sticky hover가 붙던 문제를 없애기 위해,
+   JS(포인터 이벤트)가 마우스/펜 hover와 터치 탭을 구분해 .mac-projects__row--open을
+   직접 제어한다. 키보드는 :focus-within(위 규칙)로 유지. */
 
 /* Responsive: stack on small screens */
 @keyframes macSheetUp {
