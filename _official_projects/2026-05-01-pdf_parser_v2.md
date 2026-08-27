@@ -1,6 +1,6 @@
 ---
 title: "PDF Parser v2 (VLM) × Cloud Storage"
-date: 2026-06-01
+date: 2026-05-01
 thumbnail: 
 link: 
 summary: ""
