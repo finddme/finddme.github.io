@@ -48,11 +48,9 @@ summary: ""
 ### 서비스 제공 운영 조건
 
 | 조건 | 이유 |
-| --- | --- |
-| 로컬(자체 GPU) 상시 구동 회피 | GPU 서버 상시 구동비 vs 요청별 과금 |
-| → MaaS(Model-as-a-Service)의 on-demand(요청별/토큰별) 추론이 운영상 유리 |  |
-| 데이터 거버넌스 (no-training) | 보안에 민감한 회사 내부 문건을 저장하는 B2B Cloud Storage 서비스로, |
-| 사용자가 입력한 PDF가 모델 학습에 사용되지 않아야 함 |  |
+|---|---|
+| 로컬(자체 GPU) 상시 구동 회피 | GPU 서버 상시 구동비 vs 요청별 과금<br>→ MaaS(Model-as-a-Service)의 on-demand(요청별/토큰별) 추론이 운영상 유리 |
+| 데이터 거버넌스 (no-training) | 보안에 민감한 회사 내부 문건을 저장하는 B2B Cloud Storage 서비스로,<br>사용자가 입력한 PDF가 모델 학습에 사용되지 않아야 함 |
 
 - 2025.09 기준, 위 조건을 모두 만족하는 문서 특화 VLM 존재 X
 - MaaS로 제공되는 서비스 제공 가능 수준의 문서 parsing 품질을 갖춘 VLM 없음
