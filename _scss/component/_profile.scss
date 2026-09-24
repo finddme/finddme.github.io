@@ -21,7 +21,10 @@ $desktop-accent: #E1E708;
   // 좌/우 존의 UI 글자 크기. 1265px 이상에서 0.9rem(기존값) 그대로이고, 769px 에서
   // 0.72rem 바닥에 닿는다. 여백·간격을 em 으로 쓰면 컬럼이 한 덩어리로 줄어든다.
   --ui-fs: clamp(0.72rem, 0.44rem + 0.58vw, 0.9rem);
-  --left-w: clamp(250px, 28vw, 420px);
+  // 말풍선 폭이 곧 이 값이다. 안의 글씨가 읽혀야 하므로 화면과 1:1 로 줄이지 않고
+  // 완만하게 줄인다: 1310px 이상에서 420px 그대로, 1000px 에서도 320px 을 유지한다.
+  // (바닥 290px. 더 줄이면 말풍선 글씨가 뭉개진다.)
+  --left-w: clamp(290px, 32vw, 420px);
   // 파일명은 줄바꿈 대신 글자가 줄어든다. 가장 긴 라벨(AI_관련_이것저것_하고_있어요.jpeg)이
   // 약 16.5em 이라 18em 을 잡아 한 줄을 보장한다. 글자가 줄면 존 폭도 같은 비율로 준다.
   --files-w: calc(var(--ui-fs) * 18);
@@ -64,7 +67,9 @@ $desktop-accent: #E1E708;
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: calc(100vh - 32rem);
+  /* max() 안쪽이 세로 공간 계산, 바깥 240px 은 가독성 바닥이다. 세로가 아주 짧으면
+     바닥이 이겨 컬럼 아래가 조금 잘릴 수 있지만, 읽을 수 없는 말풍선보다는 낫다. */
+  max-height: max(240px, calc(100vh - 32rem));
 }
 
 .desktop__menu {
@@ -609,14 +614,14 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
    메뉴가 작아진 만큼 인트로 이미지 상한은 기본(34rem)보다 느슨하게 27rem 을 뺀다. */
 @media (max-height: 800px) and (min-width: 769px) {
   .desktop {
-    --pad: 1.75rem;
-    --left-w: clamp(220px, 22vw, 340px);
+    --pad: 1.5rem;
+    --left-w: clamp(260px, 26vw, 380px);
     /* 글자 크기만 낮추면 메뉴 여백·간격·파일명이 em 이라 전부 따라 줄어든다.
        개별 요소에 padding/font-size 를 다시 쓰지 않는 이유. */
     --ui-fs: clamp(0.68rem, 0.42rem + 0.54vw, 0.82rem);
   }
   .desktop__intro-img {
-    max-height: calc(100vh - 28rem);
+    max-height: max(240px, calc(100vh - 27rem));
   }
 }
 
