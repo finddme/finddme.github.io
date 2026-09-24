@@ -110,8 +110,9 @@ html:not(.has-touch) .desktop--dark .desktop__menu-item:active {
 /* Top-right image file list (each opens an image window) */
 .desktop__files {
   position: absolute;
-  top: 3rem;
-  right: 3rem;
+  top: var(--pad);
+  right: var(--pad);
+  width: var(--files-w);
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -124,6 +125,11 @@ html:not(.has-touch) .desktop--dark .desktop__menu-item:active {
   background: transparent;
   border: 0;
   padding: 0;
+  max-width: 100%;
+  /* 한글 파일명이 길어 한 줄에 안 들어가면 단어 중간에서라도 접는다. 말줄임이 아니라
+     줄바꿈인 이유: 파일명 뒤쪽(확장자·숫자)이 식별에 필요하다. .mac-skills__name 과 같은 관용구. */
+  overflow-wrap: anywhere;
+  text-align: right;
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
   font-size: 0.9rem;
@@ -607,10 +613,13 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
   /* image file list flows below the menu (not pinned top-right) */
   .desktop__files {
     position: static;
+    width: auto;            /* 데스크톱의 --files-w 존 폭을 풀어준다 */
     align-items: flex-start;
     text-align: left;
     margin-top: 1.5rem;
   }
+  /* 데스크톱에서 버튼 자체에 text-align:right 를 걸었으므로 모바일에서 되돌린다. */
+  .desktop__file { text-align: left; }
 
   /* default-open Blog window: small, pinned top-right beside the art */
   #win-blog {
