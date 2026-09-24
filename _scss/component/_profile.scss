@@ -46,7 +46,17 @@ $desktop-accent: #E1E708;
 }
 
 .desktop__intro { margin: 0; }
-.desktop__intro-img { display: block; width: 100%; height: auto; }
+/* 인트로 이미지는 1248x1680 세로 이미지라, 컬럼 폭 420px 이면 혼자 565px 를 먹는다.
+   컬럼 전체(이미지 + 메뉴 7개 + 패딩)가 약 1079px 이라 1080p 모니터의 뷰포트(~950px)를
+   넘어 .desktop 의 overflow:hidden 에 잘렸다. 뷰포트 높이에서 메뉴+패딩 몫(34rem)을 뺀
+   만큼으로 상한을 둔다. width/height 를 auto 로 두고 max-* 로만 제한해야 비율이 안 깨진다. */
+.desktop__intro-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 34rem);
+}
 
 .desktop__menu {
   margin-top: 1.6rem;
@@ -581,6 +591,28 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
   to   { transform: translateY(0); }
 }
 
+/* 세로가 짧은 랩톱(1280x720, 1366x768 등): .desktop 이 overflow:hidden 이라 좌측 컬럼
+   (인트로 이미지 + 메뉴 7개)이 잘린다. 패딩·좌측 존·메뉴를 줄여 확보한다.
+   min-width 조건으로 모바일 블록(<=768px)과 영역이 겹치지 않게 한다.
+   메뉴가 작아진 만큼 인트로 이미지 상한은 기본(34rem)보다 느슨하게 27rem 을 뺀다. */
+@media (max-height: 800px) and (min-width: 769px) {
+  .desktop {
+    --pad: 1.75rem;
+    --left-w: clamp(220px, 22vw, 340px);
+  }
+  .desktop__intro-img {
+    max-height: calc(100vh - 27rem);
+  }
+  .desktop__menu {
+    margin-top: 1rem;
+    gap: 0.55rem;
+  }
+  .desktop__menu-item {
+    padding: 0.42rem 1.1rem;
+    font-size: 0.84rem;
+  }
+}
+
 @media (max-width: 768px) {
   /* scrollable page; reserve top band for the art + Blog window */
   .desktop {
@@ -606,6 +638,8 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
 
   /* reduced intro bubble */
   .desktop__intro { max-width: 280px; }
+  /* 데스크톱의 뷰포트 기반 높이 상한은 모바일에선 불필요(세로 스크롤되는 문서 흐름). */
+  .desktop__intro-img { width: 100%; max-height: none; }
 
   /* full-width stacked menu */
   .desktop__menu { width: 100%; }
