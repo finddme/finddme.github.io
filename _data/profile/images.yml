@@ -1,9 +1,6 @@
 # Per-image-window default DESKTOP position / stacking.
 # Key = slugified basename (the part after "win-img-" in the window id).
 # left/top: CSS values. z: initial z-index. open: true shows it on page load.
-# width: 창 폭. 사진 자연 크기 + 좌우 여백으로 잡아 창이 사진에 딱 맞게 한다.
-#   (없으면 창은 기본 640px 인데 사진은 320px 안팎이라, 창을 줄여도 사진 크기가
-#    그대로여서 '안 줄어드는' 것처럼 보였다.)
 # 좌표는 폭 2560급 화면에서 잡은 값이라 그보다 좁으면 이미 화면 밖이 된다(clampIntoView 가
 # 강제로 끌어당기던 원인). min(px, vw/vh) 로 감싸 2560 이상에서는 그대로, 그 아래에서는 비례 축소.
 # (On mobile these windows are full-screen sheets, so position is ignored and
@@ -12,17 +9,14 @@
   left: "min(1547.19px, 60.4vw)"
   top: "min(30.0625px, 2.1vh)"
   z: 32
-  width: "min(352px, 22vw)"
 "02-ai-관련-이것저것-하고-있어요":
   left: "min(1876.52px, 73.3vw)"
   top: "min(392.729px, 27.3vh)"
   z: 34
-  width: "min(400px, 25vw)"
 "03-원래-ai-모델-개발했었는데요":
   left: "min(1552.52px, 60.6vw)"
   top: "min(451.396px, 31.3vh)"
   z: 36
-  width: "min(284px, 17.75vw)"
 "04-요즘은-agent-만들어요":
   left: "min(1628.5px, 63.6vw)"
   top: "min(299.375px, 20.8vh)"
@@ -35,9 +29,7 @@
   left: "min(1475.19px, 57.6vw)"
   top: "min(516.729px, 35.9vh)"
   z: 46
-  width: "min(370px, 23.1vw)"
 "06-잘-부탁드립니다":
   left: "min(1028.52px, 40.2vw)"
   top: "min(76.7292px, 5.3vh)"
   z: 48
-  width: "min(332px, 20.75vw)"
