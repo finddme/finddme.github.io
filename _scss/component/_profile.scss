@@ -12,7 +12,34 @@ $desktop-accent: #E1E708;
 .desktop {
   position: relative;
   min-height: 100vh;
-  padding: 3rem;
+  // 3-존(좌측 컬럼 / 중앙 아트 통로 / 우측 파일목록) 공용 토큰. 세 요소가 같은
+  // 토큰을 공유하므로 폭이 줄어도 서로 침범하지 않는다. 화면마다 기준이 달라
+  // 1265px 아래에서 겹치던 문제를 구조적으로 없애는 게 목적이다.
+  // 모바일(<=768px)에서는 아트·파일목록이 재배치되므로 이 토큰은 쓰이지 않는다.
+  // 주의: 이 사이트는 608px 이상에서 html{font-size:20px} 이다(_poole.scss).
+  // 데스크톱에서 1rem = 20px 이므로 아래 rem 값은 전부 그 기준으로 읽어야 한다.
+  --pad: clamp(1.25rem, 4vw, 3rem);
+  --zone-gap: clamp(0.6rem, 2vw, 2rem);
+  // 좌/우 존의 UI 글자 크기. 가로(vw)와 세로(vh) 중 더 빡빡한 쪽을 따른다 —
+  // 세로가 줄면 메뉴가 같이 작아져야 말풍선에 돌아갈 공간이 생긴다.
+  --ui-fs: clamp(0.66rem, min(0.44rem + 0.58vw, 0.276rem + 0.96vh), 0.9rem);
+  // 좌측 메뉴 높이 모델: --ui-fs * k + b. 버튼 7개 1열 기준이며(2열일 때는 아래
+  // 미디어쿼리에서 덮는다), 말풍선 높이 상한을 여기서 역산한다.
+  //   버튼 = line-height 1.5em + 상하 padding 0.62em*2 + 테두리 2.5px*2
+  //   k = 7*(1.5+1.24) + 6*0.89(gap) + 1.78(margin-top) = 26.3,  b = 7*5px = 35px
+  --menu-k: 26.3;
+  --menu-b: 35px;
+  // 창 안 글자 크기. 창 폭/높이와 같은 리듬으로 줄어든다(1500px 이상에서 1rem 그대로,
+  // 800px 에서 0.72rem 바닥). 창 내부 치수는 전부 em 이라 이 값만 따라간다.
+  --win-fs: clamp(0.72rem, 0.4rem + 0.8vw, 1rem);
+  // 말풍선 폭이 곧 이 값이다. 안의 글씨가 읽혀야 하므로 화면과 1:1 로 줄이지 않고
+  // 완만하게 줄인다: 1310px 이상에서 420px 그대로, 1000px 에서도 320px 을 유지한다.
+  // (바닥 290px. 더 줄이면 말풍선 글씨가 뭉개진다.)
+  --left-w: clamp(290px, 32vw, 420px);
+  // 파일명은 줄바꿈 대신 글자가 줄어든다. 가장 긴 라벨(AI_관련_이것저것_하고_있어요.jpeg)이
+  // 약 16.5em 이라 18em 을 잡아 한 줄을 보장한다. 글자가 줄면 존 폭도 같은 비율로 준다.
+  --files-w: calc(var(--ui-fs) * 18);
+  padding: var(--pad);
   overflow: hidden;
   background: #fff;
   color: #111;
@@ -31,19 +58,46 @@ $desktop-accent: #E1E708;
 .desktop__left {
   position: relative;
   z-index: 2;
-  max-width: 420px;
+  // 기존 420px 상한은 --left-w 의 clamp 상한으로 옮겼다. 넓은 화면에서는 420px
+  // 그대로이고, 좁아지면 화면과 함께 줄어든다.
+  width: var(--left-w);
+  max-width: none;
+  // 컬럼 전체(말풍선 + 버튼)가 같은 비율로 줄어들도록 기준 글자 크기를 여기서 잡는다.
+  // 아래 메뉴의 여백·간격은 전부 em 이라 이 값만 따라간다.
+  font-size: var(--ui-fs);
 }
 
 .desktop__intro { margin: 0; }
-.desktop__intro-img { display: block; width: 100%; height: auto; }
+/* 인트로 이미지는 1248x1680 세로 이미지라, 컬럼 폭 420px 이면 혼자 565px 를 먹는다.
+   컬럼 전체(이미지 + 메뉴 7개 + 패딩)가 약 1079px 이라 1080p 모니터의 뷰포트(~950px)를
+   넘어 .desktop 의 overflow:hidden 에 잘렸다. 메뉴도 --ui-fs 를 따라 함께 줄어들므로
+   이미지만 과하게 깎지 않아도 된다.
+   width/height 를 auto 로 두고 max-* 로만 제한해야 비율이 안 깨진다. */
+.desktop__intro-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  /* 상한 = 뷰포트 높이 − (메뉴 실제 높이 + 위아래 패딩). 고정 rem 으로 어림잡던 것을
+     메뉴 높이 모델로 역산해, 실제로 남는 만큼만 말풍선에서 뺀다.
+     max() 바깥의 240px 은 가독성 바닥이다 — 세로가 아주 짧으면 바닥이 이겨 컬럼 아래가
+     조금 잘릴 수 있지만, 읽을 수 없는 말풍선보다는 낫다. */
+  max-height: max(
+    240px,
+    calc(100vh - var(--menu-b) - var(--pad) * 2 - var(--ui-fs) * var(--menu-k))
+  );
+}
 
 .desktop__menu {
-  margin-top: 1.6rem;
-  width: 259px;
+  // 아래 값들이 전부 em 인 이유: 컬럼 글자 크기(--ui-fs)가 줄면 버튼 여백·간격도
+  // 같은 비율로 줄어 말풍선과 조화를 유지한다. rem 이면 버튼만 그대로 남는다.
+  margin-top: 1.78em;
+  // 넓은 화면에서는 기존 259px 그대로, 컬럼이 그보다 좁아지면 컬럼을 따라 줄어든다.
+  width: min(100%, 259px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.8rem;
+  gap: 0.89em;
 }
 .desktop__menu-item {
   appearance: none;
@@ -52,9 +106,9 @@ $desktop-accent: #E1E708;
   background: transparent;
   border: 2.5px solid $desktop-accent;
   border-radius: 4px;
-  padding: 0.56rem 1.29rem;
+  padding: 0.62em 1.43em;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 1em;
   cursor: pointer;
   transition: background 0.15s ease, transform 0.14s ease, box-shadow 0.16s ease;
 }
@@ -98,23 +152,30 @@ html:not(.has-touch) .desktop--dark .desktop__menu-item:active {
 /* Top-right image file list (each opens an image window) */
 .desktop__files {
   position: absolute;
-  top: 3rem;
-  right: 3rem;
+  top: var(--pad);
+  right: var(--pad);
+  width: var(--files-w);
   z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.4rem;
+  gap: 0.44em;
   text-align: right;
+  /* 좌측 컬럼과 같은 토큰. 화면이 줄면 파일명이 꺾이는 대신 글자가 같은 비율로 작아진다. */
+  font-size: var(--ui-fs);
 }
 .desktop__file {
   appearance: none;
   background: transparent;
   border: 0;
   padding: 0;
+  /* 한 파일 = 한 줄. 줄바꿈으로 목록이 흐트러지는 대신 --ui-fs 가 글자를 줄인다.
+     --files-w(18em)가 가장 긴 라벨(약 16.5em)보다 넓어 어느 폭에서도 한 줄로 들어간다. */
+  white-space: nowrap;
+  text-align: right;
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
-  font-size: 0.9rem;
+  font-size: 1em;
   color: #5a4bb2;
   text-decoration: underline;
   transition: color 0.15s ease, transform 0.14s ease;
@@ -130,21 +191,29 @@ html:not(.has-touch) .desktop__file:active { transform: translateY(1px); }
 html:not(.has-touch) .desktop--dark .desktop__file:active { transform: translateY(1px); }
 
 /* Image windows */
-.mac-window--image .mac-window__body { padding: 0.75rem; }
+.mac-window--image .mac-window__body { padding: 0.75em; }
 .mac-image { display: block; max-width: 100%; height: auto; margin: 0 auto; }
 
-/* Center art (horizontally + vertically centered on the viewport) */
+/* Center art — 화면 중앙이 아니라 "좌측 컬럼과 우측 파일목록 사이 통로"의 중앙.
+   left:50% 로 W/2 를 얻고, 두 존의 폭 차이의 절반만큼 transform 으로 밀어준다
+   (좌우 패딩이 대칭이라 --pad 는 상쇄됨). vw 를 쓰지 않으므로 스크롤바 폭에 영향받지 않는다.
+   --corridor 의 100% 는 containing block(=.desktop 의 padding box) 폭으로 풀리므로
+   해석 기준이 달라지지 않게 이 블록 밖에서는 재사용하지 않는다. */
 .desktop__art {
   appearance: none;
   background: transparent;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  --corridor: calc(100% - var(--pad) * 2 - var(--left-w) - var(--files-w) - var(--zone-gap) * 2);
+  transform: translate(
+    calc(-50% + (var(--left-w) - var(--files-w)) / 2),
+    -50%
+  );
   z-index: 1;
   border: 2.5px solid $desktop-accent;
   padding: 1.25rem;
-  width: min(340px, 26vw);
+  width: clamp(140px, calc(var(--corridor) * 0.8), 340px);
   aspect-ratio: 340 / 467;       /* keep box size stable while the image shrinks */
   display: flex;
   align-items: center;
@@ -201,8 +270,11 @@ html:not(.has-touch) .desktop--dark .desktop__art:active img {
   position: absolute;
   top: 12%;
   left: 12%;
-  width: min(640px, 80vw);
+  // 기존 min(640px, 80vw) 은 80vw < 640px, 즉 800px 이하에서만 줄어 "밀릴 때만
+  // 작아지는" 것처럼 보였다. clamp 로 1600px 부터 연속적으로 줄인다.
+  width: clamp(300px, 40vw, 640px);
   max-height: 78vh;
+  font-size: var(--win-fs);
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -249,16 +321,16 @@ html:not(.has-touch) .desktop--dark .desktop__art:active img {
 
 /* Skills window opens just tall enough for the compact skill rows */
 #win-skills {
-  width: min(720px, 84vw);
-  height: min(480px, 84vh);
+  width: clamp(320px, 45vw, 720px);
+  height: clamp(240px, 37vh, 480px);
   max-height: 92vh;
 }
 
 #win-official,
 #win-personal,
 #win-devlog {
-  width: min(980px, 88vw);
-  height: min(620px, 82vh);
+  width: clamp(340px, 61vw, 980px);
+  height: clamp(280px, 50vh, 620px);
   max-height: 90vh;
 }
 
@@ -267,35 +339,35 @@ html:not(.has-touch) .desktop--dark .desktop__art:active img {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  height: 36px;
-  padding: 0 0.75rem;
+  height: 1.8em;
+  padding: 0 0.75em;
   background: linear-gradient(#f6f6f6, #e7e7e7);
   border-bottom: 1px solid #cfcfcf;
   cursor: grab;
   user-select: none;
 }
 .mac-window__bar:active { cursor: grabbing; }
-.mac-window__lights { display: inline-flex; gap: 0.45rem; }
+.mac-window__lights { display: inline-flex; gap: 0.45em; }
 .mac-window__light {
-  width: 12px; height: 12px; border-radius: 50%; border: 0; padding: 0;
+  width: 0.6em; height: 0.6em; border-radius: 50%; border: 0; padding: 0;
 }
 .mac-window__light--red    { background: #ff5f57; cursor: pointer; position: relative; z-index: 3; }
 /* enlarge the close hit-area to span the red AND yellow dots (red is small/fiddly) */
 .mac-window__light--red::after {
   content: "";
   position: absolute;
-  top: -8px;
-  bottom: -8px;
-  left: -4px;
-  right: -20px;
+  top: -0.4em;
+  bottom: -0.4em;
+  left: -0.2em;
+  right: -1em;
 }
 .mac-window__light--yellow { background: #febc2e; }
 .mac-window__light--green  { background: #28c840; }
 .mac-window__title {
   position: absolute; left: 0; right: 0; text-align: center;
-  font-size: 0.8rem; color: #4a4a4a; pointer-events: none;
+  font-size: 0.8em; color: #4a4a4a; pointer-events: none;
 }
-.mac-window__body { flex: 1 1 auto; overflow: auto; padding: 1.5rem; }
+.mac-window__body { flex: 1 1 auto; overflow: auto; padding: 1.5em; }
 
 .desktop--dark .mac-window {
   background: #1f1f21;
@@ -394,16 +466,16 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
 .mac-window__resize--sw { bottom: 0; left: 0; width: 14px; height: 14px; cursor: nesw-resize; z-index: 6; }
 
 /* Skills grid */
-.mac-skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.45rem; }
+.mac-skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.45em; }
 .mac-skills__chip {
-  display: flex; align-items: center; gap: 0.4rem;
+  display: flex; align-items: center; gap: 0.54em;   /* 0.4rem 상당, 칩 자신의 em 기준 */
   min-width: 0;
   // 고스트 칩: 흰 창에 거의 투명하게 녹아들고 윤곽선 + 어두운 글씨만.
   background: rgba(0, 0, 0, 0.045); color: #1c1c1e;
   border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: 10px; padding: 0.52rem 0.68rem;
+  border-radius: 0.5em; padding: 0.7em 0.92em;   /* 0.52rem/0.68rem 상당 */
   font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 0.74rem; font-weight: 600;
+  font-size: 0.74em; font-weight: 600;
   line-height: 1.25;
 }
 .mac-skills__icon { flex: 0 0 1.05em; width: 1.05em; text-align: center; opacity: 0.9; }
@@ -418,8 +490,8 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
   text-align: left;
 }
 .mac-bloglinks__item {
-  margin: 0 0 0.28rem;
-  font-size: 0.82rem;
+  margin: 0 0 0.28em;
+  font-size: 0.82em;
   line-height: 1.15;
 }
 .mac-bloglinks__item a {
@@ -434,7 +506,7 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
 .mac-bloglinks__item a:visited { color: #6d42a8; }
 html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
 
-.mac-projects__empty { color: #888; font-size: 0.9rem; }
+.mac-projects__empty { color: #888; font-size: 0.9em; }
 
 /* Projects / Dev Log windows reuse the Blog window's serif typeface */
 .mac-projects .archive-sheet__index,
@@ -555,6 +627,34 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
   to   { transform: translateY(0); }
 }
 
+/* 세로가 짧은 랩톱(1280x720, 1366x768 등): .desktop 이 overflow:hidden 이라 좌측 컬럼
+   (인트로 이미지 + 메뉴 7개)이 잘린다. 패딩·좌측 존·메뉴를 줄여 확보한다.
+   min-width 조건으로 모바일 블록(<=768px)과 영역이 겹치지 않게 한다.
+   메뉴가 작아진 만큼 인트로 이미지 상한은 기본(34rem)보다 느슨하게 27rem 을 뺀다. */
+/* 세로가 짧은데 가로는 여유가 있으면 메뉴를 2열로 접는다. 버튼 7개가 4줄로 줄어
+   메뉴 높이가 약 40% 빠지고, 그만큼이 통째로 말풍선에게 돌아간다(위 max-height 공식이
+   --menu-k/b 를 읽으므로 값만 바꾸면 상한이 자동으로 늘어난다).
+   가로 1100px 미만에서는 2열 칸이 좁아 "Official-Projects" 가 안 들어가므로 1열 유지. */
+@media (max-height: 900px) and (min-width: 1100px) {
+  .desktop {
+    /* 4줄: k = 4*(1.5+1.24) + 3*0.89 + 1.78 = 15.41,  b = 4*5px = 20px */
+    --menu-k: 15.41;
+    --menu-b: 20px;
+  }
+  .desktop__menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: min(100%, 420px);
+  }
+}
+
+@media (max-height: 800px) and (min-width: 769px) {
+  .desktop {
+    --pad: 1.5rem;
+    --left-w: clamp(260px, 26vw, 380px);
+  }
+}
+
 @media (max-width: 768px) {
   /* scrollable page; reserve top band for the art + Blog window */
   .desktop {
@@ -563,7 +663,10 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
     padding: 1rem;
     padding-top: calc(172px + 0.75rem);
   }
-  .desktop__left { max-width: none; }
+  /* 데스크톱에서 컬럼 폭을 --left-w 로 잡으므로, 모바일에서는 풀블리드로 되돌린다.
+     글자 크기도 뷰포트 연동(--ui-fs)을 풀고 원래 0.9rem 으로 고정한다 — 모바일은
+     세로로 흐르는 문서라 가로 폭에 맞춰 글자를 줄일 이유가 없다. */
+  .desktop__left { width: auto; max-width: none; font-size: 0.9rem; }
 
   /* small YEIN art (dark-mode toggle) pinned top-left */
   .desktop__art {
@@ -579,6 +682,8 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
 
   /* reduced intro bubble */
   .desktop__intro { max-width: 280px; }
+  /* 데스크톱의 뷰포트 기반 높이 상한은 모바일에선 불필요(세로 스크롤되는 문서 흐름). */
+  .desktop__intro-img { width: 100%; max-height: none; }
 
   /* full-width stacked menu */
   .desktop__menu { width: 100%; }
@@ -586,10 +691,15 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
   /* image file list flows below the menu (not pinned top-right) */
   .desktop__files {
     position: static;
+    width: auto;            /* 데스크톱의 --files-w 존 폭을 풀어준다 */
     align-items: flex-start;
     text-align: left;
     margin-top: 1.5rem;
+    font-size: 0.9rem;      /* --ui-fs 연동 해제 */
   }
+  /* 데스크톱에선 오른쪽 정렬 + 한 줄 고정이지만, 모바일은 왼쪽 정렬에 폭이 좁아
+     긴 한글 파일명이 화면을 넘칠 수 있으므로 줄바꿈을 다시 허용한다. */
+  .desktop__file { text-align: left; white-space: normal; overflow-wrap: anywhere; }
 
   /* default-open Blog window: small, pinned top-right beside the art */
   #win-blog {
@@ -617,6 +727,10 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
     border-radius: 0;
     animation: macSheetUp 260ms ease both;
   }
+
+  /* 데스크톱에선 창 크기와 함께 글자도 줄이지만(--win-fs), 모바일 창은 전체화면
+     시트라 화면 폭에 맞춰 글자를 줄일 이유가 없다. 원래 크기로 되돌린다. */
+  .mac-window { font-size: 1rem; }
 
   /* no resizing on mobile */
   .mac-window__resize { display: none; }

@@ -23,10 +23,25 @@
     return !reduceMotion && !isMobile();
   }
 
+  // 창이 "원래 있고 싶어 하는" 좌표. 기본 배치 값이거나 사용자가 드래그해 놓은
+  // 자리이며, clamp 가 화면 안으로 밀어 넣은 임시 좌표는 여기에 기록하지 않는다.
+  //
+  // 이게 없으면 clampIntoView 가 style.left 를 px 로 덮어쓰면서 원래 좌표가 사라져,
+  // 화면을 다시 넓혀도 돌아갈 곳이 없어 창이 밀린 자리에 고착됐다(사용자가 옮긴 적도
+  // 없는데 옮겨진 것처럼 보이던 증상).
+  function rememberWanted(win) {
+    win.dataset.wantLeft = win.style.left || '';
+    win.dataset.wantTop = win.style.top || '';
+  }
+
   // Pull a window fully into the viewport so wide default positions aren't clipped
   // on narrower screens. Desktop only (mobile windows are full-screen sheets).
   function clampIntoView(win) {
     if (isMobile()) return;
+    // 직전 clamp 결과가 아니라 "원래 좌표"에서 다시 계산해야, 화면을 넓혔을 때
+    // 창이 제자리로 돌아온다. 원래 좌표가 없는 창(=CSS 기본 위치)은 건드리지 않는다.
+    if (win.dataset.wantLeft) win.style.left = win.dataset.wantLeft;
+    if (win.dataset.wantTop) win.style.top = win.dataset.wantTop;
     var rect = win.getBoundingClientRect();
     if (!rect.width) return; // hidden / not laid out
     var margin = 8;
@@ -50,6 +65,8 @@
   document.querySelectorAll('.mac-window').forEach(function (win) {
     var z = parseInt(window.getComputedStyle(win).zIndex, 10);
     if (!isNaN(z)) zTop = Math.max(zTop, z);
+    // HTML 인라인으로 심긴 기본 좌표(_data/profile/*.yml)를 clamp 전에 확보해 둔다.
+    rememberWanted(win);
   });
 
   // On mobile, image windows never auto-open — a full-screen sheet would cover the
@@ -124,7 +141,9 @@
         if (!w.id) return;
         st.win[w.id] = {
           o: !w.hidden,
-          l: w.style.left || '', t: w.style.top || '',
+          // clamp 로 밀린 임시 좌표가 아니라 원래 좌표를 저장한다(없으면 현재 값).
+          l: w.dataset.wantLeft || w.style.left || '',
+          t: w.dataset.wantTop || w.style.top || '',
           w: w.style.width || '', h: w.style.height || '',
           z: w.style.zIndex || ''
         };
@@ -175,6 +194,8 @@
       if (s.w) w.style.width = s.w;
       if (s.h) w.style.height = s.h;
       if (s.z) w.style.zIndex = s.z;
+      // 복원된 좌표가 이 창의 원래 좌표가 된다(아래 clampVisibleWindows 전에 갱신).
+      if (s.l || s.t) rememberWanted(w);
       if (s.o) {
         w.hidden = false;
         w.dataset.placed = '1';
@@ -271,6 +292,8 @@
           win.style.left = 'calc(12% + ' + offset + 'px)';
           openCount += 1;
         }
+        // 방금 정한 자리가 이 창의 원래 좌표다(이후 clamp 는 여기서 다시 계산한다).
+        rememberWanted(win);
       }
       win.dataset.placed = '1';
     }
@@ -464,7 +487,11 @@
     drag.win.style.top = (e.clientY - drag.dy) + 'px';
   });
   function endDrag() {
-    if (drag) { drag.win.classList.remove('mac-window--dragging'); saveState(); }   // PR2: 놓으면 lift 해제 + 위치 저장
+    if (drag) {
+      drag.win.classList.remove('mac-window--dragging');   // PR2: 놓으면 lift 해제
+      rememberWanted(drag.win);   // 사용자가 고른 자리가 이제 이 창의 원래 좌표
+      saveState();
+    }
     drag = null;
   }
   layer.addEventListener('pointerup', endDrag);
@@ -532,7 +559,8 @@
       rez.win.style.top = (rez.top + (rez.h - newH)) + 'px';
     }
   });
-  function endResize() { if (rez) saveState(); rez = null; }
+  // n/w 방향 리사이즈는 left/top 도 움직이므로 원래 좌표를 갱신해야 한다.
+  function endResize() { if (rez) { rememberWanted(rez.win); saveState(); } rez = null; }
   layer.addEventListener('pointerup', endResize);
   layer.addEventListener('pointercancel', endResize);
 

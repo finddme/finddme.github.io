@@ -1,33 +1,45 @@
 # Per-image-window default DESKTOP position / stacking.
 # Key = slugified basename (the part after "win-img-" in the window id).
-# left/top: CSS values (px). z: initial z-index. open: true shows it on page load.
+# left/top: CSS values. z: initial z-index. open: true shows it on page load.
+# imgw: 창 안 사진의 폭 상한. 사진 파일이 252~368px 로 작아서 640px 창 안에서는
+#   자연 크기 그대로 떠 있었고, 창을 줄여도 사진 크기가 안 변해 '안 줄어드는' 것처럼
+#   보였다. 여기에 min(자연크기, vw) 를 주면 창 모양은 그대로 두고 사진만 화면에
+#   비례해 줄어든다. (창을 사진에 맞춰 줄이면 정사각 사진 때문에 창까지 정사각이 됨)
+# 좌표는 폭 2560급 화면에서 잡은 값이라 그보다 좁으면 이미 화면 밖이 된다(clampIntoView 가
+# 강제로 끌어당기던 원인). min(px, vw/vh) 로 감싸 2560 이상에서는 그대로, 그 아래에서는 비례 축소.
 # (On mobile these windows are full-screen sheets, so position is ignored and
 #  open-by-default is suppressed — only the Blog window stays open on mobile.)
 "01-안녕하세요-황예인입니다":
-  left: "1547.19px"
-  top: "30.0625px"
+  left: "min(1547.19px, 60.4vw)"
+  top: "min(30.0625px, 2.1vh)"
   z: 32
+  imgw: "min(320px, 20vw)"
 "02-ai-관련-이것저것-하고-있어요":
-  left: "1876.52px"
-  top: "392.729px"
+  left: "min(1876.52px, 73.3vw)"
+  top: "min(392.729px, 27.3vh)"
   z: 34
+  imgw: "min(368px, 23vw)"
 "03-원래-ai-모델-개발했었는데요":
-  left: "1552.52px"
-  top: "451.396px"
+  left: "min(1552.52px, 60.6vw)"
+  top: "min(451.396px, 31.3vh)"
   z: 36
+  imgw: "min(252px, 15.75vw)"
 "04-요즘은-agent-만들어요":
-  left: "1628.5px"
-  top: "299.375px"
+  left: "min(1628.5px, 63.6vw)"
+  top: "min(299.375px, 20.8vh)"
   z: 50
-  width: "732px"
-  height: "443.667px"
+  width: "min(732px, 46vw)"
+  height: "min(443.667px, 34vh)"
   maxheight: "none"
   open: true
+  imgw: "min(270px, 16.9vw)"
 "05":
-  left: "1475.19px"
-  top: "516.729px"
+  left: "min(1475.19px, 57.6vw)"
+  top: "min(516.729px, 35.9vh)"
   z: 46
+  imgw: "min(338px, 21.1vw)"
 "06-잘-부탁드립니다":
-  left: "1028.52px"
-  top: "76.7292px"
+  left: "min(1028.52px, 40.2vw)"
+  top: "min(76.7292px, 5.3vh)"
   z: 48
+  imgw: "min(300px, 18.75vw)"
