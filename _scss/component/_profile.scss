@@ -12,7 +12,15 @@ $desktop-accent: #E1E708;
 .desktop {
   position: relative;
   min-height: 100vh;
-  padding: 3rem;
+  // 3-존(좌측 컬럼 / 중앙 아트 통로 / 우측 파일목록) 공용 토큰. 세 요소가 같은
+  // 토큰을 공유하므로 폭이 줄어도 서로 침범하지 않는다. 화면마다 기준이 달라
+  // 1265px 아래에서 겹치던 문제를 구조적으로 없애는 게 목적이다.
+  // 모바일(<=768px)에서는 아트·파일목록이 재배치되므로 이 토큰은 쓰이지 않는다.
+  --pad: 3rem;
+  --zone-gap: clamp(1rem, 2vw, 2rem);
+  --left-w: clamp(240px, 26vw, 420px);
+  --files-w: clamp(150px, 16vw, 240px);
+  padding: var(--pad);
   overflow: hidden;
   background: #fff;
   color: #111;
@@ -31,7 +39,10 @@ $desktop-accent: #E1E708;
 .desktop__left {
   position: relative;
   z-index: 2;
-  max-width: 420px;
+  // 기존 420px 상한은 --left-w 의 clamp 상한으로 옮겼다. 넓은 화면에서는 420px
+  // 그대로이고, 좁아지면 화면과 함께 줄어든다.
+  width: var(--left-w);
+  max-width: none;
 }
 
 .desktop__intro { margin: 0; }
@@ -39,7 +50,8 @@ $desktop-accent: #E1E708;
 
 .desktop__menu {
   margin-top: 1.6rem;
-  width: 259px;
+  // 넓은 화면에서는 기존 259px 그대로, 컬럼이 그보다 좁아지면 컬럼을 따라 줄어든다.
+  width: min(100%, 259px);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -563,7 +575,8 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
     padding: 1rem;
     padding-top: calc(172px + 0.75rem);
   }
-  .desktop__left { max-width: none; }
+  /* 데스크톱에서 컬럼 폭을 --left-w 로 잡으므로, 모바일에서는 풀블리드로 되돌린다. */
+  .desktop__left { width: auto; max-width: none; }
 
   /* small YEIN art (dark-mode toggle) pinned top-left */
   .desktop__art {
