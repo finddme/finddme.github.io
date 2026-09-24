@@ -2,20 +2,22 @@
 # type: skills | blog | links | projects
 # source (links/projects only): github | email | collection:<name> | category:<Category Name>
 # Optional per-window first-open position: default_left/default_top, e.g. "208px" or "12vw".
+# 좌표는 1440x900 기준으로 잡은 값을 min(px, vw/vh) 로 감쌌다. 기준 이상 화면에서는 px 그대로,
+# 그보다 좁으면 비례해 줄어 좁은 화면에서 창이 중앙 아트 위로 끌려오는 것을 막는다.
 # Optional default_z sets the initial stacking order. default_open: true shows a window on page load.
 - label: "Skills"
   id: "win-skills"
   filename: "skills.txt"
   type: "skills"
-  default_left: "195.729px"
-  default_top: "140.729px"
+  default_left: "min(195.729px, 13.6vw)"
+  default_top: "min(140.729px, 15.6vh)"
   default_z: 14
 - label: "Blog"
   id: "win-blog"
   filename: "blog.txt"
   type: "blog"
-  default_left: "580.333px"
-  default_top: "142.708px"
+  default_left: "min(580.333px, 40.3vw)"
+  default_top: "min(142.708px, 15.9vh)"
   default_z: 54
   default_open: true
 - label: "Official-Projects"
@@ -23,24 +25,24 @@
   filename: "official_projects.rtf"
   type: "projects"
   source: "collection:official_projects"
-  default_left: "812.385px"
-  default_top: "53.3958px"
+  default_left: "min(812.385px, 56.4vw)"
+  default_top: "min(53.3958px, 5.9vh)"
   default_z: 23
 - label: "Personal-Projects"
   id: "win-personal"
   filename: "personal_projects.rtf"
   type: "projects"
   source: "collection:personal_projects"
-  default_left: "247.052px"
-  default_top: "305.385px"
+  default_left: "min(247.052px, 17.2vw)"
+  default_top: "min(305.385px, 33.9vh)"
   default_z: 28
 - label: "Dev-Logs"
   id: "win-devlog"
   filename: "dev_logs.rtf"
   type: "projects"
   source: "category:Dev Log"
-  default_left: "883.062px"
-  default_top: "322.062px"
+  default_left: "min(883.062px, 61.3vw)"
+  default_top: "min(322.062px, 35.8vh)"
   default_z: 26
 - label: "Github"
   id: "win-github"
