@@ -20,6 +20,10 @@
     <span class="mac-window__title">{{ label }}</span>
   </header>
   <div class="mac-window__body">
-    <img class="mac-image" src="{{ site.baseurl }}{{ include.file.path }}" alt="{{ include.file.name }}" loading="lazy">
+    {%- comment -%}
+      imgw 가 있으면 사진 폭에 화면 비례 상한을 건다. 창 자체는 건드리지 않으므로
+      창 모양(가로형 틀)은 그대로이고, 화면이 줄면 창과 사진이 각각 함께 줄어든다.
+    {%- endcomment -%}
+    <img class="mac-image" src="{{ site.baseurl }}{{ include.file.path }}" alt="{{ include.file.name }}" loading="lazy"{% if cfg.imgw %} style="max-width: min(100%, {{ cfg.imgw }})"{% endif %}>
   </div>
 </section>
