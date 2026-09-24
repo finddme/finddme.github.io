@@ -29,6 +29,9 @@ $desktop-accent: #E1E708;
   //   k = 7*(1.5+1.24) + 6*0.89(gap) + 1.78(margin-top) = 26.3,  b = 7*5px = 35px
   --menu-k: 26.3;
   --menu-b: 35px;
+  // 창 안 글자 크기. 창 폭/높이와 같은 리듬으로 줄어든다(1500px 이상에서 1rem 그대로,
+  // 800px 에서 0.72rem 바닥). 창 내부 치수는 전부 em 이라 이 값만 따라간다.
+  --win-fs: clamp(0.72rem, 0.4rem + 0.8vw, 1rem);
   // 말풍선 폭이 곧 이 값이다. 안의 글씨가 읽혀야 하므로 화면과 1:1 로 줄이지 않고
   // 완만하게 줄인다: 1310px 이상에서 420px 그대로, 1000px 에서도 320px 을 유지한다.
   // (바닥 290px. 더 줄이면 말풍선 글씨가 뭉개진다.)
@@ -67,9 +70,9 @@ $desktop-accent: #E1E708;
 .desktop__intro { margin: 0; }
 /* 인트로 이미지는 1248x1680 세로 이미지라, 컬럼 폭 420px 이면 혼자 565px 를 먹는다.
    컬럼 전체(이미지 + 메뉴 7개 + 패딩)가 약 1079px 이라 1080p 모니터의 뷰포트(~950px)를
-   넘어 .desktop 의 overflow:hidden 에 잘렸다. 뷰포트 높이에서 메뉴+패딩 몫(32rem)을 뺀
-   만큼으로 상한을 둔다. 메뉴도 --ui-fs 를 따라 함께 줄어들므로 이미지만 과하게 깎지 않아도
-   된다. width/height 를 auto 로 두고 max-* 로만 제한해야 비율이 안 깨진다. */
+   넘어 .desktop 의 overflow:hidden 에 잘렸다. 메뉴도 --ui-fs 를 따라 함께 줄어들므로
+   이미지만 과하게 깎지 않아도 된다.
+   width/height 를 auto 로 두고 max-* 로만 제한해야 비율이 안 깨진다. */
 .desktop__intro-img {
   display: block;
   width: auto;
@@ -188,7 +191,7 @@ html:not(.has-touch) .desktop__file:active { transform: translateY(1px); }
 html:not(.has-touch) .desktop--dark .desktop__file:active { transform: translateY(1px); }
 
 /* Image windows */
-.mac-window--image .mac-window__body { padding: 0.75rem; }
+.mac-window--image .mac-window__body { padding: 0.75em; }
 .mac-image { display: block; max-width: 100%; height: auto; margin: 0 auto; }
 
 /* Center art — 화면 중앙이 아니라 "좌측 컬럼과 우측 파일목록 사이 통로"의 중앙.
@@ -267,8 +270,11 @@ html:not(.has-touch) .desktop--dark .desktop__art:active img {
   position: absolute;
   top: 12%;
   left: 12%;
-  width: min(640px, 80vw);
+  // 기존 min(640px, 80vw) 은 80vw < 640px, 즉 800px 이하에서만 줄어 "밀릴 때만
+  // 작아지는" 것처럼 보였다. clamp 로 1600px 부터 연속적으로 줄인다.
+  width: clamp(300px, 40vw, 640px);
   max-height: 78vh;
+  font-size: var(--win-fs);
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -315,16 +321,16 @@ html:not(.has-touch) .desktop--dark .desktop__art:active img {
 
 /* Skills window opens just tall enough for the compact skill rows */
 #win-skills {
-  width: min(720px, 84vw);
-  height: min(480px, 84vh);
+  width: clamp(320px, 45vw, 720px);
+  height: clamp(240px, 37vh, 480px);
   max-height: 92vh;
 }
 
 #win-official,
 #win-personal,
 #win-devlog {
-  width: min(980px, 88vw);
-  height: min(620px, 82vh);
+  width: clamp(340px, 61vw, 980px);
+  height: clamp(280px, 50vh, 620px);
   max-height: 90vh;
 }
 
@@ -333,35 +339,35 @@ html:not(.has-touch) .desktop--dark .desktop__art:active img {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  height: 36px;
-  padding: 0 0.75rem;
+  height: 1.8em;
+  padding: 0 0.75em;
   background: linear-gradient(#f6f6f6, #e7e7e7);
   border-bottom: 1px solid #cfcfcf;
   cursor: grab;
   user-select: none;
 }
 .mac-window__bar:active { cursor: grabbing; }
-.mac-window__lights { display: inline-flex; gap: 0.45rem; }
+.mac-window__lights { display: inline-flex; gap: 0.45em; }
 .mac-window__light {
-  width: 12px; height: 12px; border-radius: 50%; border: 0; padding: 0;
+  width: 0.6em; height: 0.6em; border-radius: 50%; border: 0; padding: 0;
 }
 .mac-window__light--red    { background: #ff5f57; cursor: pointer; position: relative; z-index: 3; }
 /* enlarge the close hit-area to span the red AND yellow dots (red is small/fiddly) */
 .mac-window__light--red::after {
   content: "";
   position: absolute;
-  top: -8px;
-  bottom: -8px;
-  left: -4px;
-  right: -20px;
+  top: -0.4em;
+  bottom: -0.4em;
+  left: -0.2em;
+  right: -1em;
 }
 .mac-window__light--yellow { background: #febc2e; }
 .mac-window__light--green  { background: #28c840; }
 .mac-window__title {
   position: absolute; left: 0; right: 0; text-align: center;
-  font-size: 0.8rem; color: #4a4a4a; pointer-events: none;
+  font-size: 0.8em; color: #4a4a4a; pointer-events: none;
 }
-.mac-window__body { flex: 1 1 auto; overflow: auto; padding: 1.5rem; }
+.mac-window__body { flex: 1 1 auto; overflow: auto; padding: 1.5em; }
 
 .desktop--dark .mac-window {
   background: #1f1f21;
@@ -460,16 +466,16 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
 .mac-window__resize--sw { bottom: 0; left: 0; width: 14px; height: 14px; cursor: nesw-resize; z-index: 6; }
 
 /* Skills grid */
-.mac-skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.45rem; }
+.mac-skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.45em; }
 .mac-skills__chip {
-  display: flex; align-items: center; gap: 0.4rem;
+  display: flex; align-items: center; gap: 0.54em;   /* 0.4rem 상당, 칩 자신의 em 기준 */
   min-width: 0;
   // 고스트 칩: 흰 창에 거의 투명하게 녹아들고 윤곽선 + 어두운 글씨만.
   background: rgba(0, 0, 0, 0.045); color: #1c1c1e;
   border: 1px solid rgba(0, 0, 0, 0.14);
-  border-radius: 10px; padding: 0.52rem 0.68rem;
+  border-radius: 0.5em; padding: 0.7em 0.92em;   /* 0.52rem/0.68rem 상당 */
   font-family: "Geist Post Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 0.74rem; font-weight: 600;
+  font-size: 0.74em; font-weight: 600;
   line-height: 1.25;
 }
 .mac-skills__icon { flex: 0 0 1.05em; width: 1.05em; text-align: center; opacity: 0.9; }
@@ -484,8 +490,8 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
   text-align: left;
 }
 .mac-bloglinks__item {
-  margin: 0 0 0.28rem;
-  font-size: 0.82rem;
+  margin: 0 0 0.28em;
+  font-size: 0.82em;
   line-height: 1.15;
 }
 .mac-bloglinks__item a {
@@ -500,7 +506,7 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
 .mac-bloglinks__item a:visited { color: #6d42a8; }
 html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
 
-.mac-projects__empty { color: #888; font-size: 0.9rem; }
+.mac-projects__empty { color: #888; font-size: 0.9em; }
 
 /* Projects / Dev Log windows reuse the Blog window's serif typeface */
 .mac-projects .archive-sheet__index,
@@ -721,6 +727,10 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
     border-radius: 0;
     animation: macSheetUp 260ms ease both;
   }
+
+  /* 데스크톱에선 창 크기와 함께 글자도 줄이지만(--win-fs), 모바일 창은 전체화면
+     시트라 화면 폭에 맞춰 글자를 줄일 이유가 없다. 원래 크기로 되돌린다. */
+  .mac-window { font-size: 1rem; }
 
   /* no resizing on mobile */
   .mac-window__resize { display: none; }

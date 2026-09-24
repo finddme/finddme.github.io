@@ -21,8 +21,8 @@
   left: "min(1628.5px, 63.6vw)"
   top: "min(299.375px, 20.8vh)"
   z: 50
-  width: "732px"
-  height: "443.667px"
+  width: "min(732px, 46vw)"
+  height: "min(443.667px, 34vh)"
   maxheight: "none"
   open: true
 "05":
