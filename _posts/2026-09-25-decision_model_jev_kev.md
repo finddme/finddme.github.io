@@ -87,6 +87,7 @@ thumbnail: https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c
 | Kev | 스스로 "Jev-style decision model" / "Jev-like" 결정 모델군으로 지칭 [49][59] |
 | OpenAI | "Decisions API" [74][75] |
 | TechCrunch | OpenAI Decisions를 "Jev clone"으로 표현 [100] |
+
 - 신생 카테고리라 표준 명칭 미확정
 
 ### 1.2 생성 LLM과의 차이
