@@ -121,6 +121,7 @@ thumbnail: https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c
 ### 2.1 decoder LLM은 두 부분으로 나뉜다 (일반론)
 
 <center><img width="1200" src="https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c3e78bc51b8"></center>
+<center><em style="color:gray;">decoder LLM 구조: 트랜스포머 본체가 hidden state를 만들고 LM head와 샘플링 루프가 토큰을 하나씩 덧붙여 재실행</em></center><br>
 
 - 그림: 입력 토큰 → 트랜스포머 본체(backbone) → 토큰마다 hidden state → (마지막 위치) LM head(선형층 1개) → 다음 토큰 확률(어휘 전체) → 샘플링(토큰 1개 선택) → 토큰을 덧붙여 재실행. 출력이 100토큰이면 이 루프를 100회 반복
 
@@ -160,6 +161,7 @@ thumbnail: https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c
 ### 2.2 출력층 교체: pointer head
 
 <center><img width="1200" src="https://github.com/user-attachments/assets/668221cd-c324-4c91-96b1-d8c025514036"></center>
+<center><em style="color:gray;">Kev 구조: 직렬화 입력이 Qwen 본체를 1회 통과하고 선택지 표현과 질문 표현을 pointer head가 비교해 선택지별 확률을 낸다. LM head는 로드 후 버린다</em></center><br>
 
 - 그림: 직렬화 입력(`<state> … <q> … <opt> … </opt> ×K <decide>`, Qwen 특수 토큰 재활용) → 트랜스포머 본체(Qwen, prefill ×1, 위치별 hidden state) → 선택지 표현 h(`</opt>`)=key(선택지마다 1개)와 질문 표현 h(`<decide>`)=query(전체 문맥 반영) → pointer head(q,k: Linear(d→256), k·q/√256, 선택지별 점수) → 선택지별 확률 softmax(z/T)(T는 체크포인트별 1개, 예: 4B T=2.41) → System One JSON(choice/confidence/score). LM head(어휘 248,320, padded)는 로드 후 버린다. forward 1회, 생성 토큰 0개, 선택지 최대 255개(요청마다 달라도 된다)
 
@@ -227,6 +229,7 @@ Kev 1.0 backbone 내부
 ### 2.3 실행 경로 비교: 생성 LLM vs Kev
 
 <center><img width="1200" src="https://github.com/user-attachments/assets/cd3b8184-954b-43e5-899c-4347e9287358"></center>
+<center><em style="color:gray;">생성 LLM(Before)과 Kev(After)의 실행 경로 비교: 출력층 교체와 반복 루프 제거</em></center><br>
 
 - 그림의 변경 사항
     - 01 CHANGED: LM head → pointer head 교체(LM head는 로드 후 버리고 쓰지 않는다). 입력에 선택지 마커(`<opt>`/`</opt>`/`<decide>`) 추가
@@ -258,6 +261,7 @@ Kev 1.0 backbone 내부
 ### 2.4 여러 질문 동시 처리: 세대별 차이
 
 <center><img width="1200" src="https://github.com/user-attachments/assets/2417e7eb-f74e-42e3-9493-d389dd362f29"></center>
+<center><em style="color:gray;">Kev-0.5B/Qwen3 세대(attention mask로 한 시퀀스 처리)와 Kev 1.0(질문별 행 + state 캐시 재사용)의 다중 질문 처리 비교</em></center><br>
 
 - 그림
     - Before(Kev-0.5B / Qwen3 세대, attention-only): state와 Q1/Q2/Q3를 한 시퀀스로 연결하고 질문마다 position 재시작 → attention mask로 질문 간 격리(질문 토큰은 state와 자기 질문만 참조) → forward 1회로 모든 질문 처리(1 sequence, 1 pass)
@@ -916,6 +920,7 @@ OpenRouter `jaredpalmer/kev-4b` 표기 [56]
 ### 5.1 calibration 개념 (일반론, Jev 공식 방식과 무관)
 
 <center><img width="1200" src="https://github.com/user-attachments/assets/c52b74ed-14e8-4fb2-beeb-f189c688867d"></center>
+<center><em style="color:gray;">reliability diagram 개념도(가상 수치): 보정 전 과신 곡선은 대각선 아래로 처지고 temperature scaling 후 대각선에 붙는다</em></center><br>
 
 - **Calibration**: 확률 p로 예측한 사례들 중 실제 정답 비율이 p에 가까운 성질. 개별 정답 보장이 아니라 집단 통계(TypeSafe 문서에도 같은 단서 포함 [2])
 - **Reliability diagram**: 예측 확률을 구간(bin)으로 나눠 구간별 평균 confidence(x)와 실제 정확도(y)를 그린 그림. 대각선에 가까울수록 잘 맞고 대각선 아래면 과신(overconfident)
@@ -1035,6 +1040,7 @@ proper scoring rule을 RL 보상으로 쓰는 연구
 ### 5.3 모델별 calibration 처리 비교
 
 <center><img width="1200" src="https://github.com/user-attachments/assets/a49928af-7ce9-40fd-8c2f-215a69bbeee9"></center>
+<center><em style="color:gray;">confidence 3구간 라우팅: softmax(z / T) → confidence → 자동 처리 / 확인·검토 / 사람 또는 다른 시스템</em></center><br>
 
 | 모델 | 학습 손실 | calibration 처리 | 출처 |
 | --- | --- | --- | --- |
