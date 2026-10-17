@@ -100,6 +100,7 @@ thumbnail: https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c
 | 확률 | 직접 주지 않거나(Anthropic) 프롬프트 추정치라 calibration이 약하다 [87] | softmax에서 직접 나오므로 temperature scaling 등으로 calibration 조정이 쉽다 |
 | 질문 정의 | 프롬프트 | 런타임에 자연어로 질문과 선택지 정의 |
 | 대표 용도 | 생성/설명/추론 | 분류/라우팅/이진 판정/점수화 |
+
 - 위 실행/지연/과금/확률 비교는 일반론. Jev가 같은 방식이라는 보장은 없다(Jev 내부 비공개)
 - "환각 0%"(TypeSafe 주장)는 **타입 안전성(스키마 일치)**에 대한 주장이며 답의 정확성 보장이 아니다 [1][2]
 - Jev 공개(2026-09-15) 뒤 약 3주 사이 Kev, OpenAI Decisions API, Claude Haiku 5.5 등이 잇따라 나왔다
@@ -215,6 +216,7 @@ Kev 1.0 backbone 내부
 | Qwen3.5-4B-Base | 8 | 32(24 + 8) | 2,560 |
 | Qwen3.5-9B-Base | 8 | 32(24 + 8) | 4,096 |
 | Qwen3.8-27B | 16 | 64(48 + 16) | 5,120 |
+
 - 층 하나 = RMSNorm → token mixer(Gated DeltaNet 또는 gated attention) → residual → RMSNorm → FFN → residual. 마지막 층 뒤 최종 RMSNorm. 2.1 일반론의 pre-norm 블록에서 attention 자리만 층마다 다른 구조 [117]
 - Gated DeltaNet: 선형 attention 계열의 순환형 층. 고정 크기 행렬 상태 S를 토큰마다 갱신(`S_t = S_{t-1}(α_t(I − β_t k_t k_tᵀ)) + β_t v_t k_tᵀ`)하고 출력은 `o_t = S_t q_t`. 상태 크기가 토큰 수와 무관 [115][119]
 - gated attention: softmax attention 출력에 head별 sigmoid gate를 곱한 형태. Qwen3.5 구현은 q_proj 출력을 query와 gate로 나눠 `attn_output × sigmoid(gate)` [116][117]
@@ -240,6 +242,7 @@ Kev 1.0 backbone 내부
 | 최종 출력층 | LM head: 마지막 hidden state → 어휘 전체의 다음 토큰 확률 | pointer head: `<decide>`와 각 `</opt>` hidden state 내적 → 선택지 K개의 확률 |
 | 실행 횟수 | 출력 토큰 수만큼 forward 반복(샘플링 → 덧붙임 → 재실행) | forward(prefill) 1회 |
 | 출력 | 텍스트 | 선택지별 확률 + confidence |
+
 - 사전학습으로 얻은 본체의 문맥 이해 능력(hidden state)은 그대로 쓰고 텍스트를 만드는 LM head와 샘플링 루프만 제거한 구조
 - 생성은 출력 길이만큼 forward가 필요. Kev는 입력과 선택지를 한 번 읽는 prefill로 종료
 - LoRA/head 학습: 본체(LoRA, 27B는 전체 가중치)와 pointer head를 선택지 비교 과제에 맞추는 짧은 fine-tuning
@@ -264,6 +267,7 @@ Kev 1.0 backbone 내부
 | --- | --- | --- |
 | Kev-0.5B, Qwen3 세대(attention-only) | state와 모든 질문을 **한 시퀀스**로 연결. attention mask로 "질문 토큰은 state와 자기 질문만 보고 다른 질문은 못 본다"를 강제. 질문마다 position id를 state 직후부터 다시 시작. 실제로 한 번의 forward pass | [49][51] |
 | **Kev 1.0 (Qwen3.5/3.8, 현행)** | DeltaNet 층은 순환형이라 mask를 무시. 그래서 **질문마다 별도 행**(state + 그 질문)으로 실행. state 부분은 한 번 계산해 캐시를 모든 행에 재사용. 행이 독립이라 격리는 정확(exact). 서버는 행들을 한 배치로 묶어 처리. 16,384는 패스당 토큰 예산(`ROW_PASS_TOKENS`)이고 행마다 state 길이를 포함해 센다. 패스당 행 수 = `max(1, 16384 // (state 길이 + 가장 긴 행 길이))` | [49][54] |
+
 - "질문 간 attention mask로 한 번의 forward pass에서 여러 질문 평가"는 **현행 Kev(Qwen3.5/3.8)에는 해당하지 않는다.** attention-only인 Qwen3 세대와 프로토타입 방식 [49]
 - attention-only 모델에서 두 방식이 같은 확률을 낸다는 테스트 존재(fp32에서 차이 4e-6 이내). 서빙 경로와 평가 경로도 fp32 반올림 수준으로 일치 [49]
 - 격리는 **질문 간**에만 보장 [49]
@@ -396,6 +400,7 @@ backbone 규모와 지식
 | 새 라벨/질문 | 재학습 필요 | 요청에 적으면 끝 |
 | 확률의 위상 | 내부 산출물(보통 argmax만 사용) | 출력 계약(보정된 확률로 분기) |
 | 포지셔닝 | 분류기 | "typed probabilistic decisions" [1] |
+
 1. 함수 시그니처: 질문까지 인자로 받으므로 분류기보다 판단 함수처럼 쓰인다
 2. 확률이 출력 계약: 생성 LLM이 말로 표현한 confidence는 과신 경향(Xiong et al., GPT-3.5 등 평균 ECE 0.377 초과) [135]. decision model은 softmax 확률을 temperature scaling으로 보정해 반환 [92] → confidence 임계값 분기를 코드로 작성 가능(5장)
 3. 포지셔닝: "unstructured state in, typed probabilistic decisions out", "System One" [1]. 마케팅 framing 비중이 크다
@@ -443,6 +448,7 @@ backbone 규모와 지식
 | `noul` | 예/아니오 | 0~1 확률 |
 | `choice` | 선택지 중 하나(최대 255개) | 선택값 + 선택지별 확률 + confidence |
 | `score` | 2~10단계 척도 | 확률가중 점수 + 단계별 확률 + confidence |
+
 - 여러 질문을 한 요청 안에서 서로 독립적으로 평가 [2]
 - 입력은 텍스트만 [4]
     - 이미지/음성/영상은 사전에 텍스트 변환 필요
@@ -464,6 +470,7 @@ backbone 규모와 지식
 | 구조적 특성 | 공개 | 비자기회귀 / 단일 병렬 forward pass / 출력 토큰 0개 [1][2] |
 | 고객별 fine-tuning | 미제공 | 도메인 적응은 `state`/`instructions`/`criteria`로 [4] |
 | 고객 데이터 학습 | 미사용 | 고객 요청/응답으로 학습하지 않는다 [4] |
+
 - 외부 정리도 동일
     - akitaonrails 벤치마크: Jev backbone을 "Undisclosed"로 표기 [69]
     - 일부 관찰자의 오픈웨이트 LLM 기반 추측은 근거 없는 추측으로 취급 [48]
@@ -485,6 +492,7 @@ backbone 규모와 지식
 | --- | --- | --- | --- |
 | 지연 | 0.114초 | 8.566초 | 193.6배 빠름 |
 | 비용 | $0.000081 | $0.013880 | 444.6배 저렴 |
+
 - 데모 단서: TypeSafe 스스로 "실제 이득의 상위 범위"라는 단서를 붙였고 평가 워크플로를 자사 팀이 구성했다고 명시
 - 가격: 입력 100만 토큰당 $0.042, 출력 무료 [1][4]
 - "환각 0%"는 **타입 안전성(스키마 일치)**에 대한 주장이며 답의 정확성 보장이 아니다
@@ -603,6 +611,7 @@ Kev 1.0 (현행, 2026-09-30 확정본) [49][50][51]
 | Kev-4B | Qwen3.5-4B-Base (`1001bb4d`) | 32층(DeltaNet 24 + attention 8), hidden 2,560 | 동결 + LoRA | LoRA 33.8M |
 | Kev-9B (v2) | Qwen3.5-9B-Base (`68c46c4b`) | 32층(DeltaNet 24 + attention 8), hidden 4,096 | 동결 + LoRA | LoRA 45.4M |
 | Kev-27B (v2) | Qwen3.8-27B (`1d4bf0f2`, post-trained) | 64층(DeltaNet 48 + attention 16), hidden 5,120 | **전체 가중치 FT** | 전부(bf16 51GB) |
+
 - 0.8B~9B는 지시 튜닝 전의 `Base` 체크포인트에서 출발. 27B만 Qwen의 post-trained 공개판에서 출발했고 그 post-training 데이터는 Kev 측도 모른다고 명시 [49]
 - Gated DeltaNet은 선형 attention 계열의 **순환형(recurrent) 층**. 현행 세대가 attention mask 방식을 쓰지 않는 원인(2.4) [49]
 - 일부 2차 출처는 0.8B/4B/9B만 언급. 27B는 이후 추가된 것으로 보인다(추측) [68]
@@ -662,6 +671,7 @@ Kev 1.0 (현행, 2026-09-30 확정본) [49][50][51]
 | 스킬(`hard-v1`) | 6,000 | 예외 많은 정책 / 우선순위 트레이드오프 / 기대값 / 다단계 추론 / 날짜와 산술 / 답 채점 / 모르면 기권. 프로그램으로 라벨 |
 | 개발도구(`devtools-v1`) | 5,320 | CodeReviewer, CommitPackFT, FlakeFlagger, Aegis(콘텐츠 안전) 원래 라벨 |
 | 27B 추가 | 합계 145,840 | 위 + 라이선스 확인된 공개 태스크 + 오픈웨이트 모델이 쓴 합성 결정 + 코드가 생성한 장문서/도구 라우팅/에이전트 로그/가드레일 레코드 |
+
 - **Jev로 라벨링/증류하지 않는다.** README/모델카드/블로그 모두 "No Jev outputs were used"를 명시 [49][50][53]. 라벨 출처는 공개 데이터 원래 라벨 / 코드 계산 / 오픈웨이트 LLM 보조
 - **"$0.03 Jev API 비용"** [59]
     - 2차 보도(aiweekly) 표기: "Modal H100 약 $95 + Jev API 호출 $0.03". 용도는 원문에서 확인 못 함
@@ -693,6 +703,7 @@ Kev 1.0 (현행, 2026-09-30 확정본) [49][50][51]
 | Kev-9B | 0.820 / 0.852 | 0.874 / 0.873 | 0.289 / 0.217 | 41.0 | 0.590 | 0.52~0.69 |
 | Kev-27B | 0.851 / 0.889 | 0.865 / 0.866 | 0.225 / 0.156 | 52.3 | 0.675 | 0.52~0.69 |
 | Jev | 0.857 / – | 0.845 / – | 0.211 / – | 54.0 | 0.840 | 0.70 |
+
 - 용어 [49]
     - "미학습 소스" = `transfer-v4`(QNLI, SciQ, PAWS, MMLU, Emotion, TweetEval + 미학습 정책/규칙, 764건)
     - breadth-v1 = Kev가 학습하지 않은 공개 데이터셋 14개의 chance 보정 지수
@@ -713,6 +724,7 @@ Kev 1.0 (현행, 2026-09-30 확정본) [49][50][51]
 | Kev-4B | H100(3.95) | 18.1 / 12.9 ms | 89.4 / 22.5 ms | 100.8 |  |
 | Kev-9B | H100(3.95) | 24.0 / 16.6 ms | 88.5 / 26.4 ms | 79.5 | 약 17GB |
 | Kev-27B | H100(3.95) | 75.0 / 52.0 ms | 277.5 / 79.3 ms | 28.9 | 가중치 51GB, 상주 약 66GB |
+
 - 위 표 요약: Kev-4B 18~89ms, Kev-27B 75~278ms(H100)
 - Apple M5 32GB(MLX, 270토큰 5질문): 0.8B 149/28ms, 4B 721/136ms. 27B는 96~128GB Mac 예상(미측정) [49]
 - Modal 실배포 HTTP(Kev-4B, H100) [49]
@@ -734,6 +746,7 @@ Kev 1.0 (현행, 2026-09-30 확정본) [49][50][51]
 | 로컬 | `uv sync --extra serve` 후 `uv run --extra serve python -m kev.serve --run jaredpalmer/kev-4b --port 8009`. CUDA/ROCm/MLX/CPU 자동 선택. **`pip install kev`는 무관한 다른 패키지**(PyPI 이름 충돌) |
 | Modal | `kev_serve.py` 하나로 HTTPS 엔드포인트 배포, 유휴 시 0으로 축소 |
 | OpenRouter | `jaredpalmer/kev-4b`만 등재(2026-09-25 등록). 입력 $0.042/M, 출력 무료, 컨텍스트 8,192. 제공자 Phala, SiliconFlow(fp8). 엔드포인트 이름 `kev-4b-20260924`(OpenRouter 공개 API, 2026-10-14 기준). 한 2차 사이트는 $0.01/M으로 표기해 불일치 [56][57] |
+
 - **TypeSafe API 호환** [49]
     - `POST /v1/systemone`, 요청 `state`/`model`/`questions`(`noul`/`choice`/`score`, `instructions`, `criteria`) 형식 그대로
     - TypeSafe Python SDK의 `base_url`만 바꾸면 동작. 저장소 테스트가 TypeSafe 예제 요청과 공식 SDK로 검증
@@ -842,6 +855,7 @@ TypeSafe 형식과 다른 점
 | state 길이 초과 | `422` [49][105] | `400` + `max_tokens_exceeded` [3] |
 | 바디 압축 | `serve.py`에 해제 처리 없음 [105] | gzip/zstd [3] |
 | 확률 표기 | 소수 4자리 반올림 [54] | 확인 못 함 |
+
 - `usage.output_tokens`는 계산 방식이 달라 Jev와 값 비교가 의미 없다
 - 압축 호환 [24][106]
     - TypeSafe SDK 최신판(Python v0.7.5 / JS v0.7.0)은 1 KiB 이상 바디를 zstd로 기본 압축
@@ -871,6 +885,7 @@ TypeSafe 형식과 다른 점
 | Choice 선택지 / Score 단계 | 각 1~255 [54] | `422` |
 | `/v1/systemone/permute` `n_perm` | 1~64, 기본 6 [105] | `422` |
 | 질문 키 길이, 바디 크기 | 확인 못 함 | 확인 못 함 |
+
 - 코드 주석: "a state of up to 64k tokens (twice Jev's 32k; the Qwen3.5 / Qwen3.8 bases' window is 262k)" [54]
 - 서버 허용치와 별개로 검증된 길이는 0.8B~9B 8,192 / 27B 65,536(4.4) [49]
 - 422 본문
@@ -986,6 +1001,7 @@ TypeSafe Docs [2][6]
 | --- | --- | --- |
 | **RLCD(TypeSafe)** | Reinforcement Learning for Calibrated Decisions, Jev 학습 방식, 비공개 | 확률 calibration |
 | **RLCD(Yang 2023)** | Reinforcement Learning from Contrastive Distillation, arXiv 2307.12950 | 인간 라벨 없이 선호쌍을 만드는 정렬(alignment) 기법 |
+
 - "RLCD"만으로 검색하면 Yang 2023 논문이 섞여 나온다
 - "RLCR"(Damani et al. 2025, calibration reward)과도 철자가 비슷해 혼동 주의(아래 관련 연구 참조)
 
@@ -1000,6 +1016,7 @@ RLHF/RL 후처리가 calibration을 망가뜨린다는 근거
 | Tian et al. 2023, "Just Ask for Calibration" (EMNLP 2023, arXiv 2305.14975) [95] | RLHF 모델(ChatGPT/GPT-4/Claude)에서 토큰 조건부 확률보다 **말로 표현한 confidence**가 더 잘 calibrated, ECE 약 50% 감소 |
 | Leng et al. 2024, "Taming Overconfidence in LLMs: Reward Calibration in RLHF" (arXiv 2410.09724) [96] | RLHF 모델이 과신하는 원인으로 보상모델의 고신뢰 편향 지목. PPO-M/PPO-C로 calibration 오류 감소 |
 | Yaldiz et al. 2026 (Amazon), "Balancing Classification and Calibration Performance in Decision-Making LLMs via Calibration Aware RL" (arXiv 2601.13284) [97] | **결정 과제**에서 RLVR이 정확도는 올리지만 극단적 과신 모델을 만든다고 진단. decision 토큰 확률을 직접 조정하는 calibration-aware RL로 정확도 유지 + ECE 최대 9pt 감소. Jev류 "결정 모델"과 문제 설정이 가장 가까운 공개 연구 |
+
 - TypeSafe의 문제의식(RLHF는 human preference를 최적화하므로 확률 분포가 망가진다)과 위 연구 흐름은 방향이 같다. 단 TypeSafe가 이 연구들을 근거로 들었다는 기록은 확인 못 함
 
 proper scoring rule을 RL 보상으로 쓰는 연구
@@ -1009,6 +1026,7 @@ proper scoring rule을 RL 보상으로 쓰는 연구
 | **RLCR**: Damani et al., "Beyond Binary Rewards: Training LMs to Reason About Their Uncertainty" (arXiv 2507.16806, 2025-07) [90] | 정답 여부(binary) + **Brier score**(말로 낸 confidence에 대해) | 추론 후 답과 수치 confidence를 함께 출력하도록 학습. 정확도 손실 없이 calibration 개선, 도메인 외에서도 일반 RL/사후 분류기보다 우수. 유계 proper scoring rule 기반 보상이 정확하고 calibrated한 모델을 만든다는 것을 증명 |
 | **Rewarding Doubt**: Bani-Harouni et al. (arXiv 2503.02623, 2025-03) [91] | **log scoring rule** 기반 보상 | 사실 질문에 대한 confidence 표현을 RL로 calibration. 과신/과소신 모두에 페널티, 미학습 과제로 일반화 |
 | Yaldiz et al. 2026 [97] | calibration-aware RL 목표(위 표 참조) | 생성된 decision 토큰 확률 자체를 교정 |
+
 - 위 연구들은 대부분 **생성형 LLM이 confidence를 말로 출력(verbalized)**하는 설정
 - Jev는 softmax 등에서 확률을 직접 내는 비생성 모델로 알려져 있어 설정이 다르다 [1]. RLCD(TypeSafe)가 이들 중 어느 것과 비슷한지는 확인 못 함
 - verbalized confidence 계열의 초기 연구로 Lin et al. 2022 "Teaching Models to Express Their Uncertainty in Words"(arXiv 2205.14334) 존재 [98]
@@ -1023,6 +1041,7 @@ proper scoring rule을 RL 보상으로 쓰는 연구
 | Kev (Jared Palmer) | 정답에 대한 cross-entropy(지도학습, RL 미사용) | 체크포인트별 temperature 하나를 저장해 pointer head에 적용(0.8B 2.35 / 4B 2.41 / 9B 2.19 / 27B 1.32). NLL 최소화로 fitting. 0.8B/4B는 in-distribution dev셋, 9B/27B는 held-out 데이터셋으로 fitting. 평가는 Brier score("whole probability distribution"을 채점) | [49] |
 | autotrust/JEV-9B (AutoTrust, TypeSafe와 무관 명시) | Jev 출력 모사 distillation(741k행 코퍼스): KL loss + score 질문은 RPS. LoRA 40.1M + head 98k 파라미터, B200 1장 약 3시간 | 타입별 temperature 적용 후 활성 슬롯 softmax | [70] |
 | OpenAI Decisions | 비공개 | **미언급.** Decisions 가이드에 "calibrat" 단어 자체가 없다. 임계값 설정은 사용자 측정에 위임 | [75] |
+
 - 공개 복제 모델 중 RL로 calibration을 학습했다고 밝힌 사례는 확인 못 함. 확인된 방식은 2가지
     - "cross-entropy(=log loss) 지도학습 + 사후 temperature scaling"
     - "Jev 확률 분포를 직접 증류"
@@ -1074,6 +1093,7 @@ proper scoring rule을 RL 보상으로 쓰는 연구
 | 출력 크기 결정 방식 | 스키마(질문 수 × 타입별 필드, choice ≤255, score 2~10). 출력 길이 파라미터 없음 [3][38] | 스키마(choice/score 각 1~255). `output_tokens` = answers JSON 토큰 수 [54] | 확인 못 함 | 생성 토큰 수(출력 길이 한도로 제어, 일반론) |
 | 데이터 거버넌스 | 학습 미사용, ZDR은 엔터프라이즈만, 미국 호스팅 | 자체 호스팅이면 외부 전송 불필요 | ZDR/HIPAA, US/EEA 리전 | Anthropic 표준 정책 |
 | 출처 | [1][4] | [49][59] | [74][75][77][85] | [83][85] |
+
 - Jev 데이터 거버넌스: TypeSafe 블로그/Models 문서에는 데이터 리전/ZDR 미기재. 법무 문서(Legal/DPA/Privacy Policy/MCA)에서 확인한 내용이 위 표 [33][34][35][36]
 
 ### 6.2 OpenAI Decisions API 상세
@@ -1170,6 +1190,7 @@ Jev 이후 2~3주 내 공개된 Jev류
 | autotrust/JEV-9B | AutoTrust(TypeSafe와 무관 명시) | 확인 못 함 | Qwen3.5-9B | Hugging Face 가중치 | Jev 출력 distillation, 24슬롯 고정 head [70] |
 | Laya | 확인 못 함 | 확인 못 함 | ModernBERT-large 기반 인코더 | 확인 못 함 | 양방향 인코더 + 결정 head [67][61] |
 | Von | 확인 못 함 | 확인 못 함 | 양방향 인코더 | 확인 못 함 | [67] |
+
 - 공개일/가격 중 2차 출처만 있는 항목은 1차 출처 미확인
 - 외부 데이터를 보낼 수 없는 경우 Kev / Strands Decider 2B / Microsoft Decision-1 등 오픈 가중치 Qwen 기반 모델의 자체 호스팅이 선택지(라이선스는 모델별 확인) [49][71].
 
@@ -1206,6 +1227,7 @@ Jev 이후 2~3주 내 공개된 Jev류
 | Noul | 별도 `confidence` 없다. 원하면 `abs(2p - 1)` |
 | Choice | `(p_max - 1/n) / (1 - 1/n)` |
 | Score | `max(0, 1 - Σ p_i·abs(i-m) / MAD_unif)` |
+
 - 기본 3구간: 높음 = 자동 처리 / 중간 = 확인/검토 / 낮음 = 사람 또는 다른 시스템 [13]
 - 위험도별로 임계값을 다르게(예: 전체 floor 0.5 미만 → 사람, 고위험은 0.9 초과일 때만) [13]
 - "보수적으로 시작, 자기 데이터로 confidence 대 정확도를 그려서 조정" [13][14]
@@ -1245,6 +1267,7 @@ agent 단계별 적용 후보 (추측 포함)
 | 가드레일(PII/정책/인젝션 탐지) 보조 | 1차 필터로는 가능 | **"적대적 콘텐츠를 적대적으로 취급하지 않음"**이 공식 약점 → 인젝션 방어를 이 모델에만 맡기면 안 된다 [5]. Kev 기본판의 모더레이션 성능은 낮다 [62] | [5][49][62] |
 | SQL 생성/집계 등 계산형 | 부적합 | 수학/날짜 약점 [5] | [5] |
 | 최종 응답 생성 | 부적합 | 텍스트 생성 불가. generator는 기존 LLM 유지 | [5] |
+
 - 크기 선택 (Kev 자체 호스팅 시, 추측 포함) [49]
     - intent 분류/시나리오 라우팅/대화 이력 판정 같은 다건 `noul`: Kev-4B부터 시작(H100 1장 약 100 req/s 수준)
     - 긴 문서 기반 판정: 27B(80GB GPU)가 아니면 8k 이하로 잘라 넣어야 한다
