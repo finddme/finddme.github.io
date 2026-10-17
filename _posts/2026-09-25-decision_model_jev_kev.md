@@ -39,7 +39,7 @@ thumbnail: https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c
 
 ---
 
-## 0. 한눈에 보기
+## 0. 요약
 
 ### 0.1 비교 요약
 
