@@ -1,5 +1,5 @@
 ---
-title: "Decision Model: Jev, Kev"
+title: "Decision Model: <span style='font-weight:bold; font-family:CMU Serif Roman;'>Jev</span>, Kev"
 category: LLM / Multimodal
 tag: Multimodal
 thumbnail: https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c3e78bc51b8
