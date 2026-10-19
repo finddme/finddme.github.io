@@ -48,6 +48,51 @@
   }
 
   var activeLink = null;
+  var followPausedUntil = 0;
+  var railPointerDown = false;
+
+  function pauseFollow() {
+    // 타이머로 강제로 되돌리지 않고, 이후 본문 스크롤/리사이즈에서 추적을 재개한다.
+    followPausedUntil = Date.now() + 1500;
+  }
+
+  function revealActiveLink() {
+    if (!rail || !activeLink || mobileLayout.matches || railPointerDown ||
+        Date.now() < followPausedUntil) return;
+
+    var bounds = rail.getBoundingClientRect();
+    var linkBounds = activeLink.getBoundingClientRect();
+    var top = Math.max(0, bounds.top + rail.clientTop) + 12;
+    var bottom = Math.min(window.innerHeight,
+      bounds.top + rail.clientTop + rail.clientHeight) - 12;
+    if (bottom <= top) return;
+
+    // scrollIntoView는 본문도 움직일 수 있으므로 목차의 scrollTop만 조정한다.
+    if (linkBounds.top < top) {
+      rail.scrollTop += linkBounds.top - top;
+    } else if (linkBounds.bottom > bottom) {
+      rail.scrollTop += linkBounds.bottom - bottom;
+    }
+  }
+
+  if (rail) {
+    rail.addEventListener('wheel', pauseFollow, { passive: true });
+    rail.addEventListener('touchmove', pauseFollow, { passive: true });
+    rail.addEventListener('keydown', pauseFollow);
+    rail.addEventListener('pointerdown', function () {
+      railPointerDown = true;
+      pauseFollow();
+    });
+    function releaseRailPointer() {
+      if (!railPointerDown) return;
+      railPointerDown = false;
+      pauseFollow();
+    }
+    window.addEventListener('pointerup', releaseRailPointer);
+    window.addEventListener('pointercancel', releaseRailPointer);
+    window.addEventListener('blur', releaseRailPointer);
+  }
+
   function setActive(link) {
     if (link === activeLink) {
       return;
@@ -76,6 +121,7 @@
       }
     }
     setActive(current);
+    revealActiveLink();
   }
 
   function onScroll() {
