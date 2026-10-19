@@ -232,6 +232,10 @@ body.post-page .post-tag:before {
 }
 
 body.post-page .post-rail__sticky {
+  box-sizing: border-box;
+  max-height: var(--toc-available-height, calc(100dvh - 3rem));
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
   padding-bottom: 1.5rem;
   position: sticky;
   top: 1.5rem;

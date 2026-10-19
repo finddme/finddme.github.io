@@ -28,6 +28,25 @@
     return;
   }
 
+  var rail = toc.closest('.post-rail__sticky');
+  var mobileLayout = window.matchMedia('(max-width: 48em)');
+
+  function updateRailHeight() {
+    if (!rail) return;
+    if (mobileLayout.matches) {
+      rail.style.removeProperty('--toc-available-height');
+      return;
+    }
+    // 제목/태그/날짜 아래에서 시작할 때도 스크롤 영역의 바닥이 화면 안에 온다.
+    var railStyle = window.getComputedStyle(rail);
+    var bottomGap = parseFloat(railStyle.paddingBottom) || 0;
+    // 포스트 끝에서 sticky가 위로 밀려나도 높이가 계속 커지지 않게 제한한다.
+    var top = Math.max(parseFloat(railStyle.top) || 0, rail.getBoundingClientRect().top);
+    var available = Math.max(0,
+      window.innerHeight - top - bottomGap);
+    rail.style.setProperty('--toc-available-height', available + 'px');
+  }
+
   var activeLink = null;
   function setActive(link) {
     if (link === activeLink) {
@@ -45,6 +64,7 @@
   var ticking = false;
   function update() {
     ticking = false;
+    updateRailHeight();
     // 뷰포트 상단에서 살짝 내려온 지점을 기준선으로(스티키 레일 top≈1.5rem 아래).
     var line = 140;
     var current = pairs[0].link;
@@ -67,5 +87,12 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
+  window.addEventListener('load', onScroll);
+  // 웹폰트가 제목 높이를 바꾸면 목차 시작 위치도 다시 측정한다.
+  if (document.fonts) document.fonts.ready.then(onScroll);
+  if (rail && window.ResizeObserver) {
+    var layoutObserver = new ResizeObserver(onScroll);
+    layoutObserver.observe(document.querySelector('.post-lab-sheet'));
+  }
   update();
 })();
