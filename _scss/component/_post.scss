@@ -252,6 +252,48 @@ body.post-page .post-content article > :first-child {
   margin-top: 0;
 }
 
+// 본문에서 필요한 구간만 <details class="post-disclosure" markdown="1">로 접는다.
+body.post-page .post-content .post-disclosure {
+  margin: 1rem 0;
+  overflow-wrap: anywhere;
+
+  > summary {
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+  }
+
+  > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  > summary::before {
+    content: "▶";
+    font-size: 0.75em;
+    flex: none;
+  }
+
+  &[open] > summary::before {
+    content: "▼";
+  }
+
+  > summary > h2 {
+    margin: 0;
+  }
+
+  > summary:focus-visible {
+    outline: 2px solid #8e8e93;
+    outline-offset: 4px;
+  }
+
+  &[open] > summary {
+    margin-bottom: 0.75rem;
+  }
+}
+
 // P3: TOC 앵커로 점프 시 헤딩이 뷰포트 최상단에 딱 붙지 않게 여백을 준다.
 body.post-page .post-content h1,
 body.post-page .post-content h2,

@@ -1409,6 +1409,9 @@ Kev
 
 ## Reference
 
+<details class="post-disclosure" data-reference-disclosure markdown="1">
+<summary>Reference</summary>
+
 번호는 주제별로 묶은 일련번호. 기준일은 별도 표기가 없으면 2026-10-14.
 
 TypeSafe 공식 블로그/문서 (docs.typesafe.ai)
@@ -1570,3 +1573,5 @@ Anthropic / 어댑터
 - [136] Stanford CS224n 2019 default project report (BERT + Answer Pointer head): https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1194/reports/default/15791435.pdf
 - [137] Jurafsky & Martin, Speech and Language Processing 3rd ed. draft, ch.10 (양방향 인코더 vs causal): https://web.stanford.edu/~jurafsky/slp3/10.pdf
 - 2026-10-15 기준 자료: [3] API reference, [4] Models, [8] Primitives, [24] Changelogs, [38] OpenAPI(버전 표기 0.2.0 유지, `assets`/Box/Long context 헤더 추가 상태), [49] Kev README, [50] Kev-4B 모델카드, [54] `kev/api.py`/`kev/model.py`, [56] OpenRouter `kev-4b` 엔드포인트 API
+
+</details>
