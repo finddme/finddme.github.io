@@ -5,9 +5,24 @@
   var dialog = document.getElementById("lab-sites-dialog");
   if (!trigger || !dialog) return;
 
-  trigger.addEventListener("click", function () {
+  // Safari can show :focus-visible on the autofocus target after a tap.
+  // Suppress only the pointer focus ring, keeping focus inside the dialog.
+  var pointerOpen = false;
+  trigger.addEventListener("pointerdown", function () {
+    pointerOpen = true;
+  });
+  trigger.addEventListener("keydown", function () {
+    pointerOpen = false;
+  });
+  trigger.addEventListener("click", function (event) {
+    dialog.toggleAttribute("data-pointer-focus", pointerOpen || event.detail > 0);
+    pointerOpen = false;
     dialog.showModal();
     document.documentElement.classList.add("lab-sites-open");
+  });
+
+  dialog.addEventListener("keydown", function () {
+    dialog.removeAttribute("data-pointer-focus");
   });
 
   dialog.querySelector("[data-sites-close]").addEventListener("click", function () {
@@ -22,6 +37,7 @@
   }
   var pressedOutside = false;
   dialog.addEventListener("pointerdown", function (event) {
+    dialog.setAttribute("data-pointer-focus", "");
     pressedOutside = event.target === dialog && outside(event);
   });
   dialog.addEventListener("click", function (event) {
@@ -31,6 +47,7 @@
 
   // Native dialog handles Escape and keeps keyboard focus inside the popup.
   dialog.addEventListener("close", function () {
+    dialog.removeAttribute("data-pointer-focus");
     document.documentElement.classList.remove("lab-sites-open");
     trigger.focus({ preventScroll: true });
   });

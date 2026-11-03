@@ -141,6 +141,26 @@
     el.addEventListener("touchstart", function () {}, { passive: true });
   });
 
+  // Track the physical press explicitly: mobile browsers differ in :active timing.
+  var profileButtons = root.querySelectorAll(".lab-profile-links :is(a, button)");
+  function clearProfilePress() {
+    Array.prototype.forEach.call(profileButtons, function (el) {
+      el.removeAttribute("data-pressed");
+    });
+  }
+  Array.prototype.forEach.call(profileButtons, function (el) {
+    el.addEventListener("pointerdown", function (event) {
+      if (event.button === 0) el.setAttribute("data-pressed", "");
+    });
+    el.addEventListener("pointerleave", function () {
+      el.removeAttribute("data-pressed");
+    });
+  });
+  document.addEventListener("pointerup", clearProfilePress, true);
+  document.addEventListener("pointercancel", clearProfilePress, true);
+  window.addEventListener("blur", clearProfilePress);
+  window.addEventListener("pagehide", clearProfilePress);
+
   // 모바일: 각 카드가 스크롤로 뷰포트에 들어오면 materialize(등장) 시킨다.
   // 초기 숨김 상태 CSS는 [data-lab-anim]로 게이트되므로, 이 함수가 돌 때만
   // (모바일 + 모션 허용 + IO 지원) 숨겼다가 순차로 드러낸다. 그 외엔 정상 표시.
