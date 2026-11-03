@@ -576,7 +576,10 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
   margin-top: 0;
 }
 
-.lab-profile-links a {
+.lab-profile-links :is(a, button) {
+  appearance: none;
+  cursor: pointer;
+  font-family: inherit;
   // iOS 유리 필(pill): 그리드/이미지 위에 떠 있는 반투명 컨트롤.
   -webkit-backdrop-filter: blur(8px) saturate(150%);
   backdrop-filter: blur(8px) saturate(150%);
@@ -605,10 +608,102 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
     transform 260ms var(--lab-ease);
 }
 
+html.lab-sites-open {
+  overflow: hidden;
+}
+
+.lab-sites {
+  background: rgba(250, 250, 252, 0.88);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 20px 64px rgba(0, 0, 0, 0.18);
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: auto;
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  padding: 12px 20px 20px;
+  width: min(440px, calc(100% - 32px));
+
+  &::backdrop { background: rgba(0, 0, 0, 0.18); }
+  &[open] { animation: lab-sites-appear 180ms ease-out; }
+}
+
+.lab-sites__header {
+  display: flex;
+  justify-content: flex-end;
+  margin: -4px -12px 0 0;
+}
+
+.lab-sites__close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #626267;
+  cursor: pointer;
+  &:hover { color: #1d1d1f; }
+}
+
+.lab-sites .lab-sites__link {
+  display: block;
+  padding: 18px 4px;
+  color: #1d1d1f;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 140ms ease, background-color 140ms ease;
+
+  + .lab-sites__link { border-top: 1px solid rgba(60, 60, 67, 0.14); }
+  &:hover { color: #005ac1; background: rgba(255, 255, 255, 0.35); }
+  &:active { background: rgba(118, 118, 128, 0.1); }
+}
+
+.lab-sites__link:focus-visible,
+.lab-sites__close:focus-visible {
+  outline: 2px solid #007aff;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+@keyframes lab-sites-appear {
+  from { opacity: 0; transform: translateY(6px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-sites[open] { animation: none; }
+  .lab-sites .lab-sites__link { transition: none; }
+}
+
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .lab-sites { background: #fafafc; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .lab-sites .lab-sites__link + .lab-sites__link { border-color: #76767c; }
+}
+
+.lab-sites__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 // hover/focus 시 글씨와 테두리를 이전 "Profile" 제목 초록(#0EEF0F)으로,
 // 유리 필이 살짝 떠오르고(translateY) 더 맑아진다.
-.lab-profile-links a:hover,
-.lab-profile-links a:focus {
+.lab-profile-links :is(a, button):hover,
+.lab-profile-links :is(a, button):focus {
   background: rgba(255, 255, 255, 0.55);
   border-color: #0EEF0F;
   box-shadow:
@@ -619,7 +714,7 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
 }
 
 // 누르면 즉시 눌린다 (스킬 §1). 짧은 duration으로 손에 붙게.
-.lab-profile-links a:active {
+.lab-profile-links :is(a, button):active {
   transform: translateY(1px) scale(0.97);
   box-shadow:
     inset 0 1px 3px rgba(0, 0, 0, 0.14),
@@ -631,16 +726,16 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
 
 // 클릭/탭(포인터)에는 outline 없음 — 검은 테두리 제거(초록 border/press 효과만).
 // 키보드(:focus-visible)만 접근성용 링 유지.
-.lab-profile-links a:focus {
+.lab-profile-links :is(a, button):focus {
   outline: none;
 }
-.lab-profile-links a:focus-visible {
+.lab-profile-links :is(a, button):focus-visible {
   outline: 2px solid rgba(142, 142, 147, 0.55);
   outline-offset: 3px;
 }
 
 // Profile 버튼만 기본 상태에서도 초록색(hover 없이).
-.lab-profile-links a[href$="/profile/"] {
+.lab-profile-links :is(a, button)[href$="/profile/"] {
   border-color: #0EEF0F;
   color: #0EEF0F;
 }
@@ -959,7 +1054,7 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
     backdrop-filter: none;
   }
 
-  .lab-profile-links a {
+  .lab-profile-links :is(a, button) {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
     background: rgba(255, 255, 255, 0.92);
@@ -977,7 +1072,7 @@ html:not(.has-touch) .lab-figure:active .lab-figure__img {
 // 고대비 선호(스킬 §14): 거의 불투명한 배경 + 뚜렷한 대비 테두리로 경계를 확정하고,
 // 흐릿한 muted 텍스트를 진하게 올린다.
 @media (prefers-contrast: more) {
-  .lab-profile-links a {
+  .lab-profile-links :is(a, button) {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
     background: #fff;

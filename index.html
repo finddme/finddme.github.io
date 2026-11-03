@@ -104,7 +104,7 @@ homepage_style: lab-archive
         <nav class="lab-profile-links" aria-label="profile links">
           <a href="{{ site.baseurl }}/profile/">Profile</a>
           <a href="https://github.com/finddme">GitHub</a>
-          <a href="mailto:yein4452@yonsei.ac.kr">Email</a>
+          <button type="button" data-sites-open aria-haspopup="dialog" aria-controls="lab-sites-dialog">Sites</button>
         </nav>
       </div>
 
@@ -115,6 +115,17 @@ homepage_style: lab-archive
     </div>
   </section>
 </main>
+
+<dialog class="lab-sites" id="lab-sites-dialog" aria-label="Sites">
+  <div class="lab-sites__header">
+    <button type="button" class="lab-sites__close" data-sites-close aria-label="Close sites" autofocus>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2 2 8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <a class="lab-sites__link" href="https://pleasereadthisforme.github.io/" target="_blank" rel="noopener noreferrer">https://pleasereadthisforme.github.io/<span class="lab-sites__sr-only"> (opens in a new tab)</span></a>
+  <a class="lab-sites__link" href="https://finddme-jomul.github.io/" target="_blank" rel="noopener noreferrer">https://finddme-jomul.github.io/<span class="lab-sites__sr-only"> (opens in a new tab)</span></a>
+</dialog>
+<script src="{{ site.baseurl }}/public/js/lab-sites.js?v=1"></script>
 
 <script>
   // 로고 유리창에 무작위로 띄울 이미지 목록. Jekyll 정적 사이트라 런타임에
@@ -131,4 +142,4 @@ homepage_style: lab-archive
   ];
 </script>
 <script src="{{ site.baseurl }}/public/js/lab-spring.js?v=1"></script>
-<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=49"></script>
+<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=50"></script>
