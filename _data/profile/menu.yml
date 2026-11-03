@@ -12,9 +12,9 @@
   default_left: "min(195.729px, 13.6vw)"
   default_top: "min(140.729px, 15.6vh)"
   default_z: 14
-- label: "Blog"
+- label: "Sites"
   id: "win-blog"
-  filename: "blog.txt"
+  filename: "sites.txt"
   type: "blog"
   default_left: "min(580.333px, 40.3vw)"
   default_top: "min(142.708px, 15.9vh)"

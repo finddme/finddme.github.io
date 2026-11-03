@@ -1,2 +1,4 @@
-# Blog links shown verbatim in the Blog window. Add/edit lines freely.
+# Site URLs shown verbatim in the sites.txt window.
 - { label: "https://finddme.github.io/",   url: "https://finddme.github.io/" }
+- { label: "https://pleasereadthisforme.github.io/", url: "https://pleasereadthisforme.github.io/" }
+- { label: "https://finddme-jomul.github.io/", url: "https://finddme-jomul.github.io/" }
