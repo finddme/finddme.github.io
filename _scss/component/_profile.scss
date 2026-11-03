@@ -701,7 +701,7 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
      긴 한글 파일명이 화면을 넘칠 수 있으므로 줄바꿈을 다시 허용한다. */
   .desktop__file { text-align: left; white-space: normal; overflow-wrap: anywhere; }
 
-  /* default-open Blog window: small, pinned top-right beside the art */
+  /* Default-open Sites window; retain win-blog for saved window positions. */
   #win-blog {
     position: absolute !important;
     top: 1rem !important;
@@ -709,12 +709,13 @@ html:not(.has-touch) .mac-bloglinks__item a:hover { color: #34258f; }
     right: 1rem !important;
     bottom: auto !important;
     width: auto !important;
-    height: 100px !important;
-    max-height: 100px !important;
+    height: auto !important;
+    max-height: 40vh !important;
     border-radius: 8px;
   }
-  /* compact body so the single link fits the shorter Blog window */
+  /* Let all site URLs fit, including wrapped URLs on narrow screens. */
   #win-blog .mac-window__body { padding: 0.6rem 1.1rem; }
+  #win-blog .mac-bloglinks__item a { overflow-wrap: anywhere; }
 
   /* every other window opens as a full-screen sheet */
   .mac-window:not(#win-blog) {
