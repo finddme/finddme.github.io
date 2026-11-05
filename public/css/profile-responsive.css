@@ -1,0 +1,88 @@
+/* Responsive profile layout: default windows participate in the page grid. */
+html{font-size:16px}body{margin:0}*{box-sizing:border-box}
+.desktop{--pad:clamp(20px,2.5vw,48px);--ui-fs:14px;--win-fs:16px;display:grid;grid-template-columns:minmax(220px,.8fr) minmax(260px,1.2fr) minmax(260px,1.2fr);grid-template-rows:auto 1fr;gap:clamp(20px,3vw,56px);align-items:start;min-height:100svh;overflow:visible;padding:var(--pad)}
+.desktop__left{grid-column:1;grid-row:1/3;width:100%;max-width:290px;font:14px/1.4 Arial,sans-serif}
+.desktop__intro,.desktop__intro-img{width:100%;max-width:100%;height:auto;max-height:none}
+.desktop__menu{width:100%;display:grid;grid-template-columns:1fr;gap:9px;margin-top:20px}
+.desktop__menu-item{font:12px/1.4 Arial,sans-serif;min-height:36px;padding:8px 12px;border-width:1.5px}
+.desktop__art{position:static;grid-column:2;grid-row:2;transform:none;width:clamp(160px,17vw,270px);max-width:100%;justify-self:center;align-self:start;margin:clamp(12px,4svh,48px) 0 0;padding:20px}
+.desktop__files{position:static;grid-column:3;grid-row:1;width:100%;margin:0;gap:8px;font-size:12px}
+.desktop__file{white-space:normal;overflow-wrap:anywhere;line-height:1.5}
+.desktop__windows{display:contents}
+.mac-window{font-size:16px}
+.mac-window:not(.profile-docked){position:fixed}
+.desktop .profile-duck:not(#win-blog),.desktop #win-blog.profile-docked,.desktop .profile-docked{position:relative!important;inset:auto!important;width:100%!important;max-width:640px!important;height:auto!important;max-height:none!important;min-width:0;justify-self:center;animation:none;transform:none!important;align-self:start}
+.profile-docked[hidden]{display:none!important}
+.profile-sites{grid-column:2;grid-row:1;margin-top:clamp(0px,4svh,48px)}
+.profile-duck{grid-column:3;grid-row:2}
+.profile-docked .mac-window__bar{cursor:default}
+.profile-docked .mac-window__resize{display:none}
+.profile-docked .mac-window__body{padding:20px;max-height:none;overflow:visible}
+.profile-docked .mac-bloglinks__item{font-size:13px;line-height:1.5}
+.profile-docked a{overflow-wrap:anywhere}
+.profile-docked .mac-image{width:215px!important;max-width:100%!important;max-height:300px!important;height:auto!important;object-fit:contain}
+.mac-window__title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12.8px;font-weight:400;line-height:1.4;letter-spacing:normal}
+@media(max-width:900px){
+ .desktop{grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr);grid-template-rows:auto auto auto auto}
+ .desktop__left{grid-row:1/5}.desktop__art{grid-column:2;grid-row:2;width:240px;margin:0}
+ .desktop__files{grid-column:2;grid-row:3;align-items:flex-start;text-align:left}.desktop__file{text-align:left}
+ .profile-duck{grid-column:2;grid-row:4}.profile-sites{margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.desktop.desktop--dark{background:#1c1c1e;color:#f5f5f5}
+
+/* Real text preserves legibility and can reflow independently of the bubble. */
+.profile-bubble{--bubble-fill:#e9e9eb;position:relative;isolation:isolate;background:var(--bubble-fill);color:#191919;border-radius:18px;padding:12px;font:12px/1.28 Arial,sans-serif}
+/* Short, downward-curving tail based on the original iPad capture.
+   A mask shares the bubble fill without painting over the page background. */
+.profile-bubble::before{content:"";position:absolute;left:4px;bottom:-5px;width:18px;height:20px;pointer-events:none;z-index:-1;background:var(--bubble-fill);--tail:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 20'%3E%3Cpath d='M0 0H18V14C12 14 10 19 2 20C6 15 3 11 1 8C0 6 0 3 0 0Z'/%3E%3C/svg%3E");-webkit-mask:var(--tail) center/100% 100% no-repeat;mask:var(--tail) center/100% 100% no-repeat}
+.profile-bubble p{font:inherit;margin:0 0 1.15em}.profile-bubble p:last-child{margin-bottom:0}
+.profile-bubble strong{font-weight:700}
+.desktop--dark .profile-bubble{--bubble-fill:#333336;color:#f5f5f5}
+.profile-docked .mac-window__bar{font-size:12px;min-height:26px}
+@media(max-height:760px) and (min-width:769px){
+ .desktop{--pad:20px;gap:20px}
+ .desktop__menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+ .desktop__menu-item{overflow-wrap:anywhere;padding:8px;font-size:12px}
+ .profile-sites,.desktop__art{margin-top:0}
+ .desktop__art{width:210px}
+ .profile-docked .mac-window__body{padding:16px}
+}
+@media(pointer:coarse){.desktop__menu-item{min-height:44px}}
+
+/* Preserve the original mobile composition; the top row grows with wrapped URLs. */
+@media(max-width:768px){
+ .desktop{--pad:16px;grid-template-columns:104px minmax(0,1fr);grid-template-rows:auto auto auto;gap:28px 9px;align-content:start}
+ .desktop__art{grid-column:1;grid-row:1;width:104px;max-width:104px;margin:0;padding:8px;justify-self:start}
+ .profile-sites{grid-column:2;grid-row:1;margin:0}
+ .desktop #win-blog.profile-docked{border-radius:8px}
+ .desktop #win-blog .mac-window__body{padding:10px 14px}
+ .profile-sites .mac-bloglinks__item{font-size:12px;line-height:1.3}
+ .desktop__left{grid-column:1/-1;grid-row:2;max-width:none;justify-self:stretch}
+ .desktop__intro{max-width:280px}
+ .profile-bubble{font-size:12px;line-height:1.28;padding:12px}
+ .desktop__menu{grid-template-columns:1fr;width:100%;gap:12px;margin-top:30px}
+ .desktop__menu-item{min-height:44px;padding:10px 20px;font-size:14px}
+ .desktop__files{grid-column:1/-1;grid-row:3;font-size:14px;margin:0}
+ .mac-window--image:not(.profile-docked) .mac-image{max-width:100%!important;width:auto;height:auto}
+}
+
+/* Match all inline emphasis to the bubble in either appearance. */
+.profile-bubble strong,.profile-bubble b{color:inherit}
+/* WAAPI owns window entry/exit; retain shadow feedback for focus and drag. */
+.desktop .mac-window{animation:none!important;transition:box-shadow 180ms ease;border-color:#b8b8b8}
+.desktop .mac-window:not(.profile-docked){max-width:calc(100vw - 16px)}
+.desktop .profile-docked[hidden]{display:flex!important;visibility:hidden;pointer-events:none}
+.mac-window:not(.mac-window--focused) .mac-window__title{color:#777}
+.mac-window--focused .mac-window__title{color:#333}
+.desktop--dark .mac-window:not(.mac-window--focused) .mac-window__title{color:#aaa}
+.desktop--dark .mac-window--focused .mac-window__title{color:#f5f5f7}
+.mac-window__title{transition:color 180ms ease}
+.mac-window__light--red::after{width:28px;height:28px;left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%)}
+.mac-window__light--red:focus-visible{outline:2px solid #777;outline-offset:5px}
+@media(max-width:768px){
+ .desktop .mac-window:not(.profile-docked){max-width:none}
+ .mac-window:not(.profile-docked) .mac-window__bar{min-height:44px}
+ .mac-window__light--red::after{width:44px;height:44px}
+}
+@media(prefers-reduced-motion:reduce){.desktop .mac-window,.mac-window__title{transition:none}}

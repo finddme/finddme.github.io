@@ -1,145 +1,37 @@
 ---
-layout: default
+layout: main-v5
 title: Home
-homepage_style: lab-archive
 ---
 
-<main class="lab-home" data-lab-home>
-  <svg class="lab-glass-defs" aria-hidden="true" focusable="false" width="0" height="0">
-    <defs>
-      <filter id="archiveGlassDistort" x="-25%" y="-25%" width="150%" height="150%" color-interpolation-filters="sRGB">
-        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.011" numOctaves="2" seed="7" result="noise" />
-        <feGaussianBlur in="noise" stdDeviation="2.2" result="smooth" />
-        <feDisplacementMap in="SourceGraphic" in2="smooth" scale="34" xChannelSelector="R" yChannelSelector="G" />
-      </filter>
-    </defs>
-  </svg>
-  <section class="lab-hero" aria-label="finddme lab archive homepage">
-    <div class="lab-grid" aria-hidden="true">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" focusable="false">
-          <g class="lab-grid__lines">
-            <line x1="33.333" y1="0" x2="33.333" y2="100" />
-            <line x1="66.667" y1="0" x2="66.667" y2="100" />
-            <line x1="0" y1="31" x2="100" y2="31" />
-            <line x1="0" y1="50" x2="100" y2="50" />
-            <line x1="0" y1="75" x2="100" y2="75" />
-          </g>
-          <g class="lab-grid__marks">
-            <rect x="32.72" y="29.85" width="1.22" height="2.3" />
-            <line x1="33.333" y1="30.42" x2="33.333" y2="31.58" />
-            <line x1="32.78" y1="31" x2="33.89" y2="31" />
-            <rect x="66.06" y="29.85" width="1.22" height="2.3" />
-            <line x1="66.667" y1="30.42" x2="66.667" y2="31.58" />
-            <line x1="66.11" y1="31" x2="67.22" y2="31" />
-            <rect x="32.72" y="48.85" width="1.22" height="2.3" />
-            <line x1="33.333" y1="49.42" x2="33.333" y2="50.58" />
-            <line x1="32.78" y1="50" x2="33.89" y2="50" />
-            <rect x="66.06" y="48.85" width="1.22" height="2.3" />
-            <line x1="66.667" y1="49.42" x2="66.667" y2="50.58" />
-            <line x1="66.11" y1="50" x2="67.22" y2="50" />
-            <rect x="32.72" y="73.85" width="1.22" height="2.3" />
-            <line x1="33.333" y1="74.42" x2="33.333" y2="75.58" />
-            <line x1="32.78" y1="75" x2="33.89" y2="75" />
-            <rect x="66.06" y="73.85" width="1.22" height="2.3" />
-            <line x1="66.667" y1="74.42" x2="66.667" y2="75.58" />
-            <line x1="66.11" y1="75" x2="67.22" y2="75" />
-          </g>
-        </svg>
-      </div>
+<div class="page">
+<header class="top"><nav aria-label="Personal links"><a class="profile-link" href="{{ site.baseurl }}/profile/">Profile</a><a href="https://github.com/finddme">GitHub</a><button class="sites-trigger" aria-haspopup="dialog" aria-controls="sites">Sites</button></nav><div class="edition">Personal archive<span>Design study / V.005</span></div></header>
+<main>
+<section class="cover" aria-label="Introduction">
+<div class="intro">
+<div class="mark"><a class="explore" href="#archive" aria-label="Explore the archive"><span aria-hidden="true">(<span id="explore-word">linguistics</span>)</span></a></div>
+<h1 class="statement"><span class="lead">Notes on language and AI.</span>
+<a href="#models">Language models and multimodal <span class="term-ending">AI<sup>(01)</sup></span></a><span class="punctuation">,</span><br>
+<a href="#nlp">NLP and machine <span class="term-ending">learning<sup>(02)</sup></span></a><span class="punctuation">,</span><br>
+<span class="ui-copy">and </span><a href="#language"><span class="term-ending">linguistics<sup>(03)</sup></span></a><span class="punctuation">.</span></h1>
 
-    <div class="lab-stage" data-lab-stage>
-      <div class="lab-title" data-lab-layer="0.2">
-        <h1>FINDDME</h1>
-        <div class="lab-title__glass lab-title__glass--a" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--b" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--c" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--wide-a" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--wide-b" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--wide-c" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--b" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--c" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--wide-a" aria-hidden="true"></div>
-        <div class="lab-title__glass lab-title__glass--wide-c" aria-hidden="true"></div>
-        <a class="lab-pill" href="{{ site.baseurl }}/profile/" aria-label="finddme profile">👽🤓🙄🤫😺👽</a>
-      </div>
-
-      {%- comment -%}
-        좌상단 상자. public/main-page/box/ 안의 첫 이미지를 상자 중앙에 배치한다.
-        폴더에 이미지를 넣고 재빌드하면 자동 반영(없으면 빈 상자).
-      {%- endcomment -%}
-      {%- assign box_files = site.static_files | where_exp: "f", "f.path contains '/public/main-page/box/'" -%}
-      {%- assign box_src = "" -%}
-      {%- for f in box_files -%}
-        {%- assign box_ext = f.extname | downcase -%}
-        {%- case box_ext -%}
-          {%- when ".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg" -%}
-            {%- if box_src == "" -%}{%- assign box_src = f.path -%}{%- endif -%}
-        {%- endcase -%}
-      {%- endfor -%}
-      <a class="lab-figure" data-lab-figure href="{{ site.baseurl }}/profile/" aria-label="finddme profile">
-        <span class="lab-figure__img"{% if box_src != "" %} style="background-image: url('{{ box_src | relative_url }}')"{% endif %}></span>
-      </a>
-
-      <a class="lab-callout lab-callout--multi" href="{{ site.baseurl }}/blog/llm_multimodal/" data-lab-callout="multi">
-        <span>LLM / Multimodal</span>
-        <small>Agents, language &amp; vision models</small>
-      </a>
-
-      <a class="lab-callout lab-callout--all" href="{{ site.baseurl }}/blog/categories/" data-lab-callout="all">
-        <span>All categories</span>
-        <small>Every topic, one index</small>
-      </a>
-
-      <a class="lab-callout lab-callout--nlp" href="{{ site.baseurl }}/blog/nlp/" data-lab-callout="nlp">
-        <span>NLP</span>
-        <small>Language, ML &amp; deep learning</small>
-      </a>
-
-      <a class="lab-callout lab-callout--ling" href="{{ site.baseurl }}/blog/nlp_linguistics/" data-lab-callout="ling">
-        <span>NLP and Linguistics</span>
-        <small>The linguistics beneath the models</small>
-      </a>
-
-      <div class="lab-callout lab-callout--about" data-lab-callout="about">
-        <nav class="lab-profile-links" aria-label="profile links">
-          <a href="{{ site.baseurl }}/profile/">Profile</a>
-          <a href="https://github.com/finddme">GitHub</a>
-          <button type="button" data-sites-open aria-haspopup="dialog" aria-controls="lab-sites-dialog">Sites</button>
-        </nav>
-      </div>
-
-      <a class="lab-callout lab-callout--project" href="{{ site.baseurl }}/blog/project/" data-lab-callout="project">
-        <span>Project Archive</span>
-        <small>Things built, not only noted</small>
-      </a>
-    </div>
-  </section>
+</div>
+<div class="notes">
+<article class="note"><h2><a href="#models">(01) MODELS</a></h2><p>Model architecture, fine-tuning, inference, RAG, and agents.</p></article>
+<article class="note"><h2><a href="#nlp">(02) NLP</a></h2><p>Embeddings, Transformers, prompt-based learning, and machine learning basics.</p></article>
+<article class="note"><h2><a href="#language">(03) LANGUAGE</a></h2><p>Syntax, semantics, conversation analysis, and linguistic knowledge in models.</p></article>
+<article class="note"><h2><a href="{{ site.baseurl }}/profile/">:) PROFILE</a></h2><p><a href="{{ site.baseurl }}/profile/">{{ site.baseurl }}/profile/</a></p></article>
+</div>
+</section>
+<section id="archive" aria-labelledby="archive-title">
+<div class="archive-heading"><h2 id="archive-title">Categories</h2><span>Latest posts by category ↓</span></div>
+<div class="chapters">
+<section class="chapter" id="models"><div><div class="meta">01 / LLM &amp; MULTIMODAL</div><h3><a href="{{ site.baseurl }}/blog/llm_multimodal/">LLM / Multimodal</a></h3><p>Language models, multimodal models, RAG, and agents.</p></div><a class="number" href="{{ site.baseurl }}/blog/llm_multimodal/" aria-label="Browse llm_multimodal category"><span aria-hidden="true">(<span class="swap"><span class="digit">01</span><span class="arrow">↗</span></span>)</span></a><ol class="recent-posts" data-category="llm_multimodal" aria-label="Latest posts">{% assign shown = 0 %}{% for post in site.posts %}{% if post.categories contains 'LLM / Multimodal' %}<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | strip_html | escape }}</a></li>{% assign shown = shown | plus: 1 %}{% if shown == 5 %}{% break %}{% endif %}{% endif %}{% endfor %}</ol></section>
+<section class="chapter" id="nlp"><div><div class="meta">02 / NLP &amp; MACHINE LEARNING</div><h3><a href="{{ site.baseurl }}/blog/nlp/">NLP</a></h3><p>Notes on NLP, machine learning, and deep learning.</p></div><a class="number" href="{{ site.baseurl }}/blog/nlp/" aria-label="Browse nlp category"><span aria-hidden="true">(<span class="swap"><span class="digit">02</span><span class="arrow">↗</span></span>)</span></a><ol class="recent-posts" data-category="nlp" aria-label="Latest posts">{% assign shown = 0 %}{% for post in site.posts %}{% if post.categories contains 'Natural Language Processing' or post.categories contains 'Machine Learning, Deep Learning' %}<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | strip_html | escape }}</a></li>{% assign shown = shown | plus: 1 %}{% if shown == 5 %}{% break %}{% endif %}{% endif %}{% endfor %}</ol></section>
+<section class="chapter" id="language"><div><div class="meta">03 / LINGUISTICS</div><h3><a href="{{ site.baseurl }}/blog/nlp_linguistics/">NLP and Linguistics</a></h3><p>Linguistics, language study, and linguistic analysis of models.</p></div><a class="number" href="{{ site.baseurl }}/blog/nlp_linguistics/" aria-label="Browse nlp_linguistics category"><span aria-hidden="true">(<span class="swap"><span class="digit">03</span><span class="arrow">↗</span></span>)</span></a><ol class="recent-posts" data-category="nlp_linguistics" aria-label="Latest posts">{% assign shown = 0 %}{% for post in site.posts %}{% if post.categories contains 'Natural Language Processing and Linguistics' or post.categories contains 'Linguistik | Germanistik' or post.categories contains 'Linguistics | English' or post.categories contains 'Language' %}<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | strip_html | escape }}</a></li>{% assign shown = shown | plus: 1 %}{% if shown == 5 %}{% break %}{% endif %}{% endif %}{% endfor %}</ol></section>
+</div>
+<div class="bottom"><a class="all" href="{{ site.baseurl }}/blog/categories/">All categories ↗</a><small>FINDDME / A PERSONAL ARCHIVE</small><a class="back" href="#top">Back to top ↑</a></div>
+</section>
 </main>
-
-<dialog class="lab-sites" id="lab-sites-dialog" aria-label="Sites">
-  <div class="lab-sites__header">
-    <button type="button" class="lab-sites__close" data-sites-close aria-label="Close sites" autofocus>
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2 2 8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-  <a class="lab-sites__link" href="https://pleasereadthisforme.github.io/" target="_blank" rel="noopener noreferrer">https://pleasereadthisforme.github.io/<span class="lab-sites__sr-only"> (opens in a new tab)</span></a>
-  <a class="lab-sites__link" href="https://finddme-jomul.github.io/" target="_blank" rel="noopener noreferrer">https://finddme-jomul.github.io/<span class="lab-sites__sr-only"> (opens in a new tab)</span></a>
-</dialog>
-<script src="{{ site.baseurl }}/public/js/lab-sites.js?v=2"></script>
-
-<script>
-  // 로고 유리창에 무작위로 띄울 이미지 목록. Jekyll 정적 사이트라 런타임에
-  // 폴더를 읽을 수 없으므로, 빌드 시점에 public/main-page/glass/ 안의 이미지들을
-  // 훑어 배열로 심는다. 폴더에 이미지를 넣고 재빌드하면 자동 반영된다.
-  window.LAB_GLASS_IMAGES = [
-    {%- assign glass_files = site.static_files | where_exp: "f", "f.path contains '/public/main-page/glass/'" -%}
-    {%- for f in glass_files -%}
-      {%- assign ext = f.extname | downcase -%}
-      {%- if ext == ".png" or ext == ".jpg" or ext == ".jpeg" or ext == ".gif" or ext == ".webp" or ext == ".svg" %}
-    "{{ f.path | relative_url }}",
-      {%- endif -%}
-    {%- endfor %}
-  ];
-</script>
-<script src="{{ site.baseurl }}/public/js/lab-spring.js?v=1"></script>
-<script src="{{ site.baseurl }}/public/js/lab-archive.js?v=51"></script>
+</div>
+<aside class="rail" aria-label="Other sites"><a href="https://pleasereadthisforme.github.io/" target="_blank" rel="noopener noreferrer" aria-label="https://pleasereadthisforme.github.io/ (opens in a new tab)"><img class="site-icon" src="{{ site.baseurl }}/public/main-v5/assets/site-icons/pleasereadthisforme.png" width="28" height="28" alt=""><span>https://pleasereadthisforme.github.io/</span></a><a href="https://finddme-jomul.github.io/" target="_blank" rel="noopener noreferrer" aria-label="https://finddme-jomul.github.io/ (opens in a new tab)"><img class="site-icon" src="{{ site.baseurl }}/public/main-v5/assets/site-icons/jomul.png" width="28" height="28" alt=""><span>https://finddme-jomul.github.io/</span></a></aside>
+<dialog id="sites" aria-label="Sites"><div class="dialog-top"><button class="close" aria-label="Close sites">×</button></div><a href="https://pleasereadthisforme.github.io/">https://pleasereadthisforme.github.io/</a><a href="https://finddme-jomul.github.io/">https://finddme-jomul.github.io/</a></dialog>
