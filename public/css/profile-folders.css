@@ -1,0 +1,57 @@
+/* Profile folder menu. Base interactions are inherited from the shared profile styles. */
+.desktop .desktop__menu{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 8px;margin-top:22px}
+.desktop .desktop__menu .desktop__menu-item{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;min-width:0;min-height:92px;padding:6px 3px;border:0;border-radius:8px;font:12px/1.35 "Helvetica Neue",Arial,sans-serif;text-align:center}
+.folder-icon{display:block;width:72px;height:60px;flex-shrink:0;object-fit:contain}
+.folder-label{padding:2px 5px;border-radius:4px;max-width:100%;overflow-wrap:anywhere}
+.github-icon{display:flex;align-items:center;justify-content:center}
+.github-icon img{width:44px;height:44px;object-fit:contain}
+.github-icon .github-dark{display:none}
+.desktop--dark .github-icon .github-light{display:none}
+.desktop--dark .github-icon .github-dark{display:block}
+.desktop__menu .folder-icon,.desktop__menu .github-icon img{margin:0;border-radius:0}
+
+/* Move the persistent Official Projects accent onto the folder artwork. */
+.desktop .desktop__menu-item[data-mac-open="win-official"]{background:transparent}
+
+/* Smooth web feedback, not a claim of a native Finder animation. */
+.finder-folder .folder-label{transition:background-color 160ms ease,color 160ms ease}
+.finder-folder:active .folder-label{transition-duration:80ms}
+.official-icon img{display:block;width:72px;height:60px;margin:0;border-radius:0}
+.official-icon .official-dark{display:none}
+.desktop--dark .official-icon .official-light{display:none}
+.desktop--dark .official-icon .official-dark{display:block}
+@media(prefers-reduced-motion:reduce){.finder-folder .folder-label{transition:none}}
+
+/* Quiet hover and persistent window-linked selection, limited to folder labels. */
+@media(hover:hover) and (pointer:fine){
+ html:not(.has-touch) .desktop .desktop__menu .finder-folder:not(.folder-open):not(:active):hover .folder-label{background:rgba(0,0,0,.055)}
+ html:not(.has-touch) .desktop--dark .desktop__menu .finder-folder:not(.folder-open):not(:active):hover .folder-label{background:rgba(255,255,255,.09)}
+}
+html .desktop .desktop__menu .finder-folder.folder-open .folder-label{background:#e5e7eb;color:#333}
+html .desktop--dark .desktop__menu .finder-folder.folder-open .folder-label{background:#41444a;color:#eee}
+html .desktop .desktop__menu .finder-folder.folder-selected .folder-label,
+html .desktop .desktop__menu .finder-folder:active .folder-label{background:#2864c5;color:#fff}
+html .desktop--dark .desktop__menu .finder-folder.folder-selected .folder-label,
+html .desktop--dark .desktop__menu .finder-folder:active .folder-label{background:#305c9a;color:#fff}
+html .desktop .desktop__menu .finder-folder:focus-visible{outline:2px solid #76acd5;outline-offset:2px}
+
+/* Keep hover motion and shadow, without the yellow button surface. */
+html:not(.has-touch) .desktop .desktop__menu .desktop__menu-item:hover{background:transparent}
+
+/* Only the icon silhouette and label receive visible feedback, not the hit area. */
+html .desktop .desktop__menu .desktop__menu-item,
+html .desktop .desktop__menu .desktop__menu-item:hover,
+html .desktop .desktop__menu .desktop__menu-item:active{background:transparent;box-shadow:none}
+.desktop__menu .folder-icon{transition:filter 160ms ease}
+@media(hover:hover) and (pointer:fine){
+ html:not(.has-touch) .desktop .desktop__menu-item:hover .folder-icon:not(.github-icon){filter:drop-shadow(0 3px 3px rgba(0,0,0,.16))}
+ html:not(.has-touch) .desktop--dark .desktop__menu-item:hover .folder-icon:not(.github-icon){filter:drop-shadow(0 3px 3px rgba(0,0,0,.35))}
+ html:not(.has-touch) .desktop .desktop__menu-item:active .folder-icon:not(.github-icon){filter:drop-shadow(0 1px 1px rgba(0,0,0,.12))}
+}
+@media(prefers-reduced-motion:reduce){.desktop__menu .folder-icon{transition:none}}
+
+/* Mobile spacing only: preserve item order, icon sizes and file-list styling. */
+@media(max-width:768px){
+ .desktop .desktop__menu{grid-template-columns:repeat(3,minmax(0,1fr));width:264px;max-width:100%;margin-inline:5px 0;column-gap:0;row-gap:0}
+ .desktop .desktop__menu .desktop__menu-item{min-height:0;padding:0;gap:0}
+}

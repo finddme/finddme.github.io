@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 60"><!-- Front uses the original translucent fill composited on its page background to keep the back panel from showing through. --><defs>
+ <linearGradient id="back" x2="0" y2="1"><stop stop-color="#E1E708"/><stop offset="1" stop-color="#E1E708"/></linearGradient>
+ <linearGradient id="front" x2="0" y2="1"><stop stop-color="#F6F8B5"/><stop offset="1" stop-color="#F6F8B5"/></linearGradient>
+ <linearGradient id="rim" x2="0" y2="1"><stop stop-color="#ffffe8"/><stop offset="1" stop-color="#edf0ad"/></linearGradient>
+ </defs>
+ <path d="M7 49h58l-2 5H9Z" fill="#73762b" opacity=".13"/>
+ <path d="M6 15q0-3 3-3h17q2 0 4 3l2 2h31q3 0 3 3v30H6Z" fill="url(#back)" stroke="#b3b65f" stroke-width=".5"/>
+ <path d="M10 19h52v5H10Z" fill="url(#rim)"/>
+ <path d="M6 23q0-2 3-2h55q3 0 3 2l-2 27q0 3-3 3H11q-3 0-3-3Z" fill="url(#front)" stroke="#c4c77e" stroke-width=".55"/>
+ <path d="M9 22h54" stroke="#ffffed" stroke-width=".8" opacity=".9"/>
+ <path d="M11 51.5h50" stroke="#b0b554" stroke-width=".6" opacity=".4"/>
+ 
+ </svg>
