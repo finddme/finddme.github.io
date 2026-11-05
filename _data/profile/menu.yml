@@ -1,4 +1,4 @@
-# Left-column menu boxes (#E1E708 border). Order here = display order.
+# Left-column folder menu. Order here = display order.
 # type: skills | blog | links | projects
 # source (links/projects only): github | email | collection:<name> | category:<Category Name>
 # Optional per-window first-open position: default_left/default_top, e.g. "208px" or "12vw".
@@ -16,8 +16,8 @@
   id: "win-blog"
   filename: "sites.txt"
   type: "blog"
-  default_left: "min(580.333px, 40.3vw)"
-  default_top: "min(142.708px, 15.9vh)"
+  default_left: "min(443.25px, 27.395vw)"
+  default_top: "min(93.4375px, 10.2566vh)"
   default_z: 54
   default_open: true
 - label: "Official-Projects"
@@ -33,8 +33,8 @@
   filename: "personal_projects.rtf"
   type: "projects"
   source: "collection:personal_projects"
-  default_left: "min(247.052px, 17.2vw)"
-  default_top: "min(305.385px, 33.9vh)"
+  default_left: "min(314.53125px, 38.0328vw)"
+  default_top: "min(309.375px, 33.9599vh)"
   default_z: 28
 - label: "Dev-Logs"
   id: "win-devlog"
@@ -44,7 +44,7 @@
   default_left: "min(883.062px, 61.3vw)"
   default_top: "min(322.062px, 35.8vh)"
   default_z: 26
-- label: "Github"
+- label: "GitHub"
   id: "win-github"
   filename: "github.txt"
   type: "links"

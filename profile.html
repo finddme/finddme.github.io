@@ -9,7 +9,7 @@ permalink: /profile/
        (use "01_", "02_" … if you have 10+). The number prefix is stripped for display. {% endcomment %}
   {% assign profile_images = site.static_files | where_exp: "f", "f.path contains '/public/profile/images/'" | sort: "name" %}
 
-  <!-- Left column: intro card + menu boxes -->
+  <!-- Left column: intro card + folder menu -->
   <div class="desktop__left">
     <div class="desktop__intro">
       <div class="profile-bubble">
@@ -23,8 +23,9 @@ permalink: /profile/
 
     <nav class="desktop__menu" aria-label="Profile sections">
       {% for item in site.data.profile.menu %}
-        <button type="button" class="desktop__menu-item" data-mac-open="{{ item.id }}">
-          {{ item.label }}
+        <button type="button" class="desktop__menu-item finder-folder" data-mac-open="{{ item.id }}">
+          {% include profile/menu-icon.html item=item %}
+          <span class="folder-label">{{ item.label }}</span>
         </button>
       {% endfor %}
     </nav>
