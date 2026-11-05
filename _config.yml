@@ -149,3 +149,7 @@ incremental: false
 # # dark mode
 # dark_theme_toggle        : true 
 #   - /assets/js/custom/dark-theme.js
+
+# Local design studies are not published site assets.
+exclude:
+  - docs

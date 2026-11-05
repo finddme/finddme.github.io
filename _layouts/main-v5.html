@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ site.title | escape }}</title>
+<meta name="description" content="Notes on language and AI. Language models, multimodal AI, NLP, machine learning, and linguistics.">
+<link rel="canonical" href="https://finddme.github.io{{ site.baseurl }}/">
+<link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/public/favicon.svg">
+<link rel="apple-touch-icon" href="{{ site.baseurl }}/public/apple-touch-icon.png">
+<link rel="stylesheet" href="{{ site.baseurl }}/public/main-v5/main.css?v={{ site.time | date: '%s' }}">
+{% if site.google_analytics_token %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_token }}"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',{{ site.google_analytics_token | jsonify }});</script>
+{% endif %}
+</head><body id="top">{{ content }}
+<script src="{{ site.baseurl }}/public/main-v5/main.js?v={{ site.time | date: '%s' }}"></script>
+</body></html>
