@@ -120,3 +120,7 @@
 .top nav a:active,.sites-trigger:active,.rail a:active,.note a:active,.recent-posts a:active{opacity:.62}
 .rail a:active .site-icon{opacity:.75}
 @media(prefers-reduced-motion:reduce){.number .digit,.number .arrow{transition:none}}
+
+/* Vector arrows keep the same shape on iOS and desktop, without emoji substitution. */
+.arrow-up-right{display:inline-block;width:1em;height:1em;vertical-align:-.12em;flex-shrink:0}
+.number .arrow .arrow-up-right{display:block;margin-inline:auto}
