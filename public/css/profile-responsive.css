@@ -5,13 +5,13 @@ html{font-size:16px}body{margin:0}*{box-sizing:border-box}
 .desktop__intro,.desktop__intro-img{width:100%;max-width:100%;height:auto;max-height:none}
 .desktop__menu{width:100%;display:grid;grid-template-columns:1fr;gap:9px;margin-top:20px}
 .desktop__menu-item{font:12px/1.4 Arial,sans-serif;min-height:36px;padding:8px 12px;border-width:1.5px}
-.desktop__art{position:static;grid-column:2;grid-row:2;transform:none;width:clamp(160px,17vw,270px);max-width:100%;justify-self:center;align-self:start;margin:clamp(12px,4svh,48px) 0 0;padding:20px}
+.desktop__art{position:static;grid-column:2;grid-row:2;transform:none;width:clamp(136.8px,14.535vw,230.85px);max-width:100%;justify-self:center;align-self:start;margin:clamp(12px,4svh,48px) 0 0;padding:17.1px}
 .desktop__files{position:static;grid-column:3;grid-row:1;width:100%;margin:0;gap:8px;font-size:12px}
 .desktop__file{white-space:normal;overflow-wrap:anywhere;line-height:1.5}
 .desktop__windows{display:contents}
 .mac-window{font-size:16px}
 .mac-window:not(.profile-docked){position:fixed}
-.desktop .profile-duck:not(#win-blog),.desktop #win-blog.profile-docked,.desktop .profile-docked{position:relative!important;inset:auto!important;width:100%!important;max-width:640px!important;height:auto!important;max-height:none!important;min-width:0;justify-self:center;animation:none;transform:none!important;align-self:start}
+.desktop .profile-duck:not(#win-blog):not(.profile-detached),.desktop #win-blog.profile-docked:not(.profile-detached),.desktop .profile-docked:not(.profile-detached){position:relative!important;inset:auto!important;width:100%!important;max-width:640px!important;height:auto!important;max-height:none!important;min-width:0;justify-self:center;animation:none;transform:none;align-self:start}
 .profile-docked[hidden]{display:none!important}
 .profile-sites{grid-column:2;grid-row:1;margin-top:clamp(0px,4svh,48px)}
 .profile-duck{grid-column:3;grid-row:2}
@@ -24,7 +24,7 @@ html{font-size:16px}body{margin:0}*{box-sizing:border-box}
 .mac-window__title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:12.8px;font-weight:400;line-height:1.4;letter-spacing:normal}
 @media(max-width:900px){
  .desktop{grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr);grid-template-rows:auto auto auto auto}
- .desktop__left{grid-row:1/5}.desktop__art{grid-column:2;grid-row:2;width:240px;margin:0}
+ .desktop__left{grid-row:1/5}.desktop__art{grid-column:2;grid-row:2;width:205.2px;margin:0}
  .desktop__files{grid-column:2;grid-row:3;align-items:flex-start;text-align:left}.desktop__file{text-align:left}
  .profile-duck{grid-column:2;grid-row:4}.profile-sites{margin-top:0}
 }
@@ -45,7 +45,7 @@ html{font-size:16px}body{margin:0}*{box-sizing:border-box}
  .desktop__menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
  .desktop__menu-item{overflow-wrap:anywhere;padding:8px;font-size:12px}
  .profile-sites,.desktop__art{margin-top:0}
- .desktop__art{width:210px}
+ .desktop__art{width:179.55px}
  .profile-docked .mac-window__body{padding:16px}
 }
 @media(pointer:coarse){.desktop__menu-item{min-height:44px}}
@@ -86,3 +86,14 @@ html{font-size:16px}body{margin:0}*{box-sizing:border-box}
  .mac-window__light--red::after{width:44px;height:44px}
 }
 @media(prefers-reduced-motion:reduce){.desktop .mac-window,.mac-window__title{transition:none}}
+
+/* Desktop default windows keep their grid slots when moved by the title bar. */
+@media(min-width:769px){
+ .desktop .profile-detached{position:fixed!important;margin:0;max-width:calc(100vw - 16px)}
+ .profile-docked .mac-window__bar{cursor:grab}
+ .profile-docked.mac-window--dragging .mac-window__bar{cursor:grabbing}
+}
+@media(max-width:768px){
+ .profile-window-slot{display:none}
+ .desktop #win-blog.profile-detached{position:relative!important;inset:auto!important;width:100%!important;max-width:640px!important;height:auto!important;max-height:none!important;min-width:0;justify-self:center;align-self:start;margin:0;transform:none}
+}
