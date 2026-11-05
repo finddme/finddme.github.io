@@ -37,7 +37,7 @@
   // Pull a window fully into the viewport so wide default positions aren't clipped
   // on narrower screens. Desktop only (mobile windows are full-screen sheets).
   function clampIntoView(win) {
-    if (win.classList.contains('profile-docked')) return;
+    if (win.classList.contains('profile-docked') && !win.classList.contains('profile-detached')) return;
     if (isMobile()) return;
     // 직전 clamp 결과가 아니라 "원래 좌표"에서 다시 계산해야, 화면을 넓혔을 때
     // 창이 제자리로 돌아온다. 원래 좌표가 없는 창(=CSS 기본 위치)은 건드리지 않는다.
@@ -74,6 +74,17 @@
   // home screen on load. Only the small pinned Blog window stays open by default.
   if (isMobile()) {
     document.querySelectorAll('.mac-window--image').forEach(function (w) { if (!w.classList.contains('profile-docked')) w.hidden = true; });
+  }
+
+  // Desktop Sites starts at the requested position; retain its original grid slot.
+  if (!isMobile()) {
+    var sitesWindow = document.getElementById('win-blog');
+    if (sitesWindow) {
+      detachDockedWindow(sitesWindow);
+      sitesWindow.style.left = sitesWindow.dataset.defaultLeft;
+      sitesWindow.style.top = sitesWindow.dataset.defaultTop;
+      rememberWanted(sitesWindow);
+    }
   }
 
   // Keep default-open windows on-screen now and whenever the viewport changes.
@@ -135,6 +146,28 @@
   // 내비게이션일 때만 복원한다(직접 로드/새로고침은 기본 상태 유지). 데스크톱 전용.
   var STATE_KEY = 'profileResponsive_v2';
 
+  // Keep the original grid slot while a default window is dragged freely.
+  function detachDockedWindow(win) {
+    if (!win.classList.contains('profile-docked') || win.classList.contains('profile-detached')) return;
+    var rect = win.getBoundingClientRect(), css = getComputedStyle(win);
+    var slot = document.createElement('div');
+    slot.className = 'profile-window-slot';
+    slot.setAttribute('aria-hidden', 'true');
+    slot.style.cssText = 'pointer-events:none;visibility:hidden';
+    ['gridColumn','gridRow','margin','justifySelf','alignSelf'].forEach(function (key) {
+      slot.style[key] = css[key];
+    });
+    slot.style.width = rect.width + 'px';
+    slot.style.maxWidth = '100%';
+    slot.style.height = rect.height + 'px';
+    win.before(slot);
+    win.classList.add('profile-detached');
+    win.style.width = rect.width + 'px';
+    win.style.left = rect.left + 'px';
+    win.style.top = rect.top + 'px';
+    win.dataset.placed = '1';
+  }
+
   function saveState() {
     if (!desktop) return;
     try {
@@ -142,7 +175,7 @@
       document.querySelectorAll('.mac-window').forEach(function (w) {
         if (!w.id) return;
         st.win[w.id] = {
-          o: !w.hidden,
+          o: !w.hidden, detached: w.classList.contains('profile-detached'),
           // clamp 로 밀린 임시 좌표가 아니라 원래 좌표를 저장한다(없으면 현재 값).
           l: w.dataset.wantLeft || w.style.left || '',
           t: w.dataset.wantTop || w.style.top || '',
@@ -191,6 +224,7 @@
       var w = document.getElementById(id);
       if (!w) return;
       var s = st.win[id];
+      if (s.detached && !isMobile()) detachDockedWindow(w);
       if (s.l) w.style.left = s.l;
       if (s.t) w.style.top = s.t;
       if (s.w) w.style.width = s.w;
@@ -257,11 +291,21 @@
     stopWindowMotion(win);
     if (motionQuery.matches) { complete(); return; }
     var docked = win.classList.contains('profile-docked');
-    var small = isMobile() && !docked ? 'translateY(28px)' : 'scale(.96)';
-    var frames = docked ? [{opacity:0},{opacity:1}] :
-      [{opacity:0,transform:small},{opacity:1,transform:'none'}];
+    var menuGrow = !isMobile();
+    if (menuGrow) {
+      var opener = windowOpeners.get(win) || document.querySelector('[data-mac-open="'+win.id+'"]');
+      if (opener) {
+        var r = win.getBoundingClientRect(), b = opener.getBoundingClientRect();
+        win.style.transformOrigin = (b.left+b.width/2-r.left)+'px '+(b.top+b.height/2-r.top)+'px';
+      }
+    }
+    var sheet = isMobile() && !docked;
+    var frames = sheet ? [{transform:'translateY(100%)'},{transform:'translateY(0)'}] :
+      (menuGrow ? [{opacity:0,transform:'scale(.5)'},{opacity:1,transform:'none'}] :
+      [{opacity:0},{opacity:1}]);
     var animation = win.animate(closing ? frames.slice().reverse() : frames, {
-      duration:closing ? 180 : 240,easing:'cubic-bezier(.22,1,.36,1)'
+      duration:sheet ? 260 : (closing ? 320 : 420),
+      easing:sheet ? 'ease' : 'cubic-bezier(.22,1,.36,1)'
     });
     windowMotion.set(win,{animation:animation,closing:closing,complete:complete});
     animation.onfinish = function () {
@@ -457,9 +501,9 @@
     var handle = e.target.closest('[data-mac-drag-handle]');
     if (!handle || e.target.closest('[data-mac-close]')) return;
     var win = handle.closest('.mac-window');
-    if (win && win.classList.contains('profile-docked')) return;
     if (!win) return;
     stopWindowMotion(win);
+    detachDockedWindow(win);
     var rect = win.getBoundingClientRect();
     drag = { win: win, dx: e.clientX - rect.left, dy: e.clientY - rect.top };
     win.style.top = rect.top + 'px';
@@ -661,4 +705,32 @@
       el.addEventListener('pointerleave', release);
     });
   })();
+})();
+
+// Folder labels reflect window state; no changes to window animation or timing.
+(function(){
+  var pairs=Array.from(document.querySelectorAll('.finder-folder')).map(function(button){
+    return {button:button,window:document.getElementById(button.dataset.macOpen)};
+  }).filter(function(pair){return pair.window;});
+  var interacted=false;
+  function sync(){
+    pairs.forEach(function(pair){
+      var open=!pair.window.hidden;
+      pair.button.classList.toggle('folder-open',open);
+      pair.button.classList.toggle('folder-selected',interacted && open && pair.window.classList.contains('mac-window--focused'));
+      pair.button.setAttribute('aria-expanded',String(open));
+      pair.button.setAttribute('aria-controls',pair.window.id);
+    });
+  }
+  function noteInteraction(event){
+    if(!event.target.closest('[data-mac-open],.mac-window'))return;
+    interacted=true;
+    queueMicrotask(sync);
+  }
+  document.addEventListener('pointerdown',noteInteraction);
+  document.addEventListener('click',noteInteraction);
+  document.addEventListener('focusin',noteInteraction);
+  var observer=new MutationObserver(sync);
+  pairs.forEach(function(pair){observer.observe(pair.window,{attributes:true,attributeFilter:['hidden','class']});});
+  sync();
 })();

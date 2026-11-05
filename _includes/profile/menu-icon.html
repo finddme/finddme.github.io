@@ -1,0 +1,11 @@
+{% assign icon_root = '/public/profile/icons/' | prepend: site.baseurl %}
+{% case include.item.id %}
+  {% when 'win-official' %}
+    <span class="folder-icon official-icon" aria-hidden="true"><img class="official-light" src="{{ icon_root }}win-official.svg" alt=""><img class="official-dark" src="{{ icon_root }}win-official-dark.svg" alt=""></span>
+  {% when 'win-github' %}
+    <span class="folder-icon github-icon" aria-hidden="true"><img class="github-light" src="{{ icon_root }}github-black.svg" alt=""><img class="github-dark" src="{{ icon_root }}github-white.svg" alt=""></span>
+  {% when 'win-email' %}
+    <img class="folder-icon" src="{{ icon_root }}email.svg" alt="" aria-hidden="true">
+  {% else %}
+    <img class="folder-icon" src="{{ icon_root }}{{ include.item.id }}.svg" alt="" aria-hidden="true">
+{% endcase %}
