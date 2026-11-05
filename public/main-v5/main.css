@@ -128,3 +128,15 @@
 /* Keep touch-opened dialog focus without drawing a keyboard focus ring. */
 #sites .close{appearance:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent}
 #sites .close:focus:not(:focus-visible),#sites.pointer-focus .close:focus{outline:none;box-shadow:none}
+
+/* A slimmer site rail on mobile, with space reserved alongside the content. */
+@media(max-width:800px){
+ :root{--rail:calc(28px + env(safe-area-inset-right,0px))}
+ .rail{display:flex;padding:16px env(safe-area-inset-right,0px) 16px 0;gap:20px}
+ .rail a{width:28px;padding:10px 0;gap:8px;font-size:10px;line-height:1.4;position:relative;left:-0.5px}
+ .rail .site-icon{width:20px;height:20px}
+ .rail a:focus-visible{outline-offset:-3px}
+}
+@media(max-width:800px) and (max-height:600px){
+ .rail{justify-content:flex-start}
+}
