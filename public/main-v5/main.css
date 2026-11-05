@@ -87,8 +87,8 @@
  .top nav>a,.top .sites-trigger{display:inline-flex;align-items:center;min-height:44px}
  .cover{padding:24px var(--page-gutter) 40px;gap:44px}
  .intro{padding:0;gap:32px;align-items:stretch}
- .mark{transform:none;align-self:center;padding:12px 0;max-width:100%}
- .mark .explore{width:13em;max-width:100%;font-size:clamp(22px,4vw,30px);white-space:nowrap}
+ .mark{transform:translateX(calc(var(--rail)/2));align-self:stretch;width:100%;min-width:0;padding:12px 0;max-width:100%}
+ .mark .explore{width:100%;max-width:100%;text-align:center;font-size:clamp(22px,4vw,30px);white-space:nowrap}
  .statement{font-size:clamp(26px,4.5vw,36px);line-height:1.25;text-align:left;letter-spacing:-.025em}
  .statement .lead{display:block;margin-bottom:.3em}
  .statement br{display:block}
