@@ -29,6 +29,10 @@ document.addEventListener('visibilitychange',restartExplore);
 restartExplore();
 const dialog=document.querySelector('#sites');
 const trigger=document.querySelector('.sites-trigger');
+// Safari may mark the dialog's automatically focused close button as focus-visible.
+// Suppress that ring for pointer input, then restore it as soon as a keyboard is used.
+document.addEventListener('pointerdown',()=>dialog.classList.add('pointer-focus'),{passive:true});
+document.addEventListener('keydown',()=>dialog.classList.remove('pointer-focus'));
 const dialogMotion=matchMedia('(prefers-reduced-motion: reduce)');
 let dialogAnimation=null;
 function animateDialog(closing){
