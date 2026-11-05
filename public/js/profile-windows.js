@@ -37,6 +37,7 @@
   // Pull a window fully into the viewport so wide default positions aren't clipped
   // on narrower screens. Desktop only (mobile windows are full-screen sheets).
   function clampIntoView(win) {
+    if (win.classList.contains('profile-docked')) return;
     if (isMobile()) return;
     // 직전 clamp 결과가 아니라 "원래 좌표"에서 다시 계산해야, 화면을 넓혔을 때
     // 창이 제자리로 돌아온다. 원래 좌표가 없는 창(=CSS 기본 위치)은 건드리지 않는다.
@@ -72,7 +73,7 @@
   // On mobile, image windows never auto-open — a full-screen sheet would cover the
   // home screen on load. Only the small pinned Blog window stays open by default.
   if (isMobile()) {
-    document.querySelectorAll('.mac-window--image').forEach(function (w) { w.hidden = true; });
+    document.querySelectorAll('.mac-window--image').forEach(function (w) { if (!w.classList.contains('profile-docked')) w.hidden = true; });
   }
 
   // Keep default-open windows on-screen now and whenever the viewport changes.
@@ -90,6 +91,7 @@
     var art = artToggle.getBoundingClientRect();
     if (!art.width) return;
     document.querySelectorAll('.mac-window--image:not([hidden])').forEach(function (win) {
+      if (win.classList.contains('profile-docked')) return;
       var r = win.getBoundingClientRect();
       if (!r.width) return;
       var overlaps = r.left < art.right && art.left < r.right &&
@@ -131,7 +133,7 @@
   // 프로젝트를 눌러 다른 페이지로 갔다가 뒤로 오면 열어둔 창이 초기화되던 문제를
   // 해결한다. bfcache에 의존하지 않고 sessionStorage에 상태를 저장, "뒤로/앞으로"
   // 내비게이션일 때만 복원한다(직접 로드/새로고침은 기본 상태 유지). 데스크톱 전용.
-  var STATE_KEY = 'profileDesktopState_v1';
+  var STATE_KEY = 'profileResponsive_v2';
 
   function saveState() {
     if (!desktop) return;
@@ -243,116 +245,99 @@
     if (isMobile()) closeTopMobileWindow();
   });
 
-  // 이미지 창(win-img-*)은 중앙 축소(collapsed), 나머지 메뉴 창은 버튼에서
-  // 자라나는(grow) 효과를 쓴다.
-  var GROW_SCALE = 0.5; // .mac-window--grow의 scale과 반드시 일치
-  function collapseClassFor(win) {
-    return win.id.indexOf('win-img-') === 0 ? 'mac-window--collapsed' : 'mac-window--grow';
+  // One cancellable animation per window; positioning uses the final layout size.
+  var windowMotion = new Map();
+  var windowOpeners = new Map();
+  var motionQuery = matchMedia('(prefers-reduced-motion: reduce)');
+  function stopWindowMotion(win) {
+    var entry = windowMotion.get(win);
+    if (entry) { entry.animation.cancel(); windowMotion.delete(win); }
   }
-  // 그로우 창을 클릭한 버튼에서 자라나 보이게 transform-origin을 버튼 중심으로.
-  // 창은 지금 center-origin으로 GROW_SCALE 축소된 상태(opacity 0)라, 그 rect에서
-  // 원래(미축소) 박스를 복원해 버튼 중심의 상대 좌표를 구한다. origin 변경 때
-  // 위치가 튀지만 opacity 0이라 안 보인다.
-  function setGrowOrigin(win, btn) {
-    if (!btn) return;
-    var r = win.getBoundingClientRect();
-    if (!r.width) return;
-    var cx = r.left + r.width / 2;
-    var cy = r.top + r.height / 2;
-    var uw = r.width / GROW_SCALE;
-    var uh = r.height / GROW_SCALE;
-    var uLeft = cx - uw / 2;
-    var uTop = cy - uh / 2;
-    var b = btn.getBoundingClientRect();
-    var ox = (b.left + b.width / 2) - uLeft;
-    var oy = (b.top + b.height / 2) - uTop;
-    win.style.transformOrigin = ox.toFixed(1) + 'px ' + oy.toFixed(1) + 'px';
+  function animateWindow(win, closing, complete) {
+    stopWindowMotion(win);
+    if (motionQuery.matches) { complete(); return; }
+    var docked = win.classList.contains('profile-docked');
+    var small = isMobile() && !docked ? 'translateY(28px)' : 'scale(.96)';
+    var frames = docked ? [{opacity:0},{opacity:1}] :
+      [{opacity:0,transform:small},{opacity:1,transform:'none'}];
+    var animation = win.animate(closing ? frames.slice().reverse() : frames, {
+      duration:closing ? 180 : 240,easing:'cubic-bezier(.22,1,.36,1)'
+    });
+    windowMotion.set(win,{animation:animation,closing:closing,complete:complete});
+    animation.onfinish = function () {
+      var current = windowMotion.get(win);
+      if (!current || current.animation !== animation) return;
+      windowMotion.delete(win);complete();
+    };
   }
-
   function openWindow(id, btn) {
     var win = document.getElementById(id);
     if (!win) return;
     var wasHidden = win.hidden;
-    // 닫히는 중이었다면 취소하고 다시 연다.
-    win.classList.remove('mac-window--collapsed', 'mac-window--grow');
-    var cls = collapseClassFor(win);
-    var animate = wasHidden && canAnimateWindow();
-    // 축소 상태에서 시작 → 표시 → 리플로우 → 해제하면 scale/opacity가 도착하며 재생.
-    if (animate) win.classList.add(cls);
+    var wasClosing = win.dataset.closing === 'true';
+    stopWindowMotion(win);
+    delete win.dataset.closing;
+    win.classList.remove('mac-window--collapsed','mac-window--grow');
+    if (btn) windowOpeners.set(win,btn);
     win.hidden = false;
     if (wasHidden && !win.dataset.placed) {
-      if (!isMobile()) {
+      if (!isMobile() && !win.classList.contains('profile-docked')) {
         if (win.dataset.defaultTop || win.dataset.defaultLeft) {
           if (win.dataset.defaultTop) win.style.top = win.dataset.defaultTop;
           if (win.dataset.defaultLeft) win.style.left = win.dataset.defaultLeft;
         } else {
-          // cascade new windows so they don't fully overlap
           var offset = (openCount % 6) * 28;
-          win.style.top = 'calc(5% + ' + offset + 'px)';
-          win.style.left = 'calc(12% + ' + offset + 'px)';
-          openCount += 1;
+          win.style.top = 'calc(5% + '+offset+'px)';
+          win.style.left = 'calc(12% + '+offset+'px)';openCount++;
         }
-        // 방금 정한 자리가 이 창의 원래 좌표다(이후 clamp 는 여기서 다시 계산한다).
         rememberWanted(win);
       }
       win.dataset.placed = '1';
     }
-    bringToFront(win);
     clampIntoView(win);
-    if (animate) {
-      // 그로우 창은 버튼 위치로 origin을 잡는다(위치 조정은 opacity 0라 안 보임).
-      if (cls === 'mac-window--grow') setGrowOrigin(win, btn);
-      void win.offsetWidth;                       // 리플로우로 시작 상태를 확정
-      win.classList.remove(cls);                  // → scale 1 / opacity 1로 전환
-    }
-    // 모바일: 풀스크린 창(win-blog 제외)을 열면 히스토리 항목을 쌓아 뒤로가기로 닫히게.
-    if (wasHidden && isMobile() && id !== 'win-blog') {
-      pushMobileWinHistory(id);
-    }
+    if (btn && !isMobile() && !win.classList.contains('profile-docked')) {
+      var r=win.getBoundingClientRect(),b=btn.getBoundingClientRect();
+      win.style.transformOrigin=(b.left+b.width/2-r.left)+'px '+(b.top+b.height/2-r.top)+'px';
+    } else win.style.transformOrigin='center';
+    bringToFront(win);
+    if (wasHidden || wasClosing) animateWindow(win,false,function(){clampIntoView(win);});
+    if ((wasHidden || wasClosing) && isMobile() && id !== 'win-blog' && mobileWinStack.indexOf(id) === -1) pushMobileWinHistory(id);
+    var closeButton=win.querySelector('[data-mac-close]');
+    if(closeButton)closeButton.focus({preventScroll:true});
   }
-
   function closeWindow(id) {
-    var win = document.getElementById(id);
-    if (!win) return;
-    if (!canAnimateWindow()) {
-      win.hidden = true;
+    var win=document.getElementById(id);
+    if(!win || win.hidden || win.dataset.closing==='true')return;
+    win.dataset.closing='true';
+    animateWindow(win,true,function(){
+      win.hidden=true;delete win.dataset.closing;
+      win.classList.remove('mac-window--focused');
+      var opener=windowOpeners.get(win);
+      if(opener && opener.isConnected)opener.focus({preventScroll:true});
       saveState();
-      return;
-    }
-    // 축소·페이드로 닫힌 뒤 실제로 숨긴다. 그로우 창은 저장된 transform-origin을
-    // 그대로 써 열렸던 버튼 쪽으로 되빨려든다. transitionend(폴백 타이머) 후 hidden.
-    var cls = collapseClassFor(win);
-    win.classList.add(cls);
-    var done = false;
-    function finish() {
-      if (done) return;
-      done = true;
-      win.hidden = true;
-      win.classList.remove('mac-window--collapsed', 'mac-window--grow');
-      win.removeEventListener('transitionend', onEnd);
-      saveState();
-    }
-    function onEnd(e) {
-      if (e.target === win && (e.propertyName === 'transform' || e.propertyName === 'opacity')) {
-        finish();
-      }
-    }
-    win.addEventListener('transitionend', onEnd);
-    window.setTimeout(finish, 400);
+    });
   }
+  function isWindowOpen(win) {return !!win && !win.hidden && win.dataset.closing!=='true';}
+  motionQuery.addEventListener('change',function(){
+    reduceMotion=motionQuery.matches;
+    Array.from(windowMotion.keys()).forEach(function(win){
+      var entry=windowMotion.get(win);stopWindowMotion(win);entry.complete();
+    });
+  });
+  window.addEventListener('resize',function(){
+    Array.from(windowMotion.keys()).forEach(function(win){
+      var entry=windowMotion.get(win);stopWindowMotion(win);entry.complete();
+    });
+    clampVisibleWindows();
+  });
 
-  // 창이 "열려 있음"(표시 중 + 닫히는 중 아님) 판정.
-  function isWindowOpen(win) {
-    return !!win && !win.hidden &&
-      !win.classList.contains('mac-window--collapsed') &&
-      !win.classList.contains('mac-window--grow');
-  }
   // 같은 버튼을 다시 누르면 토글: 열려 있으면 닫고, 아니면 연다.
   function toggleWindow(id, btn) {
     var win = document.getElementById(id);
     if (!win) return;
     if (isWindowOpen(win)) {
-      closeWindow(id);
+      if(isMobile() && mobileWinStack[mobileWinStack.length-1]===id) history.back();
+      else closeWindow(id);
     } else {
       openWindow(id, btn);
     }
@@ -472,7 +457,9 @@
     var handle = e.target.closest('[data-mac-drag-handle]');
     if (!handle || e.target.closest('[data-mac-close]')) return;
     var win = handle.closest('.mac-window');
+    if (win && win.classList.contains('profile-docked')) return;
     if (!win) return;
+    stopWindowMotion(win);
     var rect = win.getBoundingClientRect();
     drag = { win: win, dx: e.clientX - rect.left, dy: e.clientY - rect.top };
     win.style.top = rect.top + 'px';
@@ -520,7 +507,9 @@
     var handle = e.target.closest('[data-mac-resize]');
     if (!handle) return;
     var win = handle.closest('.mac-window');
+    if (win && win.classList.contains('profile-docked')) return;
     if (!win) return;
+    stopWindowMotion(win);
     var rect = win.getBoundingClientRect();
     rez = {
       win: win,

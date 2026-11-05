@@ -589,3 +589,70 @@ body.post-page .post-lab-sheet--project .post-title {
 }
 
 .post-tabs__panel[hidden] { display: none; }
+
+// Mobile-only TOC disclosure; desktop contents remain expanded.
+body.post-page .post-toc-toggle[hidden],
+body.post-page #markdown-toc[hidden] { display:none; }
+body.post-page .post-toc-toggle {
+  display:none;
+}
+@media (max-width:48em) {
+  body.post-page .post-toc-toggle {
+    display:flex;align-items:center;justify-content:space-between;min-height:48px;width:100%;
+    padding:12px 0;border:0;border-top:1px solid #dedede;border-bottom:1px solid #dedede;
+    border-radius:0;background:#fff;box-shadow:none;color:#C4C4C4;
+    font:400 1.15rem/1.2 "Anton Archive Tabs",Impact,"Arial Narrow",sans-serif;
+    letter-spacing:.01em;text-transform:uppercase;cursor:pointer;
+  }
+  body.post-page .post-toc-toggle:focus-visible {
+    outline:2px solid currentColor;outline-offset:4px;
+  }
+  body.post-page .post-toc-toggle[aria-expanded="true"] {margin-bottom:0;border-bottom:0;}
+  body.post-page .post-toc:has(.post-toc-toggle[aria-expanded="true"]) #markdown-toc {
+    padding:4px 0 16px;border-bottom:1px solid #dedede;
+  }
+}
+
+// Constrain only content that needs its own horizontal viewport.
+body.post-page .post-content a {overflow-wrap:anywhere;word-break:normal;}
+body.post-page .post-content pre {
+  max-width:100%;min-width:0;overflow-x:auto;
+  white-space:pre;word-break:normal;overflow-wrap:normal;
+}
+body.post-page .post-content pre code {
+  white-space:pre;word-break:normal;overflow-wrap:normal;
+}
+body.post-page .post-content .highlight,
+body.post-page .post-content .highlighter-rouge {min-width:0;max-width:100%;}
+body.post-page .post-table-scroll {
+  width:100%;max-width:100%;min-width:0;overflow-x:auto;margin:0 0 1rem;
+}
+body.post-page .post-table-scroll > table {
+  width:max-content;min-width:100%;max-width:none;margin-bottom:0;table-layout:auto;
+}
+body.post-page .post-content pre a,
+body.post-page .post-table-scroll a {overflow-wrap:normal;}
+body.post-page .post-table-scroll:focus-visible,
+body.post-page .post-content pre:focus-visible {outline:2px solid #666;outline-offset:2px;}
+body.post-page .post-toc-toggle__icon {font-size:20px;line-height:1;font-weight:400;}
+
+// Small state cues, without moving the active TOC link.
+body.post-page .post-toc-toggle__icon{position:relative;width:14px;height:14px;flex:none;margin-right:12px}
+body.post-page .post-toc-toggle__icon::before,
+body.post-page .post-toc-toggle__icon::after{content:"";position:absolute;background:currentColor;left:0;top:6px;width:14px;height:2px}
+body.post-page .post-toc-toggle__icon::after{transform:rotate(90deg);transition:transform 180ms ease,opacity 180ms ease}
+body.post-page .post-toc-toggle[aria-expanded="true"] .post-toc-toggle__icon::after{transform:rotate(0);opacity:0}
+body.post-page .post-toc-panel{min-width:0}
+body.post-page .post-scroll-frame{position:relative;min-width:0;max-width:100%}
+body.post-page .post-scroll-frame::before,
+body.post-page .post-scroll-frame::after{content:"";position:absolute;top:0;bottom:0;width:14px;z-index:2;pointer-events:none;opacity:0;transition:opacity 150ms ease}
+body.post-page .post-scroll-frame::before{left:0;background:linear-gradient(to right,rgba(0,0,0,.12),transparent)}
+body.post-page .post-scroll-frame::after{right:0;background:linear-gradient(to left,rgba(0,0,0,.12),transparent)}
+body.post-page .post-scroll-frame.has-left-overflow::before,
+body.post-page .post-scroll-frame.has-right-overflow::after{opacity:1}
+@media(prefers-reduced-motion:reduce){
+ body.post-page .post-toc-toggle__icon::after,
+ body.post-page #markdown-toc a,
+ body.post-page .post-scroll-frame::before,
+ body.post-page .post-scroll-frame::after{transition:none}
+}
