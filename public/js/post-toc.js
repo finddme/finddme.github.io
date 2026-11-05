@@ -31,6 +31,55 @@
   var rail = toc.closest('.post-rail__sticky');
   var mobileLayout = window.matchMedia('(max-width: 48em)');
 
+  // Keep the desktop rail open; collapse the mobile TOC on entry.
+  var toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'post-toc-toggle';
+  toggle.setAttribute('aria-controls', toc.id);
+  toc.parentNode.insertBefore(toggle, toc);
+  var label = document.createElement('span');
+  label.textContent = 'CONTENTS';
+  var icon = document.createElement('span');
+  icon.className = 'post-toc-toggle__icon';
+  icon.setAttribute('aria-hidden', 'true');
+  toggle.append(label, icon);
+  var panel = document.createElement('div');
+  panel.className = 'post-toc-panel';
+  toc.parentNode.insertBefore(panel, toc);
+  panel.appendChild(toc);
+  var mobileExpanded = false;
+  var disclosureAnimation = null;
+  var reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  function syncTocDisclosure(animate) {
+    var expanded = !mobileLayout.matches || mobileExpanded;
+    var from = panel.getBoundingClientRect().height;
+    if (disclosureAnimation) { disclosureAnimation.cancel(); disclosureAnimation = null; }
+    toggle.hidden = !mobileLayout.matches;
+    toggle.setAttribute('aria-expanded', String(expanded));
+    panel.inert = !expanded;
+    toc.hidden = false;
+    var to = expanded ? panel.getBoundingClientRect().height : 0;
+    function settle() { toc.hidden = !expanded; panel.style.overflow = ''; }
+    if (!animate || reducedMotion.matches || !mobileLayout.matches) { settle(); return; }
+    panel.style.overflow = 'hidden';
+    disclosureAnimation = panel.animate([{height:from+'px'},{height:to+'px'}], {
+      duration:220,easing:'cubic-bezier(.22,1,.36,1)'
+    });
+    var current = disclosureAnimation;
+    current.onfinish = function () { if (current !== disclosureAnimation) return; disclosureAnimation = null; settle(); };
+  }
+  toggle.addEventListener('click', function () {
+    mobileExpanded = !mobileExpanded;
+    syncTocDisclosure(true);
+  });
+  mobileLayout.addEventListener('change', function () {
+    mobileExpanded = false;
+    syncTocDisclosure(false);
+  });
+  reducedMotion.addEventListener('change', function () { syncTocDisclosure(false); });
+  syncTocDisclosure(false);
+
+
   function updateRailHeight() {
     if (!rail) return;
     if (mobileLayout.matches) {
@@ -99,10 +148,12 @@
     }
     if (activeLink) {
       activeLink.classList.remove('is-active');
+      activeLink.removeAttribute('aria-current');
     }
     activeLink = link;
     if (activeLink) {
       activeLink.classList.add('is-active');
+      activeLink.setAttribute('aria-current', 'location');
     }
   }
 
