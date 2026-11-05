@@ -124,3 +124,7 @@
 /* Vector arrows keep the same shape on iOS and desktop, without emoji substitution. */
 .arrow-up-right{display:inline-block;width:1em;height:1em;vertical-align:-.12em;flex-shrink:0}
 .number .arrow .arrow-up-right{display:block;margin-inline:auto}
+
+/* Keep touch-opened dialog focus without drawing a keyboard focus ring. */
+#sites .close{appearance:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent}
+#sites .close:focus:not(:focus-visible),#sites.pointer-focus .close:focus{outline:none;box-shadow:none}
