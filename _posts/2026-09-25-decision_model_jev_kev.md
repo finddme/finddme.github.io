@@ -19,10 +19,10 @@ Jev는 호스팅 API로 제공되는 decision model이고 Kev는 자체 호스�
 
 ## 0. 요약
 
-1. Decision model은 상태와 타입이 지정된 질문을 받아 **정해진 답과 확률**을 반환. 생성 디코딩을 생략하는 구현은 지연을 줄일 수 있지만 질문 수/입력 길이/하드웨어에 따라 비용과 속도가 달라진다. 출력 무료는 서비스의 과금 정책
-2. Jev는 TypeSafe가 처음 공개한 System One 모델(2026-09-15). backbone/파라미터 수/아키텍처는 비공개. 학습 방식은 "RLCD"라는 이름과 목표만 공개
+1. Decision model은 상태와 타입이 지정된 질문을 받아 **정해진 답과 확률**을 반환. 생성 디코딩을 생략하는 구현은 지연을 줄일 수 있지만 질문 수/입력 길이/하드웨어에 따라 비용과 속도가 달라진다.
+2. Jev는 TypeSafe가 처음 공개한 System One 모델(2026-09-15). backbone/파라미터 수와 세부 구조/학습 방식은 비공개
 3. Kev는 Jev 구조에 대한 제3자 가설(Archer Hume)을 Qwen 위에 구현한 오픈소스 재현판. LM head 대신 pointer head로 선택지를 평가. Kev 1.0은 공유 state를 캐시하고 질문별 행을 배치 처리. Jev와 같은 구조라는 보장은 없다
-4. Kev 측 평가에서 Kev-27B는 정확도 0.851로 Jev 0.857에 근접. 지식형 질문(MMLU-Pro 0.675 vs 0.840)과 자동화율(5% 오류예산에서 Kev-4B/9B/27B 0.52~0.69 vs Jev 0.70)는 Jev 우위
+4. Kev 측 평가에서 Kev-27B의 일부 분류 성능은 Jev에 근접했지만 지식형 질문과 자동화율에서는 격차 존재. 세부 수치와 평가 조건은 4.4 참조
 5. OpenAI는 Decisions API(`gpt-6-luna`)로 같은 카테고리에 진입. Claude Haiku 5.5는 일반 생성형 모델이며 AI SDK에서는 structured output adapter로 연결
 6. 한국어: Jev/Kev 모두 영어 중심이며 한국어 정확도 공식 수치 부재
     - Jev는 고객별 fine-tuning 불가 → 질문/상태 구성과 임계값을 자체 평가셋으로 조정
@@ -54,7 +54,6 @@ Jev는 호스팅 API로 제공되는 decision model이고 Kev는 자체 호스�
 
 - 생성 토큰이 없어도 응답 JSON에는 길이가 있다. Kev의 `usage.output_tokens`는 이 JSON의 토큰 수를 계산 [54]
 - "환각 0%"(TypeSafe 주장)는 **타입 안전성(스키마 일치)**에 대한 주장이며 답의 정확성 보장이 아니다 [1][2]
-- Jev 공개(2026-09-15) 뒤 약 3주 사이 Kev, OpenAI Decisions API, Claude Haiku 5.5 등이 잇따라 나왔다
 
 ---
 
@@ -63,7 +62,6 @@ Jev는 호스팅 API로 제공되는 decision model이고 Kev는 자체 호스�
 - **Jev 내부는 비공개.** 이 장은 소스가 공개된 Kev 코드 기준 설명
 - Kev 구조 자체도 Archer Hume의 Jev 구조 가설을 구현한 것이라 Jev와 같다는 보장은 없다 [49][58]
 - TypeSafe는 Jev를 비자기회귀 모델로 설명하고 질문을 병렬 평가한다고 명시. 구체적인 head와 실행 경로는 비공개 [1][2]
-- 텍스트를 생성하지 않는 것과 출력 요금이 없는 것은 별개. 출력 무료는 TypeSafe의 정책 [4]
 - TypeSafe 블로그의 구조 표현은 "new model architecture", "parallel sampler", 모든 출력을 한 번에 생성한다는 수준 [1]
 
 ### 2.1 decoder LLM은 두 부분으로 나뉜다 (일반론)
@@ -202,7 +200,7 @@ state 캐시 내용과 행 배치 [49][54][105]
 
 </details>
 
-### 2.5 decoder backbone을 선택한 이유
+### 2.5 decoder backbone의 이점과 비교 한계
 
 Kev는 Archer Hume의 구조 가설을 Qwen으로 구현. 개발자가 encoder와 decoder를 통제된 조건에서 비교해 선택했다고 볼 자료는 없다 [49][58].
 
@@ -226,7 +224,6 @@ encoder도 런타임 라벨을 지원하도록 설계 가능. backbone 방향과
 Kev의 응답 크기는 질문 수와 Choice 선택지/Score 단계 수에 따라 결정. 텍스트 생성 루프는 없지만 응답 JSON의 크기와 전송 비용은 존재 [49][54].
 
 - `usage.output_tokens`는 직렬화된 answers JSON의 토큰 수이며 생성 횟수가 아니다
-- Jev의 출력 무료는 서비스 정책. 생성 루프의 유무와 과금 정책은 구분 필요 [4]
 - 실제 요청에서는 컨텍스트/선택지 수/바디 크기 제한을 함께 확인(7.1)
 
 ### 2.8 인코더 분류 head vs 디코더 pointer head: 무엇이 다른가
@@ -322,9 +319,9 @@ TypeSafe는 비자기회귀 실행과 질문 병렬 평가를 설명하지만 �
 | 지연 | 0.114초 | 8.566초 | 약 75.1배 |
 | 비용 | $0.000081 | $0.013880 | 약 171.4배 |
 
-- 위 배수는 표에 제시된 값으로 계산. TypeSafe의 193.6배/444.6배 주장은 별도의 워크플로 평가 결과이며 이 데모 수치와 혼용 불가 [1]
+- 위 배수는 표에 제시된 값으로 계산. 해당 데모 조건에 한정되며 일반적인 성능 차이를 뜻하지 않는다 [1]
 - 워크플로는 TypeSafe 팀이 구성했으며 회사도 이득이 큰 사례에 해당한다고 설명 [1]
-- 가격: 입력 100만 토큰당 $0.042, 출력 무료 [1][4]
+- 가격: 입력 100만 토큰당 $0.042, 출력 무료. 출력 요금은 TypeSafe의 서비스 정책이며 비생성 구조 자체가 무료를 뜻하지는 않는다 [1][4]
 - "환각 0%"는 **타입 안전성(스키마 일치)**에 대한 주장이며 답의 정확성 보장이 아니다
     - TypeSafe 설명: "경험적 수치가 아니라 스키마 매칭이 보장된다는 의미" [1]
     - 문서도 개별 답의 정확성은 보장하지 않는다고 명시 [2]
@@ -351,11 +348,9 @@ Jev 1.13의 주요 약점은 계산/날짜 비교/다단계 추론, 불필요하
 ### 4.1 개요
 
 - Jared Palmer가 만든 오픈소스 "Jev-like" 결정 모델군. TypeSafe 제품이 아니다. Apache-2.0 [49]
-- Jev 공개 직후 단시간에 재현판을 공개했다는 2차 보도 존재 [64]
 - 아키텍처 출처 [49][58]
     - README에 따르면 Archer Hume의 글 "Jev's Architecture Unmasked"를 구현. 이 글은 2026-09-17 Jev API를 1만 회 이상 호출해 구조를 역추론
     - 즉 **Kev가 Jev와 같은 구조라는 보장은 없다. Jev 구조에 대한 제3자 가설의 구현**
-- 개발 도구: README에 "Built with Devin" 명시 [49]
 - 동작 원리(pointer head + 질문별 행/공유 prefix 캐시)는 2장 참조
 
 ### 4.2 backbone과 학습 형태
@@ -478,7 +473,7 @@ Kev는 공개 데이터의 정답 라벨/코드로 계산한 정책 결과/오�
 | Hugging Face | `jaredpalmer/kev-0.8b`, `kev-4b`, `kev-9b`, `kev-27b`(+ `@v1.0` 태그 고정), 데모 Space `jaredpalmer/kev`(4B/0.8B) |
 | 로컬 | `uv sync --extra serve` 후 `uv run --extra serve python -m kev.serve --run jaredpalmer/kev-4b --port 8009`. CUDA/ROCm/MLX/CPU 자동 선택. **`pip install kev`는 무관한 다른 패키지**(PyPI 이름 충돌) |
 | Modal | `kev_serve.py` 하나로 HTTPS 엔드포인트 배포, 유휴 시 0으로 축소 |
-| OpenRouter | `jaredpalmer/kev-4b`만 제공. 입력 $0.042/M, 출력 무료, 컨텍스트 8,192. 제공자 Phala, SiliconFlow(fp8). 엔드포인트 이름 `kev-4b-20260924`(OpenRouter 공개 API). 한 2차 사이트는 $0.01/M으로 표기해 불일치 [56][57] |
+| OpenRouter | `jaredpalmer/kev-4b`만 제공. 입력 $0.042/M, 출력 무료, 컨텍스트 8,192. 제공자 Phala, SiliconFlow(fp8). 엔드포인트 이름 `kev-4b-20260924`(OpenRouter 공개 API) [56] |
 
 - **TypeSafe API 호환** [49]
     - `POST /v1/systemone`, 요청 `state`/`model`/`questions`(`noul`/`choice`/`score`, `instructions`, `criteria`) 형식 그대로
@@ -539,7 +534,7 @@ Jev와의 전체 비교는 6.1 참조. Kev 선택 시에는 아래 약점을 함
     - 정확도가 높아도 과신 가능
     - 판별력(AUROC)이 낮으면 calibration만 맞춰도 임계값 분기의 효용이 작다
 
-- **Temperature scaling의 범위**: 양수 T는 한 문항의 argmax를 유지. 다중 클래스에서는 서로 다른 문항의 최대 확률 순위가 바뀔 수 있으므로 “confidence 순위를 전혀 바꾸지 못한다”는 일반화는 부정확 [92]
+- **Temperature scaling의 범위**: 양수 T는 한 문항 안의 선택지 순위와 argmax를 유지하지만 서로 다른 문항의 최대 확률 순위는 바꿀 수 있다 [92]
 - 자동화율은 보정 후의 risk-coverage 곡선으로 평가. confidence와 정답 여부를 구분하는 능력이 함께 필요
 
 ### 5.2 Jev: RLCD (Reinforcement Learning for Calibrated Decisions)
@@ -559,7 +554,7 @@ Jev와의 전체 비교는 6.1 참조. Kev 선택 시에는 아래 약점을 함
 - 높은 confidence가 높은 정확도와 연결되도록 학습했다는 주장과 개별 답의 정답 보장은 구분 필요 [2]
 - 구조/데이터/학습 방식이 함께 비공개라 RLCD만의 성능 기여를 분리해 평가하기 어렵다
 
-학계의 RLCD(Reinforcement Learning from Contrastive Distillation)는 같은 약어를 쓰는 별도 연구. TypeSafe의 비공개 방법과 기술적 관계가 밝혀진 것은 아니다 [89].
+> 참고: 학계의 RLCD(Contrastive Distillation)는 같은 약어를 쓰는 별도 연구. TypeSafe 방식과의 기술적 관계는 확인되지 않았다 [89].
 
 RL 이후 calibration이 악화되거나 별도 보상으로 개선된 연구는 존재하지만 이를 Jev의 학습 방식으로 대입할 수는 없다 [93][97].
 
@@ -652,7 +647,7 @@ AI SDK의 Anthropic adapter는 structured output으로 결정 형식을 구성 [
 | Strands Decider 2B | Qwen3.5-2B 기반 오픈소스 | 로컬 실행과 개발용 소형 decision model | [71] |
 | Microsoft-Decision-1 | Qwen3.5-9B 기반. Microsoft Foundry/OpenRouter | 분류/라우팅/평가용 확률 출력 | [73] |
 
-외부 전송이 불가능한 데이터에는 Kev/Clef/Strands처럼 가중치가 공개된 모델의 자체 호스팅 검토. Qwen 기반이라는 이유만으로 모든 서비스의 가중치가 공개됐다고 볼 수는 없다.
+외부 전송이 불가능한 데이터에는 Kev/Clef/Strands처럼 가중치가 공개된 모델의 자체 호스팅 검토.
 
 ---
 
@@ -878,10 +873,10 @@ Kev
 
 권장 단계 (제안)
 
-1. 기존 intent/라우팅 골든셋(한국어/일본어)으로 후보 비교: Jev / OpenAI Decisions / Kev-4B 기본판(로컬) / 현행 LLM
+1. 실제 사용 사례를 반영한 한국어 평가셋을 구성하고 Jev / OpenAI Decisions / Kev-4B 기본판(로컬)을 현재 사용하는 모델과 비교
     - 지표: 정확도 / calibration(Brier, reliability diagram, ECE) / AUROC / 5% 오류예산 자동화율 / 지연 / 비용
     - 외부 전송이 금지된 데이터는 내부 GPU에서 평가
-    - 기존 LLM 기준선(예: Azure gpt-4.1)의 비결정성을 고려해 같은 문항으로 반복 측정(N>=5)
+    - 같은 문항을 반복 평가해 모델별 응답 변동도 확인
     - `kev.benchmark --remote`로 Jev 포함 System One 엔드포인트를 같은 문항으로 평가 가능 [49]
 2. Kev와 격차가 크면 내부 라벨로 `init_from` fine-tune 1회(README의 소규모 예시는 약 $1/H100)를 시험하고 같은 지표로 재측정
 3. confidence 임계값별 "자동 처리율 vs 오류율" 곡선으로 fallback 기준 결정. 임계값은 자체 데이터로 반드시 다시 설정(Kev README도 같은 권고) [49]
@@ -973,14 +968,12 @@ Kev
 - [53] Jared Palmer, Introducing Kev (블로그): https://jaredpalmer.com/blog/introducing-kev
 - [54] Kev 소스 `kev/model.py`, `kev/api.py`: https://github.com/jaredpalmer/kev/blob/main/kev/model.py
 - [56] OpenRouter 모델 API(`/api/v1/models/jaredpalmer/kev-4b/endpoints`), https://openrouter.ai/jaredpalmer
-- [57] ModelSystem.One, Kev 4B lands on OpenRouter (2차, 가격 $0.01 표기/JevBench 인용): https://modelsystem.one/news/kev-openrouter/
 - [58] Archer Hume, Jev's Architecture Unmasked (2026-09-17): https://archerhume.com/posts/jevs-architecture-unmasked
 - [59] AI Weekly, Jared Palmer Ports Kev to Qwen3.5 for Roughly $95 in H100 (2차, $95/$0.03/0.837 출처): https://aiweekly.co/alerts/jared-palmer-ships-kev-an-apache-20-jev-style-decision-model-family-built-on
 - [60] Opper.ai, Jev vs. Kev tested side by side (2026-09-25): https://opper.ai/blog/jev-vs-kev-open-decision-model
 - [61] ddalcu/mlx-serve Issue #599, Kev-4B 2,394문항 시험 (2026-09-27): https://github.com/ddalcu/mlx-serve/issues/599
 - [62] GovTech Singapore AI 블로그, Decision Models for Guardrails: Exploring Jev and Kev for Moderation (2026-09-28): https://blog.ai.gov.sg/decision-models-for-guardrails-exploring-jev-and-kev-for-moderation/
 - [63] Qwen 모델 HF 카드(license 필드): https://huggingface.co/Qwen/Qwen3.5-4B-Base , https://huggingface.co/Qwen/Qwen3.8-27B
-- [64] prismix.dev, Jev vs. Kev tested side by side: https://prismix.dev/news/6391253633e5 (본문 미확인, 요약 기준)
 
 기타 Jev류 모델/비교
 
