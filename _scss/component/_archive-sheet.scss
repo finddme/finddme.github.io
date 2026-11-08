@@ -685,3 +685,6 @@ body.archive-sheet-page .archive-sheet__title {
 body.archive-sheet-page .archive-sheet__row:not(:last-child) {
   border-bottom:1px solid #e4e4e4;
 }
+
+/* Keep emphasized title fragments in the same text flow. */
+body.archive-sheet-page .archive-sheet__title { display: block; }
