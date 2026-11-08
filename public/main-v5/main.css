@@ -50,7 +50,7 @@
 @media(max-width:800px){.top nav{grid-column:2;justify-self:end}}
 #explore-word{font-family:SimonThin,monospace;font-weight:400}
 #explore-word.is-brand{font-family:SimonBold,monospace;font-weight:700}
-.top nav .profile-link{color:#0eef0f}
+.top nav .profile-link{color:#0eef0f;font-weight:700}
 /* Shared cover grid and fluid spacing across viewport sizes. */
 :root{--page-gutter:clamp(1.25rem,2vw,3rem)}
 .top{padding-inline:var(--page-gutter)}

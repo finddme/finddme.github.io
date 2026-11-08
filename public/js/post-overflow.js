@@ -38,4 +38,36 @@
     if(document.fonts) document.fonts.ready.then(updateEdges);
     updateEdges();
   });
+  // MathJax typesets asynchronously. Keep only oversized formula roots scrollable;
+  // do not change the layout or baseline of short inline formulas.
+  var mathFrame;
+  function updateMath() {
+    mathFrame = null;
+    article.querySelectorAll('.MathJax_CHTML').forEach(function (math) {
+      var wrapper = math.parentElement.classList.contains('post-math-scroll') ? math.parentElement : null;
+      var available = (wrapper ? wrapper.parentElement : math.parentElement).clientWidth;
+      if (math.getBoundingClientRect().width > available + 1) {
+        if (!wrapper) {
+          wrapper = document.createElement('span');
+          wrapper.className = 'post-math-scroll';
+          wrapper.tabIndex = 0;
+          wrapper.setAttribute('role','region');
+          wrapper.setAttribute('aria-label','수식 가로 스크롤');
+          math.before(wrapper);
+          wrapper.appendChild(math);
+        }
+      } else if (wrapper) {
+        wrapper.replaceWith(math);
+      }
+    });
+  }
+  function scheduleMath() {
+    if (!mathFrame) mathFrame = requestAnimationFrame(updateMath);
+  }
+  new MutationObserver(scheduleMath).observe(article, {childList:true, subtree:true});
+  if (window.ResizeObserver) new ResizeObserver(scheduleMath).observe(article);
+  window.addEventListener('load', scheduleMath);
+  window.addEventListener('resize', scheduleMath);
+  if (document.fonts) document.fonts.ready.then(scheduleMath);
+  scheduleMath();
 })();
