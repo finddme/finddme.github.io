@@ -734,3 +734,71 @@
   pairs.forEach(function(pair){observer.observe(pair.window,{attributes:true,attributeFilter:['hidden','class']});});
   sync();
 })();
+
+// Mobile sheets are modal; desktop windows remain independently focusable.
+(function () {
+  var layer = document.querySelector('[data-mac-layer]');
+  if (!layer) return;
+  var active = null, restore = [], previousFocus = null;
+  function focusables(win) {
+    return Array.from(win.querySelectorAll('a[href],button,input,select,textarea,[tabindex]')).filter(function (el) {
+      return el.tabIndex >= 0 && !el.disabled && !el.closest('[inert]') && el.getClientRects().length && getComputedStyle(el).visibility !== 'hidden';
+    });
+  }
+  function focusFirst() {
+    var target = focusables(active)[0] || active;
+    target.focus({preventScroll:true});
+  }
+  function sync() {
+    var top = null;
+    if (matchMedia('(max-width:768px)').matches) {
+      layer.querySelectorAll('.mac-window:not([hidden]):not(.profile-docked)').forEach(function (win) {
+        if (!top || Number(getComputedStyle(win).zIndex) >= Number(getComputedStyle(top).zIndex)) top = win;
+      });
+    }
+    if (top === active) return;
+    var old = active, returnTo = previousFocus;
+    restore.forEach(function (undo) { undo(); });
+    restore = [];
+    active = top;
+    if (!top) {
+      previousFocus = null;
+      if (old && old.hidden && (old.contains(document.activeElement) || document.activeElement === document.body) && returnTo && returnTo.isConnected) returnTo.focus({preventScroll:true});
+      return;
+    }
+    if (!old) previousFocus = Array.from(document.querySelectorAll('[data-mac-open]')).find(function (button) { return button.dataset.macOpen === top.id; }) || document.activeElement;
+    ['role','aria-modal','aria-label','tabindex'].forEach(function (name) {
+      var value = top.getAttribute(name);
+      restore.push(function () { if (value === null) top.removeAttribute(name); else top.setAttribute(name,value); });
+    });
+    top.setAttribute('role','dialog');
+    var title = top.querySelector('.mac-window__title');
+    if (title && !top.hasAttribute('aria-labelledby')) top.setAttribute('aria-label',title.textContent.trim());
+    top.setAttribute('aria-modal','true');
+    top.setAttribute('tabindex','-1');
+    // Disable siblings along the whole ancestor path, never the dialog itself.
+    for (var node = top; node.parentElement && node !== document.body; node = node.parentElement) {
+      Array.from(node.parentElement.children).forEach(function (sibling) {
+        if (sibling === node || sibling.inert) return;
+        sibling.inert = true;
+        restore.push(function () { sibling.inert = false; });
+      });
+    }
+    if (!top.contains(document.activeElement)) focusFirst();
+  }
+  document.addEventListener('keydown',function (event) {
+    sync();
+    if (!active || event.key !== 'Tab') return;
+    var items = focusables(active), index = items.indexOf(document.activeElement);
+    if (!items.length) { event.preventDefault(); active.focus(); return; }
+    if (event.shiftKey && index <= 0) { event.preventDefault(); items[items.length-1].focus(); }
+    else if (!event.shiftKey && (index < 0 || index === items.length-1)) { event.preventDefault(); items[0].focus(); }
+  });
+  document.addEventListener('focusin',function () {
+    sync();
+    if (active && !active.contains(document.activeElement)) focusFirst();
+  });
+  new MutationObserver(sync).observe(layer,{subtree:true,attributes:true,attributeFilter:['hidden','style','class']});
+  window.addEventListener('resize',function () { requestAnimationFrame(sync); });
+  sync();
+})();
