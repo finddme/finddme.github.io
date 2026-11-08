@@ -656,3 +656,14 @@ body.post-page .post-scroll-frame.has-right-overflow::after{opacity:1}
  body.post-page .post-scroll-frame::before,
  body.post-page .post-scroll-frame::after{transition:none}
 }
+
+// Scroll the formula itself rather than clipping or shrinking the entire article.
+.post-content .post-math-scroll {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+  padding-block: .15em;
+  -webkit-overflow-scrolling: touch;
+}
