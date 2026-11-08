@@ -89,6 +89,7 @@ html{font-size:16px}body{margin:0}*{box-sizing:border-box}
 
 /* Desktop default windows keep their grid slots when moved by the title bar. */
 @media(min-width:769px){
+ .desktop .profile-detached.profile-docked{height:auto!important;max-height:none!important}
  .desktop .profile-detached{position:fixed!important;margin:0;max-width:calc(100vw - 16px)}
  .profile-docked .mac-window__bar{cursor:grab}
  .profile-docked.mac-window--dragging .mac-window__bar{cursor:grabbing}

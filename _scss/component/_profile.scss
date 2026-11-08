@@ -447,12 +447,14 @@ html:not(.has-touch) .desktop--dark .mac-bloglinks__item a:hover {
 .desktop--dark .mac-projects .archive-sheet__row--no-image {
   --arch-thumb-veil: transparent;           /* 이미지 없는 칸: 행 배경 그대로 (라이트와 같은 인상) */
 }
-/* keep project/dev-log title links the same blue as light mode (not visited purple) */
+/* Lift lightness for dark surfaces while preserving the blue hue/saturation. */
 .desktop--dark .mac-projects a,
 .desktop--dark .mac-projects a:visited,
 .desktop--dark .mac-projects a:hover {
-  color: #268bd2;
+  color: #5baae1;
 }
+
+.desktop--dark .mac-projects .archive-sheet__index { color: #a0a0a0; }
 
 /* Resize handles (edges + corners). Sit just inside the window border. */
 .mac-window__resize { position: absolute; z-index: 5; touch-action: none; }
