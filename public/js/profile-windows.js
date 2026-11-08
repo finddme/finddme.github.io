@@ -12,6 +12,20 @@
   var layer = document.querySelector('[data-mac-layer]');
   if (!layer) return;
 
+  // Keep automatic/pointer focus inside windows without drawing a keyboard ring.
+  // Track input before the browser or openWindow moves focus (including first tap).
+  var focusDesktop = document.querySelector('[data-desktop]');
+  if (focusDesktop) {
+    focusDesktop.dataset.windowInput = 'automatic';
+    document.addEventListener('pointerdown', function () {
+      focusDesktop.dataset.windowInput = 'pointer';
+    }, {capture:true, passive:true});
+    document.addEventListener('keydown', function (event) {
+      if (['Shift','Control','Alt','Meta'].indexOf(event.key) !== -1) return;
+      focusDesktop.dataset.windowInput = 'keyboard';
+    }, true);
+  }
+
   function isMobile() {
     return window.matchMedia('(max-width: 768px)').matches;
   }

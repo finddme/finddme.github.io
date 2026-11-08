@@ -79,7 +79,10 @@ html{font-size:16px}body{margin:0}*{box-sizing:border-box}
 .desktop--dark .mac-window--focused .mac-window__title{color:#f5f5f7}
 .mac-window__title{transition:color 180ms ease}
 .mac-window__light--red::after{width:28px;height:28px;left:50%;top:50%;right:auto;bottom:auto;transform:translate(-50%,-50%)}
+/* Safari may paint a focus ring or tap highlight on the first automatic focus. */
+.mac-window__light--red{appearance:none;-webkit-appearance:none;-webkit-tap-highlight-color:transparent}
 .mac-window__light--red:focus-visible{outline:2px solid #777;outline-offset:5px}
+.desktop:not([data-window-input="keyboard"]) .mac-window__light--red:focus{outline:none;box-shadow:none}
 @media(max-width:768px){
  .desktop .mac-window:not(.profile-docked){max-width:none}
  .mac-window:not(.profile-docked) .mac-window__bar{min-height:44px}
