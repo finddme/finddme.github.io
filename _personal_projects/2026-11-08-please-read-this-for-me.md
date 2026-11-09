@@ -1,7 +1,8 @@
 ---
 title: "Please read this for me: An AI Agent App for Local Files"
 date: 2026-11-08
-thumbnail: https://github.com/user-attachments/assets/d9a77fe2-da52-44e2-bb5e-c18f099caf41
+thumbnail: /public/thumbnails/personal_projects-2026-11-08-please-read-this-for-me.webp
+thumbnail_source: https://github.com/user-attachments/assets/d9a77fe2-da52-44e2-bb5e-c18f099caf41
 link:
 summary: "A Windows desktop app whose AI agent finds and reads files in selected folders to answer questions with verifiable sources. Combines file exploration with optional semantic search."
 ---

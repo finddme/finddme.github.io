@@ -2,7 +2,8 @@
 title: Transformer | Attention Is All You Need
 category: Natural Language Processing
 tag: NLP
-thumbnail: https://user-images.githubusercontent.com/53667002/69211133-5eb7d400-0ba0-11ea-8d50-40ae5b838a1a.png
+thumbnail: /public/thumbnails/posts-2019-11-19-transformer.webp
+thumbnail_source: https://user-images.githubusercontent.com/53667002/69211133-5eb7d400-0ba0-11ea-8d50-40ae5b838a1a.png
 ---
 **Transformer 실습 코드: [https://finddme.github.io/natural%20language%20processing/2019/11/20/TransformerCode/](https://finddme.github.io/natural%20language%20processing/2019/11/20/TransformerCode/)**
 

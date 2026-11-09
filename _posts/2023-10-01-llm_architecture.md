@@ -2,7 +2,8 @@
 title: "LLM Architecture"
 category: LLM / Multimodal
 tag: NLP
-thumbnail: https://github.com/finddme/finddme.github.io/assets/53667002/7daf9db0-5680-4b4c-8629-9543323f20df
+thumbnail: /public/thumbnails/posts-2023-10-01-llm-architecture.webp
+thumbnail_source: https://github.com/finddme/finddme.github.io/assets/53667002/7daf9db0-5680-4b4c-8629-9543323f20df
 ---
 
 
