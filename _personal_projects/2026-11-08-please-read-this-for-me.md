@@ -6,8 +6,13 @@ link:
 summary: "A Windows desktop app whose AI agent finds and reads files in selected folders to answer questions with verifiable sources. Combines file exploration with optional semantic search."
 ---
 
-- [앱 소스 / 릴리스](https://github.com/pleasereadthisforme/pleasereadthisforme) 
-- [프로젝트 소개 사이트 소스](https://github.com/pleasereadthisforme/pleasereadthisforme.github.io)
+# [Please read this for me]
+
+- 정체: 선택한 폴더의 문서를 찾아 읽고, 사용자가 확인할 수 있는 출처와 함께 답하는 데스크톱 앱.
+- 앱 소스 / 릴리스: https://github.com/pleasereadthisforme/pleasereadthisforme
+- 프로젝트 소개 사이트 소스: https://github.com/pleasereadthisforme/pleasereadthisforme.github.io
+
+<img width="1000" height="980" alt="전체 시스템의 질문/검색/근거 반환 흐름" src="https://github.com/user-attachments/assets/d9a77fe2-da52-44e2-bb5e-c18f099caf41" />
 
 # [0. 핵심 설계 규칙 (TL;DR)]
 
