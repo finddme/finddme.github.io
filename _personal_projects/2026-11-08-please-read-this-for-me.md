@@ -6,7 +6,8 @@ link:
 summary: "A Windows desktop app whose AI agent finds and reads files in selected folders to answer questions with verifiable sources. Combines file exploration with optional semantic search."
 ---
 
-**GitHub repos:** [앱 소스 / 릴리스](https://github.com/pleasereadthisforme/pleasereadthisforme) | [프로젝트 소개 사이트 소스](https://github.com/pleasereadthisforme/pleasereadthisforme.github.io)
+- [앱 소스 / 릴리스](https://github.com/pleasereadthisforme/pleasereadthisforme) 
+- [프로젝트 소개 사이트 소스](https://github.com/pleasereadthisforme/pleasereadthisforme.github.io)
 
 # [0. 핵심 설계 규칙 (TL;DR)]
 
@@ -61,8 +62,6 @@ summary: "A Windows desktop app whose AI agent finds and reads files in selected
 최종 방향은 **agentic search를 기본으로 하고 선택적 의미 검색으로 보완하는 검색 증강 방식**. RAG를 벡터 top-k 검색으로 한정하지 않았고 모든 파일의 임베딩도 질문의 선행 조건에서 제외.
 
 CAG의 재사용 취지와 이후 구현한 검증된 근거 재사용 사이에 일부 공통점 존재. 다만 현재의 본문 재사용과 논문의 KV 캐시 구현은 별개. KAG는 여러 문서의 관계를 연결하는 질문에서 실패가 반복될 때 재검토할 후보로 유지. 세 방식의 관계는 발전 단계가 아닌 자료 규모/변경 빈도/질문 성격에 따른 선택지.
-
-참고: [CAG 원 논문](https://arxiv.org/abs/2412.15605), [OpenSPG KAG](https://github.com/OpenSPG/KAG). 실제 수행한 검색 실험은 다음 절에 별도 정리.
 
 # [3. PoC와 설계 결정]
 
@@ -184,11 +183,11 @@ Java 동봉 부담은 별도 런타임 실험으로 확인. jlink 최소 모듈/
 
 # [5. 시스템 구성]
 
-<img width="1000" height="980" alt="전체 시스템의 질문/검색/근거 반환 흐름" src="https://github.com/user-attachments/assets/4b037bd4-bd0c-4604-9753-a9e0fa708ff4" />
+<img width="1000" height="980" alt="전체 시스템의 질문/검색/근거 반환 흐름" src="https://github.com/user-attachments/assets/d9a77fe2-da52-44e2-bb5e-c18f099caf41" />
 
 준비된 문서에 질문하는 과정을 네 층으로 표현한 구조도. 의미 검색을 포함한 설명용 예시로, 질문별 실행 순서는 달라질 수 있다는 점에 유의. 문서 준비와 임베딩 생성은 별도 작업.
 
-<img width="1200" height="950" alt="앱 구성" src="https://github.com/user-attachments/assets/000f5d56-a26d-4767-a9e4-6e1edbc1269d" />
+<img width="1200" height="950" alt="앱 구성" src="https://github.com/user-attachments/assets/371153a9-a2b8-477b-9197-0401b971a09d" />
 
 | 구성 | 역할 |
 | --- | --- |
@@ -203,7 +202,7 @@ Java 동봉 부담은 별도 런타임 실험으로 확인. jlink 최소 모듈/
 
 # [6. 에이전트와 검색]
 
-<img width="1200" height="1113" alt="에이전트 파이프라인" src="https://github.com/user-attachments/assets/5e60900d-6d58-447d-bdc1-14714e57fdfb" />
+<img width="1200" height="1113" alt="에이전트 파이프라인" src="https://github.com/user-attachments/assets/e841ca45-d85f-4cbd-b370-023dd4aaaad2" />
 
 에이전트는 질문/최근 대화/검증된 이전 근거를 받아 다음 도구 또는 답변을 선택. 파일 찾기/본문 검색/구간 읽기는 고정 순서의 단일 실행이 아닌 관찰 결과에 따른 반복 동작. 반복 횟수와 입력 예산에는 상한을 설정.
 
@@ -213,13 +212,13 @@ Java 동봉 부담은 별도 런타임 실험으로 확인. jlink 최소 모듈/
 
 ### 검색과 임베딩의 상세 흐름
 
-<img width="1200" height="1134" alt="검색 로직" src="https://github.com/user-attachments/assets/033733a8-c402-4fa9-b576-a1159c38b3aa" />
+<img width="1200" height="1134" alt="검색 로직" src="https://github.com/user-attachments/assets/54ad9337-3f91-4408-ae4b-2ba50e4564ea" />
 
-<img width="1200" height="1178" alt="임베딩 준비와 검색" src="https://github.com/user-attachments/assets/79bab108-0d19-40ac-bf13-d999d951775e" />
+<img width="1200" height="1178" alt="임베딩 준비와 검색" src="https://github.com/user-attachments/assets/9f60e70c-213f-4085-a2fd-9a086d51c868" />
 
 # [7. 답변과 출처 검증]
 
-<img width="1200" height="1134" alt="본문 읽기와 근거 검증" src="https://github.com/user-attachments/assets/00ecd28a-4c39-430c-b643-95f7a91642c5" />
+<img width="1200" height="1134" alt="본문 읽기와 근거 검증" src="https://github.com/user-attachments/assets/f73fb244-a651-4cc6-9652-c8d1b9088d2d" />
 
 답변의 인용 ID를 모델에 전달된 허용 근거와 대조. 사용자가 출처를 열면 저장된 본문과 위치를 확인할 수 있도록 원본 텍스트 줄/추출 본문 줄/PDF 페이지를 구분. 참조의 유효성을 확인하는 절차로, 모든 문장의 사실성 보장과는 구분.
 
