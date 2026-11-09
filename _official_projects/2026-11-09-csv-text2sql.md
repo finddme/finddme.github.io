@@ -1,7 +1,7 @@
 ---
 title: "CSV Query Agent × Cloud Storage"
 date: 2026-11-09
-thumbnail: https://github.com/user-attachments/assets/cf21d46b-e4ce-47a4-ba36-338c468c516b
+thumbnail: https://github.com/user-attachments/assets/9b279d75-3db6-4dc9-842b-db9311228ac2
 link:
 summary: "A Text-to-SQL subagent that answers natural-language questions about an uploaded CSV using DuckDB, with SQL validation, execution-based correction, and source references."
 ---
@@ -170,7 +170,7 @@ Uber(Intent → Table → Column Prune → SQL)와 LinkedIn(임베딩 검색 + �
 
 **v2**
 
-<img width="2432" height="2528" alt="CSV Text-to-SQL 파이프라인 구조" src="https://github.com/user-attachments/assets/f62b3ada-675f-4c5e-b5b3-b9409f39fc0a" />
+<img width="2432" height="2528" alt="CSV Text-to-SQL 파이프라인 구조" src="https://github.com/user-attachments/assets/9b279d75-3db6-4dc9-842b-db9311228ac2" />
 
 
 **결정 사항**
@@ -709,7 +709,7 @@ L1은 어느 모델이든 맞히므로 **실무 정확도를 가르는 구간은
 
 ### 6-1. 전체 흐름
 
-<img width="2560" height="1402" alt="CSV 질의 에이전트 전체 흐름" src="https://github.com/user-attachments/assets/cf21d46b-e4ce-47a4-ba36-338c468c516b" />
+<img width="2560" height="1402" alt="CSV 질의 에이전트 전체 흐름" src="https://github.com/user-attachments/assets/e293f8d9-1356-4792-8927-a05bc8c9df36" />
 
 ### 6-2. 모듈별 책임
 
