@@ -39,7 +39,7 @@
           <span class="archive-sheet__thumb" aria-hidden="true">
             {% if item.thumbnail %}
               <a class="mac-projects__thumb-link" href="{{ href_out }}" tabindex="-1" aria-hidden="true">
-                <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" loading="lazy">
+                <img data-profile-thumbnail="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" decoding="async">
               </a>
             {% endif %}
           </span>
@@ -61,7 +61,7 @@
           <span class="archive-sheet__index">{{ forloop.index }}</span>
           <span class="archive-sheet__thumb" aria-hidden="true">
             {% if item.thumbnail %}
-              <img src="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" loading="lazy">
+              <img data-profile-thumbnail="{% if item.thumbnail contains '://' %}{{ item.thumbnail }}{% else %}{{ site.baseurl }}{{ item.thumbnail }}{% endif %}" alt="" decoding="async">
             {% endif %}
           </span>
           <span class="archive-sheet__title">{{ item.title }}</span>

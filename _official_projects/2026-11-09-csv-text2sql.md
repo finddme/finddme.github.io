@@ -1,7 +1,8 @@
 ---
 title: "CSV Query Agent × Cloud Storage"
 date: 2026-11-09
-thumbnail: https://github.com/user-attachments/assets/9b279d75-3db6-4dc9-842b-db9311228ac2
+thumbnail: /public/thumbnails/csv-text2sql.webp
+thumbnail_source: https://github.com/user-attachments/assets/9b279d75-3db6-4dc9-842b-db9311228ac2
 link:
 summary: "A Text-to-SQL subagent that answers natural-language questions about an uploaded CSV using DuckDB, with SQL validation, execution-based correction, and source references."
 ---

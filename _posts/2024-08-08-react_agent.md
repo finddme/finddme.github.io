@@ -2,7 +2,8 @@
 title: "Search system : #ReACT #HITL #<span style='font-weight: bold; font-family: Computer Modern;'>Multi-Agent</span>"
 category: Dev Log
 tag: Development
-thumbnail: https://github.com/user-attachments/assets/e6becc32-d802-4cde-ba28-e704edbb8ec4
+thumbnail: /public/thumbnails/posts-2024-08-08-react-agent.webp
+thumbnail_source: https://github.com/user-attachments/assets/e6becc32-d802-4cde-ba28-e704edbb8ec4
 ---
 
 

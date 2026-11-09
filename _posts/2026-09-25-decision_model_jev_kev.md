@@ -2,7 +2,8 @@
 title: "Decision Model: <span style='font-weight:bold; font-family:CMU Serif Roman;'>Jev</span>, Kev"
 category: LLM / Multimodal
 tag: Multimodal
-thumbnail: https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c3e78bc51b8
+thumbnail: /public/thumbnails/posts-2026-09-25-decision-model-jev-kev.webp
+thumbnail_source: https://github.com/user-attachments/assets/6408c678-9703-4cb7-92e7-7c3e78bc51b8
 ---
 
 * 목차

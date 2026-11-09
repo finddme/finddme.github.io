@@ -628,10 +628,15 @@ body.post-page .post-table-scroll {
   width:100%;max-width:100%;min-width:0;overflow-x:auto;margin:0 0 1rem;
 }
 body.post-page .post-table-scroll > table {
-  width:max-content;min-width:100%;max-width:none;margin-bottom:0;table-layout:auto;
+  width:100%;max-width:none;margin-bottom:0;table-layout:auto;
 }
-body.post-page .post-content pre a,
-body.post-page .post-table-scroll a {overflow-wrap:normal;}
+// Let prose wrap naturally; retain intrinsic minimum widths for wide data tables.
+body.post-page .post-table-scroll th,
+body.post-page .post-table-scroll td {word-break:normal;overflow-wrap:break-word;}
+// Long URLs and inline identifiers should not dictate the entire table width.
+body.post-page .post-table-scroll a,
+body.post-page .post-table-scroll :not(pre) > code {overflow-wrap:anywhere;}
+body.post-page .post-content pre a {overflow-wrap:normal;}
 body.post-page .post-table-scroll:focus-visible,
 body.post-page .post-content pre:focus-visible {outline:2px solid #666;outline-offset:2px;}
 body.post-page .post-toc-toggle__icon {font-size:20px;line-height:1;font-weight:400;}
