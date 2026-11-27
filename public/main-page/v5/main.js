@@ -78,19 +78,26 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     const top=Math.min(Math.max(st.y+d.wt/100*st.h,0),Math.max(0,st.ch-h-MARGIN));
     Object.assign(win.style,{left:left+'px',top:top+'px',width:w+'px',height:h+'px'});
   }
+  // Mobile: the list box is exactly the intro box; desktop: no inline box on the container.
+  function placeMobile(){
+    if(isMobile()){const c=coverBox(),i=introBox();PR.style.top=(i.top-c.top)+'px';PR.style.height=i.height+'px';}
+    else{PR.style.top='';PR.style.height='';}
+  }
+  function updFade(){PR.classList.toggle('has-more',PR.scrollHeight-PR.clientHeight-PR.scrollTop>2);}
   function fitAll(){
     const c=coverBox(),i=introBox();
     PR.style.setProperty('--intro-top',(i.top-c.top)+'px');
     PR.style.setProperty('--intro-h',i.height+'px');
-    if(isMobile()){wins.forEach(w=>w.removeAttribute('style'));return;}
+    placeMobile();
+    if(isMobile()){wins.forEach(w=>w.removeAttribute('style'));updFade();return;}
     const st=stage();
     PR.style.setProperty('--k',Math.max(1,st.k).toFixed(3));
     wins.forEach(w=>{if(!w.hidden)place(w,st);});
   }
   function closeWin(win){
-    if(reduceQuery.matches){win.hidden=true;return;}
+    if(reduceQuery.matches){win.hidden=true;updFade();return;}
     win.classList.add('is-closing');
-    setTimeout(()=>{win.hidden=true;win.classList.remove('is-closing');},160);
+    setTimeout(()=>{win.hidden=true;win.classList.remove('is-closing');updFade();},160);
   }
   wins.forEach(win=>{
     ['n','s','e','w','ne','nw','se','sw'].forEach(dir=>{const h=document.createElement('span');h.className='promo-rz';h.dataset.rz=dir;h.setAttribute('aria-hidden','true');win.appendChild(h);});
@@ -138,6 +145,9 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     document.body.appendChild(btn);
   }
   addEventListener('resize',()=>requestAnimationFrame(fitAll));
+  PR.addEventListener('scroll',updFade,{passive:true});
+  // the statement reflows when fonts arrive or the width changes; keep the list/blur box on it
+  if(window.ResizeObserver)new ResizeObserver(()=>fitAll()).observe(intro);
   mobileQuery.addEventListener('change',fitAll);
   if(document.fonts)document.fonts.ready.then(fitAll);
   fitAll();

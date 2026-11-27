@@ -178,3 +178,23 @@
  .promo-rz[data-rz=se]{bottom:-4px;right:-4px;width:16px;height:16px;cursor:nwse-resize;z-index:7}
  .promo-rz[data-rz=sw]{bottom:-4px;left:-4px;width:16px;height:16px;cursor:nesw-resize;z-index:7}
 }
+/* Mobile: the index list sits exactly over the intro (JS sets top/height), blurs what it doesn't cover,
+   centres its rows and scrolls inside that box when there are more rows than fit. */
+@media(max-width:800px){
+ .promos{position:absolute;left:0;right:0;top:0;z-index:4;display:flex;flex-direction:column;padding-inline:var(--page-gutter);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;-webkit-backdrop-filter:blur(var(--promo-blur));backdrop-filter:blur(var(--promo-blur))}
+ .promos::before,.promos::after{content:"";flex:1 1 0;min-height:0}
+ .promos::before{border-bottom:1px solid var(--ink)}
+ .promos:not(:has(.promo:not([hidden]))){display:none}
+ .promo{flex:none;display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;background:#fff;color:var(--ink);border-bottom:1px solid #0003}
+ .promo[hidden]{display:none}
+ .promo-bar{order:3}
+ .promo-name{display:none}
+ .promo-x{width:44px;height:44px;font:16px/1 var(--sans)}
+ .promo-media{display:block}
+ .promo video{height:auto}
+ .promo-cap{display:block;min-width:0;font:11px/1.4 var(--sans);text-transform:uppercase}
+ .promo-go{display:block;font:13px/1.35 var(--serif);text-transform:none;text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+ .promo-rz{display:none}
+ /* "More below" hint while rows remain under the fold of the list */
+ .promos.has-more .promo-fade{display:block;position:sticky;bottom:0;flex:none;height:56px;margin-top:-56px;z-index:1;pointer-events:none;background:linear-gradient(rgba(255,255,255,0),#fff 85%)}
+}
