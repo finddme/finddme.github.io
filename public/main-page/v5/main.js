@@ -73,7 +73,11 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
   function introBox(){const i=intro.getBoundingClientRect(),m=mark?mark.getBoundingClientRect():i,top=Math.min(i.top,m.top),bottom=Math.max(i.bottom,m.bottom);return{top,height:bottom-top};}
   function rel(el){const c=coverBox(),r=el.getBoundingClientRect();return{l:r.left-c.left,t:r.top-c.top,w:r.width,h:r.height};}
   function place(win,st){
-    const d=win.dataset,w=d.ww/100*st.w,h=w/d.ar;
+    // Wanted size, shrunk (temporarily, ratio kept) if it would not fit inside the cover.
+    const d=win.dataset;let w=d.ww/100*st.w,h=w/d.ar;
+    const maxW=st.cw-2*MARGIN,maxH=st.ch-MARGIN;
+    if(w>maxW){w=maxW;h=w/d.ar;}
+    if(h>maxH){h=maxH;w=h*d.ar;}
     const left=Math.min(Math.max(st.x+d.wl/100*st.w,MARGIN),Math.max(MARGIN,st.cw-w-MARGIN));
     const top=Math.min(Math.max(st.y+d.wt/100*st.h,0),Math.max(0,st.ch-h-MARGIN));
     Object.assign(win.style,{left:left+'px',top:top+'px',width:w+'px',height:h+'px'});
@@ -83,7 +87,8 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     if(isMobile()){const c=coverBox(),i=introBox();PR.style.top=(i.top-c.top)+'px';PR.style.height=i.height+'px';}
     else{PR.style.top='';PR.style.height='';}
   }
-  function syncEmpty(){PR.classList.toggle('is-empty',!wins.some(w=>!w.hidden));}
+  // On mobile the list covers the intro: keep keyboard focus out of what can't be seen while it is shown.
+  function syncEmpty(){const empty=!wins.some(w=>!w.hidden);PR.classList.toggle('is-empty',empty);intro.inert=isMobile()&&!empty;}
   function updFade(){PR.classList.toggle('has-more',PR.scrollHeight-PR.clientHeight-PR.scrollTop>2);}
   // Video policy: play only what is on screen (desktop: viewport; mobile: inside the list box, and only while
   // the cover itself is on screen). Never play under reduced motion. The decision is mirrored in data-playing.
@@ -101,15 +106,15 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     videoIO=new IntersectionObserver(es=>es.forEach(e=>{seen.set(e.target,e.isIntersecting&&e.intersectionRatio>=0.1);decide(e.target);}),{root:isMobile()?PR:null,threshold:[0,0.1]});
     watchVideos();
   }
-  function applyMotionPref(){
-    PR.querySelectorAll('.promo video').forEach(v=>{if(reduceQuery.matches)v.removeAttribute('autoplay');else v.setAttribute('autoplay','');});
-    decideAll();
-  }
+  const applyMotionPref=decideAll;
   function fitAll(){
     const c=coverBox(),i=introBox();
     PR.style.setProperty('--intro-top',(i.top-c.top)+'px');
     PR.style.setProperty('--intro-h',i.height+'px');
     placeMobile();
+    syncEmpty();
+    // mobile: the caption is the row's link, so the thumbnail link leaves the tab order (desktop: the video is the link)
+    PR.querySelectorAll('.promo-media').forEach(a=>{if(isMobile())a.tabIndex=-1;else a.removeAttribute('tabindex');});
     if(videoIO)watchVideos();
     if(isMobile()){wins.forEach(w=>w.removeAttribute('style'));updFade();return;}
     const st=stage();
@@ -118,7 +123,7 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
   }
   function closeWin(win){
     const finish=()=>{win.hidden=true;win.classList.remove('is-closing');syncEmpty();updFade();decideAll();};
-    if(reduceQuery.matches){finish();return;}
+    if(reduceQuery.matches||isMobile()){finish();return;}
     win.classList.add('is-closing');
     setTimeout(finish,160);
   }
@@ -162,8 +167,8 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     const btn=document.createElement('button');
     btn.type='button';btn.className='promo-layout-copy';btn.textContent='copy positions';
     btn.addEventListener('click',async()=>{
-      const st=stage();
-      const out=wins.map(w=>{const b=rel(w);return`- slug: ${w.dataset.name}\n  left: ${pct(b.l-st.x,st.w)}\n  top: ${pct(b.t-st.y,st.h)}\n  width: ${pct(b.w,st.w)}\n  aspect: ${(b.w/b.h).toFixed(4)}`;}).join('\n');
+      // the wanted geometry (not the clamped px on this screen), open windows only
+      const out=wins.filter(w=>!w.hidden).map(w=>{const d=w.dataset;return`- slug: ${d.name}\n  left: ${+d.wl}\n  top: ${+d.wt}\n  width: ${+d.ww}\n  aspect: ${(+d.ar).toFixed(4)}`;}).join('\n');
       try{await navigator.clipboard.writeText(out);btn.textContent='copied';}catch{prompt('positions',out);}
       setTimeout(()=>{btn.textContent='copy positions';},1500);
     });
@@ -171,6 +176,7 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
   }
   addEventListener('resize',()=>requestAnimationFrame(fitAll));
   PR.addEventListener('scroll',updFade,{passive:true});
+  PR.querySelectorAll('.promo video').forEach(v=>v.addEventListener('loadedmetadata',updFade));
   // the statement reflows when fonts arrive or the width changes; keep the list/blur box on it
   if(window.ResizeObserver)new ResizeObserver(()=>fitAll()).observe(intro);
   mobileQuery.addEventListener('change',()=>{fitAll();makeVideoIO();});
