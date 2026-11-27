@@ -50,3 +50,95 @@ dialog.addEventListener('cancel',e=>{e.preventDefault();closeSites();});
 dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))closeSites();});
 dialog.addEventListener('close',()=>{if(dialogAnimation)dialogAnimation.cancel();dialogAnimation=null;trigger.focus({preventScroll:true});});
 dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.finish();});
+
+// Promo windows (data: _data/main_promos.yml).
+// Desktop: windows are laid out on a reference stage (data-ref-w/h = the cover size the layout was composed on)
+// fitted into the cover with its ratio kept and centred, growing on big screens. Each window keeps its "wanted"
+// geometry as stage fractions in data-wl/wt/ww (%) + data-ar (width/height); clamping into the cover only writes
+// temporary px, so a wider viewport restores the composition. Nothing persists across reloads.
+(()=>{
+  const PR=document.querySelector('.promos');
+  if(!PR)return;
+  const cover=PR.closest('.cover'),intro=document.querySelector('.intro'),mark=document.querySelector('.mark');
+  const REF={w:+PR.dataset.refW,h:+PR.dataset.refH};
+  const mobileQuery=matchMedia('(max-width:800px)'),isMobile=()=>mobileQuery.matches;
+  const reduceQuery=matchMedia('(prefers-reduced-motion: reduce)');
+  const wins=[...PR.querySelectorAll('.promo')];
+  const MIN_W=260,MIN_H=180,MARGIN=8;
+  let zTop=10;
+  const coverBox=()=>cover.getBoundingClientRect();
+  const pct=(v,total)=>+(v/total*100).toFixed(2);
+  function stage(){const c=coverBox(),k=Math.min(c.width/REF.w,c.height/REF.h),w=REF.w*k,h=REF.h*k;return{x:(c.width-w)/2,y:(c.height-h)/2,w,h,k,cw:c.width,ch:c.height};}
+  // Typing line + statement. The typing line is shifted with a transform, so take the union of both boxes.
+  function introBox(){const i=intro.getBoundingClientRect(),m=mark?mark.getBoundingClientRect():i,top=Math.min(i.top,m.top),bottom=Math.max(i.bottom,m.bottom);return{top,height:bottom-top};}
+  function rel(el){const c=coverBox(),r=el.getBoundingClientRect();return{l:r.left-c.left,t:r.top-c.top,w:r.width,h:r.height};}
+  function place(win,st){
+    const d=win.dataset,w=d.ww/100*st.w,h=w/d.ar;
+    const left=Math.min(Math.max(st.x+d.wl/100*st.w,MARGIN),Math.max(MARGIN,st.cw-w-MARGIN));
+    const top=Math.min(Math.max(st.y+d.wt/100*st.h,0),Math.max(0,st.ch-h-MARGIN));
+    Object.assign(win.style,{left:left+'px',top:top+'px',width:w+'px',height:h+'px'});
+  }
+  function fitAll(){
+    const c=coverBox(),i=introBox();
+    PR.style.setProperty('--intro-top',(i.top-c.top)+'px');
+    PR.style.setProperty('--intro-h',i.height+'px');
+    if(isMobile()){wins.forEach(w=>w.removeAttribute('style'));return;}
+    const st=stage();
+    PR.style.setProperty('--k',Math.max(1,st.k).toFixed(3));
+    wins.forEach(w=>{if(!w.hidden)place(w,st);});
+  }
+  function closeWin(win){
+    if(reduceQuery.matches){win.hidden=true;return;}
+    win.classList.add('is-closing');
+    setTimeout(()=>{win.hidden=true;win.classList.remove('is-closing');},160);
+  }
+  wins.forEach(win=>{
+    ['n','s','e','w','ne','nw','se','sw'].forEach(dir=>{const h=document.createElement('span');h.className='promo-rz';h.dataset.rz=dir;h.setAttribute('aria-hidden','true');win.appendChild(h);});
+    win.querySelector('.promo-x').addEventListener('click',()=>closeWin(win));
+    let op=null;
+    win.addEventListener('pointerdown',e=>{
+      if(isMobile()||e.button!==0)return;
+      win.style.zIndex=++zTop;
+      const rz=e.target.closest('.promo-rz'),bar=e.target.closest('.promo-bar');
+      if(!rz&&(!bar||e.target.closest('.promo-x')))return;
+      op={x:e.clientX,y:e.clientY,b:rel(win),dir:rz?rz.dataset.rz:null};
+      win.classList.add(rz?'is-resizing':'is-dragging');
+      e.target.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    win.addEventListener('pointermove',e=>{
+      if(!op)return;
+      const dx=e.clientX-op.x,dy=e.clientY-op.y,b=op.b,d=op.dir;
+      if(!d){win.style.left=(b.l+dx)+'px';win.style.top=(b.t+dy)+'px';return;}
+      if(d.includes('e'))win.style.width=Math.max(MIN_W,b.w+dx)+'px';
+      if(d.includes('w')){const w=Math.max(MIN_W,b.w-dx);win.style.width=w+'px';win.style.left=(b.l+b.w-w)+'px';}
+      if(d.includes('s'))win.style.height=Math.max(MIN_H,b.h+dy)+'px';
+      if(d.includes('n')){const h=Math.max(MIN_H,b.h-dy);win.style.height=h+'px';win.style.top=(b.t+b.h-h)+'px';}
+    });
+    const end=()=>{
+      if(!op)return;
+      op=null;win.classList.remove('is-dragging','is-resizing');
+      const b=rel(win),st=stage(),d=win.dataset;
+      d.wl=pct(b.l-st.x,st.w);d.wt=pct(b.t-st.y,st.h);d.ww=pct(b.w,st.w);d.ar=(b.w/b.h).toFixed(4);
+      place(win,st);
+    };
+    win.addEventListener('pointerup',end);
+    win.addEventListener('pointercancel',end);
+  });
+  // ?layout: copy the current geometry as YAML lines for _data/main_promos.yml
+  if(new URLSearchParams(location.search).has('layout')){
+    const btn=document.createElement('button');
+    btn.type='button';btn.className='promo-layout-copy';btn.textContent='copy positions';
+    btn.addEventListener('click',async()=>{
+      const st=stage();
+      const out=wins.map(w=>{const b=rel(w);return`- slug: ${w.dataset.name}\n  left: ${pct(b.l-st.x,st.w)}\n  top: ${pct(b.t-st.y,st.h)}\n  width: ${pct(b.w,st.w)}\n  aspect: ${(b.w/b.h).toFixed(4)}`;}).join('\n');
+      try{await navigator.clipboard.writeText(out);btn.textContent='copied';}catch{prompt('positions',out);}
+      setTimeout(()=>{btn.textContent='copy positions';},1500);
+    });
+    document.body.appendChild(btn);
+  }
+  addEventListener('resize',()=>requestAnimationFrame(fitAll));
+  mobileQuery.addEventListener('change',fitAll);
+  if(document.fonts)document.fonts.ready.then(fitAll);
+  fitAll();
+})();
