@@ -185,7 +185,9 @@
  .promos{position:absolute;left:0;right:0;top:0;z-index:4;display:flex;flex-direction:column;padding-inline:var(--page-gutter);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;-webkit-backdrop-filter:blur(var(--promo-blur));backdrop-filter:blur(var(--promo-blur))}
  .promos::before,.promos::after{content:"";flex:1 1 0;min-height:0}
  .promos::before{border-bottom:1px solid var(--ink)}
- .promo{flex:none;display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 0;background:#fff;color:var(--ink);border-bottom:1px solid #0003}
+ /* rows paint white edge to edge (so the blurred intro doesn't show in the gutters beside them); content and separator stay inside the gutters */
+ .promo{position:relative;flex:none;display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:12px;align-items:center;margin-inline:calc(-1 * var(--page-gutter));padding:10px var(--page-gutter);background:#fff;color:var(--ink)}
+ .promo::after{content:"";position:absolute;left:var(--page-gutter);right:var(--page-gutter);bottom:0;height:1px;background:#0003;pointer-events:none}
  .promo[hidden]{display:none}
  .promo-bar{order:0}
  .promo-name{display:none}
