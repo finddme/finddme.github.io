@@ -84,20 +84,41 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     else{PR.style.top='';PR.style.height='';}
   }
   function updFade(){PR.classList.toggle('has-more',PR.scrollHeight-PR.clientHeight-PR.scrollTop>2);}
+  // Video policy: play only what is on screen (desktop: viewport; mobile: inside the list box, and only while
+  // the cover itself is on screen). Never play under reduced motion. The decision is mirrored in data-playing.
+  const seen=new Map();let coverOnScreen=true,videoIO=null;
+  function decide(v){
+    const on=coverOnScreen&&!!seen.get(v)&&!reduceQuery.matches&&!v.closest('.promo').hidden;
+    v.dataset.playing=on?'1':'0';
+    if(on){const pr=v.play();if(pr)pr.catch(()=>{});}else v.pause();
+  }
+  const decideAll=()=>PR.querySelectorAll('.promo video').forEach(decide);
+  function watchVideos(){PR.querySelectorAll('.promo video').forEach(v=>{if(!seen.has(v)){seen.set(v,false);videoIO.observe(v);}});}
+  function makeVideoIO(){
+    if(videoIO)videoIO.disconnect();
+    seen.clear();
+    videoIO=new IntersectionObserver(es=>es.forEach(e=>{seen.set(e.target,e.isIntersecting&&e.intersectionRatio>=0.1);decide(e.target);}),{root:isMobile()?PR:null,threshold:[0,0.1]});
+    watchVideos();
+  }
+  function applyMotionPref(){
+    PR.querySelectorAll('.promo video').forEach(v=>{if(reduceQuery.matches)v.removeAttribute('autoplay');else v.setAttribute('autoplay','');});
+    decideAll();
+  }
   function fitAll(){
     const c=coverBox(),i=introBox();
     PR.style.setProperty('--intro-top',(i.top-c.top)+'px');
     PR.style.setProperty('--intro-h',i.height+'px');
     placeMobile();
+    if(videoIO)watchVideos();
     if(isMobile()){wins.forEach(w=>w.removeAttribute('style'));updFade();return;}
     const st=stage();
     PR.style.setProperty('--k',Math.max(1,st.k).toFixed(3));
     wins.forEach(w=>{if(!w.hidden)place(w,st);});
   }
   function closeWin(win){
-    if(reduceQuery.matches){win.hidden=true;updFade();return;}
+    if(reduceQuery.matches){win.hidden=true;updFade();decideAll();return;}
     win.classList.add('is-closing');
-    setTimeout(()=>{win.hidden=true;win.classList.remove('is-closing');updFade();},160);
+    setTimeout(()=>{win.hidden=true;win.classList.remove('is-closing');updFade();decideAll();},160);
   }
   wins.forEach(win=>{
     ['n','s','e','w','ne','nw','se','sw'].forEach(dir=>{const h=document.createElement('span');h.className='promo-rz';h.dataset.rz=dir;h.setAttribute('aria-hidden','true');win.appendChild(h);});
@@ -148,7 +169,11 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
   PR.addEventListener('scroll',updFade,{passive:true});
   // the statement reflows when fonts arrive or the width changes; keep the list/blur box on it
   if(window.ResizeObserver)new ResizeObserver(()=>fitAll()).observe(intro);
-  mobileQuery.addEventListener('change',fitAll);
+  mobileQuery.addEventListener('change',()=>{fitAll();makeVideoIO();});
+  reduceQuery.addEventListener('change',applyMotionPref);
+  new IntersectionObserver(([e])=>{coverOnScreen=e.isIntersecting;decideAll();}).observe(cover);
+  makeVideoIO();
+  applyMotionPref();
   if(document.fonts)document.fonts.ready.then(fitAll);
   fitAll();
 })();
