@@ -83,6 +83,7 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     if(isMobile()){const c=coverBox(),i=introBox();PR.style.top=(i.top-c.top)+'px';PR.style.height=i.height+'px';}
     else{PR.style.top='';PR.style.height='';}
   }
+  function syncEmpty(){PR.classList.toggle('is-empty',!wins.some(w=>!w.hidden));}
   function updFade(){PR.classList.toggle('has-more',PR.scrollHeight-PR.clientHeight-PR.scrollTop>2);}
   // Video policy: play only what is on screen (desktop: viewport; mobile: inside the list box, and only while
   // the cover itself is on screen). Never play under reduced motion. The decision is mirrored in data-playing.
@@ -116,9 +117,10 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     wins.forEach(w=>{if(!w.hidden)place(w,st);});
   }
   function closeWin(win){
-    if(reduceQuery.matches){win.hidden=true;updFade();decideAll();return;}
+    const finish=()=>{win.hidden=true;win.classList.remove('is-closing');syncEmpty();updFade();decideAll();};
+    if(reduceQuery.matches){finish();return;}
     win.classList.add('is-closing');
-    setTimeout(()=>{win.hidden=true;win.classList.remove('is-closing');updFade();decideAll();},160);
+    setTimeout(finish,160);
   }
   wins.forEach(win=>{
     ['n','s','e','w','ne','nw','se','sw'].forEach(dir=>{const h=document.createElement('span');h.className='promo-rz';h.dataset.rz=dir;h.setAttribute('aria-hidden','true');win.appendChild(h);});
@@ -137,6 +139,7 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     win.addEventListener('pointermove',e=>{
       if(!op)return;
       const dx=e.clientX-op.x,dy=e.clientY-op.y,b=op.b,d=op.dir;
+      op.moved=true;
       if(!d){win.style.left=(b.l+dx)+'px';win.style.top=(b.t+dy)+'px';return;}
       if(d.includes('e'))win.style.width=Math.max(MIN_W,b.w+dx)+'px';
       if(d.includes('w')){const w=Math.max(MIN_W,b.w-dx);win.style.width=w+'px';win.style.left=(b.l+b.w-w)+'px';}
@@ -145,7 +148,8 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
     });
     const end=()=>{
       if(!op)return;
-      op=null;win.classList.remove('is-dragging','is-resizing');
+      const moved=op.moved;op=null;win.classList.remove('is-dragging','is-resizing');
+      if(!moved)return; // a plain click (bring to front) must not save a clamped position as the wanted one
       const b=rel(win),st=stage(),d=win.dataset;
       d.wl=pct(b.l-st.x,st.w);d.wt=pct(b.t-st.y,st.h);d.ww=pct(b.w,st.w);d.ar=(b.w/b.h).toFixed(4);
       place(win,st);
@@ -174,6 +178,8 @@ dialogMotion.addEventListener('change',()=>{if(dialogAnimation)dialogAnimation.f
   new IntersectionObserver(([e])=>{coverOnScreen=e.isIntersecting;decideAll();}).observe(cover);
   makeVideoIO();
   applyMotionPref();
+  syncEmpty();
+  PR.classList.add('is-ready');
   if(document.fonts)document.fonts.ready.then(fitAll);
   fitAll();
 })();
