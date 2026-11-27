@@ -1,0 +1,30 @@
+# Home page side-project promo windows (index.html cover). See docs: main-promo-windows design.
+# ref: the cover size the layout was composed on. Desktop windows are placed on a stage of this
+#      ratio fitted into the cover (and keep growing on bigger screens).
+# left/top/width: percent of that stage. aspect: window width / height.
+# Order = stacking order on desktop (later on top) and list order on mobile.
+# Media: public/main-page/v5/promos/<slug>/promo.mp4 + poster.webp (silent H.264, <=960px wide).
+# Tip: open the home page with ?layout, move/resize windows, then "copy positions".
+ref: { w: 1849, h: 839 }
+items:
+  - slug: sketch-to-cad
+    url: https://github.com/finddme/sketch-to-cad
+    host: github.com/finddme/sketch-to-cad
+    left: 6.12
+    top: 3.7
+    width: 42.78
+    aspect: 1.8630
+  - slug: ascii-qr-studio
+    url: https://github.com/finddme/ascii-qr-studio
+    host: github.com/finddme/ascii-qr-studio
+    left: 63.79
+    top: 3.75
+    width: 29.69
+    aspect: 1.6659
+  - slug: pleasereadthisforme
+    url: https://pleasereadthisforme.github.io/
+    host: pleasereadthisforme.github.io
+    left: 38.34
+    top: 38.2
+    width: 35.96
+    aspect: 1.8046
