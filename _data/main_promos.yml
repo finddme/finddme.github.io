@@ -28,3 +28,10 @@ items:
     top: 38.2
     width: 35.96
     aspect: 1.8046
+  - slug: korea-sos-atlas-kit
+    url: https://github.com/finddme/korea-sos-atlas-kit
+    host: github.com/finddme/korea-sos-atlas-kit
+    left: 74
+    top: 50
+    width: 22
+    aspect: 1.7778
